@@ -1,0 +1,21 @@
+Author: Ian Gilman
+Title: Net Income Calculator
+
+Abstract / Introduction: This calculator uses base salary, federal, 
+   income tax rate, FICA tax rate, and state income tax rate (if any)
+   to calculate net income.
+   
+Inputs:  (float) base salary - limited to non-negative float-sized numbers:
+                  Gross annual income.
+         (float) federal tax - limited to non-negative float-sized numbers:
+                  Percent federal tax rate
+         (float) fica tax - limited to non-negative float-sized numbers:
+                  Percent Federal Insurance Contribution Act tax rate
+         (float) state tax - limited to non-negative float-sized numbers:
+                  Percent state tax rate
+                  
+Outputs: (float) net income - limited to non-negative float-sized numbers,
+                  rounded to nearest cent:
+                  net annual income
+                  
+Major Functions: calculate_net_income - takes salary (float), array of all taxes (float 			 	array), and number of taxes (int), and returns net income (float)
