@@ -2,17 +2,13 @@
 
 Author: Ian Gilman
 Title: Net Income Calculator
-Abstract / Introduction: This calculator uses base salary, federal,
-   income tax rate, FICA tax rate, and state income tax rate (if any)
+Abstract / Introduction: This calculator uses base salary, social security tax,
+   federal income tax rate and bracket, and state income tax rate (if any)
    to calculate net income.
 Inputs:  (float) base salary - limited to non-negative float-sized numbers:
                   Gross annual income.
-         (float) federal tax - limited to non-negative float-sized numbers:
-                  Percent federal tax rate
-         (float) fica tax - limited to non-negative float-sized numbers:
-                  Percent Federal Insurance Contribution Act tax rate
          (float) state tax - limited to non-negative float-sized numbers:
-                  Percent state tax rate
+                  Percent state tax rate.
 
 Outputs: (float) net income - limited to non-negative float-sized numbers,
                   rounded to nearest cent:
@@ -32,7 +28,12 @@ Major Functions: calculate_net_income - takes salary (float), array of all taxes
 
 
 // Program constants
-#define NUM_OF_TAXES 3
+#define NUM_OF_TAXES 1
+#define FED_TAX 28  // applies to income above FED_TAX_CUTOFF
+#define FED_TAX_CUTOFF 30000  // income cutoff for federal tax
+#define FLAT_TAX 3500  // determined by tax bracket
+#define SS_TAX 10.3  // applies to income up to the SS_TAX_CUTOFF
+#define SS_TAX_CUTOFF 65000  // income cutoff for social security tax
 
 
 // Function declarations
@@ -62,20 +63,14 @@ int main() {
 
    // Calculator variable names
    const char SALARY_PROMPT[] = "base annual salary";
-   const char FED_TAX_PROMPT[] = "federal tax rate percentage";
-   const char FICA_TAX_PROMPT[] = "FICA tax rate percentage";
    const char STATE_TAX_PROMPT[] = "state tax rate percentage";
 
    // Calculator variables
    flid base_salary; // base annual salary
-   flid fed_tax; // federal tax rate percentage
-   flid fica_tax; // FICA tax rate percentage
    flid state_tax; // state tax rate percentage
 
    // Instantiate calculator variables with names
    strcpy(base_salary.name, SALARY_PROMPT);
-   strcpy(fed_tax.name, FED_TAX_PROMPT);
-   strcpy(fica_tax.name, FICA_TAX_PROMPT);
    strcpy(state_tax.name, STATE_TAX_PROMPT);
 
    ////////////
@@ -85,14 +80,10 @@ int main() {
 
    // Get calculator variable values from user
    base_salary.value = prompt_user_for_float(base_salary.name);
-   fed_tax.value = prompt_user_for_float(fed_tax.name);
-   fica_tax.value = prompt_user_for_float(fica_tax.name);
    state_tax.value = prompt_user_for_float(state_tax.name);
 
    // Aggregate taxes and calculate net income
-   all_taxes[0] = fed_tax.value;
-   all_taxes[1] = fica_tax.value;
-   all_taxes[2] = state_tax.value;
+   all_taxes[0] = state_tax.value;
    net_income = calculate_net_income
                 (
                      base_salary.value,
@@ -132,6 +123,8 @@ float prompt_user_for_float(char* float_name) {
 float calculate_net_income(float salary, float taxes[], int num_of_taxes) {
    float net_income; // income after taxes
    float total_tax = 0; // sum of tax percentages
+   float ss_tax = 0;  // amount of social security tax
+   float fed_tax = 0; // amount of federal tax
    int i; // loop iterator
 
    // find sum of taxes
@@ -139,8 +132,18 @@ float calculate_net_income(float salary, float taxes[], int num_of_taxes) {
       total_tax += taxes[i];
    }
 
+   // Calculate social security tax
+   if(salary < SS_TAX_CUTOFF)
+      ss_tax = (salary * SS_TAX) / 100;
+   else
+      ss_tax = SS_TAX * SS_TAX_CUTOFF;
+
+   // Calculate federal tax
+   if(salary > FED_TAX_CUTOFF)
+      fed_tax = ((salary - FED_TAX_CUTOFF) * FED_TAX) / 100;
+
    // calculate income after taxes
-   net_income = salary * (1 - (total_tax / 100));
+   net_income = salary * (1 - (total_tax / 100)) - ss_tax - fed_tax - FLAT_TAX;
    negative_float_check(net_income);
    return net_income;
 }
