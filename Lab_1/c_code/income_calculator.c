@@ -82,7 +82,7 @@ int main() {
    base_salary.value = prompt_user_for_float(base_salary.name);
    state_tax.value = prompt_user_for_float(state_tax.name);
 
-   // Aggregate taxes and calculate net income
+   // aggregate taxes and calculate net income
    all_taxes[0] = state_tax.value;
    net_income = calculate_net_income
                 (
@@ -91,7 +91,7 @@ int main() {
                      NUM_OF_TAXES
                 );
 
-   // Return result to the user and exit the program
+   // return result to the user and exit the program
    printf("%s%.2f\n", RESULT, net_income);
    printf("%s", END);
    return 0;
@@ -110,8 +110,9 @@ float prompt_user_for_float(char* float_name) {
    printf("Please enter your %s:\n", float_name);
    scanf("%f", &user_value);
 
-   // ensure function does not return a negative value
+   // error if user_value is negative
    negative_float_check(user_value);
+
    return user_value;
 }
 
@@ -132,19 +133,22 @@ float calculate_net_income(float salary, float taxes[], int num_of_taxes) {
       total_tax += taxes[i];
    }
 
-   // Calculate social security tax
+   // calculate social security tax
    if(salary < SS_TAX_CUTOFF)
       ss_tax = (salary * SS_TAX) / 100;
    else
-      ss_tax = SS_TAX * SS_TAX_CUTOFF;
+      ss_tax = (SS_TAX * SS_TAX_CUTOFF) / 100;
 
-   // Calculate federal tax
+   // calculate federal tax
    if(salary > FED_TAX_CUTOFF)
       fed_tax = ((salary - FED_TAX_CUTOFF) * FED_TAX) / 100;
 
    // calculate income after taxes
    net_income = salary * (1 - (total_tax / 100)) - ss_tax - fed_tax - FLAT_TAX;
+
+   // error if negative net income
    negative_float_check(net_income);
+
    return net_income;
 }
 
