@@ -1,0 +1,106 @@
+|Johnson_de1soc_top
+LEDR[0] << Johnson:johnson.q0
+LEDR[1] << Johnson:johnson.q1
+LEDR[2] << Johnson:johnson.q2
+LEDR[3] << Johnson:johnson.q3
+LEDR[4] << <GND>
+LEDR[5] << <GND>
+LEDR[6] << <GND>
+LEDR[7] << <GND>
+LEDR[8] << <GND>
+LEDR[9] << <GND>
+CLOCK_50 => CLOCK_50.IN1
+SW[9] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[0] => SW[0].IN1
+
+
+|Johnson_de1soc_top|clk_div:frequency_divider
+orig_clk => div_clks[0]~reg0.CLK
+orig_clk => div_clks[1]~reg0.CLK
+orig_clk => div_clks[2]~reg0.CLK
+orig_clk => div_clks[3]~reg0.CLK
+orig_clk => div_clks[4]~reg0.CLK
+orig_clk => div_clks[5]~reg0.CLK
+orig_clk => div_clks[6]~reg0.CLK
+orig_clk => div_clks[7]~reg0.CLK
+orig_clk => div_clks[8]~reg0.CLK
+orig_clk => div_clks[9]~reg0.CLK
+orig_clk => div_clks[10]~reg0.CLK
+orig_clk => div_clks[11]~reg0.CLK
+orig_clk => div_clks[12]~reg0.CLK
+orig_clk => div_clks[13]~reg0.CLK
+orig_clk => div_clks[14]~reg0.CLK
+orig_clk => div_clks[15]~reg0.CLK
+orig_clk => div_clks[16]~reg0.CLK
+orig_clk => div_clks[17]~reg0.CLK
+orig_clk => div_clks[18]~reg0.CLK
+orig_clk => div_clks[19]~reg0.CLK
+orig_clk => div_clks[20]~reg0.CLK
+orig_clk => div_clks[21]~reg0.CLK
+orig_clk => div_clks[22]~reg0.CLK
+orig_clk => div_clks[23]~reg0.CLK
+orig_clk => div_clks[24]~reg0.CLK
+orig_clk => div_clks[25]~reg0.CLK
+orig_clk => div_clks[26]~reg0.CLK
+orig_clk => div_clks[27]~reg0.CLK
+orig_clk => div_clks[28]~reg0.CLK
+orig_clk => div_clks[29]~reg0.CLK
+orig_clk => div_clks[30]~reg0.CLK
+orig_clk => div_clks[31]~reg0.CLK
+div_clks[0] <= div_clks[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[1] <= div_clks[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[2] <= div_clks[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[3] <= div_clks[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[4] <= div_clks[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[5] <= div_clks[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[6] <= div_clks[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[7] <= div_clks[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[8] <= div_clks[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[9] <= div_clks[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[10] <= div_clks[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[11] <= div_clks[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[12] <= div_clks[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[13] <= div_clks[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[14] <= div_clks[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[15] <= div_clks[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[16] <= div_clks[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[17] <= div_clks[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[18] <= div_clks[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[19] <= div_clks[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[20] <= div_clks[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[21] <= div_clks[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[22] <= div_clks[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[23] <= div_clks[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[24] <= div_clks[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[25] <= div_clks[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[26] <= div_clks[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[27] <= div_clks[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[28] <= div_clks[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[29] <= div_clks[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[30] <= div_clks[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[31] <= div_clks[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Johnson_de1soc_top|Johnson:johnson
+q0 <= q0~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q1 <= q1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q2 <= q2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q3 <= q3~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => q3~reg0.CLK
+clk => q2~reg0.CLK
+clk => q1~reg0.CLK
+clk => q0~reg0.CLK
+rst => q3~reg0.ACLR
+rst => q2~reg0.ACLR
+rst => q1~reg0.ACLR
+rst => q0~reg0.ACLR
+
+

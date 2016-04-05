@@ -1,0 +1,1079 @@
+TimeQuest Timing Analyzer report for Johnson
+Mon Apr 04 19:26:42 2016
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow 1100mV 85C Model Fmax Summary
+  7. Timing Closure Recommendations
+  8. Slow 1100mV 85C Model Setup Summary
+  9. Slow 1100mV 85C Model Hold Summary
+ 10. Slow 1100mV 85C Model Recovery Summary
+ 11. Slow 1100mV 85C Model Removal Summary
+ 12. Slow 1100mV 85C Model Minimum Pulse Width Summary
+ 13. Setup Times
+ 14. Hold Times
+ 15. Clock to Output Times
+ 16. Minimum Clock to Output Times
+ 17. Slow 1100mV 85C Model Metastability Report
+ 18. Slow 1100mV 0C Model Fmax Summary
+ 19. Slow 1100mV 0C Model Setup Summary
+ 20. Slow 1100mV 0C Model Hold Summary
+ 21. Slow 1100mV 0C Model Recovery Summary
+ 22. Slow 1100mV 0C Model Removal Summary
+ 23. Slow 1100mV 0C Model Minimum Pulse Width Summary
+ 24. Setup Times
+ 25. Hold Times
+ 26. Clock to Output Times
+ 27. Minimum Clock to Output Times
+ 28. Slow 1100mV 0C Model Metastability Report
+ 29. Fast 1100mV 85C Model Setup Summary
+ 30. Fast 1100mV 85C Model Hold Summary
+ 31. Fast 1100mV 85C Model Recovery Summary
+ 32. Fast 1100mV 85C Model Removal Summary
+ 33. Fast 1100mV 85C Model Minimum Pulse Width Summary
+ 34. Setup Times
+ 35. Hold Times
+ 36. Clock to Output Times
+ 37. Minimum Clock to Output Times
+ 38. Fast 1100mV 85C Model Metastability Report
+ 39. Fast 1100mV 0C Model Setup Summary
+ 40. Fast 1100mV 0C Model Hold Summary
+ 41. Fast 1100mV 0C Model Recovery Summary
+ 42. Fast 1100mV 0C Model Removal Summary
+ 43. Fast 1100mV 0C Model Minimum Pulse Width Summary
+ 44. Setup Times
+ 45. Hold Times
+ 46. Clock to Output Times
+ 47. Minimum Clock to Output Times
+ 48. Fast 1100mV 0C Model Metastability Report
+ 49. Multicorner Timing Analysis Summary
+ 50. Setup Times
+ 51. Hold Times
+ 52. Clock to Output Times
+ 53. Minimum Clock to Output Times
+ 54. Board Trace Model Assignments
+ 55. Input Transition Times
+ 56. Signal Integrity Metrics (Slow 1100mv 0c Model)
+ 57. Signal Integrity Metrics (Slow 1100mv 85c Model)
+ 58. Signal Integrity Metrics (Fast 1100mv 0c Model)
+ 59. Signal Integrity Metrics (Fast 1100mv 85c Model)
+ 60. Setup Transfers
+ 61. Hold Transfers
+ 62. Recovery Transfers
+ 63. Removal Transfers
+ 64. Report TCCS
+ 65. Report RSKM
+ 66. Unconstrained Paths
+ 67. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name      ; Johnson                                            ;
+; Device Family      ; Cyclone V                                          ;
+; Device Name        ; 5CSEMA5F31C6                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Enabled                                            ;
++--------------------+----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.07        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   6.7%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------+
+; SDC File List                                     ;
++---------------+--------+--------------------------+
+; SDC File Path ; Status ; Read at                  ;
++---------------+--------+--------------------------+
+; Johnson.sdc   ; OK     ; Mon Apr 04 19:26:29 2016 ;
++---------------+--------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                   ;
++---------------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+; Clock Name          ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                 ;
++---------------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+; altera_reserved_tck ; Base ; 33.333 ; 30.0 MHz  ; 0.000 ; 16.666 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { altera_reserved_tck } ;
+; CLOCK_50            ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 }            ;
++---------------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+
+
++-----------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                        ;
++------------+-----------------+---------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
++------------+-----------------+---------------------+------+
+; 76.98 MHz  ; 76.98 MHz       ; altera_reserved_tck ;      ;
+; 273.82 MHz ; 273.82 MHz      ; CLOCK_50            ;      ;
++------------+-----------------+---------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++----------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary          ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 10.171 ; 0.000         ;
+; CLOCK_50            ; 16.348 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary          ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; CLOCK_50            ; 0.402 ; 0.000         ;
+; altera_reserved_tck ; 0.409 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++----------------------------------------------+
+; Slow 1100mV 85C Model Recovery Summary       ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 15.308 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1100mV 85C Model Removal Summary       ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.725 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++---------------------------------------------------+
+; Slow 1100mV 85C Model Minimum Pulse Width Summary ;
++---------------------+--------+--------------------+
+; Clock               ; Slack  ; End Point TNS      ;
++---------------------+--------+--------------------+
+; CLOCK_50            ; 8.695  ; 0.000              ;
+; altera_reserved_tck ; 15.250 ; 0.000              ;
++---------------------+--------+--------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Setup Times                                                                                  ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdi ; altera_reserved_tck ; 1.888 ; 2.523 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 2.615 ; 3.009 ; Rise       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Hold Times                                                                                   ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdi ; altera_reserved_tck ; 0.822 ; 0.384 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 0.628 ; 0.180 ; Rise       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                        ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdo ; altera_reserved_tck ; 5.509 ; 5.570 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 6.527 ; 6.619 ; Fall       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdo ; altera_reserved_tck ; 5.229 ; 5.278 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 5.291 ; 5.363 ; Fall       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
+----------------------------------------------
+; Slow 1100mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                         ;
++------------+-----------------+---------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
++------------+-----------------+---------------------+------+
+; 80.13 MHz  ; 80.13 MHz       ; altera_reserved_tck ;      ;
+; 254.71 MHz ; 254.71 MHz      ; CLOCK_50            ;      ;
++------------+-----------------+---------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary           ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 10.427 ; 0.000         ;
+; CLOCK_50            ; 16.074 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary           ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.417 ; 0.000         ;
+; CLOCK_50            ; 0.425 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++----------------------------------------------+
+; Slow 1100mV 0C Model Recovery Summary        ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 15.449 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1100mV 0C Model Removal Summary        ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.688 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++--------------------------------------------------+
+; Slow 1100mV 0C Model Minimum Pulse Width Summary ;
++---------------------+--------+-------------------+
+; Clock               ; Slack  ; End Point TNS     ;
++---------------------+--------+-------------------+
+; CLOCK_50            ; 8.676  ; 0.000             ;
+; altera_reserved_tck ; 15.249 ; 0.000             ;
++---------------------+--------+-------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Setup Times                                                                                  ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdi ; altera_reserved_tck ; 1.901 ; 2.567 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 2.675 ; 3.087 ; Rise       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Hold Times                                                                                   ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdi ; altera_reserved_tck ; 0.790 ; 0.415 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 0.566 ; 0.197 ; Rise       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                        ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdo ; altera_reserved_tck ; 5.352 ; 5.388 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 6.250 ; 6.286 ; Fall       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdo ; altera_reserved_tck ; 5.090 ; 5.115 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 5.136 ; 5.184 ; Fall       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
+---------------------------------------------
+; Slow 1100mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------+
+; Fast 1100mV 85C Model Setup Summary          ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 13.024 ; 0.000         ;
+; CLOCK_50            ; 17.854 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary          ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.172 ; 0.000         ;
+; CLOCK_50            ; 0.190 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++----------------------------------------------+
+; Fast 1100mV 85C Model Recovery Summary       ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 16.314 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Fast 1100mV 85C Model Removal Summary       ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.338 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++---------------------------------------------------+
+; Fast 1100mV 85C Model Minimum Pulse Width Summary ;
++---------------------+--------+--------------------+
+; Clock               ; Slack  ; End Point TNS      ;
++---------------------+--------+--------------------+
+; CLOCK_50            ; 8.652  ; 0.000              ;
+; altera_reserved_tck ; 14.910 ; 0.000              ;
++---------------------+--------+--------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Setup Times                                                                                  ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdi ; altera_reserved_tck ; 1.075 ; 2.133 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 1.590 ; 2.374 ; Rise       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Hold Times                                                                                    ;
++---------------------+---------------------+-------+--------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall   ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+--------+------------+---------------------+
+; altera_reserved_tdi ; altera_reserved_tck ; 0.432 ; -0.282 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 0.341 ; -0.385 ; Rise       ; altera_reserved_tck ;
++---------------------+---------------------+-------+--------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                        ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdo ; altera_reserved_tck ; 3.369 ; 3.421 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 4.460 ; 4.518 ; Fall       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdo ; altera_reserved_tck ; 3.260 ; 3.306 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 3.777 ; 3.835 ; Fall       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
+----------------------------------------------
+; Fast 1100mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------+
+; Fast 1100mV 0C Model Setup Summary           ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 13.491 ; 0.000         ;
+; CLOCK_50            ; 17.836 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary           ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.164 ; 0.000         ;
+; CLOCK_50            ; 0.184 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++----------------------------------------------+
+; Fast 1100mV 0C Model Recovery Summary        ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 16.446 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Fast 1100mV 0C Model Removal Summary        ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.302 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++--------------------------------------------------+
+; Fast 1100mV 0C Model Minimum Pulse Width Summary ;
++---------------------+--------+-------------------+
+; Clock               ; Slack  ; End Point TNS     ;
++---------------------+--------+-------------------+
+; CLOCK_50            ; 8.643  ; 0.000             ;
+; altera_reserved_tck ; 14.882 ; 0.000             ;
++---------------------+--------+-------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Setup Times                                                                                  ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdi ; altera_reserved_tck ; 1.004 ; 2.052 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 1.462 ; 2.288 ; Rise       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Hold Times                                                                                    ;
++---------------------+---------------------+-------+--------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall   ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+--------+------------+---------------------+
+; altera_reserved_tdi ; altera_reserved_tck ; 0.414 ; -0.326 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 0.306 ; -0.431 ; Rise       ; altera_reserved_tck ;
++---------------------+---------------------+-------+--------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                        ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdo ; altera_reserved_tck ; 3.142 ; 3.174 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 4.174 ; 4.213 ; Fall       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdo ; altera_reserved_tck ; 3.032 ; 3.057 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 3.596 ; 3.634 ; Fall       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
+---------------------------------------------
+; Fast 1100mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++----------------------+--------+-------+----------+---------+---------------------+
+; Clock                ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack     ; 10.171 ; 0.164 ; 15.308   ; 0.302   ; 8.643               ;
+;  CLOCK_50            ; 16.074 ; 0.184 ; N/A      ; N/A     ; 8.643               ;
+;  altera_reserved_tck ; 10.171 ; 0.164 ; 15.308   ; 0.302   ; 14.882              ;
+; Design-wide TNS      ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  CLOCK_50            ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  altera_reserved_tck ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
++----------------------+--------+-------+----------+---------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Setup Times                                                                                  ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdi ; altera_reserved_tck ; 1.901 ; 2.567 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 2.675 ; 3.087 ; Rise       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Hold Times                                                                                   ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdi ; altera_reserved_tck ; 0.822 ; 0.415 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 0.628 ; 0.197 ; Rise       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                        ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdo ; altera_reserved_tck ; 5.509 ; 5.570 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 6.527 ; 6.619 ; Fall       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+; altera_reserved_tdo ; altera_reserved_tck ; 3.032 ; 3.057 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 3.596 ; 3.634 ; Fall       ; altera_reserved_tck ;
++---------------------+---------------------+-------+-------+------------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                          ;
++---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin                 ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; LEDR[0]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[1]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[2]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[3]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[4]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[5]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[6]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[7]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[8]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[9]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; altera_reserved_tdo ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++------------------------------------------------------------------------+
+; Input Transition Times                                                 ;
++---------------------+--------------+-----------------+-----------------+
+; Pin                 ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++---------------------+--------------+-----------------+-----------------+
+; SW[9]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[8]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[7]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[6]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[5]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[4]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[3]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[2]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[1]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[0]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; CLOCK_50            ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; altera_reserved_tms ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; altera_reserved_tck ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; altera_reserved_tdi ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
++---------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LEDR[0]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.5e-07 V                    ; 3.14 V              ; -0.195 V            ; 0.158 V                              ; 0.394 V                              ; 4.46e-10 s                  ; 1.64e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.5e-07 V                   ; 3.14 V             ; -0.195 V           ; 0.158 V                             ; 0.394 V                             ; 4.46e-10 s                 ; 1.64e-10 s                 ; Yes                       ; No                        ;
+; LEDR[1]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.62e-07 V                   ; 3.1 V               ; -0.153 V            ; 0.035 V                              ; 0.31 V                               ; 4.23e-10 s                  ; 1.59e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.62e-07 V                  ; 3.1 V              ; -0.153 V           ; 0.035 V                             ; 0.31 V                              ; 4.23e-10 s                 ; 1.59e-10 s                 ; Yes                       ; No                        ;
+; LEDR[2]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.5e-07 V                    ; 3.14 V              ; -0.195 V            ; 0.158 V                              ; 0.394 V                              ; 4.46e-10 s                  ; 1.64e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.5e-07 V                   ; 3.14 V             ; -0.195 V           ; 0.158 V                             ; 0.394 V                             ; 4.46e-10 s                 ; 1.64e-10 s                 ; Yes                       ; No                        ;
+; LEDR[3]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.5e-07 V                    ; 3.14 V              ; -0.195 V            ; 0.158 V                              ; 0.394 V                              ; 4.46e-10 s                  ; 1.64e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.5e-07 V                   ; 3.14 V             ; -0.195 V           ; 0.158 V                             ; 0.394 V                             ; 4.46e-10 s                 ; 1.64e-10 s                 ; Yes                       ; No                        ;
+; LEDR[4]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.62e-07 V                   ; 3.1 V               ; -0.153 V            ; 0.035 V                              ; 0.31 V                               ; 4.23e-10 s                  ; 1.59e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.62e-07 V                  ; 3.1 V              ; -0.153 V           ; 0.035 V                             ; 0.31 V                              ; 4.23e-10 s                 ; 1.59e-10 s                 ; Yes                       ; No                        ;
+; LEDR[5]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.62e-07 V                   ; 3.1 V               ; -0.153 V            ; 0.035 V                              ; 0.31 V                               ; 4.23e-10 s                  ; 1.59e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.62e-07 V                  ; 3.1 V              ; -0.153 V           ; 0.035 V                             ; 0.31 V                              ; 4.23e-10 s                 ; 1.59e-10 s                 ; Yes                       ; No                        ;
+; LEDR[6]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.5e-07 V                    ; 3.14 V              ; -0.195 V            ; 0.158 V                              ; 0.394 V                              ; 4.46e-10 s                  ; 1.64e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.5e-07 V                   ; 3.14 V             ; -0.195 V           ; 0.158 V                             ; 0.394 V                             ; 4.46e-10 s                 ; 1.64e-10 s                 ; Yes                       ; No                        ;
+; LEDR[7]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.5e-07 V                    ; 3.14 V              ; -0.195 V            ; 0.158 V                              ; 0.394 V                              ; 4.46e-10 s                  ; 1.64e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.5e-07 V                   ; 3.14 V             ; -0.195 V           ; 0.158 V                             ; 0.394 V                             ; 4.46e-10 s                 ; 1.64e-10 s                 ; Yes                       ; No                        ;
+; LEDR[8]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.5e-07 V                    ; 3.14 V              ; -0.195 V            ; 0.158 V                              ; 0.394 V                              ; 4.46e-10 s                  ; 1.64e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.5e-07 V                   ; 3.14 V             ; -0.195 V           ; 0.158 V                             ; 0.394 V                             ; 4.46e-10 s                 ; 1.64e-10 s                 ; Yes                       ; No                        ;
+; LEDR[9]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.62e-07 V                   ; 3.1 V               ; -0.153 V            ; 0.035 V                              ; 0.31 V                               ; 4.23e-10 s                  ; 1.59e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.62e-07 V                  ; 3.1 V              ; -0.153 V           ; 0.035 V                             ; 0.31 V                              ; 4.23e-10 s                 ; 1.59e-10 s                 ; Yes                       ; No                        ;
+; altera_reserved_tdo ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 4.54e-07 V                   ; 3.11 V              ; -0.0675 V           ; 0.176 V                              ; 0.182 V                              ; 5.82e-10 s                  ; 2.68e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 4.54e-07 V                  ; 3.11 V             ; -0.0675 V          ; 0.176 V                             ; 0.182 V                             ; 5.82e-10 s                 ; 2.68e-10 s                 ; Yes                       ; Yes                       ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LEDR[0]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.32e-05 V                   ; 3.09 V              ; -0.11 V             ; 0.031 V                              ; 0.155 V                              ; 5.43e-10 s                  ; 3.14e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.32e-05 V                  ; 3.09 V             ; -0.11 V            ; 0.031 V                             ; 0.155 V                             ; 5.43e-10 s                 ; 3.14e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[1]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.61e-05 V                   ; 3.09 V              ; -0.0638 V           ; 0.034 V                              ; 0.099 V                              ; 5.12e-10 s                  ; 2.97e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.61e-05 V                  ; 3.09 V             ; -0.0638 V          ; 0.034 V                             ; 0.099 V                             ; 5.12e-10 s                 ; 2.97e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[2]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.32e-05 V                   ; 3.09 V              ; -0.11 V             ; 0.031 V                              ; 0.155 V                              ; 5.43e-10 s                  ; 3.14e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.32e-05 V                  ; 3.09 V             ; -0.11 V            ; 0.031 V                             ; 0.155 V                             ; 5.43e-10 s                 ; 3.14e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[3]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.32e-05 V                   ; 3.09 V              ; -0.11 V             ; 0.031 V                              ; 0.155 V                              ; 5.43e-10 s                  ; 3.14e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.32e-05 V                  ; 3.09 V             ; -0.11 V            ; 0.031 V                             ; 0.155 V                             ; 5.43e-10 s                 ; 3.14e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[4]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.61e-05 V                   ; 3.09 V              ; -0.0638 V           ; 0.034 V                              ; 0.099 V                              ; 5.12e-10 s                  ; 2.97e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.61e-05 V                  ; 3.09 V             ; -0.0638 V          ; 0.034 V                             ; 0.099 V                             ; 5.12e-10 s                 ; 2.97e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[5]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.61e-05 V                   ; 3.09 V              ; -0.0638 V           ; 0.034 V                              ; 0.099 V                              ; 5.12e-10 s                  ; 2.97e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.61e-05 V                  ; 3.09 V             ; -0.0638 V          ; 0.034 V                             ; 0.099 V                             ; 5.12e-10 s                 ; 2.97e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[6]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.32e-05 V                   ; 3.09 V              ; -0.11 V             ; 0.031 V                              ; 0.155 V                              ; 5.43e-10 s                  ; 3.14e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.32e-05 V                  ; 3.09 V             ; -0.11 V            ; 0.031 V                             ; 0.155 V                             ; 5.43e-10 s                 ; 3.14e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[7]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.32e-05 V                   ; 3.09 V              ; -0.11 V             ; 0.031 V                              ; 0.155 V                              ; 5.43e-10 s                  ; 3.14e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.32e-05 V                  ; 3.09 V             ; -0.11 V            ; 0.031 V                             ; 0.155 V                             ; 5.43e-10 s                 ; 3.14e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[8]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.32e-05 V                   ; 3.09 V              ; -0.11 V             ; 0.031 V                              ; 0.155 V                              ; 5.43e-10 s                  ; 3.14e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.32e-05 V                  ; 3.09 V             ; -0.11 V            ; 0.031 V                             ; 0.155 V                             ; 5.43e-10 s                 ; 3.14e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[9]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.61e-05 V                   ; 3.09 V              ; -0.0638 V           ; 0.034 V                              ; 0.099 V                              ; 5.12e-10 s                  ; 2.97e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.61e-05 V                  ; 3.09 V             ; -0.0638 V          ; 0.034 V                             ; 0.099 V                             ; 5.12e-10 s                 ; 2.97e-10 s                 ; Yes                       ; Yes                       ;
+; altera_reserved_tdo ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 4.39e-05 V                   ; 3.12 V              ; -0.0432 V           ; 0.292 V                              ; 0.097 V                              ; 6.42e-10 s                  ; 3.87e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 4.39e-05 V                  ; 3.12 V             ; -0.0432 V          ; 0.292 V                             ; 0.097 V                             ; 6.42e-10 s                 ; 3.87e-10 s                 ; Yes                       ; Yes                       ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LEDR[0]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
+; LEDR[1]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.63e-06 V                   ; 3.64 V              ; -0.326 V            ; 0.091 V                              ; 0.479 V                              ; 3.83e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 3.63e-06 V                  ; 3.64 V             ; -0.326 V           ; 0.091 V                             ; 0.479 V                             ; 3.83e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
+; LEDR[2]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
+; LEDR[3]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
+; LEDR[4]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.63e-06 V                   ; 3.64 V              ; -0.326 V            ; 0.091 V                              ; 0.479 V                              ; 3.83e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 3.63e-06 V                  ; 3.64 V             ; -0.326 V           ; 0.091 V                             ; 0.479 V                             ; 3.83e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
+; LEDR[5]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.63e-06 V                   ; 3.64 V              ; -0.326 V            ; 0.091 V                              ; 0.479 V                              ; 3.83e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 3.63e-06 V                  ; 3.64 V             ; -0.326 V           ; 0.091 V                             ; 0.479 V                             ; 3.83e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
+; LEDR[6]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
+; LEDR[7]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
+; LEDR[8]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
+; LEDR[9]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.63e-06 V                   ; 3.64 V              ; -0.326 V            ; 0.091 V                              ; 0.479 V                              ; 3.83e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 3.63e-06 V                  ; 3.64 V             ; -0.326 V           ; 0.091 V                             ; 0.479 V                             ; 3.83e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
+; altera_reserved_tdo ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 6.35e-06 V                   ; 3.69 V              ; -0.125 V            ; 0.384 V                              ; 0.202 V                              ; 4.63e-10 s                  ; 2.66e-10 s                  ; No                         ; Yes                        ; 3.63 V                      ; 6.35e-06 V                  ; 3.69 V             ; -0.125 V           ; 0.384 V                             ; 0.202 V                             ; 4.63e-10 s                 ; 2.66e-10 s                 ; No                        ; Yes                       ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LEDR[0]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
+; LEDR[1]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000184 V                   ; 3.64 V              ; -0.19 V             ; 0.019 V                              ; 0.425 V                              ; 4.44e-10 s                  ; 1.91e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000184 V                  ; 3.64 V             ; -0.19 V            ; 0.019 V                             ; 0.425 V                             ; 4.44e-10 s                 ; 1.91e-10 s                 ; Yes                       ; No                        ;
+; LEDR[2]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
+; LEDR[3]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
+; LEDR[4]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000184 V                   ; 3.64 V              ; -0.19 V             ; 0.019 V                              ; 0.425 V                              ; 4.44e-10 s                  ; 1.91e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000184 V                  ; 3.64 V             ; -0.19 V            ; 0.019 V                             ; 0.425 V                             ; 4.44e-10 s                 ; 1.91e-10 s                 ; Yes                       ; No                        ;
+; LEDR[5]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000184 V                   ; 3.64 V              ; -0.19 V             ; 0.019 V                              ; 0.425 V                              ; 4.44e-10 s                  ; 1.91e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000184 V                  ; 3.64 V             ; -0.19 V            ; 0.019 V                             ; 0.425 V                             ; 4.44e-10 s                 ; 1.91e-10 s                 ; Yes                       ; No                        ;
+; LEDR[6]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
+; LEDR[7]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
+; LEDR[8]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
+; LEDR[9]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000184 V                   ; 3.64 V              ; -0.19 V             ; 0.019 V                              ; 0.425 V                              ; 4.44e-10 s                  ; 1.91e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000184 V                  ; 3.64 V             ; -0.19 V            ; 0.019 V                             ; 0.425 V                             ; 4.44e-10 s                 ; 1.91e-10 s                 ; Yes                       ; No                        ;
+; altera_reserved_tdo ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000312 V                   ; 3.68 V              ; -0.0512 V           ; 0.226 V                              ; 0.205 V                              ; 5.93e-10 s                  ; 2.92e-10 s                  ; No                         ; Yes                        ; 3.63 V                      ; 0.000312 V                  ; 3.68 V             ; -0.0512 V          ; 0.226 V                             ; 0.205 V                             ; 5.93e-10 s                 ; 2.92e-10 s                 ; No                        ; Yes                       ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Setup Transfers                                                                       ;
++---------------------+---------------------+----------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+----------+----------+----------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 4549     ; 0        ; 45       ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; 300      ; 0        ; 0        ; 0        ;
++---------------------+---------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------+
+; Hold Transfers                                                                        ;
++---------------------+---------------------+----------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+----------+----------+----------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 4549     ; 0        ; 45       ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; 300      ; 0        ; 0        ; 0        ;
++---------------------+---------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                    ;
++---------------------+---------------------+----------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+----------+----------+----------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 114      ; 0        ; 1        ; 0        ;
++---------------------+---------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------+
+; Removal Transfers                                                                     ;
++---------------------+---------------------+----------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+----------+----------+----------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 114      ; 0        ; 1        ; 0        ;
++---------------------+---------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 2     ; 2    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 59    ; 59   ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 9     ; 9    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+    Info: Processing started: Mon Apr 04 19:26:23 2016
+Info: Command: quartus_sta Johnson -c Johnson
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332164): Evaluating HDL-embedded SDC commands
+    Info (332165): Entity sld_jtag_hub
+        Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 30MHz   
+        Info (332166): if { [string equal quartus_fit $::TimeQuestInfo(nameofexecutable)] } { set_max_delay -to [get_ports { altera_reserved_tdo } ] 0 }
+        Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
+Info (332104): Reading SDC File: 'Johnson.sdc'
+Warning (332174): Ignored filter at Johnson.sdc(10): CLOCK2_50 could not be matched with a port
+Warning (332049): Ignored create_clock at Johnson.sdc(10): Argument <targets> is an empty collection
+    Info (332050): create_clock -period 20 [get_ports CLOCK2_50]
+Warning (332174): Ignored filter at Johnson.sdc(11): CLOCK3_50 could not be matched with a port
+Warning (332049): Ignored create_clock at Johnson.sdc(11): Argument <targets> is an empty collection
+    Info (332050): create_clock -period 20 [get_ports CLOCK3_50]
+Warning (332174): Ignored filter at Johnson.sdc(12): CLOCK4_50 could not be matched with a port
+Warning (332049): Ignored create_clock at Johnson.sdc(12): Argument <targets> is an empty collection
+    Info (332050): create_clock -period 20 [get_ports CLOCK4_50]
+Warning (332174): Ignored filter at Johnson.sdc(14): TD_CLK27 could not be matched with a port
+Warning (332049): Ignored create_clock at Johnson.sdc(14): Argument <targets> is an empty collection
+    Info (332050): create_clock -period "27 MHz"  -name tv_27m [get_ports TD_CLK27]
+Warning (332174): Ignored filter at Johnson.sdc(15): DRAM_CLK could not be matched with a port
+Warning (332049): Ignored create_clock at Johnson.sdc(15): Argument <targets> is an empty collection
+    Info (332050): create_clock -period "100 MHz" -name clk_dram [get_ports DRAM_CLK]
+Warning (332174): Ignored filter at Johnson.sdc(20): VGA_CLK could not be matched with a port
+Warning (332049): Ignored create_clock at Johnson.sdc(20): Argument <targets> is an empty collection
+    Info (332050): create_clock -period "25.18 MHz" -name clk_vga [get_ports VGA_CLK]
+Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
+Warning (332174): Ignored filter at Johnson.sdc(53): DRAM_DQ* could not be matched with a port
+Warning (332174): Ignored filter at Johnson.sdc(53): clk_dram could not be matched with a clock
+Warning (332049): Ignored set_input_delay at Johnson.sdc(53): Argument <targets> is an empty collection
+    Info (332050): set_input_delay -max -clock clk_dram -0.048 [get_ports DRAM_DQ*]
+Warning (332049): Ignored set_input_delay at Johnson.sdc(53): Argument -clock is not an object ID
+Warning (332049): Ignored set_input_delay at Johnson.sdc(54): Argument <targets> is an empty collection
+    Info (332050): set_input_delay -min -clock clk_dram -0.057 [get_ports DRAM_DQ*]
+Warning (332049): Ignored set_input_delay at Johnson.sdc(54): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(56): TD_DATA* could not be matched with a port
+Warning (332174): Ignored filter at Johnson.sdc(56): tv_27m could not be matched with a clock
+Warning (332049): Ignored set_input_delay at Johnson.sdc(56): Argument <targets> is an empty collection
+    Info (332050): set_input_delay -max -clock tv_27m 3.692 [get_ports TD_DATA*]
+Warning (332049): Ignored set_input_delay at Johnson.sdc(56): Argument -clock is not an object ID
+Warning (332049): Ignored set_input_delay at Johnson.sdc(57): Argument <targets> is an empty collection
+    Info (332050): set_input_delay -min -clock tv_27m 2.492 [get_ports TD_DATA*]
+Warning (332049): Ignored set_input_delay at Johnson.sdc(57): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(58): TD_HS could not be matched with a port
+Warning (332049): Ignored set_input_delay at Johnson.sdc(58): Argument <targets> is an empty collection
+    Info (332050): set_input_delay -max -clock tv_27m 3.654 [get_ports TD_HS]
+Warning (332049): Ignored set_input_delay at Johnson.sdc(58): Argument -clock is not an object ID
+Warning (332049): Ignored set_input_delay at Johnson.sdc(59): Argument <targets> is an empty collection
+    Info (332050): set_input_delay -min -clock tv_27m 2.454 [get_ports TD_HS]
+Warning (332049): Ignored set_input_delay at Johnson.sdc(59): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(60): TD_VS could not be matched with a port
+Warning (332049): Ignored set_input_delay at Johnson.sdc(60): Argument <targets> is an empty collection
+    Info (332050): set_input_delay -max -clock tv_27m 3.656 [get_ports TD_VS]
+Warning (332049): Ignored set_input_delay at Johnson.sdc(60): Argument -clock is not an object ID
+Warning (332049): Ignored set_input_delay at Johnson.sdc(61): Argument <targets> is an empty collection
+    Info (332050): set_input_delay -min -clock tv_27m 2.456 [get_ports TD_VS]
+Warning (332049): Ignored set_input_delay at Johnson.sdc(61): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(68): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_dram 1.452  [get_ports DRAM_DQ*]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(68): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(69): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_dram -0.857 [get_ports DRAM_DQ*]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(69): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(70): DRAM_ADDR* could not be matched with a port
+Warning (332049): Ignored set_output_delay at Johnson.sdc(70): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_dram 1.531 [get_ports DRAM_ADDR*]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(70): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(71): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_dram -0.805 [get_ports DRAM_ADDR*]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(71): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(72): DRAM_*DQM could not be matched with a port
+Warning (332049): Ignored set_output_delay at Johnson.sdc(72): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_dram 1.533  [get_ports DRAM_*DQM]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(72): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(73): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_dram -0.805 [get_ports DRAM_*DQM]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(73): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(74): DRAM_BA* could not be matched with a port
+Warning (332049): Ignored set_output_delay at Johnson.sdc(74): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_dram 1.510  [get_ports DRAM_BA*]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(74): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(75): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_dram -0.800 [get_ports DRAM_BA*]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(75): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(76): DRAM_RAS_N could not be matched with a port
+Warning (332049): Ignored set_output_delay at Johnson.sdc(76): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_dram 1.520  [get_ports DRAM_RAS_N]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(76): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(77): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_dram -0.780 [get_ports DRAM_RAS_N]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(77): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(78): DRAM_CAS_N could not be matched with a port
+Warning (332049): Ignored set_output_delay at Johnson.sdc(78): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_dram 1.5000  [get_ports DRAM_CAS_N]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(78): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(79): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_dram -0.800 [get_ports DRAM_CAS_N]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(79): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(80): DRAM_WE_N could not be matched with a port
+Warning (332049): Ignored set_output_delay at Johnson.sdc(80): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_dram 1.545 [get_ports DRAM_WE_N]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(80): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(81): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_dram -0.755 [get_ports DRAM_WE_N]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(81): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(82): DRAM_CKE could not be matched with a port
+Warning (332049): Ignored set_output_delay at Johnson.sdc(82): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_dram 1.496  [get_ports DRAM_CKE]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(82): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(83): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_dram -0.804 [get_ports DRAM_CKE]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(83): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(84): DRAM_CS_N could not be matched with a port
+Warning (332049): Ignored set_output_delay at Johnson.sdc(84): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_dram 1.508  [get_ports DRAM_CS_N]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(84): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(85): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_dram -0.792 [get_ports DRAM_CS_N]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(85): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(87): VGA_R* could not be matched with a port
+Warning (332174): Ignored filter at Johnson.sdc(87): clk_vga could not be matched with a clock
+Warning (332049): Ignored set_output_delay at Johnson.sdc(87): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_vga 0.220 [get_ports VGA_R*]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(87): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(88): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_vga -1.506 [get_ports VGA_R*]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(88): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(89): VGA_G* could not be matched with a port
+Warning (332049): Ignored set_output_delay at Johnson.sdc(89): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_vga 0.212 [get_ports VGA_G*]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(89): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(90): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_vga -1.519 [get_ports VGA_G*]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(90): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(91): VGA_B* could not be matched with a port
+Warning (332049): Ignored set_output_delay at Johnson.sdc(91): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_vga 0.264 [get_ports VGA_B*]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(91): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(92): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_vga -1.519 [get_ports VGA_B*]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(92): Argument -clock is not an object ID
+Warning (332174): Ignored filter at Johnson.sdc(93): VGA_BLANK could not be matched with a port
+Warning (332049): Ignored set_output_delay at Johnson.sdc(93): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -max -clock clk_vga 0.215 [get_ports VGA_BLANK]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(93): Argument -clock is not an object ID
+Warning (332049): Ignored set_output_delay at Johnson.sdc(94): Argument <targets> is an empty collection
+    Info (332050): set_output_delay -min -clock clk_vga -1.485 [get_ports VGA_BLANK]
+Warning (332049): Ignored set_output_delay at Johnson.sdc(94): Argument -clock is not an object ID
+Warning (332060): Node: clk_div:frequency_divider|div_clks[23] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Johnson:johnson|q0 is being clocked by clk_div:frequency_divider|div_clks[23]
+Warning (332060): Node: clk_div:frequency_divider|div_clks[20] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:collecting_post_data_var is being clocked by clk_div:frequency_divider|div_clks[20]
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1100mV 85C Model
+Info (332146): Worst-case setup slack is 10.171
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    10.171               0.000 altera_reserved_tck 
+    Info (332119):    16.348               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.402
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.402               0.000 CLOCK_50 
+    Info (332119):     0.409               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 15.308
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    15.308               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.725
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.725               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 8.695
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     8.695               0.000 CLOCK_50 
+    Info (332119):    15.250               0.000 altera_reserved_tck 
+Info: Analyzing Slow 1100mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Warning (332060): Node: clk_div:frequency_divider|div_clks[23] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Johnson:johnson|q0 is being clocked by clk_div:frequency_divider|div_clks[23]
+Warning (332060): Node: clk_div:frequency_divider|div_clks[20] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:collecting_post_data_var is being clocked by clk_div:frequency_divider|div_clks[20]
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info (332146): Worst-case setup slack is 10.427
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    10.427               0.000 altera_reserved_tck 
+    Info (332119):    16.074               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.417
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.417               0.000 altera_reserved_tck 
+    Info (332119):     0.425               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 15.449
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    15.449               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.688
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.688               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 8.676
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     8.676               0.000 CLOCK_50 
+    Info (332119):    15.249               0.000 altera_reserved_tck 
+Info: Analyzing Fast 1100mV 85C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Warning (332060): Node: clk_div:frequency_divider|div_clks[23] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Johnson:johnson|q0 is being clocked by clk_div:frequency_divider|div_clks[23]
+Warning (332060): Node: clk_div:frequency_divider|div_clks[20] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:collecting_post_data_var is being clocked by clk_div:frequency_divider|div_clks[20]
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info (332146): Worst-case setup slack is 13.024
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    13.024               0.000 altera_reserved_tck 
+    Info (332119):    17.854               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.172
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.172               0.000 altera_reserved_tck 
+    Info (332119):     0.190               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 16.314
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    16.314               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.338
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.338               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 8.652
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     8.652               0.000 CLOCK_50 
+    Info (332119):    14.910               0.000 altera_reserved_tck 
+Info: Analyzing Fast 1100mV 0C Model
+Warning (332060): Node: clk_div:frequency_divider|div_clks[23] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Johnson:johnson|q0 is being clocked by clk_div:frequency_divider|div_clks[23]
+Warning (332060): Node: clk_div:frequency_divider|div_clks[20] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:collecting_post_data_var is being clocked by clk_div:frequency_divider|div_clks[20]
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info (332146): Worst-case setup slack is 13.491
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    13.491               0.000 altera_reserved_tck 
+    Info (332119):    17.836               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.164
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.164               0.000 altera_reserved_tck 
+    Info (332119):     0.184               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 16.446
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    16.446               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.302
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.302               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 8.643
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     8.643               0.000 CLOCK_50 
+    Info (332119):    14.882               0.000 altera_reserved_tck 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 107 warnings
+    Info: Peak virtual memory: 946 megabytes
+    Info: Processing ended: Mon Apr 04 19:26:42 2016
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:20
+
+

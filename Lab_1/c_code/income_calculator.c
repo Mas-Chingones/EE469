@@ -144,7 +144,16 @@ float calculate_net_income(float salary, float taxes[], int num_of_taxes) {
       fed_tax = ((salary - FED_TAX_CUTOFF) * FED_TAX) / 100;
 
    // calculate income after taxes
-   net_income = salary * (1 - (total_tax / 100)) - ss_tax - fed_tax - FLAT_TAX;
+   net_income = salary * (1 - (total_tax / 100)) - ss_tax - fed_tax;
+
+   // calculate worthiness to live in US
+   if(net_income < FLAT_TAX) {
+      printf("You are to poor to live in this country. Get out please.");
+      exit(-1);
+   }
+
+   // Apply flat tax to income
+   net_income = net_income - FLAT_TAX;
 
    // error if negative net income
    negative_float_check(net_income);
