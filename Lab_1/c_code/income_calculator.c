@@ -2,9 +2,17 @@
 
 Author: Ian Gilman
 Title: Net Income Calculator
-Abstract / Introduction: This calculator uses base salary, social security tax,
-   federal income tax rate and bracket, and state income tax rate (if any)
-   to calculate net income.
+
+Abstract: This program was designed to implement a calculator that uses base
+   salary, social security tax, federal income tax rate & flat-tax, and state
+   income tax rate (if any) to calculate net income.
+
+Introduction: This calculator applies taxes to salary as follows:
+   state tax applies to all income, social security tax applies to income
+   below $65,000, the federal tax rate applies to income above $30,000,
+   and the flat tax applies to income in all cases. No negative inputs or
+   results are allowed.
+
 Inputs:  (float) base salary - limited to non-negative float-sized numbers:
                   Gross annual income.
          (float) state tax - limited to non-negative float-sized numbers:
