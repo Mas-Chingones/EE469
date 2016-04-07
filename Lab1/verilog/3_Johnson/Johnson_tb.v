@@ -6,7 +6,7 @@
 // All files used
 `include "Johnson.v"
 `include "JohnsonTester.v"
-`include "DFlipFlop.v"
+//`include "DFlipFlop.v"
 
 module Johnson_tb;
 	wire q0, q1, q2, q3, clk, rst;
