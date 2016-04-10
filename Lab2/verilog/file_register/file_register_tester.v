@@ -27,7 +27,7 @@ module file_register_tester(
    initial begin
          $display("\tRA0\tRD0     \tRA1\tRD1     \tWrA\tWrD     \twe \trst\tclk\ttime");
          $monitor("\t%h \t%h\t%h \t%h\t%h \t%h\t%b  \t%b  \t%b  \t%g",
-                  read1_addr, read1_data, read0_addr, read0_data, write_addr,
+                  read0_addr, read0_data, read01addr, read1_data, write_addr,
                   write_data, we, rst_all, clk, $time);
    end
    
@@ -35,6 +35,7 @@ module file_register_tester(
    parameter delay = 1;
    integer i;
    initial begin
+   
       // initial file register state
       clk = 1'b1;
       we = 1'b0;
