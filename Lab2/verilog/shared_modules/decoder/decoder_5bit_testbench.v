@@ -21,5 +21,4 @@ module decoder_5bit_testbench();
       $dumpvars(1, decoder);
    end
 
-
 endmodule
