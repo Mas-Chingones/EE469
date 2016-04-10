@@ -8,7 +8,7 @@ Summary: MIPS-based 32 by 32-bit file register hardware module with dual-read
 // Module Dependencies:
 //`include "../shared_modules/dff/dff.v"
 //`include "register_32bit/register_32bit.v"
-//`include "/decoder_5bit/decoder_5bit.v"
+//`include "decoder_5bit/decoder_5bit.v"
 
 module file_register(
          clk, 
@@ -21,16 +21,16 @@ module file_register(
          read0_data, 
          read1_data
        );
-   input wire clk, we, rst_all;  // clock, write enable, reset all registers
-   input wire [4:0] read0_addr,  // read0 register address selection 
+   input wire clk, we, rst_all;  // clock, write enable, low reset all registers
+   input wire [4:0] read0_addr,  // read0 register address selection
                     read1_addr,  // read1 register address selection
                     write_addr;  // write register address selection
-   input wire [31:0] write_data;  // data to be written to write_sel address
-   output wire [31:0] read0_data,  // data to be read from read0_sel address
-                      read1_data;  // data to be read from read1_sel address
+   input wire [31:0] write_data;  // data to be written to write address
+   output wire [31:0] read0_data,  // data to be read from read0 address
+                      read1_data;  // data to be read from read1 address
    wire [31:0][31:0] Q;  // data read from all registers
    wire [31:0] write_sel,  // write register selection
-               read0_sel,  // read0 register selection 
+               read0_sel,  // read0 register selection
                read1_sel,  // read1 register selection
                we_sel;  // write enable to selected register
   
