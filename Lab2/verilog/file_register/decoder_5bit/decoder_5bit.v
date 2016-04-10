@@ -11,5 +11,4 @@ module decoder_5bit(code, selection);
    
    // shift high value to proper selection based on code
    assign selection = {32'b1 << (code)};
-
 endmodule

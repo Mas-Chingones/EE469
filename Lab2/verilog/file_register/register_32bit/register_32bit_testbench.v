@@ -4,6 +4,8 @@ Title: 32-bit Parallel In/Out Register test bench
 Summary: Test module for 32-bit register
 */
 
+// Module Dependencies:
+`include "../../shared_modules/dff/dff.v"
 `include "register_32bit.v"
 `include "register_32bit_tester.v"
 
@@ -20,5 +22,4 @@ module register_32bit_testbench();
       $dumpfile("register_32bit.vcd");
       $dumpvars(1, register);
    end
-
 endmodule

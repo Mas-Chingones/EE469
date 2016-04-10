@@ -58,5 +58,4 @@ module register_32bit_tester(Q, clk, we, rst, D);
       
       $finish;
    end
-   
 endmodule

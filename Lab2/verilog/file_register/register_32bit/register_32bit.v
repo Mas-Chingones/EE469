@@ -5,7 +5,8 @@ Summary: 32 synchronous d flip-flops configured to operate as a parallel in/out,
    register with write enable and reset.
 */
 
-`include "../../shared_modules/dff/dff.v"
+// Module Dependencies:
+//`include "../../shared_modules/dff/dff.v"
 
 module register_32bit(clk, we, rst, D, Q);
    input wire clk, we, rst;  // clock, write enabled, active-low reset register
@@ -19,8 +20,7 @@ module register_32bit(clk, we, rst, D, Q);
    // register of 32 d flip-flops
    genvar i;
    generate for(i = 0; i < 32; i = i + 1) begin: REGISTER
-      dff U(.q(Q[i]), .qBar(), .D(parallel_write_data[i]), .clk, .rst);
+      dff FF(.q(Q[i]), .qBar(), .D(parallel_write_data[i]), .clk, .rst);
    end
    endgenerate
-
 endmodule

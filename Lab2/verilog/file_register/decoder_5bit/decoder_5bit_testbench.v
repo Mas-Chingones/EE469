@@ -4,6 +4,7 @@ Title: testbench for 5-bit decoder
 Summary: Test module for 5-bit decoder 
 */
 
+// Module Dependencies:
 `include "decoder_5bit.v"
 `include "decoder_5bit_tester.v"
 
@@ -20,5 +21,4 @@ module decoder_5bit_testbench();
       $dumpfile("decoder_5bit.vcd");
       $dumpvars(1, decoder);
    end
-
 endmodule
