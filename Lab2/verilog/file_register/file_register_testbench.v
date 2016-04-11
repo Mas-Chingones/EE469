@@ -6,7 +6,7 @@ Summary: Link 32x32 file register DUT to test stimulus device and record
 */
 
 // Module Dependencies:
-`include "../shared_modules/dff/dff.v"
+`include "../shared_modules/d_flipflop/d_flipflop.v"
 `include "register_32bit/register_32bit.v"
 `include "decoder_5bit/decoder_5bit.v"
 `include "file_register.v"
@@ -23,26 +23,26 @@ module file_register_testbench();
 
    // DUT and test stimulus
    file_register FILE_REG(
-         .clk, 
-         .we, 
-         .rst_all, 
-         .read0_addr, 
-         .read1_addr, 
-         .write_addr, 
-         .write_data,
-         .read0_data, 
-         .read1_data
+         .clk(clk), 
+         .we(we), 
+         .rst_all(rst_all), 
+         .read0_addr(read0_addr), 
+         .read1_addr(read1_addr), 
+         .write_addr(write_addr), 
+         .write_data(write_data),
+         .read0_data(read0_data), 
+         .read1_data(read1_data)
        );
-   file_register_tester TESTER(
-         .read0_data, 
-         .read1_data,
-         .clk, 
-         .we, 
-         .rst_all, 
-         .read0_addr, 
-         .read1_addr, 
-         .write_addr, 
-         .write_data
+   file_register_tester TESTER( 
+         .read0_data(read0_data), 
+         .read1_data(read1_data),
+         .clk(clk), 
+         .we(we), 
+         .rst_all(rst_all), 
+         .read0_addr(read0_addr), 
+         .read1_addr(read1_addr), 
+         .write_addr(write_addr), 
+         .write_data(write_data)
        );
    
    // Store waveform data

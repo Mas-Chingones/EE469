@@ -6,7 +6,7 @@ Summary: 32 synchronous d flip-flops configured to operate as a parallel in/out,
 */
 
 // Module Dependencies:
-//`include "../../shared_modules/d_flipflop/d_flipflop.v"
+//`include "../../shared_modules/dff/dff.v"
 
 module register_32bit(clk, we, rst, D, Q);
    input wire clk, we, rst;  // clock, write enabled, active-low reset register
@@ -19,8 +19,8 @@ module register_32bit(clk, we, rst, D, Q);
    
    // register of 32 d flip-flops
    genvar i;
-   generate for(i=0; i<32; i=i+1) begin: REGISTER
-      d_flipflop FF(.q(Q[i]), .qBar(), .D(parallel_write_data[i]), .clk(clk), .rst(rst));
+   generate for(i = 0; i < 32; i = i + 1) begin: REGISTER
+      dff FF(.q(Q[i]), .qBar(), .D(parallel_write_data[i]), .clk, .rst);
    end
    endgenerate
 endmodule

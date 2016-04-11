@@ -13,8 +13,8 @@ module decoder_5bit_testbench();
    wire [31:0] selection;
    
    // DUT & Tester
-   decoder_5bit decoder(.code, .selection);
-   decoder_5bit_tester tester(.selection, .code);
+   decoder_5bit decoder(.code(code), .selection(selection);
+   decoder_5bit_tester tester(.selection(selection), .code(code));
 
    // create wave data file
    initial begin

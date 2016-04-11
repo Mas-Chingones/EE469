@@ -5,7 +5,7 @@ Summary: Test module for 32-bit register
 */
 
 // Module Dependencies:
-`include "../../shared_modules/dff/dff.v"
+`include "../../shared_modules/d_flipflop/d_flipflop.v"
 `include "register_32bit.v"
 `include "register_32bit_tester.v"
 
@@ -14,8 +14,8 @@ module register_32bit_testbench();
    wire clk, we, rst;  // clock, register write enable, reset register
    
    // DUT and test device
-   register_32bit register(.clk, .we, .rst, .D, .Q);
-   register_32bit_tester tester(.Q, .clk, .we, .rst, .D);
+   register_32bit register(.clk(clk), .we(we), .rst(rst, .D(D), .Q(Q));
+   register_32bit_tester tester(.Q(Q), .clk(clk), .we(we), .rst(rst), .D(D));
    
    // Store waveform data from test
    initial begin
