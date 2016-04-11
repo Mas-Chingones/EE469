@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1460401527 source:c:\ee469\ee469\lab2\c_code\lab2airlines\lab2airlines.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
