@@ -29,14 +29,12 @@ module file_register(
    output wire [31:0] read0_data,  // data to be read from read0 address
                       read1_data;  // data to be read from read1 address
    wire [31:0] Q[31:0];  // data read from all registers
-   wire [31:0] write_sel,  // write register selection
-               read0_sel,  // read0 register selection
-               read1_sel,  // read1 register selection
+   wire [31:0] wreg_sel,  // write register selection
                we_sel;  // write enable to selected register
   
    // write enable register selection
-   assign we_sel = we ? write_sel : 32'b0;
-   decoder_5bit write_decoder(.code(write_addr), .selection(write_sel));
+   assign we_sel = we ? wreg_sel : 32'b0;
+   decoder_5bit write_decoder(.code(write_addr), .selection(wreg_sel));
    // read data selection
    assign read0_data = Q[read0_addr];
    assign read1_data = Q[read1_addr];

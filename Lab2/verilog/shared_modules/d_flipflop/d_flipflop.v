@@ -4,7 +4,6 @@ Title: D flip-flop
 Summary: Behavioral model of a d flip-flop
 */
 
-
 module d_flipflop(q, qBar, D, clk, rst);
    input D, clk, rst; // DFF input, clock, reset
    output q, qBar; // DFF output, DFF negated output

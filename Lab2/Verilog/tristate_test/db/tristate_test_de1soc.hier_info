@@ -1,0 +1,120 @@
+|tristate_test_de1soc
+CLOCK_50 => CLOCK_50.IN1
+SW[0] => rst.IN1
+SW[1] => RWI[0].IN1
+SW[2] => RWI[1].IN1
+SW[3] => comb.DATAIN
+LEDR[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] << <GND>
+LEDR[2] << <GND>
+LEDR[3] << <GND>
+LEDR[4] << <GND>
+LEDR[5] << <GND>
+LEDR[6] << <GND>
+LEDR[7] << <GND>
+LEDR[8] << <GND>
+LEDR[9] << <GND>
+
+
+|tristate_test_de1soc|div_clock:divider
+orig_clk => div_clks[0]~reg0.CLK
+orig_clk => div_clks[1]~reg0.CLK
+orig_clk => div_clks[2]~reg0.CLK
+orig_clk => div_clks[3]~reg0.CLK
+orig_clk => div_clks[4]~reg0.CLK
+orig_clk => div_clks[5]~reg0.CLK
+orig_clk => div_clks[6]~reg0.CLK
+orig_clk => div_clks[7]~reg0.CLK
+orig_clk => div_clks[8]~reg0.CLK
+orig_clk => div_clks[9]~reg0.CLK
+orig_clk => div_clks[10]~reg0.CLK
+orig_clk => div_clks[11]~reg0.CLK
+orig_clk => div_clks[12]~reg0.CLK
+orig_clk => div_clks[13]~reg0.CLK
+orig_clk => div_clks[14]~reg0.CLK
+orig_clk => div_clks[15]~reg0.CLK
+orig_clk => div_clks[16]~reg0.CLK
+orig_clk => div_clks[17]~reg0.CLK
+orig_clk => div_clks[18]~reg0.CLK
+orig_clk => div_clks[19]~reg0.CLK
+orig_clk => div_clks[20]~reg0.CLK
+orig_clk => div_clks[21]~reg0.CLK
+orig_clk => div_clks[22]~reg0.CLK
+orig_clk => div_clks[23]~reg0.CLK
+orig_clk => div_clks[24]~reg0.CLK
+orig_clk => div_clks[25]~reg0.CLK
+orig_clk => div_clks[26]~reg0.CLK
+orig_clk => div_clks[27]~reg0.CLK
+orig_clk => div_clks[28]~reg0.CLK
+orig_clk => div_clks[29]~reg0.CLK
+orig_clk => div_clks[30]~reg0.CLK
+orig_clk => div_clks[31]~reg0.CLK
+div_clks[0] <= div_clks[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[1] <= div_clks[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[2] <= div_clks[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[3] <= div_clks[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[4] <= div_clks[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[5] <= div_clks[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[6] <= div_clks[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[7] <= div_clks[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[8] <= div_clks[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[9] <= div_clks[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[10] <= div_clks[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[11] <= div_clks[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[12] <= div_clks[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[13] <= div_clks[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[14] <= div_clks[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[15] <= div_clks[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[16] <= div_clks[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[17] <= div_clks[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[18] <= div_clks[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[19] <= div_clks[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[20] <= div_clks[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[21] <= div_clks[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[22] <= div_clks[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[23] <= div_clks[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[24] <= div_clks[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[25] <= div_clks[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[26] <= div_clks[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[27] <= div_clks[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[28] <= div_clks[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[29] <= div_clks[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[30] <= div_clks[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[31] <= div_clks[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|tristate_test_de1soc|tristate_test:test
+data <> comb
+data <> comb
+rwi[0] => Equal0.IN1
+rwi[0] => Equal1.IN0
+rwi[0] => Equal2.IN1
+rwi[0] => Equal3.IN0
+rwi[0] => Equal4.IN1
+rwi[0] => Equal5.IN1
+rwi[1] => Equal0.IN0
+rwi[1] => Equal1.IN1
+rwi[1] => Equal2.IN0
+rwi[1] => Equal3.IN1
+rwi[1] => Equal4.IN0
+rwi[1] => Equal5.IN0
+clk => clk.IN2
+rst => rst.IN2
+
+
+|tristate_test_de1soc|tristate_test:test|d_flipflop:FF0
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qBar <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q~reg0.DATAIN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+
+
+|tristate_test_de1soc|tristate_test:test|d_flipflop:FF1
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qBar <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q~reg0.DATAIN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+
+
