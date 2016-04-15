@@ -1,9 +1,9 @@
-module sram(clk, rst, oe, we, address, data, out);
+module sram(clk, rst, oe, we, address, data, read_out);
 	input clk, rst;
 	input oe, we;
 	input [10:0] address;
 	input [15:0] data;
-	output reg [15:0] out;
+	output reg [15:0] read_out;
 	reg [15:0] memory [0:2047];
 	
 	always @(posedge clk) begin
@@ -14,9 +14,9 @@ module sram(clk, rst, oe, we, address, data, out);
 			memory[address] = data;
 		end else begin
 			if (we & ~oe) begin
-				out = data;
+				read_out = memory[address];
 			end else begin
-				out = 16'bz;
+				read_out = 16'bz;
 			end
 		end
 	end
