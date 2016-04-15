@@ -9,7 +9,7 @@ Summary: Test Reading/Writing From/To a tri-state connected register
 
 module tristate_test(data, rwi, clk, rst);
    inout wire data;  // data bus input/output to register
-   input wire [1:0] rwi; // read/write/initializse mode
+   input wire [1:0] rwi; // read/write/initialize mode
 	input wire clk, rst;  // clock, reset
    wire d0, d1, q0, q1;  // reg d-port, reg q-port
    

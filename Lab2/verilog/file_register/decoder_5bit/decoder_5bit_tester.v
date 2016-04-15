@@ -12,8 +12,8 @@ module decoder_5bit_tester(selection, code);
 
    // display logic data
    initial begin
-      $display("\t\tcod\tsel     \ttime");
-      $monitor("t\t%b\t%h\t%g", code, selection, $time);
+      $display("\tcod\tsel     \ttime");
+      $monitor("\t%b\t%h\t%g", code, selection, $time);
    end
    
    // create stimulus signals

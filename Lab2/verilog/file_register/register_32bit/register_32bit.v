@@ -6,7 +6,7 @@ Summary: 32 synchronous d flip-flops configured to operate as a parallel in/out,
 */
 
 // Module Dependencies:
-//`include "../../shared_modules/d_flipflop/d_flipflop.v"
+//`include "register_32bit/d_flipflop/d_flipflop.v"
 
 module register_32bit(clk, we, rst, D, Q);
    input wire clk, we, rst;  // clock, write enabled, active-low reset register
