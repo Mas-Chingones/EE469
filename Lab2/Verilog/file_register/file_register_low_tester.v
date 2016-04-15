@@ -4,7 +4,7 @@ Title: 32x32 File Register HW Tester
 Summary: Create test stimulus for 32x32 file register, prints out logic results
 */
 
-module file_register_tester(
+module file_register_low_tester(
          read0_data, 
          read1_data,
          clk, 

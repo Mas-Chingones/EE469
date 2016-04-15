@@ -1,9 +1,9 @@
 
 // Module Dependencies:
 //`include "register_32bit/d_flipflop/d_flipflop.v"
+//`include "shared_module/mux_2to1/mux_2to1.v"
 //`include "register_32bit/register_32bit.v"
 //`include "decoder_5bit/decoder_5bit.v"
-
 
 /*
 Author: Ian Gilman
@@ -30,9 +30,20 @@ module file_register(
                write_data;  // data to write to write_addr
    
    // read from file register buffer
-   assign data_bus = we ? 32'bz : read1_data;
+   genvar i;
+   generate for(i=0; i<32; i=i+1) begin: READ
+      bufif0(data_bus[i], read1_data[i], we);
+   end
+   endgenerate
+   //assign data_bus = we ? 32'bz : read1_data;
+   
    // write to file register buffer
-   assign write_data = we ? data_bus : 32'bz;
+   genvar j;
+   generate for(j=0; j<32; j=j+1) begin: WRITE
+      bufif1(write_data[j], data_bus[j], we);
+   end
+   endgenerate
+   //assign write_data = we ? data_bus : 32'bz;
 
    // file register hardware
    file_register_low FILE_REG_HW(
@@ -80,21 +91,30 @@ module file_register_low(
                we_sel;  // write enable to selected register
   
    // write enable register selection
-   assign we_sel = we ? wreg_sel : 32'b0;
+   genvar i;
+   generate for(i=0; i<32; i=i+1) begin: WRITE
+      mux_2to1 mux(.in0(1'b0), .in1(wreg_sel[i]), .select(we), .out(we_sel[i]));
+   end
+   endgenerate
    decoder_5bit write_decoder(.code(write_addr), .selection(wreg_sel));
+   
    // read data selection
-   assign read0_data = Q[read0_addr];
-   assign read1_data = Q[read1_addr];
+   genvar j;
+   generate for(j=0; j<32; j=j+1) begin: READ
+      buf buff_read0(read0_data[j], Q[read0_addr][j]);
+      buf buff_read1(read1_data[j], Q[read1_addr][j]);
+   end
+   endgenerate
    
    // 32, 32-bit registers
-   genvar i;
-   generate for(i=0; i<32; i=i+1) begin: FILE_REGISTER
+   genvar k;
+   generate for(k=0; k<32; k=k+1) begin: FILE_REGISTER
       register_32bit F_REG(
                         .clk(clk), 
-                        .we(we_sel[i]), 
+                        .we(we_sel[k]), 
                         .rst(rst_all), 
                         .D(write_data), 
-                        .Q(Q[i])
+                        .Q(Q[k])
                      );
    end
    endgenerate

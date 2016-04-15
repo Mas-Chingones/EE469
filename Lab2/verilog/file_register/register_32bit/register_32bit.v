@@ -1,12 +1,14 @@
+
+// Module Dependencies:
+//`include "../shared_mmodules/mux_2to1/mux_2to1.v"
+//`include "d_flipflop/d_flipflop.v"
+
 /*
 Author: Ian Gilman
 Title: 32-bit Parallel In/Out Register
 Summary: 32 synchronous d flip-flops configured to operate as a parallel in/out,
    register with write enable and reset.
 */
-
-// Module Dependencies:
-//`include "register_32bit/d_flipflop/d_flipflop.v"
 
 module register_32bit(clk, we, rst, D, Q);
    input wire clk, we, rst;  // clock, write enabled, active-low reset register
@@ -15,12 +17,27 @@ module register_32bit(clk, we, rst, D, Q);
    wire [31:0] parallel_write_data;  // parallel data to register
    
    // write new data to register if write is enabled, else keep same data
-   assign parallel_write_data = we ? D : Q;
+   genvar i;
+   generate for(i=0; i<32; i=i+1) begin: TO_FF
+      mux_2to1 mux(
+                  .in0(Q[i]), 
+                  .in1(D[i]), 
+                  .select(we), 
+                  .out(parallel_write_data[i])
+               );
+   end
+   endgenerate
    
    // register of 32 d flip-flops
-   genvar i;
+   genvar j;
    generate for(i=0; i<32; i=i+1) begin: REGISTER
-      d_flipflop FF(.q(Q[i]), .qBar(), .D(parallel_write_data[i]), .clk(clk), .rst(rst));
+      d_flipflop FF(
+                  .q(Q[i]),
+                  .qBar(),
+                  .d(parallel_write_data[i]), 
+                  .clk(clk), 
+                  .rst(rst)
+                 );
    end
    endgenerate
 endmodule

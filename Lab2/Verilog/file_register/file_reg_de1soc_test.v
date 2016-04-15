@@ -1,3 +1,10 @@
+
+// Module Dependencies:
+//`include "register_32bit/d_flipflop/d_flipflop.v"
+//`include "shared_module/mux_2to1/mux_2to1.v"
+//`include "register_32bit/register_32bit.v"
+//`include "decoder_5bit/decoder_5bit.v"
+
 /*
 Author: Ian Gilman
 Title: File Register Test on De1-soc
