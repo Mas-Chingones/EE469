@@ -63,7 +63,7 @@ module sramTester (clk, cs, oe, rw, addr_bus, data_bus);
 	begin
    
    // initial
-	clk = 1; 
+	clk = 0; 
 	cs = 1;
 	rw = 0;
 	oe = 0;
@@ -76,11 +76,11 @@ module sramTester (clk, cs, oe, rw, addr_bus, data_bus);
 	clk = ~clk; #stimDelay;
 	oe = 1;
 	for (i = 0; i < 32; i = i + 1) begin
-		if (clk)
+		if (clk) begin
 			data = data + 1;
-		else
          address = address + 1;
-      clk = ~clk; #stimDelay;
+      end
+	clk = ~clk; #stimDelay;
 	end
 	
    // read
@@ -95,19 +95,19 @@ module sramTester (clk, cs, oe, rw, addr_bus, data_bus);
    end
 	
    // read again
-	address = 10;
-   for(i=0; i<2; i=i+1) begin
+	address = 4'hA;
+   for(i=0; i<4; i=i+1) begin
       clk = ~clk;   #stimDelay;
    end
 	
-	// write
-   data = 16'hAAAA;
+   // write
+   rw = 0;
+   oe = 1;
+   clk = ~clk;   #stimDelay;
    address = 11'h200;
-	rw = 0;
-	oe = 1;
-	for(i=0; i<2; i=i+1) begin
-      clk = ~clk;   #stimDelay;
-   end
+   data = 16'hAAAA;
+   clk = ~clk;   #stimDelay;
+   clk = ~clk;	#stimDelay;
 	
    // read again
 	rw = 1;
