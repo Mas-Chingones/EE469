@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 14.0.0 Build 200 06/17/2014 SJ Web Edition"
 
--- DATE "04/14/2016 17:49:37"
+-- DATE "04/15/2016 17:08:48"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -87,116 +87,78 @@ SIGNAL ww_KEY : std_logic_vector(1 DOWNTO 0);
 SIGNAL ww_LEDR : std_logic_vector(9 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
 SIGNAL \CLOCK_50~input_o\ : std_logic;
-SIGNAL \CLOCK_50~inputCLKENA0_outclk\ : std_logic;
 SIGNAL \clock_divider|div_clks[0]~0_combout\ : std_logic;
-SIGNAL \clock_divider|Add0~77_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~78\ : std_logic;
-SIGNAL \clock_divider|Add0~73_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~74\ : std_logic;
-SIGNAL \clock_divider|Add0~69_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~70\ : std_logic;
-SIGNAL \clock_divider|Add0~65_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~66\ : std_logic;
-SIGNAL \clock_divider|Add0~61_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~62\ : std_logic;
-SIGNAL \clock_divider|Add0~57_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~58\ : std_logic;
-SIGNAL \clock_divider|Add0~53_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~54\ : std_logic;
-SIGNAL \clock_divider|Add0~49_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~50\ : std_logic;
-SIGNAL \clock_divider|Add0~45_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~46\ : std_logic;
-SIGNAL \clock_divider|Add0~41_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~42\ : std_logic;
-SIGNAL \clock_divider|Add0~37_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~38\ : std_logic;
-SIGNAL \clock_divider|Add0~33_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~34\ : std_logic;
-SIGNAL \clock_divider|Add0~29_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~30\ : std_logic;
-SIGNAL \clock_divider|Add0~25_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~26\ : std_logic;
-SIGNAL \clock_divider|Add0~21_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~22\ : std_logic;
-SIGNAL \clock_divider|Add0~17_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~18\ : std_logic;
-SIGNAL \clock_divider|Add0~13_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~14\ : std_logic;
-SIGNAL \clock_divider|Add0~9_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~10\ : std_logic;
-SIGNAL \clock_divider|Add0~5_sumout\ : std_logic;
-SIGNAL \clock_divider|Add0~6\ : std_logic;
-SIGNAL \clock_divider|Add0~1_sumout\ : std_logic;
-SIGNAL \clock_divider|div_clks[20]~feeder_combout\ : std_logic;
+SIGNAL \clock_divider|Add0~0_combout\ : std_logic;
 SIGNAL \KEY[1]~input_o\ : std_logic;
 SIGNAL \SW[0]~input_o\ : std_logic;
 SIGNAL \write_data[0]~feeder_combout\ : std_logic;
-SIGNAL \SW[8]~input_o\ : std_logic;
 SIGNAL \reg_file|write_data[0]~0_combout\ : std_logic;
 SIGNAL \KEY[0]~input_o\ : std_logic;
 SIGNAL \SW[9]~input_o\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|we_sel[0]~0_combout\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|we_sel[1]~1_combout\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|we_sel[3]~3_combout\ : std_logic;
+SIGNAL \SW[8]~input_o\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[0].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|we_sel[2]~2_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~feeder_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1~combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~q\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~feeder_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~q\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|Mux63~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|Mux1~0_combout\ : std_logic;
 SIGNAL \data_bus[0]~0_combout\ : std_logic;
 SIGNAL \SW[1]~input_o\ : std_logic;
 SIGNAL \reg_file|write_data[1]~1_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~q\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|Mux62~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|Mux3~0_combout\ : std_logic;
 SIGNAL \data_bus[1]~1_combout\ : std_logic;
 SIGNAL \SW[2]~input_o\ : std_logic;
-SIGNAL \write_data[2]~feeder_combout\ : std_logic;
 SIGNAL \reg_file|write_data[2]~2_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~feeder_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~q\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~feeder_combout\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|Mux61~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|Mux5~0_combout\ : std_logic;
 SIGNAL \data_bus[2]~2_combout\ : std_logic;
 SIGNAL \SW[3]~input_o\ : std_logic;
 SIGNAL \write_data[3]~feeder_combout\ : std_logic;
 SIGNAL \reg_file|write_data[3]~3_combout\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q~q\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~q\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|Mux60~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q~q\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|Mux7~0_combout\ : std_logic;
 SIGNAL \data_bus[3]~3_combout\ : std_logic;
 SIGNAL \SW[4]~input_o\ : std_logic;
-SIGNAL \write_data[4]~feeder_combout\ : std_logic;
 SIGNAL \reg_file|write_data[4]~4_combout\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[4].FF|q~q\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[4].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|Mux59~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|Mux9~0_combout\ : std_logic;
 SIGNAL \data_bus[4]~4_combout\ : std_logic;
 SIGNAL \SW[5]~input_o\ : std_logic;
 SIGNAL \write_data[5]~feeder_combout\ : std_logic;
 SIGNAL \reg_file|write_data[5]~5_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~feeder_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|Mux58~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|Mux11~0_combout\ : std_logic;
 SIGNAL \data_bus[5]~5_combout\ : std_logic;
 SIGNAL \SW[6]~input_o\ : std_logic;
-SIGNAL \write_data[6]~feeder_combout\ : std_logic;
 SIGNAL \reg_file|write_data[6]~6_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~q\ : std_logic;
@@ -204,78 +166,78 @@ SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~feeder_comb
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[6].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|Mux57~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|Mux13~0_combout\ : std_logic;
 SIGNAL \data_bus[6]~6_combout\ : std_logic;
 SIGNAL \SW[7]~input_o\ : std_logic;
+SIGNAL \write_data[7]~feeder_combout\ : std_logic;
 SIGNAL \reg_file|write_data[7]~7_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q~q\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~feeder_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|Mux56~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|Mux15~0_combout\ : std_logic;
 SIGNAL \data_bus[7]~7_combout\ : std_logic;
 SIGNAL write_data : std_logic_vector(31 DOWNTO 0);
 SIGNAL led_data : std_logic_vector(7 DOWNTO 0);
 SIGNAL \clock_divider|div_clks\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \ALT_INV_SW[6]~input_o\ : std_logic;
+SIGNAL \ALT_INV_SW[7]~input_o\ : std_logic;
 SIGNAL \ALT_INV_SW[5]~input_o\ : std_logic;
-SIGNAL \ALT_INV_SW[4]~input_o\ : std_logic;
 SIGNAL \ALT_INV_SW[3]~input_o\ : std_logic;
-SIGNAL \ALT_INV_SW[2]~input_o\ : std_logic;
 SIGNAL \ALT_INV_SW[0]~input_o\ : std_logic;
 SIGNAL \ALT_INV_SW[9]~input_o\ : std_logic;
 SIGNAL \ALT_INV_SW[8]~input_o\ : std_logic;
 SIGNAL \ALT_INV_KEY[1]~input_o\ : std_logic;
-SIGNAL \clock_divider|ALT_INV_div_clks\ : std_logic_vector(20 DOWNTO 0);
 SIGNAL \reg_file|ALT_INV_write_data[7]~7_combout\ : std_logic;
 SIGNAL \reg_file|ALT_INV_write_data[6]~6_combout\ : std_logic;
 SIGNAL \reg_file|ALT_INV_write_data[5]~5_combout\ : std_logic;
-SIGNAL \reg_file|ALT_INV_write_data[4]~4_combout\ : std_logic;
+SIGNAL \reg_file|ALT_INV_write_data[3]~3_combout\ : std_logic;
 SIGNAL \reg_file|ALT_INV_write_data[2]~2_combout\ : std_logic;
 SIGNAL \reg_file|ALT_INV_write_data[1]~1_combout\ : std_logic;
+SIGNAL \clock_divider|ALT_INV_div_clks\ : std_logic_vector(1 DOWNTO 0);
+SIGNAL \reg_file|ALT_INV_write_data[0]~0_combout\ : std_logic;
 SIGNAL ALT_INV_write_data : std_logic_vector(7 DOWNTO 0);
-SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux56~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux15~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|ALT_INV_q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux57~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux13~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[6].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|ALT_INV_q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux58~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux11~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|ALT_INV_q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux59~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux9~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[4].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[4].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|ALT_INV_q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux60~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux7~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|ALT_INV_q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux61~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux5~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|ALT_INV_q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux62~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux3~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|ALT_INV_q~q\ : std_logic;
-SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux63~0_combout\ : std_logic;
+SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux1~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[0].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|ALT_INV_q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|ALT_INV_q~q\ : std_logic;
-SIGNAL \clock_divider|ALT_INV_Add0~1_sumout\ : std_logic;
 
 BEGIN
 
@@ -286,91 +248,70 @@ LEDR <= ww_LEDR;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
-\ALT_INV_SW[6]~input_o\ <= NOT \SW[6]~input_o\;
+\ALT_INV_SW[7]~input_o\ <= NOT \SW[7]~input_o\;
 \ALT_INV_SW[5]~input_o\ <= NOT \SW[5]~input_o\;
-\ALT_INV_SW[4]~input_o\ <= NOT \SW[4]~input_o\;
 \ALT_INV_SW[3]~input_o\ <= NOT \SW[3]~input_o\;
-\ALT_INV_SW[2]~input_o\ <= NOT \SW[2]~input_o\;
 \ALT_INV_SW[0]~input_o\ <= NOT \SW[0]~input_o\;
 \ALT_INV_SW[9]~input_o\ <= NOT \SW[9]~input_o\;
 \ALT_INV_SW[8]~input_o\ <= NOT \SW[8]~input_o\;
 \ALT_INV_KEY[1]~input_o\ <= NOT \KEY[1]~input_o\;
-\clock_divider|ALT_INV_div_clks\(0) <= NOT \clock_divider|div_clks\(0);
-\clock_divider|ALT_INV_div_clks\(1) <= NOT \clock_divider|div_clks\(1);
-\clock_divider|ALT_INV_div_clks\(2) <= NOT \clock_divider|div_clks\(2);
-\clock_divider|ALT_INV_div_clks\(3) <= NOT \clock_divider|div_clks\(3);
-\clock_divider|ALT_INV_div_clks\(4) <= NOT \clock_divider|div_clks\(4);
-\clock_divider|ALT_INV_div_clks\(5) <= NOT \clock_divider|div_clks\(5);
-\clock_divider|ALT_INV_div_clks\(6) <= NOT \clock_divider|div_clks\(6);
-\clock_divider|ALT_INV_div_clks\(7) <= NOT \clock_divider|div_clks\(7);
-\clock_divider|ALT_INV_div_clks\(8) <= NOT \clock_divider|div_clks\(8);
-\clock_divider|ALT_INV_div_clks\(9) <= NOT \clock_divider|div_clks\(9);
-\clock_divider|ALT_INV_div_clks\(10) <= NOT \clock_divider|div_clks\(10);
-\clock_divider|ALT_INV_div_clks\(11) <= NOT \clock_divider|div_clks\(11);
-\clock_divider|ALT_INV_div_clks\(12) <= NOT \clock_divider|div_clks\(12);
-\clock_divider|ALT_INV_div_clks\(13) <= NOT \clock_divider|div_clks\(13);
-\clock_divider|ALT_INV_div_clks\(14) <= NOT \clock_divider|div_clks\(14);
-\clock_divider|ALT_INV_div_clks\(15) <= NOT \clock_divider|div_clks\(15);
-\clock_divider|ALT_INV_div_clks\(16) <= NOT \clock_divider|div_clks\(16);
-\clock_divider|ALT_INV_div_clks\(17) <= NOT \clock_divider|div_clks\(17);
-\clock_divider|ALT_INV_div_clks\(18) <= NOT \clock_divider|div_clks\(18);
-\clock_divider|ALT_INV_div_clks\(19) <= NOT \clock_divider|div_clks\(19);
 \reg_file|ALT_INV_write_data[7]~7_combout\ <= NOT \reg_file|write_data[7]~7_combout\;
 \reg_file|ALT_INV_write_data[6]~6_combout\ <= NOT \reg_file|write_data[6]~6_combout\;
 \reg_file|ALT_INV_write_data[5]~5_combout\ <= NOT \reg_file|write_data[5]~5_combout\;
-\reg_file|ALT_INV_write_data[4]~4_combout\ <= NOT \reg_file|write_data[4]~4_combout\;
+\reg_file|ALT_INV_write_data[3]~3_combout\ <= NOT \reg_file|write_data[3]~3_combout\;
 \reg_file|ALT_INV_write_data[2]~2_combout\ <= NOT \reg_file|write_data[2]~2_combout\;
 \reg_file|ALT_INV_write_data[1]~1_combout\ <= NOT \reg_file|write_data[1]~1_combout\;
+\clock_divider|ALT_INV_div_clks\(0) <= NOT \clock_divider|div_clks\(0);
+\reg_file|ALT_INV_write_data[0]~0_combout\ <= NOT \reg_file|write_data[0]~0_combout\;
 ALT_INV_write_data(7) <= NOT write_data(7);
-\reg_file|FILE_REG_HW|ALT_INV_Mux56~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux56~0_combout\;
+\reg_file|FILE_REG_HW|ALT_INV_Mux15~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux15~0_combout\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~q\;
 ALT_INV_write_data(6) <= NOT write_data(6);
-\reg_file|FILE_REG_HW|ALT_INV_Mux57~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux57~0_combout\;
+\reg_file|FILE_REG_HW|ALT_INV_Mux13~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux13~0_combout\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[6].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[6].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~q\;
 ALT_INV_write_data(5) <= NOT write_data(5);
-\reg_file|FILE_REG_HW|ALT_INV_Mux58~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux58~0_combout\;
+\reg_file|FILE_REG_HW|ALT_INV_Mux11~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux11~0_combout\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\;
 ALT_INV_write_data(4) <= NOT write_data(4);
-\reg_file|FILE_REG_HW|ALT_INV_Mux59~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux59~0_combout\;
+\reg_file|FILE_REG_HW|ALT_INV_Mux9~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux9~0_combout\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[4].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[4].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[4].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[4].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|q~q\;
 ALT_INV_write_data(3) <= NOT write_data(3);
-\reg_file|FILE_REG_HW|ALT_INV_Mux60~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux60~0_combout\;
+\reg_file|FILE_REG_HW|ALT_INV_Mux7~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux7~0_combout\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~q\;
 ALT_INV_write_data(2) <= NOT write_data(2);
-\reg_file|FILE_REG_HW|ALT_INV_Mux61~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux61~0_combout\;
+\reg_file|FILE_REG_HW|ALT_INV_Mux5~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux5~0_combout\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~q\;
 ALT_INV_write_data(1) <= NOT write_data(1);
-\reg_file|FILE_REG_HW|ALT_INV_Mux62~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux62~0_combout\;
+\reg_file|FILE_REG_HW|ALT_INV_Mux3~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux3~0_combout\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~q\;
-\clock_divider|ALT_INV_div_clks\(20) <= NOT \clock_divider|div_clks\(20);
+\clock_divider|ALT_INV_div_clks\(1) <= NOT \clock_divider|div_clks\(1);
 ALT_INV_write_data(0) <= NOT write_data(0);
-\reg_file|FILE_REG_HW|ALT_INV_Mux63~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux63~0_combout\;
+\reg_file|FILE_REG_HW|ALT_INV_Mux1~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux1~0_combout\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[0].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[0].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~q\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~q\;
-\clock_divider|ALT_INV_Add0~1_sumout\ <= NOT \clock_divider|Add0~1_sumout\;
 
 -- Location: IOOBUF_X52_Y0_N2
 \LEDR[0]~output\ : cyclonev_io_obuf
@@ -513,21 +454,7 @@ PORT MAP (
 	i => ww_CLOCK_50,
 	o => \CLOCK_50~input_o\);
 
--- Location: CLKCTRL_G6
-\CLOCK_50~inputCLKENA0\ : cyclonev_clkena
--- pragma translate_off
-GENERIC MAP (
-	clock_type => "global clock",
-	disable_mode => "low",
-	ena_register_mode => "always enabled",
-	ena_register_power_up => "high",
-	test_syn => "high")
--- pragma translate_on
-PORT MAP (
-	inclk => \CLOCK_50~input_o\,
-	outclk => \CLOCK_50~inputCLKENA0_outclk\);
-
--- Location: LABCELL_X31_Y1_N33
+-- Location: LABCELL_X31_Y1_N54
 \clock_divider|div_clks[0]~0\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \clock_divider|div_clks[0]~0_combout\ = ( !\clock_divider|div_clks\(0) )
@@ -535,14 +462,14 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1111111111111111000000000000000011111111111111110000000000000000",
+	lut_mask => "1111111111111111111111111111111100000000000000000000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datae => \clock_divider|ALT_INV_div_clks\(0),
+	dataf => \clock_divider|ALT_INV_div_clks\(0),
 	combout => \clock_divider|div_clks[0]~0_combout\);
 
--- Location: FF_X31_Y1_N34
+-- Location: FF_X31_Y1_N35
 \clock_divider|div_clks[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -550,32 +477,30 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|div_clks[0]~0_combout\,
+	clk => \CLOCK_50~input_o\,
+	asdata => \clock_divider|div_clks[0]~0_combout\,
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \clock_divider|div_clks\(0));
 
--- Location: LABCELL_X33_Y2_N0
-\clock_divider|Add0~77\ : cyclonev_lcell_comb
+-- Location: LABCELL_X31_Y1_N33
+\clock_divider|Add0~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \clock_divider|Add0~77_sumout\ = SUM(( \clock_divider|div_clks\(1) ) + ( \clock_divider|div_clks\(0) ) + ( !VCC ))
--- \clock_divider|Add0~78\ = CARRY(( \clock_divider|div_clks\(1) ) + ( \clock_divider|div_clks\(0) ) + ( !VCC ))
+-- \clock_divider|Add0~0_combout\ = ( !\clock_divider|div_clks\(0) & ( \clock_divider|div_clks\(1) ) ) # ( \clock_divider|div_clks\(0) & ( !\clock_divider|div_clks\(1) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000111100001111000000000000000000000000000011111111",
+	lut_mask => "0000000000000000111111111111111111111111111111110000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datac => \clock_divider|ALT_INV_div_clks\(0),
-	datad => \clock_divider|ALT_INV_div_clks\(1),
-	cin => GND,
-	sumout => \clock_divider|Add0~77_sumout\,
-	cout => \clock_divider|Add0~78\);
+	datae => \clock_divider|ALT_INV_div_clks\(0),
+	dataf => \clock_divider|ALT_INV_div_clks\(1),
+	combout => \clock_divider|Add0~0_combout\);
 
--- Location: FF_X33_Y2_N2
+-- Location: FF_X31_Y1_N32
 \clock_divider|div_clks[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -583,632 +508,12 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~77_sumout\,
+	clk => \CLOCK_50~input_o\,
+	asdata => \clock_divider|Add0~0_combout\,
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \clock_divider|div_clks\(1));
-
--- Location: LABCELL_X33_Y2_N3
-\clock_divider|Add0~73\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~73_sumout\ = SUM(( \clock_divider|div_clks\(2) ) + ( GND ) + ( \clock_divider|Add0~78\ ))
--- \clock_divider|Add0~74\ = CARRY(( \clock_divider|div_clks\(2) ) + ( GND ) + ( \clock_divider|Add0~78\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(2),
-	cin => \clock_divider|Add0~78\,
-	sumout => \clock_divider|Add0~73_sumout\,
-	cout => \clock_divider|Add0~74\);
-
--- Location: FF_X33_Y2_N5
-\clock_divider|div_clks[2]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~73_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(2));
-
--- Location: LABCELL_X33_Y2_N6
-\clock_divider|Add0~69\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~69_sumout\ = SUM(( \clock_divider|div_clks\(3) ) + ( GND ) + ( \clock_divider|Add0~74\ ))
--- \clock_divider|Add0~70\ = CARRY(( \clock_divider|div_clks\(3) ) + ( GND ) + ( \clock_divider|Add0~74\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(3),
-	cin => \clock_divider|Add0~74\,
-	sumout => \clock_divider|Add0~69_sumout\,
-	cout => \clock_divider|Add0~70\);
-
--- Location: FF_X33_Y2_N8
-\clock_divider|div_clks[3]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~69_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(3));
-
--- Location: LABCELL_X33_Y2_N9
-\clock_divider|Add0~65\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~65_sumout\ = SUM(( \clock_divider|div_clks\(4) ) + ( GND ) + ( \clock_divider|Add0~70\ ))
--- \clock_divider|Add0~66\ = CARRY(( \clock_divider|div_clks\(4) ) + ( GND ) + ( \clock_divider|Add0~70\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(4),
-	cin => \clock_divider|Add0~70\,
-	sumout => \clock_divider|Add0~65_sumout\,
-	cout => \clock_divider|Add0~66\);
-
--- Location: FF_X33_Y2_N11
-\clock_divider|div_clks[4]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~65_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(4));
-
--- Location: LABCELL_X33_Y2_N12
-\clock_divider|Add0~61\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~61_sumout\ = SUM(( \clock_divider|div_clks\(5) ) + ( GND ) + ( \clock_divider|Add0~66\ ))
--- \clock_divider|Add0~62\ = CARRY(( \clock_divider|div_clks\(5) ) + ( GND ) + ( \clock_divider|Add0~66\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(5),
-	cin => \clock_divider|Add0~66\,
-	sumout => \clock_divider|Add0~61_sumout\,
-	cout => \clock_divider|Add0~62\);
-
--- Location: FF_X33_Y2_N14
-\clock_divider|div_clks[5]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~61_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(5));
-
--- Location: LABCELL_X33_Y2_N15
-\clock_divider|Add0~57\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~57_sumout\ = SUM(( \clock_divider|div_clks\(6) ) + ( GND ) + ( \clock_divider|Add0~62\ ))
--- \clock_divider|Add0~58\ = CARRY(( \clock_divider|div_clks\(6) ) + ( GND ) + ( \clock_divider|Add0~62\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(6),
-	cin => \clock_divider|Add0~62\,
-	sumout => \clock_divider|Add0~57_sumout\,
-	cout => \clock_divider|Add0~58\);
-
--- Location: FF_X33_Y2_N17
-\clock_divider|div_clks[6]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~57_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(6));
-
--- Location: LABCELL_X33_Y2_N18
-\clock_divider|Add0~53\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~53_sumout\ = SUM(( \clock_divider|div_clks\(7) ) + ( GND ) + ( \clock_divider|Add0~58\ ))
--- \clock_divider|Add0~54\ = CARRY(( \clock_divider|div_clks\(7) ) + ( GND ) + ( \clock_divider|Add0~58\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(7),
-	cin => \clock_divider|Add0~58\,
-	sumout => \clock_divider|Add0~53_sumout\,
-	cout => \clock_divider|Add0~54\);
-
--- Location: FF_X33_Y2_N20
-\clock_divider|div_clks[7]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~53_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(7));
-
--- Location: LABCELL_X33_Y2_N21
-\clock_divider|Add0~49\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~49_sumout\ = SUM(( \clock_divider|div_clks\(8) ) + ( GND ) + ( \clock_divider|Add0~54\ ))
--- \clock_divider|Add0~50\ = CARRY(( \clock_divider|div_clks\(8) ) + ( GND ) + ( \clock_divider|Add0~54\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(8),
-	cin => \clock_divider|Add0~54\,
-	sumout => \clock_divider|Add0~49_sumout\,
-	cout => \clock_divider|Add0~50\);
-
--- Location: FF_X33_Y2_N23
-\clock_divider|div_clks[8]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~49_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(8));
-
--- Location: LABCELL_X33_Y2_N24
-\clock_divider|Add0~45\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~45_sumout\ = SUM(( \clock_divider|div_clks\(9) ) + ( GND ) + ( \clock_divider|Add0~50\ ))
--- \clock_divider|Add0~46\ = CARRY(( \clock_divider|div_clks\(9) ) + ( GND ) + ( \clock_divider|Add0~50\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(9),
-	cin => \clock_divider|Add0~50\,
-	sumout => \clock_divider|Add0~45_sumout\,
-	cout => \clock_divider|Add0~46\);
-
--- Location: FF_X33_Y2_N26
-\clock_divider|div_clks[9]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~45_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(9));
-
--- Location: LABCELL_X33_Y2_N27
-\clock_divider|Add0~41\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~41_sumout\ = SUM(( \clock_divider|div_clks\(10) ) + ( GND ) + ( \clock_divider|Add0~46\ ))
--- \clock_divider|Add0~42\ = CARRY(( \clock_divider|div_clks\(10) ) + ( GND ) + ( \clock_divider|Add0~46\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(10),
-	cin => \clock_divider|Add0~46\,
-	sumout => \clock_divider|Add0~41_sumout\,
-	cout => \clock_divider|Add0~42\);
-
--- Location: FF_X33_Y2_N29
-\clock_divider|div_clks[10]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~41_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(10));
-
--- Location: LABCELL_X33_Y2_N30
-\clock_divider|Add0~37\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~37_sumout\ = SUM(( \clock_divider|div_clks\(11) ) + ( GND ) + ( \clock_divider|Add0~42\ ))
--- \clock_divider|Add0~38\ = CARRY(( \clock_divider|div_clks\(11) ) + ( GND ) + ( \clock_divider|Add0~42\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(11),
-	cin => \clock_divider|Add0~42\,
-	sumout => \clock_divider|Add0~37_sumout\,
-	cout => \clock_divider|Add0~38\);
-
--- Location: FF_X33_Y2_N32
-\clock_divider|div_clks[11]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~37_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(11));
-
--- Location: LABCELL_X33_Y2_N33
-\clock_divider|Add0~33\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~33_sumout\ = SUM(( \clock_divider|div_clks\(12) ) + ( GND ) + ( \clock_divider|Add0~38\ ))
--- \clock_divider|Add0~34\ = CARRY(( \clock_divider|div_clks\(12) ) + ( GND ) + ( \clock_divider|Add0~38\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(12),
-	cin => \clock_divider|Add0~38\,
-	sumout => \clock_divider|Add0~33_sumout\,
-	cout => \clock_divider|Add0~34\);
-
--- Location: FF_X33_Y2_N35
-\clock_divider|div_clks[12]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~33_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(12));
-
--- Location: LABCELL_X33_Y2_N36
-\clock_divider|Add0~29\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~29_sumout\ = SUM(( \clock_divider|div_clks\(13) ) + ( GND ) + ( \clock_divider|Add0~34\ ))
--- \clock_divider|Add0~30\ = CARRY(( \clock_divider|div_clks\(13) ) + ( GND ) + ( \clock_divider|Add0~34\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(13),
-	cin => \clock_divider|Add0~34\,
-	sumout => \clock_divider|Add0~29_sumout\,
-	cout => \clock_divider|Add0~30\);
-
--- Location: FF_X33_Y2_N38
-\clock_divider|div_clks[13]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~29_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(13));
-
--- Location: LABCELL_X33_Y2_N39
-\clock_divider|Add0~25\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~25_sumout\ = SUM(( \clock_divider|div_clks\(14) ) + ( GND ) + ( \clock_divider|Add0~30\ ))
--- \clock_divider|Add0~26\ = CARRY(( \clock_divider|div_clks\(14) ) + ( GND ) + ( \clock_divider|Add0~30\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(14),
-	cin => \clock_divider|Add0~30\,
-	sumout => \clock_divider|Add0~25_sumout\,
-	cout => \clock_divider|Add0~26\);
-
--- Location: FF_X33_Y2_N41
-\clock_divider|div_clks[14]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~25_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(14));
-
--- Location: LABCELL_X33_Y2_N42
-\clock_divider|Add0~21\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~21_sumout\ = SUM(( \clock_divider|div_clks\(15) ) + ( GND ) + ( \clock_divider|Add0~26\ ))
--- \clock_divider|Add0~22\ = CARRY(( \clock_divider|div_clks\(15) ) + ( GND ) + ( \clock_divider|Add0~26\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(15),
-	cin => \clock_divider|Add0~26\,
-	sumout => \clock_divider|Add0~21_sumout\,
-	cout => \clock_divider|Add0~22\);
-
--- Location: FF_X33_Y2_N44
-\clock_divider|div_clks[15]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~21_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(15));
-
--- Location: LABCELL_X33_Y2_N45
-\clock_divider|Add0~17\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~17_sumout\ = SUM(( \clock_divider|div_clks\(16) ) + ( GND ) + ( \clock_divider|Add0~22\ ))
--- \clock_divider|Add0~18\ = CARRY(( \clock_divider|div_clks\(16) ) + ( GND ) + ( \clock_divider|Add0~22\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(16),
-	cin => \clock_divider|Add0~22\,
-	sumout => \clock_divider|Add0~17_sumout\,
-	cout => \clock_divider|Add0~18\);
-
--- Location: FF_X33_Y2_N47
-\clock_divider|div_clks[16]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~17_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(16));
-
--- Location: LABCELL_X33_Y2_N48
-\clock_divider|Add0~13\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~13_sumout\ = SUM(( \clock_divider|div_clks\(17) ) + ( GND ) + ( \clock_divider|Add0~18\ ))
--- \clock_divider|Add0~14\ = CARRY(( \clock_divider|div_clks\(17) ) + ( GND ) + ( \clock_divider|Add0~18\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(17),
-	cin => \clock_divider|Add0~18\,
-	sumout => \clock_divider|Add0~13_sumout\,
-	cout => \clock_divider|Add0~14\);
-
--- Location: FF_X33_Y2_N50
-\clock_divider|div_clks[17]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~13_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(17));
-
--- Location: LABCELL_X33_Y2_N51
-\clock_divider|Add0~9\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~9_sumout\ = SUM(( \clock_divider|div_clks\(18) ) + ( GND ) + ( \clock_divider|Add0~14\ ))
--- \clock_divider|Add0~10\ = CARRY(( \clock_divider|div_clks\(18) ) + ( GND ) + ( \clock_divider|Add0~14\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(18),
-	cin => \clock_divider|Add0~14\,
-	sumout => \clock_divider|Add0~9_sumout\,
-	cout => \clock_divider|Add0~10\);
-
--- Location: FF_X33_Y2_N53
-\clock_divider|div_clks[18]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~9_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(18));
-
--- Location: LABCELL_X33_Y2_N54
-\clock_divider|Add0~5\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~5_sumout\ = SUM(( \clock_divider|div_clks\(19) ) + ( GND ) + ( \clock_divider|Add0~10\ ))
--- \clock_divider|Add0~6\ = CARRY(( \clock_divider|div_clks\(19) ) + ( GND ) + ( \clock_divider|Add0~10\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \clock_divider|ALT_INV_div_clks\(19),
-	cin => \clock_divider|Add0~10\,
-	sumout => \clock_divider|Add0~5_sumout\,
-	cout => \clock_divider|Add0~6\);
-
--- Location: FF_X33_Y2_N56
-\clock_divider|div_clks[19]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~inputCLKENA0_outclk\,
-	d => \clock_divider|Add0~5_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(19));
-
--- Location: LABCELL_X33_Y2_N57
-\clock_divider|Add0~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|Add0~1_sumout\ = SUM(( \clock_divider|div_clks\(20) ) + ( GND ) + ( \clock_divider|Add0~6\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000101010101010101",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \clock_divider|ALT_INV_div_clks\(20),
-	cin => \clock_divider|Add0~6\,
-	sumout => \clock_divider|Add0~1_sumout\);
-
--- Location: LABCELL_X31_Y1_N24
-\clock_divider|div_clks[20]~feeder\ : cyclonev_lcell_comb
--- Equation(s):
--- \clock_divider|div_clks[20]~feeder_combout\ = ( \clock_divider|Add0~1_sumout\ )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataf => \clock_divider|ALT_INV_Add0~1_sumout\,
-	combout => \clock_divider|div_clks[20]~feeder_combout\);
-
--- Location: FF_X31_Y1_N26
-\clock_divider|div_clks[20]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~input_o\,
-	d => \clock_divider|div_clks[20]~feeder_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \clock_divider|div_clks\(20));
 
 -- Location: IOIBUF_X36_Y0_N18
 \KEY[1]~input\ : cyclonev_io_ibuf
@@ -1232,7 +537,7 @@ PORT MAP (
 	i => ww_SW(0),
 	o => \SW[0]~input_o\);
 
--- Location: LABCELL_X29_Y1_N24
+-- Location: MLABCELL_X28_Y1_N27
 \write_data[0]~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \write_data[0]~feeder_combout\ = ( \SW[0]~input_o\ )
@@ -1247,7 +552,7 @@ PORT MAP (
 	dataf => \ALT_INV_SW[0]~input_o\,
 	combout => \write_data[0]~feeder_combout\);
 
--- Location: FF_X29_Y1_N26
+-- Location: FF_X28_Y1_N29
 \write_data[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1255,25 +560,14 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \write_data[0]~feeder_combout\,
 	ena => \ALT_INV_KEY[1]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => write_data(0));
 
--- Location: IOIBUF_X4_Y0_N18
-\SW[8]~input\ : cyclonev_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_SW(8),
-	o => \SW[8]~input_o\);
-
--- Location: LABCELL_X33_Y1_N36
+-- Location: LABCELL_X33_Y1_N9
 \reg_file|write_data[0]~0\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \reg_file|write_data[0]~0_combout\ = ( write_data(0) ) # ( !write_data(0) & ( \KEY[1]~input_o\ ) )
@@ -1281,11 +575,11 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011001100110011001100110011001111111111111111111111111111111111",
+	lut_mask => "0101010101010101010101010101010111111111111111111111111111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \ALT_INV_KEY[1]~input_o\,
+	dataa => \ALT_INV_KEY[1]~input_o\,
 	dataf => ALT_INV_write_data(0),
 	combout => \reg_file|write_data[0]~0_combout\);
 
@@ -1311,92 +605,35 @@ PORT MAP (
 	i => ww_SW(9),
 	o => \SW[9]~input_o\);
 
--- Location: LABCELL_X33_Y1_N51
-\reg_file|FILE_REG_HW|we_sel[0]~0\ : cyclonev_lcell_comb
+-- Location: IOIBUF_X4_Y0_N18
+\SW[8]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_SW(8),
+	o => \SW[8]~input_o\);
+
+-- Location: MLABCELL_X28_Y1_N57
+\reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|we_sel[0]~0_combout\ = ( !\KEY[1]~input_o\ & ( (!\SW[9]~input_o\ & !\SW[8]~input_o\) ) )
+-- \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\ = ( \SW[8]~input_o\ & ( (!\KEY[1]~input_o\ & \SW[9]~input_o\) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100000000000000000000000000000000000",
+	lut_mask => "0000000000000000000000000000000000100010001000100010001000100010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_SW[9]~input_o\,
-	datab => \ALT_INV_SW[8]~input_o\,
-	dataf => \ALT_INV_KEY[1]~input_o\,
-	combout => \reg_file|FILE_REG_HW|we_sel[0]~0_combout\);
+	dataa => \ALT_INV_KEY[1]~input_o\,
+	datab => \ALT_INV_SW[9]~input_o\,
+	dataf => \ALT_INV_SW[8]~input_o\,
+	combout => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\);
 
--- Location: FF_X33_Y1_N32
-\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	asdata => \reg_file|write_data[0]~0_combout\,
-	clrn => \KEY[0]~input_o\,
-	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[0]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~q\);
-
--- Location: LABCELL_X33_Y1_N24
-\reg_file|FILE_REG_HW|we_sel[1]~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \reg_file|FILE_REG_HW|we_sel[1]~1_combout\ = ( !\KEY[1]~input_o\ & ( (!\SW[9]~input_o\ & \SW[8]~input_o\) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0010001000100010001000100010001000000000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ALT_INV_SW[9]~input_o\,
-	datab => \ALT_INV_SW[8]~input_o\,
-	dataf => \ALT_INV_KEY[1]~input_o\,
-	combout => \reg_file|FILE_REG_HW|we_sel[1]~1_combout\);
-
--- Location: FF_X31_Y2_N35
-\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	asdata => \reg_file|write_data[0]~0_combout\,
-	clrn => \KEY[0]~input_o\,
-	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[1]~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~q\);
-
--- Location: LABCELL_X33_Y1_N48
-\reg_file|FILE_REG_HW|we_sel[3]~3\ : cyclonev_lcell_comb
--- Equation(s):
--- \reg_file|FILE_REG_HW|we_sel[3]~3_combout\ = ( !\KEY[1]~input_o\ & ( (\SW[9]~input_o\ & \SW[8]~input_o\) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0001000100010001000100010001000100000000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ALT_INV_SW[9]~input_o\,
-	datab => \ALT_INV_SW[8]~input_o\,
-	dataf => \ALT_INV_KEY[1]~input_o\,
-	combout => \reg_file|FILE_REG_HW|we_sel[3]~3_combout\);
-
--- Location: FF_X33_Y1_N37
+-- Location: FF_X33_Y1_N10
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[0].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1404,32 +641,128 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \reg_file|write_data[0]~0_combout\,
 	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[3]~3_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[0].FF|q~q\);
 
--- Location: LABCELL_X33_Y1_N27
-\reg_file|FILE_REG_HW|we_sel[2]~2\ : cyclonev_lcell_comb
+-- Location: LABCELL_X30_Y1_N3
+\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|we_sel[2]~2_combout\ = ( !\KEY[1]~input_o\ & ( (\SW[9]~input_o\ & !\SW[8]~input_o\) ) )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~feeder_combout\ = ( \reg_file|write_data[0]~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0100010001000100010001000100010000000000000000000000000000000000",
+	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_SW[9]~input_o\,
-	datab => \ALT_INV_SW[8]~input_o\,
-	dataf => \ALT_INV_KEY[1]~input_o\,
-	combout => \reg_file|FILE_REG_HW|we_sel[2]~2_combout\);
+	dataf => \reg_file|ALT_INV_write_data[0]~0_combout\,
+	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~feeder_combout\);
 
--- Location: FF_X31_Y2_N8
+-- Location: MLABCELL_X28_Y1_N48
+\reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1~combout\ = ( !\SW[8]~input_o\ & ( (!\SW[9]~input_o\ & !\KEY[1]~input_o\) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1100000011000000110000001100000000000000000000000000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \ALT_INV_SW[9]~input_o\,
+	datac => \ALT_INV_KEY[1]~input_o\,
+	dataf => \ALT_INV_SW[8]~input_o\,
+	combout => \reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1~combout\);
+
+-- Location: FF_X30_Y1_N4
+\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	d => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~feeder_combout\,
+	clrn => \KEY[0]~input_o\,
+	ena => \reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~q\);
+
+-- Location: LABCELL_X30_Y1_N39
+\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~feeder\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~feeder_combout\ = ( \reg_file|write_data[0]~0_combout\ )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataf => \reg_file|ALT_INV_write_data[0]~0_combout\,
+	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~feeder_combout\);
+
+-- Location: MLABCELL_X28_Y1_N51
+\reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0_combout\ = ( \SW[8]~input_o\ & ( (!\KEY[1]~input_o\ & !\SW[9]~input_o\) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000000000000010001000100010001000100010001000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ALT_INV_KEY[1]~input_o\,
+	datab => \ALT_INV_SW[9]~input_o\,
+	dataf => \ALT_INV_SW[8]~input_o\,
+	combout => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0_combout\);
+
+-- Location: FF_X30_Y1_N40
+\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	d => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~feeder_combout\,
+	clrn => \KEY[0]~input_o\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~q\);
+
+-- Location: MLABCELL_X28_Y1_N54
+\reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\ = ( !\SW[8]~input_o\ & ( (\SW[9]~input_o\ & !\KEY[1]~input_o\) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0011000000110000001100000011000000000000000000000000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \ALT_INV_SW[9]~input_o\,
+	datac => \ALT_INV_KEY[1]~input_o\,
+	dataf => \ALT_INV_SW[8]~input_o\,
+	combout => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\);
+
+-- Location: FF_X33_Y1_N32
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1437,57 +770,57 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	asdata => \reg_file|write_data[0]~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[2]~2_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q~q\);
 
--- Location: LABCELL_X31_Y2_N6
-\reg_file|FILE_REG_HW|Mux63~0\ : cyclonev_lcell_comb
+-- Location: LABCELL_X33_Y1_N30
+\reg_file|FILE_REG_HW|Mux1~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|Mux63~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q~q\ & ( \SW[9]~input_o\ & ( (!\SW[8]~input_o\) # (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[0].FF|q~q\) ) ) ) # ( 
--- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q~q\ & ( \SW[9]~input_o\ & ( (\SW[8]~input_o\ & \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[0].FF|q~q\) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q~q\ & ( 
--- !\SW[9]~input_o\ & ( (!\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~q\)) # (\SW[8]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~q\))) ) ) ) # ( 
--- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q~q\ & ( !\SW[9]~input_o\ & ( (!\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~q\)) # (\SW[8]~input_o\ & 
--- ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~q\))) ) ) )
+-- \reg_file|FILE_REG_HW|Mux1~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q~q\ & ( \SW[8]~input_o\ & ( (!\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~q\))) # (\SW[9]~input_o\ & 
+-- (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[0].FF|q~q\)) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q~q\ & ( \SW[8]~input_o\ & ( (!\SW[9]~input_o\ & 
+-- ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~q\))) # (\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[0].FF|q~q\)) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q~q\ & ( !\SW[8]~input_o\ 
+-- & ( (\SW[9]~input_o\) # (\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~q\) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q~q\ & ( !\SW[8]~input_o\ & ( 
+-- (\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~q\ & !\SW[9]~input_o\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0010011100100111001001110010011100000000010101011010101011111111",
+	lut_mask => "0011000000110000001111110011111100000101111101010000010111110101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_SW[8]~input_o\,
+	dataa => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[0].FF|ALT_INV_q~q\,
 	datab => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|ALT_INV_q~q\,
-	datac => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|ALT_INV_q~q\,
-	datad => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[0].FF|ALT_INV_q~q\,
+	datac => \ALT_INV_SW[9]~input_o\,
+	datad => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|ALT_INV_q~q\,
 	datae => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|ALT_INV_q~q\,
-	dataf => \ALT_INV_SW[9]~input_o\,
-	combout => \reg_file|FILE_REG_HW|Mux63~0_combout\);
+	dataf => \ALT_INV_SW[8]~input_o\,
+	combout => \reg_file|FILE_REG_HW|Mux1~0_combout\);
 
--- Location: LABCELL_X29_Y1_N0
+-- Location: MLABCELL_X28_Y1_N3
 \data_bus[0]~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \data_bus[0]~0_combout\ = ( \reg_file|FILE_REG_HW|Mux63~0_combout\ & ( (write_data(0)) # (\KEY[1]~input_o\) ) ) # ( !\reg_file|FILE_REG_HW|Mux63~0_combout\ & ( (!\KEY[1]~input_o\ & write_data(0)) ) )
+-- \data_bus[0]~0_combout\ = ( \reg_file|FILE_REG_HW|Mux1~0_combout\ & ( (write_data(0)) # (\KEY[1]~input_o\) ) ) # ( !\reg_file|FILE_REG_HW|Mux1~0_combout\ & ( (!\KEY[1]~input_o\ & write_data(0)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000110000001100000011000000110000111111001111110011111100111111",
+	lut_mask => "0000000010101010000000001010101001010101111111110101010111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \ALT_INV_KEY[1]~input_o\,
-	datac => ALT_INV_write_data(0),
-	dataf => \reg_file|FILE_REG_HW|ALT_INV_Mux63~0_combout\,
+	dataa => \ALT_INV_KEY[1]~input_o\,
+	datad => ALT_INV_write_data(0),
+	dataf => \reg_file|FILE_REG_HW|ALT_INV_Mux1~0_combout\,
 	combout => \data_bus[0]~0_combout\);
 
--- Location: FF_X29_Y1_N1
+-- Location: FF_X28_Y1_N4
 \led_data[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1495,7 +828,7 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \data_bus[0]~0_combout\,
 	ena => \KEY[1]~input_o\,
 	devclrn => ww_devclrn,
@@ -1513,7 +846,7 @@ PORT MAP (
 	i => ww_SW(1),
 	o => \SW[1]~input_o\);
 
--- Location: FF_X29_Y1_N29
+-- Location: FF_X28_Y1_N26
 \write_data[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1521,7 +854,7 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	asdata => \SW[1]~input_o\,
 	sload => VCC,
 	ena => \ALT_INV_KEY[1]~input_o\,
@@ -1529,23 +862,39 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => write_data(1));
 
--- Location: LABCELL_X33_Y1_N39
+-- Location: LABCELL_X29_Y1_N36
 \reg_file|write_data[1]~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|write_data[1]~1_combout\ = (write_data(1)) # (\KEY[1]~input_o\)
+-- \reg_file|write_data[1]~1_combout\ = ( write_data(1) ) # ( !write_data(1) & ( \KEY[1]~input_o\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011111100111111001111110011111100111111001111110011111100111111",
+	lut_mask => "0011001100110011001100110011001111111111111111111111111111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	datab => \ALT_INV_KEY[1]~input_o\,
-	datac => ALT_INV_write_data(1),
+	dataf => ALT_INV_write_data(1),
 	combout => \reg_file|write_data[1]~1_combout\);
 
--- Location: LABCELL_X31_Y2_N12
+-- Location: FF_X29_Y1_N38
+\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	d => \reg_file|write_data[1]~1_combout\,
+	clrn => \KEY[0]~input_o\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q~q\);
+
+-- Location: LABCELL_X30_Y1_N48
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~feeder_combout\ = ( \reg_file|write_data[1]~1_combout\ )
@@ -1560,7 +909,7 @@ PORT MAP (
 	dataf => \reg_file|ALT_INV_write_data[1]~1_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~feeder_combout\);
 
--- Location: FF_X31_Y2_N14
+-- Location: FF_X30_Y1_N49
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1568,15 +917,32 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~feeder_combout\,
 	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[1]~1_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~q\);
 
--- Location: LABCELL_X33_Y1_N33
+-- Location: FF_X29_Y1_N32
+\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	asdata => \reg_file|write_data[1]~1_combout\,
+	clrn => \KEY[0]~input_o\,
+	sload => VCC,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\);
+
+-- Location: LABCELL_X30_Y1_N12
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~feeder_combout\ = ( \reg_file|write_data[1]~1_combout\ )
@@ -1591,7 +957,7 @@ PORT MAP (
 	dataf => \reg_file|ALT_INV_write_data[1]~1_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~feeder_combout\);
 
--- Location: FF_X33_Y1_N34
+-- Location: FF_X30_Y1_N14
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1599,89 +965,58 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~feeder_combout\,
 	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[0]~0_combout\,
+	ena => \reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~q\);
 
--- Location: FF_X33_Y1_N40
-\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	d => \reg_file|write_data[1]~1_combout\,
-	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[3]~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q~q\);
-
--- Location: FF_X31_Y2_N20
-\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	asdata => \reg_file|write_data[1]~1_combout\,
-	clrn => \KEY[0]~input_o\,
-	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[2]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\);
-
--- Location: LABCELL_X31_Y2_N18
-\reg_file|FILE_REG_HW|Mux62~0\ : cyclonev_lcell_comb
+-- Location: LABCELL_X29_Y1_N30
+\reg_file|FILE_REG_HW|Mux3~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|Mux62~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\ & ( \SW[9]~input_o\ & ( (!\SW[8]~input_o\) # (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q~q\) ) ) ) # ( 
--- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\ & ( \SW[9]~input_o\ & ( (\SW[8]~input_o\ & \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q~q\) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\ & ( 
--- !\SW[9]~input_o\ & ( (!\SW[8]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~q\))) # (\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~q\)) ) ) ) # ( 
--- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\ & ( !\SW[9]~input_o\ & ( (!\SW[8]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~q\))) # (\SW[8]~input_o\ & 
--- (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~q\)) ) ) )
+-- \reg_file|FILE_REG_HW|Mux3~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\ & ( \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~q\ & ( (!\SW[8]~input_o\) # ((!\SW[9]~input_o\ & 
+-- ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~q\))) # (\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q~q\))) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\ & ( 
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~q\ & ( (!\SW[8]~input_o\ & (!\SW[9]~input_o\)) # (\SW[8]~input_o\ & ((!\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~q\))) # (\SW[9]~input_o\ & 
+-- (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q~q\)))) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~q\ & ( (!\SW[8]~input_o\ & 
+-- (\SW[9]~input_o\)) # (\SW[8]~input_o\ & ((!\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~q\))) # (\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q~q\)))) ) ) ) # ( 
+-- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~q\ & ( (\SW[8]~input_o\ & ((!\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~q\))) # 
+-- (\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q~q\)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001101100011011000110110001101100000000010101011010101011111111",
+	lut_mask => "0000000101000101001000110110011110001001110011011010101111101111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_SW[8]~input_o\,
-	datab => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|ALT_INV_q~q\,
-	datac => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|ALT_INV_q~q\,
-	datad => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|ALT_INV_q~q\,
+	datab => \ALT_INV_SW[9]~input_o\,
+	datac => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|ALT_INV_q~q\,
+	datad => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|ALT_INV_q~q\,
 	datae => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[1].FF|ALT_INV_q~q\,
-	dataf => \ALT_INV_SW[9]~input_o\,
-	combout => \reg_file|FILE_REG_HW|Mux62~0_combout\);
+	dataf => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|ALT_INV_q~q\,
+	combout => \reg_file|FILE_REG_HW|Mux3~0_combout\);
 
--- Location: LABCELL_X29_Y1_N3
+-- Location: MLABCELL_X28_Y1_N0
 \data_bus[1]~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \data_bus[1]~1_combout\ = ( \reg_file|FILE_REG_HW|Mux62~0_combout\ & ( (write_data(1)) # (\KEY[1]~input_o\) ) ) # ( !\reg_file|FILE_REG_HW|Mux62~0_combout\ & ( (!\KEY[1]~input_o\ & write_data(1)) ) )
+-- \data_bus[1]~1_combout\ = ( write_data(1) & ( (!\KEY[1]~input_o\) # (\reg_file|FILE_REG_HW|Mux3~0_combout\) ) ) # ( !write_data(1) & ( (\KEY[1]~input_o\ & \reg_file|FILE_REG_HW|Mux3~0_combout\) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000011001100000000001100110000110011111111110011001111111111",
+	lut_mask => "0000000001010101000000000101010110101010111111111010101011111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \ALT_INV_KEY[1]~input_o\,
-	datad => ALT_INV_write_data(1),
-	dataf => \reg_file|FILE_REG_HW|ALT_INV_Mux62~0_combout\,
+	dataa => \ALT_INV_KEY[1]~input_o\,
+	datad => \reg_file|FILE_REG_HW|ALT_INV_Mux3~0_combout\,
+	dataf => ALT_INV_write_data(1),
 	combout => \data_bus[1]~1_combout\);
 
--- Location: FF_X29_Y1_N4
+-- Location: FF_X28_Y1_N1
 \led_data[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1689,7 +1024,7 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \data_bus[1]~1_combout\,
 	ena => \KEY[1]~input_o\,
 	devclrn => ww_devclrn,
@@ -1707,22 +1042,7 @@ PORT MAP (
 	i => ww_SW(2),
 	o => \SW[2]~input_o\);
 
--- Location: LABCELL_X29_Y1_N30
-\write_data[2]~feeder\ : cyclonev_lcell_comb
--- Equation(s):
--- \write_data[2]~feeder_combout\ = ( \SW[2]~input_o\ )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataf => \ALT_INV_SW[2]~input_o\,
-	combout => \write_data[2]~feeder_combout\);
-
--- Location: FF_X29_Y1_N32
+-- Location: FF_X28_Y1_N32
 \write_data[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1730,80 +1050,31 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	d => \write_data[2]~feeder_combout\,
+	clk => \clock_divider|div_clks\(1),
+	asdata => \SW[2]~input_o\,
+	sload => VCC,
 	ena => \ALT_INV_KEY[1]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => write_data(2));
 
--- Location: LABCELL_X33_Y1_N18
+-- Location: LABCELL_X33_Y1_N51
 \reg_file|write_data[2]~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|write_data[2]~2_combout\ = (write_data(2)) # (\KEY[1]~input_o\)
+-- \reg_file|write_data[2]~2_combout\ = ( write_data(2) ) # ( !write_data(2) & ( \KEY[1]~input_o\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011111100111111001111110011111100111111001111110011111100111111",
+	lut_mask => "0101010101010101010101010101010111111111111111111111111111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \ALT_INV_KEY[1]~input_o\,
-	datac => ALT_INV_write_data(2),
+	dataa => \ALT_INV_KEY[1]~input_o\,
+	dataf => ALT_INV_write_data(2),
 	combout => \reg_file|write_data[2]~2_combout\);
 
--- Location: FF_X31_Y2_N17
-\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	asdata => \reg_file|write_data[2]~2_combout\,
-	clrn => \KEY[0]~input_o\,
-	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[1]~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~q\);
-
--- Location: FF_X33_Y1_N19
-\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	d => \reg_file|write_data[2]~2_combout\,
-	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[3]~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|q~q\);
-
--- Location: FF_X31_Y2_N56
-\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	asdata => \reg_file|write_data[2]~2_combout\,
-	clrn => \KEY[0]~input_o\,
-	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[2]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q~q\);
-
--- Location: LABCELL_X33_Y1_N12
+-- Location: LABCELL_X30_Y1_N15
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~feeder_combout\ = ( \reg_file|write_data[2]~2_combout\ )
@@ -1818,7 +1089,7 @@ PORT MAP (
 	dataf => \reg_file|ALT_INV_write_data[2]~2_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~feeder_combout\);
 
--- Location: FF_X33_Y1_N13
+-- Location: FF_X30_Y1_N16
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1826,58 +1097,120 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~feeder_combout\,
 	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[0]~0_combout\,
+	ena => \reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~q\);
 
--- Location: LABCELL_X31_Y2_N54
-\reg_file|FILE_REG_HW|Mux61~0\ : cyclonev_lcell_comb
+-- Location: LABCELL_X30_Y1_N51
+\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|Mux61~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q~q\ & ( \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~q\ & ( (!\SW[8]~input_o\) # ((!\SW[9]~input_o\ & 
--- (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~q\)) # (\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|q~q\)))) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q~q\ & ( 
--- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~q\ & ( (!\SW[8]~input_o\ & (((!\SW[9]~input_o\)))) # (\SW[8]~input_o\ & ((!\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~q\)) # (\SW[9]~input_o\ & 
--- ((\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|q~q\))))) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~q\ & ( (!\SW[8]~input_o\ & 
--- (((\SW[9]~input_o\)))) # (\SW[8]~input_o\ & ((!\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~q\)) # (\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|q~q\))))) ) ) ) # ( 
--- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~q\ & ( (\SW[8]~input_o\ & ((!\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~q\)) # 
--- (\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|q~q\))))) ) ) )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~feeder_combout\ = ( \reg_file|write_data[2]~2_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001000000010101000110100001111110110000101101011011101010111111",
+	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_SW[8]~input_o\,
-	datab => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|ALT_INV_q~q\,
-	datac => \ALT_INV_SW[9]~input_o\,
+	dataf => \reg_file|ALT_INV_write_data[2]~2_combout\,
+	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~feeder_combout\);
+
+-- Location: FF_X30_Y1_N52
+\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	d => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~feeder_combout\,
+	clrn => \KEY[0]~input_o\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~q\);
+
+-- Location: FF_X33_Y1_N52
+\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	d => \reg_file|write_data[2]~2_combout\,
+	clrn => \KEY[0]~input_o\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|q~q\);
+
+-- Location: FF_X33_Y1_N14
+\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	asdata => \reg_file|write_data[2]~2_combout\,
+	clrn => \KEY[0]~input_o\,
+	sload => VCC,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q~q\);
+
+-- Location: LABCELL_X33_Y1_N12
+\reg_file|FILE_REG_HW|Mux5~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \reg_file|FILE_REG_HW|Mux5~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q~q\ & ( \SW[8]~input_o\ & ( (!\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~q\)) # (\SW[9]~input_o\ & 
+-- ((\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|q~q\))) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q~q\ & ( \SW[8]~input_o\ & ( (!\SW[9]~input_o\ & 
+-- (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~q\)) # (\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|q~q\))) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q~q\ & ( !\SW[8]~input_o\ 
+-- & ( (\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~q\) # (\SW[9]~input_o\) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|q~q\ & ( !\SW[8]~input_o\ & ( (!\SW[9]~input_o\ & 
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~q\) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010011101110111011100001010010111110000101001011111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ALT_INV_SW[9]~input_o\,
+	datab => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|ALT_INV_q~q\,
+	datac => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|ALT_INV_q~q\,
 	datad => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[2].FF|ALT_INV_q~q\,
 	datae => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[2].FF|ALT_INV_q~q\,
-	dataf => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|ALT_INV_q~q\,
-	combout => \reg_file|FILE_REG_HW|Mux61~0_combout\);
+	dataf => \ALT_INV_SW[8]~input_o\,
+	combout => \reg_file|FILE_REG_HW|Mux5~0_combout\);
 
--- Location: LABCELL_X29_Y1_N36
+-- Location: MLABCELL_X28_Y1_N6
 \data_bus[2]~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \data_bus[2]~2_combout\ = ( \reg_file|FILE_REG_HW|Mux61~0_combout\ & ( (write_data(2)) # (\KEY[1]~input_o\) ) ) # ( !\reg_file|FILE_REG_HW|Mux61~0_combout\ & ( (!\KEY[1]~input_o\ & write_data(2)) ) )
+-- \data_bus[2]~2_combout\ = (!\KEY[1]~input_o\ & ((write_data(2)))) # (\KEY[1]~input_o\ & (\reg_file|FILE_REG_HW|Mux5~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000110000001100000011000000110000111111001111110011111100111111",
+	lut_mask => "0000010110101111000001011010111100000101101011110000010110101111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \ALT_INV_KEY[1]~input_o\,
-	datac => ALT_INV_write_data(2),
-	dataf => \reg_file|FILE_REG_HW|ALT_INV_Mux61~0_combout\,
+	dataa => \ALT_INV_KEY[1]~input_o\,
+	datac => \reg_file|FILE_REG_HW|ALT_INV_Mux5~0_combout\,
+	datad => ALT_INV_write_data(2),
 	combout => \data_bus[2]~2_combout\);
 
--- Location: FF_X29_Y1_N37
+-- Location: FF_X28_Y1_N7
 \led_data[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1885,7 +1218,7 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \data_bus[2]~2_combout\,
 	ena => \KEY[1]~input_o\,
 	devclrn => ww_devclrn,
@@ -1903,7 +1236,7 @@ PORT MAP (
 	i => ww_SW(3),
 	o => \SW[3]~input_o\);
 
--- Location: LABCELL_X29_Y1_N33
+-- Location: MLABCELL_X28_Y1_N33
 \write_data[3]~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \write_data[3]~feeder_combout\ = ( \SW[3]~input_o\ )
@@ -1918,7 +1251,7 @@ PORT MAP (
 	dataf => \ALT_INV_SW[3]~input_o\,
 	combout => \write_data[3]~feeder_combout\);
 
--- Location: FF_X29_Y1_N35
+-- Location: FF_X28_Y1_N35
 \write_data[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1926,14 +1259,14 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \write_data[3]~feeder_combout\,
 	ena => \ALT_INV_KEY[1]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => write_data(3));
 
--- Location: LABCELL_X33_Y1_N21
+-- Location: LABCELL_X33_Y1_N6
 \reg_file|write_data[3]~3\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \reg_file|write_data[3]~3_combout\ = ( write_data(3) ) # ( !write_data(3) & ( \KEY[1]~input_o\ ) )
@@ -1941,31 +1274,30 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011001100110011001100110011001111111111111111111111111111111111",
+	lut_mask => "0101010101010101010101010101010111111111111111111111111111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \ALT_INV_KEY[1]~input_o\,
+	dataa => \ALT_INV_KEY[1]~input_o\,
 	dataf => ALT_INV_write_data(3),
 	combout => \reg_file|write_data[3]~3_combout\);
 
--- Location: FF_X33_Y1_N22
-\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q\ : dffeas
+-- Location: LABCELL_X30_Y1_N36
+\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~feeder\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~feeder_combout\ = ( \reg_file|write_data[3]~3_combout\ )
+
 -- pragma translate_off
 GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
+	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	d => \reg_file|write_data[3]~3_combout\,
-	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[3]~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q~q\);
+	dataf => \reg_file|ALT_INV_write_data[3]~3_combout\,
+	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~feeder_combout\);
 
--- Location: FF_X31_Y2_N2
+-- Location: FF_X30_Y1_N37
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1973,16 +1305,30 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	asdata => \reg_file|write_data[3]~3_combout\,
+	clk => \clock_divider|div_clks\(1),
+	d => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~feeder_combout\,
 	clrn => \KEY[0]~input_o\,
-	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[1]~1_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~q\);
 
--- Location: FF_X33_Y1_N17
+-- Location: LABCELL_X30_Y1_N0
+\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~feeder\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~feeder_combout\ = ( \reg_file|write_data[3]~3_combout\ )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataf => \reg_file|ALT_INV_write_data[3]~3_combout\,
+	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~feeder_combout\);
+
+-- Location: FF_X30_Y1_N1
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1990,16 +1336,15 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	asdata => \reg_file|write_data[3]~3_combout\,
+	clk => \clock_divider|div_clks\(1),
+	d => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~feeder_combout\,
 	clrn => \KEY[0]~input_o\,
-	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[0]~0_combout\,
+	ena => \reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~q\);
 
--- Location: FF_X31_Y2_N38
+-- Location: FF_X33_Y1_N56
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2007,57 +1352,75 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	asdata => \reg_file|write_data[3]~3_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[2]~2_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|q~q\);
 
--- Location: LABCELL_X31_Y2_N36
-\reg_file|FILE_REG_HW|Mux60~0\ : cyclonev_lcell_comb
+-- Location: FF_X33_Y1_N7
+\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	d => \reg_file|write_data[3]~3_combout\,
+	clrn => \KEY[0]~input_o\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q~q\);
+
+-- Location: LABCELL_X33_Y1_N54
+\reg_file|FILE_REG_HW|Mux7~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|Mux60~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|q~q\ & ( \SW[9]~input_o\ & ( (!\SW[8]~input_o\) # (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q~q\) ) ) ) # ( 
--- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|q~q\ & ( \SW[9]~input_o\ & ( (\SW[8]~input_o\ & \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q~q\) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|q~q\ & ( 
--- !\SW[9]~input_o\ & ( (!\SW[8]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~q\))) # (\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~q\)) ) ) ) # ( 
--- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|q~q\ & ( !\SW[9]~input_o\ & ( (!\SW[8]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~q\))) # (\SW[8]~input_o\ & 
--- (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~q\)) ) ) )
+-- \reg_file|FILE_REG_HW|Mux7~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|q~q\ & ( \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q~q\ & ( ((!\SW[8]~input_o\ & 
+-- ((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~q\))) # (\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~q\))) # (\SW[9]~input_o\) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|q~q\ 
+-- & ( \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q~q\ & ( (!\SW[8]~input_o\ & (((!\SW[9]~input_o\ & \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~q\)))) # (\SW[8]~input_o\ & (((\SW[9]~input_o\)) # 
+-- (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~q\))) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q~q\ & ( (!\SW[8]~input_o\ & 
+-- (((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~q\) # (\SW[9]~input_o\)))) # (\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~q\ & (!\SW[9]~input_o\))) ) ) ) # ( 
+-- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q~q\ & ( (!\SW[9]~input_o\ & ((!\SW[8]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~q\))) # 
+-- (\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~q\)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000010110101111000001011010111100010001000100011011101110111011",
+	lut_mask => "0001000010110000000110101011101000010101101101010001111110111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_SW[8]~input_o\,
-	datab => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|ALT_INV_q~q\,
-	datac => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|ALT_INV_q~q\,
+	datab => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|ALT_INV_q~q\,
+	datac => \ALT_INV_SW[9]~input_o\,
 	datad => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|ALT_INV_q~q\,
 	datae => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[3].FF|ALT_INV_q~q\,
-	dataf => \ALT_INV_SW[9]~input_o\,
-	combout => \reg_file|FILE_REG_HW|Mux60~0_combout\);
+	dataf => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|ALT_INV_q~q\,
+	combout => \reg_file|FILE_REG_HW|Mux7~0_combout\);
 
--- Location: LABCELL_X29_Y1_N39
+-- Location: MLABCELL_X28_Y1_N9
 \data_bus[3]~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \data_bus[3]~3_combout\ = ( write_data(3) & ( (!\KEY[1]~input_o\) # (\reg_file|FILE_REG_HW|Mux60~0_combout\) ) ) # ( !write_data(3) & ( (\KEY[1]~input_o\ & \reg_file|FILE_REG_HW|Mux60~0_combout\) ) )
+-- \data_bus[3]~3_combout\ = ( write_data(3) & ( (!\KEY[1]~input_o\) # (\reg_file|FILE_REG_HW|Mux7~0_combout\) ) ) # ( !write_data(3) & ( (\KEY[1]~input_o\ & \reg_file|FILE_REG_HW|Mux7~0_combout\) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000110011000000000011001111001100111111111100110011111111",
+	lut_mask => "0000010100000101000001010000010110101111101011111010111110101111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \ALT_INV_KEY[1]~input_o\,
-	datad => \reg_file|FILE_REG_HW|ALT_INV_Mux60~0_combout\,
+	dataa => \ALT_INV_KEY[1]~input_o\,
+	datac => \reg_file|FILE_REG_HW|ALT_INV_Mux7~0_combout\,
 	dataf => ALT_INV_write_data(3),
 	combout => \data_bus[3]~3_combout\);
 
--- Location: FF_X29_Y1_N40
+-- Location: FF_X28_Y1_N10
 \led_data[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2065,7 +1428,7 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \data_bus[3]~3_combout\,
 	ena => \KEY[1]~input_o\,
 	devclrn => ww_devclrn,
@@ -2083,22 +1446,7 @@ PORT MAP (
 	i => ww_SW(4),
 	o => \SW[4]~input_o\);
 
--- Location: LABCELL_X29_Y1_N6
-\write_data[4]~feeder\ : cyclonev_lcell_comb
--- Equation(s):
--- \write_data[4]~feeder_combout\ = ( \SW[4]~input_o\ )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataf => \ALT_INV_SW[4]~input_o\,
-	combout => \write_data[4]~feeder_combout\);
-
--- Location: FF_X29_Y1_N8
+-- Location: FF_X28_Y1_N38
 \write_data[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2106,62 +1454,31 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	d => \write_data[4]~feeder_combout\,
+	clk => \clock_divider|div_clks\(1),
+	asdata => \SW[4]~input_o\,
+	sload => VCC,
 	ena => \ALT_INV_KEY[1]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => write_data(4));
 
--- Location: LABCELL_X33_Y1_N0
+-- Location: LABCELL_X33_Y1_N36
 \reg_file|write_data[4]~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|write_data[4]~4_combout\ = (write_data(4)) # (\KEY[1]~input_o\)
+-- \reg_file|write_data[4]~4_combout\ = ( write_data(4) ) # ( !write_data(4) & ( \KEY[1]~input_o\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011111100111111001111110011111100111111001111110011111100111111",
+	lut_mask => "0101010101010101010101010101010111111111111111111111111111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \ALT_INV_KEY[1]~input_o\,
-	datac => ALT_INV_write_data(4),
+	dataa => \ALT_INV_KEY[1]~input_o\,
+	dataf => ALT_INV_write_data(4),
 	combout => \reg_file|write_data[4]~4_combout\);
 
--- Location: FF_X33_Y1_N55
-\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	asdata => \reg_file|write_data[4]~4_combout\,
-	clrn => \KEY[0]~input_o\,
-	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[0]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|q~q\);
-
--- Location: LABCELL_X31_Y2_N3
-\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q~feeder\ : cyclonev_lcell_comb
--- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q~feeder_combout\ = ( \reg_file|write_data[4]~4_combout\ )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[4]~4_combout\,
-	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q~feeder_combout\);
-
--- Location: FF_X31_Y2_N5
+-- Location: FF_X30_Y1_N31
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2169,15 +1486,16 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	d => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q~feeder_combout\,
+	clk => \clock_divider|div_clks\(1),
+	asdata => \reg_file|write_data[4]~4_combout\,
 	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[1]~1_combout\,
+	sload => VCC,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q~q\);
 
--- Location: FF_X33_Y1_N1
+-- Location: FF_X33_Y1_N37
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[4].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2185,15 +1503,32 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \reg_file|write_data[4]~4_combout\,
 	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[3]~3_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[4].FF|q~q\);
 
--- Location: FF_X31_Y2_N44
+-- Location: FF_X30_Y1_N55
+\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	asdata => \reg_file|write_data[4]~4_combout\,
+	clrn => \KEY[0]~input_o\,
+	sload => VCC,
+	ena => \reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|q~q\);
+
+-- Location: FF_X33_Y1_N2
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[4].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2201,19 +1536,19 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	asdata => \reg_file|write_data[4]~4_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[2]~2_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[4].FF|q~q\);
 
--- Location: LABCELL_X31_Y2_N42
-\reg_file|FILE_REG_HW|Mux59~0\ : cyclonev_lcell_comb
+-- Location: LABCELL_X33_Y1_N0
+\reg_file|FILE_REG_HW|Mux9~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|Mux59~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[4].FF|q~q\ & ( \SW[8]~input_o\ & ( (!\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q~q\)) # (\SW[9]~input_o\ & 
+-- \reg_file|FILE_REG_HW|Mux9~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[4].FF|q~q\ & ( \SW[8]~input_o\ & ( (!\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q~q\)) # (\SW[9]~input_o\ & 
 -- ((\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[4].FF|q~q\))) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[4].FF|q~q\ & ( \SW[8]~input_o\ & ( (!\SW[9]~input_o\ & 
 -- (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q~q\)) # (\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[4].FF|q~q\))) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[4].FF|q~q\ & ( !\SW[8]~input_o\ 
 -- & ( (\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|q~q\) # (\SW[9]~input_o\) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[4].FF|q~q\ & ( !\SW[8]~input_o\ & ( (!\SW[9]~input_o\ & 
@@ -2222,36 +1557,36 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0010001000100010011101110111011100001010010111110000101001011111",
+	lut_mask => "0000000010101010010101011111111100100111001001110010011100100111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_SW[9]~input_o\,
-	datab => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|ALT_INV_q~q\,
-	datac => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|ALT_INV_q~q\,
-	datad => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[4].FF|ALT_INV_q~q\,
+	datab => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|ALT_INV_q~q\,
+	datac => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[4].FF|ALT_INV_q~q\,
+	datad => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|ALT_INV_q~q\,
 	datae => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[4].FF|ALT_INV_q~q\,
 	dataf => \ALT_INV_SW[8]~input_o\,
-	combout => \reg_file|FILE_REG_HW|Mux59~0_combout\);
+	combout => \reg_file|FILE_REG_HW|Mux9~0_combout\);
 
--- Location: LABCELL_X29_Y1_N12
+-- Location: MLABCELL_X28_Y1_N42
 \data_bus[4]~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \data_bus[4]~4_combout\ = ( \KEY[1]~input_o\ & ( \reg_file|FILE_REG_HW|Mux59~0_combout\ ) ) # ( !\KEY[1]~input_o\ & ( write_data(4) ) )
+-- \data_bus[4]~4_combout\ = (!\KEY[1]~input_o\ & ((write_data(4)))) # (\KEY[1]~input_o\ & (\reg_file|FILE_REG_HW|Mux9~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011001100110011001100110011001100001111000011110000111100001111",
+	lut_mask => "0000010110101111000001011010111100000101101011110000010110101111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => ALT_INV_write_data(4),
-	datac => \reg_file|FILE_REG_HW|ALT_INV_Mux59~0_combout\,
-	dataf => \ALT_INV_KEY[1]~input_o\,
+	dataa => \ALT_INV_KEY[1]~input_o\,
+	datac => \reg_file|FILE_REG_HW|ALT_INV_Mux9~0_combout\,
+	datad => ALT_INV_write_data(4),
 	combout => \data_bus[4]~4_combout\);
 
--- Location: FF_X29_Y1_N13
+-- Location: FF_X28_Y1_N43
 \led_data[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2259,7 +1594,7 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \data_bus[4]~4_combout\,
 	ena => \KEY[1]~input_o\,
 	devclrn => ww_devclrn,
@@ -2277,7 +1612,7 @@ PORT MAP (
 	i => ww_SW(5),
 	o => \SW[5]~input_o\);
 
--- Location: LABCELL_X29_Y1_N9
+-- Location: MLABCELL_X28_Y1_N39
 \write_data[5]~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \write_data[5]~feeder_combout\ = ( \SW[5]~input_o\ )
@@ -2292,7 +1627,7 @@ PORT MAP (
 	dataf => \ALT_INV_SW[5]~input_o\,
 	combout => \write_data[5]~feeder_combout\);
 
--- Location: FF_X29_Y1_N11
+-- Location: FF_X28_Y1_N41
 \write_data[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2300,14 +1635,14 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \write_data[5]~feeder_combout\,
 	ena => \ALT_INV_KEY[1]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => write_data(5));
 
--- Location: LABCELL_X33_Y1_N3
+-- Location: LABCELL_X29_Y1_N39
 \reg_file|write_data[5]~5\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \reg_file|write_data[5]~5_combout\ = (write_data(5)) # (\KEY[1]~input_o\)
@@ -2323,7 +1658,71 @@ PORT MAP (
 	datac => ALT_INV_write_data(5),
 	combout => \reg_file|write_data[5]~5_combout\);
 
--- Location: LABCELL_X31_Y2_N30
+-- Location: LABCELL_X30_Y1_N57
+\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~feeder\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~feeder_combout\ = ( \reg_file|write_data[5]~5_combout\ )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataf => \reg_file|ALT_INV_write_data[5]~5_combout\,
+	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~feeder_combout\);
+
+-- Location: FF_X30_Y1_N58
+\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	d => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~feeder_combout\,
+	clrn => \KEY[0]~input_o\,
+	ena => \reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\);
+
+-- Location: FF_X29_Y1_N41
+\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	d => \reg_file|write_data[5]~5_combout\,
+	clrn => \KEY[0]~input_o\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\);
+
+-- Location: FF_X33_Y1_N44
+\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	asdata => \reg_file|write_data[5]~5_combout\,
+	clrn => \KEY[0]~input_o\,
+	sload => VCC,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\);
+
+-- Location: LABCELL_X30_Y1_N33
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~feeder_combout\ = ( \reg_file|write_data[5]~5_combout\ )
@@ -2338,7 +1737,7 @@ PORT MAP (
 	dataf => \reg_file|ALT_INV_write_data[5]~5_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~feeder_combout\);
 
--- Location: FF_X31_Y2_N32
+-- Location: FF_X30_Y1_N34
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2346,108 +1745,58 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~feeder_combout\,
 	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[1]~1_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~q\);
 
--- Location: FF_X33_Y1_N58
-\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	asdata => \reg_file|write_data[5]~5_combout\,
-	clrn => \KEY[0]~input_o\,
-	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[0]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\);
-
--- Location: FF_X31_Y2_N50
-\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	asdata => \reg_file|write_data[5]~5_combout\,
-	clrn => \KEY[0]~input_o\,
-	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[2]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\);
-
--- Location: FF_X33_Y1_N4
-\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	d => \reg_file|write_data[5]~5_combout\,
-	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[3]~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\);
-
--- Location: LABCELL_X31_Y2_N48
-\reg_file|FILE_REG_HW|Mux58~0\ : cyclonev_lcell_comb
+-- Location: LABCELL_X33_Y1_N42
+\reg_file|FILE_REG_HW|Mux11~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|Mux58~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\ & ( \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\ & ( ((!\SW[8]~input_o\ & 
--- ((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\))) # (\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~q\))) # (\SW[9]~input_o\) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\ 
--- & ( \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\ & ( (!\SW[8]~input_o\ & (((!\SW[9]~input_o\ & \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\)))) # (\SW[8]~input_o\ & (((\SW[9]~input_o\)) # 
--- (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~q\))) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\ & ( (!\SW[8]~input_o\ & 
--- (((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\) # (\SW[9]~input_o\)))) # (\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~q\ & (!\SW[9]~input_o\))) ) ) ) # ( 
--- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\ & ( (!\SW[9]~input_o\ & ((!\SW[8]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\))) # 
--- (\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~q\)))) ) ) )
+-- \reg_file|FILE_REG_HW|Mux11~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\ & ( \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~q\ & ( (!\SW[8]~input_o\ & (((\SW[9]~input_o\)) # 
+-- (\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\))) # (\SW[8]~input_o\ & (((!\SW[9]~input_o\) # (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\)))) ) ) ) # ( 
+-- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\ & ( \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~q\ & ( (!\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\ & (!\SW[9]~input_o\))) # 
+-- (\SW[8]~input_o\ & (((!\SW[9]~input_o\) # (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\)))) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\ & ( 
+-- !\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~q\ & ( (!\SW[8]~input_o\ & (((\SW[9]~input_o\)) # (\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\))) # (\SW[8]~input_o\ & (((\SW[9]~input_o\ & 
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\)))) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~q\ & ( (!\SW[8]~input_o\ & 
+-- (\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\ & (!\SW[9]~input_o\))) # (\SW[8]~input_o\ & (((\SW[9]~input_o\ & \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001000010110000000110101011101000010101101101010001111110111111",
+	lut_mask => "0010000000100101001010100010111101110000011101010111101001111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_SW[8]~input_o\,
-	datab => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|ALT_INV_q~q\,
+	datab => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|ALT_INV_q~q\,
 	datac => \ALT_INV_SW[9]~input_o\,
-	datad => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|ALT_INV_q~q\,
+	datad => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|ALT_INV_q~q\,
 	datae => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[5].FF|ALT_INV_q~q\,
-	dataf => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|ALT_INV_q~q\,
-	combout => \reg_file|FILE_REG_HW|Mux58~0_combout\);
+	dataf => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|ALT_INV_q~q\,
+	combout => \reg_file|FILE_REG_HW|Mux11~0_combout\);
 
--- Location: LABCELL_X29_Y1_N15
+-- Location: MLABCELL_X28_Y1_N45
 \data_bus[5]~5\ : cyclonev_lcell_comb
 -- Equation(s):
--- \data_bus[5]~5_combout\ = ( \KEY[1]~input_o\ & ( \reg_file|FILE_REG_HW|Mux58~0_combout\ ) ) # ( !\KEY[1]~input_o\ & ( write_data(5) ) )
+-- \data_bus[5]~5_combout\ = ( \reg_file|FILE_REG_HW|Mux11~0_combout\ & ( (write_data(5)) # (\KEY[1]~input_o\) ) ) # ( !\reg_file|FILE_REG_HW|Mux11~0_combout\ & ( (!\KEY[1]~input_o\ & write_data(5)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000111100001111000011110000111100000000111111110000000011111111",
+	lut_mask => "0000101000001010000010100000101001011111010111110101111101011111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
+	dataa => \ALT_INV_KEY[1]~input_o\,
 	datac => ALT_INV_write_data(5),
-	datad => \reg_file|FILE_REG_HW|ALT_INV_Mux58~0_combout\,
-	dataf => \ALT_INV_KEY[1]~input_o\,
+	dataf => \reg_file|FILE_REG_HW|ALT_INV_Mux11~0_combout\,
 	combout => \data_bus[5]~5_combout\);
 
--- Location: FF_X29_Y1_N16
+-- Location: FF_X28_Y1_N46
 \led_data[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2455,7 +1804,7 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \data_bus[5]~5_combout\,
 	ena => \KEY[1]~input_o\,
 	devclrn => ww_devclrn,
@@ -2473,22 +1822,7 @@ PORT MAP (
 	i => ww_SW(6),
 	o => \SW[6]~input_o\);
 
--- Location: LABCELL_X29_Y1_N42
-\write_data[6]~feeder\ : cyclonev_lcell_comb
--- Equation(s):
--- \write_data[6]~feeder_combout\ = ( \SW[6]~input_o\ )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataf => \ALT_INV_SW[6]~input_o\,
-	combout => \write_data[6]~feeder_combout\);
-
--- Location: FF_X29_Y1_N44
+-- Location: FF_X28_Y1_N14
 \write_data[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2496,14 +1830,15 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	d => \write_data[6]~feeder_combout\,
+	clk => \clock_divider|div_clks\(1),
+	asdata => \SW[6]~input_o\,
+	sload => VCC,
 	ena => \ALT_INV_KEY[1]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => write_data(6));
 
--- Location: LABCELL_X33_Y1_N42
+-- Location: LABCELL_X33_Y1_N48
 \reg_file|write_data[6]~6\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \reg_file|write_data[6]~6_combout\ = (write_data(6)) # (\KEY[1]~input_o\)
@@ -2511,15 +1846,15 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011111100111111001111110011111100111111001111110011111100111111",
+	lut_mask => "0101111101011111010111110101111101011111010111110101111101011111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \ALT_INV_KEY[1]~input_o\,
+	dataa => \ALT_INV_KEY[1]~input_o\,
 	datac => ALT_INV_write_data(6),
 	combout => \reg_file|write_data[6]~6_combout\);
 
--- Location: LABCELL_X31_Y2_N24
+-- Location: LABCELL_X30_Y1_N42
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~feeder_combout\ = ( \reg_file|write_data[6]~6_combout\ )
@@ -2534,7 +1869,7 @@ PORT MAP (
 	dataf => \reg_file|ALT_INV_write_data[6]~6_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~feeder_combout\);
 
--- Location: FF_X31_Y2_N25
+-- Location: FF_X30_Y1_N43
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2542,15 +1877,15 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~feeder_combout\,
 	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[1]~1_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~q\);
 
--- Location: LABCELL_X33_Y1_N6
+-- Location: LABCELL_X30_Y1_N6
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~feeder_combout\ = ( \reg_file|write_data[6]~6_combout\ )
@@ -2565,7 +1900,7 @@ PORT MAP (
 	dataf => \reg_file|ALT_INV_write_data[6]~6_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~feeder_combout\);
 
--- Location: FF_X33_Y1_N7
+-- Location: FF_X30_Y1_N7
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2573,15 +1908,15 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~feeder_combout\,
 	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[0]~0_combout\,
+	ena => \reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~q\);
 
--- Location: FF_X30_Y1_N32
+-- Location: FF_X33_Y1_N20
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[6].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2589,16 +1924,16 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	asdata => \reg_file|write_data[6]~6_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[2]~2_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[6].FF|q~q\);
 
--- Location: FF_X33_Y1_N43
+-- Location: FF_X33_Y1_N49
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2606,58 +1941,58 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \reg_file|write_data[6]~6_combout\,
 	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[3]~3_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|q~q\);
 
--- Location: LABCELL_X30_Y1_N30
-\reg_file|FILE_REG_HW|Mux57~0\ : cyclonev_lcell_comb
+-- Location: LABCELL_X33_Y1_N18
+\reg_file|FILE_REG_HW|Mux13~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|Mux57~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[6].FF|q~q\ & ( \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|q~q\ & ( ((!\SW[8]~input_o\ & 
+-- \reg_file|FILE_REG_HW|Mux13~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[6].FF|q~q\ & ( \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|q~q\ & ( ((!\SW[8]~input_o\ & 
 -- ((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~q\))) # (\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~q\))) # (\SW[9]~input_o\) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[6].FF|q~q\ 
--- & ( \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|q~q\ & ( (!\SW[8]~input_o\ & (((!\SW[9]~input_o\ & \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~q\)))) # (\SW[8]~input_o\ & (((\SW[9]~input_o\)) # 
+-- & ( \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|q~q\ & ( (!\SW[8]~input_o\ & (((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~q\ & !\SW[9]~input_o\)))) # (\SW[8]~input_o\ & (((\SW[9]~input_o\)) # 
 -- (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~q\))) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[6].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|q~q\ & ( (!\SW[8]~input_o\ & 
--- (((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~q\) # (\SW[9]~input_o\)))) # (\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~q\ & (!\SW[9]~input_o\))) ) ) ) # ( 
+-- (((\SW[9]~input_o\) # (\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~q\)))) # (\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~q\ & ((!\SW[9]~input_o\)))) ) ) ) # ( 
 -- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[6].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|q~q\ & ( (!\SW[9]~input_o\ & ((!\SW[8]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~q\))) # 
 -- (\SW[8]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~q\)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001000010110000000110101011101000010101101101010001111110111111",
+	lut_mask => "0001101100000000000110111010101000011011010101010001101111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_SW[8]~input_o\,
 	datab => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|ALT_INV_q~q\,
-	datac => \ALT_INV_SW[9]~input_o\,
-	datad => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|ALT_INV_q~q\,
+	datac => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|ALT_INV_q~q\,
+	datad => \ALT_INV_SW[9]~input_o\,
 	datae => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[6].FF|ALT_INV_q~q\,
 	dataf => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[6].FF|ALT_INV_q~q\,
-	combout => \reg_file|FILE_REG_HW|Mux57~0_combout\);
+	combout => \reg_file|FILE_REG_HW|Mux13~0_combout\);
 
--- Location: LABCELL_X29_Y1_N18
+-- Location: MLABCELL_X28_Y1_N18
 \data_bus[6]~6\ : cyclonev_lcell_comb
 -- Equation(s):
--- \data_bus[6]~6_combout\ = ( \KEY[1]~input_o\ & ( \reg_file|FILE_REG_HW|Mux57~0_combout\ ) ) # ( !\KEY[1]~input_o\ & ( write_data(6) ) )
+-- \data_bus[6]~6_combout\ = ( \reg_file|FILE_REG_HW|Mux13~0_combout\ & ( (write_data(6)) # (\KEY[1]~input_o\) ) ) # ( !\reg_file|FILE_REG_HW|Mux13~0_combout\ & ( (!\KEY[1]~input_o\ & write_data(6)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011001100110011001100110011001100001111000011110000111100001111",
+	lut_mask => "0000101000001010000010100000101001011111010111110101111101011111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => ALT_INV_write_data(6),
-	datac => \reg_file|FILE_REG_HW|ALT_INV_Mux57~0_combout\,
-	dataf => \ALT_INV_KEY[1]~input_o\,
+	dataa => \ALT_INV_KEY[1]~input_o\,
+	datac => ALT_INV_write_data(6),
+	dataf => \reg_file|FILE_REG_HW|ALT_INV_Mux13~0_combout\,
 	combout => \data_bus[6]~6_combout\);
 
--- Location: FF_X29_Y1_N19
+-- Location: FF_X28_Y1_N19
 \led_data[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2665,7 +2000,7 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \data_bus[6]~6_combout\,
 	ena => \KEY[1]~input_o\,
 	devclrn => ww_devclrn,
@@ -2683,7 +2018,22 @@ PORT MAP (
 	i => ww_SW(7),
 	o => \SW[7]~input_o\);
 
--- Location: FF_X29_Y1_N47
+-- Location: MLABCELL_X28_Y1_N15
+\write_data[7]~feeder\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \write_data[7]~feeder_combout\ = ( \SW[7]~input_o\ )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataf => \ALT_INV_SW[7]~input_o\,
+	combout => \write_data[7]~feeder_combout\);
+
+-- Location: FF_X28_Y1_N17
 \write_data[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2691,31 +2041,30 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	asdata => \SW[7]~input_o\,
-	sload => VCC,
+	clk => \clock_divider|div_clks\(1),
+	d => \write_data[7]~feeder_combout\,
 	ena => \ALT_INV_KEY[1]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => write_data(7));
 
--- Location: LABCELL_X33_Y1_N45
+-- Location: LABCELL_X33_Y1_N39
 \reg_file|write_data[7]~7\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|write_data[7]~7_combout\ = ( write_data(7) ) # ( !write_data(7) & ( \KEY[1]~input_o\ ) )
+-- \reg_file|write_data[7]~7_combout\ = (write_data(7)) # (\KEY[1]~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011001100110011001100110011001111111111111111111111111111111111",
+	lut_mask => "0101111101011111010111110101111101011111010111110101111101011111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \ALT_INV_KEY[1]~input_o\,
-	dataf => ALT_INV_write_data(7),
+	dataa => \ALT_INV_KEY[1]~input_o\,
+	datac => ALT_INV_write_data(7),
 	combout => \reg_file|write_data[7]~7_combout\);
 
--- Location: FF_X33_Y1_N46
+-- Location: FF_X33_Y1_N40
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2723,15 +2072,46 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \reg_file|write_data[7]~7_combout\,
 	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[3]~3_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q~q\);
 
--- Location: LABCELL_X31_Y2_N27
+-- Location: LABCELL_X30_Y1_N9
+\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~feeder\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~feeder_combout\ = ( \reg_file|write_data[7]~7_combout\ )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataf => \reg_file|ALT_INV_write_data[7]~7_combout\,
+	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~feeder_combout\);
+
+-- Location: FF_X30_Y1_N10
+\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock_divider|div_clks\(1),
+	d => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~feeder_combout\,
+	clrn => \KEY[0]~input_o\,
+	ena => \reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~q\);
+
+-- Location: LABCELL_X30_Y1_N45
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~feeder_combout\ = ( \reg_file|write_data[7]~7_combout\ )
@@ -2746,7 +2126,7 @@ PORT MAP (
 	dataf => \reg_file|ALT_INV_write_data[7]~7_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~feeder_combout\);
 
--- Location: FF_X31_Y2_N28
+-- Location: FF_X30_Y1_N46
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2754,15 +2134,15 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~feeder_combout\,
 	clrn => \KEY[0]~input_o\,
-	ena => \reg_file|FILE_REG_HW|we_sel[1]~1_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~q\);
 
--- Location: FF_X30_Y1_N8
+-- Location: FF_X33_Y1_N26
 \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|q\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2770,76 +2150,57 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	asdata => \reg_file|write_data[7]~7_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[2]~2_combout\,
+	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|q~q\);
 
--- Location: FF_X33_Y1_N10
-\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock_divider|div_clks\(20),
-	asdata => \reg_file|write_data[7]~7_combout\,
-	clrn => \KEY[0]~input_o\,
-	sload => VCC,
-	ena => \reg_file|FILE_REG_HW|we_sel[0]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~q\);
-
--- Location: LABCELL_X30_Y1_N6
-\reg_file|FILE_REG_HW|Mux56~0\ : cyclonev_lcell_comb
+-- Location: LABCELL_X33_Y1_N24
+\reg_file|FILE_REG_HW|Mux15~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|Mux56~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|q~q\ & ( \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~q\ & ( (!\SW[8]~input_o\) # ((!\SW[9]~input_o\ & 
--- ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~q\))) # (\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q~q\))) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|q~q\ & ( 
--- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~q\ & ( (!\SW[8]~input_o\ & (((!\SW[9]~input_o\)))) # (\SW[8]~input_o\ & ((!\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~q\))) # (\SW[9]~input_o\ & 
--- (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q~q\)))) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~q\ & ( (!\SW[8]~input_o\ & 
--- (((\SW[9]~input_o\)))) # (\SW[8]~input_o\ & ((!\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~q\))) # (\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q~q\)))) ) ) ) # ( 
--- !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|q~q\ & ( !\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~q\ & ( (\SW[8]~input_o\ & ((!\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~q\))) # 
--- (\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q~q\)))) ) ) )
+-- \reg_file|FILE_REG_HW|Mux15~0_combout\ = ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|q~q\ & ( \SW[8]~input_o\ & ( (!\SW[9]~input_o\ & ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~q\))) # (\SW[9]~input_o\ & 
+-- (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q~q\)) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|q~q\ & ( \SW[8]~input_o\ & ( (!\SW[9]~input_o\ & 
+-- ((\reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~q\))) # (\SW[9]~input_o\ & (\reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q~q\)) ) ) ) # ( \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|q~q\ & ( !\SW[8]~input_o\ 
+-- & ( (\reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~q\) # (\SW[9]~input_o\) ) ) ) # ( !\reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|q~q\ & ( !\SW[8]~input_o\ & ( (!\SW[9]~input_o\ & 
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~q\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000010100010001000001011011101110101111000100011010111110111011",
+	lut_mask => "0000101000001010010111110101111100010001101110110001000110111011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_SW[8]~input_o\,
+	dataa => \ALT_INV_SW[9]~input_o\,
 	datab => \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|ALT_INV_q~q\,
-	datac => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|ALT_INV_q~q\,
-	datad => \ALT_INV_SW[9]~input_o\,
+	datac => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|ALT_INV_q~q\,
+	datad => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|ALT_INV_q~q\,
 	datae => \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[7].FF|ALT_INV_q~q\,
-	dataf => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|ALT_INV_q~q\,
-	combout => \reg_file|FILE_REG_HW|Mux56~0_combout\);
+	dataf => \ALT_INV_SW[8]~input_o\,
+	combout => \reg_file|FILE_REG_HW|Mux15~0_combout\);
 
--- Location: LABCELL_X29_Y1_N21
+-- Location: MLABCELL_X28_Y1_N21
 \data_bus[7]~7\ : cyclonev_lcell_comb
 -- Equation(s):
--- \data_bus[7]~7_combout\ = ( \KEY[1]~input_o\ & ( \reg_file|FILE_REG_HW|Mux56~0_combout\ ) ) # ( !\KEY[1]~input_o\ & ( write_data(7) ) )
+-- \data_bus[7]~7_combout\ = (!\KEY[1]~input_o\ & (write_data(7))) # (\KEY[1]~input_o\ & ((\reg_file|FILE_REG_HW|Mux15~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000111100001111000011110000111100000000111111110000000011111111",
+	lut_mask => "0000101001011111000010100101111100001010010111110000101001011111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
+	dataa => \ALT_INV_KEY[1]~input_o\,
 	datac => ALT_INV_write_data(7),
-	datad => \reg_file|FILE_REG_HW|ALT_INV_Mux56~0_combout\,
-	dataf => \ALT_INV_KEY[1]~input_o\,
+	datad => \reg_file|FILE_REG_HW|ALT_INV_Mux15~0_combout\,
 	combout => \data_bus[7]~7_combout\);
 
--- Location: FF_X29_Y1_N22
+-- Location: FF_X28_Y1_N23
 \led_data[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2847,14 +2208,14 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clock_divider|div_clks\(20),
+	clk => \clock_divider|div_clks\(1),
 	d => \data_bus[7]~7_combout\,
 	ena => \KEY[1]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => led_data(7));
 
--- Location: MLABCELL_X28_Y36_N0
+-- Location: LABCELL_X24_Y35_N0
 \~QUARTUS_CREATED_GND~I\ : cyclonev_lcell_comb
 -- Equation(s):
 

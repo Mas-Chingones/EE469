@@ -32,7 +32,7 @@ module file_reg_de1soc_test(CLOCK_50, SW, KEY, LEDR);
 	assign we = !KEY[1];
 	
 	// divide 50 MHz clock to get sys clock
-	assign sys_clk = clocks[20];
+	assign sys_clk = clocks[1];
 	div_clock clock_divider(.orig_clk(CLOCK_50), .div_clks(clocks));
 	
 	// write to bus

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for file_register
-Thu Apr 14 21:29:13 2016
+Fri Apr 15 17:07:05 2016
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -110,13 +110,45 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 102. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL2"
 103. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL1"
 104. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL0"
-105. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW"
-106. Port Connectivity Checks: "file_register:reg_file"
-107. Port Connectivity Checks: "div_clock:clock_divider"
-108. Post-Synthesis Netlist Statistics for Top Partition
-109. Elapsed Time Per Partition
-110. Analysis & Synthesis Messages
-111. Analysis & Synthesis Suppressed Messages
+105. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[31].mux"
+106. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[30].mux"
+107. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[29].mux"
+108. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[28].mux"
+109. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[27].mux"
+110. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[26].mux"
+111. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[25].mux"
+112. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[24].mux"
+113. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[23].mux"
+114. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[22].mux"
+115. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[21].mux"
+116. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[20].mux"
+117. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[19].mux"
+118. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[18].mux"
+119. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[17].mux"
+120. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[16].mux"
+121. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[15].mux"
+122. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[14].mux"
+123. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[13].mux"
+124. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[12].mux"
+125. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[11].mux"
+126. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[10].mux"
+127. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[9].mux"
+128. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[8].mux"
+129. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[7].mux"
+130. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[6].mux"
+131. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[5].mux"
+132. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[4].mux"
+133. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[3].mux"
+134. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[2].mux"
+135. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[1].mux"
+136. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[0].mux"
+137. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW"
+138. Port Connectivity Checks: "file_register:reg_file"
+139. Port Connectivity Checks: "div_clock:clock_divider"
+140. Post-Synthesis Netlist Statistics for Top Partition
+141. Elapsed Time Per Partition
+142. Analysis & Synthesis Messages
+143. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -143,13 +175,13 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Apr 14 21:29:13 2016      ;
+; Analysis & Synthesis Status     ; Successful - Fri Apr 15 17:07:05 2016      ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                   ; file_register                              ;
 ; Top-level Entity Name           ; file_reg_de1soc_test                       ;
 ; Family                          ; Cyclone V                                  ;
 ; Logic utilization (in ALMs)     ; N/A                                        ;
-; Total registers                 ; 69                                         ;
+; Total registers                 ; 50                                         ;
 ; Total pins                      ; 23                                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0                                          ;
@@ -273,7 +305,7 @@ agreement for further details.
 +----------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path       ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                          ; Library ;
 +----------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------+---------+
-; decoder_5bit/mux_2to1/mux_2to1.v       ; yes             ; User Verilog HDL File  ; C:/EE_469/git/EE469/Lab2/verilog/file_register/decoder_5bit/mux_2to1/mux_2to1.v       ;         ;
+; shared_modules/mux_2to1/mux_2to1.v     ; yes             ; User Verilog HDL File  ; C:/EE_469/git/EE469/Lab2/verilog/file_register/shared_modules/mux_2to1/mux_2to1.v     ;         ;
 ; register_32bit/d_flipflop/d_flipflop.v ; yes             ; User Verilog HDL File  ; C:/EE_469/git/EE469/Lab2/verilog/file_register/register_32bit/d_flipflop/d_flipflop.v ;         ;
 ; decoder_5bit/decoder_5bit.v            ; yes             ; User Verilog HDL File  ; C:/EE_469/git/EE469/Lab2/verilog/file_register/decoder_5bit/decoder_5bit.v            ;         ;
 ; register_32bit/register_32bit.v        ; yes             ; User Verilog HDL File  ; C:/EE_469/git/EE469/Lab2/verilog/file_register/register_32bit/register_32bit.v        ;         ;
@@ -282,29 +314,29 @@ agreement for further details.
 +----------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                        ;
-+---------------------------------------------+--------------------------------------+
-; Resource                                    ; Usage                                ;
-+---------------------------------------------+--------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 40                                   ;
-;                                             ;                                      ;
-; Combinational ALUT usage for logic          ; 49                                   ;
-;     -- 7 input functions                    ; 0                                    ;
-;     -- 6 input functions                    ; 8                                    ;
-;     -- 5 input functions                    ; 0                                    ;
-;     -- 4 input functions                    ; 0                                    ;
-;     -- <=3 input functions                  ; 41                                   ;
-;                                             ;                                      ;
-; Dedicated logic registers                   ; 69                                   ;
-;                                             ;                                      ;
-; I/O pins                                    ; 23                                   ;
-; Total DSP Blocks                            ; 0                                    ;
-; Maximum fan-out node                        ; div_clock:clock_divider|div_clks[20] ;
-; Maximum fan-out                             ; 49                                   ;
-; Total fan-out                               ; 390                                  ;
-; Average fan-out                             ; 2.38                                 ;
-+---------------------------------------------+--------------------------------------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                       ;
++---------------------------------------------+-------------------------------------+
+; Resource                                    ; Usage                               ;
++---------------------------------------------+-------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 30                                  ;
+;                                             ;                                     ;
+; Combinational ALUT usage for logic          ; 30                                  ;
+;     -- 7 input functions                    ; 0                                   ;
+;     -- 6 input functions                    ; 8                                   ;
+;     -- 5 input functions                    ; 0                                   ;
+;     -- 4 input functions                    ; 0                                   ;
+;     -- <=3 input functions                  ; 22                                  ;
+;                                             ;                                     ;
+; Dedicated logic registers                   ; 50                                  ;
+;                                             ;                                     ;
+; I/O pins                                    ; 23                                  ;
+; Total DSP Blocks                            ; 0                                   ;
+; Maximum fan-out node                        ; div_clock:clock_divider|div_clks[1] ;
+; Maximum fan-out                             ; 49                                  ;
+; Total fan-out                               ; 314                                 ;
+; Average fan-out                             ; 2.49                                ;
++---------------------------------------------+-------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -312,10 +344,13 @@ agreement for further details.
 +--------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                        ; Library Name ;
 +--------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |file_reg_de1soc_test                            ; 49 (8)            ; 69 (16)      ; 0                 ; 0          ; 23   ; 0            ; |file_reg_de1soc_test                                                                                                                      ; work         ;
-;    |div_clock:clock_divider|                     ; 21 (21)           ; 21 (21)      ; 0                 ; 0          ; 0    ; 0            ; |file_reg_de1soc_test|div_clock:clock_divider                                                                                              ; work         ;
+; |file_reg_de1soc_test                            ; 30 (8)            ; 50 (16)      ; 0                 ; 0          ; 23   ; 0            ; |file_reg_de1soc_test                                                                                                                      ; work         ;
+;    |div_clock:clock_divider|                     ; 2 (2)             ; 2 (2)        ; 0                 ; 0          ; 0    ; 0            ; |file_reg_de1soc_test|div_clock:clock_divider                                                                                              ; work         ;
 ;    |file_register:reg_file|                      ; 20 (8)            ; 32 (0)       ; 0                 ; 0          ; 0    ; 0            ; |file_reg_de1soc_test|file_register:reg_file                                                                                               ; work         ;
-;       |file_register_low:FILE_REG_HW|            ; 12 (12)           ; 32 (0)       ; 0                 ; 0          ; 0    ; 0            ; |file_reg_de1soc_test|file_register:reg_file|file_register_low:FILE_REG_HW                                                                 ; work         ;
+;       |file_register_low:FILE_REG_HW|            ; 12 (8)            ; 32 (0)       ; 0                 ; 0          ; 0    ; 0            ; |file_reg_de1soc_test|file_register:reg_file|file_register_low:FILE_REG_HW                                                                 ; work         ;
+;          |decoder_5bit:write_decoder|            ; 3 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |file_reg_de1soc_test|file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder                                      ; work         ;
+;             |mux_2to1:BARREL[2].BARREL1|         ; 3 (3)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |file_reg_de1soc_test|file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[2].BARREL1           ; work         ;
+;          |mux_2to1:WRITE[0].mux|                 ; 1 (1)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |file_reg_de1soc_test|file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[0].mux                                           ; work         ;
 ;          |register_32bit:FILE_REGISTER[0].F_REG| ; 0 (0)             ; 8 (0)        ; 0                 ; 0          ; 0    ; 0            ; |file_reg_de1soc_test|file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG                           ; work         ;
 ;             |d_flipflop:REGISTER[0].FF|          ; 0 (0)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |file_reg_de1soc_test|file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[0].FF ; work         ;
 ;             |d_flipflop:REGISTER[1].FF|          ; 0 (0)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |file_reg_de1soc_test|file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[1].FF ; work         ;
@@ -585,8 +620,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[4].F_REG|d_flipflop:REGISTER[2].FF|q  ; Lost fanout        ;
 ; file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[4].F_REG|d_flipflop:REGISTER[1].FF|q  ; Lost fanout        ;
 ; file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[4].F_REG|d_flipflop:REGISTER[0].FF|q  ; Lost fanout        ;
-; div_clock:clock_divider|div_clks[21..31]                                                                                ; Lost fanout        ;
-; Total Number of Removed Registers = 235                                                                                 ;                    ;
+; div_clock:clock_divider|div_clks[2..31]                                                                                 ; Lost fanout        ;
+; Total Number of Removed Registers = 254                                                                                 ;                    ;
 +-------------------------------------------------------------------------------------------------------------------------+--------------------+
 
 
@@ -595,7 +630,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 69    ;
+; Total registers                              ; 50    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 32    ;
@@ -605,13 +640,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |file_reg_de1soc_test|file_register:reg_file|file_register_low:FILE_REG_HW|Mux63 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |file_reg_de1soc_test|file_register:reg_file|file_register_low:FILE_REG_HW|Mux9 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1492,6 +1527,294 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+-------+----------+--------------------------------------------------------------------------------------------------------------+
 
 
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[31].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[30].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[29].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[28].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[27].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[26].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[25].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[24].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[23].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[22].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[21].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[20].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[19].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[18].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[17].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[16].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[15].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[14].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[13].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[12].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[11].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[10].mux" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[9].mux" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[8].mux" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[7].mux" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[6].mux" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[5].mux" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[4].mux" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[3].mux" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[2].mux" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[1].mux" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[0].mux" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; in0  ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW"                                     ;
 +------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1511,14 +1834,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+-------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "div_clock:clock_divider"                                                                        ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port             ; Type   ; Severity ; Details                                                                             ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; div_clks[31..21] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; div_clks[19..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "div_clock:clock_divider"                                                                       ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; div_clks[31..2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; div_clks[0]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -1526,24 +1849,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 69                          ;
+; arriav_ff             ; 50                          ;
 ;     ENA               ; 16                          ;
 ;     ENA CLR           ; 32                          ;
-;     plain             ; 21                          ;
-; arriav_lcell_comb     ; 50                          ;
-;     arith             ; 20                          ;
-;         1 data inputs ; 19                          ;
-;         2 data inputs ; 1                           ;
-;     normal            ; 30                          ;
+;     plain             ; 2                           ;
+; arriav_lcell_comb     ; 31                          ;
+;     normal            ; 31                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 8                           ;
+;         2 data inputs ; 9                           ;
 ;         3 data inputs ; 12                          ;
 ;         6 data inputs ; 8                           ;
 ; boundary_port         ; 23                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.90                        ;
-; Average LUT depth     ; 1.71                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.33                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1562,10 +1882,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Thu Apr 14 21:29:07 2016
+    Info: Processing started: Fri Apr 15 17:06:58 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off file_register -c file_register
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
-Info (12021): Found 1 design units, including 1 entities, in source file decoder_5bit/mux_2to1/mux_2to1.v
+Info (12021): Found 1 design units, including 1 entities, in source file shared_modules/mux_2to1/mux_2to1.v
     Info (12023): Found entity 1: mux_2to1
 Info (12021): Found 1 design units, including 1 entities, in source file register_32bit/d_flipflop/d_flipflop.v
     Info (12023): Found entity 1: d_flipflop
@@ -1583,10 +1903,12 @@ Info (12127): Elaborating entity "file_reg_de1soc_test" for the top level hierar
 Info (12128): Elaborating entity "div_clock" for hierarchy "div_clock:clock_divider"
 Info (12128): Elaborating entity "file_register" for hierarchy "file_register:reg_file"
 Info (12128): Elaborating entity "file_register_low" for hierarchy "file_register:reg_file|file_register_low:FILE_REG_HW"
+Info (12128): Elaborating entity "mux_2to1" for hierarchy "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[0].mux"
 Info (12128): Elaborating entity "decoder_5bit" for hierarchy "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder"
-Info (12128): Elaborating entity "mux_2to1" for hierarchy "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL0"
 Info (12128): Elaborating entity "register_32bit" for hierarchy "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG"
 Info (12128): Elaborating entity "d_flipflop" for hierarchy "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[0].FF"
+Info (13014): Ignored 8 buffer(s)
+    Info (13019): Ignored 8 SOFT buffer(s)
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "read_data[0]" to the node "led_data[0]" into an OR gate
@@ -1618,19 +1940,19 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[8]" is stuck at GND
     Warning (13410): Pin "LEDR[9]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 235 registers lost all their fanouts during netlist optimizations.
+Info (17049): 254 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/EE_469/git/EE469/Lab2/verilog/file_register/output_files/file_register.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 112 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 93 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 89 logic cells
+    Info (21061): Implemented 70 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 602 megabytes
-    Info: Processing ended: Thu Apr 14 21:29:13 2016
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 620 megabytes
+    Info: Processing ended: Fri Apr 15 17:07:05 2016
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +------------------------------------------+

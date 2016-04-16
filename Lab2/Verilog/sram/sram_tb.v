@@ -1,148 +1,121 @@
-// Title:
-// Author: Adolfo Pineda
-// A test bench module
 
 // All files used
 `include "sram.v"
 
+// Title: SRAM Testbench
+// Author: Adolfo Pineda
+// A test bench module
+
 module sram_tb;
 
-	wire clk, rst, oe, we;
-	wire [10:0] address;
-	wire [15:0] data;
-	wire [15:0] read_out;
-	//reg [15:0] other_out;
+	wire clk, cs, oe, rw;
+	wire [31:0] addr_bus;
+	wire [31:0] data_bus;
 	
-	// Declare an instance of the Johnson module
-	sram ram (clk, rst, oe, we, address, data, read_out);
+	// dut
+	sram ram(clk, cs, oe, rw, addr_bus, data_bus);
 	
-	// Declare an instance of the JohnsonTester module
-	sramTester aTester (read_out, clk, rst, oe, we, address, data);
+	// tester
+	sramTester aTester(clk, cs, oe, rw, addr_bus, data_bus);
 
 	// File for gtkwave
 	initial begin
 		$dumpfile("sram.vcd");
 		$dumpvars(1, ram);
-		
 	end
 endmodule
 
-// Title:
+
+
+// Title: SRAM Tester
 // Author: Adolfo Pineda
 // A testing module
 
-module sramTester (read_out, clk, rst, oe, we, address, data);
+module sramTester (clk, cs, oe, rw, addr_bus, data_bus);
 
 	integer i;
 	input [15:0] read_out;
-	output reg clk, rst, oe, we;
-	output reg [10:0] address;
-	output reg [15:0] data;
+	output reg clk, cs, oe, rw;
+   inout [31:0] addr_bus;
+   inout [31:0] data_bus;
+	reg [10:0] address;
+	reg [15:0] data;
+   wire [10:0] addr_bus_mon;
+   wire [15:0] data_bus_mon;
 	parameter stimDelay = 1;
 	
+   assign data_bus = (!cs && rw && !oe) ? 32'bz : {16'b0, data};
+   assign addr_bus = !cs ? {21'b0, address} : 32'bz;
+   
+   
+   assign addr_bus_mon = addr_bus[10:0];
+   assign data_bus_mon = data_bus[15:0];
 	initial // Response
 	begin
 	
 	// Displays the labels and data
-	$display("\t\t clk \t rst \t we \t oe \t addr \t data \t r_out \t Time");
-	$monitor("\t\t %b \t %b \t %b \t %b \t %d \t %h \t %h \t %g",
-			clk, rst, we, oe, address, data, read_out, $time);
+	$display("\t\t cs rw oe   ad_b da_b  clk  Time");
+	$monitor("\t\t %b  %b  %b    %h  %h  %b    %g",
+			cs, rw, oe, addr_bus_mon, data_bus_mon, clk, $time);
 	end
 
 	initial // Stimulus
 	begin
-	clk = 0; 
-	rst = 1;
-	we = 0;
+   
+   // initial
+	clk = 1; 
+	cs = 1;
+	rw = 0;
 	oe = 0;
 	data = 16'b0;
 	address = 0;
 	
-	#stimDelay;
-	rst = 0;
-	#stimDelay;
-	rst = 1;
-	#stimDelay;
-	clk = 1;
+   // write values to first 16 addresses
+	clk = ~clk; #stimDelay;
+	cs = 0;
+	clk = ~clk; #stimDelay;
 	oe = 1;
-	//sram[0] = data;
 	for (i = 0; i < 32; i = i + 1) begin
-		#stimDelay;
-		clk = ~clk;
-		if (clk) begin
-			address = address + 1;
+		if (clk)
 			data = data + 1;
-		end
+		else
+         address = address + 1;
+      clk = ~clk; #stimDelay;
 	end
-	clk = ~clk;
-	#stimDelay;
 	
-	clk = ~clk;
-	#stimDelay;
-	
-	clk = ~clk;
-	#stimDelay;
-	
-	clk = 0;
-	we = 0;
+   // read
+   for(i=0; i<2; i=i+1) begin
+      clk = ~clk;   #stimDelay;
+   end
+   address = 5;
+	rw = 1;
 	oe = 0;
-	#stimDelay;
+   for(i=0; i<2; i=i+1) begin
+      clk = ~clk;   #stimDelay;
+   end
 	
-	clk = 1;
-	we = 1;
-	oe = 0;
-	#stimDelay;
-	
-	address = 5;
-	#stimDelay;
-	
-	clk = 0;
-	#stimDelay;
-	
-	clk = 1;
-	#stimDelay;
-	
+   // read again
 	address = 10;
-	clk = 0;
-	#stimDelay;
+   for(i=0; i<2; i=i+1) begin
+      clk = ~clk;   #stimDelay;
+   end
 	
-	clk = 1;
-	#stimDelay;
-	
-	clk = 0;
-	#stimDelay;
-	
-	we = 0;
+	// write
+   data = 16'hAAAA;
+   address = 11'h200;
+	rw = 0;
 	oe = 1;
-	clk = 1;
-	#stimDelay;
+	for(i=0; i<2; i=i+1) begin
+      clk = ~clk;   #stimDelay;
+   end
 	
-	clk = 0;
-	#stimDelay;
-	
-	clk = 1;
-	#stimDelay;
-	
-	clk = 0;
-	#stimDelay;
-	
-	address = 2000; 
-	data = 16'hAAAA;
-	clk = 1;
-	#stimDelay;
-	
-	we = 1;
+   // read again
+	rw = 1;
 	oe = 0;
-	clk = ~clk;
-	#stimDelay;
-	
-	clk = ~clk;
-	#stimDelay;
-	
-	clk = ~clk;
-	#stimDelay;
-	
-	#(2*stimDelay); // needed to see END of simulation
+	for(i=0; i<4; i=i+1) begin
+      clk = ~clk;   #stimDelay;
+   end
+   
 	$finish; // finish simulation
 	end
 	
