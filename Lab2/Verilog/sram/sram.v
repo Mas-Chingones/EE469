@@ -21,7 +21,7 @@ module sram(clk, cs, oe, rw, addr_bus, data_bus);
    assign data_bus = (!cs && rw && !oe) ? {16'b0, mdr} : 32'bz;
 	// drive data to sram from mdr if writing, drive data to mdr from sram if reading
 	// else hi-z
-   assign sram_data_bus = (!cs && rw && !oe) ? memory[mar] : ((!cs && !rw && oe) ? mdr : 16'bz);
+   assign sram_data_bus = (!cs && rw && !oe) ? memory[sram_mar_bus] : ((!cs && !rw && oe) ? mdr : 16'bz);
    
 	//// Tristate Buffers for address buses //
 	// addr_bus not driven by sram
@@ -43,7 +43,7 @@ module sram(clk, cs, oe, rw, addr_bus, data_bus);
          if(!clk && (!rw && oe))
             mdr = data_bus[15:0];
          else if(clk &&((rw && !oe)))
-            mdr = memory[sram_mar_bus];
+            mdr = sram_data_bus;
       end
    end   
    

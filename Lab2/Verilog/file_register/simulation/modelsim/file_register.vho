@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 14.0.0 Build 200 06/17/2014 SJ Web Edition"
 
--- DATE "04/15/2016 17:08:48"
+-- DATE "04/16/2016 12:25:40"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -92,7 +92,7 @@ SIGNAL \clock_divider|Add0~0_combout\ : std_logic;
 SIGNAL \KEY[1]~input_o\ : std_logic;
 SIGNAL \SW[0]~input_o\ : std_logic;
 SIGNAL \write_data[0]~feeder_combout\ : std_logic;
-SIGNAL \reg_file|write_data[0]~0_combout\ : std_logic;
+SIGNAL \reg_file|WRITE[0].write_tri~0_combout\ : std_logic;
 SIGNAL \KEY[0]~input_o\ : std_logic;
 SIGNAL \SW[9]~input_o\ : std_logic;
 SIGNAL \SW[8]~input_o\ : std_logic;
@@ -109,7 +109,7 @@ SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[2].F_REG|REGISTER[0].FF|q~q\ : std_lo
 SIGNAL \reg_file|FILE_REG_HW|Mux1~0_combout\ : std_logic;
 SIGNAL \data_bus[0]~0_combout\ : std_logic;
 SIGNAL \SW[1]~input_o\ : std_logic;
-SIGNAL \reg_file|write_data[1]~1_combout\ : std_logic;
+SIGNAL \reg_file|WRITE[1].write_tri~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~q\ : std_logic;
@@ -119,7 +119,7 @@ SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~q\ : std_lo
 SIGNAL \reg_file|FILE_REG_HW|Mux3~0_combout\ : std_logic;
 SIGNAL \data_bus[1]~1_combout\ : std_logic;
 SIGNAL \SW[2]~input_o\ : std_logic;
-SIGNAL \reg_file|write_data[2]~2_combout\ : std_logic;
+SIGNAL \reg_file|WRITE[2].write_tri~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~feeder_combout\ : std_logic;
@@ -130,7 +130,7 @@ SIGNAL \reg_file|FILE_REG_HW|Mux5~0_combout\ : std_logic;
 SIGNAL \data_bus[2]~2_combout\ : std_logic;
 SIGNAL \SW[3]~input_o\ : std_logic;
 SIGNAL \write_data[3]~feeder_combout\ : std_logic;
-SIGNAL \reg_file|write_data[3]~3_combout\ : std_logic;
+SIGNAL \reg_file|WRITE[3].write_tri~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~feeder_combout\ : std_logic;
@@ -140,7 +140,7 @@ SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[3].FF|q~q\ : std_lo
 SIGNAL \reg_file|FILE_REG_HW|Mux7~0_combout\ : std_logic;
 SIGNAL \data_bus[3]~3_combout\ : std_logic;
 SIGNAL \SW[4]~input_o\ : std_logic;
-SIGNAL \reg_file|write_data[4]~4_combout\ : std_logic;
+SIGNAL \reg_file|WRITE[4].write_tri~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[4].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[4].FF|q~q\ : std_logic;
@@ -149,7 +149,7 @@ SIGNAL \reg_file|FILE_REG_HW|Mux9~0_combout\ : std_logic;
 SIGNAL \data_bus[4]~4_combout\ : std_logic;
 SIGNAL \SW[5]~input_o\ : std_logic;
 SIGNAL \write_data[5]~feeder_combout\ : std_logic;
-SIGNAL \reg_file|write_data[5]~5_combout\ : std_logic;
+SIGNAL \reg_file|WRITE[5].write_tri~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[5].FF|q~q\ : std_logic;
@@ -159,7 +159,7 @@ SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~q\ : std_lo
 SIGNAL \reg_file|FILE_REG_HW|Mux11~0_combout\ : std_logic;
 SIGNAL \data_bus[5]~5_combout\ : std_logic;
 SIGNAL \SW[6]~input_o\ : std_logic;
-SIGNAL \reg_file|write_data[6]~6_combout\ : std_logic;
+SIGNAL \reg_file|WRITE[6].write_tri~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~feeder_combout\ : std_logic;
@@ -170,7 +170,7 @@ SIGNAL \reg_file|FILE_REG_HW|Mux13~0_combout\ : std_logic;
 SIGNAL \data_bus[6]~6_combout\ : std_logic;
 SIGNAL \SW[7]~input_o\ : std_logic;
 SIGNAL \write_data[7]~feeder_combout\ : std_logic;
-SIGNAL \reg_file|write_data[7]~7_combout\ : std_logic;
+SIGNAL \reg_file|WRITE[7].write_tri~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q~q\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~feeder_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~q\ : std_logic;
@@ -189,14 +189,14 @@ SIGNAL \ALT_INV_SW[0]~input_o\ : std_logic;
 SIGNAL \ALT_INV_SW[9]~input_o\ : std_logic;
 SIGNAL \ALT_INV_SW[8]~input_o\ : std_logic;
 SIGNAL \ALT_INV_KEY[1]~input_o\ : std_logic;
-SIGNAL \reg_file|ALT_INV_write_data[7]~7_combout\ : std_logic;
-SIGNAL \reg_file|ALT_INV_write_data[6]~6_combout\ : std_logic;
-SIGNAL \reg_file|ALT_INV_write_data[5]~5_combout\ : std_logic;
-SIGNAL \reg_file|ALT_INV_write_data[3]~3_combout\ : std_logic;
-SIGNAL \reg_file|ALT_INV_write_data[2]~2_combout\ : std_logic;
-SIGNAL \reg_file|ALT_INV_write_data[1]~1_combout\ : std_logic;
+SIGNAL \reg_file|ALT_INV_WRITE[7].write_tri~0_combout\ : std_logic;
+SIGNAL \reg_file|ALT_INV_WRITE[6].write_tri~0_combout\ : std_logic;
+SIGNAL \reg_file|ALT_INV_WRITE[5].write_tri~0_combout\ : std_logic;
+SIGNAL \reg_file|ALT_INV_WRITE[3].write_tri~0_combout\ : std_logic;
+SIGNAL \reg_file|ALT_INV_WRITE[2].write_tri~0_combout\ : std_logic;
+SIGNAL \reg_file|ALT_INV_WRITE[1].write_tri~0_combout\ : std_logic;
 SIGNAL \clock_divider|ALT_INV_div_clks\ : std_logic_vector(1 DOWNTO 0);
-SIGNAL \reg_file|ALT_INV_write_data[0]~0_combout\ : std_logic;
+SIGNAL \reg_file|ALT_INV_WRITE[0].write_tri~0_combout\ : std_logic;
 SIGNAL ALT_INV_write_data : std_logic_vector(7 DOWNTO 0);
 SIGNAL \reg_file|FILE_REG_HW|ALT_INV_Mux15~0_combout\ : std_logic;
 SIGNAL \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|ALT_INV_q~q\ : std_logic;
@@ -255,14 +255,14 @@ ww_devpor <= devpor;
 \ALT_INV_SW[9]~input_o\ <= NOT \SW[9]~input_o\;
 \ALT_INV_SW[8]~input_o\ <= NOT \SW[8]~input_o\;
 \ALT_INV_KEY[1]~input_o\ <= NOT \KEY[1]~input_o\;
-\reg_file|ALT_INV_write_data[7]~7_combout\ <= NOT \reg_file|write_data[7]~7_combout\;
-\reg_file|ALT_INV_write_data[6]~6_combout\ <= NOT \reg_file|write_data[6]~6_combout\;
-\reg_file|ALT_INV_write_data[5]~5_combout\ <= NOT \reg_file|write_data[5]~5_combout\;
-\reg_file|ALT_INV_write_data[3]~3_combout\ <= NOT \reg_file|write_data[3]~3_combout\;
-\reg_file|ALT_INV_write_data[2]~2_combout\ <= NOT \reg_file|write_data[2]~2_combout\;
-\reg_file|ALT_INV_write_data[1]~1_combout\ <= NOT \reg_file|write_data[1]~1_combout\;
+\reg_file|ALT_INV_WRITE[7].write_tri~0_combout\ <= NOT \reg_file|WRITE[7].write_tri~0_combout\;
+\reg_file|ALT_INV_WRITE[6].write_tri~0_combout\ <= NOT \reg_file|WRITE[6].write_tri~0_combout\;
+\reg_file|ALT_INV_WRITE[5].write_tri~0_combout\ <= NOT \reg_file|WRITE[5].write_tri~0_combout\;
+\reg_file|ALT_INV_WRITE[3].write_tri~0_combout\ <= NOT \reg_file|WRITE[3].write_tri~0_combout\;
+\reg_file|ALT_INV_WRITE[2].write_tri~0_combout\ <= NOT \reg_file|WRITE[2].write_tri~0_combout\;
+\reg_file|ALT_INV_WRITE[1].write_tri~0_combout\ <= NOT \reg_file|WRITE[1].write_tri~0_combout\;
 \clock_divider|ALT_INV_div_clks\(0) <= NOT \clock_divider|div_clks\(0);
-\reg_file|ALT_INV_write_data[0]~0_combout\ <= NOT \reg_file|write_data[0]~0_combout\;
+\reg_file|ALT_INV_WRITE[0].write_tri~0_combout\ <= NOT \reg_file|WRITE[0].write_tri~0_combout\;
 ALT_INV_write_data(7) <= NOT write_data(7);
 \reg_file|FILE_REG_HW|ALT_INV_Mux15~0_combout\ <= NOT \reg_file|FILE_REG_HW|Mux15~0_combout\;
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|ALT_INV_q~q\ <= NOT \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q~q\;
@@ -568,9 +568,9 @@ PORT MAP (
 	q => write_data(0));
 
 -- Location: LABCELL_X33_Y1_N9
-\reg_file|write_data[0]~0\ : cyclonev_lcell_comb
+\reg_file|WRITE[0].write_tri~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|write_data[0]~0_combout\ = ( write_data(0) ) # ( !write_data(0) & ( \KEY[1]~input_o\ ) )
+-- \reg_file|WRITE[0].write_tri~0_combout\ = ( write_data(0) ) # ( !write_data(0) & ( \KEY[1]~input_o\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -581,7 +581,7 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_KEY[1]~input_o\,
 	dataf => ALT_INV_write_data(0),
-	combout => \reg_file|write_data[0]~0_combout\);
+	combout => \reg_file|WRITE[0].write_tri~0_combout\);
 
 -- Location: IOIBUF_X36_Y0_N1
 \KEY[0]~input\ : cyclonev_io_ibuf
@@ -642,7 +642,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	d => \reg_file|write_data[0]~0_combout\,
+	d => \reg_file|WRITE[0].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
 	devclrn => ww_devclrn,
@@ -652,7 +652,7 @@ PORT MAP (
 -- Location: LABCELL_X30_Y1_N3
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~feeder_combout\ = ( \reg_file|write_data[0]~0_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~feeder_combout\ = ( \reg_file|WRITE[0].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -661,7 +661,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[0]~0_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[0].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[0].FF|q~feeder_combout\);
 
 -- Location: MLABCELL_X28_Y1_N48
@@ -700,7 +700,7 @@ PORT MAP (
 -- Location: LABCELL_X30_Y1_N39
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~feeder_combout\ = ( \reg_file|write_data[0]~0_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~feeder_combout\ = ( \reg_file|WRITE[0].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -709,7 +709,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[0]~0_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[0].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[0].FF|q~feeder_combout\);
 
 -- Location: MLABCELL_X28_Y1_N51
@@ -771,7 +771,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	asdata => \reg_file|write_data[0]~0_combout\,
+	asdata => \reg_file|WRITE[0].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
@@ -863,9 +863,9 @@ PORT MAP (
 	q => write_data(1));
 
 -- Location: LABCELL_X29_Y1_N36
-\reg_file|write_data[1]~1\ : cyclonev_lcell_comb
+\reg_file|WRITE[1].write_tri~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|write_data[1]~1_combout\ = ( write_data(1) ) # ( !write_data(1) & ( \KEY[1]~input_o\ ) )
+-- \reg_file|WRITE[1].write_tri~0_combout\ = ( write_data(1) ) # ( !write_data(1) & ( \KEY[1]~input_o\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -876,7 +876,7 @@ GENERIC MAP (
 PORT MAP (
 	datab => \ALT_INV_KEY[1]~input_o\,
 	dataf => ALT_INV_write_data(1),
-	combout => \reg_file|write_data[1]~1_combout\);
+	combout => \reg_file|WRITE[1].write_tri~0_combout\);
 
 -- Location: FF_X29_Y1_N38
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[1].FF|q\ : dffeas
@@ -887,7 +887,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	d => \reg_file|write_data[1]~1_combout\,
+	d => \reg_file|WRITE[1].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
 	devclrn => ww_devclrn,
@@ -897,7 +897,7 @@ PORT MAP (
 -- Location: LABCELL_X30_Y1_N48
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~feeder_combout\ = ( \reg_file|write_data[1]~1_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~feeder_combout\ = ( \reg_file|WRITE[1].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -906,7 +906,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[1]~1_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[1].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[1].FF|q~feeder_combout\);
 
 -- Location: FF_X30_Y1_N49
@@ -934,7 +934,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	asdata => \reg_file|write_data[1]~1_combout\,
+	asdata => \reg_file|WRITE[1].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
@@ -945,7 +945,7 @@ PORT MAP (
 -- Location: LABCELL_X30_Y1_N12
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~feeder_combout\ = ( \reg_file|write_data[1]~1_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~feeder_combout\ = ( \reg_file|WRITE[1].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -954,7 +954,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[1]~1_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[1].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[1].FF|q~feeder_combout\);
 
 -- Location: FF_X30_Y1_N14
@@ -1059,9 +1059,9 @@ PORT MAP (
 	q => write_data(2));
 
 -- Location: LABCELL_X33_Y1_N51
-\reg_file|write_data[2]~2\ : cyclonev_lcell_comb
+\reg_file|WRITE[2].write_tri~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|write_data[2]~2_combout\ = ( write_data(2) ) # ( !write_data(2) & ( \KEY[1]~input_o\ ) )
+-- \reg_file|WRITE[2].write_tri~0_combout\ = ( write_data(2) ) # ( !write_data(2) & ( \KEY[1]~input_o\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1072,12 +1072,12 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_KEY[1]~input_o\,
 	dataf => ALT_INV_write_data(2),
-	combout => \reg_file|write_data[2]~2_combout\);
+	combout => \reg_file|WRITE[2].write_tri~0_combout\);
 
 -- Location: LABCELL_X30_Y1_N15
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~feeder_combout\ = ( \reg_file|write_data[2]~2_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~feeder_combout\ = ( \reg_file|WRITE[2].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1086,7 +1086,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[2]~2_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[2].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[2].FF|q~feeder_combout\);
 
 -- Location: FF_X30_Y1_N16
@@ -1108,7 +1108,7 @@ PORT MAP (
 -- Location: LABCELL_X30_Y1_N51
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~feeder_combout\ = ( \reg_file|write_data[2]~2_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~feeder_combout\ = ( \reg_file|WRITE[2].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1117,7 +1117,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[2]~2_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[2].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[2].FF|q~feeder_combout\);
 
 -- Location: FF_X30_Y1_N52
@@ -1145,7 +1145,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	d => \reg_file|write_data[2]~2_combout\,
+	d => \reg_file|WRITE[2].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
 	devclrn => ww_devclrn,
@@ -1161,7 +1161,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	asdata => \reg_file|write_data[2]~2_combout\,
+	asdata => \reg_file|WRITE[2].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
@@ -1267,9 +1267,9 @@ PORT MAP (
 	q => write_data(3));
 
 -- Location: LABCELL_X33_Y1_N6
-\reg_file|write_data[3]~3\ : cyclonev_lcell_comb
+\reg_file|WRITE[3].write_tri~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|write_data[3]~3_combout\ = ( write_data(3) ) # ( !write_data(3) & ( \KEY[1]~input_o\ ) )
+-- \reg_file|WRITE[3].write_tri~0_combout\ = ( write_data(3) ) # ( !write_data(3) & ( \KEY[1]~input_o\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1280,12 +1280,12 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_KEY[1]~input_o\,
 	dataf => ALT_INV_write_data(3),
-	combout => \reg_file|write_data[3]~3_combout\);
+	combout => \reg_file|WRITE[3].write_tri~0_combout\);
 
 -- Location: LABCELL_X30_Y1_N36
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~feeder_combout\ = ( \reg_file|write_data[3]~3_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~feeder_combout\ = ( \reg_file|WRITE[3].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1294,7 +1294,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[3]~3_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[3].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[3].FF|q~feeder_combout\);
 
 -- Location: FF_X30_Y1_N37
@@ -1316,7 +1316,7 @@ PORT MAP (
 -- Location: LABCELL_X30_Y1_N0
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~feeder_combout\ = ( \reg_file|write_data[3]~3_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~feeder_combout\ = ( \reg_file|WRITE[3].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1325,7 +1325,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[3]~3_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[3].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[3].FF|q~feeder_combout\);
 
 -- Location: FF_X30_Y1_N1
@@ -1353,7 +1353,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	asdata => \reg_file|write_data[3]~3_combout\,
+	asdata => \reg_file|WRITE[3].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
@@ -1370,7 +1370,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	d => \reg_file|write_data[3]~3_combout\,
+	d => \reg_file|WRITE[3].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
 	devclrn => ww_devclrn,
@@ -1463,9 +1463,9 @@ PORT MAP (
 	q => write_data(4));
 
 -- Location: LABCELL_X33_Y1_N36
-\reg_file|write_data[4]~4\ : cyclonev_lcell_comb
+\reg_file|WRITE[4].write_tri~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|write_data[4]~4_combout\ = ( write_data(4) ) # ( !write_data(4) & ( \KEY[1]~input_o\ ) )
+-- \reg_file|WRITE[4].write_tri~0_combout\ = ( write_data(4) ) # ( !write_data(4) & ( \KEY[1]~input_o\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1476,7 +1476,7 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_KEY[1]~input_o\,
 	dataf => ALT_INV_write_data(4),
-	combout => \reg_file|write_data[4]~4_combout\);
+	combout => \reg_file|WRITE[4].write_tri~0_combout\);
 
 -- Location: FF_X30_Y1_N31
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[4].FF|q\ : dffeas
@@ -1487,7 +1487,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	asdata => \reg_file|write_data[4]~4_combout\,
+	asdata => \reg_file|WRITE[4].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~0_combout\,
@@ -1504,7 +1504,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	d => \reg_file|write_data[4]~4_combout\,
+	d => \reg_file|WRITE[4].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
 	devclrn => ww_devclrn,
@@ -1520,7 +1520,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	asdata => \reg_file|write_data[4]~4_combout\,
+	asdata => \reg_file|WRITE[4].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
 	ena => \reg_file|FILE_REG_HW|WRITE[0].mux|and_sel1~combout\,
@@ -1537,7 +1537,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	asdata => \reg_file|write_data[4]~4_combout\,
+	asdata => \reg_file|WRITE[4].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
@@ -1643,9 +1643,9 @@ PORT MAP (
 	q => write_data(5));
 
 -- Location: LABCELL_X29_Y1_N39
-\reg_file|write_data[5]~5\ : cyclonev_lcell_comb
+\reg_file|WRITE[5].write_tri~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|write_data[5]~5_combout\ = (write_data(5)) # (\KEY[1]~input_o\)
+-- \reg_file|WRITE[5].write_tri~0_combout\ = (write_data(5)) # (\KEY[1]~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1656,12 +1656,12 @@ GENERIC MAP (
 PORT MAP (
 	datab => \ALT_INV_KEY[1]~input_o\,
 	datac => ALT_INV_write_data(5),
-	combout => \reg_file|write_data[5]~5_combout\);
+	combout => \reg_file|WRITE[5].write_tri~0_combout\);
 
 -- Location: LABCELL_X30_Y1_N57
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~feeder_combout\ = ( \reg_file|write_data[5]~5_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~feeder_combout\ = ( \reg_file|WRITE[5].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1670,7 +1670,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[5]~5_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[5].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[5].FF|q~feeder_combout\);
 
 -- Location: FF_X30_Y1_N58
@@ -1698,7 +1698,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	d => \reg_file|write_data[5]~5_combout\,
+	d => \reg_file|WRITE[5].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
 	devclrn => ww_devclrn,
@@ -1714,7 +1714,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	asdata => \reg_file|write_data[5]~5_combout\,
+	asdata => \reg_file|WRITE[5].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
@@ -1725,7 +1725,7 @@ PORT MAP (
 -- Location: LABCELL_X30_Y1_N33
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~feeder_combout\ = ( \reg_file|write_data[5]~5_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~feeder_combout\ = ( \reg_file|WRITE[5].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1734,7 +1734,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[5]~5_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[5].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[5].FF|q~feeder_combout\);
 
 -- Location: FF_X30_Y1_N34
@@ -1839,9 +1839,9 @@ PORT MAP (
 	q => write_data(6));
 
 -- Location: LABCELL_X33_Y1_N48
-\reg_file|write_data[6]~6\ : cyclonev_lcell_comb
+\reg_file|WRITE[6].write_tri~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|write_data[6]~6_combout\ = (write_data(6)) # (\KEY[1]~input_o\)
+-- \reg_file|WRITE[6].write_tri~0_combout\ = (write_data(6)) # (\KEY[1]~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1852,12 +1852,12 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_KEY[1]~input_o\,
 	datac => ALT_INV_write_data(6),
-	combout => \reg_file|write_data[6]~6_combout\);
+	combout => \reg_file|WRITE[6].write_tri~0_combout\);
 
 -- Location: LABCELL_X30_Y1_N42
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~feeder_combout\ = ( \reg_file|write_data[6]~6_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~feeder_combout\ = ( \reg_file|WRITE[6].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1866,7 +1866,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[6]~6_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[6].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[6].FF|q~feeder_combout\);
 
 -- Location: FF_X30_Y1_N43
@@ -1888,7 +1888,7 @@ PORT MAP (
 -- Location: LABCELL_X30_Y1_N6
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~feeder_combout\ = ( \reg_file|write_data[6]~6_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~feeder_combout\ = ( \reg_file|WRITE[6].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1897,7 +1897,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[6]~6_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[6].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[6].FF|q~feeder_combout\);
 
 -- Location: FF_X30_Y1_N7
@@ -1925,7 +1925,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	asdata => \reg_file|write_data[6]~6_combout\,
+	asdata => \reg_file|WRITE[6].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
@@ -1942,7 +1942,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	d => \reg_file|write_data[6]~6_combout\,
+	d => \reg_file|WRITE[6].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
 	devclrn => ww_devclrn,
@@ -2049,9 +2049,9 @@ PORT MAP (
 	q => write_data(7));
 
 -- Location: LABCELL_X33_Y1_N39
-\reg_file|write_data[7]~7\ : cyclonev_lcell_comb
+\reg_file|WRITE[7].write_tri~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|write_data[7]~7_combout\ = (write_data(7)) # (\KEY[1]~input_o\)
+-- \reg_file|WRITE[7].write_tri~0_combout\ = (write_data(7)) # (\KEY[1]~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2062,7 +2062,7 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_KEY[1]~input_o\,
 	datac => ALT_INV_write_data(7),
-	combout => \reg_file|write_data[7]~7_combout\);
+	combout => \reg_file|WRITE[7].write_tri~0_combout\);
 
 -- Location: FF_X33_Y1_N40
 \reg_file|FILE_REG_HW|FILE_REGISTER[3].F_REG|REGISTER[7].FF|q\ : dffeas
@@ -2073,7 +2073,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	d => \reg_file|write_data[7]~7_combout\,
+	d => \reg_file|WRITE[7].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~2_combout\,
 	devclrn => ww_devclrn,
@@ -2083,7 +2083,7 @@ PORT MAP (
 -- Location: LABCELL_X30_Y1_N9
 \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~feeder_combout\ = ( \reg_file|write_data[7]~7_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~feeder_combout\ = ( \reg_file|WRITE[7].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2092,7 +2092,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[7]~7_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[7].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[0].F_REG|REGISTER[7].FF|q~feeder_combout\);
 
 -- Location: FF_X30_Y1_N10
@@ -2114,7 +2114,7 @@ PORT MAP (
 -- Location: LABCELL_X30_Y1_N45
 \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~feeder\ : cyclonev_lcell_comb
 -- Equation(s):
--- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~feeder_combout\ = ( \reg_file|write_data[7]~7_combout\ )
+-- \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~feeder_combout\ = ( \reg_file|WRITE[7].write_tri~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2123,7 +2123,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataf => \reg_file|ALT_INV_write_data[7]~7_combout\,
+	dataf => \reg_file|ALT_INV_WRITE[7].write_tri~0_combout\,
 	combout => \reg_file|FILE_REG_HW|FILE_REGISTER[1].F_REG|REGISTER[7].FF|q~feeder_combout\);
 
 -- Location: FF_X30_Y1_N46
@@ -2151,7 +2151,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock_divider|div_clks\(1),
-	asdata => \reg_file|write_data[7]~7_combout\,
+	asdata => \reg_file|WRITE[7].write_tri~0_combout\,
 	clrn => \KEY[0]~input_o\,
 	sload => VCC,
 	ena => \reg_file|FILE_REG_HW|write_decoder|BARREL[2].BARREL1|and_sel1~1_combout\,
