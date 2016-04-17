@@ -47,7 +47,6 @@ module sramTester (clk, cs, oe, rw, addr_bus, data_bus);
    assign data_bus = (!cs && rw && !oe) ? 32'bz : {16'b0, data};
    assign addr_bus = !cs ? {21'b0, address} : 32'bz;
    
-   
    assign addr_bus_mon = addr_bus[10:0];
    assign data_bus_mon = data_bus[15:0];
 	initial // Response
@@ -63,57 +62,56 @@ module sramTester (clk, cs, oe, rw, addr_bus, data_bus);
 	begin
    
    // initial
-	clk = 0; 
+	clk = 1; 
 	cs = 1;
 	rw = 0;
 	oe = 0;
 	data = 16'b0;
 	address = 0;
+   clk = 1;
 	
    // write values to first 16 addresses
-	clk = ~clk; #stimDelay;
-	cs = 0;
-	clk = ~clk; #stimDelay;
-	oe = 1;
+   for(i=0; i<2; i=i+1) begin
+      #stimDelay; clk = ~clk;
+   end
+   cs = 1'b0;
+   oe = 1'b1;
 	for (i = 0; i < 32; i = i + 1) begin
-		if (clk) begin
-			data = data + 1;
-         address = address + 1;
-      end
-	clk = ~clk; #stimDelay;
-	end
+			data = data + (i+1)%2;
+         address = address + (i+1)%2;
+         #stimDelay; clk = ~clk;
+   end
+	
 	
    // read
    for(i=0; i<2; i=i+1) begin
-      clk = ~clk;   #stimDelay;
+      #stimDelay; clk = ~clk;
    end
-   address = 5;
+   address = 0;
 	rw = 1;
 	oe = 0;
+   for (i = 0; i < 32; i = i + 1) begin
+      address = address + (i+1)%2;
+      #stimDelay; clk = ~clk;
+	end
    for(i=0; i<2; i=i+1) begin
-      clk = ~clk;   #stimDelay;
-   end
-	
-   // read again
-	address = 4'hA;
-   for(i=0; i<4; i=i+1) begin
-      clk = ~clk;   #stimDelay;
+      #stimDelay; clk = ~clk;
    end
 	
    // write
    rw = 0;
    oe = 1;
-   clk = ~clk;   #stimDelay;
    address = 11'h200;
    data = 16'hAAAA;
-   clk = ~clk;   #stimDelay;
-   clk = ~clk;	#stimDelay;
+   for(i=0; i<4; i=i+1) begin
+      #stimDelay; clk = ~clk;
+   end
 	
    // read again
 	rw = 1;
 	oe = 0;
 	for(i=0; i<4; i=i+1) begin
-      clk = ~clk;   #stimDelay;
+      #stimDelay; clk = ~clk;
    end
    
 	$finish; // finish simulation

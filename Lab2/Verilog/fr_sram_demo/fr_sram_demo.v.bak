@@ -1,0 +1,10 @@
+/*
+Author: Ian Gilman
+Title: File Register and SRAM Demo Module
+Summary: Code to demonstrate coordination of SRAM and file register computer
+   architecture for a MIPs machine
+*/
+
+module fr_sram_demo();
+
+endmodule
