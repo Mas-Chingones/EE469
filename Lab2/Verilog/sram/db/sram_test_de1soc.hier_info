@@ -1,30 +1,30 @@
-|sram_test_de1soc
+|sram_test_127_bit
 CLOCK_50 => CLOCK_50.IN1
-SW[0] => write_data.DATAA
-SW[1] => write_data.DATAA
-SW[2] => write_data.DATAA
-SW[3] => write_data.DATAA
-SW[4] => write_data.DATAA
-SW[5] => write_data.DATAA
-SW[6] => write_data.DATAA
-SW[7] => write_data.DATAA
-SW[8] => address[0].IN1
-SW[9] => address[1].IN1
-KEY[0] => cs.IN1
-KEY[1] => rw.IN1
-LEDR[0] << led_data[0].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[1] << led_data[1].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[2] << led_data[2].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[3] << led_data[3].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[4] << led_data[4].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[5] << led_data[5].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[6] << led_data[6].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[7] << led_data[7].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[8] << <GND>
-LEDR[9] << <GND>
+SW[0] => address_wire[0].IN1
+SW[1] => address_wire[1].IN1
+SW[2] => address_wire[2].IN1
+SW[3] => address_wire[3].IN1
+SW[4] => address_wire[4].IN1
+SW[5] => address_wire[5].IN1
+SW[6] => address_wire[6].IN1
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+KEY[0] => ~NO_FANOUT~
+KEY[1] => ~NO_FANOUT~
+LEDR[0] <= read_data[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= read_data[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= read_data[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= read_data[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= read_data[4].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] <= read_data[5].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] <= read_data[6].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
 
 
-|sram_test_de1soc|div_clock:clock_divider
+|sram_test_127_bit|div_clock:clock_divider
 orig_clk => div_clks[0]~reg0.CLK
 orig_clk => div_clks[1]~reg0.CLK
 orig_clk => div_clks[2]~reg0.CLK
@@ -91,7 +91,7 @@ div_clks[30] <= div_clks[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 div_clks[31] <= div_clks[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sram_test_de1soc|sram:memory
+|sram_test_127_bit|sram:memory
 clk => always1.IN1
 clk => memory.we_a.CLK
 clk => memory.waddr_a[10].CLK
