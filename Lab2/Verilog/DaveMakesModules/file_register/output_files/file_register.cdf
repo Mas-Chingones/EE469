@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("C:/EE_469/git/EE469/Lab2/verilog/file_register/output_files/") File("file_register.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("C:/EE469/EE469/Lab2/Verilog/DaveMakesModules/file_register/output_files/") File("file_register.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
