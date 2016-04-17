@@ -43,7 +43,7 @@ module sram(clk, cs, oe, rw, addr_bus, data_bus);
          if(!clk && (!rw && oe))
             mdr = data_bus[15:0];
          else if(clk &&((rw && !oe)))
-            mdr = memory[sram_mar_bus];
+            mdr = sram_data_bus;
       end
    end   
    
