@@ -1,0 +1,3741 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_024bff00 .scope module, "decoder_5bit_testbench" "decoder_5bit_testbench" 2 12;
+ .timescale 0 0;
+v0267b598_0 .net "code", 4 0, v0267b4e8_0;  1 drivers
+v0267b5f0_0 .net "selection", 31 0, L_026cae88;  1 drivers
+S_024793f0 .scope module, "decoder" "decoder_5bit" 2 17, 3 11 0, S_024bff00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 5 "code"
+    .port_info 1 /OUTPUT 32 "selection"
+v0267b2d8_0 .net "code", 4 0, v0267b4e8_0;  alias, 1 drivers
+v0267b330_0 .net "mux1", 31 0, L_026c3b38;  1 drivers
+v0267b388_0 .net "mux2", 31 0, L_026ca960;  1 drivers
+v0267b3e0_0 .net "mux3", 31 0, L_026cab18;  1 drivers
+v0267b438_0 .net "mux4", 31 0, L_026cacd0;  1 drivers
+v0267b490_0 .net "selection", 31 0, L_026cae88;  alias, 1 drivers
+L_0267b6a0 .part v0267b4e8_0, 0, 1;
+L_0267b750 .part L_026c3b38, 0, 1;
+L_0267b7a8 .part v0267b4e8_0, 1, 1;
+L_0267b858 .part L_026ca960, 0, 1;
+L_0267b8b0 .part v0267b4e8_0, 2, 1;
+L_0267b960 .part L_026cab18, 0, 1;
+L_0267b9b8 .part v0267b4e8_0, 3, 1;
+L_0267ba68 .part L_026cacd0, 0, 1;
+L_0267bac0 .part v0267b4e8_0, 4, 1;
+L_0267bb70 .part v0267b4e8_0, 0, 1;
+L_0267bc20 .part L_026c3b38, 1, 1;
+L_0267bc78 .part v0267b4e8_0, 1, 1;
+L_0267bd28 .part L_026ca960, 1, 1;
+L_0267bd80 .part v0267b4e8_0, 2, 1;
+L_0267be30 .part L_026cab18, 1, 1;
+L_0267be88 .part v0267b4e8_0, 3, 1;
+L_0267bf38 .part L_026cacd0, 1, 1;
+L_0267bf90 .part v0267b4e8_0, 4, 1;
+L_0267c040 .part v0267b4e8_0, 0, 1;
+L_0267c0f0 .part L_026c3b38, 2, 1;
+L_0267c148 .part L_026c3b38, 0, 1;
+L_0267c1a0 .part v0267b4e8_0, 1, 1;
+L_0267c250 .part L_026ca960, 2, 1;
+L_0267c2a8 .part v0267b4e8_0, 2, 1;
+L_0267c358 .part L_026cab18, 2, 1;
+L_0267c3b0 .part v0267b4e8_0, 3, 1;
+L_0267c460 .part L_026cacd0, 2, 1;
+L_0267c4b8 .part v0267b4e8_0, 4, 1;
+L_0267c568 .part v0267b4e8_0, 0, 1;
+L_0267c618 .part L_026c3b38, 3, 1;
+L_0267c670 .part L_026c3b38, 1, 1;
+L_0267c6c8 .part v0267b4e8_0, 1, 1;
+L_0267c778 .part L_026ca960, 3, 1;
+L_0267c7d0 .part v0267b4e8_0, 2, 1;
+L_0267c880 .part L_026cab18, 3, 1;
+L_0267c8d8 .part v0267b4e8_0, 3, 1;
+L_0267c988 .part L_026cacd0, 3, 1;
+L_0267c9e0 .part v0267b4e8_0, 4, 1;
+L_0267ca90 .part v0267b4e8_0, 0, 1;
+L_0267cb40 .part L_026c3b38, 4, 1;
+L_0267cb98 .part L_026c3b38, 2, 1;
+L_0267cbf0 .part v0267b4e8_0, 1, 1;
+L_0267cca0 .part L_026ca960, 4, 1;
+L_0267ccf8 .part L_026ca960, 0, 1;
+L_0267cd50 .part v0267b4e8_0, 2, 1;
+L_0267ce00 .part L_026cab18, 4, 1;
+L_0267ce58 .part v0267b4e8_0, 3, 1;
+L_0267cf08 .part L_026cacd0, 4, 1;
+L_0267cf60 .part v0267b4e8_0, 4, 1;
+L_0267d010 .part v0267b4e8_0, 0, 1;
+L_0267d0c0 .part L_026c3b38, 5, 1;
+L_0267d118 .part L_026c3b38, 3, 1;
+L_0267d170 .part v0267b4e8_0, 1, 1;
+L_0267d220 .part L_026ca960, 5, 1;
+L_0267d278 .part L_026ca960, 1, 1;
+L_0267d2d0 .part v0267b4e8_0, 2, 1;
+L_0267d380 .part L_026cab18, 5, 1;
+L_0267d3d8 .part v0267b4e8_0, 3, 1;
+L_0267d488 .part L_026cacd0, 5, 1;
+L_0267d4e0 .part v0267b4e8_0, 4, 1;
+L_0267d590 .part v0267b4e8_0, 0, 1;
+L_0267d640 .part L_026c3b38, 6, 1;
+L_0267d698 .part L_026c3b38, 4, 1;
+L_0267d6f0 .part v0267b4e8_0, 1, 1;
+L_0267d7a0 .part L_026ca960, 6, 1;
+L_0267d7f8 .part L_026ca960, 2, 1;
+L_0267d850 .part v0267b4e8_0, 2, 1;
+L_0267d900 .part L_026cab18, 6, 1;
+L_0267d958 .part v0267b4e8_0, 3, 1;
+L_0267da08 .part L_026cacd0, 6, 1;
+L_0267da60 .part v0267b4e8_0, 4, 1;
+L_0267db10 .part v0267b4e8_0, 0, 1;
+L_0267dbc0 .part L_026c3b38, 7, 1;
+L_0267dc18 .part L_026c3b38, 5, 1;
+L_0267dc70 .part v0267b4e8_0, 1, 1;
+L_0267dd20 .part L_026ca960, 7, 1;
+L_0267dd78 .part L_026ca960, 3, 1;
+L_0267ddd0 .part v0267b4e8_0, 2, 1;
+L_0267de80 .part L_026cab18, 7, 1;
+L_0267ded8 .part v0267b4e8_0, 3, 1;
+L_0267df88 .part L_026cacd0, 7, 1;
+L_0267dfe0 .part v0267b4e8_0, 4, 1;
+L_0267e090 .part v0267b4e8_0, 0, 1;
+L_0267e140 .part L_026c3b38, 8, 1;
+L_0267e198 .part L_026c3b38, 6, 1;
+L_0267e1f0 .part v0267b4e8_0, 1, 1;
+L_0267e2a0 .part L_026ca960, 8, 1;
+L_0267e2f8 .part L_026ca960, 4, 1;
+L_0267e350 .part v0267b4e8_0, 2, 1;
+L_0267e400 .part L_026cab18, 8, 1;
+L_0267e458 .part L_026cab18, 0, 1;
+L_0267e4b0 .part v0267b4e8_0, 3, 1;
+L_0267e560 .part L_026cacd0, 8, 1;
+L_0267e5b8 .part v0267b4e8_0, 4, 1;
+L_0267e668 .part v0267b4e8_0, 0, 1;
+L_0267e718 .part L_026c3b38, 9, 1;
+L_0267e770 .part L_026c3b38, 7, 1;
+L_0267e7c8 .part v0267b4e8_0, 1, 1;
+L_0267e878 .part L_026ca960, 9, 1;
+L_0267e8d0 .part L_026ca960, 5, 1;
+L_0267e928 .part v0267b4e8_0, 2, 1;
+L_0267e9d8 .part L_026cab18, 9, 1;
+L_0267ea30 .part L_026cab18, 1, 1;
+L_0267ea88 .part v0267b4e8_0, 3, 1;
+L_0267eb38 .part L_026cacd0, 9, 1;
+L_0267eb90 .part v0267b4e8_0, 4, 1;
+L_0267ec40 .part v0267b4e8_0, 0, 1;
+L_0267ecf0 .part L_026c3b38, 10, 1;
+L_0267ed48 .part L_026c3b38, 8, 1;
+L_0267eda0 .part v0267b4e8_0, 1, 1;
+L_0267ee50 .part L_026ca960, 10, 1;
+L_0267eea8 .part L_026ca960, 6, 1;
+L_026b1a48 .part v0267b4e8_0, 2, 1;
+L_026b1af8 .part L_026cab18, 10, 1;
+L_026b1b50 .part L_026cab18, 2, 1;
+L_026b1ba8 .part v0267b4e8_0, 3, 1;
+L_026b1c58 .part L_026cacd0, 10, 1;
+L_026b1cb0 .part v0267b4e8_0, 4, 1;
+L_026b1d60 .part v0267b4e8_0, 0, 1;
+L_026b1e10 .part L_026c3b38, 11, 1;
+L_026b1e68 .part L_026c3b38, 9, 1;
+L_026b1ec0 .part v0267b4e8_0, 1, 1;
+L_026b1f70 .part L_026ca960, 11, 1;
+L_026b1fc8 .part L_026ca960, 7, 1;
+L_026b2020 .part v0267b4e8_0, 2, 1;
+L_026b20d0 .part L_026cab18, 11, 1;
+L_026b2128 .part L_026cab18, 3, 1;
+L_026b2180 .part v0267b4e8_0, 3, 1;
+L_026b2230 .part L_026cacd0, 11, 1;
+L_026b2288 .part v0267b4e8_0, 4, 1;
+L_026b2338 .part v0267b4e8_0, 0, 1;
+L_026b23e8 .part L_026c3b38, 12, 1;
+L_026b2440 .part L_026c3b38, 10, 1;
+L_026b2498 .part v0267b4e8_0, 1, 1;
+L_026b2548 .part L_026ca960, 12, 1;
+L_026b25a0 .part L_026ca960, 8, 1;
+L_026b25f8 .part v0267b4e8_0, 2, 1;
+L_026b26a8 .part L_026cab18, 12, 1;
+L_026b2700 .part L_026cab18, 4, 1;
+L_026b2758 .part v0267b4e8_0, 3, 1;
+L_026b2808 .part L_026cacd0, 12, 1;
+L_026b2860 .part v0267b4e8_0, 4, 1;
+L_026b2910 .part v0267b4e8_0, 0, 1;
+L_026b29c0 .part L_026c3b38, 13, 1;
+L_026b2a18 .part L_026c3b38, 11, 1;
+L_026b2a70 .part v0267b4e8_0, 1, 1;
+L_026b2b20 .part L_026ca960, 13, 1;
+L_026b2b78 .part L_026ca960, 9, 1;
+L_026b2bd0 .part v0267b4e8_0, 2, 1;
+L_026b2c80 .part L_026cab18, 13, 1;
+L_026b2cd8 .part L_026cab18, 5, 1;
+L_026b2d30 .part v0267b4e8_0, 3, 1;
+L_026b2de0 .part L_026cacd0, 13, 1;
+L_026b2e38 .part v0267b4e8_0, 4, 1;
+L_026b2ee8 .part v0267b4e8_0, 0, 1;
+L_026b2f98 .part L_026c3b38, 14, 1;
+L_026b2ff0 .part L_026c3b38, 12, 1;
+L_026b3048 .part v0267b4e8_0, 1, 1;
+L_026b30f8 .part L_026ca960, 14, 1;
+L_026b3150 .part L_026ca960, 10, 1;
+L_026b31a8 .part v0267b4e8_0, 2, 1;
+L_026b3258 .part L_026cab18, 14, 1;
+L_026b32b0 .part L_026cab18, 6, 1;
+L_026b3308 .part v0267b4e8_0, 3, 1;
+L_026b33b8 .part L_026cacd0, 14, 1;
+L_026b3410 .part v0267b4e8_0, 4, 1;
+L_026b34c0 .part v0267b4e8_0, 0, 1;
+L_026b3570 .part L_026c3b38, 15, 1;
+L_026b35c8 .part L_026c3b38, 13, 1;
+L_026b3620 .part v0267b4e8_0, 1, 1;
+L_026b36d0 .part L_026ca960, 15, 1;
+L_026b3728 .part L_026ca960, 11, 1;
+L_026b3780 .part v0267b4e8_0, 2, 1;
+L_026b3830 .part L_026cab18, 15, 1;
+L_026b3888 .part L_026cab18, 7, 1;
+L_026b38e0 .part v0267b4e8_0, 3, 1;
+L_026b3990 .part L_026cacd0, 15, 1;
+L_026b39e8 .part v0267b4e8_0, 4, 1;
+L_026b3a98 .part v0267b4e8_0, 0, 1;
+L_026b3b48 .part L_026c3b38, 16, 1;
+L_026b3ba0 .part L_026c3b38, 14, 1;
+L_026b3bf8 .part v0267b4e8_0, 1, 1;
+L_026b3ca8 .part L_026ca960, 16, 1;
+L_026b3d00 .part L_026ca960, 12, 1;
+L_026b3d58 .part v0267b4e8_0, 2, 1;
+L_026b3e08 .part L_026cab18, 16, 1;
+L_026b3e60 .part L_026cab18, 8, 1;
+L_026b3eb8 .part v0267b4e8_0, 3, 1;
+L_026b3f68 .part L_026cacd0, 16, 1;
+L_026b3fc0 .part L_026cacd0, 0, 1;
+L_026b4018 .part v0267b4e8_0, 4, 1;
+L_026b40c8 .part v0267b4e8_0, 0, 1;
+L_026b4178 .part L_026c3b38, 17, 1;
+L_026b41d0 .part L_026c3b38, 15, 1;
+L_026b4228 .part v0267b4e8_0, 1, 1;
+L_026b42d8 .part L_026ca960, 17, 1;
+L_026b4330 .part L_026ca960, 13, 1;
+L_026b4388 .part v0267b4e8_0, 2, 1;
+L_026b4438 .part L_026cab18, 17, 1;
+L_026b4490 .part L_026cab18, 9, 1;
+L_026b44e8 .part v0267b4e8_0, 3, 1;
+L_026b4598 .part L_026cacd0, 17, 1;
+L_026b45f0 .part L_026cacd0, 1, 1;
+L_026b4648 .part v0267b4e8_0, 4, 1;
+L_026b46f8 .part v0267b4e8_0, 0, 1;
+L_026b47a8 .part L_026c3b38, 18, 1;
+L_026b4800 .part L_026c3b38, 16, 1;
+L_026b4858 .part v0267b4e8_0, 1, 1;
+L_026b4908 .part L_026ca960, 18, 1;
+L_026b4960 .part L_026ca960, 14, 1;
+L_026b49b8 .part v0267b4e8_0, 2, 1;
+L_026b4a68 .part L_026cab18, 18, 1;
+L_026b4ac0 .part L_026cab18, 10, 1;
+L_026b4b18 .part v0267b4e8_0, 3, 1;
+L_026b4bc8 .part L_026cacd0, 18, 1;
+L_026b4c20 .part L_026cacd0, 2, 1;
+L_026b4c78 .part v0267b4e8_0, 4, 1;
+L_026b4d28 .part v0267b4e8_0, 0, 1;
+L_026b4dd8 .part L_026c3b38, 19, 1;
+L_026b4e30 .part L_026c3b38, 17, 1;
+L_026b4e88 .part v0267b4e8_0, 1, 1;
+L_026b4f38 .part L_026ca960, 19, 1;
+L_026b4f90 .part L_026ca960, 15, 1;
+L_026b4fe8 .part v0267b4e8_0, 2, 1;
+L_026b5098 .part L_026cab18, 19, 1;
+L_026b50f0 .part L_026cab18, 11, 1;
+L_026b5148 .part v0267b4e8_0, 3, 1;
+L_026b51f8 .part L_026cacd0, 19, 1;
+L_026b5250 .part L_026cacd0, 3, 1;
+L_026b52a8 .part v0267b4e8_0, 4, 1;
+L_026b5358 .part v0267b4e8_0, 0, 1;
+L_026b5408 .part L_026c3b38, 20, 1;
+L_026b5460 .part L_026c3b38, 18, 1;
+L_026b54b8 .part v0267b4e8_0, 1, 1;
+L_026b5568 .part L_026ca960, 20, 1;
+L_026b55c0 .part L_026ca960, 16, 1;
+L_026b5618 .part v0267b4e8_0, 2, 1;
+L_026b56c8 .part L_026cab18, 20, 1;
+L_026b5720 .part L_026cab18, 12, 1;
+L_026b5778 .part v0267b4e8_0, 3, 1;
+L_026b5828 .part L_026cacd0, 20, 1;
+L_026b5880 .part L_026cacd0, 4, 1;
+L_026b58d8 .part v0267b4e8_0, 4, 1;
+L_026b5988 .part v0267b4e8_0, 0, 1;
+L_026bfdb0 .part L_026c3b38, 21, 1;
+L_026bfe08 .part L_026c3b38, 19, 1;
+L_026bfe60 .part v0267b4e8_0, 1, 1;
+L_026bff10 .part L_026ca960, 21, 1;
+L_026bff68 .part L_026ca960, 17, 1;
+L_026bffc0 .part v0267b4e8_0, 2, 1;
+L_026c0070 .part L_026cab18, 21, 1;
+L_026c00c8 .part L_026cab18, 13, 1;
+L_026c0120 .part v0267b4e8_0, 3, 1;
+L_026c01d0 .part L_026cacd0, 21, 1;
+L_026c0228 .part L_026cacd0, 5, 1;
+L_026c0280 .part v0267b4e8_0, 4, 1;
+L_026c0330 .part v0267b4e8_0, 0, 1;
+L_026c03e0 .part L_026c3b38, 22, 1;
+L_026c0438 .part L_026c3b38, 20, 1;
+L_026c0490 .part v0267b4e8_0, 1, 1;
+L_026c0540 .part L_026ca960, 22, 1;
+L_026c0598 .part L_026ca960, 18, 1;
+L_026c05f0 .part v0267b4e8_0, 2, 1;
+L_026c06a0 .part L_026cab18, 22, 1;
+L_026c06f8 .part L_026cab18, 14, 1;
+L_026c0750 .part v0267b4e8_0, 3, 1;
+L_026c0800 .part L_026cacd0, 22, 1;
+L_026c0858 .part L_026cacd0, 6, 1;
+L_026c08b0 .part v0267b4e8_0, 4, 1;
+L_026c0960 .part v0267b4e8_0, 0, 1;
+L_026c0a10 .part L_026c3b38, 23, 1;
+L_026c0a68 .part L_026c3b38, 21, 1;
+L_026c0ac0 .part v0267b4e8_0, 1, 1;
+L_026c0b70 .part L_026ca960, 23, 1;
+L_026c0bc8 .part L_026ca960, 19, 1;
+L_026c0c20 .part v0267b4e8_0, 2, 1;
+L_026c0cd0 .part L_026cab18, 23, 1;
+L_026c0d28 .part L_026cab18, 15, 1;
+L_026c0d80 .part v0267b4e8_0, 3, 1;
+L_026c0e30 .part L_026cacd0, 23, 1;
+L_026c0e88 .part L_026cacd0, 7, 1;
+L_026c0ee0 .part v0267b4e8_0, 4, 1;
+L_026c0f90 .part v0267b4e8_0, 0, 1;
+L_026c1040 .part L_026c3b38, 24, 1;
+L_026c1098 .part L_026c3b38, 22, 1;
+L_026c10f0 .part v0267b4e8_0, 1, 1;
+L_026c11a0 .part L_026ca960, 24, 1;
+L_026c11f8 .part L_026ca960, 20, 1;
+L_026c1250 .part v0267b4e8_0, 2, 1;
+L_026c1300 .part L_026cab18, 24, 1;
+L_026c1358 .part L_026cab18, 16, 1;
+L_026c13b0 .part v0267b4e8_0, 3, 1;
+L_026c1460 .part L_026cacd0, 24, 1;
+L_026c14b8 .part L_026cacd0, 8, 1;
+L_026c1510 .part v0267b4e8_0, 4, 1;
+L_026c15c0 .part v0267b4e8_0, 0, 1;
+L_026c1670 .part L_026c3b38, 25, 1;
+L_026c16c8 .part L_026c3b38, 23, 1;
+L_026c1720 .part v0267b4e8_0, 1, 1;
+L_026c17d0 .part L_026ca960, 25, 1;
+L_026c1828 .part L_026ca960, 21, 1;
+L_026c1880 .part v0267b4e8_0, 2, 1;
+L_026c1930 .part L_026cab18, 25, 1;
+L_026c1988 .part L_026cab18, 17, 1;
+L_026c19e0 .part v0267b4e8_0, 3, 1;
+L_026c1a90 .part L_026cacd0, 25, 1;
+L_026c1ae8 .part L_026cacd0, 9, 1;
+L_026c1b40 .part v0267b4e8_0, 4, 1;
+L_026c1bf0 .part v0267b4e8_0, 0, 1;
+L_026c1ca0 .part L_026c3b38, 26, 1;
+L_026c1cf8 .part L_026c3b38, 24, 1;
+L_026c1d50 .part v0267b4e8_0, 1, 1;
+L_026c1e00 .part L_026ca960, 26, 1;
+L_026c1e58 .part L_026ca960, 22, 1;
+L_026c1eb0 .part v0267b4e8_0, 2, 1;
+L_026c1f60 .part L_026cab18, 26, 1;
+L_026c1fb8 .part L_026cab18, 18, 1;
+L_026c2010 .part v0267b4e8_0, 3, 1;
+L_026c20c0 .part L_026cacd0, 26, 1;
+L_026c2118 .part L_026cacd0, 10, 1;
+L_026c2170 .part v0267b4e8_0, 4, 1;
+L_026c2220 .part v0267b4e8_0, 0, 1;
+L_026c22d0 .part L_026c3b38, 27, 1;
+L_026c2328 .part L_026c3b38, 25, 1;
+L_026c2380 .part v0267b4e8_0, 1, 1;
+L_026c2430 .part L_026ca960, 27, 1;
+L_026c2488 .part L_026ca960, 23, 1;
+L_026c24e0 .part v0267b4e8_0, 2, 1;
+L_026c2590 .part L_026cab18, 27, 1;
+L_026c25e8 .part L_026cab18, 19, 1;
+L_026c2640 .part v0267b4e8_0, 3, 1;
+L_026c26f0 .part L_026cacd0, 27, 1;
+L_026c2748 .part L_026cacd0, 11, 1;
+L_026c27a0 .part v0267b4e8_0, 4, 1;
+L_026c2850 .part v0267b4e8_0, 0, 1;
+L_026c2900 .part L_026c3b38, 28, 1;
+L_026c2958 .part L_026c3b38, 26, 1;
+L_026c29b0 .part v0267b4e8_0, 1, 1;
+L_026c2a60 .part L_026ca960, 28, 1;
+L_026c2ab8 .part L_026ca960, 24, 1;
+L_026c2b10 .part v0267b4e8_0, 2, 1;
+L_026c2bc0 .part L_026cab18, 28, 1;
+L_026c2c18 .part L_026cab18, 20, 1;
+L_026c2c70 .part v0267b4e8_0, 3, 1;
+L_026c2d20 .part L_026cacd0, 28, 1;
+L_026c2d78 .part L_026cacd0, 12, 1;
+L_026c2dd0 .part v0267b4e8_0, 4, 1;
+L_026c2e80 .part v0267b4e8_0, 0, 1;
+L_026c2f30 .part L_026c3b38, 29, 1;
+L_026c2f88 .part L_026c3b38, 27, 1;
+L_026c2fe0 .part v0267b4e8_0, 1, 1;
+L_026c3090 .part L_026ca960, 29, 1;
+L_026c30e8 .part L_026ca960, 25, 1;
+L_026c3140 .part v0267b4e8_0, 2, 1;
+L_026c31f0 .part L_026cab18, 29, 1;
+L_026c3248 .part L_026cab18, 21, 1;
+L_026c32a0 .part v0267b4e8_0, 3, 1;
+L_026c3350 .part L_026cacd0, 29, 1;
+L_026c33a8 .part L_026cacd0, 13, 1;
+L_026c3400 .part v0267b4e8_0, 4, 1;
+L_026c34b0 .part v0267b4e8_0, 0, 1;
+L_026c3560 .part L_026c3b38, 30, 1;
+L_026c35b8 .part L_026c3b38, 28, 1;
+L_026c3610 .part v0267b4e8_0, 1, 1;
+L_026c36c0 .part L_026ca960, 30, 1;
+L_026c3718 .part L_026ca960, 26, 1;
+L_026c3770 .part v0267b4e8_0, 2, 1;
+L_026c3820 .part L_026cab18, 30, 1;
+L_026c3878 .part L_026cab18, 22, 1;
+L_026c38d0 .part v0267b4e8_0, 3, 1;
+L_026c3980 .part L_026cacd0, 30, 1;
+L_026c39d8 .part L_026cacd0, 14, 1;
+L_026c3a30 .part v0267b4e8_0, 4, 1;
+L_026c3ae0 .part v0267b4e8_0, 0, 1;
+LS_026c3b38_0_0 .concat8 [ 1 1 1 1], L_0260ab68, L_0260afa0, L_026a9840, L_026a9c30;
+LS_026c3b38_0_4 .concat8 [ 1 1 1 1], L_026aa068, L_026aa4a0, L_026acd28, L_026ad160;
+LS_026c3b38_0_8 .concat8 [ 1 1 1 1], L_026ad598, L_026ad9d0, L_026b0678, L_026b0ab0;
+LS_026c3b38_0_12 .concat8 [ 1 1 1 1], L_026b0ee8, L_026b1320, L_026b8758, L_026b8b90;
+LS_026c3b38_0_16 .concat8 [ 1 1 1 1], L_026b8fc8, L_026bb748, L_026bbb80, L_026bbfb8;
+LS_026c3b38_0_20 .concat8 [ 1 1 1 1], L_026bc3f0, L_026bee78, L_026bf2b0, L_026bf6e8;
+LS_026c3b38_0_24 .concat8 [ 1 1 1 1], L_026bfb20, L_026c3f98, L_026c43d0, L_026c4808;
+LS_026c3b38_0_28 .concat8 [ 1 1 1 1], L_026c4c40, L_026c7cc0, L_026c80f8, L_026c8530;
+LS_026c3b38_1_0 .concat8 [ 4 4 4 4], LS_026c3b38_0_0, LS_026c3b38_0_4, LS_026c3b38_0_8, LS_026c3b38_0_12;
+LS_026c3b38_1_4 .concat8 [ 4 4 4 4], LS_026c3b38_0_16, LS_026c3b38_0_20, LS_026c3b38_0_24, LS_026c3b38_0_28;
+L_026c3b38 .concat8 [ 16 16 0 0], LS_026c3b38_1_0, LS_026c3b38_1_4;
+L_026c3be8 .part L_026c3b38, 31, 1;
+L_026c3c40 .part L_026c3b38, 29, 1;
+L_026c3c98 .part v0267b4e8_0, 1, 1;
+LS_026ca960_0_0 .concat8 [ 1 1 1 1], L_0260ac40, L_0260b078, L_026a9918, L_026a9d08;
+LS_026ca960_0_4 .concat8 [ 1 1 1 1], L_026aa140, L_026aa578, L_026ace00, L_026ad238;
+LS_026ca960_0_8 .concat8 [ 1 1 1 1], L_026ad670, L_026adaa8, L_026b0750, L_026b0b88;
+LS_026ca960_0_12 .concat8 [ 1 1 1 1], L_026b0fc0, L_026b13f8, L_026b8830, L_026b8c68;
+LS_026ca960_0_16 .concat8 [ 1 1 1 1], L_026b90a0, L_026bb820, L_026bbc58, L_026bc090;
+LS_026ca960_0_20 .concat8 [ 1 1 1 1], L_026bc4c8, L_026bef50, L_026bf388, L_026bf7c0;
+LS_026ca960_0_24 .concat8 [ 1 1 1 1], L_026bfbf8, L_026c4070, L_026c44a8, L_026c48e0;
+LS_026ca960_0_28 .concat8 [ 1 1 1 1], L_026c7960, L_026c7d98, L_026c81d0, L_026c8608;
+LS_026ca960_1_0 .concat8 [ 4 4 4 4], LS_026ca960_0_0, LS_026ca960_0_4, LS_026ca960_0_8, LS_026ca960_0_12;
+LS_026ca960_1_4 .concat8 [ 4 4 4 4], LS_026ca960_0_16, LS_026ca960_0_20, LS_026ca960_0_24, LS_026ca960_0_28;
+L_026ca960 .concat8 [ 16 16 0 0], LS_026ca960_1_0, LS_026ca960_1_4;
+L_026caa10 .part L_026ca960, 31, 1;
+L_026caa68 .part L_026ca960, 27, 1;
+L_026caac0 .part v0267b4e8_0, 2, 1;
+LS_026cab18_0_0 .concat8 [ 1 1 1 1], L_0260ad18, L_0260b198, L_026a99f0, L_026a9de0;
+LS_026cab18_0_4 .concat8 [ 1 1 1 1], L_026aa218, L_026aa650, L_026aced8, L_026ad310;
+LS_026cab18_0_8 .concat8 [ 1 1 1 1], L_026ad748, L_026adb80, L_026b0828, L_026b0c60;
+LS_026cab18_0_12 .concat8 [ 1 1 1 1], L_026b1098, L_026b84d0, L_026b8908, L_026b8d40;
+LS_026cab18_0_16 .concat8 [ 1 1 1 1], L_026b9178, L_026bb8f8, L_026bbd30, L_026bc168;
+LS_026cab18_0_20 .concat8 [ 1 1 1 1], L_026bc5a0, L_026bf028, L_026bf460, L_026bf898;
+LS_026cab18_0_24 .concat8 [ 1 1 1 1], L_026bfcd0, L_026c4148, L_026c4580, L_026c49b8;
+LS_026cab18_0_28 .concat8 [ 1 1 1 1], L_026c7a38, L_026c7e70, L_026c82a8, L_026c86e0;
+LS_026cab18_1_0 .concat8 [ 4 4 4 4], LS_026cab18_0_0, LS_026cab18_0_4, LS_026cab18_0_8, LS_026cab18_0_12;
+LS_026cab18_1_4 .concat8 [ 4 4 4 4], LS_026cab18_0_16, LS_026cab18_0_20, LS_026cab18_0_24, LS_026cab18_0_28;
+L_026cab18 .concat8 [ 16 16 0 0], LS_026cab18_1_0, LS_026cab18_1_4;
+L_026cabc8 .part L_026cab18, 31, 1;
+L_026cac20 .part L_026cab18, 23, 1;
+L_026cac78 .part v0267b4e8_0, 3, 1;
+LS_026cacd0_0_0 .concat8 [ 1 1 1 1], L_0260adf0, L_0260b270, L_026a9ac8, L_026a9eb8;
+LS_026cacd0_0_4 .concat8 [ 1 1 1 1], L_026aa2f0, L_026aa728, L_026acfb0, L_026ad3e8;
+LS_026cacd0_0_8 .concat8 [ 1 1 1 1], L_026ad820, L_026b04c8, L_026b0900, L_026b0d38;
+LS_026cacd0_0_12 .concat8 [ 1 1 1 1], L_026b1170, L_026b85a8, L_026b89e0, L_026b8e18;
+LS_026cacd0_0_16 .concat8 [ 1 1 1 1], L_026b9250, L_026bb9d0, L_026bbe08, L_026bc240;
+LS_026cacd0_0_20 .concat8 [ 1 1 1 1], L_026bc678, L_026bf100, L_026bf538, L_026bf970;
+LS_026cacd0_0_24 .concat8 [ 1 1 1 1], L_026c3de8, L_026c4220, L_026c4658, L_026c4a90;
+LS_026cacd0_0_28 .concat8 [ 1 1 1 1], L_026c7b10, L_026c7f48, L_026c8380, L_026c87b8;
+LS_026cacd0_1_0 .concat8 [ 4 4 4 4], LS_026cacd0_0_0, LS_026cacd0_0_4, LS_026cacd0_0_8, LS_026cacd0_0_12;
+LS_026cacd0_1_4 .concat8 [ 4 4 4 4], LS_026cacd0_0_16, LS_026cacd0_0_20, LS_026cacd0_0_24, LS_026cacd0_0_28;
+L_026cacd0 .concat8 [ 16 16 0 0], LS_026cacd0_1_0, LS_026cacd0_1_4;
+L_026cad80 .part L_026cacd0, 31, 1;
+L_026cadd8 .part L_026cacd0, 15, 1;
+L_026cae30 .part v0267b4e8_0, 4, 1;
+LS_026cae88_0_0 .concat8 [ 1 1 1 1], L_0260aec8, L_0260b348, L_026a9ba0, L_026a9f90;
+LS_026cae88_0_4 .concat8 [ 1 1 1 1], L_026aa3c8, L_026acc50, L_026ad088, L_026ad4c0;
+LS_026cae88_0_8 .concat8 [ 1 1 1 1], L_026ad8f8, L_026b05a0, L_026b09d8, L_026b0e10;
+LS_026cae88_0_12 .concat8 [ 1 1 1 1], L_026b1248, L_026b8680, L_026b8ab8, L_026b8ef0;
+LS_026cae88_0_16 .concat8 [ 1 1 1 1], L_026b9328, L_026bbaa8, L_026bbee0, L_026bc318;
+LS_026cae88_0_20 .concat8 [ 1 1 1 1], L_026beda0, L_026bf1d8, L_026bf610, L_026bfa48;
+LS_026cae88_0_24 .concat8 [ 1 1 1 1], L_026c3ec0, L_026c42f8, L_026c4730, L_026c4b68;
+LS_026cae88_0_28 .concat8 [ 1 1 1 1], L_026c7be8, L_026c8020, L_026c8458, L_026c8890;
+LS_026cae88_1_0 .concat8 [ 4 4 4 4], LS_026cae88_0_0, LS_026cae88_0_4, LS_026cae88_0_8, LS_026cae88_0_12;
+LS_026cae88_1_4 .concat8 [ 4 4 4 4], LS_026cae88_0_16, LS_026cae88_0_20, LS_026cae88_0_24, LS_026cae88_0_28;
+L_026cae88 .concat8 [ 16 16 0 0], LS_026cae88_1_0, LS_026cae88_1_4;
+S_0260e290 .scope generate, "BARREL[0]" "BARREL[0]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_0242ac58 .param/l "i" 0 3 19, +C4<00>;
+S_024113f0 .scope generate, "genblk10" "genblk10" 3 38, 3 38 0, S_0260e290;
+ .timescale 0 0;
+S_024114c0 .scope module, "BARREL3" "mux_2to1" 3 39, 4 7 0, S_024113f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0260ad60 .functor AND 1, L_0267b960, L_0267b908, C4<1>, C4<1>;
+L_0267f7f8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260ada8 .functor AND 1, L_0267f7f8, L_0267b9b8, C4<1>, C4<1>;
+L_0260adf0 .functor OR 1, L_0260ad60, L_0260ada8, C4<0>, C4<0>;
+v0260a2d0_0 .net *"_s1", 0 0, L_0267b908;  1 drivers
+v0260a328_0 .net "in0", 0 0, L_0267b960;  1 drivers
+v0260a380_0 .net "in1", 0 0, L_0267f7f8;  1 drivers
+v0260a3d8_0 .net "out", 0 0, L_0260adf0;  1 drivers
+v02641828_0 .net "sel0", 0 0, L_0260ad60;  1 drivers
+v02641880_0 .net "sel1", 0 0, L_0260ada8;  1 drivers
+v026418d8_0 .net "select", 0 0, L_0267b9b8;  1 drivers
+L_0267b908 .reduce/nor L_0267b9b8;
+S_02412c38 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_0260e290;
+ .timescale 0 0;
+S_02412d08 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_02412c38;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0260ae38 .functor AND 1, L_0267ba68, L_0267ba10, C4<1>, C4<1>;
+L_0267f820 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260ae80 .functor AND 1, L_0267f820, L_0267bac0, C4<1>, C4<1>;
+L_0260aec8 .functor OR 1, L_0260ae38, L_0260ae80, C4<0>, C4<0>;
+v02641930_0 .net *"_s1", 0 0, L_0267ba10;  1 drivers
+v02641988_0 .net "in0", 0 0, L_0267ba68;  1 drivers
+v026419e0_0 .net "in1", 0 0, L_0267f820;  1 drivers
+v02641a38_0 .net "out", 0 0, L_0260aec8;  1 drivers
+v02641a90_0 .net "sel0", 0 0, L_0260ae38;  1 drivers
+v02641ae8_0 .net "sel1", 0 0, L_0260ae80;  1 drivers
+v02641b40_0 .net "select", 0 0, L_0267bac0;  1 drivers
+L_0267ba10 .reduce/nor L_0267bac0;
+S_00785568 .scope generate, "genblk2" "genblk2" 3 21, 3 21 0, S_0260e290;
+ .timescale 0 0;
+S_00785638 .scope module, "BARREL0" "mux_2to1" 3 22, 4 7 0, S_00785568;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267f758 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+L_0260aad8 .functor AND 1, L_0267f758, L_0267b648, C4<1>, C4<1>;
+L_0267f780 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260ab20 .functor AND 1, L_0267f780, L_0267b6a0, C4<1>, C4<1>;
+L_0260ab68 .functor OR 1, L_0260aad8, L_0260ab20, C4<0>, C4<0>;
+v02641b98_0 .net *"_s1", 0 0, L_0267b648;  1 drivers
+v02641bf0_0 .net "in0", 0 0, L_0267f758;  1 drivers
+v02641c48_0 .net "in1", 0 0, L_0267f780;  1 drivers
+v02641ca0_0 .net "out", 0 0, L_0260ab68;  1 drivers
+v02641cf8_0 .net "sel0", 0 0, L_0260aad8;  1 drivers
+v02641d50_0 .net "sel1", 0 0, L_0260ab20;  1 drivers
+v02641da8_0 .net "select", 0 0, L_0267b6a0;  1 drivers
+L_0267b648 .reduce/nor L_0267b6a0;
+S_02486ce8 .scope generate, "genblk6" "genblk6" 3 28, 3 28 0, S_0260e290;
+ .timescale 0 0;
+S_02486db8 .scope module, "BARREL1" "mux_2to1" 3 29, 4 7 0, S_02486ce8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0260abb0 .functor AND 1, L_0267b750, L_0267b6f8, C4<1>, C4<1>;
+L_0267f7a8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260abf8 .functor AND 1, L_0267f7a8, L_0267b7a8, C4<1>, C4<1>;
+L_0260ac40 .functor OR 1, L_0260abb0, L_0260abf8, C4<0>, C4<0>;
+v02641e00_0 .net *"_s1", 0 0, L_0267b6f8;  1 drivers
+v02641e58_0 .net "in0", 0 0, L_0267b750;  1 drivers
+v02641eb0_0 .net "in1", 0 0, L_0267f7a8;  1 drivers
+v02641f08_0 .net "out", 0 0, L_0260ac40;  1 drivers
+v02641f60_0 .net "sel0", 0 0, L_0260abb0;  1 drivers
+v02641fb8_0 .net "sel1", 0 0, L_0260abf8;  1 drivers
+v02642010_0 .net "select", 0 0, L_0267b7a8;  1 drivers
+L_0267b6f8 .reduce/nor L_0267b7a8;
+S_00783b20 .scope generate, "genblk8" "genblk8" 3 33, 3 33 0, S_0260e290;
+ .timescale 0 0;
+S_00783bf0 .scope module, "BARREL2" "mux_2to1" 3 34, 4 7 0, S_00783b20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0260ac88 .functor AND 1, L_0267b858, L_0267b800, C4<1>, C4<1>;
+L_0267f7d0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260acd0 .functor AND 1, L_0267f7d0, L_0267b8b0, C4<1>, C4<1>;
+L_0260ad18 .functor OR 1, L_0260ac88, L_0260acd0, C4<0>, C4<0>;
+v02642068_0 .net *"_s1", 0 0, L_0267b800;  1 drivers
+v026420c0_0 .net "in0", 0 0, L_0267b858;  1 drivers
+v02642118_0 .net "in1", 0 0, L_0267f7d0;  1 drivers
+v02642170_0 .net "out", 0 0, L_0260ad18;  1 drivers
+v026421c8_0 .net "sel0", 0 0, L_0260ac88;  1 drivers
+v02642220_0 .net "sel1", 0 0, L_0260acd0;  1 drivers
+v02642278_0 .net "select", 0 0, L_0267b8b0;  1 drivers
+L_0267b800 .reduce/nor L_0267b8b0;
+S_02643810 .scope generate, "BARREL[1]" "BARREL[1]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_0242ad70 .param/l "i" 0 3 19, +C4<01>;
+S_026438e0 .scope generate, "genblk10" "genblk10" 3 38, 3 38 0, S_02643810;
+ .timescale 0 0;
+S_026439b0 .scope module, "BARREL3" "mux_2to1" 3 39, 4 7 0, S_026438e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0260b1e0 .functor AND 1, L_0267be30, L_0267bdd8, C4<1>, C4<1>;
+L_0267f8e8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260b228 .functor AND 1, L_0267f8e8, L_0267be88, C4<1>, C4<1>;
+L_0260b270 .functor OR 1, L_0260b1e0, L_0260b228, C4<0>, C4<0>;
+v026422d0_0 .net *"_s1", 0 0, L_0267bdd8;  1 drivers
+v02642328_0 .net "in0", 0 0, L_0267be30;  1 drivers
+v02642380_0 .net "in1", 0 0, L_0267f8e8;  1 drivers
+v026423d8_0 .net "out", 0 0, L_0260b270;  1 drivers
+v02642430_0 .net "sel0", 0 0, L_0260b1e0;  1 drivers
+v02642488_0 .net "sel1", 0 0, L_0260b228;  1 drivers
+v026424e0_0 .net "select", 0 0, L_0267be88;  1 drivers
+L_0267bdd8 .reduce/nor L_0267be88;
+S_02643a80 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_02643810;
+ .timescale 0 0;
+S_02643b68 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_02643a80;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0260b2b8 .functor AND 1, L_0267bf38, L_0267bee0, C4<1>, C4<1>;
+L_0267f910 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260b300 .functor AND 1, L_0267f910, L_0267bf90, C4<1>, C4<1>;
+L_0260b348 .functor OR 1, L_0260b2b8, L_0260b300, C4<0>, C4<0>;
+v02642538_0 .net *"_s1", 0 0, L_0267bee0;  1 drivers
+v02642590_0 .net "in0", 0 0, L_0267bf38;  1 drivers
+v026425e8_0 .net "in1", 0 0, L_0267f910;  1 drivers
+v02642640_0 .net "out", 0 0, L_0260b348;  1 drivers
+v02642698_0 .net "sel0", 0 0, L_0260b2b8;  1 drivers
+v026426f0_0 .net "sel1", 0 0, L_0260b300;  1 drivers
+v02642748_0 .net "select", 0 0, L_0267bf90;  1 drivers
+L_0267bee0 .reduce/nor L_0267bf90;
+S_02643c38 .scope generate, "genblk4" "genblk4" 3 23, 3 23 0, S_02643810;
+ .timescale 0 0;
+S_02643d08 .scope module, "BARREL0" "mux_2to1" 3 24, 4 7 0, S_02643c38;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267f848 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260af10 .functor AND 1, L_0267f848, L_0267bb18, C4<1>, C4<1>;
+L_0267f870 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+L_0260af58 .functor AND 1, L_0267f870, L_0267bb70, C4<1>, C4<1>;
+L_0260afa0 .functor OR 1, L_0260af10, L_0260af58, C4<0>, C4<0>;
+v026427a0_0 .net *"_s1", 0 0, L_0267bb18;  1 drivers
+v026427f8_0 .net "in0", 0 0, L_0267f848;  1 drivers
+v02642850_0 .net "in1", 0 0, L_0267f870;  1 drivers
+v026428a8_0 .net "out", 0 0, L_0260afa0;  1 drivers
+v02642900_0 .net "sel0", 0 0, L_0260af10;  1 drivers
+v02642958_0 .net "sel1", 0 0, L_0260af58;  1 drivers
+v026429b0_0 .net "select", 0 0, L_0267bb70;  1 drivers
+L_0267bb18 .reduce/nor L_0267bb70;
+S_02643dd8 .scope generate, "genblk6" "genblk6" 3 28, 3 28 0, S_02643810;
+ .timescale 0 0;
+S_02643ea8 .scope module, "BARREL1" "mux_2to1" 3 29, 4 7 0, S_02643dd8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0260afe8 .functor AND 1, L_0267bc20, L_0267bbc8, C4<1>, C4<1>;
+L_0267f898 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260b030 .functor AND 1, L_0267f898, L_0267bc78, C4<1>, C4<1>;
+L_0260b078 .functor OR 1, L_0260afe8, L_0260b030, C4<0>, C4<0>;
+v02642a08_0 .net *"_s1", 0 0, L_0267bbc8;  1 drivers
+v02642a60_0 .net "in0", 0 0, L_0267bc20;  1 drivers
+v02642ab8_0 .net "in1", 0 0, L_0267f898;  1 drivers
+v02642b10_0 .net "out", 0 0, L_0260b078;  1 drivers
+v02642b68_0 .net "sel0", 0 0, L_0260afe8;  1 drivers
+v02642bc0_0 .net "sel1", 0 0, L_0260b030;  1 drivers
+v02642c18_0 .net "select", 0 0, L_0267bc78;  1 drivers
+L_0267bbc8 .reduce/nor L_0267bc78;
+S_02643f78 .scope generate, "genblk8" "genblk8" 3 33, 3 33 0, S_02643810;
+ .timescale 0 0;
+S_02644048 .scope module, "BARREL2" "mux_2to1" 3 34, 4 7 0, S_02643f78;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0260b108 .functor AND 1, L_0267bd28, L_0267bcd0, C4<1>, C4<1>;
+L_0267f8c0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260b150 .functor AND 1, L_0267f8c0, L_0267bd80, C4<1>, C4<1>;
+L_0260b198 .functor OR 1, L_0260b108, L_0260b150, C4<0>, C4<0>;
+v02642c70_0 .net *"_s1", 0 0, L_0267bcd0;  1 drivers
+v02642cc8_0 .net "in0", 0 0, L_0267bd28;  1 drivers
+v02642d20_0 .net "in1", 0 0, L_0267f8c0;  1 drivers
+v02642d78_0 .net "out", 0 0, L_0260b198;  1 drivers
+v02642dd0_0 .net "sel0", 0 0, L_0260b108;  1 drivers
+v02642e28_0 .net "sel1", 0 0, L_0260b150;  1 drivers
+v02642e80_0 .net "select", 0 0, L_0267bd80;  1 drivers
+L_0267bcd0 .reduce/nor L_0267bd80;
+S_02644118 .scope generate, "BARREL[2]" "BARREL[2]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_0242ae88 .param/l "i" 0 3 19, +C4<010>;
+S_026441e8 .scope generate, "genblk10" "genblk10" 3 38, 3 38 0, S_02644118;
+ .timescale 0 0;
+S_026442b8 .scope module, "BARREL3" "mux_2to1" 3 39, 4 7 0, S_026441e8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026a9a38 .functor AND 1, L_0267c358, L_0267c300, C4<1>, C4<1>;
+L_0267f9b0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026a9a80 .functor AND 1, L_0267f9b0, L_0267c3b0, C4<1>, C4<1>;
+L_026a9ac8 .functor OR 1, L_026a9a38, L_026a9a80, C4<0>, C4<0>;
+v02642ed8_0 .net *"_s1", 0 0, L_0267c300;  1 drivers
+v02642f30_0 .net "in0", 0 0, L_0267c358;  1 drivers
+v02642f88_0 .net "in1", 0 0, L_0267f9b0;  1 drivers
+v02642fe0_0 .net "out", 0 0, L_026a9ac8;  1 drivers
+v02643038_0 .net "sel0", 0 0, L_026a9a38;  1 drivers
+v02643090_0 .net "sel1", 0 0, L_026a9a80;  1 drivers
+v026430e8_0 .net "select", 0 0, L_0267c3b0;  1 drivers
+L_0267c300 .reduce/nor L_0267c3b0;
+S_02644388 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_02644118;
+ .timescale 0 0;
+S_02644458 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_02644388;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026a9b10 .functor AND 1, L_0267c460, L_0267c408, C4<1>, C4<1>;
+L_0267f9d8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026a9b58 .functor AND 1, L_0267f9d8, L_0267c4b8, C4<1>, C4<1>;
+L_026a9ba0 .functor OR 1, L_026a9b10, L_026a9b58, C4<0>, C4<0>;
+v02643140_0 .net *"_s1", 0 0, L_0267c408;  1 drivers
+v02643198_0 .net "in0", 0 0, L_0267c460;  1 drivers
+v026431f0_0 .net "in1", 0 0, L_0267f9d8;  1 drivers
+v02643248_0 .net "out", 0 0, L_026a9ba0;  1 drivers
+v026432a0_0 .net "sel0", 0 0, L_026a9b10;  1 drivers
+v026432f8_0 .net "sel1", 0 0, L_026a9b58;  1 drivers
+v02643350_0 .net "select", 0 0, L_0267c4b8;  1 drivers
+L_0267c408 .reduce/nor L_0267c4b8;
+S_02644528 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02644118;
+ .timescale 0 0;
+S_026445f8 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02644528;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267f938 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260b390 .functor AND 1, L_0267f938, L_0267bfe8, C4<1>, C4<1>;
+L_0267f960 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260b3d8 .functor AND 1, L_0267f960, L_0267c040, C4<1>, C4<1>;
+L_026a9840 .functor OR 1, L_0260b390, L_0260b3d8, C4<0>, C4<0>;
+v026433a8_0 .net *"_s1", 0 0, L_0267bfe8;  1 drivers
+v02643400_0 .net "in0", 0 0, L_0267f938;  1 drivers
+v02643458_0 .net "in1", 0 0, L_0267f960;  1 drivers
+v026434b0_0 .net "out", 0 0, L_026a9840;  1 drivers
+v02643508_0 .net "sel0", 0 0, L_0260b390;  1 drivers
+v02643560_0 .net "sel1", 0 0, L_0260b3d8;  1 drivers
+v026435b8_0 .net "select", 0 0, L_0267c040;  1 drivers
+L_0267bfe8 .reduce/nor L_0267c040;
+S_026446c8 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02644118;
+ .timescale 0 0;
+S_02644798 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_026446c8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026a9888 .functor AND 1, L_0267c0f0, L_0267c098, C4<1>, C4<1>;
+L_026a98d0 .functor AND 1, L_0267c148, L_0267c1a0, C4<1>, C4<1>;
+L_026a9918 .functor OR 1, L_026a9888, L_026a98d0, C4<0>, C4<0>;
+v02643610_0 .net *"_s1", 0 0, L_0267c098;  1 drivers
+v02643668_0 .net "in0", 0 0, L_0267c0f0;  1 drivers
+v026436c0_0 .net "in1", 0 0, L_0267c148;  1 drivers
+v02643718_0 .net "out", 0 0, L_026a9918;  1 drivers
+v02643770_0 .net "sel0", 0 0, L_026a9888;  1 drivers
+v02646b68_0 .net "sel1", 0 0, L_026a98d0;  1 drivers
+v02646bc0_0 .net "select", 0 0, L_0267c1a0;  1 drivers
+L_0267c098 .reduce/nor L_0267c1a0;
+S_02644868 .scope generate, "genblk8" "genblk8" 3 33, 3 33 0, S_02644118;
+ .timescale 0 0;
+S_02644938 .scope module, "BARREL2" "mux_2to1" 3 34, 4 7 0, S_02644868;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026a9960 .functor AND 1, L_0267c250, L_0267c1f8, C4<1>, C4<1>;
+L_0267f988 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026a99a8 .functor AND 1, L_0267f988, L_0267c2a8, C4<1>, C4<1>;
+L_026a99f0 .functor OR 1, L_026a9960, L_026a99a8, C4<0>, C4<0>;
+v02646c18_0 .net *"_s1", 0 0, L_0267c1f8;  1 drivers
+v02646c70_0 .net "in0", 0 0, L_0267c250;  1 drivers
+v02646cc8_0 .net "in1", 0 0, L_0267f988;  1 drivers
+v02646d20_0 .net "out", 0 0, L_026a99f0;  1 drivers
+v02646d78_0 .net "sel0", 0 0, L_026a9960;  1 drivers
+v02646dd0_0 .net "sel1", 0 0, L_026a99a8;  1 drivers
+v02646e28_0 .net "select", 0 0, L_0267c2a8;  1 drivers
+L_0267c1f8 .reduce/nor L_0267c2a8;
+S_02644a08 .scope generate, "BARREL[3]" "BARREL[3]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02648b68 .param/l "i" 0 3 19, +C4<011>;
+S_02644ad8 .scope generate, "genblk10" "genblk10" 3 38, 3 38 0, S_02644a08;
+ .timescale 0 0;
+S_02644ba8 .scope module, "BARREL3" "mux_2to1" 3 39, 4 7 0, S_02644ad8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026a9e28 .functor AND 1, L_0267c880, L_0267c828, C4<1>, C4<1>;
+L_0267fa78 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026a9e70 .functor AND 1, L_0267fa78, L_0267c8d8, C4<1>, C4<1>;
+L_026a9eb8 .functor OR 1, L_026a9e28, L_026a9e70, C4<0>, C4<0>;
+v02646e80_0 .net *"_s1", 0 0, L_0267c828;  1 drivers
+v02646ed8_0 .net "in0", 0 0, L_0267c880;  1 drivers
+v02646f30_0 .net "in1", 0 0, L_0267fa78;  1 drivers
+v02646f88_0 .net "out", 0 0, L_026a9eb8;  1 drivers
+v02646fe0_0 .net "sel0", 0 0, L_026a9e28;  1 drivers
+v02647038_0 .net "sel1", 0 0, L_026a9e70;  1 drivers
+v02647090_0 .net "select", 0 0, L_0267c8d8;  1 drivers
+L_0267c828 .reduce/nor L_0267c8d8;
+S_02644c78 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_02644a08;
+ .timescale 0 0;
+S_02644d48 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_02644c78;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026a9f00 .functor AND 1, L_0267c988, L_0267c930, C4<1>, C4<1>;
+L_0267faa0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026a9f48 .functor AND 1, L_0267faa0, L_0267c9e0, C4<1>, C4<1>;
+L_026a9f90 .functor OR 1, L_026a9f00, L_026a9f48, C4<0>, C4<0>;
+v026470e8_0 .net *"_s1", 0 0, L_0267c930;  1 drivers
+v02647140_0 .net "in0", 0 0, L_0267c988;  1 drivers
+v02647198_0 .net "in1", 0 0, L_0267faa0;  1 drivers
+v026471f0_0 .net "out", 0 0, L_026a9f90;  1 drivers
+v02647248_0 .net "sel0", 0 0, L_026a9f00;  1 drivers
+v026472a0_0 .net "sel1", 0 0, L_026a9f48;  1 drivers
+v026472f8_0 .net "select", 0 0, L_0267c9e0;  1 drivers
+L_0267c930 .reduce/nor L_0267c9e0;
+S_02644e18 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02644a08;
+ .timescale 0 0;
+S_02644ee8 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02644e18;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267fa00 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0260b0c0 .functor AND 1, L_0267fa00, L_0267c510, C4<1>, C4<1>;
+L_0267fa28 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026a9be8 .functor AND 1, L_0267fa28, L_0267c568, C4<1>, C4<1>;
+L_026a9c30 .functor OR 1, L_0260b0c0, L_026a9be8, C4<0>, C4<0>;
+v02647350_0 .net *"_s1", 0 0, L_0267c510;  1 drivers
+v026473a8_0 .net "in0", 0 0, L_0267fa00;  1 drivers
+v02647400_0 .net "in1", 0 0, L_0267fa28;  1 drivers
+v02647458_0 .net "out", 0 0, L_026a9c30;  1 drivers
+v026474b0_0 .net "sel0", 0 0, L_0260b0c0;  1 drivers
+v02647508_0 .net "sel1", 0 0, L_026a9be8;  1 drivers
+v02647560_0 .net "select", 0 0, L_0267c568;  1 drivers
+L_0267c510 .reduce/nor L_0267c568;
+S_02644fb8 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02644a08;
+ .timescale 0 0;
+S_02645088 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02644fb8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026a9c78 .functor AND 1, L_0267c618, L_0267c5c0, C4<1>, C4<1>;
+L_026a9cc0 .functor AND 1, L_0267c670, L_0267c6c8, C4<1>, C4<1>;
+L_026a9d08 .functor OR 1, L_026a9c78, L_026a9cc0, C4<0>, C4<0>;
+v026475b8_0 .net *"_s1", 0 0, L_0267c5c0;  1 drivers
+v02647610_0 .net "in0", 0 0, L_0267c618;  1 drivers
+v02647668_0 .net "in1", 0 0, L_0267c670;  1 drivers
+v026476c0_0 .net "out", 0 0, L_026a9d08;  1 drivers
+v02647718_0 .net "sel0", 0 0, L_026a9c78;  1 drivers
+v02647770_0 .net "sel1", 0 0, L_026a9cc0;  1 drivers
+v026477c8_0 .net "select", 0 0, L_0267c6c8;  1 drivers
+L_0267c5c0 .reduce/nor L_0267c6c8;
+S_02645158 .scope generate, "genblk8" "genblk8" 3 33, 3 33 0, S_02644a08;
+ .timescale 0 0;
+S_02645228 .scope module, "BARREL2" "mux_2to1" 3 34, 4 7 0, S_02645158;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026a9d50 .functor AND 1, L_0267c778, L_0267c720, C4<1>, C4<1>;
+L_0267fa50 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026a9d98 .functor AND 1, L_0267fa50, L_0267c7d0, C4<1>, C4<1>;
+L_026a9de0 .functor OR 1, L_026a9d50, L_026a9d98, C4<0>, C4<0>;
+v02647820_0 .net *"_s1", 0 0, L_0267c720;  1 drivers
+v02647878_0 .net "in0", 0 0, L_0267c778;  1 drivers
+v026478d0_0 .net "in1", 0 0, L_0267fa50;  1 drivers
+v02647928_0 .net "out", 0 0, L_026a9de0;  1 drivers
+v02647980_0 .net "sel0", 0 0, L_026a9d50;  1 drivers
+v026479d8_0 .net "sel1", 0 0, L_026a9d98;  1 drivers
+v02647a30_0 .net "select", 0 0, L_0267c7d0;  1 drivers
+L_0267c720 .reduce/nor L_0267c7d0;
+S_026452f8 .scope generate, "BARREL[4]" "BARREL[4]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02648ca8 .param/l "i" 0 3 19, +C4<0100>;
+S_026453c8 .scope generate, "genblk10" "genblk10" 3 38, 3 38 0, S_026452f8;
+ .timescale 0 0;
+S_02645498 .scope module, "BARREL3" "mux_2to1" 3 39, 4 7 0, S_026453c8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026aa260 .functor AND 1, L_0267ce00, L_0267cda8, C4<1>, C4<1>;
+L_0267fb18 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026aa2a8 .functor AND 1, L_0267fb18, L_0267ce58, C4<1>, C4<1>;
+L_026aa2f0 .functor OR 1, L_026aa260, L_026aa2a8, C4<0>, C4<0>;
+v02647a88_0 .net *"_s1", 0 0, L_0267cda8;  1 drivers
+v02647ae0_0 .net "in0", 0 0, L_0267ce00;  1 drivers
+v02647b38_0 .net "in1", 0 0, L_0267fb18;  1 drivers
+v02647b90_0 .net "out", 0 0, L_026aa2f0;  1 drivers
+v02647be8_0 .net "sel0", 0 0, L_026aa260;  1 drivers
+v02647c40_0 .net "sel1", 0 0, L_026aa2a8;  1 drivers
+v02647c98_0 .net "select", 0 0, L_0267ce58;  1 drivers
+L_0267cda8 .reduce/nor L_0267ce58;
+S_02645568 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_026452f8;
+ .timescale 0 0;
+S_02645638 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_02645568;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026aa338 .functor AND 1, L_0267cf08, L_0267ceb0, C4<1>, C4<1>;
+L_0267fb40 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026aa380 .functor AND 1, L_0267fb40, L_0267cf60, C4<1>, C4<1>;
+L_026aa3c8 .functor OR 1, L_026aa338, L_026aa380, C4<0>, C4<0>;
+v02647cf0_0 .net *"_s1", 0 0, L_0267ceb0;  1 drivers
+v02647d48_0 .net "in0", 0 0, L_0267cf08;  1 drivers
+v02647da0_0 .net "in1", 0 0, L_0267fb40;  1 drivers
+v02647df8_0 .net "out", 0 0, L_026aa3c8;  1 drivers
+v02647e50_0 .net "sel0", 0 0, L_026aa338;  1 drivers
+v02647ea8_0 .net "sel1", 0 0, L_026aa380;  1 drivers
+v02647f00_0 .net "select", 0 0, L_0267cf60;  1 drivers
+L_0267ceb0 .reduce/nor L_0267cf60;
+S_02645708 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_026452f8;
+ .timescale 0 0;
+S_026457d8 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02645708;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267fac8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026a9fd8 .functor AND 1, L_0267fac8, L_0267ca38, C4<1>, C4<1>;
+L_0267faf0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026aa020 .functor AND 1, L_0267faf0, L_0267ca90, C4<1>, C4<1>;
+L_026aa068 .functor OR 1, L_026a9fd8, L_026aa020, C4<0>, C4<0>;
+v02647f58_0 .net *"_s1", 0 0, L_0267ca38;  1 drivers
+v02647fb0_0 .net "in0", 0 0, L_0267fac8;  1 drivers
+v02648008_0 .net "in1", 0 0, L_0267faf0;  1 drivers
+v02648060_0 .net "out", 0 0, L_026aa068;  1 drivers
+v026480b8_0 .net "sel0", 0 0, L_026a9fd8;  1 drivers
+v02648110_0 .net "sel1", 0 0, L_026aa020;  1 drivers
+v02648168_0 .net "select", 0 0, L_0267ca90;  1 drivers
+L_0267ca38 .reduce/nor L_0267ca90;
+S_026458a8 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_026452f8;
+ .timescale 0 0;
+S_02645978 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_026458a8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026aa0b0 .functor AND 1, L_0267cb40, L_0267cae8, C4<1>, C4<1>;
+L_026aa0f8 .functor AND 1, L_0267cb98, L_0267cbf0, C4<1>, C4<1>;
+L_026aa140 .functor OR 1, L_026aa0b0, L_026aa0f8, C4<0>, C4<0>;
+v026481c0_0 .net *"_s1", 0 0, L_0267cae8;  1 drivers
+v02648218_0 .net "in0", 0 0, L_0267cb40;  1 drivers
+v02648270_0 .net "in1", 0 0, L_0267cb98;  1 drivers
+v026482c8_0 .net "out", 0 0, L_026aa140;  1 drivers
+v02648320_0 .net "sel0", 0 0, L_026aa0b0;  1 drivers
+v02648378_0 .net "sel1", 0 0, L_026aa0f8;  1 drivers
+v026483d0_0 .net "select", 0 0, L_0267cbf0;  1 drivers
+L_0267cae8 .reduce/nor L_0267cbf0;
+S_02645a48 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_026452f8;
+ .timescale 0 0;
+S_02649368 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_02645a48;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026aa188 .functor AND 1, L_0267cca0, L_0267cc48, C4<1>, C4<1>;
+L_026aa1d0 .functor AND 1, L_0267ccf8, L_0267cd50, C4<1>, C4<1>;
+L_026aa218 .functor OR 1, L_026aa188, L_026aa1d0, C4<0>, C4<0>;
+v02648428_0 .net *"_s1", 0 0, L_0267cc48;  1 drivers
+v02648480_0 .net "in0", 0 0, L_0267cca0;  1 drivers
+v026484d8_0 .net "in1", 0 0, L_0267ccf8;  1 drivers
+v02648530_0 .net "out", 0 0, L_026aa218;  1 drivers
+v02648588_0 .net "sel0", 0 0, L_026aa188;  1 drivers
+v026485e0_0 .net "sel1", 0 0, L_026aa1d0;  1 drivers
+v02648638_0 .net "select", 0 0, L_0267cd50;  1 drivers
+L_0267cc48 .reduce/nor L_0267cd50;
+S_02649438 .scope generate, "BARREL[5]" "BARREL[5]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02648dc0 .param/l "i" 0 3 19, +C4<0101>;
+S_02649508 .scope generate, "genblk10" "genblk10" 3 38, 3 38 0, S_02649438;
+ .timescale 0 0;
+S_026495d8 .scope module, "BARREL3" "mux_2to1" 3 39, 4 7 0, S_02649508;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026aa698 .functor AND 1, L_0267d380, L_0267d328, C4<1>, C4<1>;
+L_0267fbb8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026aa6e0 .functor AND 1, L_0267fbb8, L_0267d3d8, C4<1>, C4<1>;
+L_026aa728 .functor OR 1, L_026aa698, L_026aa6e0, C4<0>, C4<0>;
+v02648690_0 .net *"_s1", 0 0, L_0267d328;  1 drivers
+v026486e8_0 .net "in0", 0 0, L_0267d380;  1 drivers
+v02648740_0 .net "in1", 0 0, L_0267fbb8;  1 drivers
+v02648798_0 .net "out", 0 0, L_026aa728;  1 drivers
+v026487f0_0 .net "sel0", 0 0, L_026aa698;  1 drivers
+v02648848_0 .net "sel1", 0 0, L_026aa6e0;  1 drivers
+v026488a0_0 .net "select", 0 0, L_0267d3d8;  1 drivers
+L_0267d328 .reduce/nor L_0267d3d8;
+S_026496a8 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_02649438;
+ .timescale 0 0;
+S_02649778 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_026496a8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026aa770 .functor AND 1, L_0267d488, L_0267d430, C4<1>, C4<1>;
+L_0267fbe0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026aa7b8 .functor AND 1, L_0267fbe0, L_0267d4e0, C4<1>, C4<1>;
+L_026acc50 .functor OR 1, L_026aa770, L_026aa7b8, C4<0>, C4<0>;
+v026488f8_0 .net *"_s1", 0 0, L_0267d430;  1 drivers
+v02648950_0 .net "in0", 0 0, L_0267d488;  1 drivers
+v026489a8_0 .net "in1", 0 0, L_0267fbe0;  1 drivers
+v02648a00_0 .net "out", 0 0, L_026acc50;  1 drivers
+v02648a58_0 .net "sel0", 0 0, L_026aa770;  1 drivers
+v02648ab0_0 .net "sel1", 0 0, L_026aa7b8;  1 drivers
+v0264b368_0 .net "select", 0 0, L_0267d4e0;  1 drivers
+L_0267d430 .reduce/nor L_0267d4e0;
+S_02649848 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02649438;
+ .timescale 0 0;
+S_02649918 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02649848;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267fb68 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026aa410 .functor AND 1, L_0267fb68, L_0267cfb8, C4<1>, C4<1>;
+L_0267fb90 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026aa458 .functor AND 1, L_0267fb90, L_0267d010, C4<1>, C4<1>;
+L_026aa4a0 .functor OR 1, L_026aa410, L_026aa458, C4<0>, C4<0>;
+v0264b3c0_0 .net *"_s1", 0 0, L_0267cfb8;  1 drivers
+v0264b418_0 .net "in0", 0 0, L_0267fb68;  1 drivers
+v0264b470_0 .net "in1", 0 0, L_0267fb90;  1 drivers
+v0264b4c8_0 .net "out", 0 0, L_026aa4a0;  1 drivers
+v0264b520_0 .net "sel0", 0 0, L_026aa410;  1 drivers
+v0264b578_0 .net "sel1", 0 0, L_026aa458;  1 drivers
+v0264b5d0_0 .net "select", 0 0, L_0267d010;  1 drivers
+L_0267cfb8 .reduce/nor L_0267d010;
+S_026499e8 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02649438;
+ .timescale 0 0;
+S_02649ab8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_026499e8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026aa4e8 .functor AND 1, L_0267d0c0, L_0267d068, C4<1>, C4<1>;
+L_026aa530 .functor AND 1, L_0267d118, L_0267d170, C4<1>, C4<1>;
+L_026aa578 .functor OR 1, L_026aa4e8, L_026aa530, C4<0>, C4<0>;
+v0264b628_0 .net *"_s1", 0 0, L_0267d068;  1 drivers
+v0264b680_0 .net "in0", 0 0, L_0267d0c0;  1 drivers
+v0264b6d8_0 .net "in1", 0 0, L_0267d118;  1 drivers
+v0264b730_0 .net "out", 0 0, L_026aa578;  1 drivers
+v0264b788_0 .net "sel0", 0 0, L_026aa4e8;  1 drivers
+v0264b7e0_0 .net "sel1", 0 0, L_026aa530;  1 drivers
+v0264b838_0 .net "select", 0 0, L_0267d170;  1 drivers
+L_0267d068 .reduce/nor L_0267d170;
+S_02649b88 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02649438;
+ .timescale 0 0;
+S_02649c58 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_02649b88;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026aa5c0 .functor AND 1, L_0267d220, L_0267d1c8, C4<1>, C4<1>;
+L_026aa608 .functor AND 1, L_0267d278, L_0267d2d0, C4<1>, C4<1>;
+L_026aa650 .functor OR 1, L_026aa5c0, L_026aa608, C4<0>, C4<0>;
+v0264b890_0 .net *"_s1", 0 0, L_0267d1c8;  1 drivers
+v0264b8e8_0 .net "in0", 0 0, L_0267d220;  1 drivers
+v0264b940_0 .net "in1", 0 0, L_0267d278;  1 drivers
+v0264b998_0 .net "out", 0 0, L_026aa650;  1 drivers
+v0264b9f0_0 .net "sel0", 0 0, L_026aa5c0;  1 drivers
+v0264ba48_0 .net "sel1", 0 0, L_026aa608;  1 drivers
+v0264baa0_0 .net "select", 0 0, L_0267d2d0;  1 drivers
+L_0267d1c8 .reduce/nor L_0267d2d0;
+S_02649d28 .scope generate, "BARREL[6]" "BARREL[6]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02648ed8 .param/l "i" 0 3 19, +C4<0110>;
+S_02649df8 .scope generate, "genblk10" "genblk10" 3 38, 3 38 0, S_02649d28;
+ .timescale 0 0;
+S_02649ec8 .scope module, "BARREL3" "mux_2to1" 3 39, 4 7 0, S_02649df8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026acf20 .functor AND 1, L_0267d900, L_0267d8a8, C4<1>, C4<1>;
+L_0267fc58 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026acf68 .functor AND 1, L_0267fc58, L_0267d958, C4<1>, C4<1>;
+L_026acfb0 .functor OR 1, L_026acf20, L_026acf68, C4<0>, C4<0>;
+v0264baf8_0 .net *"_s1", 0 0, L_0267d8a8;  1 drivers
+v0264bb50_0 .net "in0", 0 0, L_0267d900;  1 drivers
+v0264bba8_0 .net "in1", 0 0, L_0267fc58;  1 drivers
+v0264bc00_0 .net "out", 0 0, L_026acfb0;  1 drivers
+v0264bc58_0 .net "sel0", 0 0, L_026acf20;  1 drivers
+v0264bcb0_0 .net "sel1", 0 0, L_026acf68;  1 drivers
+v0264bd08_0 .net "select", 0 0, L_0267d958;  1 drivers
+L_0267d8a8 .reduce/nor L_0267d958;
+S_02649f98 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_02649d28;
+ .timescale 0 0;
+S_0264a068 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_02649f98;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026acff8 .functor AND 1, L_0267da08, L_0267d9b0, C4<1>, C4<1>;
+L_0267fc80 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026ad040 .functor AND 1, L_0267fc80, L_0267da60, C4<1>, C4<1>;
+L_026ad088 .functor OR 1, L_026acff8, L_026ad040, C4<0>, C4<0>;
+v0264bd60_0 .net *"_s1", 0 0, L_0267d9b0;  1 drivers
+v0264bdb8_0 .net "in0", 0 0, L_0267da08;  1 drivers
+v0264be10_0 .net "in1", 0 0, L_0267fc80;  1 drivers
+v0264be68_0 .net "out", 0 0, L_026ad088;  1 drivers
+v0264bec0_0 .net "sel0", 0 0, L_026acff8;  1 drivers
+v0264bf18_0 .net "sel1", 0 0, L_026ad040;  1 drivers
+v0264bf70_0 .net "select", 0 0, L_0267da60;  1 drivers
+L_0267d9b0 .reduce/nor L_0267da60;
+S_0264a138 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02649d28;
+ .timescale 0 0;
+S_0264a208 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_0264a138;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267fc08 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026acc98 .functor AND 1, L_0267fc08, L_0267d538, C4<1>, C4<1>;
+L_0267fc30 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026acce0 .functor AND 1, L_0267fc30, L_0267d590, C4<1>, C4<1>;
+L_026acd28 .functor OR 1, L_026acc98, L_026acce0, C4<0>, C4<0>;
+v0264bfc8_0 .net *"_s1", 0 0, L_0267d538;  1 drivers
+v0264c020_0 .net "in0", 0 0, L_0267fc08;  1 drivers
+v0264c078_0 .net "in1", 0 0, L_0267fc30;  1 drivers
+v0264c0d0_0 .net "out", 0 0, L_026acd28;  1 drivers
+v0264c128_0 .net "sel0", 0 0, L_026acc98;  1 drivers
+v0264c180_0 .net "sel1", 0 0, L_026acce0;  1 drivers
+v0264c1d8_0 .net "select", 0 0, L_0267d590;  1 drivers
+L_0267d538 .reduce/nor L_0267d590;
+S_0264a2d8 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02649d28;
+ .timescale 0 0;
+S_0264a3a8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_0264a2d8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026acd70 .functor AND 1, L_0267d640, L_0267d5e8, C4<1>, C4<1>;
+L_026acdb8 .functor AND 1, L_0267d698, L_0267d6f0, C4<1>, C4<1>;
+L_026ace00 .functor OR 1, L_026acd70, L_026acdb8, C4<0>, C4<0>;
+v0264c230_0 .net *"_s1", 0 0, L_0267d5e8;  1 drivers
+v0264c288_0 .net "in0", 0 0, L_0267d640;  1 drivers
+v0264c2e0_0 .net "in1", 0 0, L_0267d698;  1 drivers
+v0264c338_0 .net "out", 0 0, L_026ace00;  1 drivers
+v0264c390_0 .net "sel0", 0 0, L_026acd70;  1 drivers
+v0264c3e8_0 .net "sel1", 0 0, L_026acdb8;  1 drivers
+v0264c440_0 .net "select", 0 0, L_0267d6f0;  1 drivers
+L_0267d5e8 .reduce/nor L_0267d6f0;
+S_0264a478 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02649d28;
+ .timescale 0 0;
+S_0264a548 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_0264a478;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026ace48 .functor AND 1, L_0267d7a0, L_0267d748, C4<1>, C4<1>;
+L_026ace90 .functor AND 1, L_0267d7f8, L_0267d850, C4<1>, C4<1>;
+L_026aced8 .functor OR 1, L_026ace48, L_026ace90, C4<0>, C4<0>;
+v0264c498_0 .net *"_s1", 0 0, L_0267d748;  1 drivers
+v0264c4f0_0 .net "in0", 0 0, L_0267d7a0;  1 drivers
+v0264c548_0 .net "in1", 0 0, L_0267d7f8;  1 drivers
+v0264c5a0_0 .net "out", 0 0, L_026aced8;  1 drivers
+v0264c5f8_0 .net "sel0", 0 0, L_026ace48;  1 drivers
+v0264c650_0 .net "sel1", 0 0, L_026ace90;  1 drivers
+v0264c6a8_0 .net "select", 0 0, L_0267d850;  1 drivers
+L_0267d748 .reduce/nor L_0267d850;
+S_0264a618 .scope generate, "BARREL[7]" "BARREL[7]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02648ff0 .param/l "i" 0 3 19, +C4<0111>;
+S_0264a6e8 .scope generate, "genblk10" "genblk10" 3 38, 3 38 0, S_0264a618;
+ .timescale 0 0;
+S_0264a7b8 .scope module, "BARREL3" "mux_2to1" 3 39, 4 7 0, S_0264a6e8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026ad358 .functor AND 1, L_0267de80, L_0267de28, C4<1>, C4<1>;
+L_0267fcf8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026ad3a0 .functor AND 1, L_0267fcf8, L_0267ded8, C4<1>, C4<1>;
+L_026ad3e8 .functor OR 1, L_026ad358, L_026ad3a0, C4<0>, C4<0>;
+v0264c700_0 .net *"_s1", 0 0, L_0267de28;  1 drivers
+v0264c758_0 .net "in0", 0 0, L_0267de80;  1 drivers
+v0264c7b0_0 .net "in1", 0 0, L_0267fcf8;  1 drivers
+v0264c808_0 .net "out", 0 0, L_026ad3e8;  1 drivers
+v0264c860_0 .net "sel0", 0 0, L_026ad358;  1 drivers
+v0264c8b8_0 .net "sel1", 0 0, L_026ad3a0;  1 drivers
+v0264c910_0 .net "select", 0 0, L_0267ded8;  1 drivers
+L_0267de28 .reduce/nor L_0267ded8;
+S_0264a888 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_0264a618;
+ .timescale 0 0;
+S_0264a958 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_0264a888;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026ad430 .functor AND 1, L_0267df88, L_0267df30, C4<1>, C4<1>;
+L_0267fd20 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026ad478 .functor AND 1, L_0267fd20, L_0267dfe0, C4<1>, C4<1>;
+L_026ad4c0 .functor OR 1, L_026ad430, L_026ad478, C4<0>, C4<0>;
+v0264c968_0 .net *"_s1", 0 0, L_0267df30;  1 drivers
+v0264c9c0_0 .net "in0", 0 0, L_0267df88;  1 drivers
+v0264ca18_0 .net "in1", 0 0, L_0267fd20;  1 drivers
+v0264ca70_0 .net "out", 0 0, L_026ad4c0;  1 drivers
+v0264cac8_0 .net "sel0", 0 0, L_026ad430;  1 drivers
+v0264cb20_0 .net "sel1", 0 0, L_026ad478;  1 drivers
+v0264cb78_0 .net "select", 0 0, L_0267dfe0;  1 drivers
+L_0267df30 .reduce/nor L_0267dfe0;
+S_0264aa28 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_0264a618;
+ .timescale 0 0;
+S_0264aaf8 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_0264aa28;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267fca8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026ad0d0 .functor AND 1, L_0267fca8, L_0267dab8, C4<1>, C4<1>;
+L_0267fcd0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026ad118 .functor AND 1, L_0267fcd0, L_0267db10, C4<1>, C4<1>;
+L_026ad160 .functor OR 1, L_026ad0d0, L_026ad118, C4<0>, C4<0>;
+v0264cbd0_0 .net *"_s1", 0 0, L_0267dab8;  1 drivers
+v0264cc28_0 .net "in0", 0 0, L_0267fca8;  1 drivers
+v0264cc80_0 .net "in1", 0 0, L_0267fcd0;  1 drivers
+v0264ccd8_0 .net "out", 0 0, L_026ad160;  1 drivers
+v0264cd30_0 .net "sel0", 0 0, L_026ad0d0;  1 drivers
+v0264cd88_0 .net "sel1", 0 0, L_026ad118;  1 drivers
+v0264cde0_0 .net "select", 0 0, L_0267db10;  1 drivers
+L_0267dab8 .reduce/nor L_0267db10;
+S_0264abc8 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_0264a618;
+ .timescale 0 0;
+S_0264ac98 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_0264abc8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026ad1a8 .functor AND 1, L_0267dbc0, L_0267db68, C4<1>, C4<1>;
+L_026ad1f0 .functor AND 1, L_0267dc18, L_0267dc70, C4<1>, C4<1>;
+L_026ad238 .functor OR 1, L_026ad1a8, L_026ad1f0, C4<0>, C4<0>;
+v0264ce38_0 .net *"_s1", 0 0, L_0267db68;  1 drivers
+v0264ce90_0 .net "in0", 0 0, L_0267dbc0;  1 drivers
+v0264cee8_0 .net "in1", 0 0, L_0267dc18;  1 drivers
+v0264cf40_0 .net "out", 0 0, L_026ad238;  1 drivers
+v0264cf98_0 .net "sel0", 0 0, L_026ad1a8;  1 drivers
+v0264cff0_0 .net "sel1", 0 0, L_026ad1f0;  1 drivers
+v0264d048_0 .net "select", 0 0, L_0267dc70;  1 drivers
+L_0267db68 .reduce/nor L_0267dc70;
+S_0264ad68 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_0264a618;
+ .timescale 0 0;
+S_0264ae38 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_0264ad68;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026ad280 .functor AND 1, L_0267dd20, L_0267dcc8, C4<1>, C4<1>;
+L_026ad2c8 .functor AND 1, L_0267dd78, L_0267ddd0, C4<1>, C4<1>;
+L_026ad310 .functor OR 1, L_026ad280, L_026ad2c8, C4<0>, C4<0>;
+v0264d0a0_0 .net *"_s1", 0 0, L_0267dcc8;  1 drivers
+v0264d0f8_0 .net "in0", 0 0, L_0267dd20;  1 drivers
+v0264d150_0 .net "in1", 0 0, L_0267dd78;  1 drivers
+v0264d1a8_0 .net "out", 0 0, L_026ad310;  1 drivers
+v0264d200_0 .net "sel0", 0 0, L_026ad280;  1 drivers
+v0264d258_0 .net "sel1", 0 0, L_026ad2c8;  1 drivers
+v0264d2b0_0 .net "select", 0 0, L_0267ddd0;  1 drivers
+L_0267dcc8 .reduce/nor L_0267ddd0;
+S_0264af08 .scope generate, "BARREL[8]" "BARREL[8]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02648c80 .param/l "i" 0 3 19, +C4<01000>;
+S_0264afd8 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_0264af08;
+ .timescale 0 0;
+S_0264b0a8 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_0264afd8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026ad790 .functor AND 1, L_0267e400, L_0267e3a8, C4<1>, C4<1>;
+L_026ad7d8 .functor AND 1, L_0267e458, L_0267e4b0, C4<1>, C4<1>;
+L_026ad820 .functor OR 1, L_026ad790, L_026ad7d8, C4<0>, C4<0>;
+v0264d768_0 .net *"_s1", 0 0, L_0267e3a8;  1 drivers
+v0264d7c0_0 .net "in0", 0 0, L_0267e400;  1 drivers
+v0264d818_0 .net "in1", 0 0, L_0267e458;  1 drivers
+v0264d870_0 .net "out", 0 0, L_026ad820;  1 drivers
+v0264d8c8_0 .net "sel0", 0 0, L_026ad790;  1 drivers
+v0264d920_0 .net "sel1", 0 0, L_026ad7d8;  1 drivers
+v0264d978_0 .net "select", 0 0, L_0267e4b0;  1 drivers
+L_0267e3a8 .reduce/nor L_0267e4b0;
+S_0264b178 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_0264af08;
+ .timescale 0 0;
+S_0264b248 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_0264b178;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026ad868 .functor AND 1, L_0267e560, L_0267e508, C4<1>, C4<1>;
+L_0267fd98 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026ad8b0 .functor AND 1, L_0267fd98, L_0267e5b8, C4<1>, C4<1>;
+L_026ad8f8 .functor OR 1, L_026ad868, L_026ad8b0, C4<0>, C4<0>;
+v0264d9d0_0 .net *"_s1", 0 0, L_0267e508;  1 drivers
+v0264da28_0 .net "in0", 0 0, L_0267e560;  1 drivers
+v0264da80_0 .net "in1", 0 0, L_0267fd98;  1 drivers
+v0264dad8_0 .net "out", 0 0, L_026ad8f8;  1 drivers
+v0264db30_0 .net "sel0", 0 0, L_026ad868;  1 drivers
+v0264db88_0 .net "sel1", 0 0, L_026ad8b0;  1 drivers
+v0264dbe0_0 .net "select", 0 0, L_0267e5b8;  1 drivers
+L_0267e508 .reduce/nor L_0267e5b8;
+S_0264f768 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_0264af08;
+ .timescale 0 0;
+S_0264f838 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_0264f768;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267fd48 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026ad508 .functor AND 1, L_0267fd48, L_0267e038, C4<1>, C4<1>;
+L_0267fd70 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026ad550 .functor AND 1, L_0267fd70, L_0267e090, C4<1>, C4<1>;
+L_026ad598 .functor OR 1, L_026ad508, L_026ad550, C4<0>, C4<0>;
+v0264dc38_0 .net *"_s1", 0 0, L_0267e038;  1 drivers
+v0264dc90_0 .net "in0", 0 0, L_0267fd48;  1 drivers
+v0264dce8_0 .net "in1", 0 0, L_0267fd70;  1 drivers
+v0264dd40_0 .net "out", 0 0, L_026ad598;  1 drivers
+v0264dd98_0 .net "sel0", 0 0, L_026ad508;  1 drivers
+v0264ddf0_0 .net "sel1", 0 0, L_026ad550;  1 drivers
+v0264de48_0 .net "select", 0 0, L_0267e090;  1 drivers
+L_0267e038 .reduce/nor L_0267e090;
+S_0264f908 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_0264af08;
+ .timescale 0 0;
+S_0264f9d8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_0264f908;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026ad5e0 .functor AND 1, L_0267e140, L_0267e0e8, C4<1>, C4<1>;
+L_026ad628 .functor AND 1, L_0267e198, L_0267e1f0, C4<1>, C4<1>;
+L_026ad670 .functor OR 1, L_026ad5e0, L_026ad628, C4<0>, C4<0>;
+v0264dea0_0 .net *"_s1", 0 0, L_0267e0e8;  1 drivers
+v0264def8_0 .net "in0", 0 0, L_0267e140;  1 drivers
+v0264df50_0 .net "in1", 0 0, L_0267e198;  1 drivers
+v0264dfa8_0 .net "out", 0 0, L_026ad670;  1 drivers
+v0264e000_0 .net "sel0", 0 0, L_026ad5e0;  1 drivers
+v0264e058_0 .net "sel1", 0 0, L_026ad628;  1 drivers
+v0264e0b0_0 .net "select", 0 0, L_0267e1f0;  1 drivers
+L_0267e0e8 .reduce/nor L_0267e1f0;
+S_0264faa8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_0264af08;
+ .timescale 0 0;
+S_0264fb78 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_0264faa8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026ad6b8 .functor AND 1, L_0267e2a0, L_0267e248, C4<1>, C4<1>;
+L_026ad700 .functor AND 1, L_0267e2f8, L_0267e350, C4<1>, C4<1>;
+L_026ad748 .functor OR 1, L_026ad6b8, L_026ad700, C4<0>, C4<0>;
+v0264e108_0 .net *"_s1", 0 0, L_0267e248;  1 drivers
+v0264e160_0 .net "in0", 0 0, L_0267e2a0;  1 drivers
+v0264e1b8_0 .net "in1", 0 0, L_0267e2f8;  1 drivers
+v0264e210_0 .net "out", 0 0, L_026ad748;  1 drivers
+v0264e268_0 .net "sel0", 0 0, L_026ad6b8;  1 drivers
+v0264e2c0_0 .net "sel1", 0 0, L_026ad700;  1 drivers
+v0264e318_0 .net "select", 0 0, L_0267e350;  1 drivers
+L_0267e248 .reduce/nor L_0267e350;
+S_0264fc48 .scope generate, "BARREL[9]" "BARREL[9]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_026491f8 .param/l "i" 0 3 19, +C4<01001>;
+S_0264fd18 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_0264fc48;
+ .timescale 0 0;
+S_0264fde8 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_0264fd18;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026adbc8 .functor AND 1, L_0267e9d8, L_0267e980, C4<1>, C4<1>;
+L_026b0480 .functor AND 1, L_0267ea30, L_0267ea88, C4<1>, C4<1>;
+L_026b04c8 .functor OR 1, L_026adbc8, L_026b0480, C4<0>, C4<0>;
+v0264e370_0 .net *"_s1", 0 0, L_0267e980;  1 drivers
+v0264e3c8_0 .net "in0", 0 0, L_0267e9d8;  1 drivers
+v0264e420_0 .net "in1", 0 0, L_0267ea30;  1 drivers
+v0264e478_0 .net "out", 0 0, L_026b04c8;  1 drivers
+v0264e4d0_0 .net "sel0", 0 0, L_026adbc8;  1 drivers
+v0264e528_0 .net "sel1", 0 0, L_026b0480;  1 drivers
+v0264e580_0 .net "select", 0 0, L_0267ea88;  1 drivers
+L_0267e980 .reduce/nor L_0267ea88;
+S_0264feb8 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_0264fc48;
+ .timescale 0 0;
+S_0264ff88 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_0264feb8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b0510 .functor AND 1, L_0267eb38, L_0267eae0, C4<1>, C4<1>;
+L_0267fe10 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b0558 .functor AND 1, L_0267fe10, L_0267eb90, C4<1>, C4<1>;
+L_026b05a0 .functor OR 1, L_026b0510, L_026b0558, C4<0>, C4<0>;
+v0264e5d8_0 .net *"_s1", 0 0, L_0267eae0;  1 drivers
+v0264e630_0 .net "in0", 0 0, L_0267eb38;  1 drivers
+v0264e688_0 .net "in1", 0 0, L_0267fe10;  1 drivers
+v0264e6e0_0 .net "out", 0 0, L_026b05a0;  1 drivers
+v0264e738_0 .net "sel0", 0 0, L_026b0510;  1 drivers
+v0264e790_0 .net "sel1", 0 0, L_026b0558;  1 drivers
+v0264e7e8_0 .net "select", 0 0, L_0267eb90;  1 drivers
+L_0267eae0 .reduce/nor L_0267eb90;
+S_02650058 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_0264fc48;
+ .timescale 0 0;
+S_02650128 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02650058;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267fdc0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026ad940 .functor AND 1, L_0267fdc0, L_0267e610, C4<1>, C4<1>;
+L_0267fde8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026ad988 .functor AND 1, L_0267fde8, L_0267e668, C4<1>, C4<1>;
+L_026ad9d0 .functor OR 1, L_026ad940, L_026ad988, C4<0>, C4<0>;
+v0264e840_0 .net *"_s1", 0 0, L_0267e610;  1 drivers
+v0264e898_0 .net "in0", 0 0, L_0267fdc0;  1 drivers
+v0264e8f0_0 .net "in1", 0 0, L_0267fde8;  1 drivers
+v0264e948_0 .net "out", 0 0, L_026ad9d0;  1 drivers
+v0264e9a0_0 .net "sel0", 0 0, L_026ad940;  1 drivers
+v0264e9f8_0 .net "sel1", 0 0, L_026ad988;  1 drivers
+v0264ea50_0 .net "select", 0 0, L_0267e668;  1 drivers
+L_0267e610 .reduce/nor L_0267e668;
+S_026501f8 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_0264fc48;
+ .timescale 0 0;
+S_026502c8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_026501f8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026ada18 .functor AND 1, L_0267e718, L_0267e6c0, C4<1>, C4<1>;
+L_026ada60 .functor AND 1, L_0267e770, L_0267e7c8, C4<1>, C4<1>;
+L_026adaa8 .functor OR 1, L_026ada18, L_026ada60, C4<0>, C4<0>;
+v0264eaa8_0 .net *"_s1", 0 0, L_0267e6c0;  1 drivers
+v0264eb00_0 .net "in0", 0 0, L_0267e718;  1 drivers
+v0264eb58_0 .net "in1", 0 0, L_0267e770;  1 drivers
+v0264ebb0_0 .net "out", 0 0, L_026adaa8;  1 drivers
+v0264ec08_0 .net "sel0", 0 0, L_026ada18;  1 drivers
+v0264ec60_0 .net "sel1", 0 0, L_026ada60;  1 drivers
+v0264ecb8_0 .net "select", 0 0, L_0267e7c8;  1 drivers
+L_0267e6c0 .reduce/nor L_0267e7c8;
+S_02650398 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_0264fc48;
+ .timescale 0 0;
+S_02650468 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_02650398;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026adaf0 .functor AND 1, L_0267e878, L_0267e820, C4<1>, C4<1>;
+L_026adb38 .functor AND 1, L_0267e8d0, L_0267e928, C4<1>, C4<1>;
+L_026adb80 .functor OR 1, L_026adaf0, L_026adb38, C4<0>, C4<0>;
+v0264ed10_0 .net *"_s1", 0 0, L_0267e820;  1 drivers
+v0264ed68_0 .net "in0", 0 0, L_0267e878;  1 drivers
+v0264edc0_0 .net "in1", 0 0, L_0267e8d0;  1 drivers
+v0264ee18_0 .net "out", 0 0, L_026adb80;  1 drivers
+v0264ee70_0 .net "sel0", 0 0, L_026adaf0;  1 drivers
+v0264eec8_0 .net "sel1", 0 0, L_026adb38;  1 drivers
+v0264ef20_0 .net "select", 0 0, L_0267e928;  1 drivers
+L_0267e820 .reduce/nor L_0267e928;
+S_02650538 .scope generate, "BARREL[10]" "BARREL[10]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02649310 .param/l "i" 0 3 19, +C4<01010>;
+S_02650608 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_02650538;
+ .timescale 0 0;
+S_026506d8 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02650608;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b0870 .functor AND 1, L_026b1af8, L_026b1aa0, C4<1>, C4<1>;
+L_026b08b8 .functor AND 1, L_026b1b50, L_026b1ba8, C4<1>, C4<1>;
+L_026b0900 .functor OR 1, L_026b0870, L_026b08b8, C4<0>, C4<0>;
+v0264ef78_0 .net *"_s1", 0 0, L_026b1aa0;  1 drivers
+v0264efd0_0 .net "in0", 0 0, L_026b1af8;  1 drivers
+v0264f028_0 .net "in1", 0 0, L_026b1b50;  1 drivers
+v0264f080_0 .net "out", 0 0, L_026b0900;  1 drivers
+v0264f0d8_0 .net "sel0", 0 0, L_026b0870;  1 drivers
+v0264f130_0 .net "sel1", 0 0, L_026b08b8;  1 drivers
+v0264f188_0 .net "select", 0 0, L_026b1ba8;  1 drivers
+L_026b1aa0 .reduce/nor L_026b1ba8;
+S_026507a8 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_02650538;
+ .timescale 0 0;
+S_02650878 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_026507a8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b0948 .functor AND 1, L_026b1c58, L_026b1c00, C4<1>, C4<1>;
+L_0267fe88 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b0990 .functor AND 1, L_0267fe88, L_026b1cb0, C4<1>, C4<1>;
+L_026b09d8 .functor OR 1, L_026b0948, L_026b0990, C4<0>, C4<0>;
+v0264f1e0_0 .net *"_s1", 0 0, L_026b1c00;  1 drivers
+v0264f238_0 .net "in0", 0 0, L_026b1c58;  1 drivers
+v0264f290_0 .net "in1", 0 0, L_0267fe88;  1 drivers
+v0264f2e8_0 .net "out", 0 0, L_026b09d8;  1 drivers
+v0264f340_0 .net "sel0", 0 0, L_026b0948;  1 drivers
+v0264f398_0 .net "sel1", 0 0, L_026b0990;  1 drivers
+v0264f3f0_0 .net "select", 0 0, L_026b1cb0;  1 drivers
+L_026b1c00 .reduce/nor L_026b1cb0;
+S_02650948 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02650538;
+ .timescale 0 0;
+S_02650a18 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02650948;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267fe38 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b05e8 .functor AND 1, L_0267fe38, L_0267ebe8, C4<1>, C4<1>;
+L_0267fe60 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b0630 .functor AND 1, L_0267fe60, L_0267ec40, C4<1>, C4<1>;
+L_026b0678 .functor OR 1, L_026b05e8, L_026b0630, C4<0>, C4<0>;
+v0264f448_0 .net *"_s1", 0 0, L_0267ebe8;  1 drivers
+v0264f4a0_0 .net "in0", 0 0, L_0267fe38;  1 drivers
+v0264f4f8_0 .net "in1", 0 0, L_0267fe60;  1 drivers
+v0264f550_0 .net "out", 0 0, L_026b0678;  1 drivers
+v0264f5a8_0 .net "sel0", 0 0, L_026b05e8;  1 drivers
+v0264f600_0 .net "sel1", 0 0, L_026b0630;  1 drivers
+v0264f658_0 .net "select", 0 0, L_0267ec40;  1 drivers
+L_0267ebe8 .reduce/nor L_0267ec40;
+S_02650ae8 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02650538;
+ .timescale 0 0;
+S_02650bb8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02650ae8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b06c0 .functor AND 1, L_0267ecf0, L_0267ec98, C4<1>, C4<1>;
+L_026b0708 .functor AND 1, L_0267ed48, L_0267eda0, C4<1>, C4<1>;
+L_026b0750 .functor OR 1, L_026b06c0, L_026b0708, C4<0>, C4<0>;
+v0264f6b0_0 .net *"_s1", 0 0, L_0267ec98;  1 drivers
+v02652f68_0 .net "in0", 0 0, L_0267ecf0;  1 drivers
+v02652fc0_0 .net "in1", 0 0, L_0267ed48;  1 drivers
+v02653018_0 .net "out", 0 0, L_026b0750;  1 drivers
+v02653070_0 .net "sel0", 0 0, L_026b06c0;  1 drivers
+v026530c8_0 .net "sel1", 0 0, L_026b0708;  1 drivers
+v02653120_0 .net "select", 0 0, L_0267eda0;  1 drivers
+L_0267ec98 .reduce/nor L_0267eda0;
+S_02650c88 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02650538;
+ .timescale 0 0;
+S_02650d58 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_02650c88;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b0798 .functor AND 1, L_0267ee50, L_0267edf8, C4<1>, C4<1>;
+L_026b07e0 .functor AND 1, L_0267eea8, L_026b1a48, C4<1>, C4<1>;
+L_026b0828 .functor OR 1, L_026b0798, L_026b07e0, C4<0>, C4<0>;
+v02653178_0 .net *"_s1", 0 0, L_0267edf8;  1 drivers
+v026531d0_0 .net "in0", 0 0, L_0267ee50;  1 drivers
+v02653228_0 .net "in1", 0 0, L_0267eea8;  1 drivers
+v02653280_0 .net "out", 0 0, L_026b0828;  1 drivers
+v026532d8_0 .net "sel0", 0 0, L_026b0798;  1 drivers
+v02653330_0 .net "sel1", 0 0, L_026b07e0;  1 drivers
+v02653388_0 .net "select", 0 0, L_026b1a48;  1 drivers
+L_0267edf8 .reduce/nor L_026b1a48;
+S_02650e28 .scope generate, "BARREL[11]" "BARREL[11]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02652858 .param/l "i" 0 3 19, +C4<01011>;
+S_02650ef8 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_02650e28;
+ .timescale 0 0;
+S_02650fc8 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02650ef8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b0ca8 .functor AND 1, L_026b20d0, L_026b2078, C4<1>, C4<1>;
+L_026b0cf0 .functor AND 1, L_026b2128, L_026b2180, C4<1>, C4<1>;
+L_026b0d38 .functor OR 1, L_026b0ca8, L_026b0cf0, C4<0>, C4<0>;
+v026533e0_0 .net *"_s1", 0 0, L_026b2078;  1 drivers
+v02653438_0 .net "in0", 0 0, L_026b20d0;  1 drivers
+v02653490_0 .net "in1", 0 0, L_026b2128;  1 drivers
+v026534e8_0 .net "out", 0 0, L_026b0d38;  1 drivers
+v02653540_0 .net "sel0", 0 0, L_026b0ca8;  1 drivers
+v02653598_0 .net "sel1", 0 0, L_026b0cf0;  1 drivers
+v026535f0_0 .net "select", 0 0, L_026b2180;  1 drivers
+L_026b2078 .reduce/nor L_026b2180;
+S_02651098 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_02650e28;
+ .timescale 0 0;
+S_02651168 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_02651098;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b0d80 .functor AND 1, L_026b2230, L_026b21d8, C4<1>, C4<1>;
+L_0267ff00 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b0dc8 .functor AND 1, L_0267ff00, L_026b2288, C4<1>, C4<1>;
+L_026b0e10 .functor OR 1, L_026b0d80, L_026b0dc8, C4<0>, C4<0>;
+v02653648_0 .net *"_s1", 0 0, L_026b21d8;  1 drivers
+v026536a0_0 .net "in0", 0 0, L_026b2230;  1 drivers
+v026536f8_0 .net "in1", 0 0, L_0267ff00;  1 drivers
+v02653750_0 .net "out", 0 0, L_026b0e10;  1 drivers
+v026537a8_0 .net "sel0", 0 0, L_026b0d80;  1 drivers
+v02653800_0 .net "sel1", 0 0, L_026b0dc8;  1 drivers
+v02653858_0 .net "select", 0 0, L_026b2288;  1 drivers
+L_026b21d8 .reduce/nor L_026b2288;
+S_02651238 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02650e28;
+ .timescale 0 0;
+S_02651308 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02651238;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267feb0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b0a20 .functor AND 1, L_0267feb0, L_026b1d08, C4<1>, C4<1>;
+L_0267fed8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b0a68 .functor AND 1, L_0267fed8, L_026b1d60, C4<1>, C4<1>;
+L_026b0ab0 .functor OR 1, L_026b0a20, L_026b0a68, C4<0>, C4<0>;
+v026538b0_0 .net *"_s1", 0 0, L_026b1d08;  1 drivers
+v02653908_0 .net "in0", 0 0, L_0267feb0;  1 drivers
+v02653960_0 .net "in1", 0 0, L_0267fed8;  1 drivers
+v026539b8_0 .net "out", 0 0, L_026b0ab0;  1 drivers
+v02653a10_0 .net "sel0", 0 0, L_026b0a20;  1 drivers
+v02653a68_0 .net "sel1", 0 0, L_026b0a68;  1 drivers
+v02653ac0_0 .net "select", 0 0, L_026b1d60;  1 drivers
+L_026b1d08 .reduce/nor L_026b1d60;
+S_026513d8 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02650e28;
+ .timescale 0 0;
+S_026514a8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_026513d8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b0af8 .functor AND 1, L_026b1e10, L_026b1db8, C4<1>, C4<1>;
+L_026b0b40 .functor AND 1, L_026b1e68, L_026b1ec0, C4<1>, C4<1>;
+L_026b0b88 .functor OR 1, L_026b0af8, L_026b0b40, C4<0>, C4<0>;
+v02653b18_0 .net *"_s1", 0 0, L_026b1db8;  1 drivers
+v02653b70_0 .net "in0", 0 0, L_026b1e10;  1 drivers
+v02653bc8_0 .net "in1", 0 0, L_026b1e68;  1 drivers
+v02653c20_0 .net "out", 0 0, L_026b0b88;  1 drivers
+v02653c78_0 .net "sel0", 0 0, L_026b0af8;  1 drivers
+v02653cd0_0 .net "sel1", 0 0, L_026b0b40;  1 drivers
+v02653d28_0 .net "select", 0 0, L_026b1ec0;  1 drivers
+L_026b1db8 .reduce/nor L_026b1ec0;
+S_02651578 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02650e28;
+ .timescale 0 0;
+S_02651648 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_02651578;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b0bd0 .functor AND 1, L_026b1f70, L_026b1f18, C4<1>, C4<1>;
+L_026b0c18 .functor AND 1, L_026b1fc8, L_026b2020, C4<1>, C4<1>;
+L_026b0c60 .functor OR 1, L_026b0bd0, L_026b0c18, C4<0>, C4<0>;
+v02653d80_0 .net *"_s1", 0 0, L_026b1f18;  1 drivers
+v02653dd8_0 .net "in0", 0 0, L_026b1f70;  1 drivers
+v02653e30_0 .net "in1", 0 0, L_026b1fc8;  1 drivers
+v02653e88_0 .net "out", 0 0, L_026b0c60;  1 drivers
+v02653ee0_0 .net "sel0", 0 0, L_026b0bd0;  1 drivers
+v02653f38_0 .net "sel1", 0 0, L_026b0c18;  1 drivers
+v02653f90_0 .net "select", 0 0, L_026b2020;  1 drivers
+L_026b1f18 .reduce/nor L_026b2020;
+S_02658f68 .scope generate, "BARREL[12]" "BARREL[12]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02652970 .param/l "i" 0 3 19, +C4<01100>;
+S_02659038 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_02658f68;
+ .timescale 0 0;
+S_02659108 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02659038;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b10e0 .functor AND 1, L_026b26a8, L_026b2650, C4<1>, C4<1>;
+L_026b1128 .functor AND 1, L_026b2700, L_026b2758, C4<1>, C4<1>;
+L_026b1170 .functor OR 1, L_026b10e0, L_026b1128, C4<0>, C4<0>;
+v02653fe8_0 .net *"_s1", 0 0, L_026b2650;  1 drivers
+v02654040_0 .net "in0", 0 0, L_026b26a8;  1 drivers
+v02654098_0 .net "in1", 0 0, L_026b2700;  1 drivers
+v026540f0_0 .net "out", 0 0, L_026b1170;  1 drivers
+v02654148_0 .net "sel0", 0 0, L_026b10e0;  1 drivers
+v026541a0_0 .net "sel1", 0 0, L_026b1128;  1 drivers
+v026541f8_0 .net "select", 0 0, L_026b2758;  1 drivers
+L_026b2650 .reduce/nor L_026b2758;
+S_026591d8 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_02658f68;
+ .timescale 0 0;
+S_026592a8 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_026591d8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b11b8 .functor AND 1, L_026b2808, L_026b27b0, C4<1>, C4<1>;
+L_0267ff78 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b1200 .functor AND 1, L_0267ff78, L_026b2860, C4<1>, C4<1>;
+L_026b1248 .functor OR 1, L_026b11b8, L_026b1200, C4<0>, C4<0>;
+v02654250_0 .net *"_s1", 0 0, L_026b27b0;  1 drivers
+v026542a8_0 .net "in0", 0 0, L_026b2808;  1 drivers
+v02654300_0 .net "in1", 0 0, L_0267ff78;  1 drivers
+v02654358_0 .net "out", 0 0, L_026b1248;  1 drivers
+v026543b0_0 .net "sel0", 0 0, L_026b11b8;  1 drivers
+v02654408_0 .net "sel1", 0 0, L_026b1200;  1 drivers
+v02654460_0 .net "select", 0 0, L_026b2860;  1 drivers
+L_026b27b0 .reduce/nor L_026b2860;
+S_02659378 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02658f68;
+ .timescale 0 0;
+S_02659448 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02659378;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267ff28 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b0e58 .functor AND 1, L_0267ff28, L_026b22e0, C4<1>, C4<1>;
+L_0267ff50 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b0ea0 .functor AND 1, L_0267ff50, L_026b2338, C4<1>, C4<1>;
+L_026b0ee8 .functor OR 1, L_026b0e58, L_026b0ea0, C4<0>, C4<0>;
+v026544b8_0 .net *"_s1", 0 0, L_026b22e0;  1 drivers
+v02654510_0 .net "in0", 0 0, L_0267ff28;  1 drivers
+v02654568_0 .net "in1", 0 0, L_0267ff50;  1 drivers
+v026545c0_0 .net "out", 0 0, L_026b0ee8;  1 drivers
+v02654618_0 .net "sel0", 0 0, L_026b0e58;  1 drivers
+v02654670_0 .net "sel1", 0 0, L_026b0ea0;  1 drivers
+v026546c8_0 .net "select", 0 0, L_026b2338;  1 drivers
+L_026b22e0 .reduce/nor L_026b2338;
+S_02659518 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02658f68;
+ .timescale 0 0;
+S_026595e8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02659518;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b0f30 .functor AND 1, L_026b23e8, L_026b2390, C4<1>, C4<1>;
+L_026b0f78 .functor AND 1, L_026b2440, L_026b2498, C4<1>, C4<1>;
+L_026b0fc0 .functor OR 1, L_026b0f30, L_026b0f78, C4<0>, C4<0>;
+v02654720_0 .net *"_s1", 0 0, L_026b2390;  1 drivers
+v02654778_0 .net "in0", 0 0, L_026b23e8;  1 drivers
+v026547d0_0 .net "in1", 0 0, L_026b2440;  1 drivers
+v02654828_0 .net "out", 0 0, L_026b0fc0;  1 drivers
+v02654880_0 .net "sel0", 0 0, L_026b0f30;  1 drivers
+v026548d8_0 .net "sel1", 0 0, L_026b0f78;  1 drivers
+v02654930_0 .net "select", 0 0, L_026b2498;  1 drivers
+L_026b2390 .reduce/nor L_026b2498;
+S_026596b8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02658f68;
+ .timescale 0 0;
+S_02659788 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_026596b8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b1008 .functor AND 1, L_026b2548, L_026b24f0, C4<1>, C4<1>;
+L_026b1050 .functor AND 1, L_026b25a0, L_026b25f8, C4<1>, C4<1>;
+L_026b1098 .functor OR 1, L_026b1008, L_026b1050, C4<0>, C4<0>;
+v02654988_0 .net *"_s1", 0 0, L_026b24f0;  1 drivers
+v026549e0_0 .net "in0", 0 0, L_026b2548;  1 drivers
+v02654a38_0 .net "in1", 0 0, L_026b25a0;  1 drivers
+v02654a90_0 .net "out", 0 0, L_026b1098;  1 drivers
+v02654ae8_0 .net "sel0", 0 0, L_026b1008;  1 drivers
+v02654b40_0 .net "sel1", 0 0, L_026b1050;  1 drivers
+v02654b98_0 .net "select", 0 0, L_026b25f8;  1 drivers
+L_026b24f0 .reduce/nor L_026b25f8;
+S_02659858 .scope generate, "BARREL[13]" "BARREL[13]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02652a88 .param/l "i" 0 3 19, +C4<01101>;
+S_02659928 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_02659858;
+ .timescale 0 0;
+S_026599f8 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02659928;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b8518 .functor AND 1, L_026b2c80, L_026b2c28, C4<1>, C4<1>;
+L_026b8560 .functor AND 1, L_026b2cd8, L_026b2d30, C4<1>, C4<1>;
+L_026b85a8 .functor OR 1, L_026b8518, L_026b8560, C4<0>, C4<0>;
+v02654bf0_0 .net *"_s1", 0 0, L_026b2c28;  1 drivers
+v02654c48_0 .net "in0", 0 0, L_026b2c80;  1 drivers
+v02654ca0_0 .net "in1", 0 0, L_026b2cd8;  1 drivers
+v02654cf8_0 .net "out", 0 0, L_026b85a8;  1 drivers
+v02654d50_0 .net "sel0", 0 0, L_026b8518;  1 drivers
+v02654da8_0 .net "sel1", 0 0, L_026b8560;  1 drivers
+v02654e00_0 .net "select", 0 0, L_026b2d30;  1 drivers
+L_026b2c28 .reduce/nor L_026b2d30;
+S_02659ac8 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_02659858;
+ .timescale 0 0;
+S_02659b98 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_02659ac8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b85f0 .functor AND 1, L_026b2de0, L_026b2d88, C4<1>, C4<1>;
+L_0267fff0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b8638 .functor AND 1, L_0267fff0, L_026b2e38, C4<1>, C4<1>;
+L_026b8680 .functor OR 1, L_026b85f0, L_026b8638, C4<0>, C4<0>;
+v02654e58_0 .net *"_s1", 0 0, L_026b2d88;  1 drivers
+v02654eb0_0 .net "in0", 0 0, L_026b2de0;  1 drivers
+v0265af68_0 .net "in1", 0 0, L_0267fff0;  1 drivers
+v0265afc0_0 .net "out", 0 0, L_026b8680;  1 drivers
+v0265b018_0 .net "sel0", 0 0, L_026b85f0;  1 drivers
+v0265b070_0 .net "sel1", 0 0, L_026b8638;  1 drivers
+v0265b0c8_0 .net "select", 0 0, L_026b2e38;  1 drivers
+L_026b2d88 .reduce/nor L_026b2e38;
+S_02659c68 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02659858;
+ .timescale 0 0;
+S_02659d38 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02659c68;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_0267ffa0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b1290 .functor AND 1, L_0267ffa0, L_026b28b8, C4<1>, C4<1>;
+L_0267ffc8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b12d8 .functor AND 1, L_0267ffc8, L_026b2910, C4<1>, C4<1>;
+L_026b1320 .functor OR 1, L_026b1290, L_026b12d8, C4<0>, C4<0>;
+v0265b120_0 .net *"_s1", 0 0, L_026b28b8;  1 drivers
+v0265b178_0 .net "in0", 0 0, L_0267ffa0;  1 drivers
+v0265b1d0_0 .net "in1", 0 0, L_0267ffc8;  1 drivers
+v0265b228_0 .net "out", 0 0, L_026b1320;  1 drivers
+v0265b280_0 .net "sel0", 0 0, L_026b1290;  1 drivers
+v0265b2d8_0 .net "sel1", 0 0, L_026b12d8;  1 drivers
+v0265b330_0 .net "select", 0 0, L_026b2910;  1 drivers
+L_026b28b8 .reduce/nor L_026b2910;
+S_02659e08 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02659858;
+ .timescale 0 0;
+S_02659ed8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02659e08;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b1368 .functor AND 1, L_026b29c0, L_026b2968, C4<1>, C4<1>;
+L_026b13b0 .functor AND 1, L_026b2a18, L_026b2a70, C4<1>, C4<1>;
+L_026b13f8 .functor OR 1, L_026b1368, L_026b13b0, C4<0>, C4<0>;
+v0265b388_0 .net *"_s1", 0 0, L_026b2968;  1 drivers
+v0265b3e0_0 .net "in0", 0 0, L_026b29c0;  1 drivers
+v0265b438_0 .net "in1", 0 0, L_026b2a18;  1 drivers
+v0265b490_0 .net "out", 0 0, L_026b13f8;  1 drivers
+v0265b4e8_0 .net "sel0", 0 0, L_026b1368;  1 drivers
+v0265b540_0 .net "sel1", 0 0, L_026b13b0;  1 drivers
+v0265b598_0 .net "select", 0 0, L_026b2a70;  1 drivers
+L_026b2968 .reduce/nor L_026b2a70;
+S_02659fa8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02659858;
+ .timescale 0 0;
+S_0265a078 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_02659fa8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b8440 .functor AND 1, L_026b2b20, L_026b2ac8, C4<1>, C4<1>;
+L_026b8488 .functor AND 1, L_026b2b78, L_026b2bd0, C4<1>, C4<1>;
+L_026b84d0 .functor OR 1, L_026b8440, L_026b8488, C4<0>, C4<0>;
+v0265b5f0_0 .net *"_s1", 0 0, L_026b2ac8;  1 drivers
+v0265b648_0 .net "in0", 0 0, L_026b2b20;  1 drivers
+v0265b6a0_0 .net "in1", 0 0, L_026b2b78;  1 drivers
+v0265b6f8_0 .net "out", 0 0, L_026b84d0;  1 drivers
+v0265b750_0 .net "sel0", 0 0, L_026b8440;  1 drivers
+v0265b7a8_0 .net "sel1", 0 0, L_026b8488;  1 drivers
+v0265b800_0 .net "select", 0 0, L_026b2bd0;  1 drivers
+L_026b2ac8 .reduce/nor L_026b2bd0;
+S_0265a148 .scope generate, "BARREL[14]" "BARREL[14]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02652ba0 .param/l "i" 0 3 19, +C4<01110>;
+S_0265a218 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_0265a148;
+ .timescale 0 0;
+S_0265a2e8 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_0265a218;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b8950 .functor AND 1, L_026b3258, L_026b3200, C4<1>, C4<1>;
+L_026b8998 .functor AND 1, L_026b32b0, L_026b3308, C4<1>, C4<1>;
+L_026b89e0 .functor OR 1, L_026b8950, L_026b8998, C4<0>, C4<0>;
+v0265b858_0 .net *"_s1", 0 0, L_026b3200;  1 drivers
+v0265b8b0_0 .net "in0", 0 0, L_026b3258;  1 drivers
+v0265b908_0 .net "in1", 0 0, L_026b32b0;  1 drivers
+v0265b960_0 .net "out", 0 0, L_026b89e0;  1 drivers
+v0265b9b8_0 .net "sel0", 0 0, L_026b8950;  1 drivers
+v0265ba10_0 .net "sel1", 0 0, L_026b8998;  1 drivers
+v0265ba68_0 .net "select", 0 0, L_026b3308;  1 drivers
+L_026b3200 .reduce/nor L_026b3308;
+S_0265a3b8 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_0265a148;
+ .timescale 0 0;
+S_0265a488 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_0265a3b8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b8a28 .functor AND 1, L_026b33b8, L_026b3360, C4<1>, C4<1>;
+L_02680068 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b8a70 .functor AND 1, L_02680068, L_026b3410, C4<1>, C4<1>;
+L_026b8ab8 .functor OR 1, L_026b8a28, L_026b8a70, C4<0>, C4<0>;
+v0265bac0_0 .net *"_s1", 0 0, L_026b3360;  1 drivers
+v0265bb18_0 .net "in0", 0 0, L_026b33b8;  1 drivers
+v0265bb70_0 .net "in1", 0 0, L_02680068;  1 drivers
+v0265bbc8_0 .net "out", 0 0, L_026b8ab8;  1 drivers
+v0265bc20_0 .net "sel0", 0 0, L_026b8a28;  1 drivers
+v0265bc78_0 .net "sel1", 0 0, L_026b8a70;  1 drivers
+v0265bcd0_0 .net "select", 0 0, L_026b3410;  1 drivers
+L_026b3360 .reduce/nor L_026b3410;
+S_0265a558 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_0265a148;
+ .timescale 0 0;
+S_0265a628 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_0265a558;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_02680018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b86c8 .functor AND 1, L_02680018, L_026b2e90, C4<1>, C4<1>;
+L_02680040 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b8710 .functor AND 1, L_02680040, L_026b2ee8, C4<1>, C4<1>;
+L_026b8758 .functor OR 1, L_026b86c8, L_026b8710, C4<0>, C4<0>;
+v0265bd28_0 .net *"_s1", 0 0, L_026b2e90;  1 drivers
+v0265bd80_0 .net "in0", 0 0, L_02680018;  1 drivers
+v0265bdd8_0 .net "in1", 0 0, L_02680040;  1 drivers
+v0265be30_0 .net "out", 0 0, L_026b8758;  1 drivers
+v0265be88_0 .net "sel0", 0 0, L_026b86c8;  1 drivers
+v0265bee0_0 .net "sel1", 0 0, L_026b8710;  1 drivers
+v0265bf38_0 .net "select", 0 0, L_026b2ee8;  1 drivers
+L_026b2e90 .reduce/nor L_026b2ee8;
+S_0265a6f8 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_0265a148;
+ .timescale 0 0;
+S_0265a7c8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_0265a6f8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b87a0 .functor AND 1, L_026b2f98, L_026b2f40, C4<1>, C4<1>;
+L_026b87e8 .functor AND 1, L_026b2ff0, L_026b3048, C4<1>, C4<1>;
+L_026b8830 .functor OR 1, L_026b87a0, L_026b87e8, C4<0>, C4<0>;
+v0265bf90_0 .net *"_s1", 0 0, L_026b2f40;  1 drivers
+v0265bfe8_0 .net "in0", 0 0, L_026b2f98;  1 drivers
+v0265c040_0 .net "in1", 0 0, L_026b2ff0;  1 drivers
+v0265c098_0 .net "out", 0 0, L_026b8830;  1 drivers
+v0265c0f0_0 .net "sel0", 0 0, L_026b87a0;  1 drivers
+v0265c148_0 .net "sel1", 0 0, L_026b87e8;  1 drivers
+v0265c1a0_0 .net "select", 0 0, L_026b3048;  1 drivers
+L_026b2f40 .reduce/nor L_026b3048;
+S_0265a898 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_0265a148;
+ .timescale 0 0;
+S_0265a968 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_0265a898;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b8878 .functor AND 1, L_026b30f8, L_026b30a0, C4<1>, C4<1>;
+L_026b88c0 .functor AND 1, L_026b3150, L_026b31a8, C4<1>, C4<1>;
+L_026b8908 .functor OR 1, L_026b8878, L_026b88c0, C4<0>, C4<0>;
+v0265c1f8_0 .net *"_s1", 0 0, L_026b30a0;  1 drivers
+v0265c250_0 .net "in0", 0 0, L_026b30f8;  1 drivers
+v0265c2a8_0 .net "in1", 0 0, L_026b3150;  1 drivers
+v0265c300_0 .net "out", 0 0, L_026b8908;  1 drivers
+v0265c358_0 .net "sel0", 0 0, L_026b8878;  1 drivers
+v0265c3b0_0 .net "sel1", 0 0, L_026b88c0;  1 drivers
+v0265c408_0 .net "select", 0 0, L_026b31a8;  1 drivers
+L_026b30a0 .reduce/nor L_026b31a8;
+S_0265aa38 .scope generate, "BARREL[15]" "BARREL[15]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02652cb8 .param/l "i" 0 3 19, +C4<01111>;
+S_0265ab08 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_0265aa38;
+ .timescale 0 0;
+S_0265abd8 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_0265ab08;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b8d88 .functor AND 1, L_026b3830, L_026b37d8, C4<1>, C4<1>;
+L_026b8dd0 .functor AND 1, L_026b3888, L_026b38e0, C4<1>, C4<1>;
+L_026b8e18 .functor OR 1, L_026b8d88, L_026b8dd0, C4<0>, C4<0>;
+v0265c460_0 .net *"_s1", 0 0, L_026b37d8;  1 drivers
+v0265c4b8_0 .net "in0", 0 0, L_026b3830;  1 drivers
+v0265c510_0 .net "in1", 0 0, L_026b3888;  1 drivers
+v0265c568_0 .net "out", 0 0, L_026b8e18;  1 drivers
+v0265c5c0_0 .net "sel0", 0 0, L_026b8d88;  1 drivers
+v0265c618_0 .net "sel1", 0 0, L_026b8dd0;  1 drivers
+v0265c670_0 .net "select", 0 0, L_026b38e0;  1 drivers
+L_026b37d8 .reduce/nor L_026b38e0;
+S_0265aca8 .scope generate, "genblk12" "genblk12" 3 43, 3 43 0, S_0265aa38;
+ .timescale 0 0;
+S_0265ad78 .scope module, "BARREL4" "mux_2to1" 3 44, 4 7 0, S_0265aca8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b8e60 .functor AND 1, L_026b3990, L_026b3938, C4<1>, C4<1>;
+L_026800e0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b8ea8 .functor AND 1, L_026800e0, L_026b39e8, C4<1>, C4<1>;
+L_026b8ef0 .functor OR 1, L_026b8e60, L_026b8ea8, C4<0>, C4<0>;
+v0265c6c8_0 .net *"_s1", 0 0, L_026b3938;  1 drivers
+v0265c720_0 .net "in0", 0 0, L_026b3990;  1 drivers
+v0265c778_0 .net "in1", 0 0, L_026800e0;  1 drivers
+v0265c7d0_0 .net "out", 0 0, L_026b8ef0;  1 drivers
+v0265c828_0 .net "sel0", 0 0, L_026b8e60;  1 drivers
+v0265c880_0 .net "sel1", 0 0, L_026b8ea8;  1 drivers
+v0265c8d8_0 .net "select", 0 0, L_026b39e8;  1 drivers
+L_026b3938 .reduce/nor L_026b39e8;
+S_0265ae48 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_0265aa38;
+ .timescale 0 0;
+S_0265cf68 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_0265ae48;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_02680090 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b8b00 .functor AND 1, L_02680090, L_026b3468, C4<1>, C4<1>;
+L_026800b8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b8b48 .functor AND 1, L_026800b8, L_026b34c0, C4<1>, C4<1>;
+L_026b8b90 .functor OR 1, L_026b8b00, L_026b8b48, C4<0>, C4<0>;
+v0265c930_0 .net *"_s1", 0 0, L_026b3468;  1 drivers
+v0265c988_0 .net "in0", 0 0, L_02680090;  1 drivers
+v0265c9e0_0 .net "in1", 0 0, L_026800b8;  1 drivers
+v0265ca38_0 .net "out", 0 0, L_026b8b90;  1 drivers
+v0265ca90_0 .net "sel0", 0 0, L_026b8b00;  1 drivers
+v0265cae8_0 .net "sel1", 0 0, L_026b8b48;  1 drivers
+v0265cb40_0 .net "select", 0 0, L_026b34c0;  1 drivers
+L_026b3468 .reduce/nor L_026b34c0;
+S_0265d038 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_0265aa38;
+ .timescale 0 0;
+S_0265d108 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_0265d038;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b8bd8 .functor AND 1, L_026b3570, L_026b3518, C4<1>, C4<1>;
+L_026b8c20 .functor AND 1, L_026b35c8, L_026b3620, C4<1>, C4<1>;
+L_026b8c68 .functor OR 1, L_026b8bd8, L_026b8c20, C4<0>, C4<0>;
+v0265cb98_0 .net *"_s1", 0 0, L_026b3518;  1 drivers
+v0265cbf0_0 .net "in0", 0 0, L_026b3570;  1 drivers
+v0265cc48_0 .net "in1", 0 0, L_026b35c8;  1 drivers
+v0265cca0_0 .net "out", 0 0, L_026b8c68;  1 drivers
+v0265ccf8_0 .net "sel0", 0 0, L_026b8bd8;  1 drivers
+v0265cd50_0 .net "sel1", 0 0, L_026b8c20;  1 drivers
+v0265cda8_0 .net "select", 0 0, L_026b3620;  1 drivers
+L_026b3518 .reduce/nor L_026b3620;
+S_0265d1d8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_0265aa38;
+ .timescale 0 0;
+S_0265d2a8 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_0265d1d8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b8cb0 .functor AND 1, L_026b36d0, L_026b3678, C4<1>, C4<1>;
+L_026b8cf8 .functor AND 1, L_026b3728, L_026b3780, C4<1>, C4<1>;
+L_026b8d40 .functor OR 1, L_026b8cb0, L_026b8cf8, C4<0>, C4<0>;
+v0265ce00_0 .net *"_s1", 0 0, L_026b3678;  1 drivers
+v0265ce58_0 .net "in0", 0 0, L_026b36d0;  1 drivers
+v0265ceb0_0 .net "in1", 0 0, L_026b3728;  1 drivers
+v0265ef68_0 .net "out", 0 0, L_026b8d40;  1 drivers
+v0265efc0_0 .net "sel0", 0 0, L_026b8cb0;  1 drivers
+v0265f018_0 .net "sel1", 0 0, L_026b8cf8;  1 drivers
+v0265f070_0 .net "select", 0 0, L_026b3780;  1 drivers
+L_026b3678 .reduce/nor L_026b3780;
+S_0265d378 .scope generate, "BARREL[16]" "BARREL[16]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02652dd0 .param/l "i" 0 3 19, +C4<010000>;
+S_0265d448 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_0265d378;
+ .timescale 0 0;
+S_0265d518 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_0265d448;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b91c0 .functor AND 1, L_026b3e08, L_026b3db0, C4<1>, C4<1>;
+L_026b9208 .functor AND 1, L_026b3e60, L_026b3eb8, C4<1>, C4<1>;
+L_026b9250 .functor OR 1, L_026b91c0, L_026b9208, C4<0>, C4<0>;
+v0265f0c8_0 .net *"_s1", 0 0, L_026b3db0;  1 drivers
+v0265f120_0 .net "in0", 0 0, L_026b3e08;  1 drivers
+v0265f178_0 .net "in1", 0 0, L_026b3e60;  1 drivers
+v0265f1d0_0 .net "out", 0 0, L_026b9250;  1 drivers
+v0265f228_0 .net "sel0", 0 0, L_026b91c0;  1 drivers
+v0265f280_0 .net "sel1", 0 0, L_026b9208;  1 drivers
+v0265f2d8_0 .net "select", 0 0, L_026b3eb8;  1 drivers
+L_026b3db0 .reduce/nor L_026b3eb8;
+S_0265d5e8 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_0265d378;
+ .timescale 0 0;
+S_0265d6b8 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_0265d5e8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b9298 .functor AND 1, L_026b3f68, L_026b3f10, C4<1>, C4<1>;
+L_026b92e0 .functor AND 1, L_026b3fc0, L_026b4018, C4<1>, C4<1>;
+L_026b9328 .functor OR 1, L_026b9298, L_026b92e0, C4<0>, C4<0>;
+v0265f330_0 .net *"_s1", 0 0, L_026b3f10;  1 drivers
+v0265f388_0 .net "in0", 0 0, L_026b3f68;  1 drivers
+v0265f3e0_0 .net "in1", 0 0, L_026b3fc0;  1 drivers
+v0265f438_0 .net "out", 0 0, L_026b9328;  1 drivers
+v0265f490_0 .net "sel0", 0 0, L_026b9298;  1 drivers
+v0265f4e8_0 .net "sel1", 0 0, L_026b92e0;  1 drivers
+v0265f540_0 .net "select", 0 0, L_026b4018;  1 drivers
+L_026b3f10 .reduce/nor L_026b4018;
+S_0265d788 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_0265d378;
+ .timescale 0 0;
+S_0265d858 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_0265d788;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_02680108 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b8f38 .functor AND 1, L_02680108, L_026b3a40, C4<1>, C4<1>;
+L_02680130 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b8f80 .functor AND 1, L_02680130, L_026b3a98, C4<1>, C4<1>;
+L_026b8fc8 .functor OR 1, L_026b8f38, L_026b8f80, C4<0>, C4<0>;
+v0265f598_0 .net *"_s1", 0 0, L_026b3a40;  1 drivers
+v0265f5f0_0 .net "in0", 0 0, L_02680108;  1 drivers
+v0265f648_0 .net "in1", 0 0, L_02680130;  1 drivers
+v0265f6a0_0 .net "out", 0 0, L_026b8fc8;  1 drivers
+v0265f6f8_0 .net "sel0", 0 0, L_026b8f38;  1 drivers
+v0265f750_0 .net "sel1", 0 0, L_026b8f80;  1 drivers
+v0265f7a8_0 .net "select", 0 0, L_026b3a98;  1 drivers
+L_026b3a40 .reduce/nor L_026b3a98;
+S_0265d928 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_0265d378;
+ .timescale 0 0;
+S_0265d9f8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_0265d928;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b9010 .functor AND 1, L_026b3b48, L_026b3af0, C4<1>, C4<1>;
+L_026b9058 .functor AND 1, L_026b3ba0, L_026b3bf8, C4<1>, C4<1>;
+L_026b90a0 .functor OR 1, L_026b9010, L_026b9058, C4<0>, C4<0>;
+v0265f800_0 .net *"_s1", 0 0, L_026b3af0;  1 drivers
+v0265f858_0 .net "in0", 0 0, L_026b3b48;  1 drivers
+v0265f8b0_0 .net "in1", 0 0, L_026b3ba0;  1 drivers
+v0265f908_0 .net "out", 0 0, L_026b90a0;  1 drivers
+v0265f960_0 .net "sel0", 0 0, L_026b9010;  1 drivers
+v0265f9b8_0 .net "sel1", 0 0, L_026b9058;  1 drivers
+v0265fa10_0 .net "select", 0 0, L_026b3bf8;  1 drivers
+L_026b3af0 .reduce/nor L_026b3bf8;
+S_0265dac8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_0265d378;
+ .timescale 0 0;
+S_0265db98 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_0265dac8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026b90e8 .functor AND 1, L_026b3ca8, L_026b3c50, C4<1>, C4<1>;
+L_026b9130 .functor AND 1, L_026b3d00, L_026b3d58, C4<1>, C4<1>;
+L_026b9178 .functor OR 1, L_026b90e8, L_026b9130, C4<0>, C4<0>;
+v0265fa68_0 .net *"_s1", 0 0, L_026b3c50;  1 drivers
+v0265fac0_0 .net "in0", 0 0, L_026b3ca8;  1 drivers
+v0265fb18_0 .net "in1", 0 0, L_026b3d00;  1 drivers
+v0265fb70_0 .net "out", 0 0, L_026b9178;  1 drivers
+v0265fbc8_0 .net "sel0", 0 0, L_026b90e8;  1 drivers
+v0265fc20_0 .net "sel1", 0 0, L_026b9130;  1 drivers
+v0265fc78_0 .net "select", 0 0, L_026b3d58;  1 drivers
+L_026b3c50 .reduce/nor L_026b3d58;
+S_0265dc68 .scope generate, "BARREL[17]" "BARREL[17]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02652ee8 .param/l "i" 0 3 19, +C4<010001>;
+S_0265dd38 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_0265dc68;
+ .timescale 0 0;
+S_0265de08 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_0265dd38;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bb940 .functor AND 1, L_026b4438, L_026b43e0, C4<1>, C4<1>;
+L_026bb988 .functor AND 1, L_026b4490, L_026b44e8, C4<1>, C4<1>;
+L_026bb9d0 .functor OR 1, L_026bb940, L_026bb988, C4<0>, C4<0>;
+v0265fcd0_0 .net *"_s1", 0 0, L_026b43e0;  1 drivers
+v0265fd28_0 .net "in0", 0 0, L_026b4438;  1 drivers
+v0265fd80_0 .net "in1", 0 0, L_026b4490;  1 drivers
+v0265fdd8_0 .net "out", 0 0, L_026bb9d0;  1 drivers
+v0265fe30_0 .net "sel0", 0 0, L_026bb940;  1 drivers
+v0265fe88_0 .net "sel1", 0 0, L_026bb988;  1 drivers
+v0265fee0_0 .net "select", 0 0, L_026b44e8;  1 drivers
+L_026b43e0 .reduce/nor L_026b44e8;
+S_0265ded8 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_0265dc68;
+ .timescale 0 0;
+S_0265dfa8 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_0265ded8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bba18 .functor AND 1, L_026b4598, L_026b4540, C4<1>, C4<1>;
+L_026bba60 .functor AND 1, L_026b45f0, L_026b4648, C4<1>, C4<1>;
+L_026bbaa8 .functor OR 1, L_026bba18, L_026bba60, C4<0>, C4<0>;
+v0265ff38_0 .net *"_s1", 0 0, L_026b4540;  1 drivers
+v0265ff90_0 .net "in0", 0 0, L_026b4598;  1 drivers
+v0265ffe8_0 .net "in1", 0 0, L_026b45f0;  1 drivers
+v02660040_0 .net "out", 0 0, L_026bbaa8;  1 drivers
+v02660098_0 .net "sel0", 0 0, L_026bba18;  1 drivers
+v026600f0_0 .net "sel1", 0 0, L_026bba60;  1 drivers
+v02660148_0 .net "select", 0 0, L_026b4648;  1 drivers
+L_026b4540 .reduce/nor L_026b4648;
+S_0265e078 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_0265dc68;
+ .timescale 0 0;
+S_0265e148 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_0265e078;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_02680158 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b9370 .functor AND 1, L_02680158, L_026b4070, C4<1>, C4<1>;
+L_02680180 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026b93b8 .functor AND 1, L_02680180, L_026b40c8, C4<1>, C4<1>;
+L_026bb748 .functor OR 1, L_026b9370, L_026b93b8, C4<0>, C4<0>;
+v026601a0_0 .net *"_s1", 0 0, L_026b4070;  1 drivers
+v026601f8_0 .net "in0", 0 0, L_02680158;  1 drivers
+v02660250_0 .net "in1", 0 0, L_02680180;  1 drivers
+v026602a8_0 .net "out", 0 0, L_026bb748;  1 drivers
+v02660300_0 .net "sel0", 0 0, L_026b9370;  1 drivers
+v02660358_0 .net "sel1", 0 0, L_026b93b8;  1 drivers
+v026603b0_0 .net "select", 0 0, L_026b40c8;  1 drivers
+L_026b4070 .reduce/nor L_026b40c8;
+S_0265e218 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_0265dc68;
+ .timescale 0 0;
+S_0265e2e8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_0265e218;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bb790 .functor AND 1, L_026b4178, L_026b4120, C4<1>, C4<1>;
+L_026bb7d8 .functor AND 1, L_026b41d0, L_026b4228, C4<1>, C4<1>;
+L_026bb820 .functor OR 1, L_026bb790, L_026bb7d8, C4<0>, C4<0>;
+v02660408_0 .net *"_s1", 0 0, L_026b4120;  1 drivers
+v02660460_0 .net "in0", 0 0, L_026b4178;  1 drivers
+v026604b8_0 .net "in1", 0 0, L_026b41d0;  1 drivers
+v02660510_0 .net "out", 0 0, L_026bb820;  1 drivers
+v02660568_0 .net "sel0", 0 0, L_026bb790;  1 drivers
+v026605c0_0 .net "sel1", 0 0, L_026bb7d8;  1 drivers
+v02660618_0 .net "select", 0 0, L_026b4228;  1 drivers
+L_026b4120 .reduce/nor L_026b4228;
+S_0265e3b8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_0265dc68;
+ .timescale 0 0;
+S_0265e488 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_0265e3b8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bb868 .functor AND 1, L_026b42d8, L_026b4280, C4<1>, C4<1>;
+L_026bb8b0 .functor AND 1, L_026b4330, L_026b4388, C4<1>, C4<1>;
+L_026bb8f8 .functor OR 1, L_026bb868, L_026bb8b0, C4<0>, C4<0>;
+v02660670_0 .net *"_s1", 0 0, L_026b4280;  1 drivers
+v026606c8_0 .net "in0", 0 0, L_026b42d8;  1 drivers
+v02660720_0 .net "in1", 0 0, L_026b4330;  1 drivers
+v02660778_0 .net "out", 0 0, L_026bb8f8;  1 drivers
+v026607d0_0 .net "sel0", 0 0, L_026bb868;  1 drivers
+v02660828_0 .net "sel1", 0 0, L_026bb8b0;  1 drivers
+v02660880_0 .net "select", 0 0, L_026b4388;  1 drivers
+L_026b4280 .reduce/nor L_026b4388;
+S_0265e558 .scope generate, "BARREL[18]" "BARREL[18]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02662030 .param/l "i" 0 3 19, +C4<010010>;
+S_0265e628 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_0265e558;
+ .timescale 0 0;
+S_0265e6f8 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_0265e628;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bbd78 .functor AND 1, L_026b4a68, L_026b4a10, C4<1>, C4<1>;
+L_026bbdc0 .functor AND 1, L_026b4ac0, L_026b4b18, C4<1>, C4<1>;
+L_026bbe08 .functor OR 1, L_026bbd78, L_026bbdc0, C4<0>, C4<0>;
+v026608d8_0 .net *"_s1", 0 0, L_026b4a10;  1 drivers
+v02660930_0 .net "in0", 0 0, L_026b4a68;  1 drivers
+v02660988_0 .net "in1", 0 0, L_026b4ac0;  1 drivers
+v026609e0_0 .net "out", 0 0, L_026bbe08;  1 drivers
+v02660a38_0 .net "sel0", 0 0, L_026bbd78;  1 drivers
+v02660a90_0 .net "sel1", 0 0, L_026bbdc0;  1 drivers
+v02660ae8_0 .net "select", 0 0, L_026b4b18;  1 drivers
+L_026b4a10 .reduce/nor L_026b4b18;
+S_0265e7c8 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_0265e558;
+ .timescale 0 0;
+S_0265e898 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_0265e7c8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bbe50 .functor AND 1, L_026b4bc8, L_026b4b70, C4<1>, C4<1>;
+L_026bbe98 .functor AND 1, L_026b4c20, L_026b4c78, C4<1>, C4<1>;
+L_026bbee0 .functor OR 1, L_026bbe50, L_026bbe98, C4<0>, C4<0>;
+v02660b40_0 .net *"_s1", 0 0, L_026b4b70;  1 drivers
+v02660b98_0 .net "in0", 0 0, L_026b4bc8;  1 drivers
+v02660bf0_0 .net "in1", 0 0, L_026b4c20;  1 drivers
+v02660c48_0 .net "out", 0 0, L_026bbee0;  1 drivers
+v02660ca0_0 .net "sel0", 0 0, L_026bbe50;  1 drivers
+v02660cf8_0 .net "sel1", 0 0, L_026bbe98;  1 drivers
+v02660d50_0 .net "select", 0 0, L_026b4c78;  1 drivers
+L_026b4b70 .reduce/nor L_026b4c78;
+S_0265e968 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_0265e558;
+ .timescale 0 0;
+S_0265ea38 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_0265e968;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026801a8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bbaf0 .functor AND 1, L_026801a8, L_026b46a0, C4<1>, C4<1>;
+L_026801d0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bbb38 .functor AND 1, L_026801d0, L_026b46f8, C4<1>, C4<1>;
+L_026bbb80 .functor OR 1, L_026bbaf0, L_026bbb38, C4<0>, C4<0>;
+v02660da8_0 .net *"_s1", 0 0, L_026b46a0;  1 drivers
+v02660e00_0 .net "in0", 0 0, L_026801a8;  1 drivers
+v02660e58_0 .net "in1", 0 0, L_026801d0;  1 drivers
+v02660eb0_0 .net "out", 0 0, L_026bbb80;  1 drivers
+v02662768_0 .net "sel0", 0 0, L_026bbaf0;  1 drivers
+v026627c0_0 .net "sel1", 0 0, L_026bbb38;  1 drivers
+v02662818_0 .net "select", 0 0, L_026b46f8;  1 drivers
+L_026b46a0 .reduce/nor L_026b46f8;
+S_0265eb08 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_0265e558;
+ .timescale 0 0;
+S_0265ebd8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_0265eb08;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bbbc8 .functor AND 1, L_026b47a8, L_026b4750, C4<1>, C4<1>;
+L_026bbc10 .functor AND 1, L_026b4800, L_026b4858, C4<1>, C4<1>;
+L_026bbc58 .functor OR 1, L_026bbbc8, L_026bbc10, C4<0>, C4<0>;
+v02662870_0 .net *"_s1", 0 0, L_026b4750;  1 drivers
+v026628c8_0 .net "in0", 0 0, L_026b47a8;  1 drivers
+v02662920_0 .net "in1", 0 0, L_026b4800;  1 drivers
+v02662978_0 .net "out", 0 0, L_026bbc58;  1 drivers
+v026629d0_0 .net "sel0", 0 0, L_026bbbc8;  1 drivers
+v02662a28_0 .net "sel1", 0 0, L_026bbc10;  1 drivers
+v02662a80_0 .net "select", 0 0, L_026b4858;  1 drivers
+L_026b4750 .reduce/nor L_026b4858;
+S_0265eca8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_0265e558;
+ .timescale 0 0;
+S_0265ed78 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_0265eca8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bbca0 .functor AND 1, L_026b4908, L_026b48b0, C4<1>, C4<1>;
+L_026bbce8 .functor AND 1, L_026b4960, L_026b49b8, C4<1>, C4<1>;
+L_026bbd30 .functor OR 1, L_026bbca0, L_026bbce8, C4<0>, C4<0>;
+v02662ad8_0 .net *"_s1", 0 0, L_026b48b0;  1 drivers
+v02662b30_0 .net "in0", 0 0, L_026b4908;  1 drivers
+v02662b88_0 .net "in1", 0 0, L_026b4960;  1 drivers
+v02662be0_0 .net "out", 0 0, L_026bbd30;  1 drivers
+v02662c38_0 .net "sel0", 0 0, L_026bbca0;  1 drivers
+v02662c90_0 .net "sel1", 0 0, L_026bbce8;  1 drivers
+v02662ce8_0 .net "select", 0 0, L_026b49b8;  1 drivers
+L_026b48b0 .reduce/nor L_026b49b8;
+S_0265ee48 .scope generate, "BARREL[19]" "BARREL[19]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02662148 .param/l "i" 0 3 19, +C4<010011>;
+S_02664768 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_0265ee48;
+ .timescale 0 0;
+S_02664838 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02664768;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bc1b0 .functor AND 1, L_026b5098, L_026b5040, C4<1>, C4<1>;
+L_026bc1f8 .functor AND 1, L_026b50f0, L_026b5148, C4<1>, C4<1>;
+L_026bc240 .functor OR 1, L_026bc1b0, L_026bc1f8, C4<0>, C4<0>;
+v02662d40_0 .net *"_s1", 0 0, L_026b5040;  1 drivers
+v02662d98_0 .net "in0", 0 0, L_026b5098;  1 drivers
+v02662df0_0 .net "in1", 0 0, L_026b50f0;  1 drivers
+v02662e48_0 .net "out", 0 0, L_026bc240;  1 drivers
+v02662ea0_0 .net "sel0", 0 0, L_026bc1b0;  1 drivers
+v02662ef8_0 .net "sel1", 0 0, L_026bc1f8;  1 drivers
+v02662f50_0 .net "select", 0 0, L_026b5148;  1 drivers
+L_026b5040 .reduce/nor L_026b5148;
+S_02664908 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_0265ee48;
+ .timescale 0 0;
+S_026649d8 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_02664908;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bc288 .functor AND 1, L_026b51f8, L_026b51a0, C4<1>, C4<1>;
+L_026bc2d0 .functor AND 1, L_026b5250, L_026b52a8, C4<1>, C4<1>;
+L_026bc318 .functor OR 1, L_026bc288, L_026bc2d0, C4<0>, C4<0>;
+v02662fa8_0 .net *"_s1", 0 0, L_026b51a0;  1 drivers
+v02663000_0 .net "in0", 0 0, L_026b51f8;  1 drivers
+v02663058_0 .net "in1", 0 0, L_026b5250;  1 drivers
+v026630b0_0 .net "out", 0 0, L_026bc318;  1 drivers
+v02663108_0 .net "sel0", 0 0, L_026bc288;  1 drivers
+v02663160_0 .net "sel1", 0 0, L_026bc2d0;  1 drivers
+v026631b8_0 .net "select", 0 0, L_026b52a8;  1 drivers
+L_026b51a0 .reduce/nor L_026b52a8;
+S_02664aa8 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_0265ee48;
+ .timescale 0 0;
+S_02664b78 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02664aa8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026801f8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bbf28 .functor AND 1, L_026801f8, L_026b4cd0, C4<1>, C4<1>;
+L_02680220 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bbf70 .functor AND 1, L_02680220, L_026b4d28, C4<1>, C4<1>;
+L_026bbfb8 .functor OR 1, L_026bbf28, L_026bbf70, C4<0>, C4<0>;
+v02663210_0 .net *"_s1", 0 0, L_026b4cd0;  1 drivers
+v02663268_0 .net "in0", 0 0, L_026801f8;  1 drivers
+v026632c0_0 .net "in1", 0 0, L_02680220;  1 drivers
+v02663318_0 .net "out", 0 0, L_026bbfb8;  1 drivers
+v02663370_0 .net "sel0", 0 0, L_026bbf28;  1 drivers
+v026633c8_0 .net "sel1", 0 0, L_026bbf70;  1 drivers
+v02663420_0 .net "select", 0 0, L_026b4d28;  1 drivers
+L_026b4cd0 .reduce/nor L_026b4d28;
+S_02664c48 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_0265ee48;
+ .timescale 0 0;
+S_02664d18 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02664c48;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bc000 .functor AND 1, L_026b4dd8, L_026b4d80, C4<1>, C4<1>;
+L_026bc048 .functor AND 1, L_026b4e30, L_026b4e88, C4<1>, C4<1>;
+L_026bc090 .functor OR 1, L_026bc000, L_026bc048, C4<0>, C4<0>;
+v02663478_0 .net *"_s1", 0 0, L_026b4d80;  1 drivers
+v026634d0_0 .net "in0", 0 0, L_026b4dd8;  1 drivers
+v02663528_0 .net "in1", 0 0, L_026b4e30;  1 drivers
+v02663580_0 .net "out", 0 0, L_026bc090;  1 drivers
+v026635d8_0 .net "sel0", 0 0, L_026bc000;  1 drivers
+v02663630_0 .net "sel1", 0 0, L_026bc048;  1 drivers
+v02663688_0 .net "select", 0 0, L_026b4e88;  1 drivers
+L_026b4d80 .reduce/nor L_026b4e88;
+S_02664de8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_0265ee48;
+ .timescale 0 0;
+S_02664eb8 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_02664de8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bc0d8 .functor AND 1, L_026b4f38, L_026b4ee0, C4<1>, C4<1>;
+L_026bc120 .functor AND 1, L_026b4f90, L_026b4fe8, C4<1>, C4<1>;
+L_026bc168 .functor OR 1, L_026bc0d8, L_026bc120, C4<0>, C4<0>;
+v026636e0_0 .net *"_s1", 0 0, L_026b4ee0;  1 drivers
+v02663738_0 .net "in0", 0 0, L_026b4f38;  1 drivers
+v02663790_0 .net "in1", 0 0, L_026b4f90;  1 drivers
+v026637e8_0 .net "out", 0 0, L_026bc168;  1 drivers
+v02663840_0 .net "sel0", 0 0, L_026bc0d8;  1 drivers
+v02663898_0 .net "sel1", 0 0, L_026bc120;  1 drivers
+v026638f0_0 .net "select", 0 0, L_026b4fe8;  1 drivers
+L_026b4ee0 .reduce/nor L_026b4fe8;
+S_02664f88 .scope generate, "BARREL[20]" "BARREL[20]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02662260 .param/l "i" 0 3 19, +C4<010100>;
+S_02665058 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_02664f88;
+ .timescale 0 0;
+S_02665128 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02665058;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bc5e8 .functor AND 1, L_026b56c8, L_026b5670, C4<1>, C4<1>;
+L_026bc630 .functor AND 1, L_026b5720, L_026b5778, C4<1>, C4<1>;
+L_026bc678 .functor OR 1, L_026bc5e8, L_026bc630, C4<0>, C4<0>;
+v02663948_0 .net *"_s1", 0 0, L_026b5670;  1 drivers
+v026639a0_0 .net "in0", 0 0, L_026b56c8;  1 drivers
+v026639f8_0 .net "in1", 0 0, L_026b5720;  1 drivers
+v02663a50_0 .net "out", 0 0, L_026bc678;  1 drivers
+v02663aa8_0 .net "sel0", 0 0, L_026bc5e8;  1 drivers
+v02663b00_0 .net "sel1", 0 0, L_026bc630;  1 drivers
+v02663b58_0 .net "select", 0 0, L_026b5778;  1 drivers
+L_026b5670 .reduce/nor L_026b5778;
+S_026651f8 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_02664f88;
+ .timescale 0 0;
+S_026652c8 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_026651f8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bc6c0 .functor AND 1, L_026b5828, L_026b57d0, C4<1>, C4<1>;
+L_026bed58 .functor AND 1, L_026b5880, L_026b58d8, C4<1>, C4<1>;
+L_026beda0 .functor OR 1, L_026bc6c0, L_026bed58, C4<0>, C4<0>;
+v02663bb0_0 .net *"_s1", 0 0, L_026b57d0;  1 drivers
+v02663c08_0 .net "in0", 0 0, L_026b5828;  1 drivers
+v02663c60_0 .net "in1", 0 0, L_026b5880;  1 drivers
+v02663cb8_0 .net "out", 0 0, L_026beda0;  1 drivers
+v02663d10_0 .net "sel0", 0 0, L_026bc6c0;  1 drivers
+v02663d68_0 .net "sel1", 0 0, L_026bed58;  1 drivers
+v02663dc0_0 .net "select", 0 0, L_026b58d8;  1 drivers
+L_026b57d0 .reduce/nor L_026b58d8;
+S_02665398 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02664f88;
+ .timescale 0 0;
+S_02665468 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02665398;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_02680248 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bc360 .functor AND 1, L_02680248, L_026b5300, C4<1>, C4<1>;
+L_02680270 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bc3a8 .functor AND 1, L_02680270, L_026b5358, C4<1>, C4<1>;
+L_026bc3f0 .functor OR 1, L_026bc360, L_026bc3a8, C4<0>, C4<0>;
+v02663e18_0 .net *"_s1", 0 0, L_026b5300;  1 drivers
+v02663e70_0 .net "in0", 0 0, L_02680248;  1 drivers
+v02663ec8_0 .net "in1", 0 0, L_02680270;  1 drivers
+v02663f20_0 .net "out", 0 0, L_026bc3f0;  1 drivers
+v02663f78_0 .net "sel0", 0 0, L_026bc360;  1 drivers
+v02663fd0_0 .net "sel1", 0 0, L_026bc3a8;  1 drivers
+v02664028_0 .net "select", 0 0, L_026b5358;  1 drivers
+L_026b5300 .reduce/nor L_026b5358;
+S_02665538 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02664f88;
+ .timescale 0 0;
+S_02665608 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02665538;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bc438 .functor AND 1, L_026b5408, L_026b53b0, C4<1>, C4<1>;
+L_026bc480 .functor AND 1, L_026b5460, L_026b54b8, C4<1>, C4<1>;
+L_026bc4c8 .functor OR 1, L_026bc438, L_026bc480, C4<0>, C4<0>;
+v02664080_0 .net *"_s1", 0 0, L_026b53b0;  1 drivers
+v026640d8_0 .net "in0", 0 0, L_026b5408;  1 drivers
+v02664130_0 .net "in1", 0 0, L_026b5460;  1 drivers
+v02664188_0 .net "out", 0 0, L_026bc4c8;  1 drivers
+v026641e0_0 .net "sel0", 0 0, L_026bc438;  1 drivers
+v02664238_0 .net "sel1", 0 0, L_026bc480;  1 drivers
+v02664290_0 .net "select", 0 0, L_026b54b8;  1 drivers
+L_026b53b0 .reduce/nor L_026b54b8;
+S_026656d8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02664f88;
+ .timescale 0 0;
+S_026657a8 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_026656d8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bc510 .functor AND 1, L_026b5568, L_026b5510, C4<1>, C4<1>;
+L_026bc558 .functor AND 1, L_026b55c0, L_026b5618, C4<1>, C4<1>;
+L_026bc5a0 .functor OR 1, L_026bc510, L_026bc558, C4<0>, C4<0>;
+v026642e8_0 .net *"_s1", 0 0, L_026b5510;  1 drivers
+v02664340_0 .net "in0", 0 0, L_026b5568;  1 drivers
+v02664398_0 .net "in1", 0 0, L_026b55c0;  1 drivers
+v026643f0_0 .net "out", 0 0, L_026bc5a0;  1 drivers
+v02664448_0 .net "sel0", 0 0, L_026bc510;  1 drivers
+v026644a0_0 .net "sel1", 0 0, L_026bc558;  1 drivers
+v026644f8_0 .net "select", 0 0, L_026b5618;  1 drivers
+L_026b5510 .reduce/nor L_026b5618;
+S_02665878 .scope generate, "BARREL[21]" "BARREL[21]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02662378 .param/l "i" 0 3 19, +C4<010101>;
+S_02665948 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_02665878;
+ .timescale 0 0;
+S_02665a18 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02665948;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bf070 .functor AND 1, L_026c0070, L_026c0018, C4<1>, C4<1>;
+L_026bf0b8 .functor AND 1, L_026c00c8, L_026c0120, C4<1>, C4<1>;
+L_026bf100 .functor OR 1, L_026bf070, L_026bf0b8, C4<0>, C4<0>;
+v02664550_0 .net *"_s1", 0 0, L_026c0018;  1 drivers
+v026645a8_0 .net "in0", 0 0, L_026c0070;  1 drivers
+v02664600_0 .net "in1", 0 0, L_026c00c8;  1 drivers
+v02664658_0 .net "out", 0 0, L_026bf100;  1 drivers
+v026646b0_0 .net "sel0", 0 0, L_026bf070;  1 drivers
+v02666768_0 .net "sel1", 0 0, L_026bf0b8;  1 drivers
+v026667c0_0 .net "select", 0 0, L_026c0120;  1 drivers
+L_026c0018 .reduce/nor L_026c0120;
+S_02665ae8 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_02665878;
+ .timescale 0 0;
+S_02665bb8 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_02665ae8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bf148 .functor AND 1, L_026c01d0, L_026c0178, C4<1>, C4<1>;
+L_026bf190 .functor AND 1, L_026c0228, L_026c0280, C4<1>, C4<1>;
+L_026bf1d8 .functor OR 1, L_026bf148, L_026bf190, C4<0>, C4<0>;
+v02666818_0 .net *"_s1", 0 0, L_026c0178;  1 drivers
+v02666870_0 .net "in0", 0 0, L_026c01d0;  1 drivers
+v026668c8_0 .net "in1", 0 0, L_026c0228;  1 drivers
+v02666920_0 .net "out", 0 0, L_026bf1d8;  1 drivers
+v02666978_0 .net "sel0", 0 0, L_026bf148;  1 drivers
+v026669d0_0 .net "sel1", 0 0, L_026bf190;  1 drivers
+v02666a28_0 .net "select", 0 0, L_026c0280;  1 drivers
+L_026c0178 .reduce/nor L_026c0280;
+S_02665c88 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02665878;
+ .timescale 0 0;
+S_02665d58 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02665c88;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_02680298 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bede8 .functor AND 1, L_02680298, L_026b5930, C4<1>, C4<1>;
+L_026802c0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bee30 .functor AND 1, L_026802c0, L_026b5988, C4<1>, C4<1>;
+L_026bee78 .functor OR 1, L_026bede8, L_026bee30, C4<0>, C4<0>;
+v02666a80_0 .net *"_s1", 0 0, L_026b5930;  1 drivers
+v02666ad8_0 .net "in0", 0 0, L_02680298;  1 drivers
+v02666b30_0 .net "in1", 0 0, L_026802c0;  1 drivers
+v02666b88_0 .net "out", 0 0, L_026bee78;  1 drivers
+v02666be0_0 .net "sel0", 0 0, L_026bede8;  1 drivers
+v02666c38_0 .net "sel1", 0 0, L_026bee30;  1 drivers
+v02666c90_0 .net "select", 0 0, L_026b5988;  1 drivers
+L_026b5930 .reduce/nor L_026b5988;
+S_02665e28 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02665878;
+ .timescale 0 0;
+S_02665ef8 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02665e28;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026beec0 .functor AND 1, L_026bfdb0, L_026bfd58, C4<1>, C4<1>;
+L_026bef08 .functor AND 1, L_026bfe08, L_026bfe60, C4<1>, C4<1>;
+L_026bef50 .functor OR 1, L_026beec0, L_026bef08, C4<0>, C4<0>;
+v02666ce8_0 .net *"_s1", 0 0, L_026bfd58;  1 drivers
+v02666d40_0 .net "in0", 0 0, L_026bfdb0;  1 drivers
+v02666d98_0 .net "in1", 0 0, L_026bfe08;  1 drivers
+v02666df0_0 .net "out", 0 0, L_026bef50;  1 drivers
+v02666e48_0 .net "sel0", 0 0, L_026beec0;  1 drivers
+v02666ea0_0 .net "sel1", 0 0, L_026bef08;  1 drivers
+v02666ef8_0 .net "select", 0 0, L_026bfe60;  1 drivers
+L_026bfd58 .reduce/nor L_026bfe60;
+S_02665fc8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02665878;
+ .timescale 0 0;
+S_02666098 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_02665fc8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bef98 .functor AND 1, L_026bff10, L_026bfeb8, C4<1>, C4<1>;
+L_026befe0 .functor AND 1, L_026bff68, L_026bffc0, C4<1>, C4<1>;
+L_026bf028 .functor OR 1, L_026bef98, L_026befe0, C4<0>, C4<0>;
+v02666f50_0 .net *"_s1", 0 0, L_026bfeb8;  1 drivers
+v02666fa8_0 .net "in0", 0 0, L_026bff10;  1 drivers
+v02667000_0 .net "in1", 0 0, L_026bff68;  1 drivers
+v02667058_0 .net "out", 0 0, L_026bf028;  1 drivers
+v026670b0_0 .net "sel0", 0 0, L_026bef98;  1 drivers
+v02667108_0 .net "sel1", 0 0, L_026befe0;  1 drivers
+v02667160_0 .net "select", 0 0, L_026bffc0;  1 drivers
+L_026bfeb8 .reduce/nor L_026bffc0;
+S_02666168 .scope generate, "BARREL[22]" "BARREL[22]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02662490 .param/l "i" 0 3 19, +C4<010110>;
+S_02666238 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_02666168;
+ .timescale 0 0;
+S_02666308 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02666238;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bf4a8 .functor AND 1, L_026c06a0, L_026c0648, C4<1>, C4<1>;
+L_026bf4f0 .functor AND 1, L_026c06f8, L_026c0750, C4<1>, C4<1>;
+L_026bf538 .functor OR 1, L_026bf4a8, L_026bf4f0, C4<0>, C4<0>;
+v026671b8_0 .net *"_s1", 0 0, L_026c0648;  1 drivers
+v02667210_0 .net "in0", 0 0, L_026c06a0;  1 drivers
+v02667268_0 .net "in1", 0 0, L_026c06f8;  1 drivers
+v026672c0_0 .net "out", 0 0, L_026bf538;  1 drivers
+v02667318_0 .net "sel0", 0 0, L_026bf4a8;  1 drivers
+v02667370_0 .net "sel1", 0 0, L_026bf4f0;  1 drivers
+v026673c8_0 .net "select", 0 0, L_026c0750;  1 drivers
+L_026c0648 .reduce/nor L_026c0750;
+S_026663d8 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_02666168;
+ .timescale 0 0;
+S_026664a8 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_026663d8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bf580 .functor AND 1, L_026c0800, L_026c07a8, C4<1>, C4<1>;
+L_026bf5c8 .functor AND 1, L_026c0858, L_026c08b0, C4<1>, C4<1>;
+L_026bf610 .functor OR 1, L_026bf580, L_026bf5c8, C4<0>, C4<0>;
+v02667420_0 .net *"_s1", 0 0, L_026c07a8;  1 drivers
+v02667478_0 .net "in0", 0 0, L_026c0800;  1 drivers
+v026674d0_0 .net "in1", 0 0, L_026c0858;  1 drivers
+v02667528_0 .net "out", 0 0, L_026bf610;  1 drivers
+v02667580_0 .net "sel0", 0 0, L_026bf580;  1 drivers
+v026675d8_0 .net "sel1", 0 0, L_026bf5c8;  1 drivers
+v02667630_0 .net "select", 0 0, L_026c08b0;  1 drivers
+L_026c07a8 .reduce/nor L_026c08b0;
+S_02666578 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02666168;
+ .timescale 0 0;
+S_02666648 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02666578;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026802e8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bf220 .functor AND 1, L_026802e8, L_026c02d8, C4<1>, C4<1>;
+L_02680310 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bf268 .functor AND 1, L_02680310, L_026c0330, C4<1>, C4<1>;
+L_026bf2b0 .functor OR 1, L_026bf220, L_026bf268, C4<0>, C4<0>;
+v02667688_0 .net *"_s1", 0 0, L_026c02d8;  1 drivers
+v026676e0_0 .net "in0", 0 0, L_026802e8;  1 drivers
+v02667738_0 .net "in1", 0 0, L_02680310;  1 drivers
+v02667790_0 .net "out", 0 0, L_026bf2b0;  1 drivers
+v026677e8_0 .net "sel0", 0 0, L_026bf220;  1 drivers
+v02667840_0 .net "sel1", 0 0, L_026bf268;  1 drivers
+v02667898_0 .net "select", 0 0, L_026c0330;  1 drivers
+L_026c02d8 .reduce/nor L_026c0330;
+S_0266e768 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02666168;
+ .timescale 0 0;
+S_0266e838 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_0266e768;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bf2f8 .functor AND 1, L_026c03e0, L_026c0388, C4<1>, C4<1>;
+L_026bf340 .functor AND 1, L_026c0438, L_026c0490, C4<1>, C4<1>;
+L_026bf388 .functor OR 1, L_026bf2f8, L_026bf340, C4<0>, C4<0>;
+v026678f0_0 .net *"_s1", 0 0, L_026c0388;  1 drivers
+v02667948_0 .net "in0", 0 0, L_026c03e0;  1 drivers
+v026679a0_0 .net "in1", 0 0, L_026c0438;  1 drivers
+v026679f8_0 .net "out", 0 0, L_026bf388;  1 drivers
+v02667a50_0 .net "sel0", 0 0, L_026bf2f8;  1 drivers
+v02667aa8_0 .net "sel1", 0 0, L_026bf340;  1 drivers
+v02667b00_0 .net "select", 0 0, L_026c0490;  1 drivers
+L_026c0388 .reduce/nor L_026c0490;
+S_0266e908 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02666168;
+ .timescale 0 0;
+S_0266e9d8 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_0266e908;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bf3d0 .functor AND 1, L_026c0540, L_026c04e8, C4<1>, C4<1>;
+L_026bf418 .functor AND 1, L_026c0598, L_026c05f0, C4<1>, C4<1>;
+L_026bf460 .functor OR 1, L_026bf3d0, L_026bf418, C4<0>, C4<0>;
+v02667b58_0 .net *"_s1", 0 0, L_026c04e8;  1 drivers
+v02667bb0_0 .net "in0", 0 0, L_026c0540;  1 drivers
+v02667c08_0 .net "in1", 0 0, L_026c0598;  1 drivers
+v02667c60_0 .net "out", 0 0, L_026bf460;  1 drivers
+v02667cb8_0 .net "sel0", 0 0, L_026bf3d0;  1 drivers
+v02667d10_0 .net "sel1", 0 0, L_026bf418;  1 drivers
+v02667d68_0 .net "select", 0 0, L_026c05f0;  1 drivers
+L_026c04e8 .reduce/nor L_026c05f0;
+S_0266eaa8 .scope generate, "BARREL[23]" "BARREL[23]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_026625a8 .param/l "i" 0 3 19, +C4<010111>;
+S_0266eb78 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_0266eaa8;
+ .timescale 0 0;
+S_0266ec48 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_0266eb78;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bf8e0 .functor AND 1, L_026c0cd0, L_026c0c78, C4<1>, C4<1>;
+L_026bf928 .functor AND 1, L_026c0d28, L_026c0d80, C4<1>, C4<1>;
+L_026bf970 .functor OR 1, L_026bf8e0, L_026bf928, C4<0>, C4<0>;
+v02667dc0_0 .net *"_s1", 0 0, L_026c0c78;  1 drivers
+v02667e18_0 .net "in0", 0 0, L_026c0cd0;  1 drivers
+v02667e70_0 .net "in1", 0 0, L_026c0d28;  1 drivers
+v02667ec8_0 .net "out", 0 0, L_026bf970;  1 drivers
+v02667f20_0 .net "sel0", 0 0, L_026bf8e0;  1 drivers
+v02667f78_0 .net "sel1", 0 0, L_026bf928;  1 drivers
+v02667fd0_0 .net "select", 0 0, L_026c0d80;  1 drivers
+L_026c0c78 .reduce/nor L_026c0d80;
+S_0266ed18 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_0266eaa8;
+ .timescale 0 0;
+S_0266ede8 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_0266ed18;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bf9b8 .functor AND 1, L_026c0e30, L_026c0dd8, C4<1>, C4<1>;
+L_026bfa00 .functor AND 1, L_026c0e88, L_026c0ee0, C4<1>, C4<1>;
+L_026bfa48 .functor OR 1, L_026bf9b8, L_026bfa00, C4<0>, C4<0>;
+v02668028_0 .net *"_s1", 0 0, L_026c0dd8;  1 drivers
+v02668080_0 .net "in0", 0 0, L_026c0e30;  1 drivers
+v026680d8_0 .net "in1", 0 0, L_026c0e88;  1 drivers
+v02668130_0 .net "out", 0 0, L_026bfa48;  1 drivers
+v02668188_0 .net "sel0", 0 0, L_026bf9b8;  1 drivers
+v026681e0_0 .net "sel1", 0 0, L_026bfa00;  1 drivers
+v02668238_0 .net "select", 0 0, L_026c0ee0;  1 drivers
+L_026c0dd8 .reduce/nor L_026c0ee0;
+S_0266eeb8 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_0266eaa8;
+ .timescale 0 0;
+S_0266ef88 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_0266eeb8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_02680338 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bf658 .functor AND 1, L_02680338, L_026c0908, C4<1>, C4<1>;
+L_02680360 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bf6a0 .functor AND 1, L_02680360, L_026c0960, C4<1>, C4<1>;
+L_026bf6e8 .functor OR 1, L_026bf658, L_026bf6a0, C4<0>, C4<0>;
+v02668290_0 .net *"_s1", 0 0, L_026c0908;  1 drivers
+v026682e8_0 .net "in0", 0 0, L_02680338;  1 drivers
+v02668340_0 .net "in1", 0 0, L_02680360;  1 drivers
+v02668398_0 .net "out", 0 0, L_026bf6e8;  1 drivers
+v026683f0_0 .net "sel0", 0 0, L_026bf658;  1 drivers
+v02668448_0 .net "sel1", 0 0, L_026bf6a0;  1 drivers
+v026684a0_0 .net "select", 0 0, L_026c0960;  1 drivers
+L_026c0908 .reduce/nor L_026c0960;
+S_0266f058 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_0266eaa8;
+ .timescale 0 0;
+S_0266f128 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_0266f058;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bf730 .functor AND 1, L_026c0a10, L_026c09b8, C4<1>, C4<1>;
+L_026bf778 .functor AND 1, L_026c0a68, L_026c0ac0, C4<1>, C4<1>;
+L_026bf7c0 .functor OR 1, L_026bf730, L_026bf778, C4<0>, C4<0>;
+v026684f8_0 .net *"_s1", 0 0, L_026c09b8;  1 drivers
+v02668550_0 .net "in0", 0 0, L_026c0a10;  1 drivers
+v026685a8_0 .net "in1", 0 0, L_026c0a68;  1 drivers
+v02668600_0 .net "out", 0 0, L_026bf7c0;  1 drivers
+v02668658_0 .net "sel0", 0 0, L_026bf730;  1 drivers
+v026686b0_0 .net "sel1", 0 0, L_026bf778;  1 drivers
+v02668708_0 .net "select", 0 0, L_026c0ac0;  1 drivers
+L_026c09b8 .reduce/nor L_026c0ac0;
+S_0266f1f8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_0266eaa8;
+ .timescale 0 0;
+S_0266f2c8 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_0266f1f8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bf808 .functor AND 1, L_026c0b70, L_026c0b18, C4<1>, C4<1>;
+L_026bf850 .functor AND 1, L_026c0bc8, L_026c0c20, C4<1>, C4<1>;
+L_026bf898 .functor OR 1, L_026bf808, L_026bf850, C4<0>, C4<0>;
+v02668760_0 .net *"_s1", 0 0, L_026c0b18;  1 drivers
+v026687b8_0 .net "in0", 0 0, L_026c0b70;  1 drivers
+v02668810_0 .net "in1", 0 0, L_026c0bc8;  1 drivers
+v02668868_0 .net "out", 0 0, L_026bf898;  1 drivers
+v026688c0_0 .net "sel0", 0 0, L_026bf808;  1 drivers
+v02668918_0 .net "sel1", 0 0, L_026bf850;  1 drivers
+v02668970_0 .net "select", 0 0, L_026c0c20;  1 drivers
+L_026c0b18 .reduce/nor L_026c0c20;
+S_0266f398 .scope generate, "BARREL[24]" "BARREL[24]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_026626c0 .param/l "i" 0 3 19, +C4<011000>;
+S_0266f468 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_0266f398;
+ .timescale 0 0;
+S_0266f538 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_0266f468;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c3d58 .functor AND 1, L_026c1300, L_026c12a8, C4<1>, C4<1>;
+L_026c3da0 .functor AND 1, L_026c1358, L_026c13b0, C4<1>, C4<1>;
+L_026c3de8 .functor OR 1, L_026c3d58, L_026c3da0, C4<0>, C4<0>;
+v026689c8_0 .net *"_s1", 0 0, L_026c12a8;  1 drivers
+v02668a20_0 .net "in0", 0 0, L_026c1300;  1 drivers
+v02668a78_0 .net "in1", 0 0, L_026c1358;  1 drivers
+v02668ad0_0 .net "out", 0 0, L_026c3de8;  1 drivers
+v02668b28_0 .net "sel0", 0 0, L_026c3d58;  1 drivers
+v02668b80_0 .net "sel1", 0 0, L_026c3da0;  1 drivers
+v02668bd8_0 .net "select", 0 0, L_026c13b0;  1 drivers
+L_026c12a8 .reduce/nor L_026c13b0;
+S_0266f608 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_0266f398;
+ .timescale 0 0;
+S_0266f6d8 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_0266f608;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c3e30 .functor AND 1, L_026c1460, L_026c1408, C4<1>, C4<1>;
+L_026c3e78 .functor AND 1, L_026c14b8, L_026c1510, C4<1>, C4<1>;
+L_026c3ec0 .functor OR 1, L_026c3e30, L_026c3e78, C4<0>, C4<0>;
+v02668c30_0 .net *"_s1", 0 0, L_026c1408;  1 drivers
+v02668c88_0 .net "in0", 0 0, L_026c1460;  1 drivers
+v02668ce0_0 .net "in1", 0 0, L_026c14b8;  1 drivers
+v02668d38_0 .net "out", 0 0, L_026c3ec0;  1 drivers
+v02668d90_0 .net "sel0", 0 0, L_026c3e30;  1 drivers
+v02668de8_0 .net "sel1", 0 0, L_026c3e78;  1 drivers
+v02668e40_0 .net "select", 0 0, L_026c1510;  1 drivers
+L_026c1408 .reduce/nor L_026c1510;
+S_0266f7a8 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_0266f398;
+ .timescale 0 0;
+S_0266f878 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_0266f7a8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_02680388 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bfa90 .functor AND 1, L_02680388, L_026c0f38, C4<1>, C4<1>;
+L_026803b0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026bfad8 .functor AND 1, L_026803b0, L_026c0f90, C4<1>, C4<1>;
+L_026bfb20 .functor OR 1, L_026bfa90, L_026bfad8, C4<0>, C4<0>;
+v02668e98_0 .net *"_s1", 0 0, L_026c0f38;  1 drivers
+v02668ef0_0 .net "in0", 0 0, L_02680388;  1 drivers
+v02668f48_0 .net "in1", 0 0, L_026803b0;  1 drivers
+v02668fa0_0 .net "out", 0 0, L_026bfb20;  1 drivers
+v02668ff8_0 .net "sel0", 0 0, L_026bfa90;  1 drivers
+v02669050_0 .net "sel1", 0 0, L_026bfad8;  1 drivers
+v026690a8_0 .net "select", 0 0, L_026c0f90;  1 drivers
+L_026c0f38 .reduce/nor L_026c0f90;
+S_0266f948 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_0266f398;
+ .timescale 0 0;
+S_0266fa18 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_0266f948;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bfb68 .functor AND 1, L_026c1040, L_026c0fe8, C4<1>, C4<1>;
+L_026bfbb0 .functor AND 1, L_026c1098, L_026c10f0, C4<1>, C4<1>;
+L_026bfbf8 .functor OR 1, L_026bfb68, L_026bfbb0, C4<0>, C4<0>;
+v02669100_0 .net *"_s1", 0 0, L_026c0fe8;  1 drivers
+v02669158_0 .net "in0", 0 0, L_026c1040;  1 drivers
+v026691b0_0 .net "in1", 0 0, L_026c1098;  1 drivers
+v02669208_0 .net "out", 0 0, L_026bfbf8;  1 drivers
+v02669260_0 .net "sel0", 0 0, L_026bfb68;  1 drivers
+v026692b8_0 .net "sel1", 0 0, L_026bfbb0;  1 drivers
+v02669310_0 .net "select", 0 0, L_026c10f0;  1 drivers
+L_026c0fe8 .reduce/nor L_026c10f0;
+S_0266fae8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_0266f398;
+ .timescale 0 0;
+S_0266fbb8 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_0266fae8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026bfc40 .functor AND 1, L_026c11a0, L_026c1148, C4<1>, C4<1>;
+L_026bfc88 .functor AND 1, L_026c11f8, L_026c1250, C4<1>, C4<1>;
+L_026bfcd0 .functor OR 1, L_026bfc40, L_026bfc88, C4<0>, C4<0>;
+v02669368_0 .net *"_s1", 0 0, L_026c1148;  1 drivers
+v026693c0_0 .net "in0", 0 0, L_026c11a0;  1 drivers
+v02669418_0 .net "in1", 0 0, L_026c11f8;  1 drivers
+v02669470_0 .net "out", 0 0, L_026bfcd0;  1 drivers
+v026694c8_0 .net "sel0", 0 0, L_026bfc40;  1 drivers
+v02669520_0 .net "sel1", 0 0, L_026bfc88;  1 drivers
+v02669578_0 .net "select", 0 0, L_026c1250;  1 drivers
+L_026c1148 .reduce/nor L_026c1250;
+S_0266fc88 .scope generate, "BARREL[25]" "BARREL[25]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02670808 .param/l "i" 0 3 19, +C4<011001>;
+S_0266fd58 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_0266fc88;
+ .timescale 0 0;
+S_0266fe28 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_0266fd58;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c4190 .functor AND 1, L_026c1930, L_026c18d8, C4<1>, C4<1>;
+L_026c41d8 .functor AND 1, L_026c1988, L_026c19e0, C4<1>, C4<1>;
+L_026c4220 .functor OR 1, L_026c4190, L_026c41d8, C4<0>, C4<0>;
+v026695d0_0 .net *"_s1", 0 0, L_026c18d8;  1 drivers
+v02669628_0 .net "in0", 0 0, L_026c1930;  1 drivers
+v02669680_0 .net "in1", 0 0, L_026c1988;  1 drivers
+v026696d8_0 .net "out", 0 0, L_026c4220;  1 drivers
+v02669730_0 .net "sel0", 0 0, L_026c4190;  1 drivers
+v02669788_0 .net "sel1", 0 0, L_026c41d8;  1 drivers
+v026697e0_0 .net "select", 0 0, L_026c19e0;  1 drivers
+L_026c18d8 .reduce/nor L_026c19e0;
+S_0266fef8 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_0266fc88;
+ .timescale 0 0;
+S_0266ffc8 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_0266fef8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c4268 .functor AND 1, L_026c1a90, L_026c1a38, C4<1>, C4<1>;
+L_026c42b0 .functor AND 1, L_026c1ae8, L_026c1b40, C4<1>, C4<1>;
+L_026c42f8 .functor OR 1, L_026c4268, L_026c42b0, C4<0>, C4<0>;
+v02669838_0 .net *"_s1", 0 0, L_026c1a38;  1 drivers
+v02669890_0 .net "in0", 0 0, L_026c1a90;  1 drivers
+v026698e8_0 .net "in1", 0 0, L_026c1ae8;  1 drivers
+v02669940_0 .net "out", 0 0, L_026c42f8;  1 drivers
+v02669998_0 .net "sel0", 0 0, L_026c4268;  1 drivers
+v026699f0_0 .net "sel1", 0 0, L_026c42b0;  1 drivers
+v02669a48_0 .net "select", 0 0, L_026c1b40;  1 drivers
+L_026c1a38 .reduce/nor L_026c1b40;
+S_02670098 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_0266fc88;
+ .timescale 0 0;
+S_02670168 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02670098;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026803d8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c3f08 .functor AND 1, L_026803d8, L_026c1568, C4<1>, C4<1>;
+L_02680400 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c3f50 .functor AND 1, L_02680400, L_026c15c0, C4<1>, C4<1>;
+L_026c3f98 .functor OR 1, L_026c3f08, L_026c3f50, C4<0>, C4<0>;
+v02669aa0_0 .net *"_s1", 0 0, L_026c1568;  1 drivers
+v02669af8_0 .net "in0", 0 0, L_026803d8;  1 drivers
+v02669b50_0 .net "in1", 0 0, L_02680400;  1 drivers
+v02669ba8_0 .net "out", 0 0, L_026c3f98;  1 drivers
+v02669c00_0 .net "sel0", 0 0, L_026c3f08;  1 drivers
+v02669c58_0 .net "sel1", 0 0, L_026c3f50;  1 drivers
+v02669cb0_0 .net "select", 0 0, L_026c15c0;  1 drivers
+L_026c1568 .reduce/nor L_026c15c0;
+S_02670238 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_0266fc88;
+ .timescale 0 0;
+S_02670308 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02670238;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c3fe0 .functor AND 1, L_026c1670, L_026c1618, C4<1>, C4<1>;
+L_026c4028 .functor AND 1, L_026c16c8, L_026c1720, C4<1>, C4<1>;
+L_026c4070 .functor OR 1, L_026c3fe0, L_026c4028, C4<0>, C4<0>;
+v02669d08_0 .net *"_s1", 0 0, L_026c1618;  1 drivers
+v02669d60_0 .net "in0", 0 0, L_026c1670;  1 drivers
+v02669db8_0 .net "in1", 0 0, L_026c16c8;  1 drivers
+v02669e10_0 .net "out", 0 0, L_026c4070;  1 drivers
+v02669e68_0 .net "sel0", 0 0, L_026c3fe0;  1 drivers
+v02669ec0_0 .net "sel1", 0 0, L_026c4028;  1 drivers
+v02669f18_0 .net "select", 0 0, L_026c1720;  1 drivers
+L_026c1618 .reduce/nor L_026c1720;
+S_026703d8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_0266fc88;
+ .timescale 0 0;
+S_026704a8 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_026703d8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c40b8 .functor AND 1, L_026c17d0, L_026c1778, C4<1>, C4<1>;
+L_026c4100 .functor AND 1, L_026c1828, L_026c1880, C4<1>, C4<1>;
+L_026c4148 .functor OR 1, L_026c40b8, L_026c4100, C4<0>, C4<0>;
+v02669f70_0 .net *"_s1", 0 0, L_026c1778;  1 drivers
+v02669fc8_0 .net "in0", 0 0, L_026c17d0;  1 drivers
+v0266a020_0 .net "in1", 0 0, L_026c1828;  1 drivers
+v0266a078_0 .net "out", 0 0, L_026c4148;  1 drivers
+v0266a0d0_0 .net "sel0", 0 0, L_026c40b8;  1 drivers
+v0266a128_0 .net "sel1", 0 0, L_026c4100;  1 drivers
+v0266a180_0 .net "select", 0 0, L_026c1880;  1 drivers
+L_026c1778 .reduce/nor L_026c1880;
+S_02670578 .scope generate, "BARREL[26]" "BARREL[26]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02670920 .param/l "i" 0 3 19, +C4<011010>;
+S_02670648 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_02670578;
+ .timescale 0 0;
+S_02672f68 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02670648;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c45c8 .functor AND 1, L_026c1f60, L_026c1f08, C4<1>, C4<1>;
+L_026c4610 .functor AND 1, L_026c1fb8, L_026c2010, C4<1>, C4<1>;
+L_026c4658 .functor OR 1, L_026c45c8, L_026c4610, C4<0>, C4<0>;
+v0266a1d8_0 .net *"_s1", 0 0, L_026c1f08;  1 drivers
+v0266a230_0 .net "in0", 0 0, L_026c1f60;  1 drivers
+v0266a288_0 .net "in1", 0 0, L_026c1fb8;  1 drivers
+v0266a2e0_0 .net "out", 0 0, L_026c4658;  1 drivers
+v0266a338_0 .net "sel0", 0 0, L_026c45c8;  1 drivers
+v0266a390_0 .net "sel1", 0 0, L_026c4610;  1 drivers
+v0266a3e8_0 .net "select", 0 0, L_026c2010;  1 drivers
+L_026c1f08 .reduce/nor L_026c2010;
+S_02673038 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_02670578;
+ .timescale 0 0;
+S_02673108 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_02673038;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c46a0 .functor AND 1, L_026c20c0, L_026c2068, C4<1>, C4<1>;
+L_026c46e8 .functor AND 1, L_026c2118, L_026c2170, C4<1>, C4<1>;
+L_026c4730 .functor OR 1, L_026c46a0, L_026c46e8, C4<0>, C4<0>;
+v0266a440_0 .net *"_s1", 0 0, L_026c2068;  1 drivers
+v0266a498_0 .net "in0", 0 0, L_026c20c0;  1 drivers
+v0266a4f0_0 .net "in1", 0 0, L_026c2118;  1 drivers
+v0266a548_0 .net "out", 0 0, L_026c4730;  1 drivers
+v0266a5a0_0 .net "sel0", 0 0, L_026c46a0;  1 drivers
+v0266a5f8_0 .net "sel1", 0 0, L_026c46e8;  1 drivers
+v0266a650_0 .net "select", 0 0, L_026c2170;  1 drivers
+L_026c2068 .reduce/nor L_026c2170;
+S_026731d8 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02670578;
+ .timescale 0 0;
+S_026732a8 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_026731d8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_02680428 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c4340 .functor AND 1, L_02680428, L_026c1b98, C4<1>, C4<1>;
+L_02680450 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c4388 .functor AND 1, L_02680450, L_026c1bf0, C4<1>, C4<1>;
+L_026c43d0 .functor OR 1, L_026c4340, L_026c4388, C4<0>, C4<0>;
+v0266a6a8_0 .net *"_s1", 0 0, L_026c1b98;  1 drivers
+v02674f68_0 .net "in0", 0 0, L_02680428;  1 drivers
+v02674fc0_0 .net "in1", 0 0, L_02680450;  1 drivers
+v02675018_0 .net "out", 0 0, L_026c43d0;  1 drivers
+v02675070_0 .net "sel0", 0 0, L_026c4340;  1 drivers
+v026750c8_0 .net "sel1", 0 0, L_026c4388;  1 drivers
+v02675120_0 .net "select", 0 0, L_026c1bf0;  1 drivers
+L_026c1b98 .reduce/nor L_026c1bf0;
+S_02673378 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02670578;
+ .timescale 0 0;
+S_02673448 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02673378;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c4418 .functor AND 1, L_026c1ca0, L_026c1c48, C4<1>, C4<1>;
+L_026c4460 .functor AND 1, L_026c1cf8, L_026c1d50, C4<1>, C4<1>;
+L_026c44a8 .functor OR 1, L_026c4418, L_026c4460, C4<0>, C4<0>;
+v02675178_0 .net *"_s1", 0 0, L_026c1c48;  1 drivers
+v026751d0_0 .net "in0", 0 0, L_026c1ca0;  1 drivers
+v02675228_0 .net "in1", 0 0, L_026c1cf8;  1 drivers
+v02675280_0 .net "out", 0 0, L_026c44a8;  1 drivers
+v026752d8_0 .net "sel0", 0 0, L_026c4418;  1 drivers
+v02675330_0 .net "sel1", 0 0, L_026c4460;  1 drivers
+v02675388_0 .net "select", 0 0, L_026c1d50;  1 drivers
+L_026c1c48 .reduce/nor L_026c1d50;
+S_02673518 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02670578;
+ .timescale 0 0;
+S_026735e8 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_02673518;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c44f0 .functor AND 1, L_026c1e00, L_026c1da8, C4<1>, C4<1>;
+L_026c4538 .functor AND 1, L_026c1e58, L_026c1eb0, C4<1>, C4<1>;
+L_026c4580 .functor OR 1, L_026c44f0, L_026c4538, C4<0>, C4<0>;
+v026753e0_0 .net *"_s1", 0 0, L_026c1da8;  1 drivers
+v02675438_0 .net "in0", 0 0, L_026c1e00;  1 drivers
+v02675490_0 .net "in1", 0 0, L_026c1e58;  1 drivers
+v026754e8_0 .net "out", 0 0, L_026c4580;  1 drivers
+v02675540_0 .net "sel0", 0 0, L_026c44f0;  1 drivers
+v02675598_0 .net "sel1", 0 0, L_026c4538;  1 drivers
+v026755f0_0 .net "select", 0 0, L_026c1eb0;  1 drivers
+L_026c1da8 .reduce/nor L_026c1eb0;
+S_026736b8 .scope generate, "BARREL[27]" "BARREL[27]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02670a38 .param/l "i" 0 3 19, +C4<011011>;
+S_02673788 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_026736b8;
+ .timescale 0 0;
+S_02673858 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02673788;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c4a00 .functor AND 1, L_026c2590, L_026c2538, C4<1>, C4<1>;
+L_026c4a48 .functor AND 1, L_026c25e8, L_026c2640, C4<1>, C4<1>;
+L_026c4a90 .functor OR 1, L_026c4a00, L_026c4a48, C4<0>, C4<0>;
+v02675648_0 .net *"_s1", 0 0, L_026c2538;  1 drivers
+v026756a0_0 .net "in0", 0 0, L_026c2590;  1 drivers
+v026756f8_0 .net "in1", 0 0, L_026c25e8;  1 drivers
+v02675750_0 .net "out", 0 0, L_026c4a90;  1 drivers
+v026757a8_0 .net "sel0", 0 0, L_026c4a00;  1 drivers
+v02675800_0 .net "sel1", 0 0, L_026c4a48;  1 drivers
+v02675858_0 .net "select", 0 0, L_026c2640;  1 drivers
+L_026c2538 .reduce/nor L_026c2640;
+S_02673928 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_026736b8;
+ .timescale 0 0;
+S_026739f8 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_02673928;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c4ad8 .functor AND 1, L_026c26f0, L_026c2698, C4<1>, C4<1>;
+L_026c4b20 .functor AND 1, L_026c2748, L_026c27a0, C4<1>, C4<1>;
+L_026c4b68 .functor OR 1, L_026c4ad8, L_026c4b20, C4<0>, C4<0>;
+v026758b0_0 .net *"_s1", 0 0, L_026c2698;  1 drivers
+v02675908_0 .net "in0", 0 0, L_026c26f0;  1 drivers
+v02675960_0 .net "in1", 0 0, L_026c2748;  1 drivers
+v026759b8_0 .net "out", 0 0, L_026c4b68;  1 drivers
+v02675a10_0 .net "sel0", 0 0, L_026c4ad8;  1 drivers
+v02675a68_0 .net "sel1", 0 0, L_026c4b20;  1 drivers
+v02675ac0_0 .net "select", 0 0, L_026c27a0;  1 drivers
+L_026c2698 .reduce/nor L_026c27a0;
+S_02673ac8 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_026736b8;
+ .timescale 0 0;
+S_02673b98 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02673ac8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_02680478 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c4778 .functor AND 1, L_02680478, L_026c21c8, C4<1>, C4<1>;
+L_026804a0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c47c0 .functor AND 1, L_026804a0, L_026c2220, C4<1>, C4<1>;
+L_026c4808 .functor OR 1, L_026c4778, L_026c47c0, C4<0>, C4<0>;
+v02675b18_0 .net *"_s1", 0 0, L_026c21c8;  1 drivers
+v02675b70_0 .net "in0", 0 0, L_02680478;  1 drivers
+v02675bc8_0 .net "in1", 0 0, L_026804a0;  1 drivers
+v02675c20_0 .net "out", 0 0, L_026c4808;  1 drivers
+v02675c78_0 .net "sel0", 0 0, L_026c4778;  1 drivers
+v02675cd0_0 .net "sel1", 0 0, L_026c47c0;  1 drivers
+v02675d28_0 .net "select", 0 0, L_026c2220;  1 drivers
+L_026c21c8 .reduce/nor L_026c2220;
+S_02673c68 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_026736b8;
+ .timescale 0 0;
+S_02673d38 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02673c68;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c4850 .functor AND 1, L_026c22d0, L_026c2278, C4<1>, C4<1>;
+L_026c4898 .functor AND 1, L_026c2328, L_026c2380, C4<1>, C4<1>;
+L_026c48e0 .functor OR 1, L_026c4850, L_026c4898, C4<0>, C4<0>;
+v02675d80_0 .net *"_s1", 0 0, L_026c2278;  1 drivers
+v02675dd8_0 .net "in0", 0 0, L_026c22d0;  1 drivers
+v02675e30_0 .net "in1", 0 0, L_026c2328;  1 drivers
+v02675e88_0 .net "out", 0 0, L_026c48e0;  1 drivers
+v02675ee0_0 .net "sel0", 0 0, L_026c4850;  1 drivers
+v02675f38_0 .net "sel1", 0 0, L_026c4898;  1 drivers
+v02675f90_0 .net "select", 0 0, L_026c2380;  1 drivers
+L_026c2278 .reduce/nor L_026c2380;
+S_02673e08 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_026736b8;
+ .timescale 0 0;
+S_02673ed8 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_02673e08;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c4928 .functor AND 1, L_026c2430, L_026c23d8, C4<1>, C4<1>;
+L_026c4970 .functor AND 1, L_026c2488, L_026c24e0, C4<1>, C4<1>;
+L_026c49b8 .functor OR 1, L_026c4928, L_026c4970, C4<0>, C4<0>;
+v02675fe8_0 .net *"_s1", 0 0, L_026c23d8;  1 drivers
+v02676040_0 .net "in0", 0 0, L_026c2430;  1 drivers
+v02676098_0 .net "in1", 0 0, L_026c2488;  1 drivers
+v026760f0_0 .net "out", 0 0, L_026c49b8;  1 drivers
+v02676148_0 .net "sel0", 0 0, L_026c4928;  1 drivers
+v026761a0_0 .net "sel1", 0 0, L_026c4970;  1 drivers
+v026761f8_0 .net "select", 0 0, L_026c24e0;  1 drivers
+L_026c23d8 .reduce/nor L_026c24e0;
+S_02673fa8 .scope generate, "BARREL[28]" "BARREL[28]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02670b50 .param/l "i" 0 3 19, +C4<011100>;
+S_02674078 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_02673fa8;
+ .timescale 0 0;
+S_02674148 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02674078;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c7a80 .functor AND 1, L_026c2bc0, L_026c2b68, C4<1>, C4<1>;
+L_026c7ac8 .functor AND 1, L_026c2c18, L_026c2c70, C4<1>, C4<1>;
+L_026c7b10 .functor OR 1, L_026c7a80, L_026c7ac8, C4<0>, C4<0>;
+v02676250_0 .net *"_s1", 0 0, L_026c2b68;  1 drivers
+v026762a8_0 .net "in0", 0 0, L_026c2bc0;  1 drivers
+v02676300_0 .net "in1", 0 0, L_026c2c18;  1 drivers
+v02676358_0 .net "out", 0 0, L_026c7b10;  1 drivers
+v026763b0_0 .net "sel0", 0 0, L_026c7a80;  1 drivers
+v02676408_0 .net "sel1", 0 0, L_026c7ac8;  1 drivers
+v02676460_0 .net "select", 0 0, L_026c2c70;  1 drivers
+L_026c2b68 .reduce/nor L_026c2c70;
+S_02674218 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_02673fa8;
+ .timescale 0 0;
+S_026742e8 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_02674218;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c7b58 .functor AND 1, L_026c2d20, L_026c2cc8, C4<1>, C4<1>;
+L_026c7ba0 .functor AND 1, L_026c2d78, L_026c2dd0, C4<1>, C4<1>;
+L_026c7be8 .functor OR 1, L_026c7b58, L_026c7ba0, C4<0>, C4<0>;
+v026764b8_0 .net *"_s1", 0 0, L_026c2cc8;  1 drivers
+v02676510_0 .net "in0", 0 0, L_026c2d20;  1 drivers
+v02676568_0 .net "in1", 0 0, L_026c2d78;  1 drivers
+v026765c0_0 .net "out", 0 0, L_026c7be8;  1 drivers
+v02676618_0 .net "sel0", 0 0, L_026c7b58;  1 drivers
+v02676670_0 .net "sel1", 0 0, L_026c7ba0;  1 drivers
+v026766c8_0 .net "select", 0 0, L_026c2dd0;  1 drivers
+L_026c2cc8 .reduce/nor L_026c2dd0;
+S_026743b8 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02673fa8;
+ .timescale 0 0;
+S_02674488 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_026743b8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026804c8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c4bb0 .functor AND 1, L_026804c8, L_026c27f8, C4<1>, C4<1>;
+L_026804f0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c4bf8 .functor AND 1, L_026804f0, L_026c2850, C4<1>, C4<1>;
+L_026c4c40 .functor OR 1, L_026c4bb0, L_026c4bf8, C4<0>, C4<0>;
+v02676720_0 .net *"_s1", 0 0, L_026c27f8;  1 drivers
+v02676778_0 .net "in0", 0 0, L_026804c8;  1 drivers
+v026767d0_0 .net "in1", 0 0, L_026804f0;  1 drivers
+v02676828_0 .net "out", 0 0, L_026c4c40;  1 drivers
+v02676880_0 .net "sel0", 0 0, L_026c4bb0;  1 drivers
+v026768d8_0 .net "sel1", 0 0, L_026c4bf8;  1 drivers
+v02676930_0 .net "select", 0 0, L_026c2850;  1 drivers
+L_026c27f8 .reduce/nor L_026c2850;
+S_02674558 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02673fa8;
+ .timescale 0 0;
+S_02674628 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02674558;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c4c88 .functor AND 1, L_026c2900, L_026c28a8, C4<1>, C4<1>;
+L_026c4cd0 .functor AND 1, L_026c2958, L_026c29b0, C4<1>, C4<1>;
+L_026c7960 .functor OR 1, L_026c4c88, L_026c4cd0, C4<0>, C4<0>;
+v02676988_0 .net *"_s1", 0 0, L_026c28a8;  1 drivers
+v026769e0_0 .net "in0", 0 0, L_026c2900;  1 drivers
+v02676a38_0 .net "in1", 0 0, L_026c2958;  1 drivers
+v02676a90_0 .net "out", 0 0, L_026c7960;  1 drivers
+v02676ae8_0 .net "sel0", 0 0, L_026c4c88;  1 drivers
+v02676b40_0 .net "sel1", 0 0, L_026c4cd0;  1 drivers
+v02676b98_0 .net "select", 0 0, L_026c29b0;  1 drivers
+L_026c28a8 .reduce/nor L_026c29b0;
+S_026746f8 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02673fa8;
+ .timescale 0 0;
+S_026747c8 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_026746f8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c79a8 .functor AND 1, L_026c2a60, L_026c2a08, C4<1>, C4<1>;
+L_026c79f0 .functor AND 1, L_026c2ab8, L_026c2b10, C4<1>, C4<1>;
+L_026c7a38 .functor OR 1, L_026c79a8, L_026c79f0, C4<0>, C4<0>;
+v02676bf0_0 .net *"_s1", 0 0, L_026c2a08;  1 drivers
+v02676c48_0 .net "in0", 0 0, L_026c2a60;  1 drivers
+v02676ca0_0 .net "in1", 0 0, L_026c2ab8;  1 drivers
+v02676cf8_0 .net "out", 0 0, L_026c7a38;  1 drivers
+v02676d50_0 .net "sel0", 0 0, L_026c79a8;  1 drivers
+v02676da8_0 .net "sel1", 0 0, L_026c79f0;  1 drivers
+v02676e00_0 .net "select", 0 0, L_026c2b10;  1 drivers
+L_026c2a08 .reduce/nor L_026c2b10;
+S_02674898 .scope generate, "BARREL[29]" "BARREL[29]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02670c68 .param/l "i" 0 3 19, +C4<011101>;
+S_02674968 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_02674898;
+ .timescale 0 0;
+S_02674a38 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02674968;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c7eb8 .functor AND 1, L_026c31f0, L_026c3198, C4<1>, C4<1>;
+L_026c7f00 .functor AND 1, L_026c3248, L_026c32a0, C4<1>, C4<1>;
+L_026c7f48 .functor OR 1, L_026c7eb8, L_026c7f00, C4<0>, C4<0>;
+v02676e58_0 .net *"_s1", 0 0, L_026c3198;  1 drivers
+v02676eb0_0 .net "in0", 0 0, L_026c31f0;  1 drivers
+v02676f08_0 .net "in1", 0 0, L_026c3248;  1 drivers
+v02676f60_0 .net "out", 0 0, L_026c7f48;  1 drivers
+v02676fb8_0 .net "sel0", 0 0, L_026c7eb8;  1 drivers
+v02677010_0 .net "sel1", 0 0, L_026c7f00;  1 drivers
+v02677068_0 .net "select", 0 0, L_026c32a0;  1 drivers
+L_026c3198 .reduce/nor L_026c32a0;
+S_02674b08 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_02674898;
+ .timescale 0 0;
+S_02674bd8 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_02674b08;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c7f90 .functor AND 1, L_026c3350, L_026c32f8, C4<1>, C4<1>;
+L_026c7fd8 .functor AND 1, L_026c33a8, L_026c3400, C4<1>, C4<1>;
+L_026c8020 .functor OR 1, L_026c7f90, L_026c7fd8, C4<0>, C4<0>;
+v026770c0_0 .net *"_s1", 0 0, L_026c32f8;  1 drivers
+v02677118_0 .net "in0", 0 0, L_026c3350;  1 drivers
+v02677170_0 .net "in1", 0 0, L_026c33a8;  1 drivers
+v026771c8_0 .net "out", 0 0, L_026c8020;  1 drivers
+v02677220_0 .net "sel0", 0 0, L_026c7f90;  1 drivers
+v02677278_0 .net "sel1", 0 0, L_026c7fd8;  1 drivers
+v026772d0_0 .net "select", 0 0, L_026c3400;  1 drivers
+L_026c32f8 .reduce/nor L_026c3400;
+S_02674ca8 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02674898;
+ .timescale 0 0;
+S_02674d78 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02674ca8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_02680518 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c7c30 .functor AND 1, L_02680518, L_026c2e28, C4<1>, C4<1>;
+L_02680540 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c7c78 .functor AND 1, L_02680540, L_026c2e80, C4<1>, C4<1>;
+L_026c7cc0 .functor OR 1, L_026c7c30, L_026c7c78, C4<0>, C4<0>;
+v02677328_0 .net *"_s1", 0 0, L_026c2e28;  1 drivers
+v02677380_0 .net "in0", 0 0, L_02680518;  1 drivers
+v026773d8_0 .net "in1", 0 0, L_02680540;  1 drivers
+v02677430_0 .net "out", 0 0, L_026c7cc0;  1 drivers
+v02677488_0 .net "sel0", 0 0, L_026c7c30;  1 drivers
+v026774e0_0 .net "sel1", 0 0, L_026c7c78;  1 drivers
+v02677538_0 .net "select", 0 0, L_026c2e80;  1 drivers
+L_026c2e28 .reduce/nor L_026c2e80;
+S_02674e48 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02674898;
+ .timescale 0 0;
+S_02678f68 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02674e48;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c7d08 .functor AND 1, L_026c2f30, L_026c2ed8, C4<1>, C4<1>;
+L_026c7d50 .functor AND 1, L_026c2f88, L_026c2fe0, C4<1>, C4<1>;
+L_026c7d98 .functor OR 1, L_026c7d08, L_026c7d50, C4<0>, C4<0>;
+v02677590_0 .net *"_s1", 0 0, L_026c2ed8;  1 drivers
+v026775e8_0 .net "in0", 0 0, L_026c2f30;  1 drivers
+v02677640_0 .net "in1", 0 0, L_026c2f88;  1 drivers
+v02677698_0 .net "out", 0 0, L_026c7d98;  1 drivers
+v026776f0_0 .net "sel0", 0 0, L_026c7d08;  1 drivers
+v02677748_0 .net "sel1", 0 0, L_026c7d50;  1 drivers
+v026777a0_0 .net "select", 0 0, L_026c2fe0;  1 drivers
+L_026c2ed8 .reduce/nor L_026c2fe0;
+S_02679038 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02674898;
+ .timescale 0 0;
+S_02679108 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_02679038;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c7de0 .functor AND 1, L_026c3090, L_026c3038, C4<1>, C4<1>;
+L_026c7e28 .functor AND 1, L_026c30e8, L_026c3140, C4<1>, C4<1>;
+L_026c7e70 .functor OR 1, L_026c7de0, L_026c7e28, C4<0>, C4<0>;
+v026777f8_0 .net *"_s1", 0 0, L_026c3038;  1 drivers
+v02677850_0 .net "in0", 0 0, L_026c3090;  1 drivers
+v026778a8_0 .net "in1", 0 0, L_026c30e8;  1 drivers
+v02677900_0 .net "out", 0 0, L_026c7e70;  1 drivers
+v02677958_0 .net "sel0", 0 0, L_026c7de0;  1 drivers
+v026779b0_0 .net "sel1", 0 0, L_026c7e28;  1 drivers
+v02677a08_0 .net "select", 0 0, L_026c3140;  1 drivers
+L_026c3038 .reduce/nor L_026c3140;
+S_026791d8 .scope generate, "BARREL[30]" "BARREL[30]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02670d80 .param/l "i" 0 3 19, +C4<011110>;
+S_026792a8 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_026791d8;
+ .timescale 0 0;
+S_02679378 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_026792a8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c82f0 .functor AND 1, L_026c3820, L_026c37c8, C4<1>, C4<1>;
+L_026c8338 .functor AND 1, L_026c3878, L_026c38d0, C4<1>, C4<1>;
+L_026c8380 .functor OR 1, L_026c82f0, L_026c8338, C4<0>, C4<0>;
+v02677a60_0 .net *"_s1", 0 0, L_026c37c8;  1 drivers
+v02677ab8_0 .net "in0", 0 0, L_026c3820;  1 drivers
+v02677b10_0 .net "in1", 0 0, L_026c3878;  1 drivers
+v02677b68_0 .net "out", 0 0, L_026c8380;  1 drivers
+v02677bc0_0 .net "sel0", 0 0, L_026c82f0;  1 drivers
+v02677c18_0 .net "sel1", 0 0, L_026c8338;  1 drivers
+v02677c70_0 .net "select", 0 0, L_026c38d0;  1 drivers
+L_026c37c8 .reduce/nor L_026c38d0;
+S_02679448 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_026791d8;
+ .timescale 0 0;
+S_02679518 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_02679448;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c83c8 .functor AND 1, L_026c3980, L_026c3928, C4<1>, C4<1>;
+L_026c8410 .functor AND 1, L_026c39d8, L_026c3a30, C4<1>, C4<1>;
+L_026c8458 .functor OR 1, L_026c83c8, L_026c8410, C4<0>, C4<0>;
+v02677cc8_0 .net *"_s1", 0 0, L_026c3928;  1 drivers
+v02677d20_0 .net "in0", 0 0, L_026c3980;  1 drivers
+v02677d78_0 .net "in1", 0 0, L_026c39d8;  1 drivers
+v02677dd0_0 .net "out", 0 0, L_026c8458;  1 drivers
+v02677e28_0 .net "sel0", 0 0, L_026c83c8;  1 drivers
+v02677e80_0 .net "sel1", 0 0, L_026c8410;  1 drivers
+v02677ed8_0 .net "select", 0 0, L_026c3a30;  1 drivers
+L_026c3928 .reduce/nor L_026c3a30;
+S_026795e8 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_026791d8;
+ .timescale 0 0;
+S_026796b8 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_026795e8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_02680568 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c8068 .functor AND 1, L_02680568, L_026c3458, C4<1>, C4<1>;
+L_02680590 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c80b0 .functor AND 1, L_02680590, L_026c34b0, C4<1>, C4<1>;
+L_026c80f8 .functor OR 1, L_026c8068, L_026c80b0, C4<0>, C4<0>;
+v02677f30_0 .net *"_s1", 0 0, L_026c3458;  1 drivers
+v02677f88_0 .net "in0", 0 0, L_02680568;  1 drivers
+v02677fe0_0 .net "in1", 0 0, L_02680590;  1 drivers
+v02678038_0 .net "out", 0 0, L_026c80f8;  1 drivers
+v02678090_0 .net "sel0", 0 0, L_026c8068;  1 drivers
+v026780e8_0 .net "sel1", 0 0, L_026c80b0;  1 drivers
+v02678140_0 .net "select", 0 0, L_026c34b0;  1 drivers
+L_026c3458 .reduce/nor L_026c34b0;
+S_02679788 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_026791d8;
+ .timescale 0 0;
+S_02679858 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_02679788;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c8140 .functor AND 1, L_026c3560, L_026c3508, C4<1>, C4<1>;
+L_026c8188 .functor AND 1, L_026c35b8, L_026c3610, C4<1>, C4<1>;
+L_026c81d0 .functor OR 1, L_026c8140, L_026c8188, C4<0>, C4<0>;
+v02678198_0 .net *"_s1", 0 0, L_026c3508;  1 drivers
+v026781f0_0 .net "in0", 0 0, L_026c3560;  1 drivers
+v02678248_0 .net "in1", 0 0, L_026c35b8;  1 drivers
+v026782a0_0 .net "out", 0 0, L_026c81d0;  1 drivers
+v026782f8_0 .net "sel0", 0 0, L_026c8140;  1 drivers
+v02678350_0 .net "sel1", 0 0, L_026c8188;  1 drivers
+v026783a8_0 .net "select", 0 0, L_026c3610;  1 drivers
+L_026c3508 .reduce/nor L_026c3610;
+S_02679928 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_026791d8;
+ .timescale 0 0;
+S_026799f8 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_02679928;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c8218 .functor AND 1, L_026c36c0, L_026c3668, C4<1>, C4<1>;
+L_026c8260 .functor AND 1, L_026c3718, L_026c3770, C4<1>, C4<1>;
+L_026c82a8 .functor OR 1, L_026c8218, L_026c8260, C4<0>, C4<0>;
+v02678400_0 .net *"_s1", 0 0, L_026c3668;  1 drivers
+v02678458_0 .net "in0", 0 0, L_026c36c0;  1 drivers
+v026784b0_0 .net "in1", 0 0, L_026c3718;  1 drivers
+v02678508_0 .net "out", 0 0, L_026c82a8;  1 drivers
+v02678560_0 .net "sel0", 0 0, L_026c8218;  1 drivers
+v026785b8_0 .net "sel1", 0 0, L_026c8260;  1 drivers
+v02678610_0 .net "select", 0 0, L_026c3770;  1 drivers
+L_026c3668 .reduce/nor L_026c3770;
+S_02679ac8 .scope generate, "BARREL[31]" "BARREL[31]" 3 19, 3 19 0, S_024793f0;
+ .timescale 0 0;
+P_02670e98 .param/l "i" 0 3 19, +C4<011111>;
+S_02679b98 .scope generate, "genblk11" "genblk11" 3 38, 3 38 0, S_02679ac8;
+ .timescale 0 0;
+S_02679c68 .scope module, "BARREL3" "mux_2to1" 3 41, 4 7 0, S_02679b98;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c8728 .functor AND 1, L_026cabc8, L_026cab70, C4<1>, C4<1>;
+L_026c8770 .functor AND 1, L_026cac20, L_026cac78, C4<1>, C4<1>;
+L_026c87b8 .functor OR 1, L_026c8728, L_026c8770, C4<0>, C4<0>;
+v02678668_0 .net *"_s1", 0 0, L_026cab70;  1 drivers
+v026786c0_0 .net "in0", 0 0, L_026cabc8;  1 drivers
+v02678718_0 .net "in1", 0 0, L_026cac20;  1 drivers
+v02678770_0 .net "out", 0 0, L_026c87b8;  1 drivers
+v026787c8_0 .net "sel0", 0 0, L_026c8728;  1 drivers
+v02678820_0 .net "sel1", 0 0, L_026c8770;  1 drivers
+v02678878_0 .net "select", 0 0, L_026cac78;  1 drivers
+L_026cab70 .reduce/nor L_026cac78;
+S_02679d38 .scope generate, "genblk13" "genblk13" 3 43, 3 43 0, S_02679ac8;
+ .timescale 0 0;
+S_02679e08 .scope module, "BARREL4" "mux_2to1" 3 46, 4 7 0, S_02679d38;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c8800 .functor AND 1, L_026cad80, L_026cad28, C4<1>, C4<1>;
+L_026c8848 .functor AND 1, L_026cadd8, L_026cae30, C4<1>, C4<1>;
+L_026c8890 .functor OR 1, L_026c8800, L_026c8848, C4<0>, C4<0>;
+v026788d0_0 .net *"_s1", 0 0, L_026cad28;  1 drivers
+v02678928_0 .net "in0", 0 0, L_026cad80;  1 drivers
+v02678980_0 .net "in1", 0 0, L_026cadd8;  1 drivers
+v026789d8_0 .net "out", 0 0, L_026c8890;  1 drivers
+v02678a30_0 .net "sel0", 0 0, L_026c8800;  1 drivers
+v02678a88_0 .net "sel1", 0 0, L_026c8848;  1 drivers
+v02678ae0_0 .net "select", 0 0, L_026cae30;  1 drivers
+L_026cad28 .reduce/nor L_026cae30;
+S_02679ed8 .scope generate, "genblk5" "genblk5" 3 23, 3 23 0, S_02679ac8;
+ .timescale 0 0;
+S_02679fa8 .scope module, "BARREL0" "mux_2to1" 3 26, 4 7 0, S_02679ed8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026805b8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c84a0 .functor AND 1, L_026805b8, L_026c3a88, C4<1>, C4<1>;
+L_026805e0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_026c84e8 .functor AND 1, L_026805e0, L_026c3ae0, C4<1>, C4<1>;
+L_026c8530 .functor OR 1, L_026c84a0, L_026c84e8, C4<0>, C4<0>;
+v02678b38_0 .net *"_s1", 0 0, L_026c3a88;  1 drivers
+v02678b90_0 .net "in0", 0 0, L_026805b8;  1 drivers
+v02678be8_0 .net "in1", 0 0, L_026805e0;  1 drivers
+v02678c40_0 .net "out", 0 0, L_026c8530;  1 drivers
+v02678c98_0 .net "sel0", 0 0, L_026c84a0;  1 drivers
+v02678cf0_0 .net "sel1", 0 0, L_026c84e8;  1 drivers
+v02678d48_0 .net "select", 0 0, L_026c3ae0;  1 drivers
+L_026c3a88 .reduce/nor L_026c3ae0;
+S_0267a078 .scope generate, "genblk7" "genblk7" 3 28, 3 28 0, S_02679ac8;
+ .timescale 0 0;
+S_0267a148 .scope module, "BARREL1" "mux_2to1" 3 31, 4 7 0, S_0267a078;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c8578 .functor AND 1, L_026c3be8, L_026c3b90, C4<1>, C4<1>;
+L_026c85c0 .functor AND 1, L_026c3c40, L_026c3c98, C4<1>, C4<1>;
+L_026c8608 .functor OR 1, L_026c8578, L_026c85c0, C4<0>, C4<0>;
+v02678da0_0 .net *"_s1", 0 0, L_026c3b90;  1 drivers
+v02678df8_0 .net "in0", 0 0, L_026c3be8;  1 drivers
+v02678e50_0 .net "in1", 0 0, L_026c3c40;  1 drivers
+v02678ea8_0 .net "out", 0 0, L_026c8608;  1 drivers
+v0267af68_0 .net "sel0", 0 0, L_026c8578;  1 drivers
+v0267afc0_0 .net "sel1", 0 0, L_026c85c0;  1 drivers
+v0267b018_0 .net "select", 0 0, L_026c3c98;  1 drivers
+L_026c3b90 .reduce/nor L_026c3c98;
+S_0267a218 .scope generate, "genblk9" "genblk9" 3 33, 3 33 0, S_02679ac8;
+ .timescale 0 0;
+S_0267a2e8 .scope module, "BARREL2" "mux_2to1" 3 36, 4 7 0, S_0267a218;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in0"
+    .port_info 1 /INPUT 1 "in1"
+    .port_info 2 /INPUT 1 "select"
+    .port_info 3 /OUTPUT 1 "out"
+L_026c8650 .functor AND 1, L_026caa10, L_026ca9b8, C4<1>, C4<1>;
+L_026c8698 .functor AND 1, L_026caa68, L_026caac0, C4<1>, C4<1>;
+L_026c86e0 .functor OR 1, L_026c8650, L_026c8698, C4<0>, C4<0>;
+v0267b070_0 .net *"_s1", 0 0, L_026ca9b8;  1 drivers
+v0267b0c8_0 .net "in0", 0 0, L_026caa10;  1 drivers
+v0267b120_0 .net "in1", 0 0, L_026caa68;  1 drivers
+v0267b178_0 .net "out", 0 0, L_026c86e0;  1 drivers
+v0267b1d0_0 .net "sel0", 0 0, L_026c8650;  1 drivers
+v0267b228_0 .net "sel1", 0 0, L_026c8698;  1 drivers
+v0267b280_0 .net "select", 0 0, L_026caac0;  1 drivers
+L_026ca9b8 .reduce/nor L_026caac0;
+S_0267a3b8 .scope module, "tester" "decoder_5bit_tester" 2 18, 5 7 0, S_024bff00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "selection"
+    .port_info 1 /OUTPUT 5 "code"
+P_0267f008 .param/l "delay" 0 5 11, +C4<00000000000000000000000000000001>;
+v0267b4e8_0 .var "code", 4 0;
+v0267b540_0 .net "selection", 31 0, L_026cae88;  alias, 1 drivers
+    .scope S_0267a3b8;
+T_0 ;
+    %vpi_call 5 15 "$display", "\011cod\011sel     \011time" {0 0 0};
+    %vpi_call 5 16 "$monitor", "\011%b\011%h\011%g", v0267b4e8_0, v0267b540_0, $time {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0267a3b8;
+T_1 ;
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v0267b4e8_0, 0, 5;
+T_1.0 ;
+    %load/vec4 v0267b4e8_0;
+    %cmpi/u 31, 0, 5;
+    %jmp/0xz T_1.1, 5;
+    %delay 1, 0;
+    %load/vec4 v0267b4e8_0;
+    %addi 1, 0, 5;
+    %store/vec4 v0267b4e8_0, 0, 5;
+    %jmp T_1.0;
+T_1.1 ;
+    %delay 1, 0;
+    %load/vec4 v0267b4e8_0;
+    %addi 1, 0, 5;
+    %store/vec4 v0267b4e8_0, 0, 5;
+    %vpi_call 5 28 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_024bff00;
+T_2 ;
+    %vpi_call 2 22 "$dumpfile", "decoder_5bit.vcd" {0 0 0};
+    %vpi_call 2 23 "$dumpvars", 32'sb00000000000000000000000000000001, S_024793f0 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "decoder_5bit_testbench.v";
+    "./decoder_5bit.v";
+    "./mux_2to1/mux_2to1.v";
+    "./decoder_5bit_tester.v";
