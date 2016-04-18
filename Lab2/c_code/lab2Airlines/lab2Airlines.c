@@ -16,7 +16,8 @@ Inputs:  (float) flight time - limited to non-negative float-sized numbers:
 Outputs: (float) velocity - limited to non-negative float-sized numbers,
                   speed of the aircraft given flight time
          (float) headwind time - limited to non-negative float-sized numbers,
-                  time of the flight in the case of an 89.6 mph headsind
+
+                  time of the flight in the case of an 89.6 mph headwind
 
 Major Functions:
                 get_flight_time - prompts the user for the flight time.
@@ -100,9 +101,13 @@ float get_flight_time() {
    float user_value = -1.0; // float corresponding to float_name
 
    // user prompt
-   printf("Please enter the flight time from London to Seattle in hours:\n");
-   scanf("%f", &user_value);
+   do {
+      printf("Please enter the flight time from London to Seattle in hours:\n");
+      scanf("%f", &user_value);
+      if(user_value <= 0)
+         printf("Invalid time.\n");
 
+   } while (user_value <= 0);
    // error if user_value is negative
    negative_float_check(user_value);
 
@@ -119,6 +124,7 @@ float calculate_velocity(float flight_time)
     float velocity;
     negative_float_check(flight_time);
     velocity = DISTANCE/flight_time;
+    negative_float_check(velocity);
     return velocity;
 }
 
@@ -136,6 +142,9 @@ float calculate_headwind_time(float vel)
 
 }
 
+/*
+    Displays the given velocity.
+*/
 void display_velocity(float vel)
 {
     printf("Your average airspeed is %.2f mph.\n", vel);
