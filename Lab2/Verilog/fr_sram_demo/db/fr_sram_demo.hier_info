@@ -14,58 +14,58 @@ KEY[0] => KEY[0].IN1
 KEY[1] => KEY[1].IN1
 KEY[2] => KEY[2].IN1
 KEY[3] => KEY[3].IN1
-LEDR[0] <= fr_sram_demo_sm:state_mach.leds
-LEDR[1] <= fr_sram_demo_sm:state_mach.leds
-LEDR[2] <= fr_sram_demo_sm:state_mach.leds
-LEDR[3] <= fr_sram_demo_sm:state_mach.leds
-LEDR[4] <= fr_sram_demo_sm:state_mach.leds
-LEDR[5] <= fr_sram_demo_sm:state_mach.leds
-LEDR[6] <= fr_sram_demo_sm:state_mach.leds
-LEDR[7] <= fr_sram_demo_sm:state_mach.leds
-LEDR[8] <= <GND>
-LEDR[9] <= <GND>
-HEX0[0] <= HexEncoder:hex0.hexOut
-HEX0[1] <= HexEncoder:hex0.hexOut
-HEX0[2] <= HexEncoder:hex0.hexOut
-HEX0[3] <= HexEncoder:hex0.hexOut
-HEX0[4] <= HexEncoder:hex0.hexOut
-HEX0[5] <= HexEncoder:hex0.hexOut
-HEX0[6] <= HexEncoder:hex0.hexOut
-HEX1[0] <= HexEncoder:hex1.hexOut
-HEX1[1] <= HexEncoder:hex1.hexOut
-HEX1[2] <= HexEncoder:hex1.hexOut
-HEX1[3] <= HexEncoder:hex1.hexOut
-HEX1[4] <= HexEncoder:hex1.hexOut
-HEX1[5] <= HexEncoder:hex1.hexOut
-HEX1[6] <= HexEncoder:hex1.hexOut
-HEX2[0] <= HexEncoder:hex2.hexOut
-HEX2[1] <= HexEncoder:hex2.hexOut
-HEX2[2] <= HexEncoder:hex2.hexOut
-HEX2[3] <= HexEncoder:hex2.hexOut
-HEX2[4] <= HexEncoder:hex2.hexOut
-HEX2[5] <= HexEncoder:hex2.hexOut
-HEX2[6] <= HexEncoder:hex2.hexOut
-HEX3[0] <= HexEncoder:hex3.hexOut
-HEX3[1] <= HexEncoder:hex3.hexOut
-HEX3[2] <= HexEncoder:hex3.hexOut
-HEX3[3] <= HexEncoder:hex3.hexOut
-HEX3[4] <= HexEncoder:hex3.hexOut
-HEX3[5] <= HexEncoder:hex3.hexOut
-HEX3[6] <= HexEncoder:hex3.hexOut
-HEX4[0] <= HexEncoder:hex4.hexOut
-HEX4[1] <= HexEncoder:hex4.hexOut
-HEX4[2] <= HexEncoder:hex4.hexOut
-HEX4[3] <= HexEncoder:hex4.hexOut
-HEX4[4] <= HexEncoder:hex4.hexOut
-HEX4[5] <= HexEncoder:hex4.hexOut
-HEX4[6] <= HexEncoder:hex4.hexOut
-HEX5[0] <= HexEncoder:hex5.hexOut
-HEX5[1] <= HexEncoder:hex5.hexOut
-HEX5[2] <= HexEncoder:hex5.hexOut
-HEX5[3] <= HexEncoder:hex5.hexOut
-HEX5[4] <= HexEncoder:hex5.hexOut
-HEX5[5] <= HexEncoder:hex5.hexOut
-HEX5[6] <= HexEncoder:hex5.hexOut
+LEDR[0] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[9] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] << HexEncoder:hex0.hexOut
+HEX0[1] << HexEncoder:hex0.hexOut
+HEX0[2] << HexEncoder:hex0.hexOut
+HEX0[3] << HexEncoder:hex0.hexOut
+HEX0[4] << HexEncoder:hex0.hexOut
+HEX0[5] << HexEncoder:hex0.hexOut
+HEX0[6] << HexEncoder:hex0.hexOut
+HEX1[0] << HexEncoder:hex1.hexOut
+HEX1[1] << HexEncoder:hex1.hexOut
+HEX1[2] << HexEncoder:hex1.hexOut
+HEX1[3] << HexEncoder:hex1.hexOut
+HEX1[4] << HexEncoder:hex1.hexOut
+HEX1[5] << HexEncoder:hex1.hexOut
+HEX1[6] << HexEncoder:hex1.hexOut
+HEX2[0] << HexEncoder:hex2.hexOut
+HEX2[1] << HexEncoder:hex2.hexOut
+HEX2[2] << HexEncoder:hex2.hexOut
+HEX2[3] << HexEncoder:hex2.hexOut
+HEX2[4] << HexEncoder:hex2.hexOut
+HEX2[5] << HexEncoder:hex2.hexOut
+HEX2[6] << HexEncoder:hex2.hexOut
+HEX3[0] << HexEncoder:hex3.hexOut
+HEX3[1] << HexEncoder:hex3.hexOut
+HEX3[2] << HexEncoder:hex3.hexOut
+HEX3[3] << HexEncoder:hex3.hexOut
+HEX3[4] << HexEncoder:hex3.hexOut
+HEX3[5] << HexEncoder:hex3.hexOut
+HEX3[6] << HexEncoder:hex3.hexOut
+HEX4[0] << HexEncoder:hex4.hexOut
+HEX4[1] << HexEncoder:hex4.hexOut
+HEX4[2] << HexEncoder:hex4.hexOut
+HEX4[3] << HexEncoder:hex4.hexOut
+HEX4[4] << HexEncoder:hex4.hexOut
+HEX4[5] << HexEncoder:hex4.hexOut
+HEX4[6] << HexEncoder:hex4.hexOut
+HEX5[0] << HexEncoder:hex5.hexOut
+HEX5[1] << HexEncoder:hex5.hexOut
+HEX5[2] << HexEncoder:hex5.hexOut
+HEX5[3] << HexEncoder:hex5.hexOut
+HEX5[4] << HexEncoder:hex5.hexOut
+HEX5[5] << HexEncoder:hex5.hexOut
+HEX5[6] << HexEncoder:hex5.hexOut
 
 
 |fr_sram_demo|div_clock:clock_divider
@@ -284,6 +284,13 @@ clk => addr_bus[28]~reg0.CLK
 clk => addr_bus[29]~reg0.CLK
 clk => addr_bus[30]~reg0.CLK
 clk => addr_bus[31]~reg0.CLK
+clk => addr_select[0].CLK
+clk => addr_select[1].CLK
+clk => addr_select[2].CLK
+clk => addr_select[3].CLK
+clk => addr_select[4].CLK
+clk => addr_select[5].CLK
+clk => addr_select[6].CLK
 clk => count[0].CLK
 clk => count[1].CLK
 clk => count[2].CLK
@@ -296,28 +303,36 @@ clk => db_state[1]~reg0.CLK
 clk => db_state[2]~reg0.CLK
 clk => db_state[3]~reg0.CLK
 clk => key_prev[3].CLK
-clk => init_sram_state~3.DATAIN
+clk => srfr_state~5.DATAIN
+clk => srin_state~3.DATAIN
 clk => top_state~4.DATAIN
-key[0] => ~NO_FANOUT~
+key[0] => Selector2.IN3
+key[0] => fr_read_sel.DATAIN
 key[1] => ~NO_FANOUT~
 key[2] => ~NO_FANOUT~
 key[3] => key_prev.DATAA
 key[3] => start_top_state.IN1
-sw[0] => Selector36.IN1
-sw[1] => Selector35.IN1
-sw[2] => Selector34.IN1
-sw[3] => Selector33.IN1
-sw[4] => Selector32.IN1
-sw[5] => Selector31.IN1
-sw[6] => Selector30.IN1
+sw[0] => Add2.IN7
+sw[0] => Selector1.IN3
+sw[1] => Add2.IN6
+sw[1] => Selector0.IN3
+sw[2] => Add2.IN5
+sw[3] => Add2.IN4
+sw[4] => ~NO_FANOUT~
+sw[5] => ~NO_FANOUT~
+sw[6] => ~NO_FANOUT~
 sw[7] => ~NO_FANOUT~
 sw[8] => ~NO_FANOUT~
 sw[9] => ~NO_FANOUT~
 rst => top_state.OUTPUTSELECT
 rst => top_state.OUTPUTSELECT
 rst => top_state.OUTPUTSELECT
-rst => init_sram_state.OUTPUTSELECT
-rst => init_sram_state.OUTPUTSELECT
+rst => srin_state.OUTPUTSELECT
+rst => srin_state.OUTPUTSELECT
+rst => srfr_state.OUTPUTSELECT
+rst => srfr_state.OUTPUTSELECT
+rst => srfr_state.OUTPUTSELECT
+rst => srfr_state.OUTPUTSELECT
 rst => db_state.OUTPUTSELECT
 rst => db_state.OUTPUTSELECT
 rst => db_state.OUTPUTSELECT
@@ -330,7 +345,14 @@ rst => count.OUTPUTSELECT
 rst => count.OUTPUTSELECT
 rst => count.OUTPUTSELECT
 rst => count.OUTPUTSELECT
-fr_read_sel => ~NO_FANOUT~
+rst => addr_select.OUTPUTSELECT
+rst => addr_select.OUTPUTSELECT
+rst => addr_select.OUTPUTSELECT
+rst => addr_select.OUTPUTSELECT
+rst => addr_select.OUTPUTSELECT
+rst => addr_select.OUTPUTSELECT
+rst => addr_select.OUTPUTSELECT
+fr_read_sel <= key[0].DB_MAX_OUTPUT_PORT_TYPE
 db_state[0] <= db_state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 db_state[1] <= db_state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 db_state[2] <= db_state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -416,6 +438,7 @@ clk => clk.IN1
 we => we.IN1
 re => read_cond.IN0
 re => write_cond.IN0
+rs => rs.IN32
 rst => rst.IN1
 read0_addr[0] => read0_addr[0].IN1
 read0_addr[1] => read0_addr[1].IN1
@@ -464,6 +487,262 @@ data_bus[28] <> READ[28].read_tri
 data_bus[29] <> READ[29].read_tri
 data_bus[30] <> READ[30].read_tri
 data_bus[31] <> READ[31].read_tri
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[0].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[1].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[2].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[3].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[4].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[5].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[6].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[7].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[8].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[9].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[10].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[11].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[12].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[13].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[14].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[15].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[16].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[17].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[18].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[19].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[20].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[21].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[22].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[23].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[24].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[25].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[26].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[27].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[28].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[29].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[30].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fr_sram_demo|file_register:reg_file|mux_2to1:CHOOSE_READ[31].read_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |fr_sram_demo|file_register:reg_file|file_register_low:FILE_REG_HW
