@@ -15,7 +15,7 @@ Summary: Link 32x32 file register DUT to test stimulus device and record
 */
 
 module file_register_testbench();
-   wire clk, we, rst;  // clock, write enable, low reset
+   wire clk, we, re, rst;  // clock, write enable, read enable, low reset
    wire [4:0] read0_addr,  // read0 register address selection 
               read1_addr,  // read1 register address selection
               write_addr;  // write register address selection
@@ -25,6 +25,8 @@ module file_register_testbench();
    file_register FILE_REG(
          .clk(clk), 
          .we(we), 
+         .re(re),
+	 .rs(1'b1),
          .rst(rst), 
          .read0_addr(read0_addr), 
          .read1_addr(read1_addr), 
@@ -33,7 +35,8 @@ module file_register_testbench();
        );
    file_register_tester TESTER(
          .clk(clk), 
-         .we(we), 
+         .we(we),
+         .re(re),
          .rst(rst), 
          .read0_addr(read0_addr), 
          .read1_addr(read1_addr), 
