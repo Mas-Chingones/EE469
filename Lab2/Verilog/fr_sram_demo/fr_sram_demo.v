@@ -28,11 +28,11 @@ module fr_sram_demo(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5)
 	wire [31:0] clocks, data_bus,  // divide clocks, data bus
                address, sm_data;  // address sram & fr, data from state machine
    reg [2:0] sram_state, fr_state;  // sram control aggregation, fr control aggregation
+   reg [3:0] db_prev_state;  // save previous data bus state
    reg [3:0] hex_data [5:0];  // data to hex encoders
-	reg [31:0] write_data;  // data written to bus
    
    // divide 50 MHz clock to get sys clock
-	assign sys_clk = clocks[1];
+	assign sys_clk = SW[9] ? clocks[23] : clocks[1];
 	div_clock clock_divider(.orig_clk(CLOCK_50), .div_clks(clocks));
    
    // Interface signal assignment
@@ -64,8 +64,8 @@ module fr_sram_demo(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5)
    end
    
    // data bus logic
-   assign writing_db = (db_state == DATA_TO_SRAM || db_state == DATA_TO_FR);
-   assign data_bus = writing_db ? write_data : 32'bz;
+   assign writing_db = (db_prev_state == DATA_TO_SRAM || db_prev_state == DATA_TO_FR);
+   assign data_bus = writing_db ? sm_data : 32'bz;
    
    //// Test Control States ////
    // data_bus read/write states
@@ -77,18 +77,24 @@ module fr_sram_demo(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5)
    parameter [3:0] SRAM_TO_FR = 4'b0110;
    parameter [3:0] DB_IDLE = 4'b0000;
    always @(posedge sys_clk) begin
+      /*/////////////////////////////////////////////////////////////////
+       Turn all this into a giant dataflow multiplexer to avoid 
+       problems with overwriting data in sram or fr due to 
+       writing_fb becoming false before sm_state or fr_state change from
+       write to idle state due to clockk delay, 'db_prev_state is used
+       as a stopgate measure
+      *//////////////////////////////////////////////////////////////////
       // save data state
+      db_prev_state <= db_state;
       // data transfer test cases
       case(db_state)
          DATA_TO_SRAM: begin
             sram_state <= SRAM_WRITE;
             fr_state <= FR_IDLE;
-            write_data <= sm_data;
          end
          DATA_TO_FR: begin
             sram_state <= SRAM_IDLE;
             fr_state <= FR_WRITE;
-            write_data <= sm_data;
          end
          DATA_FROM_SRAM: begin
             sram_state <= SRAM_READ;
@@ -117,16 +123,21 @@ module fr_sram_demo(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5)
       endcase
    end
    
-   // state machine
+   // TEMP LED TESTER
+   wire [9:0] leds;
+   assign LEDR[7:0] = leds[7:0];
+   
+   // demonstration state machine
    fr_sram_demo_sm state_mach(
                       .clk(sys_clk),
                       .key(KEY), 
-                      .sw(SW), 
+                      .sw(SW),
+                      .rst(!SW[8]),
                       .fr_read_sel(), 
-                      .addr_bus(), 
-                      .db_state(db_state), 
-                      .data_bus(sm_data),
-                      .rst()
+                      .leds(leds),
+                      .db_state(db_state),
+                      .addr_bus(address), 
+                      .data_bus(sm_data)
                    );
    
    // file register
@@ -162,11 +173,12 @@ Summary: file reg and sram demo machine for demonstrating read/write - controls
    addressing and writing
 */
 
-module fr_sram_demo_sm(clk, key, sw, fr_read_sel, addr_bus, db_state, data_bus, rst);
-   input wire clk, fr_read_sel, rst;  // clock, file reg read0/1 select, reset
+module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, addr_bus, data_bus);
+   input wire clk, fr_read_sel, rst;  // clock, file reg read0/1 select, !reset
    input wire [3:0] key;  // keys
    input wire [9:0] sw;  // switches
    output reg [3:0] db_state;  // data bus state
+   output reg [9:0] leds;
    output reg [31:0] addr_bus, data_bus;  // address bus, data bus
    wire start_top_state;  // condition for starting a new top_state, reset
    reg [1:0] init_sram_state;  // initialize ram state variable
@@ -174,10 +186,12 @@ module fr_sram_demo_sm(clk, key, sw, fr_read_sel, addr_bus, db_state, data_bus, 
    reg [3:0] key_prev;  // previous key press values
    reg [6:0] count;  // count for iterative processes
    
+   // start machine on key0 press
    assign start_top_state = !key[0] && key_prev[0];
    
    // initialize state machine regs
    initial begin
+      leds <= 10'b0;
       top_state <= TOP_IDLE;
       init_sram_state <= 2'b0;
       key_prev <= 1'b1;
@@ -189,12 +203,15 @@ module fr_sram_demo_sm(clk, key, sw, fr_read_sel, addr_bus, db_state, data_bus, 
       key_prev <= key; // used to detect key press edges
       
       // reset state machine
-      if(rst) begin
+      if(!rst) begin
          top_state <= TOP_IDLE;
          init_sram_state <= 2'b0;
          key_prev <= 1'b1;
          count <= 7'b0;
       end
+      
+      // display current states
+      leds <= {5'b0, top_state, init_sram_state};
       
       // top level state machine flow
       case(top_state)
@@ -218,23 +235,31 @@ module fr_sram_demo_sm(clk, key, sw, fr_read_sel, addr_bus, db_state, data_bus, 
                
                // write initial data to sram
                SRIN_WRITE: begin
-                  if(count < 127) begin
+                  if(count <= 127) begin
                      addr_bus <= {25'b0 ,count};
                      data_bus <= {25'b0 ,~count};
-                     count <= count + 7'b1;
                   end
-                  else
-                     init_sram_state <= SRIN_PAUSE;
+                  if(count < 127)
+                     count <= count + 7'b1;
+                  if(count == 127) begin
+                     init_sram_state <= SRIN_WRITE_PAUSE;
+                  end   
                end  
                
-               // idle before top_state change (also to complete last write)      
-               SRIN_PAUSE: begin
-                  count <= 7'b0;
+               // idle to complete last write     
+               SRIN_WRITE_PAUSE:
+                  init_sram_state <= SRIN_SUNDER_WRITE;
+               
+               // stop write and transition to next top state
+               SRIN_SUNDER_WRITE: begin
                   db_state <= DB_IDLE;
                   top_state <= TOP_TEST;
                   /*
-                  if(start_top_state)
+                  if(start_top_state) begin
+                     count <= 7'b0;
+                     init_sram_state <= SRIN_SETUP_WRITE;
                      top_state <= TOP_WRITE_BLOCK
+                  end
                   */
                end
                
@@ -243,7 +268,7 @@ module fr_sram_demo_sm(clk, key, sw, fr_read_sel, addr_bus, db_state, data_bus, 
          
          // test values on SRAM by reading them
          TOP_TEST: begin
-            addr_bus <= sw;
+            addr_bus <= {25'b0, {sw[6:0]}};
             db_state <= DATA_FROM_SRAM;
          end
          
@@ -255,11 +280,12 @@ module fr_sram_demo_sm(clk, key, sw, fr_read_sel, addr_bus, db_state, data_bus, 
    parameter TOP_IDLE = 3'b0;
    parameter TOP_SRIN = 3'b1;
    parameter TOP_TEST = 3'b10;
-   parameter TOP_WRITE_BLOCK = 3'b11;
+   //parameter TOP_WRITE_BLOCK = 3'b10;
    // state machine initialize sram states
    parameter SRIN_SETUP_WRITE = 2'b0;
    parameter SRIN_WRITE = 2'b1;
-   parameter SRIN_PAUSE = 2'b10;
+   parameter SRIN_WRITE_PAUSE = 2'b10;
+   parameter SRIN_SUNDER_WRITE = 2'b11;
    
    // data_bus read/write states
    parameter [3:0] DATA_TO_SRAM = 4'b0001;
