@@ -1,5 +1,5 @@
 Flow report for file_register
-Sat Apr 16 12:25:40 2016
+Sun Apr 17 12:05:08 2016
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -41,25 +41,25 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +---------------------------------+--------------------------------------------+
-; Flow Status                     ; Successful - Sat Apr 16 12:25:40 2016      ;
+; Flow Status                     ; Successful - Sun Apr 17 12:05:08 2016      ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                   ; file_register                              ;
 ; Top-level Entity Name           ; file_reg_de1soc_test                       ;
 ; Family                          ; Cyclone V                                  ;
 ; Device                          ; 5CSEMA5F31C6                               ;
 ; Timing Models                   ; Final                                      ;
-; Logic utilization (in ALMs)     ; 25 / 32,070 ( < 1 % )                      ;
+; Logic utilization (in ALMs)     ; N/A                                        ;
 ; Total registers                 ; 50                                         ;
-; Total pins                      ; 23 / 457 ( 5 % )                           ;
+; Total pins                      ; 23                                         ;
 ; Total virtual pins              ; 0                                          ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                      ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                             ;
+; Total block memory bits         ; 0                                          ;
+; Total DSP Blocks                ; 0                                          ;
 ; Total HSSI RX PCSs              ; 0                                          ;
 ; Total HSSI PMA RX Deserializers ; 0                                          ;
 ; Total HSSI TX PCSs              ; 0                                          ;
 ; Total HSSI PMA TX Serializers   ; 0                                          ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                              ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                              ;
+; Total PLLs                      ; 0                                          ;
+; Total DLLs                      ; 0                                          ;
 +---------------------------------+--------------------------------------------+
 
 
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/16/2016 12:23:37 ;
+; Start date & time ; 04/17/2016 12:05:04 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; file_register       ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+----------------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name          ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+----------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 264840323699604.146083461704064       ; --            ; --                   ; --             ;
+; COMPILER_SIGNATURE_ID               ; 79515804918706.146091990410320        ; --            ; --                   ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --                   ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --                   ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --                   ; --             ;
@@ -95,41 +95,29 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+----------------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                             ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 609 MB              ; 00:00:07                           ;
-; Fitter                    ; 00:01:03     ; 1.3                     ; 1832 MB             ; 00:01:15                           ;
-; Assembler                 ; 00:00:20     ; 1.0                     ; 672 MB              ; 00:00:19                           ;
-; TimeQuest Timing Analyzer ; 00:00:13     ; 1.0                     ; 915 MB              ; 00:00:12                           ;
-; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 534 MB              ; 00:00:03                           ;
-; Total                     ; 00:01:46     ; --                      ; --                  ; 00:01:56                           ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:03     ; 1.0                     ; 637 MB              ; 00:00:03                           ;
+; Total                ; 00:00:03     ; --                      ; --                  ; 00:00:03                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; Cibo             ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; Cibo             ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; Cibo             ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; Cibo             ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; Cibo             ; Windows 7 ; 6.1        ; x86_64         ;
-+---------------------------+------------------+-----------+------------+----------------+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; DDsEEPC          ; Windows 7 ; 6.2        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off file_register -c file_register
-quartus_fit --read_settings_files=off --write_settings_files=off file_register -c file_register
-quartus_asm --read_settings_files=off --write_settings_files=off file_register -c file_register
-quartus_sta file_register -c file_register
-quartus_eda --read_settings_files=off --write_settings_files=off file_register -c file_register
 
 
 

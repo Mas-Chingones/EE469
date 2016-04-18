@@ -39,7 +39,7 @@ Major Functions:
 
 
 // Program constants
-#define DISTANCE 4781.0 //distance from Seattle to London
+#define DISTANCE 4791.0 //distance from Seattle to London
 #define HEADWIND 89.6  // estimated headwind
 
 // Function declarations

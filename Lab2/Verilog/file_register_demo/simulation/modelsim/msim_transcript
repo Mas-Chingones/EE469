@@ -1,0 +1,24 @@
+# Reading C:/Program_Files/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do file_register_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\Program_Files\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\Program_Files\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/EE_469/git/EE469/Lab2/verilog/shared_modules/d_flipflop {C:/EE_469/git/EE469/Lab2/verilog/shared_modules/d_flipflop/d_flipflop.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module d_flipflop
+# 
+# Top level modules:
+# 	d_flipflop
+# vlog -vlog01compat -work work +incdir+C:/EE_469/git/EE469/Lab2/verilog/file_register/decoder_5bit {C:/EE_469/git/EE469/Lab2/verilog/file_register/decoder_5bit/decoder_5bit.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module decoder_5bit
+# 
+# Top level modules:
+# 	decoder_5bit

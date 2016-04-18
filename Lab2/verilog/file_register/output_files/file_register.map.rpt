@@ -1,5 +1,5 @@
 Analysis & Synthesis report for file_register
-Sat Apr 16 12:23:44 2016
+Sun Apr 17 12:05:08 2016
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -175,7 +175,7 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Apr 16 12:23:44 2016      ;
+; Analysis & Synthesis Status     ; Successful - Sun Apr 17 12:05:08 2016      ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                   ; file_register                              ;
 ; Top-level Entity Name           ; file_reg_de1soc_test                       ;
@@ -283,35 +283,29 @@ agreement for further details.
 +---------------------------------------------------------------------------------+----------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                              ;
-+----------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path       ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                          ; Library ;
-+----------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------+---------+
-; shared_modules/mux_2to1/mux_2to1.v     ; yes             ; User Verilog HDL File  ; C:/EE_469/git/EE469/Lab2/verilog/file_register/shared_modules/mux_2to1/mux_2to1.v     ;         ;
-; register_32bit/d_flipflop/d_flipflop.v ; yes             ; User Verilog HDL File  ; C:/EE_469/git/EE469/Lab2/verilog/file_register/register_32bit/d_flipflop/d_flipflop.v ;         ;
-; decoder_5bit/decoder_5bit.v            ; yes             ; User Verilog HDL File  ; C:/EE_469/git/EE469/Lab2/verilog/file_register/decoder_5bit/decoder_5bit.v            ;         ;
-; register_32bit/register_32bit.v        ; yes             ; User Verilog HDL File  ; C:/EE_469/git/EE469/Lab2/verilog/file_register/register_32bit/register_32bit.v        ;         ;
-; file_register.v                        ; yes             ; User Verilog HDL File  ; C:/EE_469/git/EE469/Lab2/verilog/file_register/file_register.v                        ;         ;
-; file_reg_de1soc_test.v                 ; yes             ; User Verilog HDL File  ; C:/EE_469/git/EE469/Lab2/verilog/file_register/file_reg_de1soc_test.v                 ;         ;
-+----------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path       ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------+---------+
+; shared_modules/mux_2to1/mux_2to1.v     ; yes             ; User Verilog HDL File  ; C:/EE469/EE469/Lab2/Verilog/file_register/shared_modules/mux_2to1/mux_2to1.v     ;         ;
+; register_32bit/d_flipflop/d_flipflop.v ; yes             ; User Verilog HDL File  ; C:/EE469/EE469/Lab2/Verilog/file_register/register_32bit/d_flipflop/d_flipflop.v ;         ;
+; decoder_5bit/decoder_5bit.v            ; yes             ; User Verilog HDL File  ; C:/EE469/EE469/Lab2/Verilog/file_register/decoder_5bit/decoder_5bit.v            ;         ;
+; register_32bit/register_32bit.v        ; yes             ; User Verilog HDL File  ; C:/EE469/EE469/Lab2/Verilog/file_register/register_32bit/register_32bit.v        ;         ;
+; file_register.v                        ; yes             ; User Verilog HDL File  ; C:/EE469/EE469/Lab2/Verilog/file_register/file_register.v                        ;         ;
+; file_reg_de1soc_test.v                 ; yes             ; User Verilog HDL File  ; C:/EE469/EE469/Lab2/Verilog/file_register/file_reg_de1soc_test.v                 ;         ;
++----------------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------------------------+
@@ -1882,9 +1876,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Sat Apr 16 12:23:36 2016
+    Info: Processing started: Sun Apr 17 12:05:04 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off file_register -c file_register
-Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file shared_modules/mux_2to1/mux_2to1.v
     Info (12023): Found entity 1: mux_2to1
 Info (12021): Found 1 design units, including 1 entities, in source file register_32bit/d_flipflop/d_flipflop.v
@@ -1941,23 +1935,23 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[9]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 254 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/EE_469/git/EE469/Lab2/verilog/file_register/output_files/file_register.map.smsg
+Info (144001): Generated suppressed messages file C:/EE469/EE469/Lab2/Verilog/file_register/output_files/file_register.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 93 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 10 output pins
     Info (21061): Implemented 70 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 618 megabytes
-    Info: Processing ended: Sat Apr 16 12:23:44 2016
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:08
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 650 megabytes
+    Info: Processing ended: Sun Apr 17 12:05:08 2016
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/EE_469/git/EE469/Lab2/verilog/file_register/output_files/file_register.map.smsg.
+The suppressed messages can be found in C:/EE469/EE469/Lab2/Verilog/file_register/output_files/file_register.map.smsg.
 
 
