@@ -72,6 +72,7 @@ module file_reg_de1soc_test(CLOCK_50, SW, KEY, LEDR, HEX5, HEX4, HEX3, HEX2, HEX
 						 .clk(sys_clk), 
 						 .we(we),
                    .re(re),
+                   .rs(1'b1),
 						 .rst(rst),
 				 		 .read0_addr(), 
 				 		 .read1_addr(address),
