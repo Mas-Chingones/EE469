@@ -1,4 +1,0 @@
-
-State Machine - |file_reg_de1soc_test|hold
-Name 
-hold.000 
