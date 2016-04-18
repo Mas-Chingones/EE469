@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fr_sram_demo
-Sun Apr 17 16:10:20 2016
+Sun Apr 17 19:36:08 2016
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -14,152 +14,154 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for sld_signaltap:auto_signaltap_0
- 16. Parameter Settings for User Entity Instance: Top-level Entity: |fr_sram_demo
- 17. Parameter Settings for User Entity Instance: fr_sram_demo_sm:state_mach
- 18. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 19. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[31].FF"
- 20. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[30].FF"
- 21. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[29].FF"
- 22. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[28].FF"
- 23. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[27].FF"
- 24. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[26].FF"
- 25. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[25].FF"
- 26. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[24].FF"
- 27. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[23].FF"
- 28. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[22].FF"
- 29. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[21].FF"
- 30. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[20].FF"
- 31. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[19].FF"
- 32. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[18].FF"
- 33. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[17].FF"
- 34. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[16].FF"
- 35. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[15].FF"
- 36. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[14].FF"
- 37. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[13].FF"
- 38. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[12].FF"
- 39. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[11].FF"
- 40. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[10].FF"
- 41. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[9].FF"
- 42. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[8].FF"
- 43. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[7].FF"
- 44. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[6].FF"
- 45. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[5].FF"
- 46. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[4].FF"
- 47. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[3].FF"
- 48. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[2].FF"
- 49. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[1].FF"
- 50. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[0].FF"
- 51. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[31].BARREL0"
- 52. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[30].BARREL0"
- 53. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[29].BARREL0"
- 54. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[28].BARREL0"
- 55. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[27].BARREL0"
- 56. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[26].BARREL0"
- 57. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[25].BARREL0"
- 58. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[24].BARREL0"
- 59. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[23].BARREL0"
- 60. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[22].BARREL0"
- 61. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[21].BARREL0"
- 62. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[20].BARREL0"
- 63. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[19].BARREL0"
- 64. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[18].BARREL0"
- 65. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[17].BARREL0"
- 66. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[16].BARREL0"
- 67. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[15].BARREL4"
- 68. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[15].BARREL0"
- 69. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[14].BARREL4"
- 70. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[14].BARREL0"
- 71. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[13].BARREL4"
- 72. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[13].BARREL0"
- 73. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[12].BARREL4"
- 74. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[12].BARREL0"
- 75. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[11].BARREL4"
- 76. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[11].BARREL0"
- 77. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[10].BARREL4"
- 78. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[10].BARREL0"
- 79. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[9].BARREL4"
- 80. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[9].BARREL0"
- 81. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[8].BARREL4"
- 82. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[8].BARREL0"
- 83. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[7].BARREL4"
- 84. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[7].BARREL3"
- 85. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[7].BARREL0"
- 86. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[6].BARREL4"
- 87. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[6].BARREL3"
- 88. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[6].BARREL0"
- 89. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[5].BARREL4"
- 90. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[5].BARREL3"
- 91. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[5].BARREL0"
- 92. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[4].BARREL4"
- 93. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[4].BARREL3"
- 94. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[4].BARREL0"
- 95. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[3].BARREL4"
- 96. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[3].BARREL3"
- 97. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[3].BARREL2"
- 98. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[3].BARREL0"
- 99. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[2].BARREL4"
-100. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[2].BARREL3"
-101. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[2].BARREL2"
-102. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[2].BARREL0"
-103. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[1].BARREL4"
-104. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[1].BARREL3"
-105. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[1].BARREL2"
-106. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[1].BARREL1"
-107. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[1].BARREL0"
-108. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL4"
-109. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL3"
-110. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL2"
-111. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL1"
-112. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL0"
-113. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[31].mux"
-114. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[30].mux"
-115. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[29].mux"
-116. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[28].mux"
-117. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[27].mux"
-118. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[26].mux"
-119. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[25].mux"
-120. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[24].mux"
-121. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[23].mux"
-122. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[22].mux"
-123. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[21].mux"
-124. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[20].mux"
-125. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[19].mux"
-126. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[18].mux"
-127. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[17].mux"
-128. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[16].mux"
-129. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[15].mux"
-130. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[14].mux"
-131. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[13].mux"
-132. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[12].mux"
-133. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[11].mux"
-134. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[10].mux"
-135. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[9].mux"
-136. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[8].mux"
-137. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[7].mux"
-138. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[6].mux"
-139. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[5].mux"
-140. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[4].mux"
-141. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[3].mux"
-142. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[2].mux"
-143. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[1].mux"
-144. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[0].mux"
-145. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW"
-146. Port Connectivity Checks: "file_register:reg_file"
-147. Port Connectivity Checks: "fr_sram_demo_sm:state_mach"
-148. Port Connectivity Checks: "div_clock:clock_divider"
-149. SignalTap II Logic Analyzer Settings
-150. Post-Synthesis Netlist Statistics for Top Partition
-151. Elapsed Time Per Partition
-152. Connections to In-System Debugging Instance "auto_signaltap_0"
-153. Analysis & Synthesis Messages
-154. Analysis & Synthesis Suppressed Messages
+  9. State Machine - |fr_sram_demo|fr_sram_demo_sm:state_mach|init_sram_state
+ 10. State Machine - |fr_sram_demo|fr_sram_demo_sm:state_mach|top_state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for sld_signaltap:auto_signaltap_0
+ 18. Parameter Settings for User Entity Instance: Top-level Entity: |fr_sram_demo
+ 19. Parameter Settings for User Entity Instance: fr_sram_demo_sm:state_mach
+ 20. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 21. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[31].FF"
+ 22. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[30].FF"
+ 23. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[29].FF"
+ 24. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[28].FF"
+ 25. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[27].FF"
+ 26. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[26].FF"
+ 27. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[25].FF"
+ 28. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[24].FF"
+ 29. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[23].FF"
+ 30. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[22].FF"
+ 31. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[21].FF"
+ 32. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[20].FF"
+ 33. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[19].FF"
+ 34. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[18].FF"
+ 35. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[17].FF"
+ 36. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[16].FF"
+ 37. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[15].FF"
+ 38. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[14].FF"
+ 39. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[13].FF"
+ 40. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[12].FF"
+ 41. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[11].FF"
+ 42. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[10].FF"
+ 43. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[9].FF"
+ 44. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[8].FF"
+ 45. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[7].FF"
+ 46. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[6].FF"
+ 47. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[5].FF"
+ 48. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[4].FF"
+ 49. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[3].FF"
+ 50. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[2].FF"
+ 51. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[1].FF"
+ 52. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[0].F_REG|d_flipflop:REGISTER[0].FF"
+ 53. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[31].BARREL0"
+ 54. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[30].BARREL0"
+ 55. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[29].BARREL0"
+ 56. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[28].BARREL0"
+ 57. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[27].BARREL0"
+ 58. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[26].BARREL0"
+ 59. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[25].BARREL0"
+ 60. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[24].BARREL0"
+ 61. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[23].BARREL0"
+ 62. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[22].BARREL0"
+ 63. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[21].BARREL0"
+ 64. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[20].BARREL0"
+ 65. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[19].BARREL0"
+ 66. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[18].BARREL0"
+ 67. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[17].BARREL0"
+ 68. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[16].BARREL0"
+ 69. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[15].BARREL4"
+ 70. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[15].BARREL0"
+ 71. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[14].BARREL4"
+ 72. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[14].BARREL0"
+ 73. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[13].BARREL4"
+ 74. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[13].BARREL0"
+ 75. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[12].BARREL4"
+ 76. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[12].BARREL0"
+ 77. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[11].BARREL4"
+ 78. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[11].BARREL0"
+ 79. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[10].BARREL4"
+ 80. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[10].BARREL0"
+ 81. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[9].BARREL4"
+ 82. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[9].BARREL0"
+ 83. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[8].BARREL4"
+ 84. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[8].BARREL0"
+ 85. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[7].BARREL4"
+ 86. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[7].BARREL3"
+ 87. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[7].BARREL0"
+ 88. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[6].BARREL4"
+ 89. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[6].BARREL3"
+ 90. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[6].BARREL0"
+ 91. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[5].BARREL4"
+ 92. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[5].BARREL3"
+ 93. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[5].BARREL0"
+ 94. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[4].BARREL4"
+ 95. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[4].BARREL3"
+ 96. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[4].BARREL0"
+ 97. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[3].BARREL4"
+ 98. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[3].BARREL3"
+ 99. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[3].BARREL2"
+100. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[3].BARREL0"
+101. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[2].BARREL4"
+102. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[2].BARREL3"
+103. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[2].BARREL2"
+104. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[2].BARREL0"
+105. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[1].BARREL4"
+106. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[1].BARREL3"
+107. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[1].BARREL2"
+108. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[1].BARREL1"
+109. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[1].BARREL0"
+110. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL4"
+111. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL3"
+112. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL2"
+113. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL1"
+114. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|decoder_5bit:write_decoder|mux_2to1:BARREL[0].BARREL0"
+115. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[31].mux"
+116. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[30].mux"
+117. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[29].mux"
+118. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[28].mux"
+119. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[27].mux"
+120. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[26].mux"
+121. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[25].mux"
+122. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[24].mux"
+123. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[23].mux"
+124. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[22].mux"
+125. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[21].mux"
+126. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[20].mux"
+127. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[19].mux"
+128. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[18].mux"
+129. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[17].mux"
+130. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[16].mux"
+131. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[15].mux"
+132. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[14].mux"
+133. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[13].mux"
+134. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[12].mux"
+135. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[11].mux"
+136. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[10].mux"
+137. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[9].mux"
+138. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[8].mux"
+139. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[7].mux"
+140. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[6].mux"
+141. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[5].mux"
+142. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[4].mux"
+143. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[3].mux"
+144. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[2].mux"
+145. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[1].mux"
+146. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW|mux_2to1:WRITE[0].mux"
+147. Port Connectivity Checks: "file_register:reg_file|file_register_low:FILE_REG_HW"
+148. Port Connectivity Checks: "file_register:reg_file"
+149. Port Connectivity Checks: "fr_sram_demo_sm:state_mach"
+150. Port Connectivity Checks: "div_clock:clock_divider"
+151. SignalTap II Logic Analyzer Settings
+152. Post-Synthesis Netlist Statistics for Top Partition
+153. Elapsed Time Per Partition
+154. Connections to In-System Debugging Instance "auto_signaltap_0"
+155. Analysis & Synthesis Messages
+156. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -186,13 +188,13 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Apr 17 16:10:19 2016      ;
+; Analysis & Synthesis Status     ; Successful - Sun Apr 17 19:36:08 2016      ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                   ; fr_sram_demo                               ;
 ; Top-level Entity Name           ; fr_sram_demo                               ;
 ; Family                          ; Cyclone V                                  ;
 ; Logic utilization (in ALMs)     ; N/A                                        ;
-; Total registers                 ; 2159                                       ;
+; Total registers                 ; 2141                                       ;
 ; Total pins                      ; 67                                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 7,424                                      ;
@@ -381,25 +383,25 @@ agreement for further details.
 +---------------------------------------------+---------+
 ; Resource                                    ; Usage   ;
 +---------------------------------------------+---------+
-; Estimate of Logic utilization (ALMs needed) ; 1401    ;
+; Estimate of Logic utilization (ALMs needed) ; 1351    ;
 ;                                             ;         ;
-; Combinational ALUT usage for logic          ; 1013    ;
+; Combinational ALUT usage for logic          ; 1007    ;
 ;     -- 7 input functions                    ; 2       ;
-;     -- 6 input functions                    ; 482     ;
-;     -- 5 input functions                    ; 256     ;
-;     -- 4 input functions                    ; 62      ;
-;     -- <=3 input functions                  ; 211     ;
+;     -- 6 input functions                    ; 483     ;
+;     -- 5 input functions                    ; 127     ;
+;     -- 4 input functions                    ; 182     ;
+;     -- <=3 input functions                  ; 213     ;
 ;                                             ;         ;
-; Dedicated logic registers                   ; 2159    ;
+; Dedicated logic registers                   ; 2141    ;
 ;                                             ;         ;
 ; I/O pins                                    ; 67      ;
 ; Total MLAB memory bits                      ; 0       ;
 ; Total block memory bits                     ; 7424    ;
 ; Total DSP Blocks                            ; 0       ;
 ; Maximum fan-out node                        ; sys_clk ;
-; Maximum fan-out                             ; 1087    ;
-; Total fan-out                               ; 12651   ;
-; Average fan-out                             ; 3.75    ;
+; Maximum fan-out                             ; 1069    ;
+; Total fan-out                               ; 12453   ;
+; Average fan-out                             ; 3.72    ;
 +---------------------------------------------+---------+
 
 
@@ -408,11 +410,11 @@ agreement for further details.
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                              ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                ; Library Name ;
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |fr_sram_demo                                                                                           ; 1013 (15)         ; 2159 (13)    ; 7424              ; 0          ; 67   ; 0            ; |fr_sram_demo                                                                                                                                                                                                                                                                                                                                      ; work         ;
+; |fr_sram_demo                                                                                           ; 1007 (11)         ; 2141 (0)     ; 7424              ; 0          ; 67   ; 0            ; |fr_sram_demo                                                                                                                                                                                                                                                                                                                                      ; work         ;
 ;    |HexEncoder:hex0|                                                                                    ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|HexEncoder:hex0                                                                                                                                                                                                                                                                                                                      ; work         ;
 ;    |HexEncoder:hex1|                                                                                    ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|HexEncoder:hex1                                                                                                                                                                                                                                                                                                                      ; work         ;
 ;    |div_clock:clock_divider|                                                                            ; 24 (24)           ; 24 (24)      ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|div_clock:clock_divider                                                                                                                                                                                                                                                                                                              ; work         ;
-;    |fr_sram_demo_sm:state_mach|                                                                         ; 35 (35)           ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|fr_sram_demo_sm:state_mach                                                                                                                                                                                                                                                                                                           ; work         ;
+;    |fr_sram_demo_sm:state_mach|                                                                         ; 34 (34)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|fr_sram_demo_sm:state_mach                                                                                                                                                                                                                                                                                                           ; work         ;
 ;    |sld_hub:auto_hub|                                                                                   ; 91 (1)            ; 90 (0)       ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                     ; work         ;
 ;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 90 (58)           ; 90 (62)      ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                        ; work         ;
 ;          |sld_rom_sr:hub_info_reg|                                                                      ; 15 (15)           ; 9 (9)        ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                                ; work         ;
@@ -507,7 +509,7 @@ agreement for further details.
 ;                |lpm_shiftreg:ram_data_shift_out|                                                        ; 1 (1)             ; 58 (58)      ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                         ; work         ;
 ;                |lpm_shiftreg:status_data_shift_out|                                                     ; 1 (1)             ; 15 (15)      ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                      ; work         ;
 ;             |sld_rom_sr:crc_rom_sr|                                                                     ; 20 (20)           ; 8 (8)        ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                    ; work         ;
-;    |sram:memory|                                                                                        ; 555 (555)         ; 1031 (1031)  ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|sram:memory                                                                                                                                                                                                                                                                                                                          ; work         ;
+;    |sram:memory|                                                                                        ; 554 (554)         ; 1031 (1031)  ; 0                 ; 0          ; 0    ; 0            ; |fr_sram_demo|sram:memory                                                                                                                                                                                                                                                                                                                          ; work         ;
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -519,6 +521,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_a584:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 128          ; 58           ; 128          ; 58           ; 7424 ; None ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
+Encoding Type:  User-Encoded
++--------------------------------------------------------------------------+
+; State Machine - |fr_sram_demo|fr_sram_demo_sm:state_mach|init_sram_state ;
++-----------------------------------+--------------------------------------+
+; Name                              ; init_sram_state~4                    ;
++-----------------------------------+--------------------------------------+
+; init_sram_state.SRIN_WRITE        ; 0                                    ;
+; init_sram_state.SRIN_SUNDER_WRITE ; 1                                    ;
++-----------------------------------+--------------------------------------+
+
+
+Encoding Type:  User-Encoded
++--------------------------------------------------------------------+
+; State Machine - |fr_sram_demo|fr_sram_demo_sm:state_mach|top_state ;
++-------------------------+-------------+----------------------------+
+; Name                    ; top_state~6 ; top_state~5                ;
++-------------------------+-------------+----------------------------+
+; top_state.TOP_IDLE      ; 0           ; 0                          ;
+; top_state.TOP_SRIN      ; 0           ; 1                          ;
+; top_state.TOP_TEST_SRIN ; 1           ; 0                          ;
++-------------------------+-------------+----------------------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -544,13 +569,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 ; Register name                                                                                                            ; Reason for Removal                                                                                                                   ;
 +--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-; fr_state[0]                                                                                                              ; Stuck at VCC due to stuck port data_in                                                                                               ;
-; fr_sram_demo_sm:state_mach|leds[5..7]                                                                                    ; Stuck at GND due to stuck port data_in                                                                                               ;
 ; fr_sram_demo_sm:state_mach|data_bus[7..15]                                                                               ; Stuck at GND due to stuck port data_in                                                                                               ;
 ; fr_sram_demo_sm:state_mach|db_state[3]                                                                                   ; Merged with fr_sram_demo_sm:state_mach|db_state[2]                                                                                   ;
-; db_prev_state[3]                                                                                                         ; Merged with db_prev_state[2]                                                                                                         ;
 ; fr_sram_demo_sm:state_mach|addr_bus[7..9]                                                                                ; Merged with fr_sram_demo_sm:state_mach|addr_bus[10]                                                                                  ;
-; fr_state[1,2]                                                                                                            ; Stuck at GND due to stuck port data_in                                                                                               ;
 ; file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[6].F_REG|d_flipflop:REGISTER[2].FF|q   ; Merged with file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[31].F_REG|d_flipflop:REGISTER[15].FF|q ;
 ; file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[31].F_REG|d_flipflop:REGISTER[4].FF|q  ; Merged with file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[31].F_REG|d_flipflop:REGISTER[15].FF|q ;
 ; file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[6].F_REG|d_flipflop:REGISTER[0].FF|q   ; Merged with file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[31].F_REG|d_flipflop:REGISTER[15].FF|q ;
@@ -1064,10 +1085,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[31].F_REG|d_flipflop:REGISTER[14].FF|q ; Merged with file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[31].F_REG|d_flipflop:REGISTER[15].FF|q ;
 ; file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[31].F_REG|d_flipflop:REGISTER[15].FF|q ; Stuck at GND due to stuck port data_in                                                                                               ;
 ; fr_sram_demo_sm:state_mach|db_state[2]                                                                                   ; Stuck at GND due to stuck port data_in                                                                                               ;
-; db_prev_state[2]                                                                                                         ; Stuck at GND due to stuck port data_in                                                                                               ;
-; fr_sram_demo_sm:state_mach|top_state[2]                                                                                  ; Stuck at GND due to stuck port data_in                                                                                               ;
-; fr_sram_demo_sm:state_mach|leds[4]                                                                                       ; Stuck at GND due to stuck port data_in                                                                                               ;
 ; fr_sram_demo_sm:state_mach|addr_bus[10]                                                                                  ; Stuck at GND due to stuck port data_in                                                                                               ;
+; fr_sram_demo_sm:state_mach|init_sram_state~5                                                                             ; Lost fanout                                                                                                                          ;
+; fr_sram_demo_sm:state_mach|top_state~7                                                                                   ; Lost fanout                                                                                                                          ;
 ; sram:memory|memory~8                                                                                                     ; Lost fanout                                                                                                                          ;
 ; sram:memory|memory~9                                                                                                     ; Lost fanout                                                                                                                          ;
 ; sram:memory|memory~10                                                                                                    ; Lost fanout                                                                                                                          ;
@@ -5544,7 +5564,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; sram:memory|memory~8953                                                                                                  ; Lost fanout                                                                                                                          ;
 ; sram:memory|memory~8954                                                                                                  ; Lost fanout                                                                                                                          ;
 ; sram:memory|memory~8955                                                                                                  ; Lost fanout                                                                                                                          ;
-; Total Number of Removed Registers = 32293                                                                                ;                                                                                                                                      ;
+; sram:memory|memory~8956                                                                                                  ; Lost fanout                                                                                                                          ;
+; sram:memory|memory~8957                                                                                                  ; Lost fanout                                                                                                                          ;
+; sram:memory|memory~8958                                                                                                  ; Lost fanout                                                                                                                          ;
+; sram:memory|memory~8959                                                                                                  ; Lost fanout                                                                                                                          ;
+; sram:memory|memory~8968                                                                                                  ; Lost fanout                                                                                                                          ;
+; Total Number of Removed Registers = 32285                                                                                ;                                                                                                                                      ;
 +--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 * Table truncated at 5000 items. To change the number of removed registers reported, set the "Number of Removed Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
@@ -5554,9 +5579,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------+
 ; Register name                           ; Reason for Removal        ; Registers Removed due to This Register                                                                                   ;
 +-----------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------+
-; fr_sram_demo_sm:state_mach|top_state[2] ; Stuck at GND              ; fr_sram_demo_sm:state_mach|leds[4], fr_sram_demo_sm:state_mach|addr_bus[10],                                             ;
-;                                         ; due to stuck port data_in ; sram:memory|mar[9], sram:memory|mar[10], sram:memory|mar[8], sram:memory|mar[7],                                         ;
-;                                         ;                           ; sram:memory|memory~5120, sram:memory|memory~5136, sram:memory|memory~5152,                                               ;
+; fr_sram_demo_sm:state_mach|addr_bus[10] ; Stuck at GND              ; sram:memory|mar[9], sram:memory|mar[10], sram:memory|mar[8], sram:memory|mar[7],                                         ;
+;                                         ; due to stuck port data_in ; sram:memory|memory~5120, sram:memory|memory~5136, sram:memory|memory~5152,                                               ;
 ;                                         ;                           ; sram:memory|memory~5168, sram:memory|memory~5376, sram:memory|memory~5392,                                               ;
 ;                                         ;                           ; sram:memory|memory~5408, sram:memory|memory~5424, sram:memory|memory~5632,                                               ;
 ;                                         ;                           ; sram:memory|memory~5648, sram:memory|memory~5664, sram:memory|memory~5680,                                               ;
@@ -6239,9 +6263,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ;                                         ;                           ; sram:memory|memory~6855, sram:memory|memory~6871, sram:memory|memory~6887,                                               ;
 ;                                         ;                           ; sram:memory|memory~6903, sram:memory|memory~7111, sram:memory|memory~7127,                                               ;
 ;                                         ;                           ; sram:memory|memory~7143, sram:memory|memory~7159                                                                         ;
-; fr_state[0]                             ; Stuck at VCC              ; file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[31].F_REG|d_flipflop:REGISTER[15].FF|q ;
-;                                         ; due to stuck port data_in ;                                                                                                                          ;
-; fr_sram_demo_sm:state_mach|db_state[2]  ; Stuck at GND              ; db_prev_state[2]                                                                                                         ;
+; fr_sram_demo_sm:state_mach|data_bus[15] ; Stuck at GND              ; file_register:reg_file|file_register_low:FILE_REG_HW|register_32bit:FILE_REGISTER[31].F_REG|d_flipflop:REGISTER[15].FF|q ;
 ;                                         ; due to stuck port data_in ;                                                                                                                          ;
 +-----------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
@@ -6251,12 +6273,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2159  ;
+; Total registers                              ; 2141  ;
 ; Number of registers using Synchronous Clear  ; 105   ;
-; Number of registers using Synchronous Load   ; 168   ;
+; Number of registers using Synchronous Load   ; 167   ;
 ; Number of registers using Asynchronous Clear ; 368   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1500  ;
+; Number of registers using Clock Enable       ; 1492  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -6266,10 +6288,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                             ; Fan out ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; sram_state[2]                                                                                                                                                                 ; 133     ;
-; sram_state[0]                                                                                                                                                                 ; 141     ;
-; sram_state[1]                                                                                                                                                                 ; 141     ;
-; fr_sram_demo_sm:state_mach|key_prev[0]                                                                                                                                        ; 1       ;
 ; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|tdo                                                                                                             ; 1       ;
 ; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg[1]                                                                                                  ; 3       ;
 ; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg[2]                                                                                                  ; 3       ;
@@ -6281,21 +6299,19 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[3] ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[4] ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[5] ; 1       ;
-; Total number of inverted registers = 15                                                                                                                                       ;         ;
+; Total number of inverted registers = 11                                                                                                                                       ;         ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |fr_sram_demo|fr_sram_demo_sm:state_mach|count[6]           ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |fr_sram_demo|fr_sram_demo_sm:state_mach|addr_bus[3]        ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; Yes        ; |fr_sram_demo|fr_sram_demo_sm:state_mach|db_state[1]        ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |fr_sram_demo|fr_sram_demo_sm:state_mach|init_sram_state[1] ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |fr_sram_demo|fr_sram_demo_sm:state_mach|top_state[0]       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |fr_sram_demo|fr_sram_demo_sm:state_mach|count[1]    ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |fr_sram_demo|fr_sram_demo_sm:state_mach|addr_bus[5] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |fr_sram_demo|fr_sram_demo_sm:state_mach|Selector2   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -6337,10 +6353,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------+-------+---------------------------------------------+
 ; TOP_IDLE          ; 000   ; Unsigned Binary                             ;
 ; TOP_SRIN          ; 001   ; Unsigned Binary                             ;
-; TOP_TEST          ; 010   ; Unsigned Binary                             ;
-; SRIN_SETUP_WRITE  ; 00    ; Unsigned Binary                             ;
-; SRIN_WRITE        ; 01    ; Unsigned Binary                             ;
-; SRIN_WRITE_PAUSE  ; 10    ; Unsigned Binary                             ;
+; TOP_TEST_SRIN     ; 010   ; Unsigned Binary                             ;
+; TOP_SRFR          ; 010   ; Unsigned Binary                             ;
+; TOP_TEST_SRFR     ; 011   ; Unsigned Binary                             ;
+; SRIN_WRITE        ; 00    ; Unsigned Binary                             ;
 ; SRIN_SUNDER_WRITE ; 11    ; Unsigned Binary                             ;
 ; DATA_TO_SRAM      ; 0001  ; Unsigned Binary                             ;
 ; DATA_TO_FR        ; 0100  ; Unsigned Binary                             ;
@@ -7593,6 +7609,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
 +------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rst        ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
 ; read0_addr ; Input ; Info     ; Explicitly unconnected                                                                                                                                                             ;
 ; read1_addr ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
 ; write_addr ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
@@ -7634,29 +7651,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1100                        ;
-;     ENA               ; 1053                        ;
+; arriav_ff             ; 1082                        ;
+;     ENA               ; 1045                        ;
 ;     ENA SCLR          ; 6                           ;
-;     SLD               ; 1                           ;
-;     plain             ; 40                          ;
-; arriav_lcell_comb     ; 646                         ;
+;     plain             ; 31                          ;
+; arriav_lcell_comb     ; 640                         ;
 ;     arith             ; 30                          ;
 ;         1 data inputs ; 29                          ;
 ;         2 data inputs ; 1                           ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 615                         ;
+;     normal            ; 609                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 11                          ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 21                          ;
-;         4 data inputs ; 25                          ;
-;         5 data inputs ; 146                         ;
-;         6 data inputs ; 404                         ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 27                          ;
+;         4 data inputs ; 145                         ;
+;         5 data inputs ; 17                          ;
+;         6 data inputs ; 405                         ;
 ; boundary_port         ; 67                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 5.07                        ;
+; Average LUT depth     ; 4.95                        ;
 +-----------------------+-----------------------------+
 
 
@@ -7665,165 +7681,165 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:20     ;
+; Top            ; 00:00:15     ;
 +----------------+--------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                                           ;
-+-----------------------------------------------+--------------+-----------+--------------------------------+-------------------+-----------------------------------------------+------------------------------------------------------------------------------------------+
-; Name                                          ; Type         ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                             ; Details                                                                                  ;
-+-----------------------------------------------+--------------+-----------+--------------------------------+-------------------+-----------------------------------------------+------------------------------------------------------------------------------------------+
-; KEY[0]                                        ; post-fitting ; connected ; Top                            ; post-synthesis    ; KEY[0]                                        ; N/A                                                                                      ;
-; KEY[0]                                        ; post-fitting ; connected ; Top                            ; post-synthesis    ; KEY[0]                                        ; N/A                                                                                      ;
-; SW[8]                                         ; post-fitting ; connected ; Top                            ; post-synthesis    ; SW[8]                                         ; N/A                                                                                      ;
-; SW[8]                                         ; post-fitting ; connected ; Top                            ; post-synthesis    ; SW[8]                                         ; N/A                                                                                      ;
-; SW[9]                                         ; post-fitting ; connected ; Top                            ; post-synthesis    ; SW[9]                                         ; N/A                                                                                      ;
-; SW[9]                                         ; post-fitting ; connected ; Top                            ; post-synthesis    ; SW[9]                                         ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A                                                                                      ;
-; data_bus[0]~0                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[0]~0                                 ; N/A                                                                                      ;
-; data_bus[0]~0                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[0]~0                                 ; N/A                                                                                      ;
-; data_bus[1]~1                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[1]~1                                 ; N/A                                                                                      ;
-; data_bus[1]~1                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[1]~1                                 ; N/A                                                                                      ;
-; data_bus[2]~2                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[2]~2                                 ; N/A                                                                                      ;
-; data_bus[2]~2                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[2]~2                                 ; N/A                                                                                      ;
-; data_bus[3]~3                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[3]~3                                 ; N/A                                                                                      ;
-; data_bus[3]~3                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[3]~3                                 ; N/A                                                                                      ;
-; data_bus[4]~4                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[4]~4                                 ; N/A                                                                                      ;
-; data_bus[4]~4                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[4]~4                                 ; N/A                                                                                      ;
-; data_bus[5]~5                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[5]~5                                 ; N/A                                                                                      ;
-; data_bus[5]~5                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[5]~5                                 ; N/A                                                                                      ;
-; data_bus[6]~6                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[6]~6                                 ; N/A                                                                                      ;
-; data_bus[6]~6                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[6]~6                                 ; N/A                                                                                      ;
-; data_bus[7]~7                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[7]~7                                 ; N/A                                                                                      ;
-; data_bus[7]~7                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; data_bus[7]~7                                 ; N/A                                                                                      ;
-; div_clock:clock_divider|div_clks[20]          ; post-fitting ; connected ; Top                            ; post-synthesis    ; div_clock:clock_divider|div_clks[20]          ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[0]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[0]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[0]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[0]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[1]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[1]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[1]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[1]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[2]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[2]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[2]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[2]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[3]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[3]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[3]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[3]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[4]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[4]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[4]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[4]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[5]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[5]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[5]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[5]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[6]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[6]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[6]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[6]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|addr_bus[7]        ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                           ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
-; fr_sram_demo_sm:state_mach|addr_bus[7]        ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                           ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
-; fr_sram_demo_sm:state_mach|data_bus[0]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[0]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[0]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[0]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[1]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[1]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[1]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[1]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[2]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[2]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[2]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[2]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[3]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[3]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[3]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[3]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[4]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[4]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[4]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[4]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[5]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[5]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[5]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[5]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[6]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[6]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|data_bus[6]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[6]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|db_state[0]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|db_state[0]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|db_state[0]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|db_state[0]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|db_state[1]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|db_state[1]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|db_state[1]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|db_state[1]        ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|init_sram_state[0] ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|init_sram_state[0] ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|init_sram_state[0] ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|init_sram_state[0] ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|init_sram_state[1] ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|init_sram_state[1] ; N/A                                                                                      ;
-; fr_sram_demo_sm:state_mach|init_sram_state[1] ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|init_sram_state[1] ; N/A                                                                                      ;
-; sram:memory|mar[0]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[0]                            ; N/A                                                                                      ;
-; sram:memory|mar[0]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[0]                            ; N/A                                                                                      ;
-; sram:memory|mar[1]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[1]                            ; N/A                                                                                      ;
-; sram:memory|mar[1]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[1]                            ; N/A                                                                                      ;
-; sram:memory|mar[2]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[2]                            ; N/A                                                                                      ;
-; sram:memory|mar[2]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[2]                            ; N/A                                                                                      ;
-; sram:memory|mar[3]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[3]                            ; N/A                                                                                      ;
-; sram:memory|mar[3]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[3]                            ; N/A                                                                                      ;
-; sram:memory|mar[4]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[4]                            ; N/A                                                                                      ;
-; sram:memory|mar[4]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[4]                            ; N/A                                                                                      ;
-; sram:memory|mar[5]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[5]                            ; N/A                                                                                      ;
-; sram:memory|mar[5]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[5]                            ; N/A                                                                                      ;
-; sram:memory|mar[6]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[6]                            ; N/A                                                                                      ;
-; sram:memory|mar[6]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[6]                            ; N/A                                                                                      ;
-; sram:memory|mar[7]                            ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                           ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
-; sram:memory|mar[7]                            ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                           ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
-; sram:memory|mdr[0]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[0]                            ; N/A                                                                                      ;
-; sram:memory|mdr[0]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[0]                            ; N/A                                                                                      ;
-; sram:memory|mdr[1]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[1]                            ; N/A                                                                                      ;
-; sram:memory|mdr[1]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[1]                            ; N/A                                                                                      ;
-; sram:memory|mdr[2]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[2]                            ; N/A                                                                                      ;
-; sram:memory|mdr[2]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[2]                            ; N/A                                                                                      ;
-; sram:memory|mdr[3]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[3]                            ; N/A                                                                                      ;
-; sram:memory|mdr[3]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[3]                            ; N/A                                                                                      ;
-; sram:memory|mdr[4]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[4]                            ; N/A                                                                                      ;
-; sram:memory|mdr[4]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[4]                            ; N/A                                                                                      ;
-; sram:memory|mdr[5]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[5]                            ; N/A                                                                                      ;
-; sram:memory|mdr[5]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[5]                            ; N/A                                                                                      ;
-; sram:memory|mdr[6]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[6]                            ; N/A                                                                                      ;
-; sram:memory|mdr[6]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[6]                            ; N/A                                                                                      ;
-; sram:memory|mdr[7]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[7]                            ; N/A                                                                                      ;
-; sram:memory|mdr[7]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[7]                            ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[0]~0                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[0]~0                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[0]~0                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[0]~0                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[1]~1                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[1]~1                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[1]~1                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[1]~1                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[2]~2                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[2]~2                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[2]~2                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[2]~2                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[3]~3                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[3]~3                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[3]~3                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[3]~3                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[4]~4                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[4]~4                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[4]~4                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[4]~4                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[5]~5                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[5]~5                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[5]~5                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[5]~5                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[6]~6                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[6]~6                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[6]~6                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[6]~6                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[7]~7                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[7]~7                ; N/A                                                                                      ;
-; sram:memory|sram_data_bus[7]~7                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[7]~7                ; N/A                                                                                      ;
-; sram_state[0]                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram_state[0]                                 ; N/A                                                                                      ;
-; sram_state[0]                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram_state[0]                                 ; N/A                                                                                      ;
-; sram_state[1]                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram_state[1]                                 ; N/A                                                                                      ;
-; sram_state[1]                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram_state[1]                                 ; N/A                                                                                      ;
-; sram_state[2]                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram_state[2]                                 ; N/A                                                                                      ;
-; sram_state[2]                                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram_state[2]                                 ; N/A                                                                                      ;
-; sys_clk                                       ; post-fitting ; connected ; Top                            ; post-synthesis    ; sys_clk                                       ; N/A                                                                                      ;
-; sys_clk                                       ; post-fitting ; connected ; Top                            ; post-synthesis    ; sys_clk                                       ; N/A                                                                                      ;
-+-----------------------------------------------+--------------+-----------+--------------------------------+-------------------+-----------------------------------------------+------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                                                                                                          ;
++-----------------------------------------------+--------------+-----------+--------------------------------+-------------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Name                                          ; Type         ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                      ; Details                                                                                                                                                        ;
++-----------------------------------------------+--------------+-----------+--------------------------------+-------------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; KEY[0]                                        ; post-fitting ; connected ; Top                            ; post-synthesis    ; KEY[0]                                 ; N/A                                                                                                                                                            ;
+; KEY[0]                                        ; post-fitting ; connected ; Top                            ; post-synthesis    ; KEY[0]                                 ; N/A                                                                                                                                                            ;
+; SW[8]                                         ; post-fitting ; connected ; Top                            ; post-synthesis    ; SW[8]                                  ; N/A                                                                                                                                                            ;
+; SW[8]                                         ; post-fitting ; connected ; Top                            ; post-synthesis    ; SW[8]                                  ; N/A                                                                                                                                                            ;
+; SW[9]                                         ; post-fitting ; connected ; Top                            ; post-synthesis    ; SW[9]                                  ; N/A                                                                                                                                                            ;
+; SW[9]                                         ; post-fitting ; connected ; Top                            ; post-synthesis    ; SW[9]                                  ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|gnd                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; auto_signaltap_0|vcc                          ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC    ; N/A                                                                                                                                                            ;
+; data_bus[0]~0                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[0]~0                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[1]~1                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[1]~1                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[2]~2                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[2]~2                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[3]~3                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[3]~3                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[4]~4                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[4]~4                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[5]~5                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[5]~5                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[6]~6                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[6]~6                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[7]~7                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; data_bus[7]~7                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; div_clock:clock_divider|div_clks[20]          ; post-fitting ; connected ; Top                            ; post-synthesis    ; div_clock:clock_divider|div_clks[20]   ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[0]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[0] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[0]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[0] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[1]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[1] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[1]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[1] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[2]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[2] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[2]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[2] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[3]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[3] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[3]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[3] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[4]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[4] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[4]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[4] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[5]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[5] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[5]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[5] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[6]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[6] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[6]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|addr_bus[6] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|addr_bus[7]        ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; fr_sram_demo_sm:state_mach|addr_bus[7]        ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; fr_sram_demo_sm:state_mach|data_bus[0]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[0] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[0]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[0] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[1]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[1] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[1]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[1] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[2]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[2] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[2]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[2] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[3]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[3] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[3]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[3] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[4]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[4] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[4]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[4] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[5]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[5] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[5]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[5] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[6]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[6] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|data_bus[6]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|data_bus[6] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|db_state[0]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|db_state[0] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|db_state[0]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|db_state[0] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|db_state[1]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|db_state[1] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|db_state[1]        ; post-fitting ; connected ; Top                            ; post-synthesis    ; fr_sram_demo_sm:state_mach|db_state[1] ; N/A                                                                                                                                                            ;
+; fr_sram_demo_sm:state_mach|init_sram_state[0] ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; fr_sram_demo_sm:state_mach|init_sram_state[0] ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; fr_sram_demo_sm:state_mach|init_sram_state[1] ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; fr_sram_demo_sm:state_mach|init_sram_state[1] ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; sram:memory|mar[0]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[0]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[0]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[0]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[1]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[1]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[1]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[1]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[2]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[2]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[2]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[2]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[3]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[3]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[3]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[3]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[4]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[4]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[4]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[4]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[5]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[5]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[5]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[5]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[6]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[6]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[6]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mar[6]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mar[7]                            ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; sram:memory|mar[7]                            ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; sram:memory|mdr[0]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[0]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[0]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[0]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[1]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[1]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[1]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[1]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[2]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[2]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[2]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[2]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[3]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[3]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[3]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[3]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[4]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[4]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[4]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[4]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[5]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[5]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[5]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[5]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[6]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[6]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[6]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[6]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[7]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[7]                     ; N/A                                                                                                                                                            ;
+; sram:memory|mdr[7]                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|mdr[7]                     ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[0]~0                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[0]~0         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[0]~0                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[0]~0         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[1]~1                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[1]~1         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[1]~1                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[1]~1         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[2]~2                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[2]~2         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[2]~2                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[2]~2         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[3]~3                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[3]~3         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[3]~3                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[3]~3         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[4]~4                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[4]~4         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[4]~4                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[4]~4         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[5]~5                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[5]~5         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[5]~5                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[5]~5         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[6]~6                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[6]~6         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[6]~6                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[6]~6         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[7]~7                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[7]~7         ; N/A                                                                                                                                                            ;
+; sram:memory|sram_data_bus[7]~7                ; post-fitting ; connected ; Top                            ; post-synthesis    ; sram:memory|sram_data_bus[7]~7         ; N/A                                                                                                                                                            ;
+; sram_state[0]                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; sram_state[0]                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; sram_state[1]                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; sram_state[1]                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; sram_state[2]                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; sram_state[2]                                 ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                    ; The post-fitting netlist is not being used.  Set the partition's netlist type to source.                                                                       ;
+; sys_clk                                       ; post-fitting ; connected ; Top                            ; post-synthesis    ; sys_clk                                ; N/A                                                                                                                                                            ;
+; sys_clk                                       ; post-fitting ; connected ; Top                            ; post-synthesis    ; sys_clk                                ; N/A                                                                                                                                                            ;
++-----------------------------------------------+--------------+-----------+--------------------------------+-------------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -7832,9 +7848,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Sun Apr 17 16:09:26 2016
+    Info: Processing started: Sun Apr 17 19:35:36 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fr_sram_demo -c fr_sram_demo
-Critical Warning (138067): Current license file does not support incremental compilation. The Quartus II software removes all the user-specified design partitions in the design automatically.
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file /ee_469/git/ee469/lab2/verilog/hexencoder/hexencoder.v
     Info (12023): Found entity 1: HexEncoder
@@ -7891,7 +7906,6 @@ Info (10041): Inferred latch for "mdr[12]" at sram.v(42)
 Info (10041): Inferred latch for "mdr[13]" at sram.v(42)
 Info (10041): Inferred latch for "mdr[14]" at sram.v(42)
 Info (10041): Inferred latch for "mdr[15]" at sram.v(42)
-Critical Warning (138067): Current license file does not support incremental compilation. The Quartus II software removes all the user-specified design partitions in the design automatically.
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_a584.tdf
     Info (12023): Found entity 1: altsyncram_a584
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_elc.tdf
@@ -7947,6 +7961,8 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "sram:memory|sram_data_bus[13]" feeding internal logic into a wire
     Warning (13049): Converted tri-state buffer "sram:memory|sram_data_bus[14]" feeding internal logic into a wire
     Warning (13049): Converted tri-state buffer "sram:memory|sram_data_bus[15]" feeding internal logic into a wire
+Warning (12069): Ignored assignment(s) for "init_sram_state[0]" because "init_sram_state" is not a bus or array
+Warning (12069): Ignored assignment(s) for "init_sram_state[1]" because "init_sram_state" is not a bus or array
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "sram:memory|mar[0]" and its non-tri-state driver.
@@ -7962,14 +7978,14 @@ Warning (13032): The following tri-state nodes are fed by constants
     Warning (13033): The node "sram:memory|mar[8]" is fed by GND
     Warning (13033): The node "sram:memory|mar[7]" is fed by GND
 Warning (13027): Removed fan-outs from the following always-disabled I/O buffers
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[0].read_tri" to the node "hex_data[0][0]"
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[1].read_tri" to the node "hex_data[0][1]"
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[2].read_tri" to the node "hex_data[0][2]"
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[3].read_tri" to the node "hex_data[0][3]"
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[4].read_tri" to the node "hex_data[1][0]"
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[5].read_tri" to the node "hex_data[1][1]"
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[6].read_tri" to the node "hex_data[1][2]"
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[7].read_tri" to the node "hex_data[1][3]"
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[0].read_tri" to the node "sram:memory|mdr[0]"
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[1].read_tri" to the node "sram:memory|mdr[1]"
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[2].read_tri" to the node "sram:memory|mdr[2]"
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[3].read_tri" to the node "sram:memory|mdr[3]"
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[4].read_tri" to the node "sram:memory|mdr[4]"
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[5].read_tri" to the node "sram:memory|mdr[5]"
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[6].read_tri" to the node "sram:memory|mdr[6]"
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "file_register:reg_file|READ[7].read_tri" to the node "sram:memory|mdr[7]"
     Warning (13028): Removed fan-out from the always-disabled I/O buffer "sram:memory|addr_bus[9]" to the node "sram:memory|mar[9]"
     Warning (13028): Removed fan-out from the always-disabled I/O buffer "sram:memory|addr_bus[10]" to the node "sram:memory|mar[10]"
     Warning (13028): Removed fan-out from the always-disabled I/O buffer "sram:memory|addr_bus[0]" to the node "sram:memory|mar[0]"
@@ -7987,14 +8003,14 @@ Warning (13050): Open-drain buffer(s) that do not directly drive top-level pin(s
     Warning (13051): Converted the fanout from the open-drain buffer "address[8]" to the node "sram:memory|mar[8]" into a wire
     Warning (13051): Converted the fanout from the open-drain buffer "address[7]" to the node "sram:memory|mar[7]" into a wire
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[0]" to the node "hex_data[0][0]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[1]" to the node "hex_data[0][1]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[2]" to the node "hex_data[0][2]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[3]" to the node "hex_data[0][3]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[4]" to the node "hex_data[1][0]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[5]" to the node "hex_data[1][1]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[6]" to the node "hex_data[1][2]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[7]" to the node "hex_data[1][3]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[0]" to the node "sram:memory|mdr[0]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[1]" to the node "sram:memory|mdr[1]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[2]" to the node "sram:memory|mdr[2]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[3]" to the node "sram:memory|mdr[3]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[4]" to the node "sram:memory|mdr[4]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[5]" to the node "sram:memory|mdr[5]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[6]" to the node "sram:memory|mdr[6]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "data_bus[7]" to the node "sram:memory|mdr[7]" into an OR gate
 Warning (13012): Latch sram:memory|mdr[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal sys_clk
 Warning (13012): Latch sram:memory|mdr[1] has unsafe behavior
@@ -8012,6 +8028,10 @@ Warning (13012): Latch sram:memory|mdr[6] has unsafe behavior
 Warning (13012): Latch sram:memory|mdr[7] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal sys_clk
 Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
     Warning (13410): Pin "LEDR[4]" is stuck at GND
     Warning (13410): Pin "LEDR[5]" is stuck at GND
     Warning (13410): Pin "LEDR[6]" is stuck at GND
@@ -8047,26 +8067,25 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX5[5]" is stuck at GND
     Warning (13410): Pin "HEX5[6]" is stuck at VCC
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (17049): 29704 registers lost all their fanouts during netlist optimizations.
+Info (17049): 29706 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/EE_469/git/EE469/Lab2/verilog/fr_sram_demo/output_files/fr_sram_demo.map.smsg
-Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 145 of its 149 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 4 missing sources or connections.
+Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 119 of its 149 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 30 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]"
     Warning (15610): No output dependent on input pin "KEY[1]"
     Warning (15610): No output dependent on input pin "KEY[2]"
-    Warning (15610): No output dependent on input pin "KEY[3]"
-Info (21057): Implemented 3028 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3007 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 53 output pins
-    Info (21061): Implemented 2898 logic cells
+    Info (21061): Implemented 2877 logic cells
     Info (21064): Implemented 58 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 146 warnings
-    Info: Peak virtual memory: 777 megabytes
-    Info: Processing ended: Sun Apr 17 16:10:20 2016
-    Info: Elapsed time: 00:00:54
-    Info: Total CPU time (on all processors): 00:00:39
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 149 warnings
+    Info: Peak virtual memory: 760 megabytes
+    Info: Processing ended: Sun Apr 17 19:36:08 2016
+    Info: Elapsed time: 00:00:32
+    Info: Total CPU time (on all processors): 00:00:32
 
 
 +------------------------------------------+

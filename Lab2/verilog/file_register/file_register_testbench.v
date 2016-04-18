@@ -26,6 +26,7 @@ module file_register_testbench();
          .clk(clk), 
          .we(we), 
          .re(re),
+	 .rs(1'b1),
          .rst(rst), 
          .read0_addr(read0_addr), 
          .read1_addr(read1_addr), 

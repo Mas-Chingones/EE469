@@ -1,12 +1,11 @@
 
 State Machine - |fr_sram_demo|fr_sram_demo_sm:state_mach|init_sram_state
-Name init_sram_state~6 init_sram_state~5 
-init_sram_state.00 0 0 
-init_sram_state.SRIN_WRITE 0 1 
-init_sram_state.SRIN_PAUSE 1 0 
+Name init_sram_state~4 
+init_sram_state.SRIN_WRITE 0 
+init_sram_state.SRIN_SUNDER_WRITE 1 
 
 State Machine - |fr_sram_demo|fr_sram_demo_sm:state_mach|top_state
 Name top_state~6 top_state~5 
 top_state.TOP_IDLE 0 0 
 top_state.TOP_SRIN 0 1 
-top_state.TOP_TEST 1 0 
+top_state.TOP_TEST_SRIN 1 0 

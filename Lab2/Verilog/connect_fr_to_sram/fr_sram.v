@@ -121,7 +121,8 @@ module fr_sram(CLOCK_50, SW, KEY, LEDR);
 	file_register reg_file(
 						 .clk(sys_clk), 
 						 .we(we),
-                   .re(re), 
+                                                 .re(re),
+                                                 .rs(1'b1), 
 						 .rst(rst),
 				 		 .read0_addr(), 
 				 		 .read1_addr(addr_fr),
