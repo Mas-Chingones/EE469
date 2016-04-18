@@ -54,7 +54,7 @@ module file_register(
    generate for(j=0; j<32; j=j+1) begin: CHOOSE_READ
       mux_2to1 read_mux(
                   .in0(read0_data[j]), 
-                  .in1(read1_data[j], 
+                  .in1(read1_data[j]), 
                   .select(rs), 
                   .out(read_data_proxy[j])
                );
