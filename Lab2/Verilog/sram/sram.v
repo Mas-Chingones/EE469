@@ -11,10 +11,10 @@ module sram(clk, cs, oe, rw, addr_bus, data_bus);
 	inout wire [31:0] addr_bus;  // address bus to mar
 	inout wire [31:0] data_bus;  // data bus to mdr
 	reg [15:0] memory [0:2047];  // sram array of 16-bit registers
-   reg [10:0] mar;  // memory address reg
-   reg [15:0] mdr;  // memory data reg
-   wire [10:0] sram_mar_bus;  // address bus from mar to sram
-   wire [15:0] sram_data_bus;  // data bus from mdr to sram
+	reg [10:0] mar;  // memory address reg
+	reg [15:0] mdr;  // memory data reg
+	wire [10:0] sram_mar_bus;  // address bus from mar to sram
+	wire [15:0] sram_data_bus;  // data bus from mdr to sram
 	
    //// Tristate Buffers for data buses //
 	// drive data to data_bus from mdr if reading sram else hi-z
@@ -52,4 +52,4 @@ module sram(clk, cs, oe, rw, addr_bus, data_bus);
       if (!cs && (!rw && oe))
          memory[sram_mar_bus] = sram_data_bus;
 	end
-endmodule 
+endmodule
