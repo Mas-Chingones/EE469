@@ -21,7 +21,7 @@ module sram_test_127_bit(CLOCK_50, SW, KEY, LEDR);
 	wire [31:0] data_bus;
 	
 	// Interface signal assignment
-	assign LEDR[9] = biggerState;
+	//assign LEDR[9] = biggerState;
 	assign LEDR[8:7] = state;
 	
 	// divide 50 MHz clock to get sys clock
@@ -47,10 +47,10 @@ module sram_test_127_bit(CLOCK_50, SW, KEY, LEDR);
 	reg [6:0] address;
 	reg [6:0] value;
 	reg [1:0] state;
-	reg biggerState;
+	//reg biggerState;
 	
 	initial begin
-		biggerState = 0;
+		//biggerState = 0;
 		state = 0;
 		value = 7'd127;
 		address = 7'd0;
@@ -60,17 +60,17 @@ module sram_test_127_bit(CLOCK_50, SW, KEY, LEDR);
 	always @(posedge sys_clk) begin
 	
 		if(SW[9]) begin
-			biggerState <= 0;
+			//biggerState <= 0;
 			state <= 0;
 			value <= 7'd127;
 			address <= 7'd0;
 		end 
 		
 		else begin 
-			case (biggerState)
+			//case (biggerState)
 				
 				// write //
-				1'b0: begin
+				//1'b0: begin
 					case (state)
 						2'b00: begin
 							cs <= 0;
@@ -88,10 +88,18 @@ module sram_test_127_bit(CLOCK_50, SW, KEY, LEDR);
 						end
 						
 						2'b10: begin
-							if (value == 7'd0 && address == 7'd127) begin
-								biggerState <= 1'b1;
-							end
-							state <= 2'b00;
+							if (value == 0 && address == 127) begin
+								state <= 2'b11;
+								//biggerState <= 1'b1;
+							end else
+								state <= 2'b00;
+						end
+						
+						2'b11: begin
+							address <= SW[6:0];
+							cs <= 0;
+							rw <= 1;
+							oe <= 0;
 						end
 						
 						default: state <= 2'b00;
@@ -101,17 +109,17 @@ module sram_test_127_bit(CLOCK_50, SW, KEY, LEDR);
 				end
 				
 				// read //
-				1'b1: begin
+				/*1'b1: begin
 					address <= SW[6:0];
 					cs <= 0;
 					rw <= 1;
 					oe <= 0;
-				end
+				end*/
 			
-			endcase
+			//endcase
 			
 		end	
-	end
+	//end
 	
 	
 endmodule
