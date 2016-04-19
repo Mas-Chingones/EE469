@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for fr_sram_demo
-Mon Apr 18 18:57:58 2016
+Tue Apr 19 16:14:45 2016
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -127,12 +127,12 @@ agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.41        ;
+; Average used               ; 1.31        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  40.5%      ;
+;     Processor 2            ;  31.4%      ;
 ;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -142,7 +142,7 @@ agreement for further details.
 +------------------+--------+--------------------------+
 ; SDC File Path    ; Status ; Read at                  ;
 +------------------+--------+--------------------------+
-; fr_sram_demo.sdc ; OK     ; Mon Apr 18 18:57:24 2016 ;
+; fr_sram_demo.sdc ; OK     ; Tue Apr 19 16:14:12 2016 ;
 +------------------+--------+--------------------------+
 
 
@@ -1339,7 +1339,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Mon Apr 18 18:57:17 2016
+    Info: Processing started: Tue Apr 19 16:14:06 2016
 Info: Command: quartus_sta fr_sram_demo -c fr_sram_demo
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
@@ -1616,9 +1616,9 @@ Info (332146): Worst-case minimum pulse width slack is 9.072
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 108 warnings
-    Info: Peak virtual memory: 1055 megabytes
-    Info: Processing ended: Mon Apr 18 18:57:58 2016
-    Info: Elapsed time: 00:00:41
-    Info: Total CPU time (on all processors): 00:00:54
+    Info: Peak virtual memory: 1051 megabytes
+    Info: Processing ended: Tue Apr 19 16:14:45 2016
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:00:49
 
 

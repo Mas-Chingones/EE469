@@ -101,7 +101,7 @@ module file_reg_de1soc_test(CLOCK_50, SW, KEY, LEDR, HEX5, HEX4, HEX3, HEX2, HEX
 	
 	initial begin
 	hex_value  = 32'hFFFF000F;
-	rw_state <= IDLE_STATE;
+	rw_state = IDLE_STATE;
 	i = 0;
 	j = 0;
 	hold = 0;
@@ -111,8 +111,8 @@ module file_reg_de1soc_test(CLOCK_50, SW, KEY, LEDR, HEX5, HEX4, HEX3, HEX2, HEX
 	
 	always @(posedge sys_clk) begin
 		if(!rst) begin
-			rw_state <= IDLE_STATE;
-			hex_value  = 32'hFFFF000F;
+         rw_state <= IDLE_STATE;
+			hex_value  <= 32'hFFFF000F;
 			i <= 0;
 			j <= 0;
 			hold <= 0;
