@@ -27,7 +27,8 @@ module fr_sram_demo(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5)
         fr_read_sel;  // file reg read out select
    wire [3:0] db_state;  // determines databus state
 	wire [31:0] clocks, data_bus,  // divide clocks, data bus
-               address, sm_data;  // address sram & fr, data from state machine
+               sram_addr, fr_addr0,  // sram address, fr 1st read and write addres
+               fr_addr1, sm_data;  // fr 2nd read address, data from state machine
    wire [2:0] sram_state, fr_state;  // sram control aggregation, fr control aggregation
    wire [3:0] hex_data [5:0];  // data to hex encoders
    
@@ -106,20 +107,22 @@ module fr_sram_demo(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5)
                       .fr_read_sel(fr_read_sel), 
                       .leds(),
                       .db_state(db_state),
-                      .addr_bus(address), 
+                      .fr_addr0(fr_addr0),
+                      .fr_addr1(fr_addr1),
+                      .sram_addr(sram_addr), 
                       .data_bus(sm_data)
                    );
    
    // file register
 	file_register reg_file(
-						 .clk(sys_clk), 
+						 .clk(sys_clk),
 						 .we(we),
                    .re(re),
-                   .rs(fr_read_sel), 
+                   .rs(fr_read_sel),
 						 .rst(rst),
-				 		 .read0_addr(address), 
-				 		 .read1_addr(address),
-						 .write_addr(address),
+				 		 .read0_addr(fr_addr0),
+				 		 .read1_addr(fr_addr1),
+						 .write_addr(fr_addr0),
 						 .data_bus(data_bus)
 					  );
    
@@ -129,7 +132,7 @@ module fr_sram_demo(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5)
 			.cs(cs),
 			.oe(oe),
 			.rw(rw),
-			.addr_bus(address),
+			.addr_bus(sram_addr),
 			.data_bus(data_bus)
     	  );
    
@@ -144,25 +147,28 @@ Summary: file reg and sram demo machine for demonstrating read/write - controls
    addressing and writing
 */
 
-module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, addr_bus, data_bus);
+module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, sram_addr, fr_addr0, fr_addr1, data_bus);
    input wire clk, rst;  // clock, !reset
    input wire [3:0] key;  // keys
    input wire [9:0] sw;  // switches
    output wire fr_read_sel; // file reg read0/1 select
    output reg [3:0] db_state;  // data bus state
    output reg [9:0] leds;  // data to leds
-   output reg [31:0] addr_bus, data_bus;  // address bus, data bus
+   output reg [31:0] sram_addr, fr_addr0,  // sram address, fr address0 / fr write addr
+                     fr_addr1, data_bus;  // fr address1, data bus
    wire start_top_state;  // condition for starting a new top_state, reset
-   reg [1:0] srin_state;  // initialize ram state variable
+   reg fr_sel;  // state machine fr read select
+   reg [1:0] srin_state,  // initialize ram state variable
+             block_select,  // select data block (0-3)
+             frsr_state;  // transfer data from fr to sram
    reg [2:0] top_state,  // top state machine variable
              srfr_state;  // transfer sram block to fr state variable
    reg [3:0] key_prev;  // previous key press values
-   reg [1:0] block_select;  // select data block (0-3)
    reg [6:0] count,  // count for iterative processes
              addr_select;  // sram address corresponding to block in block_select
    
    // choose fr read ports with key0
-   assign fr_read_sel = !key[0];
+   assign fr_read_sel = (top_state != TOP_FRSR) ? !key[0] : fr_sel;
    // start machine on key3 press
    assign start_top_state = !key[3] && key_prev[3];
    
@@ -172,11 +178,13 @@ module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, addr_bus,
       top_state = TOP_IDLE;
       srin_state = SRIN_WRITE;
       srfr_state = SRFR_SELECT_BLOCK;
+      frsr_state = FRSR_SEL_ADDR;
       db_state = DB_IDLE;
       key_prev = 1'b1;
       count = 7'b0;
       block_select = 2'b0;
       addr_select = 7'b0;
+      fr_sel = 1'b0;
    end
    
    // state machine
@@ -188,11 +196,13 @@ module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, addr_bus,
          top_state <= TOP_IDLE;
          srin_state <= SRIN_WRITE;
          srfr_state <= SRFR_SELECT_BLOCK;
+         frsr_state <= FRSR_SEL_ADDR;
          db_state <= DB_IDLE;
          key_prev <= 1'b1;
          count <= 7'b0;
          block_select <= 2'b0;
          addr_select <= 7'b0;
+         fr_sel <= 1'b0;
       end
       
       // top level state machine flow
@@ -213,7 +223,7 @@ module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, addr_bus,
                SRIN_WRITE: begin
                   db_state <= DATA_TO_SRAM;
                   if(count <= 127) begin
-                     addr_bus <= {25'b0 ,count};
+                     sram_addr <= {25'b0 ,count};
                      data_bus <= {25'b0 ,~count};
                   end
                   if(count < 127)
@@ -240,11 +250,12 @@ module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, addr_bus,
          // test values on SRAM by reading them
          /*
          TOP_TEST_SRIN: begin
-            addr_bus <= {25'b0, {sw[6:0]}};
+            sram_addr <= {25'b0, {sw[6:0]}};
             db_state <= DATA_FROM_SRAM;
          end
          */
          
+         // transfer sram to fr and display data
          TOP_SRFR: begin
             // transfer block data from sram to fr
             case(srfr_state)
@@ -258,9 +269,10 @@ module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, addr_bus,
                
                // read data from sram block to data bus
                SRFR_READ_SRAM: begin
-                  db_state <= SRAM_TO_FR;
-                  addr_bus <= {25'b0 ,{count + addr_select}};
+                  sram_addr <= {25'b0, {count + addr_select}};
+                  fr_addr0 <= {25'b0, count};
                   count <= count + 7'b1;
+                  db_state <= SRAM_TO_FR;
                   srfr_state <= SRFR_WRITE_FR;
                end
                
@@ -275,21 +287,58 @@ module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, addr_bus,
                
                // display data from fr based on address on switches[3:0]
                SRFR_DISPLAY_FR: begin
+                  fr_addr0 <= {25'b0, {sw[3:0]}};
+                  fr_addr1 <= {25'b0, {7'd16 + sw[3:0]}};
                   db_state <= DATA_FROM_FR;
-                  addr_select <= 7'd16*fr_read_sel;
-                  addr_bus <= {25'b0, {addr_select + sw[3:0]}};
-                  /*
                   if(start_top_state) begin
                      addr_select <= 7'b0;
                      count <= 7'b0;
                      srfr_state <= SRFR_SELECT_BLOCK;
-                     top_state <= ;
+                     top_state <= TOP_FRSR;
                   end
-                  */
+               end 
+         
+            endcase
+         end
+         
+         // transfer fr to sram address determined by block
+         TOP_FRSR: begin
+            // transfer fr block data to corresponding sram block address
+            case(frsr_state)
+            
+               // select block address
+               FRSR_SEL_ADDR: begin
+                  addr_select <= 7'd16 * block_select;
+                  fr_sel <= !block_select[0];
+                  frsr_state <= FRSR_WRITE;
+               end
+            
+               // write data from fr to sram
+               FRSR_WRITE: begin
+                  if(count < 7'd16) begin
+                     count <= count + 7'b1;
+                     sram_addr <= {24'b0, {8'd128 + count + addr_select}};
+                     fr_addr0 <= {25'b0, count};
+                     fr_addr1 <= {25'b0, {count + 7'd16}};
+                     db_state <= FR_TO_SRAM;
+                  end
+                  else
+                     frsr_state <= FRSR_STOP_WRITE;
+               end
+               
+               // stop writing data from fr to sram
+               FRSR_STOP_WRITE: begin
+                  fr_sel <= 1'b0;
+                  count <= 7'b0;
+                  addr_select <= 7'b0;
+                  db_state <= DB_IDLE;
+                  frsr_state <= FRSR_SEL_ADDR;
+                  top_state <= TOP_IDLE;
                end
                
             endcase
          end
+         
          
       endcase  
    end
@@ -298,9 +347,10 @@ module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, addr_bus,
    // top level state machine control
    parameter TOP_IDLE = 3'b0;
    parameter TOP_SRIN = 3'b1;
-   parameter TOP_TEST_SRIN = 3'b10;
+   // parameter TOP_TEST_SRIN = 3'b10;
    parameter TOP_SRFR = 3'b10;
    parameter TOP_TEST_SRFR = 3'b11;
+   parameter TOP_FRSR = 3'b100;
    // state machine initialize sram states
    parameter SRIN_WRITE = 2'b0;
    parameter SRIN_STOP_WRITE = 2'b11;
@@ -309,7 +359,10 @@ module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, addr_bus,
    parameter SRFR_READ_SRAM = 3'b1;
    parameter SRFR_WRITE_FR = 3'b10;
    parameter SRFR_DISPLAY_FR = 3'b11;
-   
+   // state machine transfer fr data to sram
+   parameter FRSR_SEL_ADDR = 2'b0;
+   parameter FRSR_WRITE = 2'b1;
+   parameter FRSR_STOP_WRITE = 2'b10;
    
    // data_bus read/write states
    parameter DATA_TO_SRAM = 4'b0001;

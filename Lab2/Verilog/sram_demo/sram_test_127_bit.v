@@ -72,17 +72,22 @@ module sram_test_127_bit(CLOCK_50, SW, KEY, LEDR);
 		
 		case (biggerState)
 			
+         // reset
+         if(SW[9]) begin
+            biggerState <= 0;
+            state <= 0;
+            value <= 7'd127;
+            address <= 7'd0;
+         end
+         
 			// write //
 			1'b0: begin
 				case (state)
 					2'b00: begin
-						cs <= 1;
+						cs <= 0;
 						rw <= 0;
-						oe <= 0;
-						if(!SW[9]) begin
-							value <= 7'd127;
-							address <= 7'd0;
-						end else if (value != 7'd0 && address != 7'd127) begin
+						oe <= 1;
+						if (value != 7'd0 && address != 7'd127) begin
 							value <= value - 7'b1;
 							address <= address + 7'b1;
 						end
@@ -94,9 +99,6 @@ module sram_test_127_bit(CLOCK_50, SW, KEY, LEDR);
 					end
 					
 					2'b10: begin
-						cs <= 0;
-						rw <= 0;
-						oe <= 1;
 						state <= 2'b00;
 						if (value != 7'd0 && address != 7'd127) begin
 							biggerState = 1;
