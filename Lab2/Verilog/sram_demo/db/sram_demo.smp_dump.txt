@@ -1,5 +1,5 @@
 
-State Machine - |sram_test_127_bit|state
+State Machine - |sram_demo|state
 Name state~3 state~2 
 state.00 0 0 
 state.01 0 1 
