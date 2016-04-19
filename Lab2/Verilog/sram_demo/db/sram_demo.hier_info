@@ -1,4 +1,4 @@
-|sram_test_127_bit
+|sram_demo
 CLOCK_50 => CLOCK_50.IN1
 SW[0] => Selector8.IN2
 SW[1] => Selector7.IN2
@@ -44,7 +44,7 @@ LEDR[8] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[9] <= <GND>
 
 
-|sram_test_127_bit|div_clock:clock_divider
+|sram_demo|div_clock:clock_divider
 orig_clk => div_clks[0]~reg0.CLK
 orig_clk => div_clks[1]~reg0.CLK
 orig_clk => div_clks[2]~reg0.CLK
@@ -111,7 +111,7 @@ div_clks[30] <= div_clks[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 div_clks[31] <= div_clks[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sram_test_127_bit|sram:memory
+|sram_demo|sram:memory
 clk => always1.IN1
 clk => memory.we_a.CLK
 clk => memory.waddr_a[10].CLK

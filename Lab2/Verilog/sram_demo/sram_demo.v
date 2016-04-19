@@ -7,7 +7,7 @@ Title: SRAM Test on De1-soc
 Summary: Test SRAM operation using De1-soc dev board.
 */
 
-module sram_test_127_bit(CLOCK_50, SW, KEY, LEDR);
+module sram_demo(CLOCK_50, SW, KEY, LEDR);
 	//input reset;
 	input wire CLOCK_50;  // 50 MHz clock
 	input wire [1:0] KEY;  // keypad 
@@ -59,25 +59,25 @@ module sram_test_127_bit(CLOCK_50, SW, KEY, LEDR);
 	assign LEDR[6:0] = data_bus[6:0];
 	always @(posedge sys_clk) begin
 	
-		if(SW[9]) begin
+		/*if(SW[9]) begin
 			//biggerState <= 0;
 			state <= 0;
 			value <= 7'd127;
 			address <= 7'd0;
-		end 
+		end*/ 
 
-		case (biggerState)
+		//case (biggerState)
 			
          // reset
          if(SW[9]) begin
-            biggerState <= 0;
+            //biggerState <= 0;
             state <= 0;
             value <= 7'd127;
             address <= 7'd0;
-         end
+         end else begin
          
 			// write //
-			1'b0: begin
+			//1'b0: begin
 				case (state)
 					2'b00: begin
 						cs <= 0;
@@ -94,32 +94,32 @@ module sram_test_127_bit(CLOCK_50, SW, KEY, LEDR);
 						state <= 2'b10;
 					end
 					
-					2'b10: begin
+					/*2'b10: begin
 						state <= 2'b00;
 						if (value != 7'd0 && address != 7'd127) begin
 							biggerState = 1;
-						end
+						end*/
 						
-						2'b10: begin
-							if (value == 0 && address == 127) begin
-								state <= 2'b11;
-								//biggerState <= 1'b1;
-							end else
-								state <= 2'b00;
-						end
+					2'b10: begin
+						if (value == 0 && address == 127) begin
+							state <= 2'b11;
+							//biggerState <= 1'b1;
+						end else
+							state <= 2'b00;
+					end
 						
-						2'b11: begin
-							address <= SW[6:0];
-							cs <= 0;
-							rw <= 1;
-							oe <= 0;
-						end
+					2'b11: begin
+						address <= SW[6:0];
+						cs <= 0;
+						rw <= 1;
+						oe <= 0;
+					end
 						
-						default: state <= 2'b00;
+					default: state <= 2'b00;
 					
-					endcase
+				endcase
 					
-				end
+			end
 				
 				// read //
 				/*1'b1: begin
@@ -131,7 +131,7 @@ module sram_test_127_bit(CLOCK_50, SW, KEY, LEDR);
 			
 			//endcase
 			
-		end	
+	end	
 	//end
 	
 	

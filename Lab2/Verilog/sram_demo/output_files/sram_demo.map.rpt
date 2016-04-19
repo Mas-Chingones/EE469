@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sram_demo
-Mon Apr 18 19:26:04 2016
+Mon Apr 18 20:15:55 2016
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. State Machine - |sram_test_127_bit|state
+  5. State Machine - |sram_demo|state
   6. User-Specified and Inferred Latches
   7. Registers Removed During Synthesis
   8. Removed Registers Triggering Further Register Optimizations
@@ -51,10 +51,10 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Apr 18 19:26:00 2016      ;
+; Analysis & Synthesis Status     ; Successful - Mon Apr 18 20:15:52 2016      ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                   ; sram_demo                                  ;
-; Top-level Entity Name           ; sram_test_127_bit                          ;
+; Top-level Entity Name           ; sram_demo                                  ;
 ; Family                          ; Cyclone V                                  ;
 ; Logic utilization (in ALMs)     ; N/A until Partition Merge                  ;
 ; Total registers                 ; N/A until Partition Merge                  ;
@@ -77,7 +77,7 @@ agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; sram_test_127_bit  ; sram_demo          ;
+; Top-level entity name                                                           ; sram_demo          ; sram_demo          ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone IV GX      ;
 ; State Machine Processing                                                        ; User-Encoded       ; Auto               ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -177,16 +177,16 @@ agreement for further details.
 
 
 Encoding Type:  User-Encoded
-+------------------------------------------+
-; State Machine - |sram_test_127_bit|state ;
-+----------+---------+---------------------+
-; Name     ; state~3 ; state~2             ;
-+----------+---------+---------------------+
-; state.00 ; 0       ; 0                   ;
-; state.01 ; 0       ; 1                   ;
-; state.10 ; 1       ; 0                   ;
-; state.11 ; 1       ; 1                   ;
-+----------+---------+---------------------+
++----------------------------------+
+; State Machine - |sram_demo|state ;
++----------+---------+-------------+
+; Name     ; state~3 ; state~2     ;
++----------+---------+-------------+
+; state.00 ; 0       ; 0           ;
+; state.01 ; 0       ; 1           ;
+; state.10 ; 1       ; 0           ;
+; state.11 ; 1       ; 1           ;
++----------+---------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -5822,14 +5822,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+---------------------------+----------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |sram_test_127_bit|address[1] ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |sram_test_127_bit|value[0]   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |sram_demo|address[1]      ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |sram_demo|value[0]        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-------------------------------------------------------+
@@ -5964,7 +5964,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:26     ;
+; Top            ; 00:00:23     ;
 +----------------+--------------+
 
 
@@ -5974,16 +5974,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Mon Apr 18 19:25:21 2016
+    Info: Processing started: Mon Apr 18 20:15:18 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sram_demo -c sram_demo
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 2 entities, in source file sram_test_127_bit.v
-    Info (12023): Found entity 1: sram_test_127_bit
+Info (12021): Found 2 design units, including 2 entities, in source file sram_demo.v
+    Info (12023): Found entity 1: sram_demo
     Info (12023): Found entity 2: div_clock
 Info (12021): Found 1 design units, including 1 entities, in source file /users/user/desktop/ee_469/ee469/lab2/verilog/sram/sram.v
     Info (12023): Found entity 1: sram
-Info (12127): Elaborating entity "sram_test_127_bit" for the top level hierarchy
-Warning (10034): Output port "LEDR[9]" at sram_test_127_bit.v(15) has no driver
+Info (12127): Elaborating entity "sram_demo" for the top level hierarchy
+Warning (10034): Output port "LEDR[9]" at sram_demo.v(15) has no driver
 Info (12128): Elaborating entity "div_clock" for hierarchy "div_clock:clock_divider"
 Info (12128): Elaborating entity "sram" for hierarchy "sram:memory"
 Warning (10235): Verilog HDL Always Construct warning at sram.v(42): variable "cs" is read inside the Always Construct but isn't in the Always Construct's Event Control
@@ -6181,10 +6181,10 @@ Error (15856): Output port O of I/O output buffer "pre_syn.bp.data_bus_4_~output
 Error (15856): Output port O of I/O output buffer "pre_syn.bp.data_bus_5_~output" must drive a top-level pin
 Error (15856): Output port O of I/O output buffer "pre_syn.bp.data_bus_6_~output" must drive a top-level pin
 Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 15 errors, 128 warnings
-    Error: Peak virtual memory: 739 megabytes
-    Error: Processing ended: Mon Apr 18 19:26:04 2016
-    Error: Elapsed time: 00:00:43
-    Error: Total CPU time (on all processors): 00:00:39
+    Error: Peak virtual memory: 751 megabytes
+    Error: Processing ended: Mon Apr 18 20:15:55 2016
+    Error: Elapsed time: 00:00:37
+    Error: Total CPU time (on all processors): 00:00:36
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
