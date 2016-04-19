@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("C:/Users/User/Desktop/EE_469/EE469/Lab2/Verilog/sram_demo/output_files/") File("sram_demo.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("C:/EE_469/git/EE469/Lab2/verilog/sram_demo/output_files/") File("sram_demo.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
