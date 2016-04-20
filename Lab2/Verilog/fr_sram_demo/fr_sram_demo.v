@@ -347,24 +347,27 @@ module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, sram_addr
    // top level state machine control
    parameter TOP_IDLE = 3'b0;
    parameter TOP_SRIN = 3'b1;
-   // parameter TOP_TEST_SRIN = 3'b10;
+   //parameter TOP_TEST_SRIN = 3'b10;
    parameter TOP_SRFR = 3'b10;
    parameter TOP_TEST_SRFR = 3'b11;
    parameter TOP_FRSR = 3'b100;
+   
    // state machine initialize sram states
    parameter SRIN_WRITE = 2'b0;
    parameter SRIN_STOP_WRITE = 2'b11;
+   
    // state machine transfer block from sram to fr
    parameter SRFR_SELECT_BLOCK = 3'b0;
    parameter SRFR_READ_SRAM = 3'b1;
    parameter SRFR_WRITE_FR = 3'b10;
    parameter SRFR_DISPLAY_FR = 3'b11;
+   
    // state machine transfer fr data to sram
    parameter FRSR_SEL_ADDR = 2'b0;
    parameter FRSR_WRITE = 2'b1;
    parameter FRSR_STOP_WRITE = 2'b10;
    
-   // data_bus read/write states
+   //// data_bus read/write states
    parameter DATA_TO_SRAM = 4'b0001;
    parameter DATA_TO_FR = 4'b0100;
    parameter DATA_FROM_SRAM = 4'b0010;
