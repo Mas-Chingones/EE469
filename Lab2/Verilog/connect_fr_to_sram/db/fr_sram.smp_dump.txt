@@ -1,0 +1,12 @@
+
+State Machine - |fr_sram|fr_state
+Name fr_state~4 fr_state~3 
+fr_state.FR_IDLE 0 0 
+fr_state.FR_READ 0 1 
+fr_state.FR_WRITE 1 0 
+
+State Machine - |fr_sram|sram_state
+Name sram_state~4 sram_state~3 sram_state~2 
+sram_state.SRAM_READ 0 0 0 
+sram_state.SRAM_WRITE 0 1 1 
+sram_state.SRAM_IDLE 1 1 0 

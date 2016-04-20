@@ -1,0 +1,25 @@
+
+State Machine - |fr_sram_demo|fr_sram_demo_sm:state_mach|frsr_state
+Name frsr_state~6 frsr_state~5 
+frsr_state.FRSR_SEL_ADDR 0 0 
+frsr_state.FRSR_WRITE 0 1 
+frsr_state.FRSR_STOP_WRITE 1 0 
+
+State Machine - |fr_sram_demo|fr_sram_demo_sm:state_mach|srfr_state
+Name srfr_state~7 srfr_state~6 
+srfr_state.SRFR_SELECT_BLOCK 0 0 
+srfr_state.SRFR_READ_SRAM 0 1 
+srfr_state.SRFR_WRITE_FR 1 0 
+srfr_state.SRFR_DISPLAY_FR 1 1 
+
+State Machine - |fr_sram_demo|fr_sram_demo_sm:state_mach|srin_state
+Name srin_state~4 
+srin_state.SRIN_WRITE 0 
+srin_state.SRIN_STOP_WRITE 1 
+
+State Machine - |fr_sram_demo|fr_sram_demo_sm:state_mach|top_state
+Name top_state~8 top_state~7 top_state~6 
+top_state.TOP_IDLE 0 0 0 
+top_state.TOP_SRIN 0 0 1 
+top_state.TOP_SRFR 0 1 0 
+top_state.TOP_FRSR 1 0 0 

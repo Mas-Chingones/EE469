@@ -1,0 +1,21 @@
+/*
+Author: Ian Gilman
+Title: Tri-State Device Test
+Summary: Test Reading/Writing From/To a tri-state connected register
+*/
+
+// Module Dependencies
+//`include "../shared_modules/d_flipflop/d_flipflop.v"
+
+module tristate_test(data, rw, clk, rst);
+   inout wire data;  // data bus input/output to register
+   input wire rw, clk, rst;  // read/!write mode, clock, reset
+   wire d, q;  // reg d-port, reg q-port
+   
+   // data bus logic, register read logic
+   assign data = rw ? q : 1'bz;
+   assign d = rw ? q : data;
+   
+   // register
+   d_flipflop FF(.q(q), .qBar(), .D(d), .clk(clk), .rst(rst));
+endmodule
