@@ -2,10 +2,13 @@
 #include<stdio.h>
 #include<string.h>
 
+void practice(void);
+void variables(void);
+
 int main() {
 	practice();
 	variables();
-	
+
 	return 0;
 }
 
@@ -16,21 +19,21 @@ void practice() {
 	float four = 4.0;
 	char a = 'a';
 	char b = 'b';
-	
+
 	int* onePtr;
 	float* threePtr;
 	char* aPtr;
-	
+
 	onePtr = &one;
 	printf("Value of variable one:   %d\n", *onePtr);
 	onePtr = &two;
 	printf("Value of variable two:   %d\n", *onePtr);
-	
+
 	threePtr = &three;
 	printf("Value of variable three: %f\n", *threePtr);
 	threePtr = &four;
 	printf("Value of variable four:  %f\n", *threePtr);
-	
+
 	aPtr = &a;
 	printf("Value of variable a:     %c\n", *aPtr);
 	aPtr = &b;
@@ -44,13 +47,13 @@ void variables() {
 	int D = 4;
 	int E = 9;
 	int result = 0;
-	
+
 	int* aPtr = &A;
 	int* bPtr = &B;
 	int* cPtr = &C;
 	int* dPtr = &D;
 	int* ePtr = &E;
-	
+
 	result = ((*aPtr - *bPtr) * (*cPtr + *dPtr)) / *ePtr;
-	printf("Result:  %d/n", result);
+	printf("Result:  %d\n", result);
 }
