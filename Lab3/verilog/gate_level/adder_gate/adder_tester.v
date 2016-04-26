@@ -14,13 +14,13 @@ module adder_tester(addend0, addend1, sum, Z, V, C, N);
    
    // display data
    initial begin
-      $display("\tC\tZ\tV\tN\t       sum\t   addend0\t    addend1\ttime");
+      $display("\tC\tZ\tV\tN\t     sum\t addend0\t  addend1\ttime");
       $monitor(
-               "\t%b\t%b\t%b\t%b\t%d\t%d\t%d\t%g",
+               "\t%b\t%b\t%b\t%b\t%h\t%h\t%h\t%g",
                C, Z, V, N, sum, addend0, addend1, $time
               );
    end
-   
+   integer k = -1;
    // stimulus
    integer i, j;
    initial begin
@@ -41,12 +41,12 @@ module adder_tester(addend0, addend1, sum, Z, V, C, N);
       #delay;
       
       // test overflow
-      addend0 <= 32'h80000000;
+      addend0 <= 32'h7FFFFFFF;
       addend1 <= 32'h2;
       #delay;
       
       // test negative
-      addend0 <= 32'hFFFFFFFF;
+      addend0 <= 32'h80000001;
       addend1 <= 32'hF;
       #delay;
       

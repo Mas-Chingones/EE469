@@ -12,9 +12,11 @@ module half_adder(addend0, addend1, carry_in, sum, carry_out);
    wire carry0, carry1, carry2;
    
    // find sum
+   // S = A0 x A1 x Cin
    xor xor0(sum, addend0, addend1, carry_in);
    
    // find carry_out
+   // Cout = A0*A1 + A0*Cin + A1*Cin
    and and0(carry0, addend0, addend1);
    and and1(carry1, addend0, carry_in);
    and and2(carry2, addend1, carry_in);
