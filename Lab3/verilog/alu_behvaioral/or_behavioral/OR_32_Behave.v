@@ -1,4 +1,4 @@
-module OR_32_Behav(a, b, sum, zero, overflow, carryOut, negative);
+module OR_32_Behave(a, b, sum, zero, overflow, carryOut, negative);
 
 input wire [31:0] a, b;
 output wire [31:0] sum;
@@ -18,4 +18,4 @@ output wire zero, overflow, carryOut, negative;
 		carryOut = 0;
 		negative = 0;
 	end
-endmodule;
+endmodule
