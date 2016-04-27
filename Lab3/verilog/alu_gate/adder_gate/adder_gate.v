@@ -44,18 +44,18 @@ module adder_gate(addend0, addend1, Cin, sum, Z, V, C, N);
    and overflow_check(V, msb_addend_same, msb_sum_diff);
    
    // carry out flag
-   // Cout = carry[31] * ^V
+   // Cout = carry[31]
    not negate_overflow(not_overflow, V);
-   and carry_out_and(C, not_overflow, carry[31]);
+   buf carry_out_buf(C, carry[31]);
    
    // negative value flag
-   // V = sum[31] * ~V
-   and negative_val_and(N, not_overflow, sum[31]);
+   // V = sum[31]
+   buf negative_val_buf(N, sum[31]);
    
    
    // FULL_ADDERS
-   // Produce sums using half-adders
-   full_adder bit0_summation(  // first sum is an exception (no carry)
+   // Produce sums using full-adders
+   full_adder bit0_summation(  // first sum is an exception
                            .addend0(addend0[0]),
                            .addend1(addend1[0]),
                            .carry_in(Cin),

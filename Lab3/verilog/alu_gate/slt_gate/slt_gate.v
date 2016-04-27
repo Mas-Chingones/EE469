@@ -59,22 +59,25 @@ module slt_gate(operand0, operand1, result);
    endgenerate
    
    /*
-      ///// Slow Logic, accumulative values /////
-      VARS:
-      op0[30:0] = A, op1[30:0] = B
-      inidivdual less thans = L, individual less than or equal to = F,
-      cumulative less than or equal = G,
-      individual valid less than detected = D, final less than found check = C
-      LOGIC:
-      Ln = ^A*B     Fn = ^An + Bn     G30 = L30 else Gn = G30*...*G(n-1) * Ln      
-      D30 = L30 else Dn = Gn + D30 + ... + D(n+1)    C = D0
+   ///// Slow Logic, accumulative values /////
+      //VARS:
+      op0[30:0] = A,
+      op1[30:0] = B,
+      inidivdual digit less thans = L, 
+      individual digit less than or equal to = F,
+      individual valid less than = Q,
+      cumululative valid less than = D, final valid less than found check = C
+      //LOGICAL EXPRESSIONS:
+      Ln = ^A*B     Fn = ^An + Bn     Q30 = L30 else Qn = F30*...*F(n+1) * Ln      
+      D30 = L30 else Dn = Q30+...+Qn = D(n+1) + Qn    C = D0
    */
-   // determine whether valid <= is found and propogate < if present
    and valid_less_than_and(valid_less_than[29], digit_less_eq[30], digit_lesser[29]);
    or sum_valid_less_than_or(sum_valid_less_than[29], valid_less_than[29], digit_lesser[30]);
    genvar m;
    generate for(m=28; m>=0; m=m-1) begin: VALID_LESS_THAN
+      // determine whether valid <= is found
       and valid_less_than_and(valid_less_than[m], sum_less_eq[m+1], digit_lesser[m]);
+      // propogate valid < if present     
       or sum_valid_less_than_or(sum_valid_less_than[m], valid_less_than[m], sum_valid_less_than[m+1]);
    end
    endgenerate

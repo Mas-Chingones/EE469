@@ -38,6 +38,9 @@ module slt_tester(result, operand0, operand1);
       operand0 <= 32'h45804674;
       operand1 <= 32'h56309375;
       #delay;
+      operand0 <= 32'h4FFFFF04;
+      operand1 <= 32'h4FFFFF05;
+      #delay
       
       // greater than
       operand0 <= 32'h75;
@@ -45,17 +48,24 @@ module slt_tester(result, operand0, operand1);
       #delay;
       operand0 <= 32'h80000004;
       operand1 <= 32'h80000002;
-      #delay
+      #delay;
       operand0 <= 32'h34;
       operand1 <= 32'h80000005;
-      #delay
+      #delay;
       operand0 <= 32'h40000001;
       operand1 <= 32'h2;
-      #delay
+      #delay;
+      operand0 <= 32'h80000004;
+      operand1 <= 32'h80000002;
+      #delay;
+      operand0 <= 32'h4FFFFF27;
+      operand1 <= 32'h4FFFFF26;
+      #delay;
       
       // equal
       operand0 <= 32'hF;
       operand1 <= 32'hFFFFFFF1;
       #delay;
+      $finish;
    end
 endmodule

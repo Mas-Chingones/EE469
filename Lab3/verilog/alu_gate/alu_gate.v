@@ -1,16 +1,14 @@
 /*
 Author: Ian Gilman
-Title: Behavioral Arithmetic Logic Unit
+Title: Gate-Level Arithmetic Logic Unit
 Summary: two-operand / one-result implementation with Add/Sub/And/Or/Xor/Slt/Sll
    functions selected by control code and produces status flags for 
    zero result (Z), overflow (V), carry out (C), and negative result (N).
 */
 
 // Module Dependencies:
-//`include "and_behavioral/AND_32_Behave.v"
-//`include "or_behavioral/OR_32_Behave.v"
 
-module alu_behavioral(operand0, operand1, control, result, Z, V, C, N);
+module alu_gate(operand0, operand1, control, result, Z, V, C, N);
    // I/O
    input wire [31:0] operand0, operand1;  // values used as operands
    input wire [2:0] control;  // determines operation performed
@@ -23,14 +21,14 @@ module alu_behavioral(operand0, operand1, control, result, Z, V, C, N);
    wire add_Z, sub_Z,  // zero flags
         add_V, sub_V,  // overflow flags
         add_C, sub_C,  // carry flags
-        add_N, sub_N;  // negative value flags   
+        add_N, sub_N;  // negative value flags
+   
+    // operation sub-modules
+    
+   
    
    //// Store Operation Results and flags ////
    // use and-or mask with control to assign valid operation to result
-   /* 
-   
-   THIS IS NOT THE RIGHT STYLE, MAKE IT SIMPLER WITH AN ALWAYS BLOCK
-   
    assign result = (
                     ({32{control == ADD}} & sum) +
                     ({32{control == SUB}) & difference) +
@@ -60,7 +58,6 @@ module alu_behavioral(operand0, operand1, control, result, Z, V, C, N);
                  ((control == ADD) & add_N) +
                  ((control == SUB) & sub_N) +
               );
-   */
    
    // ALU operation control codes
    parameter NOP = 3'b0;
