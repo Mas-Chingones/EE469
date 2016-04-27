@@ -18,4 +18,4 @@ output wire zero, overflow, carryOut, negative;
 		carryOut = 0;
 		negative = 0;
 	end
-endmodule;
+endmodule
