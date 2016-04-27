@@ -309,7 +309,7 @@ module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, sram_addr
                // select block address
                FRSR_SEL_ADDR: begin
                   addr_select <= 7'd16 * block_select;
-                  fr_sel <= !block_select[0];
+                  fr_sel <= block_select[0];
                   frsr_state <= FRSR_WRITE;
                end
             
@@ -349,8 +349,7 @@ module fr_sram_demo_sm(clk, key, sw, rst, fr_read_sel, db_state, leds, sram_addr
    parameter TOP_SRIN = 3'b1;
    //parameter TOP_TEST_SRIN = 3'b10;
    parameter TOP_SRFR = 3'b10;
-   parameter TOP_TEST_SRFR = 3'b11;
-   parameter TOP_FRSR = 3'b100;
+   parameter TOP_FRSR = 3'b11;
    
    // state machine initialize sram states
    parameter SRIN_WRITE = 2'b0;

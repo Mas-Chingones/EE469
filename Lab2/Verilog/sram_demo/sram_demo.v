@@ -23,7 +23,7 @@ module sram_demo(CLOCK_50, SW, LEDR);
 	reg [1:0] state;  // state machine variable
 	
 	// Interface signal assignment
-   assign LEDR[9:7] = 3'b0;
+    assign LEDR[9:7] = 3'b0;
 	assign LEDR[6:0] = data_bus[6:0];
    
 	// divide 50 MHz clock to get sys clock
