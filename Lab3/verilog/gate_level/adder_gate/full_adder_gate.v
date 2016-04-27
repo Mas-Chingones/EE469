@@ -1,10 +1,10 @@
 /*
 Author: Ian Gilman
-Title: Half-Adder
+Title: 1-bit Full-Adder
 Summary: Logic for adding addend0, addend1, and carry_in to produce sum and carry
 */
 
-module half_adder(addend0, addend1, carry_in, sum, carry_out);
+module full_adder(addend0, addend1, carry_in, sum, carry_out);
    // I/O
    input wire addend0, addend1, carry_in;
    output wire sum, carry_out;

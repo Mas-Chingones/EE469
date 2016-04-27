@@ -5,7 +5,7 @@ Summary: Test bench for signed adder test, dumps waveform data
 */
 
 // Module Dependencies
-`include "half_adder_gate.v"
+`include "full_adder_gate.v"
 `include "adder_gate.v"
 `include "adder_tester.v"
 
@@ -18,6 +18,7 @@ module adder_testbench();
    adder_gate addition(
                         .addend0(addend0),
                         .addend1(addend1),
+                        .Cin(1'b0),
                         .sum(sum), 
                         .Z(Z), 
                         .V(V), 

@@ -8,9 +8,10 @@ Summary: adds signed addends together into sum. Controls flags: zero value (Z),
 // Module Dependencies
 //`include "half_adder_gate.v"
 
-module adder_gate(addend0, addend1, sum, Z, V, C, N);
+module adder_gate(addend0, addend1, Cin, sum, Z, V, C, N);
 // I/O
    input wire [31:0] addend0, addend1;  // signed values to add
+   input wire Cin;  // Carry in value (used for negative)
    output wire [31:0] sum;  // sum of addends
    output wire Z, V, C, N;  // zero, overflow, carry_out, negative value
 // Internal
@@ -34,33 +35,36 @@ module adder_gate(addend0, addend1, sum, Z, V, C, N);
       or prezero_or(pre_zero[k], pre_zero[k-1], sum[k]);
    end
    endgenerate
+   
    // overflow flag
    // addend0 = A, addend1 = B
    // V = (A[31] x^ B[31]) * (A[31] x sum[31])
    xnor same_addend_msb(msb_addend_same, addend0[31], addend1[31]);
    xor diff_sum_msb(msb_sum_diff, sum[31], addend0[31]);
    and overflow_check(V, msb_addend_same, msb_sum_diff);
+   
    // carry out flag
    // Cout = carry[31] * ^V
    not negate_overflow(not_overflow, V);
    and carry_out_and(C, not_overflow, carry[31]);
+   
    // negative value flag
    // V = sum[31] * ~V
    and negative_val_and(N, not_overflow, sum[31]);
    
    
-   // HALF_ADDERS
+   // FULL_ADDERS
    // Produce sums using half-adders
-   half_adder bit0_summation(  // first sum is an exception (no carry)
+   full_adder bit0_summation(  // first sum is an exception (no carry)
                            .addend0(addend0[0]),
                            .addend1(addend1[0]),
-                           .carry_in(1'b0),
+                           .carry_in(Cin),
                            .sum(sum[0]),
                            .carry_out(carry[0]) // 1st carry calc'd here
                         );
    genvar j;
    generate for(j=1; j<32; j=j+1) begin: HALF_ADDERS
-      half_adder summation(
+      full_adder summation(
                            .addend0(addend0[j]),
                            .addend1(addend1[j]),
                            .carry_in(carry[j-1]),
