@@ -8,6 +8,7 @@ Summary: two-operand / one-result implementation with Add/Sub/And/Or/Xor/Slt/Sll
 
 // Module Dependencies:
 
+
 module alu_gate(operand0, operand1, control, result, Z, V, C, N);
    // I/O
    input wire [31:0] operand0, operand1;  // values used as operands
@@ -18,10 +19,10 @@ module alu_gate(operand0, operand1, control, result, Z, V, C, N);
    wire [31:0] sum, difference, and_result,         //  wires connected to 
                or_result, xor_result, slt_result,   //  operation sub-module
                sll_result;                          //  results
-   wire add_Z, sub_Z,  // zero flags
+   wire Z,  // zero flag
         add_V, sub_V,  // overflow flags
         add_C, sub_C,  // carry flags
-        add_N, sub_N;  // negative value flags
+        N;  // negative value flag
    
     // operation sub-modules
     
@@ -38,11 +39,6 @@ module alu_gate(operand0, operand1, control, result, Z, V, C, N);
                     ({32{control == SLT}} & slt_result) +
                     ({32{control == SLL}} & sll_result)
                    );
-   // zero flag assignment with and-or mask using control
-   assign Z = (
-                 ((control == ADD) & add_Z) +
-                 ((control == SUB) & sub_Z) +
-              );
    // over/underflow flag assignment with and-or mask using control
    assign V = (
                  ((control == ADD) & add_V) +
@@ -53,12 +49,7 @@ module alu_gate(operand0, operand1, control, result, Z, V, C, N);
                  ((control == ADD) & add_C) +
                  ((control == SUB) & sub_C) +
               );
-   // negative value flag assignment with and-or mask using control
-   assign N = (
-                 ((control == ADD) & add_N) +
-                 ((control == SUB) & sub_N) +
-              );
-   
+              
    // ALU operation control codes
    parameter NOP = 3'b0;
    parameter ADD = 3'b1;
