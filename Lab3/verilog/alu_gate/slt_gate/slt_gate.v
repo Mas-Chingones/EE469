@@ -83,12 +83,12 @@ module slt_gate(operand0, operand1, result);
    endgenerate
    
    // final slow calc
-   and slow_and(slow, msb_same, sum_valid_less_than[0]);
+   and slow_and(slow_calc, msb_same, sum_valid_less_than[0]);
    
    
    // RESULT CALCULATIONS
    // final result
-   or result_or(result[0], fast_calc, slow);
+   or result_or(result[0], fast_calc, slow_calc);
    
    // buffer unused part of result with zeros
    genvar o;

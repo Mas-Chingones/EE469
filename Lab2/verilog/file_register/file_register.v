@@ -1,3 +1,8 @@
+/*
+Author: Ian Gilman
+Title: 32x32 File Register
+Summary: MIPS-based 32 by 32 file register with data-bus-based dual-read/write
+*/
 
 // Module Dependencies:
 //`include "register_32bit/d_flipflop/d_flipflop.v"
@@ -5,31 +10,25 @@
 //`include "register_32bit/register_32bit.v"
 //`include "decoder_5bit/decoder_5bit.v"
 
-/*
-Author: Ian Gilman
-Title: 32x32 File Register
-Summary: MIPS-based 32 by 32 file register with data-bus-based dual-read/write
-*/
-
 module file_register(
          clk, 
          we,
          re,
-         rs,
          rst,
          read0_addr, 
          read1_addr,
          write_addr,
-         data_bus
+         data_bus,
+         read0_data
        );
    input wire clk, we, re,  // clock, write enable, read enable
-              rs, rst;  // read select, !reset file registers
+              rst;  // read select, !reset file registers
    input wire [4:0] read0_addr,  // read0 register address selection
                      read1_addr,  // read1 register address selection
                      write_addr;  // write register address selection
    inout [31:0] data_bus;  // bus for data read/write
-   wire [31:0] read0_data,  // data from read0_addr 
-               read1_data,  // data from read1_addr
+   output wire [31:0] read0_data;  // data from read0_addr 
+   wire [31:0] read1_data,  // data from read1_addr
                read_data_proxy,  // mux read_s based on rs 
                write_data;  // data to write to write_addr
    wire read_fr, write_fr,  // read from fr, write to fr
@@ -42,22 +41,11 @@ module file_register(
    and read_cond(read_fr, re, n_we);
    and write_cond(write_fr, we, n_re);
    
-   // read from file register buffer
+   
+   // read from file read1 to data bus
    genvar i;
    generate for(i=0; i<32; i=i+1) begin: READ
-      bufif1 read_tri(data_bus[i], read_data_proxy[i], read_fr);
-   end
-   endgenerate
-   
-   // choose which read address to read from
-   genvar j;
-   generate for(j=0; j<32; j=j+1) begin: CHOOSE_READ
-      mux_2to1 read_mux(
-                  .in0(read0_data[j]), 
-                  .in1(read1_data[j]), 
-                  .select(rs), 
-                  .out(read_data_proxy[j])
-               );
+      bufif1 read_tri(data_bus[i], read1_data[i], read_fr);
    end
    endgenerate
    

@@ -1,0 +1,3864 @@
+|alu_dataflow_de1soc_test
+CLOCK_50 => CLOCK_50.IN1
+SW[0] => operand0.DATAB
+SW[0] => operand0.DATAB
+SW[0] => operand0.DATAB
+SW[0] => operand0.DATAB
+SW[0] => operand1.DATAB
+SW[0] => operand1.DATAB
+SW[0] => operand1.DATAB
+SW[0] => operand1.DATAB
+SW[1] => operand0.DATAB
+SW[1] => operand0.DATAB
+SW[1] => operand0.DATAB
+SW[1] => operand0.DATAB
+SW[1] => operand1.DATAB
+SW[1] => operand1.DATAB
+SW[1] => operand1.DATAB
+SW[1] => operand1.DATAB
+SW[2] => operand0.DATAB
+SW[2] => operand0.DATAB
+SW[2] => operand0.DATAB
+SW[2] => operand0.DATAB
+SW[2] => operand1.DATAB
+SW[2] => operand1.DATAB
+SW[2] => operand1.DATAB
+SW[2] => operand1.DATAB
+SW[3] => operand0.DATAB
+SW[3] => operand0.DATAB
+SW[3] => operand0.DATAB
+SW[3] => operand0.DATAB
+SW[3] => operand1.DATAB
+SW[3] => operand1.DATAB
+SW[3] => operand1.DATAB
+SW[3] => operand1.DATAB
+SW[4] => control[0].IN1
+SW[5] => control[1].IN1
+SW[6] => control[2].IN1
+SW[7] => ~NO_FANOUT~
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => hex_value.OUTPUTSELECT
+SW[8] => Equal2.IN3
+SW[8] => Equal3.IN3
+SW[8] => hex_value.DATAA
+SW[8] => Equal0.IN1
+SW[8] => Equal1.IN1
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => hex_value.OUTPUTSELECT
+SW[9] => Zp.OUTPUTSELECT
+SW[9] => Vp.OUTPUTSELECT
+SW[9] => Cp.OUTPUTSELECT
+SW[9] => Np.OUTPUTSELECT
+SW[9] => Equal2.IN2
+SW[9] => Equal3.IN2
+SW[9] => hex_value[5][1].DATAIN
+SW[9] => hex_value[5][3].DATAIN
+SW[9] => Equal0.IN0
+SW[9] => Equal1.IN0
+KEY[0] => enter.DATAIN
+KEY[0] => always2.IN1
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => hex_value.OUTPUTSELECT
+KEY[1] => Zp.OUTPUTSELECT
+KEY[1] => Vp.OUTPUTSELECT
+KEY[1] => Cp.OUTPUTSELECT
+KEY[1] => Np.OUTPUTSELECT
+KEY[1] => LEDR[1].DATAIN
+KEY[2] => backspace.DATAIN
+KEY[2] => always2.IN1
+KEY[3] => rst.DATAIN
+KEY[3] => always2.IN1
+LEDR[0] <= enter.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= KEY[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= rst.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= digitA[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= digitA[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] <= Np.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] <= Cp.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] <= Vp.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] <= Zp.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[9] <= <GND>
+HEX5[0] <= HexEncoder:hex5.hexOut
+HEX5[1] <= HexEncoder:hex5.hexOut
+HEX5[2] <= HexEncoder:hex5.hexOut
+HEX5[3] <= HexEncoder:hex5.hexOut
+HEX5[4] <= HexEncoder:hex5.hexOut
+HEX5[5] <= HexEncoder:hex5.hexOut
+HEX5[6] <= HexEncoder:hex5.hexOut
+HEX4[0] <= <VCC>
+HEX4[1] <= <VCC>
+HEX4[2] <= <VCC>
+HEX4[3] <= <VCC>
+HEX4[4] <= <VCC>
+HEX4[5] <= <VCC>
+HEX4[6] <= <GND>
+HEX3[0] <= HexEncoder:hex3.hexOut
+HEX3[1] <= HexEncoder:hex3.hexOut
+HEX3[2] <= HexEncoder:hex3.hexOut
+HEX3[3] <= HexEncoder:hex3.hexOut
+HEX3[4] <= HexEncoder:hex3.hexOut
+HEX3[5] <= HexEncoder:hex3.hexOut
+HEX3[6] <= HexEncoder:hex3.hexOut
+HEX2[0] <= HexEncoder:hex2.hexOut
+HEX2[1] <= HexEncoder:hex2.hexOut
+HEX2[2] <= HexEncoder:hex2.hexOut
+HEX2[3] <= HexEncoder:hex2.hexOut
+HEX2[4] <= HexEncoder:hex2.hexOut
+HEX2[5] <= HexEncoder:hex2.hexOut
+HEX2[6] <= HexEncoder:hex2.hexOut
+HEX1[0] <= HexEncoder:hex1.hexOut
+HEX1[1] <= HexEncoder:hex1.hexOut
+HEX1[2] <= HexEncoder:hex1.hexOut
+HEX1[3] <= HexEncoder:hex1.hexOut
+HEX1[4] <= HexEncoder:hex1.hexOut
+HEX1[5] <= HexEncoder:hex1.hexOut
+HEX1[6] <= HexEncoder:hex1.hexOut
+HEX0[0] <= HexEncoder:hex0.hexOut
+HEX0[1] <= HexEncoder:hex0.hexOut
+HEX0[2] <= HexEncoder:hex0.hexOut
+HEX0[3] <= HexEncoder:hex0.hexOut
+HEX0[4] <= HexEncoder:hex0.hexOut
+HEX0[5] <= HexEncoder:hex0.hexOut
+HEX0[6] <= HexEncoder:hex0.hexOut
+
+
+|alu_dataflow_de1soc_test|div_clock:clock_divider
+orig_clk => div_clks[0]~reg0.CLK
+orig_clk => div_clks[1]~reg0.CLK
+orig_clk => div_clks[2]~reg0.CLK
+orig_clk => div_clks[3]~reg0.CLK
+orig_clk => div_clks[4]~reg0.CLK
+orig_clk => div_clks[5]~reg0.CLK
+orig_clk => div_clks[6]~reg0.CLK
+orig_clk => div_clks[7]~reg0.CLK
+orig_clk => div_clks[8]~reg0.CLK
+orig_clk => div_clks[9]~reg0.CLK
+orig_clk => div_clks[10]~reg0.CLK
+orig_clk => div_clks[11]~reg0.CLK
+orig_clk => div_clks[12]~reg0.CLK
+orig_clk => div_clks[13]~reg0.CLK
+orig_clk => div_clks[14]~reg0.CLK
+orig_clk => div_clks[15]~reg0.CLK
+orig_clk => div_clks[16]~reg0.CLK
+orig_clk => div_clks[17]~reg0.CLK
+orig_clk => div_clks[18]~reg0.CLK
+orig_clk => div_clks[19]~reg0.CLK
+orig_clk => div_clks[20]~reg0.CLK
+orig_clk => div_clks[21]~reg0.CLK
+orig_clk => div_clks[22]~reg0.CLK
+orig_clk => div_clks[23]~reg0.CLK
+orig_clk => div_clks[24]~reg0.CLK
+orig_clk => div_clks[25]~reg0.CLK
+orig_clk => div_clks[26]~reg0.CLK
+orig_clk => div_clks[27]~reg0.CLK
+orig_clk => div_clks[28]~reg0.CLK
+orig_clk => div_clks[29]~reg0.CLK
+orig_clk => div_clks[30]~reg0.CLK
+orig_clk => div_clks[31]~reg0.CLK
+div_clks[0] <= div_clks[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[1] <= div_clks[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[2] <= div_clks[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[3] <= div_clks[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[4] <= div_clks[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[5] <= div_clks[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[6] <= div_clks[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[7] <= div_clks[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[8] <= div_clks[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[9] <= div_clks[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[10] <= div_clks[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[11] <= div_clks[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[12] <= div_clks[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[13] <= div_clks[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[14] <= div_clks[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[15] <= div_clks[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[16] <= div_clks[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[17] <= div_clks[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[18] <= div_clks[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[19] <= div_clks[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[20] <= div_clks[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[21] <= div_clks[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[22] <= div_clks[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[23] <= div_clks[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[24] <= div_clks[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[25] <= div_clks[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[26] <= div_clks[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[27] <= div_clks[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[28] <= div_clks[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[29] <= div_clks[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[30] <= div_clks[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+div_clks[31] <= div_clks[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu
+operand0[0] => operand0[0].IN7
+operand0[1] => operand0[1].IN7
+operand0[2] => operand0[2].IN7
+operand0[3] => operand0[3].IN7
+operand0[4] => operand0[4].IN7
+operand0[5] => operand0[5].IN7
+operand0[6] => operand0[6].IN7
+operand0[7] => operand0[7].IN7
+operand0[8] => operand0[8].IN7
+operand0[9] => operand0[9].IN7
+operand0[10] => operand0[10].IN7
+operand0[11] => operand0[11].IN7
+operand0[12] => operand0[12].IN7
+operand0[13] => operand0[13].IN7
+operand0[14] => operand0[14].IN7
+operand0[15] => operand0[15].IN7
+operand0[16] => operand0[16].IN7
+operand0[17] => operand0[17].IN7
+operand0[18] => operand0[18].IN7
+operand0[19] => operand0[19].IN7
+operand0[20] => operand0[20].IN7
+operand0[21] => operand0[21].IN7
+operand0[22] => operand0[22].IN7
+operand0[23] => operand0[23].IN7
+operand0[24] => operand0[24].IN7
+operand0[25] => operand0[25].IN7
+operand0[26] => operand0[26].IN7
+operand0[27] => operand0[27].IN7
+operand0[28] => operand0[28].IN7
+operand0[29] => operand0[29].IN7
+operand0[30] => operand0[30].IN7
+operand0[31] => operand0[31].IN7
+operand1[0] => operand1[0].IN7
+operand1[1] => operand1[1].IN7
+operand1[2] => operand1[2].IN7
+operand1[3] => operand1[3].IN7
+operand1[4] => operand1[4].IN7
+operand1[5] => operand1[5].IN7
+operand1[6] => operand1[6].IN6
+operand1[7] => operand1[7].IN6
+operand1[8] => operand1[8].IN6
+operand1[9] => operand1[9].IN6
+operand1[10] => operand1[10].IN6
+operand1[11] => operand1[11].IN6
+operand1[12] => operand1[12].IN6
+operand1[13] => operand1[13].IN6
+operand1[14] => operand1[14].IN6
+operand1[15] => operand1[15].IN6
+operand1[16] => operand1[16].IN6
+operand1[17] => operand1[17].IN6
+operand1[18] => operand1[18].IN6
+operand1[19] => operand1[19].IN6
+operand1[20] => operand1[20].IN6
+operand1[21] => operand1[21].IN6
+operand1[22] => operand1[22].IN6
+operand1[23] => operand1[23].IN6
+operand1[24] => operand1[24].IN6
+operand1[25] => operand1[25].IN6
+operand1[26] => operand1[26].IN6
+operand1[27] => operand1[27].IN6
+operand1[28] => operand1[28].IN6
+operand1[29] => operand1[29].IN6
+operand1[30] => operand1[30].IN6
+operand1[31] => operand1[31].IN6
+control[0] => Equal0.IN0
+control[0] => Equal1.IN2
+control[0] => Equal2.IN1
+control[0] => Equal3.IN2
+control[0] => Equal4.IN1
+control[0] => Equal5.IN2
+control[0] => Equal6.IN2
+control[1] => Equal0.IN2
+control[1] => Equal1.IN0
+control[1] => Equal2.IN0
+control[1] => Equal3.IN1
+control[1] => Equal4.IN2
+control[1] => Equal5.IN1
+control[1] => Equal6.IN1
+control[2] => Equal0.IN1
+control[2] => Equal1.IN1
+control[2] => Equal2.IN2
+control[2] => Equal3.IN0
+control[2] => Equal4.IN0
+control[2] => Equal5.IN0
+control[2] => Equal6.IN0
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[5] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[6] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[7] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[8] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[9] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[10] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[11] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[12] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[13] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[14] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[15] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[16] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[17] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[18] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[19] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[20] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[21] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[22] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[23] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[24] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[25] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[26] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[27] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[28] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[29] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[30] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[31] <= result.DB_MAX_OUTPUT_PORT_TYPE
+Z <= Equal7.DB_MAX_OUTPUT_PORT_TYPE
+V <= V.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+N <= N.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module
+addend0[0] => addend0[0].IN1
+addend0[1] => addend0[1].IN1
+addend0[2] => addend0[2].IN1
+addend0[3] => addend0[3].IN1
+addend0[4] => addend0[4].IN1
+addend0[5] => addend0[5].IN1
+addend0[6] => addend0[6].IN1
+addend0[7] => addend0[7].IN1
+addend0[8] => addend0[8].IN1
+addend0[9] => addend0[9].IN1
+addend0[10] => addend0[10].IN1
+addend0[11] => addend0[11].IN1
+addend0[12] => addend0[12].IN1
+addend0[13] => addend0[13].IN1
+addend0[14] => addend0[14].IN1
+addend0[15] => addend0[15].IN1
+addend0[16] => addend0[16].IN1
+addend0[17] => addend0[17].IN1
+addend0[18] => addend0[18].IN1
+addend0[19] => addend0[19].IN1
+addend0[20] => addend0[20].IN1
+addend0[21] => addend0[21].IN1
+addend0[22] => addend0[22].IN1
+addend0[23] => addend0[23].IN1
+addend0[24] => addend0[24].IN1
+addend0[25] => addend0[25].IN1
+addend0[26] => addend0[26].IN1
+addend0[27] => addend0[27].IN1
+addend0[28] => addend0[28].IN1
+addend0[29] => addend0[29].IN1
+addend0[30] => addend0[30].IN1
+addend0[31] => addend0[31].IN1
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend1[4] => addend1[4].IN1
+addend1[5] => addend1[5].IN1
+addend1[6] => addend1[6].IN1
+addend1[7] => addend1[7].IN1
+addend1[8] => addend1[8].IN1
+addend1[9] => addend1[9].IN1
+addend1[10] => addend1[10].IN1
+addend1[11] => addend1[11].IN1
+addend1[12] => addend1[12].IN1
+addend1[13] => addend1[13].IN1
+addend1[14] => addend1[14].IN1
+addend1[15] => addend1[15].IN1
+addend1[16] => addend1[16].IN1
+addend1[17] => addend1[17].IN1
+addend1[18] => addend1[18].IN1
+addend1[19] => addend1[19].IN1
+addend1[20] => addend1[20].IN1
+addend1[21] => addend1[21].IN1
+addend1[22] => addend1[22].IN1
+addend1[23] => addend1[23].IN1
+addend1[24] => addend1[24].IN1
+addend1[25] => addend1[25].IN1
+addend1[26] => addend1[26].IN1
+addend1[27] => addend1[27].IN1
+addend1[28] => addend1[28].IN1
+addend1[29] => addend1[29].IN1
+addend1[30] => addend1[30].IN1
+addend1[31] => addend1[31].IN1
+Cin => Cin.IN1
+sum[0] <= full_adder:bit0_summation.sum
+sum[1] <= full_adder:HALF_ADDERS[1].summation.sum
+sum[2] <= full_adder:HALF_ADDERS[2].summation.sum
+sum[3] <= full_adder:HALF_ADDERS[3].summation.sum
+sum[4] <= full_adder:HALF_ADDERS[4].summation.sum
+sum[5] <= full_adder:HALF_ADDERS[5].summation.sum
+sum[6] <= full_adder:HALF_ADDERS[6].summation.sum
+sum[7] <= full_adder:HALF_ADDERS[7].summation.sum
+sum[8] <= full_adder:HALF_ADDERS[8].summation.sum
+sum[9] <= full_adder:HALF_ADDERS[9].summation.sum
+sum[10] <= full_adder:HALF_ADDERS[10].summation.sum
+sum[11] <= full_adder:HALF_ADDERS[11].summation.sum
+sum[12] <= full_adder:HALF_ADDERS[12].summation.sum
+sum[13] <= full_adder:HALF_ADDERS[13].summation.sum
+sum[14] <= full_adder:HALF_ADDERS[14].summation.sum
+sum[15] <= full_adder:HALF_ADDERS[15].summation.sum
+sum[16] <= full_adder:HALF_ADDERS[16].summation.sum
+sum[17] <= full_adder:HALF_ADDERS[17].summation.sum
+sum[18] <= full_adder:HALF_ADDERS[18].summation.sum
+sum[19] <= full_adder:HALF_ADDERS[19].summation.sum
+sum[20] <= full_adder:HALF_ADDERS[20].summation.sum
+sum[21] <= full_adder:HALF_ADDERS[21].summation.sum
+sum[22] <= full_adder:HALF_ADDERS[22].summation.sum
+sum[23] <= full_adder:HALF_ADDERS[23].summation.sum
+sum[24] <= full_adder:HALF_ADDERS[24].summation.sum
+sum[25] <= full_adder:HALF_ADDERS[25].summation.sum
+sum[26] <= full_adder:HALF_ADDERS[26].summation.sum
+sum[27] <= full_adder:HALF_ADDERS[27].summation.sum
+sum[28] <= full_adder:HALF_ADDERS[28].summation.sum
+sum[29] <= full_adder:HALF_ADDERS[29].summation.sum
+sum[30] <= full_adder:HALF_ADDERS[30].summation.sum
+sum[31] <= full_adder:HALF_ADDERS[31].summation.sum
+Z <= ZERO_FLAG[30].prezero_or.DB_MAX_OUTPUT_PORT_TYPE
+V <= overflow_check.DB_MAX_OUTPUT_PORT_TYPE
+C <= carry_out_buf.DB_MAX_OUTPUT_PORT_TYPE
+N <= negative_val_buf.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:bit0_summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[1].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[2].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[3].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[4].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[5].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[6].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[7].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[8].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[9].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[10].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[11].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[12].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[13].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[14].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[15].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[16].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[17].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[18].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[19].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[20].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[21].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[22].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[23].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[24].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[25].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[26].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[27].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[28].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[29].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[30].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|adder_gate:adder_module|full_adder:HALF_ADDERS[31].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module
+minuend[0] => minuend[0].IN1
+minuend[1] => minuend[1].IN1
+minuend[2] => minuend[2].IN1
+minuend[3] => minuend[3].IN1
+minuend[4] => minuend[4].IN1
+minuend[5] => minuend[5].IN1
+minuend[6] => minuend[6].IN1
+minuend[7] => minuend[7].IN1
+minuend[8] => minuend[8].IN1
+minuend[9] => minuend[9].IN1
+minuend[10] => minuend[10].IN1
+minuend[11] => minuend[11].IN1
+minuend[12] => minuend[12].IN1
+minuend[13] => minuend[13].IN1
+minuend[14] => minuend[14].IN1
+minuend[15] => minuend[15].IN1
+minuend[16] => minuend[16].IN1
+minuend[17] => minuend[17].IN1
+minuend[18] => minuend[18].IN1
+minuend[19] => minuend[19].IN1
+minuend[20] => minuend[20].IN1
+minuend[21] => minuend[21].IN1
+minuend[22] => minuend[22].IN1
+minuend[23] => minuend[23].IN1
+minuend[24] => minuend[24].IN1
+minuend[25] => minuend[25].IN1
+minuend[26] => minuend[26].IN1
+minuend[27] => minuend[27].IN1
+minuend[28] => minuend[28].IN1
+minuend[29] => minuend[29].IN1
+minuend[30] => minuend[30].IN1
+minuend[31] => minuend[31].IN1
+subtrahend[0] => subtrahend[0].IN1
+subtrahend[1] => subtrahend[1].IN1
+subtrahend[2] => subtrahend[2].IN1
+subtrahend[3] => subtrahend[3].IN1
+subtrahend[4] => subtrahend[4].IN1
+subtrahend[5] => subtrahend[5].IN1
+subtrahend[6] => subtrahend[6].IN1
+subtrahend[7] => subtrahend[7].IN1
+subtrahend[8] => subtrahend[8].IN1
+subtrahend[9] => subtrahend[9].IN1
+subtrahend[10] => subtrahend[10].IN1
+subtrahend[11] => subtrahend[11].IN1
+subtrahend[12] => subtrahend[12].IN1
+subtrahend[13] => subtrahend[13].IN1
+subtrahend[14] => subtrahend[14].IN1
+subtrahend[15] => subtrahend[15].IN1
+subtrahend[16] => subtrahend[16].IN1
+subtrahend[17] => subtrahend[17].IN1
+subtrahend[18] => subtrahend[18].IN1
+subtrahend[19] => subtrahend[19].IN1
+subtrahend[20] => subtrahend[20].IN1
+subtrahend[21] => subtrahend[21].IN1
+subtrahend[22] => subtrahend[22].IN1
+subtrahend[23] => subtrahend[23].IN1
+subtrahend[24] => subtrahend[24].IN1
+subtrahend[25] => subtrahend[25].IN1
+subtrahend[26] => subtrahend[26].IN1
+subtrahend[27] => subtrahend[27].IN1
+subtrahend[28] => subtrahend[28].IN1
+subtrahend[29] => subtrahend[29].IN1
+subtrahend[30] => subtrahend[30].IN1
+subtrahend[31] => subtrahend[31].IN1
+difference[0] <= adder_gate:adding_negative.sum
+difference[1] <= adder_gate:adding_negative.sum
+difference[2] <= adder_gate:adding_negative.sum
+difference[3] <= adder_gate:adding_negative.sum
+difference[4] <= adder_gate:adding_negative.sum
+difference[5] <= adder_gate:adding_negative.sum
+difference[6] <= adder_gate:adding_negative.sum
+difference[7] <= adder_gate:adding_negative.sum
+difference[8] <= adder_gate:adding_negative.sum
+difference[9] <= adder_gate:adding_negative.sum
+difference[10] <= adder_gate:adding_negative.sum
+difference[11] <= adder_gate:adding_negative.sum
+difference[12] <= adder_gate:adding_negative.sum
+difference[13] <= adder_gate:adding_negative.sum
+difference[14] <= adder_gate:adding_negative.sum
+difference[15] <= adder_gate:adding_negative.sum
+difference[16] <= adder_gate:adding_negative.sum
+difference[17] <= adder_gate:adding_negative.sum
+difference[18] <= adder_gate:adding_negative.sum
+difference[19] <= adder_gate:adding_negative.sum
+difference[20] <= adder_gate:adding_negative.sum
+difference[21] <= adder_gate:adding_negative.sum
+difference[22] <= adder_gate:adding_negative.sum
+difference[23] <= adder_gate:adding_negative.sum
+difference[24] <= adder_gate:adding_negative.sum
+difference[25] <= adder_gate:adding_negative.sum
+difference[26] <= adder_gate:adding_negative.sum
+difference[27] <= adder_gate:adding_negative.sum
+difference[28] <= adder_gate:adding_negative.sum
+difference[29] <= adder_gate:adding_negative.sum
+difference[30] <= adder_gate:adding_negative.sum
+difference[31] <= adder_gate:adding_negative.sum
+Z <= adder_gate:adding_negative.Z
+V <= adder_gate:adding_negative.V
+C <= adder_gate:adding_negative.C
+N <= adder_gate:adding_negative.N
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|one_complement:negate_value
+num[0] => comp[0].DATAIN
+num[1] => comp[1].DATAIN
+num[2] => comp[2].DATAIN
+num[3] => comp[3].DATAIN
+num[4] => comp[4].DATAIN
+num[5] => comp[5].DATAIN
+num[6] => comp[6].DATAIN
+num[7] => comp[7].DATAIN
+num[8] => comp[8].DATAIN
+num[9] => comp[9].DATAIN
+num[10] => comp[10].DATAIN
+num[11] => comp[11].DATAIN
+num[12] => comp[12].DATAIN
+num[13] => comp[13].DATAIN
+num[14] => comp[14].DATAIN
+num[15] => comp[15].DATAIN
+num[16] => comp[16].DATAIN
+num[17] => comp[17].DATAIN
+num[18] => comp[18].DATAIN
+num[19] => comp[19].DATAIN
+num[20] => comp[20].DATAIN
+num[21] => comp[21].DATAIN
+num[22] => comp[22].DATAIN
+num[23] => comp[23].DATAIN
+num[24] => comp[24].DATAIN
+num[25] => comp[25].DATAIN
+num[26] => comp[26].DATAIN
+num[27] => comp[27].DATAIN
+num[28] => comp[28].DATAIN
+num[29] => comp[29].DATAIN
+num[30] => comp[30].DATAIN
+num[31] => comp[31].DATAIN
+comp[0] <= num[0].DB_MAX_OUTPUT_PORT_TYPE
+comp[1] <= num[1].DB_MAX_OUTPUT_PORT_TYPE
+comp[2] <= num[2].DB_MAX_OUTPUT_PORT_TYPE
+comp[3] <= num[3].DB_MAX_OUTPUT_PORT_TYPE
+comp[4] <= num[4].DB_MAX_OUTPUT_PORT_TYPE
+comp[5] <= num[5].DB_MAX_OUTPUT_PORT_TYPE
+comp[6] <= num[6].DB_MAX_OUTPUT_PORT_TYPE
+comp[7] <= num[7].DB_MAX_OUTPUT_PORT_TYPE
+comp[8] <= num[8].DB_MAX_OUTPUT_PORT_TYPE
+comp[9] <= num[9].DB_MAX_OUTPUT_PORT_TYPE
+comp[10] <= num[10].DB_MAX_OUTPUT_PORT_TYPE
+comp[11] <= num[11].DB_MAX_OUTPUT_PORT_TYPE
+comp[12] <= num[12].DB_MAX_OUTPUT_PORT_TYPE
+comp[13] <= num[13].DB_MAX_OUTPUT_PORT_TYPE
+comp[14] <= num[14].DB_MAX_OUTPUT_PORT_TYPE
+comp[15] <= num[15].DB_MAX_OUTPUT_PORT_TYPE
+comp[16] <= num[16].DB_MAX_OUTPUT_PORT_TYPE
+comp[17] <= num[17].DB_MAX_OUTPUT_PORT_TYPE
+comp[18] <= num[18].DB_MAX_OUTPUT_PORT_TYPE
+comp[19] <= num[19].DB_MAX_OUTPUT_PORT_TYPE
+comp[20] <= num[20].DB_MAX_OUTPUT_PORT_TYPE
+comp[21] <= num[21].DB_MAX_OUTPUT_PORT_TYPE
+comp[22] <= num[22].DB_MAX_OUTPUT_PORT_TYPE
+comp[23] <= num[23].DB_MAX_OUTPUT_PORT_TYPE
+comp[24] <= num[24].DB_MAX_OUTPUT_PORT_TYPE
+comp[25] <= num[25].DB_MAX_OUTPUT_PORT_TYPE
+comp[26] <= num[26].DB_MAX_OUTPUT_PORT_TYPE
+comp[27] <= num[27].DB_MAX_OUTPUT_PORT_TYPE
+comp[28] <= num[28].DB_MAX_OUTPUT_PORT_TYPE
+comp[29] <= num[29].DB_MAX_OUTPUT_PORT_TYPE
+comp[30] <= num[30].DB_MAX_OUTPUT_PORT_TYPE
+comp[31] <= num[31].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative
+addend0[0] => addend0[0].IN1
+addend0[1] => addend0[1].IN1
+addend0[2] => addend0[2].IN1
+addend0[3] => addend0[3].IN1
+addend0[4] => addend0[4].IN1
+addend0[5] => addend0[5].IN1
+addend0[6] => addend0[6].IN1
+addend0[7] => addend0[7].IN1
+addend0[8] => addend0[8].IN1
+addend0[9] => addend0[9].IN1
+addend0[10] => addend0[10].IN1
+addend0[11] => addend0[11].IN1
+addend0[12] => addend0[12].IN1
+addend0[13] => addend0[13].IN1
+addend0[14] => addend0[14].IN1
+addend0[15] => addend0[15].IN1
+addend0[16] => addend0[16].IN1
+addend0[17] => addend0[17].IN1
+addend0[18] => addend0[18].IN1
+addend0[19] => addend0[19].IN1
+addend0[20] => addend0[20].IN1
+addend0[21] => addend0[21].IN1
+addend0[22] => addend0[22].IN1
+addend0[23] => addend0[23].IN1
+addend0[24] => addend0[24].IN1
+addend0[25] => addend0[25].IN1
+addend0[26] => addend0[26].IN1
+addend0[27] => addend0[27].IN1
+addend0[28] => addend0[28].IN1
+addend0[29] => addend0[29].IN1
+addend0[30] => addend0[30].IN1
+addend0[31] => addend0[31].IN1
+addend1[0] => addend1[0].IN1
+addend1[1] => addend1[1].IN1
+addend1[2] => addend1[2].IN1
+addend1[3] => addend1[3].IN1
+addend1[4] => addend1[4].IN1
+addend1[5] => addend1[5].IN1
+addend1[6] => addend1[6].IN1
+addend1[7] => addend1[7].IN1
+addend1[8] => addend1[8].IN1
+addend1[9] => addend1[9].IN1
+addend1[10] => addend1[10].IN1
+addend1[11] => addend1[11].IN1
+addend1[12] => addend1[12].IN1
+addend1[13] => addend1[13].IN1
+addend1[14] => addend1[14].IN1
+addend1[15] => addend1[15].IN1
+addend1[16] => addend1[16].IN1
+addend1[17] => addend1[17].IN1
+addend1[18] => addend1[18].IN1
+addend1[19] => addend1[19].IN1
+addend1[20] => addend1[20].IN1
+addend1[21] => addend1[21].IN1
+addend1[22] => addend1[22].IN1
+addend1[23] => addend1[23].IN1
+addend1[24] => addend1[24].IN1
+addend1[25] => addend1[25].IN1
+addend1[26] => addend1[26].IN1
+addend1[27] => addend1[27].IN1
+addend1[28] => addend1[28].IN1
+addend1[29] => addend1[29].IN1
+addend1[30] => addend1[30].IN1
+addend1[31] => addend1[31].IN1
+Cin => Cin.IN1
+sum[0] <= full_adder:bit0_summation.sum
+sum[1] <= full_adder:HALF_ADDERS[1].summation.sum
+sum[2] <= full_adder:HALF_ADDERS[2].summation.sum
+sum[3] <= full_adder:HALF_ADDERS[3].summation.sum
+sum[4] <= full_adder:HALF_ADDERS[4].summation.sum
+sum[5] <= full_adder:HALF_ADDERS[5].summation.sum
+sum[6] <= full_adder:HALF_ADDERS[6].summation.sum
+sum[7] <= full_adder:HALF_ADDERS[7].summation.sum
+sum[8] <= full_adder:HALF_ADDERS[8].summation.sum
+sum[9] <= full_adder:HALF_ADDERS[9].summation.sum
+sum[10] <= full_adder:HALF_ADDERS[10].summation.sum
+sum[11] <= full_adder:HALF_ADDERS[11].summation.sum
+sum[12] <= full_adder:HALF_ADDERS[12].summation.sum
+sum[13] <= full_adder:HALF_ADDERS[13].summation.sum
+sum[14] <= full_adder:HALF_ADDERS[14].summation.sum
+sum[15] <= full_adder:HALF_ADDERS[15].summation.sum
+sum[16] <= full_adder:HALF_ADDERS[16].summation.sum
+sum[17] <= full_adder:HALF_ADDERS[17].summation.sum
+sum[18] <= full_adder:HALF_ADDERS[18].summation.sum
+sum[19] <= full_adder:HALF_ADDERS[19].summation.sum
+sum[20] <= full_adder:HALF_ADDERS[20].summation.sum
+sum[21] <= full_adder:HALF_ADDERS[21].summation.sum
+sum[22] <= full_adder:HALF_ADDERS[22].summation.sum
+sum[23] <= full_adder:HALF_ADDERS[23].summation.sum
+sum[24] <= full_adder:HALF_ADDERS[24].summation.sum
+sum[25] <= full_adder:HALF_ADDERS[25].summation.sum
+sum[26] <= full_adder:HALF_ADDERS[26].summation.sum
+sum[27] <= full_adder:HALF_ADDERS[27].summation.sum
+sum[28] <= full_adder:HALF_ADDERS[28].summation.sum
+sum[29] <= full_adder:HALF_ADDERS[29].summation.sum
+sum[30] <= full_adder:HALF_ADDERS[30].summation.sum
+sum[31] <= full_adder:HALF_ADDERS[31].summation.sum
+Z <= ZERO_FLAG[30].prezero_or.DB_MAX_OUTPUT_PORT_TYPE
+V <= overflow_check.DB_MAX_OUTPUT_PORT_TYPE
+C <= carry_out_buf.DB_MAX_OUTPUT_PORT_TYPE
+N <= negative_val_buf.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:bit0_summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[1].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[2].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[3].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[4].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[5].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[6].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[7].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[8].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[9].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[10].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[11].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[12].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[13].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[14].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[15].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[16].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[17].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[18].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[19].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[20].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[21].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[22].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[23].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[24].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[25].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[26].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[27].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[28].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[29].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[30].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|subtract_gate:subtract_module|adder_gate:adding_negative|full_adder:HALF_ADDERS[31].summation
+addend0 => xor0.IN0
+addend0 => and0.IN0
+addend0 => and1.IN0
+addend1 => xor0.IN1
+addend1 => and0.IN1
+addend1 => and2.IN0
+carry_in => xor0.IN2
+carry_in => and1.IN1
+carry_in => and2.IN1
+sum <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|AND_32_Data:and_module
+a[0] => sum.IN0
+a[1] => sum.IN0
+a[2] => sum.IN0
+a[3] => sum.IN0
+a[4] => sum.IN0
+a[5] => sum.IN0
+a[6] => sum.IN0
+a[7] => sum.IN0
+a[8] => sum.IN0
+a[9] => sum.IN0
+a[10] => sum.IN0
+a[11] => sum.IN0
+a[12] => sum.IN0
+a[13] => sum.IN0
+a[14] => sum.IN0
+a[15] => sum.IN0
+a[16] => sum.IN0
+a[17] => sum.IN0
+a[18] => sum.IN0
+a[19] => sum.IN0
+a[20] => sum.IN0
+a[21] => sum.IN0
+a[22] => sum.IN0
+a[23] => sum.IN0
+a[24] => sum.IN0
+a[25] => sum.IN0
+a[26] => sum.IN0
+a[27] => sum.IN0
+a[28] => sum.IN0
+a[29] => sum.IN0
+a[30] => sum.IN0
+a[31] => sum.IN0
+b[0] => sum.IN1
+b[1] => sum.IN1
+b[2] => sum.IN1
+b[3] => sum.IN1
+b[4] => sum.IN1
+b[5] => sum.IN1
+b[6] => sum.IN1
+b[7] => sum.IN1
+b[8] => sum.IN1
+b[9] => sum.IN1
+b[10] => sum.IN1
+b[11] => sum.IN1
+b[12] => sum.IN1
+b[13] => sum.IN1
+b[14] => sum.IN1
+b[15] => sum.IN1
+b[16] => sum.IN1
+b[17] => sum.IN1
+b[18] => sum.IN1
+b[19] => sum.IN1
+b[20] => sum.IN1
+b[21] => sum.IN1
+b[22] => sum.IN1
+b[23] => sum.IN1
+b[24] => sum.IN1
+b[25] => sum.IN1
+b[26] => sum.IN1
+b[27] => sum.IN1
+b[28] => sum.IN1
+b[29] => sum.IN1
+b[30] => sum.IN1
+b[31] => sum.IN1
+sum[0] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[1] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[2] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[3] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[4] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[5] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[6] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[7] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[8] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[9] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[10] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[11] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[12] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[13] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[14] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[15] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[16] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[17] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[18] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[19] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[20] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[21] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[22] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[23] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[24] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[25] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[26] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[27] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[28] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[29] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[30] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[31] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+zero <= <GND>
+overflow <= <GND>
+carryOut <= <GND>
+negative <= <GND>
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|OR_32_Data:or_module
+a[0] => sum.IN0
+a[1] => sum.IN0
+a[2] => sum.IN0
+a[3] => sum.IN0
+a[4] => sum.IN0
+a[5] => sum.IN0
+a[6] => sum.IN0
+a[7] => sum.IN0
+a[8] => sum.IN0
+a[9] => sum.IN0
+a[10] => sum.IN0
+a[11] => sum.IN0
+a[12] => sum.IN0
+a[13] => sum.IN0
+a[14] => sum.IN0
+a[15] => sum.IN0
+a[16] => sum.IN0
+a[17] => sum.IN0
+a[18] => sum.IN0
+a[19] => sum.IN0
+a[20] => sum.IN0
+a[21] => sum.IN0
+a[22] => sum.IN0
+a[23] => sum.IN0
+a[24] => sum.IN0
+a[25] => sum.IN0
+a[26] => sum.IN0
+a[27] => sum.IN0
+a[28] => sum.IN0
+a[29] => sum.IN0
+a[30] => sum.IN0
+a[31] => sum.IN0
+b[0] => sum.IN1
+b[1] => sum.IN1
+b[2] => sum.IN1
+b[3] => sum.IN1
+b[4] => sum.IN1
+b[5] => sum.IN1
+b[6] => sum.IN1
+b[7] => sum.IN1
+b[8] => sum.IN1
+b[9] => sum.IN1
+b[10] => sum.IN1
+b[11] => sum.IN1
+b[12] => sum.IN1
+b[13] => sum.IN1
+b[14] => sum.IN1
+b[15] => sum.IN1
+b[16] => sum.IN1
+b[17] => sum.IN1
+b[18] => sum.IN1
+b[19] => sum.IN1
+b[20] => sum.IN1
+b[21] => sum.IN1
+b[22] => sum.IN1
+b[23] => sum.IN1
+b[24] => sum.IN1
+b[25] => sum.IN1
+b[26] => sum.IN1
+b[27] => sum.IN1
+b[28] => sum.IN1
+b[29] => sum.IN1
+b[30] => sum.IN1
+b[31] => sum.IN1
+sum[0] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[1] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[2] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[3] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[4] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[5] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[6] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[7] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[8] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[9] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[10] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[11] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[12] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[13] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[14] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[15] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[16] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[17] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[18] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[19] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[20] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[21] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[22] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[23] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[24] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[25] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[26] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[27] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[28] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[29] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[30] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[31] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+zero <= <GND>
+overflow <= <GND>
+carryOut <= <GND>
+negative <= <GND>
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|XOR_32_Data:xor_module
+a[0] => sum.IN0
+a[1] => sum.IN0
+a[2] => sum.IN0
+a[3] => sum.IN0
+a[4] => sum.IN0
+a[5] => sum.IN0
+a[6] => sum.IN0
+a[7] => sum.IN0
+a[8] => sum.IN0
+a[9] => sum.IN0
+a[10] => sum.IN0
+a[11] => sum.IN0
+a[12] => sum.IN0
+a[13] => sum.IN0
+a[14] => sum.IN0
+a[15] => sum.IN0
+a[16] => sum.IN0
+a[17] => sum.IN0
+a[18] => sum.IN0
+a[19] => sum.IN0
+a[20] => sum.IN0
+a[21] => sum.IN0
+a[22] => sum.IN0
+a[23] => sum.IN0
+a[24] => sum.IN0
+a[25] => sum.IN0
+a[26] => sum.IN0
+a[27] => sum.IN0
+a[28] => sum.IN0
+a[29] => sum.IN0
+a[30] => sum.IN0
+a[31] => sum.IN0
+b[0] => sum.IN1
+b[1] => sum.IN1
+b[2] => sum.IN1
+b[3] => sum.IN1
+b[4] => sum.IN1
+b[5] => sum.IN1
+b[6] => sum.IN1
+b[7] => sum.IN1
+b[8] => sum.IN1
+b[9] => sum.IN1
+b[10] => sum.IN1
+b[11] => sum.IN1
+b[12] => sum.IN1
+b[13] => sum.IN1
+b[14] => sum.IN1
+b[15] => sum.IN1
+b[16] => sum.IN1
+b[17] => sum.IN1
+b[18] => sum.IN1
+b[19] => sum.IN1
+b[20] => sum.IN1
+b[21] => sum.IN1
+b[22] => sum.IN1
+b[23] => sum.IN1
+b[24] => sum.IN1
+b[25] => sum.IN1
+b[26] => sum.IN1
+b[27] => sum.IN1
+b[28] => sum.IN1
+b[29] => sum.IN1
+b[30] => sum.IN1
+b[31] => sum.IN1
+sum[0] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[1] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[2] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[3] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[4] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[5] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[6] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[7] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[8] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[9] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[10] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[11] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[12] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[13] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[14] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[15] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[16] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[17] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[18] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[19] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[20] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[21] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[22] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[23] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[24] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[25] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[26] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[27] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[28] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[29] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[30] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[31] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+zero <= <GND>
+overflow <= <GND>
+carryOut <= <GND>
+negative <= <GND>
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|slt_gate:slt_module
+operand0[0] => DIGIT_COMPARE[0].digit_lesser_and.IN0
+operand0[1] => DIGIT_COMPARE[1].digit_lesser_and.IN0
+operand0[1] => DIGIT_COMPARE[1].digit_less_eq_or.IN0
+operand0[2] => DIGIT_COMPARE[2].digit_lesser_and.IN0
+operand0[2] => DIGIT_COMPARE[2].digit_less_eq_or.IN0
+operand0[3] => DIGIT_COMPARE[3].digit_lesser_and.IN0
+operand0[3] => DIGIT_COMPARE[3].digit_less_eq_or.IN0
+operand0[4] => DIGIT_COMPARE[4].digit_lesser_and.IN0
+operand0[4] => DIGIT_COMPARE[4].digit_less_eq_or.IN0
+operand0[5] => DIGIT_COMPARE[5].digit_lesser_and.IN0
+operand0[5] => DIGIT_COMPARE[5].digit_less_eq_or.IN0
+operand0[6] => DIGIT_COMPARE[6].digit_lesser_and.IN0
+operand0[6] => DIGIT_COMPARE[6].digit_less_eq_or.IN0
+operand0[7] => DIGIT_COMPARE[7].digit_lesser_and.IN0
+operand0[7] => DIGIT_COMPARE[7].digit_less_eq_or.IN0
+operand0[8] => DIGIT_COMPARE[8].digit_lesser_and.IN0
+operand0[8] => DIGIT_COMPARE[8].digit_less_eq_or.IN0
+operand0[9] => DIGIT_COMPARE[9].digit_lesser_and.IN0
+operand0[9] => DIGIT_COMPARE[9].digit_less_eq_or.IN0
+operand0[10] => DIGIT_COMPARE[10].digit_lesser_and.IN0
+operand0[10] => DIGIT_COMPARE[10].digit_less_eq_or.IN0
+operand0[11] => DIGIT_COMPARE[11].digit_lesser_and.IN0
+operand0[11] => DIGIT_COMPARE[11].digit_less_eq_or.IN0
+operand0[12] => DIGIT_COMPARE[12].digit_lesser_and.IN0
+operand0[12] => DIGIT_COMPARE[12].digit_less_eq_or.IN0
+operand0[13] => DIGIT_COMPARE[13].digit_lesser_and.IN0
+operand0[13] => DIGIT_COMPARE[13].digit_less_eq_or.IN0
+operand0[14] => DIGIT_COMPARE[14].digit_lesser_and.IN0
+operand0[14] => DIGIT_COMPARE[14].digit_less_eq_or.IN0
+operand0[15] => DIGIT_COMPARE[15].digit_lesser_and.IN0
+operand0[15] => DIGIT_COMPARE[15].digit_less_eq_or.IN0
+operand0[16] => DIGIT_COMPARE[16].digit_lesser_and.IN0
+operand0[16] => DIGIT_COMPARE[16].digit_less_eq_or.IN0
+operand0[17] => DIGIT_COMPARE[17].digit_lesser_and.IN0
+operand0[17] => DIGIT_COMPARE[17].digit_less_eq_or.IN0
+operand0[18] => DIGIT_COMPARE[18].digit_lesser_and.IN0
+operand0[18] => DIGIT_COMPARE[18].digit_less_eq_or.IN0
+operand0[19] => DIGIT_COMPARE[19].digit_lesser_and.IN0
+operand0[19] => DIGIT_COMPARE[19].digit_less_eq_or.IN0
+operand0[20] => DIGIT_COMPARE[20].digit_lesser_and.IN0
+operand0[20] => DIGIT_COMPARE[20].digit_less_eq_or.IN0
+operand0[21] => DIGIT_COMPARE[21].digit_lesser_and.IN0
+operand0[21] => DIGIT_COMPARE[21].digit_less_eq_or.IN0
+operand0[22] => DIGIT_COMPARE[22].digit_lesser_and.IN0
+operand0[22] => DIGIT_COMPARE[22].digit_less_eq_or.IN0
+operand0[23] => DIGIT_COMPARE[23].digit_lesser_and.IN0
+operand0[23] => DIGIT_COMPARE[23].digit_less_eq_or.IN0
+operand0[24] => DIGIT_COMPARE[24].digit_lesser_and.IN0
+operand0[24] => DIGIT_COMPARE[24].digit_less_eq_or.IN0
+operand0[25] => DIGIT_COMPARE[25].digit_lesser_and.IN0
+operand0[25] => DIGIT_COMPARE[25].digit_less_eq_or.IN0
+operand0[26] => DIGIT_COMPARE[26].digit_lesser_and.IN0
+operand0[26] => DIGIT_COMPARE[26].digit_less_eq_or.IN0
+operand0[27] => DIGIT_COMPARE[27].digit_lesser_and.IN0
+operand0[27] => DIGIT_COMPARE[27].digit_less_eq_or.IN0
+operand0[28] => DIGIT_COMPARE[28].digit_lesser_and.IN0
+operand0[28] => DIGIT_COMPARE[28].digit_less_eq_or.IN0
+operand0[29] => DIGIT_COMPARE[29].digit_lesser_and.IN0
+operand0[29] => DIGIT_COMPARE[29].digit_less_eq_or.IN0
+operand0[30] => DIGIT_COMPARE[30].digit_lesser_and.IN0
+operand0[30] => DIGIT_COMPARE[30].digit_less_eq_or.IN0
+operand0[31] => fast_calc_and.IN0
+operand0[31] => msb_same_xnor.IN0
+operand1[0] => DIGIT_COMPARE[0].digit_lesser_and.IN1
+operand1[1] => DIGIT_COMPARE[1].digit_lesser_and.IN1
+operand1[1] => DIGIT_COMPARE[1].digit_less_eq_or.IN1
+operand1[2] => DIGIT_COMPARE[2].digit_lesser_and.IN1
+operand1[2] => DIGIT_COMPARE[2].digit_less_eq_or.IN1
+operand1[3] => DIGIT_COMPARE[3].digit_lesser_and.IN1
+operand1[3] => DIGIT_COMPARE[3].digit_less_eq_or.IN1
+operand1[4] => DIGIT_COMPARE[4].digit_lesser_and.IN1
+operand1[4] => DIGIT_COMPARE[4].digit_less_eq_or.IN1
+operand1[5] => DIGIT_COMPARE[5].digit_lesser_and.IN1
+operand1[5] => DIGIT_COMPARE[5].digit_less_eq_or.IN1
+operand1[6] => DIGIT_COMPARE[6].digit_lesser_and.IN1
+operand1[6] => DIGIT_COMPARE[6].digit_less_eq_or.IN1
+operand1[7] => DIGIT_COMPARE[7].digit_lesser_and.IN1
+operand1[7] => DIGIT_COMPARE[7].digit_less_eq_or.IN1
+operand1[8] => DIGIT_COMPARE[8].digit_lesser_and.IN1
+operand1[8] => DIGIT_COMPARE[8].digit_less_eq_or.IN1
+operand1[9] => DIGIT_COMPARE[9].digit_lesser_and.IN1
+operand1[9] => DIGIT_COMPARE[9].digit_less_eq_or.IN1
+operand1[10] => DIGIT_COMPARE[10].digit_lesser_and.IN1
+operand1[10] => DIGIT_COMPARE[10].digit_less_eq_or.IN1
+operand1[11] => DIGIT_COMPARE[11].digit_lesser_and.IN1
+operand1[11] => DIGIT_COMPARE[11].digit_less_eq_or.IN1
+operand1[12] => DIGIT_COMPARE[12].digit_lesser_and.IN1
+operand1[12] => DIGIT_COMPARE[12].digit_less_eq_or.IN1
+operand1[13] => DIGIT_COMPARE[13].digit_lesser_and.IN1
+operand1[13] => DIGIT_COMPARE[13].digit_less_eq_or.IN1
+operand1[14] => DIGIT_COMPARE[14].digit_lesser_and.IN1
+operand1[14] => DIGIT_COMPARE[14].digit_less_eq_or.IN1
+operand1[15] => DIGIT_COMPARE[15].digit_lesser_and.IN1
+operand1[15] => DIGIT_COMPARE[15].digit_less_eq_or.IN1
+operand1[16] => DIGIT_COMPARE[16].digit_lesser_and.IN1
+operand1[16] => DIGIT_COMPARE[16].digit_less_eq_or.IN1
+operand1[17] => DIGIT_COMPARE[17].digit_lesser_and.IN1
+operand1[17] => DIGIT_COMPARE[17].digit_less_eq_or.IN1
+operand1[18] => DIGIT_COMPARE[18].digit_lesser_and.IN1
+operand1[18] => DIGIT_COMPARE[18].digit_less_eq_or.IN1
+operand1[19] => DIGIT_COMPARE[19].digit_lesser_and.IN1
+operand1[19] => DIGIT_COMPARE[19].digit_less_eq_or.IN1
+operand1[20] => DIGIT_COMPARE[20].digit_lesser_and.IN1
+operand1[20] => DIGIT_COMPARE[20].digit_less_eq_or.IN1
+operand1[21] => DIGIT_COMPARE[21].digit_lesser_and.IN1
+operand1[21] => DIGIT_COMPARE[21].digit_less_eq_or.IN1
+operand1[22] => DIGIT_COMPARE[22].digit_lesser_and.IN1
+operand1[22] => DIGIT_COMPARE[22].digit_less_eq_or.IN1
+operand1[23] => DIGIT_COMPARE[23].digit_lesser_and.IN1
+operand1[23] => DIGIT_COMPARE[23].digit_less_eq_or.IN1
+operand1[24] => DIGIT_COMPARE[24].digit_lesser_and.IN1
+operand1[24] => DIGIT_COMPARE[24].digit_less_eq_or.IN1
+operand1[25] => DIGIT_COMPARE[25].digit_lesser_and.IN1
+operand1[25] => DIGIT_COMPARE[25].digit_less_eq_or.IN1
+operand1[26] => DIGIT_COMPARE[26].digit_lesser_and.IN1
+operand1[26] => DIGIT_COMPARE[26].digit_less_eq_or.IN1
+operand1[27] => DIGIT_COMPARE[27].digit_lesser_and.IN1
+operand1[27] => DIGIT_COMPARE[27].digit_less_eq_or.IN1
+operand1[28] => DIGIT_COMPARE[28].digit_lesser_and.IN1
+operand1[28] => DIGIT_COMPARE[28].digit_less_eq_or.IN1
+operand1[29] => DIGIT_COMPARE[29].digit_lesser_and.IN1
+operand1[29] => DIGIT_COMPARE[29].digit_less_eq_or.IN1
+operand1[30] => DIGIT_COMPARE[30].digit_lesser_and.IN1
+operand1[30] => DIGIT_COMPARE[30].digit_less_eq_or.IN1
+operand1[31] => msb_same_xnor.IN1
+operand1[31] => fast_calc_and.IN1
+result[0] <= result_or.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= <GND>
+result[2] <= <GND>
+result[3] <= <GND>
+result[4] <= <GND>
+result[5] <= <GND>
+result[6] <= <GND>
+result[7] <= <GND>
+result[8] <= <GND>
+result[9] <= <GND>
+result[10] <= <GND>
+result[11] <= <GND>
+result[12] <= <GND>
+result[13] <= <GND>
+result[14] <= <GND>
+result[15] <= <GND>
+result[16] <= <GND>
+result[17] <= <GND>
+result[18] <= <GND>
+result[19] <= <GND>
+result[20] <= <GND>
+result[21] <= <GND>
+result[22] <= <GND>
+result[23] <= <GND>
+result[24] <= <GND>
+result[25] <= <GND>
+result[26] <= <GND>
+result[27] <= <GND>
+result[28] <= <GND>
+result[29] <= <GND>
+result[30] <= <GND>
+result[31] <= <GND>
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module
+num[0] => num[0].IN2
+num[1] => num[1].IN2
+num[2] => num[2].IN2
+num[3] => num[3].IN2
+num[4] => num[4].IN2
+num[5] => num[5].IN2
+num[6] => num[6].IN2
+num[7] => num[7].IN2
+num[8] => num[8].IN2
+num[9] => num[9].IN2
+num[10] => num[10].IN2
+num[11] => num[11].IN2
+num[12] => num[12].IN2
+num[13] => num[13].IN2
+num[14] => num[14].IN2
+num[15] => num[15].IN2
+num[16] => num[16].IN2
+num[17] => num[17].IN2
+num[18] => num[18].IN2
+num[19] => num[19].IN2
+num[20] => num[20].IN2
+num[21] => num[21].IN2
+num[22] => num[22].IN2
+num[23] => num[23].IN2
+num[24] => num[24].IN2
+num[25] => num[25].IN2
+num[26] => num[26].IN2
+num[27] => num[27].IN2
+num[28] => num[28].IN2
+num[29] => num[29].IN2
+num[30] => num[30].IN2
+num[31] => num[31].IN1
+shift[0] => shift[0].IN1
+shift[1] => shift[1].IN1
+shift[2] => shift[2].IN1
+shift[3] => shift[3].IN1
+shift[4] => shift[4].IN1
+shift[5] => shift[5].IN7
+shift_num[0] <= mux_2to1:BARREL[0].BARREL5.out
+shift_num[1] <= mux_2to1:BARREL[1].BARREL5.out
+shift_num[2] <= mux_2to1:BARREL[2].BARREL5.out
+shift_num[3] <= mux_2to1:BARREL[3].BARREL5.out
+shift_num[4] <= mux_2to1:BARREL[4].BARREL5.out
+shift_num[5] <= mux_2to1:BARREL[5].BARREL5.out
+shift_num[6] <= mux_2to1:BARREL[6].BARREL5.out
+shift_num[7] <= mux_2to1:BARREL[7].BARREL5.out
+shift_num[8] <= mux_2to1:BARREL[8].BARREL5.out
+shift_num[9] <= mux_2to1:BARREL[9].BARREL5.out
+shift_num[10] <= mux_2to1:BARREL[10].BARREL5.out
+shift_num[11] <= mux_2to1:BARREL[11].BARREL5.out
+shift_num[12] <= mux_2to1:BARREL[12].BARREL5.out
+shift_num[13] <= mux_2to1:BARREL[13].BARREL5.out
+shift_num[14] <= mux_2to1:BARREL[14].BARREL5.out
+shift_num[15] <= mux_2to1:BARREL[15].BARREL5.out
+shift_num[16] <= mux_2to1:BARREL[16].BARREL5.out
+shift_num[17] <= mux_2to1:BARREL[17].BARREL5.out
+shift_num[18] <= mux_2to1:BARREL[18].BARREL5.out
+shift_num[19] <= mux_2to1:BARREL[19].BARREL5.out
+shift_num[20] <= mux_2to1:BARREL[20].BARREL5.out
+shift_num[21] <= mux_2to1:BARREL[21].BARREL5.out
+shift_num[22] <= mux_2to1:BARREL[22].BARREL5.out
+shift_num[23] <= mux_2to1:BARREL[23].BARREL5.out
+shift_num[24] <= mux_2to1:BARREL[24].BARREL5.out
+shift_num[25] <= mux_2to1:BARREL[25].BARREL5.out
+shift_num[26] <= mux_2to1:BARREL[26].BARREL5.out
+shift_num[27] <= mux_2to1:BARREL[27].BARREL5.out
+shift_num[28] <= mux_2to1:BARREL[28].BARREL5.out
+shift_num[29] <= mux_2to1:BARREL[29].BARREL5.out
+shift_num[30] <= mux_2to1:BARREL[30].BARREL5.out
+shift_num[31] <= mux_2to1:BARREL[31].BARREL5.out
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:FILTER_SHIFT[0].filter_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:FILTER_SHIFT[1].filter_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:FILTER_SHIFT[2].filter_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:FILTER_SHIFT[3].filter_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:FILTER_SHIFT[4].filter_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:FILTER_SHIFT[5].filter_mux
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[0].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[0].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[0].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[0].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[0].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[0].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[1].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[1].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[1].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[1].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[1].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[1].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[2].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[2].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[2].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[2].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[2].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[2].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[3].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[3].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[3].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[3].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[3].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[3].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[4].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[4].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[4].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[4].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[4].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[4].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[5].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[5].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[5].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[5].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[5].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[5].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[6].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[6].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[6].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[6].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[6].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[6].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[7].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[7].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[7].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[7].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[7].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[7].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[8].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[8].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[8].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[8].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[8].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[8].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[9].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[9].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[9].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[9].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[9].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[9].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[10].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[10].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[10].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[10].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[10].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[10].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[11].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[11].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[11].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[11].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[11].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[11].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[12].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[12].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[12].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[12].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[12].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[12].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[13].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[13].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[13].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[13].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[13].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[13].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[14].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[14].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[14].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[14].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[14].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[14].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[15].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[15].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[15].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[15].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[15].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[15].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[16].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[16].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[16].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[16].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[16].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[16].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[17].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[17].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[17].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[17].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[17].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[17].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[18].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[18].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[18].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[18].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[18].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[18].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[19].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[19].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[19].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[19].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[19].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[19].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[20].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[20].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[20].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[20].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[20].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[20].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[21].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[21].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[21].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[21].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[21].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[21].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[22].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[22].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[22].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[22].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[22].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[22].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[23].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[23].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[23].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[23].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[23].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[23].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[24].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[24].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[24].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[24].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[24].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[24].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[25].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[25].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[25].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[25].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[25].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[25].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[26].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[26].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[26].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[26].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[26].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[26].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[27].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[27].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[27].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[27].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[27].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[27].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[28].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[28].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[28].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[28].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[28].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[28].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[29].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[29].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[29].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[29].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[29].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[29].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[30].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[30].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[30].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[30].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[30].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[30].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[31].BARREL0
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[31].BARREL1
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[31].BARREL2
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[31].BARREL3
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[31].BARREL4
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|alu_dataflow:alu|sll_gate:sll_module|mux_2to1:BARREL[31].BARREL5
+in0 => and_sel0.IN0
+in1 => and_sel1.IN0
+select => and_sel1.IN1
+select => and_sel0.IN1
+out <= or_sel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_dataflow_de1soc_test|HexEncoder:hex5
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+hexOut[0] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[1] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[2] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[3] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[4] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[5] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[6] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+
+
+|alu_dataflow_de1soc_test|HexEncoder:hex3
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+hexOut[0] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[1] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[2] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[3] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[4] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[5] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[6] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+
+
+|alu_dataflow_de1soc_test|HexEncoder:hex2
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+hexOut[0] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[1] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[2] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[3] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[4] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[5] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[6] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+
+
+|alu_dataflow_de1soc_test|HexEncoder:hex1
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+hexOut[0] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[1] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[2] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[3] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[4] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[5] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[6] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+
+
+|alu_dataflow_de1soc_test|HexEncoder:hex0
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+hexOut[0] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[1] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[2] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[3] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[4] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[5] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+hexOut[6] <= hexOut.DB_MAX_OUTPUT_PORT_TYPE
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+off => hexOut.OUTPUTSELECT
+
+
