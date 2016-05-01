@@ -20,38 +20,46 @@ module file_register(
          read1_addr,
          write_addr,
          data_bus,
-         read0_data
+         read0_data,
+         read1_data,
+         write_data
        );
    input wire clk, we, re,  // clock, write enable, read enable
               rst;  // !reset file registers
    input wire [4:0] read0_addr,  // read0 register address selection
-                     read1_addr,  // read1 register address selection
-                     write_addr;  // write register address selection
-   inout [31:0] data_bus;  // bus for data read/write
-   output wire [31:0] read0_data;  // data from read0_addr
-   wire [31:0] read1_data,  // data from read1_addr 
-               write_data;  // data to write to write_addr
-   wire read_fr, write_fr,  // read from fr, write to fr
+                    read1_addr,  // read1 register address selection
+                    write_addr;  // write register address selection
+   input wire [31:0] write_data;  // direct data to write to fr              
+   inout wire [31:0] data_bus;  // bus for data read1/write
+   output wire [31:0] read0_data,  // direct data from read0_addr
+                      read1_data;  // direct data from read1_addr
+   wire [31:0]  write_proxy,  // data to write to write_addr in fr
+                write_bus_proxy;  // data to write from bus to fr
+   wire read_bus, write_bus,  // read from fr to bus, write to bus from fr
+        rw_direct,  // reading & writing directly to fr
         n_we, n_re;  // !write enable, !read enable
    
    // negate read and write enables
    not not_re(n_re, re);
    not not_we(n_we, we);
-   // read / write conditions
-   and read_cond(read_fr, re, n_we);
-   and write_cond(write_fr, we, n_re);
+   // read/write bus conditions
+   and read_bus_cond(read_bus, re, n_we);
+   and write_bus_cond(write_bus, we, n_re);
+   // read & write directly from & to fr
+   and write_direct_cond(rw_direct, re, we);
    
-   // read from file register buffer
+   // read1 from file register to data bus
    genvar i;
    generate for(i=0; i<32; i=i+1) begin: READ
       bufif1 read_tri(data_bus[i], read1_data[i], read_fr);
    end
    endgenerate
    
-   // write to file register buffer
+   // write to file register
    genvar k;
    generate for(k=0; k<32; k=k+1) begin: WRITE
-      bufif1 write_tri(write_data[k], data_bus[k], write_fr);
+      bufif1 write_bus_tri(write_bus_proxy[k], data_bus[k], write_bus);
+      mux_2to1 write_direct_mux(.out(write_proxy[k]), .in0(write_bus_proxy[k]), .in2(write_data), .select(rw_direct));
    end
    endgenerate
 
@@ -63,7 +71,7 @@ module file_register(
                        .read0_addr(read0_addr), 
                        .read1_addr(read1_addr), 
                        .write_addr(write_addr), 
-                       .write_data(write_data),
+                       .write_data(write_proxy),
                        .read0_data(read0_data), 
                        .read1_data(read1_data)
                      );
