@@ -14,44 +14,49 @@ module alu_dataflow_de1soc_test(CLOCK_50, SW, KEY, LEDR, HEX5, HEX4, HEX3, HEX2,
    output wire [6:0] HEX5, HEX4, HEX3, HEX2, HEX1, HEX0; //HEXs
    
    wire sys_clk;  // system clock;
-   wire [31:0] clocks;  // divide clocks, data bus, data read from bus
-   wire [3:0] hexIn [5:0];
+   wire [31:0] clocks;  // divide clocks
+   //wire [3:0] hexIn [5:0]; 
    
    reg [31:0] operand0, operand1; //input1, input2
-   reg [3:0] hex_value [5:0];
+   reg [3:0] hex_value [5:0]; //4-bit hex values to be displayed on one of 6 hex displays.
    reg [3:0] hexOff;
    
    wire [1:0] displaySelect;
    wire Z, V, C, N; //zero, overflow, carry, negative
    wire [31:0] result; //result
    
-   wire [3:0] digitIn;
-   wire [2:0] control;
-   reg enter, backspace, rst;
-   wire run;
+   wire [3:0] digitIn; //links the value of SW[3:0] to proper input.
+   wire [2:0] control; //controls the output operation of the ALU 
+   reg enter, backspace, rst; // KEY functions. 
+   wire run; //
    
    //ALU STUFF
    assign digitIn = SW[3:0];
    assign control = SW[6:4];
    assign displaySelect = SW[9:8];
    
-   //assign rst = KEY[3];
-   //assign enter = ~KEY[0];
-   assign run = KEY[1];
-   //assign backspace = ~KEY[2];
+   assign run = KEY[2];
+	/* rst <= KEY[3];		JUST FOR REFERENCE KEY ASSIGNS
+      backspace <= KEY[1];
+      enter <= KEY[0];
+	*/
+	
+	
    
-   reg Zp, Vp, Cp, Np;
+	reg [2:0]  digitA, digitB, digitDisplayed;
    
-   assign LEDR[8] = Zp;
+   /*
+	assign LEDR[8] = Zp;
    assign LEDR[7] = Vp;
    assign LEDR[6] = Cp;
    assign LEDR[5] = Np;
+   */
+	
+   assign LEDR [6:4] = control;
    
-   assign LEDR [4:3] = digitA;
-   
-   assign LEDR[0] = enter;
-   assign LEDR[1] = run;
-   assign LEDR[2] = rst;
+   assign LEDR[0] = ~enter;
+   assign LEDR[1] = ~run;
+   assign LEDR[2] = ~rst;
    
    reg [2:0] rw_state; //read write state
    reg [4:0] address;  // file register address
@@ -71,8 +76,23 @@ module alu_dataflow_de1soc_test(CLOCK_50, SW, KEY, LEDR, HEX5, HEX4, HEX3, HEX2,
    
    // divide 50 MHz clock to get sys clock
    //assign sys_clk = SW[7] ? clocks[23] : clocks[1];
-   assign sys_clk = CLOCK_50;
-   
+   wire sig_clk;
+	reg test; 
+	
+	assign sys_clk =  CLOCK_50;
+   assign sig_clk = clocks[23];
+	assign LEDR[7] = test;
+	assign LEDR[8] = sig_clk;
+	assign LEDR[9] = sys_clk;
+
+	initial begin
+		test = 1'b0;
+	end
+	
+	always @(posedge sig_clk) begin
+		test = ~test;
+	end
+	
    div_clock clock_divider(.orig_clk(CLOCK_50), .div_clks(clocks));
    
    
@@ -91,7 +111,7 @@ module alu_dataflow_de1soc_test(CLOCK_50, SW, KEY, LEDR, HEX5, HEX4, HEX3, HEX2,
    
 
    //hook hexes up to hexIn wires
-   HexEncoder hex5(.in(   hex_value[5]   ), .hexOut(HEX5)   , .off(1'b0));
+   HexEncoder hex5(.in(   hex_value[5]   ), .hexOut(HEX5)   , .off(		1'b0)	  );
    HexEncoder hex3(.in(   hex_value[3]   ), .hexOut(HEX3)   , .off(hexOff[3])   );
    HexEncoder hex2(.in(   hex_value[2]   ), .hexOut(HEX2)   , .off(hexOff[2])   );
    HexEncoder hex1(.in(   hex_value[1]   ), .hexOut(HEX1)   , .off(hexOff[1])   );
@@ -103,23 +123,14 @@ module alu_dataflow_de1soc_test(CLOCK_50, SW, KEY, LEDR, HEX5, HEX4, HEX3, HEX2,
    //OUTPUT Select logic
    always @(posedge sys_clk) begin
       if (displaySelect[1] == 1'b1) begin //display Result
-         hex_value[5] = 4'd0;
+         hex_value[5] = 4'd0; //output 
          hex_value[3] = run ? hex_value[3] : result[15:12];
          hex_value[2] = run ? hex_value[2] : result[11:8 ];
          hex_value[1] = run ? hex_value[1] : result[7 :4 ];
-         hex_value[0] = run ? hex_value[0] : result[3 :0 ]; 
-       
-         Zp = run ? Zp : Z;
-         Vp = run ? Vp : V;
-         Cp = run ? Cp : C;
-         Np = run ? Np : N;
+         hex_value[0] = run ? hex_value[0] : result[3 :0 ];
        
       end
       else begin
-         Zp = 1'b0;
-         Vp = 1'b0;
-         Cp = 1'b0;
-         Np = 1'b0;
       
          if (displaySelect[0] == 1'b1) begin //display input B
             hex_value[5] = 4'd11;
@@ -138,8 +149,6 @@ module alu_dataflow_de1soc_test(CLOCK_50, SW, KEY, LEDR, HEX5, HEX4, HEX3, HEX2,
       end
    end
    
-   
-   reg [2:0]  digitA, digitB;
    
    initial begin
       digitA = 2'b0;
@@ -170,6 +179,7 @@ module alu_dataflow_de1soc_test(CLOCK_50, SW, KEY, LEDR, HEX5, HEX4, HEX3, HEX2,
                operand0 = operand0;
             end
          endcase
+			digitDisplayed = digitA;
          operand1 = operand1;
       end
       else if (displaySelect == 2'b01) begin //display current state of input B
@@ -195,7 +205,9 @@ module alu_dataflow_de1soc_test(CLOCK_50, SW, KEY, LEDR, HEX5, HEX4, HEX3, HEX2,
                operand1 = operand1;
             end
          endcase
-         operand0 = operand0;
+         digitDisplayed = digitB;
+			
+			operand0 = operand0;
       end
       else begin 
          hexOff = 4'b0000;
@@ -205,17 +217,17 @@ module alu_dataflow_de1soc_test(CLOCK_50, SW, KEY, LEDR, HEX5, HEX4, HEX3, HEX2,
    end
    
    
-   always @(posedge sys_clk) begin //rename key two to backspace
+   always @(posedge sys_clk) begin 
       rst <= KEY[3];
-      backspace <= KEY[2];
+      backspace <= KEY[1];
       enter <= KEY[0];
       
       
-      if(~KEY[3] && rst) begin       
+      if(~KEY[3] && rst) begin //woah!      
          digitA <= 3'b0; //////ERROR TO FIX, figure out how to reset the digits
          digitB <= 3'b0;
       end
-      else if (~KEY[2] && backspace) begin
+      else if (~KEY[1] && backspace) begin
          case (displaySelect)
          2'b00:begin
             digitB <= digitB;
