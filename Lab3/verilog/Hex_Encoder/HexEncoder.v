@@ -11,7 +11,7 @@ input wire [3:0] in;
 input wire off;
 output reg [6:0] hexOut;
 
-always @(in) begin
+always @(in or off) begin
 if (off) begin //off if off is true
 	hexOut = 7'b1111111;
 end
