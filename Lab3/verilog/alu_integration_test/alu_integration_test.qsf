@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE 5CSEMA5F31C6
 set_global_assignment -name TOP_LEVEL_ENTITY alu_integration_test
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 15.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:43:45  APRIL 30, 2016"
-set_global_assignment -name LAST_QUARTUS_VERSION 14.0
+set_global_assignment -name LAST_QUARTUS_VERSION 15.1.1
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -52,7 +52,12 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulati
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE ../alu_dataflow/xor_dataflow/XOR_32_Data.v
+set_global_assignment -name VERILOG_FILE ../alu_dataflow/or_dataflow/OR_32_Data.v
+set_global_assignment -name VERILOG_FILE ../alu_dataflow/and_dataflow/AND_32_Data.v
+set_global_assignment -name VERILOG_FILE ../alu_gate/adder_gate/full_adder_gate.v
 set_global_assignment -name VERILOG_FILE ../file_register/file_register.v
 set_global_assignment -name VERILOG_FILE ../alu_gate/subtract_gate/subtract_gate.v
 set_global_assignment -name VERILOG_FILE ../alu_gate/subtract_gate/one_complement.v
@@ -67,5 +72,4 @@ set_global_assignment -name VERILOG_FILE ../file_register/register_32bit/registe
 set_global_assignment -name VERILOG_FILE ../file_register/decoder_5bit/decoder_5bit.v
 set_global_assignment -name VERILOG_FILE ../sram/sram.v
 set_global_assignment -name VERILOG_FILE alu_integration_test.v
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

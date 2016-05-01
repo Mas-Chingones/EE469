@@ -32,18 +32,24 @@ module sram(clk, cs, oe, rw, addr_bus, data_bus);
    /////  MAR & MDR  /////
    always @(*) begin
       if(!cs) begin	  
-		// Memory Address Register write:
-		if ((rw && !oe) || (!rw && oe))
-			mar = addr_bus[10:0];
-		else
-			mar = mar;
-		// Memory Data Register	write:
-		if (!rw && oe)  // bus writes to MDR
+         // Memory Address Register write:
+         if ((rw && !oe) || (!rw && oe))
+            mar = addr_bus[10:0];
+         else
+            mar = mar;
+         
+         // Memory Data Register	write:
+         if (!rw && oe)  // bus writes to MDR
             mdr = data_bus[15:0];
-        else if(rw && !oe)  // SRAM writes to MDR
+         else if(rw && !oe)  // SRAM writes to MDR
             mdr = sram_data_bus;
-		else
-			mdr = mdr;
+         else
+            mdr = mdr;
+      end
+      else begin
+         mar = mar;
+         mdr = mdr;
+      end
    end
    
     ///// SRAM WRITE  /////

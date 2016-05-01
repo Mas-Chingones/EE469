@@ -59,7 +59,7 @@ module file_register(
    genvar k;
    generate for(k=0; k<32; k=k+1) begin: WRITE
       bufif1 write_bus_tri(write_bus_proxy[k], data_bus[k], write_bus);
-      mux_2to1 write_direct_mux(.out(write_proxy[k]), .in0(write_bus_proxy[k]), .in2(write_data), .select(rw_direct));
+      mux_2to1 write_direct_mux(.out(write_proxy[k]), .in0(write_bus_proxy[k]), .in1(write_data), .select(rw_direct));
    end
    endgenerate
 
