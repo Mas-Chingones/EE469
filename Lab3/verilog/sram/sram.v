@@ -18,7 +18,7 @@ module sram(clk, cs, oe, rw, addr_bus, data_bus);
 	
    /////  DATA BUS  /////
 	// drive data to data_bus from mdr if reading sram else hi-z
-   assign data_bus = (!cs && rw && !oe) ? {16'b0, mdr} : 32'bz;
+   assign data_bus = (!cs && rw && !oe) ? {{16{mdr[15]}}, mdr} : 32'bz;  // sign extend stored value
 	// drive data to sram from mdr if writing, drive data to mdr from sram if reading
 	// else hi-z
    assign sram_data_bus = (!cs && rw && !oe) ? memory[sram_mar_bus] : ((!cs && !rw && oe) ? mdr : 16'bz);

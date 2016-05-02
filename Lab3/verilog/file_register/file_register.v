@@ -51,7 +51,7 @@ module file_register(
    // read1 from file register to data bus
    genvar i;
    generate for(i=0; i<32; i=i+1) begin: READ
-      bufif1 read_tri(data_bus[i], read1_data[i], read_fr);
+      bufif1 read_tri(data_bus[i], read1_data[i], read_bus);
    end
    endgenerate
    
