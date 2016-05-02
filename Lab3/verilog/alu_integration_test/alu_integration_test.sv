@@ -45,6 +45,7 @@ module alu_integration_test(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX
    wire next_state;  // triggers next state of the state machine
    wire reset_state;  // resets state machine
    
+	
    /////  TIMING & CONTROL LOGIC  /////
    // Create System Clock using switches and 50 MHz clock
    assign sys_clk = clk_slow ? clocks[{3'b0, clk_select} + 6'd18] : clocks[{3'b0, clk_select}];
@@ -56,10 +57,18 @@ module alu_integration_test(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX
    assign clk_select = SW[9:7];
    assign next_state = KEY[0];
    assign reset_state = KEY[3];
-   // Ouptuts
+   // Outputs
    assign LEDR[2:0] = {cs, oe, rw};  // sram control flags
    assign LEDR[5:3] = {we, re};  // fr control flags
    assign LEDR[9:6] = {Z, V, C, N};  // alu result flags
+	// disable 7-segs
+	assign HEX0 = 7'b1111111;
+	assign HEX1 = 7'b1111111;
+	assign HEX2 = 7'b1111111;
+	assign HEX3 = 7'b1111111;
+	assign HEX4 = 7'b1111111;
+	assign HEX5 = 7'b1111111;
+	
    
    // Computer Component Control States
    assign {cs, oe, rw} = sram_state;
@@ -68,19 +77,19 @@ module alu_integration_test(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX
    // Determine SRAM and FR state from  SM State
    always @(*) begin
       case(computer_state)
-         SM_IDLE: begin  // Idle Everything
+         COMP_IDLE: begin  // Idle Everything
             sram_state = SR_IDLE;
             fr_state = FR_IDLE;
          end
-         SM_LOAD_SRAM: begin  // Write data block and op codes to SRAM
+         COMP_LOAD_SRAM: begin  // Write data block and op codes to SRAM
             sram_state = SR_WRITE;
             fr_state = FR_IDLE;
          end   
-         SM_SRAM_TO_FR: begin  // transfer data block to FR
+         COMP_SRAM_TO_FR: begin  // transfer data block to FR
             sram_state = SR_READ;
             fr_state = FR_W_BUS;
          end
-         SM_ALU_OP: begin  // Execute ALU op codes and store result in FR
+         COMP_ALU_OP: begin  // Execute ALU op codes and store result in FR
             sram_state = SR_READ;
             fr_state = (alu_operation != OP_NOP) ? FR_RW_ALU : FR_IDLE;  // Write to fr if alu is not performing a NOP
          end
@@ -147,10 +156,10 @@ module alu_integration_test(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX
    
    /////  Control States  /////
    // State Machine States
-   parameter SM_IDLE = 3'd0;
-   parameter SM_LOAD_SRAM = 3'd1;
-   parameter SM_SRAM_TO_FR = 3'd2;
-   parameter SM_ALU_OP = 3'd3;
+   parameter COMP_IDLE = 3'd0;
+   parameter COMP_LOAD_SRAM = 3'd1;
+   parameter COMP_SRAM_TO_FR = 3'd2;
+   parameter COMP_ALU_OP = 3'd3;
    // SRAM Control States
    parameter SR_IDLE =  3'b111;
    parameter SR_WRITE = 3'b010;
@@ -163,14 +172,14 @@ module alu_integration_test(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX
 
    
    /////  ALU OP CODES  /////
-   parameter OP_NOP = 4'd0;
-   parameter OP_ADD = 4'd1;
-   parameter OP_SUB = 4'd2;
-   parameter OP_AND = 4'd3;
-   parameter OP_OR = 4'd4;
-   parameter OP_XOR = 4'd5;
-   parameter OP_SLT = 4'd6;
-   parameter OP_SLL = 4'd7;
+   parameter OP_NOP = 3'd0;
+   parameter OP_ADD = 3'd1;
+   parameter OP_SUB = 3'd2;
+   parameter OP_AND = 3'd3;
+   parameter OP_OR = 3'd4;
+   parameter OP_XOR = 3'd5;
+   parameter OP_SLT = 3'd6;
+   parameter OP_SLL = 3'd7;
 endmodule 
 
 
@@ -425,24 +434,23 @@ module alu_integration_sm(
    parameter N_DATA = 32'd31;
    parameter N_INSTR = 32'd7;
    // data values written to SRAM
-   
    parameter bit [31:0] DATA_TO_SRAM [N_DATA:0] = '{
                                                 32'd1,    32'd2,    32'd3,    32'd4,    32'd5,    32'd6,    32'd7,    32'd8,
                                                 32'd9,    32'd10,   32'd11,   32'd12,   32'd13,   32'd14,   32'd15,   32'd16,
-                                                32'hFFFF, 32'hFFFE, 32'hFFFD, 32'hFFFC, 32'hFFFB, 32'hFFFA, 32'hFFF9, 32'hFFF8, 
-                                                32'hFFF7, 32'hFFF6, 32'hFFF5,  32'hFFF4, 32'hFFF3, 32'hFFF2, 32'hFFF1, 32'hFFF0 
+                                                32'hFFFF, 32'hE,    32'hFFFD, 32'hC,    32'hFFFB, 32'hA,    32'hFFF9, 32'h8, 
+                                                32'hFFF7,    32'hFFF6, 32'h5,    32'hFFF4, 32'h3,    32'hFFF2, 32'h1,    32'hFFF0 
                                               };
    // ALU instructions written to SRAM
    parameter bit [31:0] INSTR_TO_SRAM [N_INSTR:0] = '{
                                                  // filler     op_code      fr_addr_op0  fr_addr_op1  fr_addr_result
-                                                   {16'b0,     OP_ADD,      4'd0,        4'd1,        4'd2},
-                                                   {16'b0,     OP_SUB,      4'd3,        4'd4,        4'd5},
-                                                   {16'b0,     OP_NOP,      4'd6,        4'd7,        4'd8},
-                                                   {16'b0,     OP_AND,      4'd3,        4'd4,        4'd5},
-                                                   {16'b0,     OP_OR,       4'd3,        4'd4,        4'd5},
-                                                   {16'b0,     OP_XOR,      4'd3,        4'd4,        4'd5},
-                                                   {16'b0,     OP_SLT,      4'd3,        4'd4,        4'd5},
-                                                   {16'b0,     OP_SLL,      4'd3,        4'd4,        4'd5}
+                                                   {17'b0,     OP_ADD,      4'd0,        4'd1,        4'd2},
+                                                   {17'b0,     OP_SUB,      4'd3,        4'd4,        4'd5},
+                                                   {17'b0,     OP_NOP,      4'd6,        4'd7,        4'd8},
+                                                   {17'b0,     OP_AND,      4'd9,        4'd10,       4'd11},
+                                                   {17'b0,     OP_OR,       4'd12,       4'd13,       4'd14},
+                                                   {17'b0,     OP_XOR,      4'd1,        4'd2,        4'd3},
+                                                   {17'b0,     OP_SLT,      4'd4,        4'd5,        4'd6},
+                                                   {17'b0,     OP_SLL,      4'd7,        4'd8,        4'd9}
                                                 };
    
    /////  Control States  /////
@@ -470,14 +478,16 @@ module alu_integration_sm(
    
    
    /////  ALU OP CODES  /////
-   parameter OP_NOP = 4'd0;
-   parameter OP_ADD = 4'd1;
-   parameter OP_SUB = 4'd2;
-   parameter OP_AND = 4'd3;
-   parameter OP_OR = 4'd4;
-   parameter OP_XOR = 4'd5;
-   parameter OP_SLT = 4'd6;
-   parameter OP_SLL = 4'd7;
+   // All opcodes take 2 operands save NOP which
+   // takes nothing and yields nothing
+   parameter OP_NOP = 3'd0;  
+   parameter OP_ADD = 3'd1;
+   parameter OP_SUB = 3'd2;
+   parameter OP_AND = 3'd3;
+   parameter OP_OR = 3'd4;
+   parameter OP_XOR = 3'd5;
+   parameter OP_SLT = 3'd6;
+   parameter OP_SLL = 3'd7;
 endmodule
 
 
