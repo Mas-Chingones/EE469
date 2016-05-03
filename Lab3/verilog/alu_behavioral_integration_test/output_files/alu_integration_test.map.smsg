@@ -1,0 +1,8 @@
+Info (10281): Verilog HDL Declaration information at slt_gate.v(22): object "valid_less_than" differs only in case from object "VALID_LESS_THAN" in the same scope File: C:/git/EE469/Lab3/verilog/alu_gate/slt_gate/slt_gate.v Line: 22
+Warning (10273): Verilog HDL warning at sram.v(21): extended using "x" or "z" File: C:/git/EE469/Lab3/verilog/sram/sram.v Line: 21
+Warning (10273): Verilog HDL warning at sram.v(24): extended using "x" or "z" File: C:/git/EE469/Lab3/verilog/sram/sram.v Line: 24
+Warning (10273): Verilog HDL warning at sram.v(28): extended using "x" or "z" File: C:/git/EE469/Lab3/verilog/sram/sram.v Line: 28
+Warning (10273): Verilog HDL warning at sram.v(30): extended using "x" or "z" File: C:/git/EE469/Lab3/verilog/sram/sram.v Line: 30
+Warning (10268): Verilog HDL information at alu_integration_test.sv(79): always construct contains both blocking and non-blocking assignments File: C:/git/EE469/Lab3/verilog/alu_integration_test/alu_integration_test.sv Line: 79
+Warning (10273): Verilog HDL warning at alu_integration_test.sv(236): extended using "x" or "z" File: C:/git/EE469/Lab3/verilog/alu_integration_test/alu_integration_test.sv Line: 236
+Warning (10268): Verilog HDL information at alu_integration_test.sv(275): always construct contains both blocking and non-blocking assignments File: C:/git/EE469/Lab3/verilog/alu_integration_test/alu_integration_test.sv Line: 275
