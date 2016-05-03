@@ -33,11 +33,11 @@ zero result (Z), overflow (V), carry out (C), and negative result (N).
 `include "gate_modules/negate_signed_gate.v"
 */
 
-module alu_behavioral(operand0, operand1, control, shift, result, Z, V, C, N);
+module alu_behavioral(operand0, operand1, control, result, Z, V, C, N);
 
 	// I/O
 	input wire [31:0] operand0, operand1;  // values used as operands
-	input wire [5:0] shift;
+	//input wire [5:0] shift;
 	input wire [2:0] control;  // determines operation performed
 	output reg [31:0] result;  // result of operation
 	output reg Z, V, C, N;  // status flags after operation
@@ -134,13 +134,13 @@ module alu_behavioral(operand0, operand1, control, shift, result, Z, V, C, N);
 			ADD: begin
 				op0_msb = operand0[31];
 				op1_msb = operand1[31];
+				result = operand0 + operand1;
 				result_msb = result[31];
 				
 				Z = (result == 0);
 				V = (~(op0_msb ^ op1_msb)) & (op0_msb ^ result_msb);
 				C = (op0_msb & op1_msb) | (op0_msb & ~result_msb) | (op1_msb & ~result_msb);
 				N = (result_msb == 1);
-				result = operand0 + operand1;
 				
 			end
 			
@@ -150,57 +150,58 @@ module alu_behavioral(operand0, operand1, control, shift, result, Z, V, C, N);
 				op0_msb = operand0[31];
 				op1_msb = twos_comp_op1[31];
 				result_msb = result_manip[31];
-
-				Z = (result == 0);
-				V = (~(op0_msb ^ op1_msb)) & (op0_msb ^ result_msb);
-				C = (op0_msb & op1_msb) | (op0_msb & ~result_msb) | (op1_msb & ~result_msb);
-				N = (result_msb == 1);
 				result = operand0 - operand1;
+				
+				Z = (result == 0);
+				V = (op0_msb & op1_msb & ~result_msb) | (~op0_msb & ~op1_msb & result_msb);
+				//V = ((op0_msb ~^ op1_msb)) & (op0_msb ^ result_msb);
+				C = (op0_msb & op1_msb) | (op0_msb & ~result_msb) | (op1_msb & ~result_msb) | ((operand0 == 0) & (operand1 == 0) & (result == 0));
+				N = (result_msb == 1);
 				
 			end
 			
 			AND: begin
+				result = operand0 & operand1;
 				Z = (result == 0);
 				V = 0; 
 				C = 0;
 				N = (result[31] == 1);
-				result = operand0 & operand1;
 					
 			end
 			
 			OR: begin
+				result = operand0 | operand1;
 				Z = (result == 0);
 				V = 0; 
 				C = 0;
 				N = (result[31] == 1);
-				result = operand0 | operand1;
 				
 			end
 			
 			XOR: begin
+				result = operand0 ^ operand1;
 				Z = (result == 0);
 				V = 0; 
 				C = 0;
 				N = (result[31] == 1);
-				result = operand0 ^ operand1;
 				
 			end
 			
 			SLT: begin
+				result = (operand0 < operand1) ? 1 : 0;
 				Z = (result == 0);
 				V = 0; 
 				C = 0;
 				N = (result[31] == 1);
-				result = (operand0 < operand1) ? 1 : 0;
 				
 			end
 			
 			SLL: begin
+				result = operand0 << operand1;
 				Z = (result == 0);
 				V = 0; 
 				C = 0;
 				N = (result[31] == 1);
-				result = operand0 << operand1;
 				
 			end
 		

@@ -63,7 +63,7 @@ module sll_gate(num, shift, shift_num);
          else
             mux_2to1 BARREL4(.in0(mux4[i]), .in1(mux4[i-16]), .select(shift_filter[4]), .out(mux5[i]));
          // 6th shift (32-bit shift)
-            mux_2to1 BARREL4(.in0(mux5[i]), .in1(1'b0), .select(shift_filter[5]), .out(shift_num[i]));
+            mux_2to1 BARREL5(.in0(mux5[i]), .in1(1'b0), .select(shift_filter[5]), .out(shift_num[i]));
       end
    endgenerate
 endmodule

@@ -68,8 +68,8 @@ module slt_gate(operand0, operand1, result);
       individual valid less than = Q,
       cumululative valid less than = D, final valid less than found check = C
       //LOGICAL EXPRESSIONS:
-      Ln = ^A*B     Fn = ^An + Bn     Q30 = L30 else Qn = F30*...*F(n+1) * Ln      
-      D30 = L30 else Dn = Q30+...+Qn = D(n+1) + Qn    C = D0
+      Ln = ^A*B     Fn = ^An + Bn     Q30 = L30  else  Qn = F30*...*F(n+1) * Ln      
+      D30 = L30  else  Dn = Q30+...+Qn = D(n+1) + Qn    C = D0
    */
    and valid_less_than_and(valid_less_than[29], digit_less_eq[30], digit_lesser[29]);
    or sum_valid_less_than_or(sum_valid_less_than[29], valid_less_than[29], digit_lesser[30]);
@@ -83,12 +83,12 @@ module slt_gate(operand0, operand1, result);
    endgenerate
    
    // final slow calc
-   and slow_and(slow, msb_same, sum_valid_less_than[0]);
+   and slow_and(slow_calc, msb_same, sum_valid_less_than[0]);
    
    
    // RESULT CALCULATIONS
    // final result
-   or result_or(result[0], fast_calc, slow);
+   or result_or(result[0], fast_calc, slow_calc);
    
    // buffer unused part of result with zeros
    genvar o;

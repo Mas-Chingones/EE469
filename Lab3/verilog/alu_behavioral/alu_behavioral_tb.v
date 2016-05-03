@@ -35,16 +35,16 @@
 module alu_behavioral_tb;
 
 	wire [31:0] operand0, operand1;
-	wire [5:0] shift;
+	//wire [5:0] shift;
 	wire [2:0] control;
 	wire [31:0] result;
 	wire Z, V, C, N;
 	
 	// dut
-	alu_behavioral operate(operand0, operand1, control, shift, result, Z, V, C, N);
+	alu_behavioral operate(operand0, operand1, control, result, Z, V, C, N);
 	
 	// tester
-	aluTester aTester(operand0, operand1, control, shift, result, Z, V, C, N);
+	aluTester aTester(operand0, operand1, control, result, Z, V, C, N);
 
 	// File for gtkwave
 	initial begin
@@ -59,16 +59,99 @@ endmodule
 // Author: Adolfo Pineda
 // A testing module
 
-module aluTester (operand0, operand1, control, shift, result, Z, V, C, N);
+module aluTester (operand0, operand1, control, result, Z, V, C, N);
 	output reg [31:0] operand0, operand1;
 	output reg [2:0] control;
-	output reg [5:0] shift;
+	//output reg [5:0] shift;
 	input wire [31:0] result;
 	input wire Z, V, C, N;
 	
-	parameter stimdelay = 10;
+	parameter delay = 10;
 
-	initial // Response
+	// ALU operation control codes
+   parameter NOP = 3'b000;
+   parameter ADD = 3'b001;
+   parameter SUB = 3'b010;
+   parameter AND = 3'b011;
+   parameter OR  = 3'b100;
+   parameter XOR = 3'b101;
+   parameter SLT = 3'b110;
+   parameter SLL = 3'b111;
+	
+	// Display variables 
+	initial begin
+		$display("\t\t a\t b\t control\t result\t Z V C N\t time");
+		$monitor("\t %d\t %d\t %b\t %d\t %b %b %b %b\t %g", 
+												operand0, 
+												operand1, 
+												control, 
+												result, 
+												Z, 
+												V, 
+												C, 
+												N, 
+												$time);
+	end
+	
+	initial begin
+		#delay; #delay; #delay;
+		
+		control <= SUB;
+		
+		 #delay;
+		operand0 <= 32'd0;
+		operand1 <= 32'd0;
+		 #delay;
+		operand0 <= 32'd500;
+		operand1 <= 32'd500;
+		 #delay;
+		operand0 <= 32'd500000000;
+		operand1 <= 32'd500000000;
+		 #delay; #delay;
+		operand0 <= 32'hFFFFFFE6;
+		operand1 <= 32'd10;
+
+		#delay;
+		operand0 <= 32'hFFFFFFFF;
+		operand1 <= 32'h00000001;
+		 #delay;
+		operand0 <= 32'd10;
+		operand1 <= 32'hFFFFFFFA;
+		 #delay;
+		operand0 <= 32'd5;
+		operand1 <= 32'hFFFFFFF6;
+
+		#delay;
+		operand0 <= 32'd2147483647;
+		operand1 <= 32'd2147483647;
+		 #delay;#delay;
+		operand0 <= 32'd3147483647;
+		operand1 <= 32'd3147483647;
+		 #delay;#delay;
+		operand0 <= 32'hFFFFF000;
+		operand1 <= 32'h80000000;
+		 #delay;#delay;
+		operand0 <= 32'd2147483647;
+		operand1 <= 32'd2147483647;
+		 #delay;#delay;
+		operand0 <= 32'h80000000;
+		operand1 <= 32'h00000001;
+		 #delay;#delay;
+		operand0 <= 32'hC0000000;
+		operand1 <= 32'hC0000000;
+		 #delay;#delay;
+		operand0 <= 32'h80000000;
+		operand1 <= 32'h80000000;
+
+		#delay;#delay;
+		operand1 <= 32'hFFFFFFF6;
+		operand0 <= 32'hFFFFFFF6;
+		 #delay; #delay; #delay;
+	end
+
+endmodule
+	
+	/*initial // Response
 	begin
 
 	// Displays the labels and data
@@ -118,4 +201,4 @@ module aluTester (operand0, operand1, control, shift, result, Z, V, C, N);
 		$finish; // finish simulation
 	end
 
-endmodule
+endmodule*/
