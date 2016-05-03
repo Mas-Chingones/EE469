@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("C:/EE469/EE469/Lab3/verilog/alu_dataflow/alu_dataflow_test/output_files/") File("alu_dataflow_test.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("C:/EE_469/git/EE469/Lab3/verilog/alu_dataflow/alu_dataflow_test/output_files/") File("alu_dataflow_test.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

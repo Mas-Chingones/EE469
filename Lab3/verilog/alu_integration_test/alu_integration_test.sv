@@ -438,7 +438,7 @@ module alu_integration_sm(
                                                 32'd1,    32'd2,    32'd3,    32'd4,    32'd5,    32'd6,    32'd7,    32'd8,
                                                 32'd9,    32'd10,   32'd11,   32'd12,   32'd13,   32'd14,   32'd15,   32'd16,
                                                 32'hFFFF, 32'hE,    32'hFFFD, 32'hC,    32'hFFFB, 32'hA,    32'hFFF9, 32'h8, 
-                                                32'hFFF7,    32'hFFF6, 32'h5,    32'hFFF4, 32'h3,    32'hFFF2, 32'h1,    32'hFFF0 
+                                                32'hFFF7, 32'hFFF6, 32'h5,    32'hFFF4, 32'h3,    32'hFFF2, 32'h1,    32'hFFF0 
                                               };
    // ALU instructions written to SRAM
    parameter bit [31:0] INSTR_TO_SRAM [N_INSTR:0] = '{
