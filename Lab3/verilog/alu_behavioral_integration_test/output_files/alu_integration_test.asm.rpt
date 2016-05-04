@@ -1,6 +1,6 @@
 Assembler report for alu_integration_test
-Mon May 02 13:48:22 2016
-Quartus Prime Version 15.1.1 Build 189 12/02/2015 SJ Standard Edition
+Tue May 03 17:50:30 2016
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
 ---------------------
@@ -11,7 +11,7 @@ Quartus Prime Version 15.1.1 Build 189 12/02/2015 SJ Standard Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/git/EE469/Lab3/verilog/alu_integration_test/output_files/alu_integration_test.sof
+  6. Assembler Device Options: C:/Users/User/Desktop/EE_469/EE469/Lab3/verilog/alu_behavioral_integration_test/output_files/alu_integration_test.sof
   7. Assembler Messages
 
 
@@ -19,14 +19,14 @@ Quartus Prime Version 15.1.1 Build 189 12/02/2015 SJ Standard Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
+Subscription Agreement, the Altera Quartus II License Agreement,
 the Altera MegaCore Function License Agreement, or other 
 applicable license agreement, including, without limitation, 
 that your use is for the sole purpose of programming logic 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon May 02 13:48:22 2016 ;
+; Assembler Status      ; Successful - Tue May 03 17:50:30 2016 ;
 ; Revision Name         ; alu_integration_test                  ;
 ; Top-level Entity Name ; alu_integration_test                  ;
 ; Family                ; Cyclone V                             ;
@@ -64,39 +64,39 @@ agreement for further details.
 +--------+------------------------+--------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                            ;
-+--------------------------------------------------------------------------------------+
-; File Name                                                                            ;
-+--------------------------------------------------------------------------------------+
-; C:/git/EE469/Lab3/verilog/alu_integration_test/output_files/alu_integration_test.sof ;
-+--------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                             ;
++-----------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                             ;
++-----------------------------------------------------------------------------------------------------------------------+
+; C:/Users/User/Desktop/EE_469/EE469/Lab3/verilog/alu_behavioral_integration_test/output_files/alu_integration_test.sof ;
++-----------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/git/EE469/Lab3/verilog/alu_integration_test/output_files/alu_integration_test.sof ;
-+----------------+-----------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                       ;
-+----------------+-----------------------------------------------------------------------------------------------+
-; Device         ; 5CSEMA5F31C6                                                                                  ;
-; JTAG usercode  ; 0x01E53E7A                                                                                    ;
-; Checksum       ; 0x01E53E7A                                                                                    ;
-+----------------+-----------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/User/Desktop/EE_469/EE469/Lab3/verilog/alu_behavioral_integration_test/output_files/alu_integration_test.sof ;
++----------------+--------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                        ;
++----------------+--------------------------------------------------------------------------------------------------------------------------------+
+; Device         ; 5CSEMA5F31C6                                                                                                                   ;
+; JTAG usercode  ; 0x01DBDEE9                                                                                                                     ;
+; Checksum       ; 0x01DBDEE9                                                                                                                     ;
++----------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Assembler
-    Info: Version 15.1.1 Build 189 12/02/2015 SJ Standard Edition
-    Info: Processing started: Mon May 02 13:48:09 2016
+Info: Running Quartus II 64-Bit Assembler
+    Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+    Info: Processing started: Tue May 03 17:49:40 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off alu_integration_test -c alu_integration_test
 Info (115030): Assembler is generating device programming files
-Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 1006 megabytes
-    Info: Processing ended: Mon May 02 13:48:22 2016
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:13
+Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 793 megabytes
+    Info: Processing ended: Tue May 03 17:50:31 2016
+    Info: Elapsed time: 00:00:51
+    Info: Total CPU time (on all processors): 00:00:42
 
 

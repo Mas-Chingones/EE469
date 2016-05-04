@@ -128,7 +128,7 @@ module alu_integration_test(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX
                    );
    
    // ALU (Arithmetic Logic Unit)
-   alu_dataflow alu(
+   alu_behavioral alu(
                      .operand0(fr_read0_data), 
                      .operand1(fr_read1_data), 
                      .control(alu_operation), 

@@ -2035,7 +2035,8 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE alu_integration_test.sv
+set_global_assignment -name VERILOG_FILE ../alu_behavioral/alu_behavioral.v
 set_global_assignment -name VERILOG_FILE ../file_register/decoder_5bit/decoder_5bit.v
 set_global_assignment -name VERILOG_FILE ../file_register/file_register.v
 set_global_assignment -name VERILOG_FILE ../file_register/shared_modules/mux_2to1/mux_2to1.v
@@ -2044,4 +2045,5 @@ set_global_assignment -name VERILOG_FILE ../file_register/register_32bit/registe
 set_global_assignment -name VERILOG_FILE ../sram/sram.v
 set_global_assignment -name SIGNALTAP_FILE output_files/alu_integration.stp
 set_global_assignment -name CDF_FILE output_files/alu_integration_test.cdf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/alu_integration_auto_stripped.stp

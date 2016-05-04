@@ -6,33 +6,6 @@ functions selected by control code and produces status flags for
 zero result (Z), overflow (V), carry out (C), and negative result (N).
 */
 
-// Module Dependencies:
-/*`include "adder_gate.v"
-`include "subtract_gate.v"
-`include "and_gate.v"
-`include "or_gate.v"
-`include "xor_gate.v"
-`include "slt_gate.v"
-`include "sll_gate.v"
-`include "full_adder_gate.v"
-`include "mux_2to1.v"
-`include "one_complement.v"
-`include "negate_signed_gate.v"*/
-
-/*
-`include "gate_modules/adder_gate.v"
-`include "gate_modules/subtract_gate.v"
-`include "gate_modules/and_gate.v"
-`include "gate_modules/or_gate.v"
-`include "gate_modules/xor_gate.v"
-`include "gate_modules/slt_gate.v"
-`include "gate_modules/sll_gate.v"
-`include "gate_modules/full_adder_gate.v"
-`include "gate_modules/mux_2to1.v"
-`include "gate_modules/one_complement.v"
-`include "gate_modules/negate_signed_gate.v"
-*/
-
 module alu_behavioral(operand0, operand1, control, result, Z, V, C, N);
 
 	// I/O
@@ -54,58 +27,6 @@ module alu_behavioral(operand0, operand1, control, result, Z, V, C, N);
 
 	//// Store Operation Results and flags ////
 	// use and-or mask with control to assign valid operation to result
-	
-	/*
-	adder_gate adder (
-					  .addend0(operand0),
-					  .addend1(operand1),
-					  .Cin(),
- 					  .sum(add_result),
-					  .Z(add_Z),
-					  .V(add_V),
-					  .C(add_C),
-					  .N(add_N)
-					  );
-					  
-	subtract_gate subtract (
-							.minuend(operand0),
-							.subtrahend(operand1),
-							.difference(sub_result),
-							.Z(sub_Z),
-							.V(sub_V),
-							.C(sub_C),
-							.N(sub_N)
-							);
-							
-	and_gate and_mod (
-					  .operand0(operand0),
-					  .operand1(operand1), 
-					  .result(and_result)
-					  );
-					  
-	or_gate or_mod (
-					.operand0(operand0),
-					.operand1(operand1),
-					.result(or_result)
-					);
-					
-	xor_gate xor_mod (
-					  .operand0(operand0),
-					  .operand1(operand1),
-					  .result(xor_result)
-					  );
-					  
-	slt_gate slt (
-				  .operand0(operand0),
-				  .operand1(operand1),
-				  .result(slt_result)
-				  );
-	
-	sll_gate sll (
-				  .num(operand0),
-				  .shift(shift),
-				  .shift_num(sll_result)
-				  );*/
 				  
 	reg op0_msb, op1_msb, result_msb;
 	reg [31:0] twos_comp_op1, result_manip;

@@ -1,23 +1,7 @@
-
 // All files used
-
-/*
 `include "alu_behavioral.v"
-`include "gate_modules/adder_gate.v"
-`include "gate_modules/subtract_gate.v"
-`include "gate_modules/and_gate.v"
-`include "gate_modules/or_gate.v"
-`include "gate_modules/xor_gate.v"
-`include "gate_modules/slt_gate.v"
-`include "gate_modules/sll_gate.v"
-`include "gate_modules/full_adder_gate.v"
-`include "gate_modules/mux_2to1.v"
-`include "gate_modules/one_complement.v"
-`include "gate_modules/negate_signed_gate.v"
-*/
 
-`include "alu_behavioral.v"
-`include "adder_gate.v"
+/*`include "adder_gate.v"
 `include "subtract_gate.v"
 `include "and_gate.v"
 `include "or_gate.v"
@@ -27,7 +11,7 @@
 `include "full_adder_gate.v"
 `include "mux_2to1.v"
 `include "one_complement.v"
-`include "negate_signed_gate.v"
+`include "negate_signed_gate.v"*/
 
 // Title: 	ALU behavioral Test bench
 // Author: 	Adolfo Pineda
