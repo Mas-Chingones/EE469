@@ -436,27 +436,8 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VERILOG_FILE ../alu_dataflow/xor_dataflow/XOR_32_Data.v
-set_global_assignment -name VERILOG_FILE ../alu_dataflow/or_dataflow/OR_32_Data.v
-set_global_assignment -name VERILOG_FILE ../alu_dataflow/and_dataflow/AND_32_Data.v
-set_global_assignment -name VERILOG_FILE ../alu_gate/adder_gate/full_adder_gate.v
-set_global_assignment -name VERILOG_FILE ../file_register/file_register.v
-set_global_assignment -name VERILOG_FILE ../alu_gate/subtract_gate/subtract_gate.v
-set_global_assignment -name VERILOG_FILE ../alu_gate/subtract_gate/one_complement.v
-set_global_assignment -name VERILOG_FILE ../alu_gate/slt_gate/slt_gate.v
-set_global_assignment -name VERILOG_FILE ../alu_gate/sll_gate/sll_gate.v
-set_global_assignment -name VERILOG_FILE ../alu_gate/shared_modules/mux_2to1.v
-set_global_assignment -name VERILOG_FILE ../alu_dataflow/alu_dataflow.v
-set_global_assignment -name VERILOG_FILE ../alu_gate/adder_gate/adder_gate.v
-set_global_assignment -name VERILOG_FILE ../file_register/shared_modules/mux_2to1/mux_2to1.v
-set_global_assignment -name VERILOG_FILE ../file_register/register_32bit/d_flipflop/d_flipflop.v
-set_global_assignment -name VERILOG_FILE ../file_register/register_32bit/register_32bit.v
-set_global_assignment -name VERILOG_FILE ../file_register/decoder_5bit/decoder_5bit.v
-set_global_assignment -name VERILOG_FILE ../sram/sram.v
-set_global_assignment -name SYSTEMVERILOG_FILE alu_integration_test.sv
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE output_files/alu_integration.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/alu_integration.stp
 set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id auto_signaltap_0
@@ -483,7 +464,6 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_global_assignment -name CDF_FILE output_files/alu_integration_test.cdf
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=128" -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
@@ -2056,4 +2036,24 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE ../shared_test_module/alu_integration_test.sv
+set_global_assignment -name VERILOG_FILE ../alu_dataflow/xor_dataflow/XOR_32_Data.v
+set_global_assignment -name VERILOG_FILE ../alu_dataflow/or_dataflow/OR_32_Data.v
+set_global_assignment -name VERILOG_FILE ../alu_dataflow/and_dataflow/AND_32_Data.v
+set_global_assignment -name VERILOG_FILE ../alu_gate/adder_gate/full_adder_gate.v
+set_global_assignment -name VERILOG_FILE ../file_register/file_register.v
+set_global_assignment -name VERILOG_FILE ../alu_gate/subtract_gate/subtract_gate.v
+set_global_assignment -name VERILOG_FILE ../alu_gate/subtract_gate/one_complement.v
+set_global_assignment -name VERILOG_FILE ../alu_gate/slt_gate/slt_gate.v
+set_global_assignment -name VERILOG_FILE ../alu_gate/sll_gate/sll_gate.v
+set_global_assignment -name VERILOG_FILE ../alu_gate/shared_modules/mux_2to1.v
+set_global_assignment -name VERILOG_FILE ../alu_dataflow/alu_dataflow.v
+set_global_assignment -name VERILOG_FILE ../alu_gate/adder_gate/adder_gate.v
+set_global_assignment -name VERILOG_FILE ../file_register/shared_modules/mux_2to1/mux_2to1.v
+set_global_assignment -name VERILOG_FILE ../file_register/register_32bit/d_flipflop/d_flipflop.v
+set_global_assignment -name VERILOG_FILE ../file_register/register_32bit/register_32bit.v
+set_global_assignment -name VERILOG_FILE ../file_register/decoder_5bit/decoder_5bit.v
+set_global_assignment -name VERILOG_FILE ../sram/sram.v
+set_global_assignment -name SIGNALTAP_FILE output_files/alu_integration.stp
+set_global_assignment -name CDF_FILE output_files/alu_integration_test.cdf
 set_global_assignment -name SLD_FILE db/alu_integration_auto_stripped.stp

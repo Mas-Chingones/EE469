@@ -4838,7 +4838,7 @@
         <trigger_in_editor/>
         <trigger_out_editor/>
       </presentation>
-      <trigger CRC="4B104438" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2016/05/02 13:44:31  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="32" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+      <trigger CRC="4B104438" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2016/05/02 13:44:31  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="32" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">
@@ -4870,8 +4870,8 @@
     </signal_set>
     <position_info>
       <single attribute="active tab" value="0"/>
-      <single attribute="data horizontal scroll position" value="23"/>
-      <single attribute="data vertical scroll position" value="14"/>
+      <single attribute="data horizontal scroll position" value="30"/>
+      <single attribute="data vertical scroll position" value="0"/>
       <single attribute="setup horizontal scroll position" value="0"/>
       <single attribute="setup vertical scroll position" value="21"/>
       <single attribute="zoom level denominator" value="1"/>
@@ -4892,8 +4892,8 @@
     <single attribute="jtag widget visible" value="1"/>
     <single attribute="lock mode" value="0"/>
     <single attribute="sof manager visible" value="0"/>
-    <multi attribute="column width" size="23" value="34,34,386,74,68,78,95,96,98,98,88,88,110,101,101,101,101,101,101,101,101,107,55"/>
-    <multi attribute="frame size" size="2" value="1370,713"/>
+    <multi attribute="column width" size="23" value="34,34,216,74,68,78,95,96,98,98,88,88,110,101,101,101,101,101,101,101,101,107,55"/>
+    <multi attribute="frame size" size="2" value="1366,721"/>
     <multi attribute="jtag widget size" size="2" value="334,120"/>
   </global_info>
 </session>
