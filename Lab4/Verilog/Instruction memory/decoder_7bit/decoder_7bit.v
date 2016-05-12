@@ -46,16 +46,16 @@ module decoder_7bit(code, selection);
             mux_2to1 BARREL4(.in0(mux4[i]), .in1(1'b0), .select(code[4]), .out(mux5[i]));
          else
             mux_2to1 BARREL4(.in0(mux4[i]), .in1(mux4[i-16]), .select(code[4]), .out(mux5[i]));
-		   // 5th shift (16-bit shift)
+		   // 6th shift (32-bit shift)
          if(i < 32)
             mux_2to1 BARREL5(.in0(mux5[i]), .in1(1'b0), .select(code[5]), .out(mux6[i]));
          else
-            mux_2to1 BARREL5(.in0(mux5[i]), .in1(mux4[i-32]), .select(code[5]), .out(mux6[i]));
-			// 5th shift (16-bit shift)
+            mux_2to1 BARREL5(.in0(mux5[i]), .in1(mux5[i-32]), .select(code[5]), .out(mux6[i]));
+			// 7th shift (64-bit shift)
          if(i < 64)
             mux_2to1 BARREL6(.in0(mux6[i]), .in1(1'b0), .select(code[6]), .out(selection[i]));
          else
-            mux_2to1 BARREL6(.in0(mux6[i]), .in1(mux4[i-64]), .select(code[6]), .out(selection[i]));
+            mux_2to1 BARREL6(.in0(mux6[i]), .in1(mux6[i-64]), .select(code[6]), .out(selection[i]));
 				
       end
    endgenerate

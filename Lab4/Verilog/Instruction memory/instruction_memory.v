@@ -1,11 +1,9 @@
 
 // Module Dependencies:
 //`include "register_32bit/d_flipflop/d_flipflop.v"
-//`include "shared_module/mux_2to1/mux_2to1.v"
 //`include "register_32bit/register_32bit.v"
-//`include "decoder_5bit/decoder_5bit.v"
-
-
+//`include "mux_2to1/mux_2to1.v"
+//`include "decoder_7bit/decoder_7bit.v"
 
 
 /*
@@ -23,12 +21,11 @@ module instruction_memory(
 		   read_data, 	
          write_addr, 
          write_data
-
        );
 		 
 		 
    input wire clk, we, rst_all;  // clock, write enable, low reset all registers
-   input wire [6:0] read_addr,  // read0 register address selection               
+   input wire [6:0] read_addr,  // read register address selection               
 						  write_addr;  // write register address selection
    input wire [31:0] write_data;  // data to be written to write address
    output wire [31:0] read_data;  // data to be read from read address
@@ -49,7 +46,6 @@ module instruction_memory(
    genvar j;
    generate for(j=0; j<32; j=j+1) begin: READ
       buf buff_read(read_data[j], Q[read_addr][j]);
-    
    end
    endgenerate
    
