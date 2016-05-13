@@ -101,48 +101,51 @@ wire flags [6:0];
    end
 
    
-   parameter delay = 5;
+   parameter delay = 50;
    integer i;
    integer j;
 
    initial begin
    
       // Initialize PC
-      clk <= 0;
-      reset <= 1;
-      writeEnable <= 0;      
-      jump <= 0;            
-      jumpReg <= 0;         
-      branch <= 0;            
-      negative <= 0;         
-      reset <= 1;      
-      suspendEnable <= 1;
-      reset <= 1; #delay;
-      reset <= 0; #delay;
-      reset <= 1; #delay;
+      clk = 1'b1;
+      reset = 1'b1;
+      writeEnable = 1'b0;      
+      jump = 1'b0;            
+      jumpReg = 1'b0;         
+      branch = 1'b0;            
+      negative = 1'b0;         
+      reset = 1'b1;      
+      suspendEnable = 1'b1;
+      reset = 1'b1; #delay;
+      reset = 1'b0; #delay;
+      reset = 1'b1; #delay;
       
       // Write Instructions to Memory
-      writeEnable <= 1;
-      writeAddress <= 7'h0;
-      writeInstruction <= 32'h5ADFACED;
-      clk <= ~clk; #delay;
-      clk <= ~clk; #delay;
+      writeEnable = 1'b1;
+      writeAddress = 7'h0;
+      writeInstruction = 32'h5ADFACED;
+      #delay; clk = ~clk;  // clk low
+      #delay; clk = ~clk;  // clk high
       for (i = 1; i < 128; i++) begin
-         writeInstruction <= writeInstruction - 32'b1;
-         writeAddress <= writeAddress + 7'b1;
-         clk <= ~clk; #delay;
-         clk <= ~clk; #delay;
+         writeInstruction = writeInstruction - 32'b1;
+         writeAddress = writeAddress + 7'b1;
+         #delay; clk = ~clk;  // clk low
+         #delay; clk = ~clk;  // clk high
       end
-      clk <= ~clk; #delay;
-      clk <= ~clk; #delay;
+      writeEnable = 1'b0;
+      #delay; clk = ~clk;  // clk low
+      #delay; clk = ~clk;  // clk high
       
       // PC is active
-      writeEnable <= 0;
-      suspendEnable <= 0;
+      #1;
+      suspendEnable = 1'b0;
       for (i = 0; i < 128; i++) begin
-         clk <= ~clk; #delay;
-         clk <= ~clk; #delay;
+         #delay; clk = ~clk;  // clk low
+         #delay; clk = ~clk;  // clk high
       end
+      
+      
    
    $finish;
    end
