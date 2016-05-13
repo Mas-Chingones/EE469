@@ -125,7 +125,7 @@ parameter CLOCK_PERIOD = 2;
       // Write Instructions to Memory
       writeEnable <= 1;
       writeAddress <= 7'h0;
-      writeInstruction <= 32'h7f;
+      writeInstruction <= 32'h108;
       clk <= ~clk; #delay;
       clk <= ~clk; #delay;
       for (i = 1; i < 128; i++) begin
@@ -149,22 +149,43 @@ parameter CLOCK_PERIOD = 2;
       // end
 	
 		jump <= 1; 
-		clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;
+		clk <= ~clk; #delay;clk <= ~clk; #delay;
 		
 		jump <= 0;
 		clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;
+      clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;
+      clk <= ~clk; #delay;clk <= ~clk; #delay;
 		
 		jump <= 1;
-		#delay;
 		branch <= 1;
-		#delay;
-		clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;
-		clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;
-		clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;
+		clk <= ~clk; #delay;clk <= ~clk; #delay;
 		
 		branch <= 0;
+      jump <= 0;
+		clk <= ~clk; #delay;clk <= ~clk; #delay;
+      
+      // branch greater than
+      branch <= 1;
+      jump <= 1;
+		clk <= ~clk; #delay;clk <= ~clk; #delay;
+      negative <= 1'b1; 
+		clk <= ~clk; #delay;clk <= ~clk; #delay;
+      branch <= 0;
+      jump <= 1'b0;
+      
+      
+      // jump reg
+      jumpRegAddr <= 32'h1F;
+		clk <= ~clk; #delay;clk <= ~clk; #delay;
+      jump <= 1'b1;
+      jumpReg <= 1'b1;
+		clk <= ~clk; #delay;clk <= ~clk; #delay;
+      jumpReg <= 1'b0;
+      jump <= 1'b0;
+      
+      
 		clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;
-		 
+		clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;
    
    $finish;
    end

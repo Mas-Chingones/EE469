@@ -54,8 +54,11 @@ always @(*) begin
       // Branching Opcodes
       if(jump) begin  //if jumping
          // Branch Greater Than (bgt)
-         if(branch & ~negative) begin
-            nextcount <= counter + instruction[6:0] + 1'b1;
+         if(branch) begin
+            if(~negative)
+               nextcount <= counter + instruction[6:0] + 6'b1;
+            else
+               nextcount <= counter + 6'b1;
          end
          
          //  NOT NEEDED
