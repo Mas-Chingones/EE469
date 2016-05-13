@@ -18,37 +18,37 @@ wire clk, writeEnable, jump, jumpReg, branch, negative, reset, suspendEnable; //
 wire [31:0] instruction; // instruction output
 
 
-PC_tester	tester (			.clk(clk), 
-								.jumpRegAddr(jumpRegAddr), 		
-								.instruction(instruction), 		
-								.writeInstruction(writeInstruction),	
-								.writeAddress(writeAddress), 		
-								.writeEnable(writeEnable),		
-								.jump(jump),				
-								.jumpReg(jumpReg),			
-								.branch(branch),				
-								.negative(negative),			
-								.reset(reset),				
-								.suspendEnable(suspendEnable)  );	
+PC_tester   tester (         .clk(clk), 
+                        .jumpRegAddr(jumpRegAddr),       
+                        .instruction(instruction),       
+                        .writeInstruction(writeInstruction),   
+                        .writeAddress(writeAddress),       
+                        .writeEnable(writeEnable),      
+                        .jump(jump),            
+                        .jumpReg(jumpReg),         
+                        .branch(branch),            
+                        .negative(negative),         
+                        .reset(reset),            
+                        .suspendEnable(suspendEnable)  );   
 
 
-Program_Control dut ( 			.clk(clk), 
-								.jumpRegAddr(jumpRegAddr), 		
-								.instruction(instruction), 		
-								.writeInstruction(writeInstruction),	
-								.writeAddress(writeAddress), 		
-								.writeEnable(writeEnable),		
-								.jump(jump),				
-								.jumpReg(jumpReg),			
-								.branch(branch),				
-								.negative(negative),			
-								.reset(reset),				
-								.suspendEnable(suspendEnable)  );	
+Program_Control dut (          .clk(clk), 
+                        .jumpRegAddr(jumpRegAddr),       
+                        .instruction(instruction),       
+                        .writeInstruction(writeInstruction),   
+                        .writeAddress(writeAddress),       
+                        .writeEnable(writeEnable),      
+                        .jump(jump),            
+                        .jumpReg(jumpReg),         
+                        .branch(branch),            
+                        .negative(negative),         
+                        .reset(reset),            
+                        .suspendEnable(suspendEnable)  );   
 
    // Store waveform data
    initial begin
       $dumpfile("PC_Test.vcd");
-      $dumpvars(3, dut);
+      $dumpvars(4, dut);
    end
 
 endmodule
@@ -58,19 +58,19 @@ endmodule
 
 
 
-module PC_tester(				clk, 
-								jumpRegAddr, 		
-								instruction, 		
-								writeInstruction,	
-								writeAddress, 		
-								writeEnable,		
-								jump,				
-								jumpReg,			
-								branch,				
-								negative,			
-								reset,				
-								suspendEnable  );	
-								
+module PC_tester(            clk, 
+                        jumpRegAddr,       
+                        instruction,       
+                        writeInstruction,   
+                        writeAddress,       
+                        writeEnable,      
+                        jump,            
+                        jumpReg,         
+                        branch,            
+                        negative,         
+                        reset,            
+                        suspendEnable  );   
+                        
 output reg [31:0] jumpRegAddr, writeInstruction; //data inputs
 output reg [6:0] writeAddress;
 output reg clk, writeEnable, jump, jumpReg, branch, negative, reset, suspendEnable; //1-bit flags
@@ -83,65 +83,69 @@ wire flags [6:0];
 
 // print out test results
  initial begin
-         $display("\tjumpAddr \tinstruction \twriteInstruction \t\t\twriteAddress \t\t(We.J.Jr.B.N.R.Se) \ttime");
-         $monitor("\t%h \t%h  \t%b  \t%h \t%b%b%b%b%b%b%b  \t%g",
-								jumpRegAddr,
-								instruction, 		
-								writeInstruction,	
-								writeAddress, 
-								writeEnable,		
-								jump,				
-								jumpReg,			
-								branch,				
-								negative,			
-								reset,				
-								suspendEnable,								
-								$time	);
+         $display("\tjumpAddr \tinstruction \twrInstrct \twrAddr \t(We.J.Jr.B.N.R.Se) \tclk\ttime");
+         $monitor("\t%h \t%h  \t%h  \t%h \t%b%b%b%b%b%b%b  \t\t%b\t%g",
+                        jumpRegAddr,
+                        instruction,       
+                        writeInstruction,   
+                        writeAddress, 
+                        writeEnable,      
+                        jump,            
+                        jumpReg,         
+                        branch,            
+                        negative,         
+                        reset,            
+                        suspendEnable,
+                        clk,
+                        $time   );
    end
 
    
-   parameter delay = 1;
+   parameter delay = 5;
    integer i;
    integer j;
-   
-	always begin
-		clk = ~clk; #delay;	
-	end
 
-	initial begin
-	
-	reset <= 0; #delay;
-		
-		writeEnable <= 1;		
-		jump <= 0;				
-		jumpReg <= 0;			
-		branch <= 0;				
-		negative <= 0;			
-		reset <= 1;				
-		suspendEnable <= 0;
-		
-		#delay;#delay;#delay;#delay;
-		
-		
-		writeAddress = 7'h0;
-		writeInstruction = 32'h5ADFACED;
-		  for (i = 0; i < 128; i++) begin
-			 writeAddress = writeAddress + 7'b1;
-			 writeInstruction = writeInstruction - 32'b1;
-			 #delay;
-		  end      
-		
-		writeEnable <= 0;
-		
-		for (i = 0; i < 128; i++) begin
-		 writeAddress = writeAddress + 7'b1;
-		 #delay;
-		end
-		
-	
-	$stop;
-	
-	end
+   initial begin
+   
+      // Initialize PC
+      clk <= 0;
+      reset <= 1;
+      writeEnable <= 0;      
+      jump <= 0;            
+      jumpReg <= 0;         
+      branch <= 0;            
+      negative <= 0;         
+      reset <= 1;      
+      suspendEnable <= 1;
+      reset <= 1; #delay;
+      reset <= 0; #delay;
+      reset <= 1; #delay;
+      
+      // Write Instructions to Memory
+      writeEnable <= 1;
+      writeAddress <= 7'h0;
+      writeInstruction <= 32'h5ADFACED;
+      clk <= ~clk; #delay;
+      clk <= ~clk; #delay;
+      for (i = 1; i < 128; i++) begin
+         writeInstruction <= writeInstruction - 32'b1;
+         writeAddress <= writeAddress + 7'b1;
+         clk <= ~clk; #delay;
+         clk <= ~clk; #delay;
+      end
+      clk <= ~clk; #delay;
+      clk <= ~clk; #delay;
+      
+      // PC is active
+      writeEnable <= 0;
+      suspendEnable <= 0;
+      for (i = 0; i < 128; i++) begin
+         clk <= ~clk; #delay;
+         clk <= ~clk; #delay;
+      end
+   
+   $finish;
+   end
    
  endmodule
 
