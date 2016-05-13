@@ -144,8 +144,6 @@ wire flags [6:0];
          #delay; clk = ~clk;  // clk low
          #delay; clk = ~clk;  // clk high
       end
-      
-      
    
    $finish;
    end
