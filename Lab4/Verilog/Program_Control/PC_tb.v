@@ -10,7 +10,7 @@ Summary: Test the operation of the Program_Control module
 `include "../Instruction_Memory/instruction_memory.v"
 `include "Program_Control.v"
 
-module PC_tb();
+module PC_tbJump();
 
 wire [31:0] jumpRegAddr, writeInstruction; //data inputs
 wire [6:0] writeAddress;
@@ -47,7 +47,7 @@ Program_Control dut (          .clk(clk),
 
    // Store waveform data
    initial begin
-      $dumpfile("PC_Test.vcd");
+      $dumpfile("PC_TestJump.vcd");
       $dumpvars(4, dut);
    end
 
@@ -79,7 +79,8 @@ input wire [31:0] instruction; // instruction output
 wire flags [6:0];
 
 //assign flags = {writeEnable, jump, jumpReg, branch, negative, reset, suspendEnable};
-
+parameter CLOCK_PERIOD = 2;
+ 
 
 // print out test results
  initial begin
