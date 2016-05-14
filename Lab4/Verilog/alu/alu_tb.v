@@ -8,15 +8,15 @@ module alu_tb;
    wire [31:0] fr_read0, fr_read1,  // file register read data
                      immediate;  // immediate value
 	wire [6:0] control;  // determines operation performed
-   wire source;  // ALU operand1 Data source
+   wire alu_source;  // ALU operand1 Data alu_source
 	wire [31:0] result;  // result of operation
 	wire Z, V, C, N;  // status flags after operation
 	
 	// dut
-	alu dut(fr_read0, fr_read1, immediate, control, source, result, Z, V, C, N);
+	alu dut(fr_read0, fr_read1, immediate, control, alu_source, result, Z, V, C, N);
 	
 	// tester
-	aluTester tester(fr_read0, fr_read1, immediate, control, source, result, Z, V, C, N);
+	aluTester tester(fr_read0, fr_read1, immediate, control, alu_source, result, Z, V, C, N);
 
 	// File for gtkwave
 	initial begin
@@ -31,11 +31,11 @@ endmodule
 // Author: Adolfo Pineda
 // A testing module
 
-module aluTester(fr_read0, fr_read1, immediate, control, source, result, Z, V, C, N);
+module aluTester(fr_read0, fr_read1, immediate, control, alu_source, result, Z, V, C, N);
 	output reg [31:0] fr_read0, fr_read1,  // file register read data
                      immediate;  // immediate value
 	output reg [6:0] control;  // determines operation performed
-   output reg source;  // ALU operand1 Data source
+   output reg alu_source;  // ALU operand1 Data alu_source
 	input wire [31:0] result;  // result of operation
 	input wire Z, V, C, N;  // status flags after operation
 	
@@ -53,13 +53,13 @@ module aluTester(fr_read0, fr_read1, immediate, control, source, result, Z, V, C
 	
 	// Display variables 
 	initial begin
-		$display("\t\tfr0\t\tfr1\t\timm\t control\tsor\t result\t Z V C N\t time");
+		$display("\t\tfr0\t\tfr1\t\timm\t control\tsor\t     result\t Z V C N\t time");
 		$monitor("\t %d\t %d\t %d\t %b\t %b\t %d\t %b %b %b %b\t %g", 
 												fr_read0, 
 												fr_read1,
                                     immediate,
 												control,
-                                    source,
+                                    alu_source,
 												result, 
 												Z, 
 												V, 
@@ -71,7 +71,7 @@ module aluTester(fr_read0, fr_read1, immediate, control, source, result, Z, V, C
 	initial begin
 		#delay; #delay; #delay;
 		
-      source <= 0;
+      alu_source <= 0;
 		control <= SUB;
 		immediate <= 32'h14;
       
@@ -120,7 +120,7 @@ module aluTester(fr_read0, fr_read1, immediate, control, source, result, Z, V, C
 		 #delay;#delay;
 		fr_read0 <= 32'h80000000;
 		fr_read1 <= 32'h80000000;
-      source <= 1'b1;
+      alu_source <= 1'b1;
       control <=ADD;
 		#delay;#delay;
 		fr_read1 <= 32'hFFFFFFF6;

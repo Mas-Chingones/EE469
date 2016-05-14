@@ -6,13 +6,13 @@ functions selected by control code and produces status flags for
 zero result (Z), overflow (V), carry out (C), and negative result (N).
 */
 
-module alu(fr_read0, fr_read1, immediate, control, source, result, Z, V, C, N);
+module alu(fr_read0, fr_read1, immediate, control, alu_source, result, Z, V, C, N);
 
 	// I/O
 	input wire [31:0] fr_read0, fr_read1,  // file register read data
                      immediate;  // immediate value
 	input wire [6:0] control;  // determines operation performed
-   input wire source;  // ALU operand1 Data source
+   input wire alu_source;  // ALU operand1 Data alu_source
 	output reg [31:0] result;  // result of operation
 	output reg Z, V, C, N;  // status flags after operation
 	
@@ -31,7 +31,7 @@ module alu(fr_read0, fr_read1, immediate, control, source, result, Z, V, C, N);
 
    // Determine operands
    assign operand0 = fr_read0;
-   assign operand1 = source ? immediate : fr_read1;
+   assign operand1 = alu_source ? immediate : fr_read1;
 	
 	// ALU operation control codes
 	parameter NOP = 6'b000;
