@@ -16,40 +16,50 @@ module file_register(
          clk, 
          we, 
          rst_all,
-         reg_dst, 
-         read0_addr, 
-         read1_addr, 
-         write0_addr,
-         write1_addr,
-         write_data,
+         reg_dst,
+         mem_to_reg,
+         read0_addr,
+         read1_addr,
+         imm_addr,
+         reg_addr,
+         mem_data,
+         alu_data,
          read0_data, 
          read1_data
        );
    input wire clk, we, rst_all,  // clock, write enable, low reset all registers
-              reg_dst;  // register destination selector
+              reg_dst, mem_to_reg;  // register destination selector, write data selection
    input wire [4:0] read0_addr,  // read0 register address selection
                     read1_addr,  // read1 register address selection
-                    write0_addr, write1_addr;  // write register address
-   input wire [31:0] write_data;  // data to be written to write address
+                    imm_addr, reg_addr;  // write register address
+   input wire [31:0] mem_data, alu_data;  // data from mem or alu to be written to write address 
    output wire [31:0] read0_data,  // data to be read from read0 address
                       read1_data;  // data to be read from read1 address
    wire [31:0] Q[31:0];  // data read from all registers
    wire [31:0] wreg_sel,  // write register selection
-               we_sel;  // write enable to selected register
-   wire [4:0] write_addr;  // data to write to registers
+               we_sel,  // write enable to selected register
+               write_data;  // data to be written to registers
+   wire [4:0] write_addr;  // address to write to in registers
   
    // write enable register selection
+   decoder_5bit write_decoder(.code(write_addr), .selection(wreg_sel));
    genvar i;
-   generate for(i=0; i<32; i=i+1) begin: WRITE
+   generate for(i=0; i<32; i=i+1) begin: WRITE_REGISTER_SELECT
       mux_2to1 mux(.in0(1'b0), .in1(wreg_sel[i]), .select(we), .out(we_sel[i]));
    end
    endgenerate
-   decoder_5bit write_decoder(.code(write_addr), .selection(wreg_sel));
    
    // choose address to write to
    genvar m;
    generate for(m=0; m<5; m=m+1) begin: WRITE_ADDR
-      mux_2to1 mux(.in0(write0_addr[m]), .in1(write1_addr[m]), .select(reg_dst), .out(write_addr[m]));
+      mux_2to1 mux(.in0(imm_addr[m]), .in1(reg_addr[m]), .select(reg_dst), .out(write_addr[m]));
+   end
+   endgenerate
+   
+   // choose data to write to registers
+   genvar n;
+   generate for(n=0; n<32; n=n+1) begin: WRITE_DATA
+      mux_2to1 mux(.in0(mem_data[n]), .in1(alu_data[n]), .select(mem_to_reg), .out(write_data[n]));
    end
    endgenerate
    

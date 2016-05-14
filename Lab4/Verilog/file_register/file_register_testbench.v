@@ -16,11 +16,11 @@ Summary: Link 32x32 file register DUT to test stimulus device and record
 
 module file_register_testbench();
    wire clk, we, rst_all,  // clock, write enable, low reset all registers
-        reg_dst;  // register destination selector
+        reg_dst, mem_to_reg;  // register destination selector, write data selection
    wire [4:0] read0_addr,  // read0 register address selection
               read1_addr,  // read1 register address selection
-              write0_addr, write1_addr;  // write register address
-   wire [31:0] write_data;  // data to be written to write address
+              imm_addr, reg_addr;  // write register address
+   wire [31:0] mem_data, alu_data;  // data from mem or alu to be written to write address 
    wire [31:0] read0_data,  // data to be read from read0 address
                read1_data;  // data to be read from read1 address
 
@@ -29,12 +29,14 @@ module file_register_testbench();
                      clk, 
                      we, 
                      rst_all,
-                     reg_dst, 
-                     read0_addr, 
-                     read1_addr, 
-                     write0_addr,
-                     write1_addr,
-                     write_data,
+                     reg_dst,
+                     mem_to_reg,
+                     read0_addr,
+                     read1_addr,
+                     imm_addr,
+                     reg_addr,
+                     mem_data,
+                     alu_data,
                      read0_data, 
                      read1_data
    );
@@ -42,12 +44,14 @@ module file_register_testbench();
                                  clk, 
                                  we, 
                                  rst_all,
-                                 reg_dst, 
-                                 read0_addr, 
-                                 read1_addr, 
-                                 write0_addr,
-                                 write1_addr,
-                                 write_data,
+                                 reg_dst,
+                                 mem_to_reg,
+                                 read0_addr,
+                                 read1_addr,
+                                 imm_addr,
+                                 reg_addr,
+                                 mem_data,
+                                 alu_data,
                                  read0_data, 
                                  read1_data
    );
