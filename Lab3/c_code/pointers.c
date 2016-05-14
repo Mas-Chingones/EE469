@@ -24,12 +24,26 @@ int main() {
 // References the addresses of the created variables
 // and dereferences them to display the values.
 void practice() {
-	int one = 1;
+	/*int one = 1;
 	int two = 2;
 	float three = 3.0;
 	float four = 4.0;
 	char a = 'a';
-	char b = 'b';
+	char b = 'b';*/
+
+    int one = 12345678901;
+	int two = -123456789;
+	float three = -3.123456;
+	float four = 3.1234567;
+	char a = 'z';
+	char b = 'Z';
+
+    /*int one = 1;
+	int two = 2;
+	float three = 3.0;
+	float four = 4.0;
+	char a = 'a';
+	char b = 'b';*/
 
 	int* onePtr;
 	float* threePtr;
