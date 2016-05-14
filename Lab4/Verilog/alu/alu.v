@@ -6,12 +6,12 @@ functions selected by control code and produces status flags for
 zero result (Z), overflow (V), carry out (C), and negative result (N).
 */
 
-module alu_behavioral(fr_read0, fr_read1, immediate, control, source, result, Z, V, C, N);
+module alu(fr_read0, fr_read1, immediate, control, source, result, Z, V, C, N);
 
 	// I/O
-	input wire [31:0] fr_read0, fr_read,  // file register read data
+	input wire [31:0] fr_read0, fr_read1,  // file register read data
                      immediate;  // immediate value
-	input wire [2:0] control;  // determines operation performed
+	input wire [6:0] control;  // determines operation performed
    input wire source;  // ALU operand1 Data source
 	output reg [31:0] result;  // result of operation
 	output reg Z, V, C, N;  // status flags after operation
@@ -31,17 +31,17 @@ module alu_behavioral(fr_read0, fr_read1, immediate, control, source, result, Z,
 
    // Determine operands
    assign operand0 = fr_read0;
-   assign operand1 = source ? immediate : operand1;
+   assign operand1 = source ? immediate : fr_read1;
 	
 	// ALU operation control codes
-	parameter NOP = 3'b000;
-	parameter ADD = 3'b001;
-	parameter SUB = 3'b010;
-	parameter AND = 3'b011;
-	parameter OR  = 3'b100;
-	parameter XOR = 3'b101;
-	parameter SLT = 3'b110;
-	parameter SLL = 3'b111;
+	parameter NOP = 6'b000;
+	parameter ADD = 6'b001;
+	parameter SUB = 6'b010;
+	parameter AND = 6'b011;
+	parameter OR  = 6'b100;
+	parameter XOR = 6'b101;
+	parameter SLT = 6'b110;
+	parameter SLL = 6'b111;
 	
 	always @ (*) begin
 		case (control)
