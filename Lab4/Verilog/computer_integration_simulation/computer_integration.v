@@ -66,7 +66,8 @@ module computer_integration(
       .jump(jump),           
       .jumpReg(jump_reg),    
       .branch(branch),        
-      .negative(N), 
+      .negative(N),
+      .zero(Z),
       .reset(comp_rst),
       .suspendEnable(comp_en),
       .immediate_value(immediate_value)

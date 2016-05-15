@@ -19,13 +19,14 @@ module Program_Control(       clk,
                         jumpReg,         //
                         branch,            //
                         negative,         //
+                        zero,
                         reset,            // active low
                         suspendEnable,  
                         immediate_value);   // active high
 // I/O
 input wire [31:0] jumpRegAddr, writeInstruction; //data inputs
 input wire [6:0] writeAddress;
-input wire clk, writeEnable, jump, jumpReg, branch, negative, reset, suspendEnable; //1-bit flags
+input wire clk, writeEnable, jump, jumpReg, branch, negative, zero, reset, suspendEnable; //1-bit flags
 output wire [31:0] instruction, immediate_value; // instruction output, immediate value to alu
 // Internal
 reg [6:0] counter, nextcount; //Program counter value
@@ -58,7 +59,7 @@ always @(*) begin
       if(jump) begin  //if jumping
          // Branch Greater Than (bgt)
          if(branch) begin
-            if(~negative)
+            if(!negative && !zero)
                nextcount <= counter + instruction[6:0] + 6'b1;
             else
                nextcount <= counter + 6'b1;

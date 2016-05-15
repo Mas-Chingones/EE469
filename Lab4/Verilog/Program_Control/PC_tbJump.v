@@ -14,7 +14,7 @@ module PC_tbJump();
 
 wire [31:0] jumpRegAddr, writeInstruction; //data inputs
 wire [6:0] writeAddress;
-wire clk, writeEnable, jump, jumpReg, branch, negative, reset, suspendEnable; //1-bit flags
+wire clk, writeEnable, jump, jumpReg, branch, negative, zero, reset, suspendEnable; //1-bit flags
 wire [31:0] instruction; // instruction output
 
 
@@ -27,7 +27,8 @@ PC_tester   tester (         .clk(clk),
                         .jump(jump),            
                         .jumpReg(jumpReg),         
                         .branch(branch),            
-                        .negative(negative),         
+                        .negative(negative),
+                        .zero(zero),         
                         .reset(reset),            
                         .suspendEnable(suspendEnable)  );   
 
@@ -41,7 +42,8 @@ Program_Control dut (          .clk(clk),
                         .jump(jump),            
                         .jumpReg(jumpReg),         
                         .branch(branch),            
-                        .negative(negative),         
+                        .negative(negative),
+                        .zero(zero),         
                         .reset(reset),            
                         .suspendEnable(suspendEnable)  );   
 
@@ -83,9 +85,9 @@ parameter CLOCK_PERIOD = 2;
  
 
 // print out test results
- initial begin
-         $display("\tjumpAddr \tinstruction \twrInstrct \twrAddr \t(We.J.Jr.B.N.R.Se) \tclk\ttime");
-         $monitor("\t%h \t%h  \t%h  \t%h \t%b%b%b%b%b%b%b  \t\t%b\t%g",
+  initial begin
+         $display("\tjumpAddr \tinstruction \twrInstrct \twrAddr \t(We.J.Jr.B.N.Z.R.Se) \tclk\ttime");
+         $monitor("\t%h \t%h  \t%h  \t%h \t%b%b%b%b%b%%bb%b  \t\t%b\t%g",
                         jumpRegAddr,
                         instruction,       
                         writeInstruction,   
@@ -94,7 +96,8 @@ parameter CLOCK_PERIOD = 2;
                         jump,            
                         jumpReg,         
                         branch,            
-                        negative,         
+                        negative,
+                        zero,
                         reset,            
                         suspendEnable,
                         clk,
@@ -102,20 +105,21 @@ parameter CLOCK_PERIOD = 2;
    end
 
    
-   parameter delay = 1;
+   parameter delay = 50;
    integer i;
    integer j;
 
    initial begin
    
       // Initialize PC
-      clk <= 0;
-      reset <= 1;
-      writeEnable <= 0;      
-      jump <= 0;            
-      jumpReg <= 0;         
-      branch <= 0;            
-      negative <= 0;         
+      clk = 1'b1;
+      reset = 1'b1;
+      writeEnable = 1'b0;      
+      jump = 1'b0;            
+      jumpReg = 1'b0;         
+      branch = 1'b0;            
+      negative = 1'b0;
+      zero = 1'b0;       
       reset <= 1;      
       suspendEnable <= 1;
       reset <= 1; #delay;
