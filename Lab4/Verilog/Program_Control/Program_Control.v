@@ -20,16 +20,16 @@ module Program_Control(       clk,
                         branch,            //
                         negative,         //
                         reset,            // active low
-                        suspendEnable  );   // active high
+                        suspendEnable  
+                        immediate_value);   // active high
 // I/O
 input wire [31:0] jumpRegAddr, writeInstruction; //data inputs
 input wire [6:0] writeAddress;
 input wire clk, writeEnable, jump, jumpReg, branch, negative, reset, suspendEnable; //1-bit flags
-output wire [31:0] instruction; // instruction output
+output wire [31:0] instruction, immediate_value; // instruction output, immediate value to alu
 // Internal
 reg [6:0] counter, nextcount; //Program counter value
 reg susHold, wasSE;
-wire [31:0] signExtended;
 
 //connect instruction memory module
 instruction_memory inst_mem(
@@ -43,7 +43,7 @@ instruction_memory inst_mem(
 
        );
                         
-sign_extender extender( .in16(instruction[15:0]), .out32(signExtended) );
+sign_extender extender( .in16(instruction[15:0]), .out32(immediate_value) );
                         
 											
 						
@@ -63,12 +63,7 @@ always @(*) begin
             else
                nextcount <= counter + 6'b1;
          end
-         
-         //  NOT NEEDED
-         /*if(branch & negative) begin //Branch Less Than
-            nextcount = counter - instruction[6:0];
-         end */
-         
+             
          // Jump Register (jr)
          else if(jumpReg) begin
             nextcount <= jumpRegAddr[6:0];
@@ -89,21 +84,21 @@ always @(*) begin
    
 end  
 
-always @ (posedge clk) begin
-	
-
-
-end
-
 always @ (posedge clk or negedge reset) begin
 
+   // Reset PC Control
 	if(!reset) begin
         counter <= 7'b0;
 	end
+   // Suspend PC Control
 	else if(~suspendEnable & wasSE)
 		counter <= counter;
-	else begin
-	    counter <= nextcount;
+	// Program Ended: Stop PC
+   else if(counter == 7'd127 || instruction == 32'b0)
+      counter <= counter;
+   // PC Active
+   else begin
+	   counter <= nextcount;
     end
 	
 

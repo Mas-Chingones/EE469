@@ -10,7 +10,7 @@ module control_signals(
                   alu_src,
                   reg_write,
                   alu_op
-                  );
+               );
                   
    input wire [5:0] op_code, alu_function;
    output reg reg_dst, jump, jump_reg,

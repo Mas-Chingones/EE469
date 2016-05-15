@@ -1,15 +1,15 @@
-
-// Module Dependencies:
-//`include "register_32bit/d_flipflop/d_flipflop.v"
-//`include "mux_2to1/mux_2to1.v"
-//`include "register_32bit/register_32bit.v"
-//`include "decoder_5bit/decoder_5bit.v"
-
 /*
 Author: Ian Gilman
 Title: 32x32 File Register HW
 Summary: MIPS-based 32 by 32-bit file register hardware module with dual-read
    and single enabled-write
+*/
+
+/*/ Module Dependencies *//*
+`include "register_32bit/d_flipflop/d_flipflop.v"
+`include "mux_2to1/mux_2to1.v"
+`include "register_32bit/register_32bit.v"
+`include "decoder_5bit/decoder_5bit.v"
 */
 
 module file_register(
