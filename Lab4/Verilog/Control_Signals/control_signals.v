@@ -47,13 +47,13 @@ module control_signals(
       jump = 0;
       jump_reg = 0;
       branch = 0;
-      cs = 0;
+      cs = 1;
       oe = 0;
       rw = 0;
       mem_to_reg = 0;
       alu_op = 6'b0;
       alu_src = 0;
-      reg_write = 0;
+      reg_write = 1;
    end
    
    always @(*) begin
@@ -206,8 +206,8 @@ module control_signals(
             jump_reg = 0;
             branch = 0;
             cs = 0;
-            oe = 1;
-            rw = 0;
+            oe = 0;
+            rw = 1;
             mem_to_reg = 1;
             alu_op = ADD;
             alu_src = 1;
@@ -220,8 +220,8 @@ module control_signals(
             jump_reg = 0;
             branch = 0;
             cs = 0;
-            oe = 0;
-            rw = 1;
+            oe = 1;
+            rw = 0;
             mem_to_reg = 0;
             alu_op = ADD;
             alu_src = 1;

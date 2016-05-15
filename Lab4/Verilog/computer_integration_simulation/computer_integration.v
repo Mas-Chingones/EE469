@@ -6,22 +6,27 @@ Summary: Integrate PC, instruction memory, computer control, alu, file register,
 */
 
 /*/ Module Dependencies *//*
-file_register.v
-sram.v
-alu.v
-instruction_memory.v
-Program_Control.v
-control_signals.v
+`include "../file_register/file_register.v"
+`include "../sram/sram.v"
+`include "../alu/alu.v"
+`include "../instruction_memory/instruction_memory.v"
+`include "../instruction_memory/decoder_7bit/decoder_7bit.v"
+`include "../Program_Control/Program_Control.v"
+`include "../control_signals/control_signals.v"
+`include "../file_register/register_32bit/d_flipflop/d_flipflop.v"
+`include "../file_register/mux_2to1/mux_2to1.v"
+`include "../file_register/register_32bit/register_32bit.v"
+`include "../file_register/decoder_5bit/decoder_5bit.v"
 */
 
 module computer_integration(
-          clk,
-          comp_rst,
-          comp_en,
-          wr_instr_en,
-          wr_instr_addr,
-          wr_instr
-       );
+   clk,
+   comp_rst,
+   comp_en,
+   wr_instr_en,
+   wr_instr_addr,
+   wr_instr
+);
 // Inputs
    input wire clk, comp_rst,  // clock, computer !reset, 
               comp_en,  //computer !enable  
@@ -50,7 +55,7 @@ module computer_integration(
    // From SRAM
    wire [31:0] mem_data;  // read data from sram
    
-   
+   // Program Counter and Instruction Memory
    Program_Control PC_InstrMem(     
       .clk(clk), 
       .jumpRegAddr(fr_data0),       
@@ -67,6 +72,7 @@ module computer_integration(
       .immediate_value(immediate_value)
    );
    
+   // Control Signal Logic
    control_signals Control(
       .op_code(instruction[31:26]),
       .alu_function(instruction[5:0]),
@@ -83,6 +89,7 @@ module computer_integration(
       .alu_op(alu_control)
    );
 
+   // Arithmetic Logic Unit
    alu Arithmetic(
       .fr_read0(fr_data0), 
       .fr_read1(fr_data1), 
@@ -96,6 +103,7 @@ module computer_integration(
       .N(N)
      );         
 
+   // General Register
    file_register General_Registers(
       .clk(clk), 
       .we(reg_write), 
@@ -105,13 +113,14 @@ module computer_integration(
       .read0_addr(instruction[25:21]),
       .read1_addr(instruction[20:16]),
       .imm_addr(instruction[20:16]),
-      .reg_addr(instruction[15:11),
+      .reg_addr(instruction[15:11]),
       .mem_data(mem_data),
       .alu_data(alu_result),
       .read0_data(fr_data0), 
       .read1_data(fr_data1)
    );
 
+   // Static Random Access Memory
    sram Memory(
       .clk(clk), 
       .cs(cs), 

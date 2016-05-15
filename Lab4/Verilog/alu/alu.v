@@ -11,7 +11,7 @@ module alu(fr_read0, fr_read1, immediate, control, alu_source, result, Z, V, C, 
 	// I/O
 	input wire [31:0] fr_read0, fr_read1,  // file register read data
                      immediate;  // immediate value
-	input wire [6:0] control;  // determines operation performed
+	input wire [5:0] control;  // determines operation performed
    input wire alu_source;  // ALU operand1 Data alu_source
 	output reg [31:0] result;  // result of operation
 	output reg Z, V, C, N;  // status flags after operation
@@ -34,14 +34,14 @@ module alu(fr_read0, fr_read1, immediate, control, alu_source, result, Z, V, C, 
    assign operand1 = alu_source ? immediate : fr_read1;
 	
 	// ALU operation control codes
-	parameter NOP = 6'h0;
-	parameter ADD = 6'h32;
-	parameter SUB = 6'h34;
-	parameter AND = 6'h36;
-	parameter OR  = 6'h37;
-	parameter XOR = 6'h38;
-	parameter SLT = 6'42;
-	parameter SLL = 6'h4;
+	parameter NOP = 6'd0;
+	parameter ADD = 6'd32;
+	parameter SUB = 6'd34;
+	parameter AND = 6'd36;
+	parameter OR  = 6'd37;
+	parameter XOR = 6'd38;
+	parameter SLT = 6'd42;
+	parameter SLL = 6'd4;
 	
 	always @ (*) begin
 		case (control)

@@ -20,7 +20,7 @@ module Program_Control(       clk,
                         branch,            //
                         negative,         //
                         reset,            // active low
-                        suspendEnable  
+                        suspendEnable,  
                         immediate_value);   // active high
 // I/O
 input wire [31:0] jumpRegAddr, writeInstruction; //data inputs

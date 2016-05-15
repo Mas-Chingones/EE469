@@ -42,14 +42,14 @@ module aluTester(fr_read0, fr_read1, immediate, control, alu_source, result, Z, 
 	parameter delay = 10;
 
 	// ALU operation control codes
-	parameter NOP = 6'h0;
-	parameter ADD = 6'h32;
-	parameter SUB = 6'h34;
-	parameter AND = 6'h36;
-	parameter OR  = 6'h37;
-	parameter XOR = 6'h38;
-	parameter SLT = 6'42;
-	parameter SLL = 6'h4;
+	parameter NOP = 6'd0;
+	parameter ADD = 6'd32;
+	parameter SUB = 6'd34;
+	parameter AND = 6'd36;
+	parameter OR  = 6'd37;
+	parameter XOR = 6'd38;
+	parameter SLT = 6'd42;
+	parameter SLL = 6'd4;
 	
 	// Display variables 
 	initial begin

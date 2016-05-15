@@ -59,7 +59,7 @@ module file_register(
    // choose data to write to registers
    genvar n;
    generate for(n=0; n<32; n=n+1) begin: WRITE_DATA
-      mux_2to1 mux(.in0(mem_data[n]), .in1(alu_data[n]), .select(mem_to_reg), .out(write_data[n]));
+      mux_2to1 mux(.in0(alu_data[n]), .in1(mem_data[n]), .select(mem_to_reg), .out(write_data[n]));
    end
    endgenerate
    
