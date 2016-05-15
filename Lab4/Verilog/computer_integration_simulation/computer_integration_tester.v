@@ -103,9 +103,21 @@ module computer_integration_tester(
    #delay; clk = ~clk;
    #delay; clk = ~clk;
    
-   // mem(25) = slli(t1, t0, 2)
-   wr_instr = {6'd15, 5'd9, 5'd8, 16'd2};
+   // mem(25) = slli(t1, t1, 2)
+   wr_instr = {6'd15, 5'd9, 5'd9, 16'd2};
    wr_instr_addr = 32'd25;
+   #delay; clk = ~clk;
+   #delay; clk = ~clk;
+   
+   // mem(26) = sw(t0, t1, 0x0)
+   wr_instr = {6'd43, 5'd8, 5'd9, 16'd0};
+   wr_instr_addr = 32'd26;
+   #delay; clk = ~clk;
+   #delay; clk = ~clk;
+   
+   // mem(27) = lw(t0, t0, 0x0)
+   wr_instr = {6'd35, 5'd8, 5'd8, 16'd0};
+   wr_instr_addr = 32'd27;
    #delay; clk = ~clk;
    #delay; clk = ~clk;
    
