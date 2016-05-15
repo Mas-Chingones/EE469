@@ -93,4 +93,8 @@ module file_register(
                         );
    end
    endgenerate
+   
+   /*///  MIPS File Register Location Reference  ///*//*
+   
+   */
 endmodule
