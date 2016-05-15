@@ -6,6 +6,9 @@ Program_Control is an integrated instruction memory and program counter
 
 */
 
+// Module dependencies
+// instruction_memory.v
+
 module Program_Control(       clk, 
                         jumpRegAddr,       //input from register Data1
                         instruction,       //main output
