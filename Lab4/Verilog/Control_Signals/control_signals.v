@@ -8,7 +8,8 @@ module control_signals(
 						cs, oe, rw, // goes into data memory
 						mem_to_reg,
 						alu_src,
-						reg_write
+						reg_write,
+						alu_op
 					   );
 					   
 	input wire [5:0] op_code, alu_function;
@@ -25,12 +26,13 @@ module control_signals(
 	parameter IAND = 6'b001100;
 	parameter IOR = 6'b001101;
 	parameter IXOR = 6'b001110;
+	parameter ISLL = 6'b001111;
 	parameter ILW = 6'b100011;
 	parameter ISW = 6'b101011;
 	
 	parameter NOP = 6'b0;
 	parameter SLLV = 6'b000100;
-	parameter JR = 6'b001000
+	parameter JR = 6'b001000;
 	parameter ADD = 6'b100000;
 	parameter SUB = 6'b100010;
 	parameter AND = 6'b100100;
@@ -77,7 +79,7 @@ module control_signals(
 				if(alu_function == NOP || alu_function == JR)
 					reg_write = 0;
 				else
-					reg_write = 1;// I forget, is this 1?
+					reg_write = 1;
 			end
 			
 			JUMP: begin
@@ -185,6 +187,21 @@ module control_signals(
 				
 			end
 			
+			ISLL: begin
+				reg_dst = 0;
+				jump = 0;
+				jump_reg = 0;
+				branch = 0;
+				cs = 1;
+				oe = oe;
+				rw = rw;
+				mem_to_reg = 0;
+				alu_op = SLLV;
+				alu_src = 1;
+				reg_write = 1;	
+				
+			end
+			
 			ILW: begin
 			
 				reg_dst = 0;
@@ -197,7 +214,7 @@ module control_signals(
 				mem_to_reg = 1;
 				alu_op = ADD;
 				alu_src = 1;
-				reg_write = 1;	
+				reg_write = 1;
 				
 			end
 			
