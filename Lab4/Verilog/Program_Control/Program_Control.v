@@ -92,7 +92,7 @@ always @ (posedge clk or negedge reset) begin
         counter <= 7'b0;
 	end
    // Suspend PC Control
-	else if(~suspendEnable & wasSE)
+	else if(suspendEnable & wasSE)
 		counter <= counter;
 	// Program Ended: Stop PC
    else if(counter == 7'd127 || instruction == 32'b0)
@@ -118,7 +118,7 @@ module sign_extender( in16, out32 );
 input wire [15:0] in16;
 output wire [31:0] out32;
 
-assign out32 = {in16[15], 15'b0, in16[14:0] }; 
+assign out32 = {{16{in16[15]}}, in16[15:0]}; 
 
 
 

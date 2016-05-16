@@ -6,9 +6,9 @@ Summary: MIPS-based 32 by 32-bit file register hardware module with dual-read
 */
 
 /*/ Module Dependencies *//*
-`include "register_32bit/d_flipflop/d_flipflop.v"
-`include "mux_2to1/mux_2to1.v"
-`include "register_32bit/register_32bit.v"
+`include "../shared_modules/register_32bit/d_flipflop/d_flipflop.v"
+`include "../shared_modulesregister_32bit/register_32bit.v"
+`include "../shared_modules/mux_2to1/mux_2to1.v"
 `include "decoder_5bit/decoder_5bit.v"
 */
 
