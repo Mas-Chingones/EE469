@@ -102,7 +102,7 @@ module control_signals(
          
          // Immediate Instructions Logic
          IBGT: begin
-            reg_dst = reg_dst;
+            reg_dst = 1;
             jump = 1;
             jump_reg = jump_reg;
             branch = 1;
