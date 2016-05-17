@@ -77,7 +77,6 @@ module alu(fr_read0, fr_read1, immediate, control, alu_source, result, Z, V, C, 
 				
 				Z = (result == 0);
 				V = (op0_msb & op1_msb & ~result_msb) | (~op0_msb & ~op1_msb & result_msb);
-				//V = ((op0_msb ~^ op1_msb)) & (op0_msb ^ result_msb);
 				C = (op0_msb & op1_msb) | (op0_msb & ~result_msb) | (op1_msb & ~result_msb) | ((operand0 == 0) & (operand1 == 0) & (result == 0));
 				N = (result_msb == 1);
 				

@@ -290,41 +290,37 @@ module computer_integration_HW_SM(
     };
    
    // Program with every operation
-   // PLACEHOLDER
-
    /* C Program 3 */
-   parameter N_INSTR_3 = 21;
+   parameter N_INSTR_3 = 25;
    parameter bit [31:0] INSTR_TO_COMPUTER_3 [0:(N_INSTR_3-1)] = 
-   '{
-		{ADDI,   zero,    t0,   16'd10},              //  0     int A = 8;
-      {SW,     zero,    t0,   A    },              //  1
-      {ADDI,   zero,    t0,   16'd3},              //  2     int B = 4;  
-      {SW,     zero,    t0,   B    },
-		{LW,     zero,    t0,   A    },              //  10    if (A-B) > 3 {
-      {LW,     zero,    t1,   B    },
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  ADD},   		  //  0 
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  SUB},         //  1
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  AND},         //  2 
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  OR},          //  3
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  XOR},         //  4 
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  SLT},         //  5
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  SLLV},	        //  6 
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},         //  7
-		{ADDI,   5'd10,    t1,   16'd3},                  //  13
-		{SLTI,   5'd10,    t1,   16'd3},                  //  14
-		{ANDI,   5'd10,    t1,   16'd3},                  //  15
-		{ORI,    5'd10,    t1,   16'd3},                  //  16
-		{XORI,   5'd10,    t1,   16'd3},                  //  17
-		{SLLI,   5'd10,    t1,   16'd3},                  //  18
-		{32'b0}                                          
-    };
-	 
-	 
-	 		//{REG,    5'd4,    15'b0,            JR},        //  8 
-		//{REG,    5'd10,   5'd3, t0, SHAMT,  NOP},       //  9
-		//{REG,    5'd10,   5'd3, t0, SHAMT,  NOP},		  //  10
-		//{REG,    5'd10,   5'd3, t0, SHAMT,  NOP},		  //  11
-		//{}, // after JR or something?						  //  12
+   '{																	//    
+		{ADDI,   zero,    t0,   16'd10},                //  0 
+      {SW,     zero,    t0,   A    },                 //  1
+      {ADDI,   zero,    t0,   16'd3},                 //  2 
+      {SW,     zero,    t0,   B    },                 //  3
+		{LW,     zero,    t0,   A    },                 //  4 
+      {LW,     zero,    t1,   B    },                 //  5
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  ADD},     //  6 
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  SUB},     //  7
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  AND},     //  8 
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  OR},      //  9
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  XOR},     //  10
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  SLT},     //  11
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  SLLV},    //  12
+		{ADDI,   zero,    t0,   16'd18},                //  13
+		{REG,    t0,   	10'b0, 	SHAMT,  JR},	      //  14
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},     //  15
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},     //  16
+ 		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},     //  17
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},     //  18
+		{ADDI,   t0,    t2,   16'd3},                	//  19
+		{SLTI,   t0,    t2,   16'd3},                	//  20
+		{ANDI,   t0,    t2,   16'd3},                	//  21
+		{ORI,    t0,    t2,   16'd3},                	//  22
+		{XORI,   t0,    t2,   16'd3},                	//  23
+		{SLLI,   t0,    t2,   16'd3}                		//  24
+    };                                                
+	
 	
    /*--------------------------------
    ///// INSTRUCTIONS Reference /////
@@ -358,7 +354,8 @@ module computer_integration_HW_SM(
    // Function Codes
    parameter NOP = 6'd0;
    parameter SLLV = 6'd4;
-   parameter ADD = 6'd8;
+	parameter JR = 6'd8;
+   parameter ADD = 6'd32;
    parameter SUB = 6'd34;
    parameter AND = 6'd36;
    parameter OR = 6'd37;
