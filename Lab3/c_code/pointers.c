@@ -1,3 +1,12 @@
+/*
+Author  : Adolfo Pineda
+Title   : Working with pointers
+Summary : Program that explores pointers by experimenting
+          with pointer variables. References and dereferences
+          the addresses themselves, computes a formula that
+          consists of pointer variables, and displays the results
+*/
+
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
@@ -12,13 +21,29 @@ int main() {
 	return 0;
 }
 
+// References the addresses of the created variables
+// and dereferences them to display the values.
 void practice() {
-	int one = 1;
+	/*int one = 1;
 	int two = 2;
 	float three = 3.0;
 	float four = 4.0;
 	char a = 'a';
-	char b = 'b';
+	char b = 'b';*/
+
+    int one = 12345678901;
+	int two = -123456789;
+	float three = -3.123456;
+	float four = 3.1234567;
+	char a = 'z';
+	char b = 'Z';
+
+    /*int one = 1;
+	int two = 2;
+	float three = 3.0;
+	float four = 4.0;
+	char a = 'a';
+	char b = 'b';*/
 
 	int* onePtr;
 	float* threePtr;
@@ -40,6 +65,8 @@ void practice() {
 	printf("Value of variable b:     %c\n", *aPtr);
 }
 
+// Computes a formula that consists of
+// pointer values and displays the result.
 void variables() {
 	int A = 25;
 	int B = 16;

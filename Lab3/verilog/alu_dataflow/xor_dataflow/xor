@@ -1,0 +1,90 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_00802E78 .scope module, "XOR_32_testbench" "XOR_32_testbench" 2 3;
+ .timescale 0 0;
+v007FE908_0 .net "a", 31 0, v007B8EB8_0; 1 drivers
+v007FE960_0 .net "b", 31 0, v007B8F10_0; 1 drivers
+v007FE9B8_0 .net "carryOut", 0 0, C4<0>; 1 drivers
+v007FEA10_0 .net "negative", 0 0, C4<0>; 1 drivers
+v007FEA68_0 .net "overflow", 0 0, C4<0>; 1 drivers
+v007FEAC0_0 .net "sum", 31 0, L_007FF8A8; 1 drivers
+v007FEB18_0 .net "zero", 0 0, C4<0>; 1 drivers
+S_00802D68 .scope module, "data" "XOR_32_Data" 2 9, 3 1, S_00802E78;
+ .timescale 0 0;
+L_007FF8A8 .functor XOR 32, v007B8EB8_0, v007B8F10_0, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>;
+v007B2F70_0 .alias "a", 31 0, v007FE908_0;
+v007BCC98_0 .alias "b", 31 0, v007FE960_0;
+v007BCCF0_0 .alias "carryOut", 0 0, v007FE9B8_0;
+v007BCD48_0 .alias "negative", 0 0, v007FEA10_0;
+v007FE800_0 .alias "overflow", 0 0, v007FEA68_0;
+v007FE858_0 .alias "sum", 31 0, v007FEAC0_0;
+v007FE8B0_0 .alias "zero", 0 0, v007FEB18_0;
+S_00802DF0 .scope module, "atester" "XOR_32_tester" 2 11, 2 21, S_00802E78;
+ .timescale 0 0;
+P_00804AEC .param/l "delay" 2 26, +C4<01010>;
+v007B8EB8_0 .var "a", 31 0;
+v007B8F10_0 .var "b", 31 0;
+v007BD340_0 .alias "carryOut", 0 0, v007FE9B8_0;
+v007BD398_0 .alias "negative", 0 0, v007FEA10_0;
+v007BD3F0_0 .alias "overflow", 0 0, v007FEA68_0;
+v007B2EC0_0 .alias "sum", 31 0, v007FEAC0_0;
+v007B2F18_0 .alias "zero", 0 0, v007FEB18_0;
+    .scope S_00802DF0;
+T_0 ;
+    %vpi_call 2 29 "$display", "\011a \011\011b \011\011xor_result \011time";
+    %vpi_call 2 30 "$monitor", "\011%h\011%h\011%h\011%g", v007B8EB8_0, v007B8F10_0, v007B2EC0_0, $time;
+    %end;
+    .thread T_0;
+    .scope S_00802DF0;
+T_1 ;
+    %delay 10, 0;
+    %delay 10, 0;
+    %delay 10, 0;
+    %ix/load 0, 32, 0;
+    %assign/v0 v007B8EB8_0, 0, 0;
+    %ix/load 0, 32, 0;
+    %assign/v0 v007B8F10_0, 0, 0;
+    %delay 10, 0;
+    %delay 10, 0;
+    %delay 10, 0;
+    %movi 8, 79, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v007B8EB8_0, 0, 8;
+    %movi 8, 27, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v007B8F10_0, 0, 8;
+    %delay 10, 0;
+    %delay 10, 0;
+    %delay 10, 0;
+    %movi 8, 3573547008, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v007B8EB8_0, 0, 8;
+    %movi 8, 587202560, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v007B8F10_0, 0, 8;
+    %delay 10, 0;
+    %delay 10, 0;
+    %movi 8, 3721778645, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v007B8EB8_0, 0, 8;
+    %movi 8, 635295050, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v007B8F10_0, 0, 8;
+    %end;
+    .thread T_1;
+    .scope S_00802E78;
+T_2 ;
+    %vpi_call 2 14 "$dumpfile", "XOR_32_Data.vcd";
+    %vpi_call 2 15 "$dumpvars", 2'sb01, S_00802D68;
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "XOR_32_testbench.v";
+    "./XOR_32_Data.v";
