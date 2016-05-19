@@ -29,19 +29,20 @@ input wire [6:0] writeAddress;
 input wire clk, writeEnable, jump, jumpReg, branch, negative, zero, reset, suspendEnable; //1-bit flags
 output wire [31:0] instruction, immediate_value; // instruction output, immediate value to alu
 // Internal
+wire [31:0] instruction_proxy;
 reg [6:0] counter, nextcount; //Program counter value
 reg susHold, wasSE;
 
 //connect instruction memory module
+assign instruction = suspendEnable ? 32'b0 : instruction_proxy;
 instruction_memory inst_mem(
          .clk(clk), 
          .we(writeEnable && suspendEnable), 
          .rst_all(reset),        //low reset
          .read_addr(counter),
-         .read_data(instruction),    
+         .read_data(instruction_proxy),    
          .write_addr(writeAddress), 
          .write_data(writeInstruction)
-
        );
                         
 sign_extender extender( .in16(instruction[15:0]), .out32(immediate_value) );

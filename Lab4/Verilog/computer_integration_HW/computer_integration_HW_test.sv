@@ -33,6 +33,7 @@ module computer_integration_HW_test(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, H
    wire [32:0] clocks;  // divided clocks to choose the system clock from
    // Control
    wire comp_rst, comp_en, wr_instr_en;  // computer !reset, computer !enable, write instruction enable
+   wire [1:0] program_select;  // select program to execute
    // Data
    wire [6:0] wr_instr_addr;  // address to write instruction
    wire [31:0] wr_instr;  // instruction to write to instruction memory
@@ -47,6 +48,7 @@ module computer_integration_HW_test(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, H
    assign clk_speed = SW[9];
    assign next_state = KEY[0];
    assign reset_sm = KEY[3];
+   assign program_select = SW[1:0];
    // Inactive Outputs
    assign LEDR = 10'd0;
    assign HEX0 = 7'h7F;
@@ -80,7 +82,8 @@ module computer_integration_HW_test(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, H
       .wr_instr_addr(wr_instr_addr),
       .wr_instr(wr_instr),
       .next_state(next_state),
-      .reset_sm(reset_sm)
+      .reset_sm(reset_sm),
+      .program_select(program_select)
    );
    
 endmodule
@@ -104,10 +107,12 @@ module computer_integration_HW_SM(
    wr_instr_addr,
    wr_instr,
    next_state,
-   reset_sm
+   reset_sm,
+   program_select
 );
 // I/O
-   input clk, next_state, reset_sm;  // sm clock, PB indicating transition to next state, reset sm signal
+   input wire clk, next_state, reset_sm;  // sm clock, PB indicating transition to next state, reset sm signal
+   input wire [1:0] program_select;  // select program to run
    output reg comp_rst, comp_en, wr_instr_en;  // reset computer, enable computer, enable write instruction
    output reg [6:0] wr_instr_addr;  // address for writing instruction
    output reg [31:0] wr_instr;  // instruction to write
@@ -116,7 +121,8 @@ module computer_integration_HW_SM(
    reg [1:0] comp_state;  // state that the sm is driving the computer in
    reg curr_state;  // used to detect transition to next state
    wire state_change;  // detects when sm should start changing state
-   
+   reg [31:0] num_of_instr;  // number of instructions to write
+   reg [31:0] instr_to_write;  // instruction that will be written to instruction memory
    
    // Detect when comp SM receives a state change command
    assign state_change = !next_state && curr_state;
@@ -171,10 +177,10 @@ module computer_integration_HW_SM(
          
             // Program instructions are being written to the computer
             WRITE_PROGRAM: begin
-               if(instr_count < N_INSTR) begin
+               if(instr_count < num_of_instr) begin
                   wr_instr_en <= 1'b1;
                   wr_instr_addr <= instr_count;
-                  wr_instr <= INSTR_TO_COMPUTER[instr_count];
+                  wr_instr <= instr_to_write;
                   instr_count <= instr_count + 7'b1;
                end
                else begin
@@ -200,42 +206,131 @@ module computer_integration_HW_SM(
    parameter RUN_PROGRAM = 2'b10;
    
    // Instructions to Write
-   parameter N_INSTR = 27;
-   parameter bit [31:0] INSTR_TO_COMPUTER [0:(N_INSTR-1)] = 
-   '{                                              //           C Equivalent
-      {ADDI,   zero,    t0,   16'd7},              // instr 0     int A = 7;
-      {SW,     zero,    t0,   A    },              // instr 1
-      {ADDI,   zero,    t0,   16'd5},              // instr 2     int B = 5;  
-      {SW,     zero,    t0,   B    },              // instr 3
-      {ADDI,   zero,    t0,   16'd2},              // instr 4     int C = 2;
-      {SW,     zero,    t0,   C    },              // instr 5
-      {ADDI,   zero,    t0,   16'd4},              // instr 6     int D = 4;
-      {SW,     zero,    t0,   D    },              // instr 7
-      {ADDI,   zero,    t0,   D    },              // instr 8     int* DPtr = &D;
-      {SW,     zero,    t0,   DPtr },              // instr 9
-      {LW,     zero,    t0,   A    },              // instr 10    if (A-B) > 3 {
-      {LW,     zero,    t1,   B    },              // instr 11
-      {REG,    t0,      t1,   t1,   SHAMT,   SUB}, // instr 12
-      {ADDI,   zero,    t0,   16'd3},              // instr 13
-      {BGT,    t0,      t1,   16'd6},              // instr 14
-      {ADDI,   zero,    t0,   16'd6},              // instr 15    C = 6;
-      {SW,     zero,    t0,   C    },              // instr 16
-      {LW,     zero,    t0,   D    },              // instr 17    D = D << 2;}
-      {SLLI,   t0,      t0,   16'd2},              // instr 18
-      {SW,     zero,    t0,   D    },              // instr 19
-      {JMP,    26'd27},                            // instr 20    else {
-      {LW,     zero,    t0,   C    },              // instr 21    C = C << 5;
-      {SLLI,   t0,      t0,   16'd5},              // instr 22
-      {SW,     zero,    t0,   C    },              // instr 23
-      {LW,     zero,    t0,   DPtr },              // instr 24    *DPtr = 7;}
-      {ADDI,   zero,    t1,   16'd7},              // instr 25
-      {SW,     t0,      t1,   16'd0}               // instr 26    
+   always @(*) begin
+      case (program_select)
+         0: begin
+            instr_to_write = INSTR_TO_COMPUTER_1[instr_count];
+            num_of_instr = N_INSTR_1;
+         end
+         1: begin
+            instr_to_write = INSTR_TO_COMPUTER_2[instr_count];
+            num_of_instr = N_INSTR_2;
+         end
+			2: begin
+            instr_to_write = INSTR_TO_COMPUTER_3[instr_count];
+            num_of_instr = N_INSTR_3;
+         end
+      endcase   
+   end
+   
+   /* C Program 1 */
+   parameter N_INSTR_1 = 27;
+   parameter bit [31:0] INSTR_TO_COMPUTER_1 [0:(N_INSTR_1-1)] = 
+   '{                                              //       C Equivalent
+      {ADDI,   zero,    t0,   16'd7},              //  0     int A = 7;
+      {SW,     zero,    t0,   A    },              //  1
+      {ADDI,   zero,    t0,   16'd5},              //  2     int B = 5;  
+      {SW,     zero,    t0,   B    },              //  3
+      {ADDI,   zero,    t0,   16'd2},              //  4     int C = 2;
+      {SW,     zero,    t0,   C    },              //  5
+      {ADDI,   zero,    t0,   16'd4},              //  6     int D = 4;
+      {SW,     zero,    t0,   D    },              //  7
+      {ADDI,   zero,    t0,   D    },              //  8     int* DPtr = &D;
+      {SW,     zero,    t0,   DPtr },              //  9
+      {LW,     zero,    t0,   A    },              //  10    if (A-B) > 3 {
+      {LW,     zero,    t1,   B    },              //  11
+      {REG,    t0,      t1,   t1,   SHAMT,   SUB}, //  12
+      {ADDI,   zero,    t0,   16'd3},              //  13
+      {BGT,    t0,      t1,   16'd6},              //  14
+      {ADDI,   zero,    t0,   16'd6},              //  15    C = 6;
+      {SW,     zero,    t0,   C    },              //  16
+      {LW,     zero,    t0,   D    },              //  17    D = D << 2;}
+      {SLLI,   t0,      t0,   16'd2},              //  18
+      {SW,     zero,    t0,   D    },              //  19
+      {JMP,    26'd27},                            //  20    else {
+      {LW,     zero,    t0,   C    },              //  21    C = C << 5;
+      {SLLI,   t0,      t0,   16'd5},              //  22
+      {SW,     zero,    t0,   C    },              //  23
+      {LW,     zero,    t0,   DPtr },              //  24    *DPtr = 7;}
+      {ADDI,   zero,    t1,   16'd7},              //  25
+      {SW,     t0,      t1,   16'd0}               //  26    
     };
     
+   /* C Program 2 */
+   parameter N_INSTR_2 = 27;
+   parameter bit [31:0] INSTR_TO_COMPUTER_2 [0:(N_INSTR_2-1)] = 
+   '{                                              //      C Equivalent
+      {ADDI,   zero,    t0,   16'd8},              //  0     int A = 8;
+      {SW,     zero,    t0,   A    },              //  1
+      {ADDI,   zero,    t0,   16'd4},              //  2     int B = 4;  
+      {SW,     zero,    t0,   B    },              //  3
+      {ADDI,   zero,    t0,   16'd2},              //  4     int C = 2;
+      {SW,     zero,    t0,   C    },              //  5
+      {ADDI,   zero,    t0,   16'd4},              //  6     int D = 4;
+      {SW,     zero,    t0,   D    },              //  7
+      {ADDI,   zero,    t0,   D    },              //  8     int* DPtr = &D;
+      {SW,     zero,    t0,   DPtr },              //  9
+      {LW,     zero,    t0,   A    },              //  10    if (A-B) > 3 {
+      {LW,     zero,    t1,   B    },              //  11
+      {REG,    t0,      t1,   t1,   SHAMT,   SUB}, //  12
+      {ADDI,   zero,    t0,   16'd3},              //  13
+      {BGT,    t0,      t1,   16'd6},              //  14
+      {ADDI,   zero,    t0,   16'd6},              //  15    C = 6;
+      {SW,     zero,    t0,   C    },              //  16
+      {LW,     zero,    t0,   D    },              //  17    D = D << 2;}
+      {SLLI,   t0,      t0,   16'd2},              //  18
+      {SW,     zero,    t0,   D    },              //  19
+      {JMP,    26'd27},                            //  20    else {
+      {LW,     zero,    t0,   C    },              //  21    C = C << 5;
+      {SLLI,   t0,      t0,   16'd5},              //  22
+      {SW,     zero,    t0,   C    },              //  23
+      {LW,     zero,    t0,   DPtr },              //  24    *DPtr = 7;}
+      {ADDI,   zero,    t1,   16'd7},              //  25
+      {SW,     t0,      t1,   16'd0}               //  26    
+    };
    
    // Program with every operation
-   // PLACEHOLDER
-
+   /* C Program 3 */
+   parameter N_INSTR_3 = 25;
+   parameter bit [31:0] INSTR_TO_COMPUTER_3 [0:(N_INSTR_3-1)] = 
+   '{																	//    
+		{ADDI,   zero,    t0,   16'd10},                //  0 
+      {SW,     zero,    t0,   A    },                 //  1
+      {ADDI,   zero,    t0,   16'd3},                 //  2 
+      {SW,     zero,    t0,   B    },                 //  3
+		{LW,     zero,    t0,   A    },                 //  4 
+      {LW,     zero,    t1,   B    },                 //  5
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  ADD},     //  6 
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  SUB},     //  7
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  AND},     //  8 
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  OR},      //  9
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  XOR},     //  10
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  SLT},     //  11
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  SLLV},    //  12
+		{ADDI,   zero,    t0,   16'd18},                //  13
+		{REG,    t0,   	10'b0, 	SHAMT,  JR},	      //  14
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},     //  15
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},     //  16
+ 		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},     //  17
+		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},     //  18
+		{ADDI,   t0,    t2,   16'd3},                	//  19
+		{SLTI,   t0,    t2,   16'd3},                	//  20
+		{ANDI,   t0,    t2,   16'd3},                	//  21
+		{ORI,    t0,    t2,   16'd3},                	//  22
+		{XORI,   t0,    t2,   16'd3},                	//  23
+		{SLLI,   t0,    t2,   16'd3}                		//  24
+    };                                                
+	
+	
+   /*--------------------------------
+   ///// INSTRUCTIONS Reference /////
+   ----------------------------------
+   // Format for the various instructions are below:
+   1) Immediate Instr = {6-bit OPCODE, 5-bit FR_ADDR (operand0), 5-bit FR_ADDR (result destination), 16-bit Immediate Value (Operand2)}
+   2) Reg Instr = {6-bit OP-CODE, 5-bit FR_ADDR (operand0), 5-bit FR_ADDR (operand1), 5-bit FR_ADDR (result destination), SHIFT_AMOUNT (Fill with 1's), ALU_FUNCTION}
+   3) Jump = {6-bit OP-CODE, 27-bit instruction address}
+   */
+   
    // C-Program Variable Memory locations
    parameter A = 16'd0;
    parameter B = 16'd1;
@@ -259,7 +354,8 @@ module computer_integration_HW_SM(
    // Function Codes
    parameter NOP = 6'd0;
    parameter SLLV = 6'd4;
-   parameter ADD = 6'd8;
+	parameter JR = 6'd8;
+   parameter ADD = 6'd32;
    parameter SUB = 6'd34;
    parameter AND = 6'd36;
    parameter OR = 6'd37;

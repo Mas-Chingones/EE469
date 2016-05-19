@@ -21,15 +21,15 @@ module control_signals(
    // Instruction OP Codes
    parameter REG = 6'd0;
    parameter JUMP = 6'd2;
-   parameter IBGT = 6'd7;
-   parameter IADD = 6'd8;
-   parameter ISLT = 6'd10;
-   parameter IAND = 6'd12;
-   parameter IOR = 6'd13;
-   parameter IXOR = 6'd14;
-   parameter ISLL = 6'd15;
-   parameter ILW = 6'd35;
-   parameter ISW = 6'd43;
+   parameter BGTI = 6'd7;
+   parameter ADDI = 6'd8;
+   parameter SLTI = 6'd10;
+   parameter ANDI = 6'd12;
+   parameter ORI = 6'd13;
+   parameter XORI = 6'd14;
+   parameter SLLI = 6'd15;
+   parameter LW = 6'd35;
+   parameter SW = 6'd43;
    
    // ALU Functions
    parameter NOP = 6'd0;
@@ -101,8 +101,8 @@ module control_signals(
          
          
          // Immediate Instructions Logic
-         IBGT: begin
-            reg_dst = reg_dst;
+         BGTI: begin
+            reg_dst = 1;
             jump = 1;
             jump_reg = jump_reg;
             branch = 1;
@@ -115,7 +115,7 @@ module control_signals(
             reg_write = 0;            
          end
          
-         IADD: begin
+         ADDI: begin
             reg_dst = 0;
             jump = 0;
             jump_reg = 0;
@@ -129,7 +129,7 @@ module control_signals(
             reg_write = 1;   
          end
          
-         ISLT: begin
+         SLTI: begin
             reg_dst = 0;
             jump = 0;
             jump_reg = 0;
@@ -143,7 +143,7 @@ module control_signals(
             reg_write = 1;
          end
          
-         IAND: begin
+         ANDI: begin
             reg_dst = 0;
             jump = 0;
             jump_reg = 0;
@@ -157,7 +157,7 @@ module control_signals(
             reg_write = 1;   
          end
          
-         IOR: begin
+         ORI: begin
             reg_dst = 0;
             jump = 0;
             jump_reg = 0;
@@ -171,7 +171,7 @@ module control_signals(
             reg_write = 1;   
          end
          
-         IXOR: begin
+         XORI: begin
             reg_dst = 0;
             jump = 0;
             jump_reg = 0;
@@ -186,7 +186,7 @@ module control_signals(
             
          end
          
-         ISLL: begin
+         SLLI: begin
             reg_dst = 0;
             jump = 0;
             jump_reg = 0;
@@ -200,7 +200,7 @@ module control_signals(
             reg_write = 1;   
          end
          
-         ILW: begin
+         LW: begin
             reg_dst = 0;
             jump = 0;
             jump_reg = 0;
@@ -214,7 +214,7 @@ module control_signals(
             reg_write = 1;
          end
          
-         ISW: begin
+         SW: begin
             reg_dst = reg_dst;
             jump = 0;
             jump_reg = 0;
