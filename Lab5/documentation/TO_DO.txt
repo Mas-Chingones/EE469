@@ -1,0 +1,2 @@
+(1) Remeber to redesign the FR to write and read the written value in one-clock cycle
+(Asynchronous Write)
