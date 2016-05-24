@@ -135,8 +135,10 @@ if((if/id_op == 0 && if/id_func == jr) || if/id == bgt) {
 /*
 signals:
    stall
+   calc_branch
    guess_brnch (currently not implemented)
 */
+// stall
 if(ex/mem_op == lw) {  // stall for forwarding from memory to alu
    if(id/ex_op == alui_rd)
       stall = ex/mem_rt == id/ex_rs;
@@ -162,3 +164,6 @@ else if(if/id_op == bgt) {  // stall for data from alu / memory to bgt
    else if(ex/mem_op == lw)
       stall = ex/mem_rt == if/id_rs || ex/mem_rt == if/id_rt;
 }
+
+// calc_branch
+calc_branch = (if/id_op == 0 && if/id_func == jr) || if/id_op == bgt || if/id_op == jmp)
