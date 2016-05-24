@@ -166,4 +166,4 @@ else if(if/id_op == bgt) {  // stall for data from alu / memory to bgt
 }
 
 // calc_branch
-calc_branch = (if/id_op == 0 && if/id_func == jr) || if/id_op == bgt || if/id_op == jmp)
+calc_branch = !stall && (if/id_op == 0 && if/id_func == jr) || if/id_op == bgt || if/id_op == jmp)
