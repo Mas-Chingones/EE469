@@ -1,6 +1,50 @@
 // Pseduo C-code logical descriptions of the hazard and data forwarding controls
 
 
+/*/// DEFINITION OF TERMS  /////
+-------------------------------------------------------------------------------------
+||  TERM           ||  Reference
+-------------------------------------------------------------------------------------
+||  alui_wr        ||  Op-codes for instructions that write data to FR from the ALU:
+||                 ||      ADDI, SLTI, ANDI, ORI, XORI, SLLI
+-------------------------------------------------------------------------------------
+||  aui_rd         ||  Op-codes for instructions that read data to ALU from the FR:
+||                 ||      ADDI, SLTI, ANDI, ORI, XORI, SLLI, SW, LW
+-------------------------------------------------------------------------------------
+||  alur           ||  ALU funct code for register instructions (Op-code = 0) that read
+||                 ||  from the FR to the ALU and also write from the ALU to the FR:
+||	                ||      ADD, SLT, AND, OR, XOR, SLLV
+-------------------------------------------------------------------------------------
+||  if/id          ||  Refers to the data buffer between the Instruction Fetch and the 
+||                 ||  Instruction Decode pipelining stages
+-------------------------------------------------------------------------------------
+||  id/ex          ||  Refers to the data buffer between the Instruction Decode and the 
+||                 ||  Execution pipelining stages
+-------------------------------------------------------------------------------------
+||  ex/mem         ||  Refers to the data buffer between the Execution and the 
+||                 ||  Memory pipelinging stages
+--------------------------------------------------------------------------------------
+||  mem/wb         ||  Refers to the data bffer between the Memory and the
+||                 ||  Write Back pipelining stages
+--------------------------------------------------------------------------------------
+||  op             ||  The op-code part of an instruction: instr[31:26] (6-bits)
+---------------------------------------------------------------------------------------
+||  rs             ||  The 1st FR register address in an instruction: instr[25:21] (5-bits)
+||                 ||  this indicates a register that is being read
+--------------------------------------------------------------------------------------
+||  rt             ||  The 2nd FR register address in an instruction: instr[20:16] (5-bits)
+||                 ||  this indicates the register that is written to for immediate instructions
+||                 ||  or a register that is read for register instructions
+---------------------------------------------------------------------------------------
+||  rd             ||  The 2nd FR register address in an instruction (register only): instr[15:11] (5-bits)
+||                 ||  this indicates the register that is written to for register instructions
+||                 ||  it is invalid for immediate instructions
+---------------------------------------------------------------------------------------
+||  funct          ||  The part of the instruction that indicates the ALU function to perform:
+||                 ||      instr[5:0] (6-bit)
+---------------------------------------------------------------------------------------              
+*/
+
 ///// DATA-FORWARDING /////
 // FORWARDING TO ALU
 /*
@@ -39,14 +83,6 @@ else if(id/ex_op = 0 && id/ex_func == alur) {
       alu_mux1 = mem/wb_rd == id/ex_rt;
    }
 }
-/* Define Terms:
-op = alui_wr:
-   ADDI, SLTI, ANDI, ORI, XORI, SLLI
-op = alui_rd:
-	ADDI, SLTI, ANDI, ORI, XORI, SLLI, SW, LW
-func = alur:
-	REG: ADD, SLT, AND, OR, XOR, SLLV
-*/
 
 // alu mux0 data
 if(id/ex_op == alui_rd || (id/ex_op = 0 && id/ex_func == alur)) {
