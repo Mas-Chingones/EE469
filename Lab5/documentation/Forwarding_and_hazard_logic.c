@@ -5,16 +5,6 @@
 -------------------------------------------------------------------------------------
 ||  TERM           ||  Reference
 -------------------------------------------------------------------------------------
-||  alui_wr        ||  Op-codes for instructions that write data to FR from the ALU:
-||                 ||      ADDI, SLTI, ANDI, ORI, XORI, SLLI
--------------------------------------------------------------------------------------
-||  aui_rd         ||  Op-codes for instructions that read data to ALU from the FR:
-||                 ||      ADDI, SLTI, ANDI, ORI, XORI, SLLI, SW, LW
--------------------------------------------------------------------------------------
-||  alur           ||  ALU funct code for register instructions (Op-code = 0) that read
-||                 ||  from the FR to the ALU and also write from the ALU to the FR:
-||	                ||      ADD, SLT, AND, OR, XOR, SLLV
--------------------------------------------------------------------------------------
 ||  if/id          ||  Refers to the data buffer between the Instruction Fetch and the 
 ||                 ||  Instruction Decode pipelining stages
 -------------------------------------------------------------------------------------
@@ -43,6 +33,16 @@
 ||  funct          ||  The part of the instruction that indicates the ALU function to perform:
 ||                 ||      instr[5:0] (6-bit)
 ---------------------------------------------------------------------------------------              
+||  alui_wr        ||  Op-codes for instructions that write data to FR from the ALU:
+||                 ||      ADDI, SLTI, ANDI, ORI, XORI, SLLI
+-------------------------------------------------------------------------------------
+||  alui_rd         ||  Op-codes for instructions that read data to ALU from the FR:
+||                 ||      ADDI, SLTI, ANDI, ORI, XORI, SLLI, SW, LW
+-------------------------------------------------------------------------------------
+||  alur           ||  ALU funct code for register instructions (Op-code = 0) that read
+||                 ||  from the FR to the ALU and also write from the ALU to the FR:
+||	                ||      ADD, SLT, AND, OR, XOR, SLLV
+-------------------------------------------------------------------------------------
 */
 
 
