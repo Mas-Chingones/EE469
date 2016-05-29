@@ -41,7 +41,7 @@
 -------------------------------------------------------------------------------------
 ||  alur           ||  ALU funct code for register instructions (Op-code = 0) that read
 ||                 ||  from the FR to the ALU and also write from the ALU to the FR:
-||	               ||      ADD, SLT, AND, OR, XOR, SLLV
+||	               ||      ADD, SUB, SLT, AND, OR, XOR, SLLV
 -------------------------------------------------------------------------------------
 */
 
