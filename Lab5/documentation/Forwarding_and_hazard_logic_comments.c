@@ -36,7 +36,7 @@
 ||  alui_wr        ||  Op-codes for instructions that write data to FR from the ALU:
 ||                 ||      ADDI, SLTI, ANDI, ORI, XORI, SLLI
 -------------------------------------------------------------------------------------
-||  alui_rd         ||  Op-codes for instructions that read data to ALU from the FR:
+||  alui_rd        ||  Op-codes for instructions that read data to ALU from the FR:
 ||                 ||      ADDI, SLTI, ANDI, ORI, XORI, SLLI, SW, LW
 -------------------------------------------------------------------------------------
 ||  alur           ||  ALU funct code for register instructions (Op-code = 0) that read
@@ -54,114 +54,85 @@ signals:
    alu_mux0, alu_mux1
    alu_D0,   alu_D1
 */
-// alu mux logic
-if(id/ex_op == alui_rd) {
-   // mux logic
-   // mux 0
-   if(ex/mem_op == alui_wr)
-      alu_mux0 = (ex/mem_rt == id/ex_rs);
-   else if(ex/mem_op == 0 && ex/mem_func == alur)
-      alu_mux0 = (ex/mem_rd == id/ex_rs);
-   else if(mem/wb_op == alui_wr || mem/wb_op == lw)
-      alu_mux0 = (mem/wb_rt == id/ex_rs);
-   else
-      alu_mux0 = (mem/wb_rd == id/ex_rs);
-   // mux 1
-   alu_mux1 = 0;
-   // data logic
-   // mux 0 data
-   if((ex/mem_op == alui_wr) || (ex/mem_op == 0 && ex/mem_func == alur))
-      alu_D0 = ex/mem_ALU_D;
-   else
-      alu_D0 = X;
-   // mux 1 data
-   alu_D1 = X;
+// alu_mux logic
+if(id/ex_op == alui_rd) { 							//If the id/ex_op instruction is an alui_rd
+   alu_mux1 = 0;									//ALU1 data never comes from Data Forwarding/Hazard Control
+   if(ex/mem_op == alui_wr)							//If the ex/mem_op instruction is an alui_wr
+      alu_mux0 = (ex/mem_rt == id/ex_rs);			//ALU0 data comes from data forwarding if the ex/mem_rt and id/ex_rs ops try to use the same address
+   else if(ex/mem_op == 0 && ex/mem_func == alur)	//If ex/mem_op and ex/mem_func are register ops
+      alu_mux0 = (ex/mem_rd == id/ex_rs);			//Use data forwarding if addresses are the same.
+   else if(mem/wb_op == alui_wr || mem/wb_op == lw) //If the mem/wb_op instruction is an alui_wr or a lw
+      alu_mux0 = mem/wb_rt == id/ex_rs;				//Use data forwarding if addresses are the same.
+   else if(mem/wb_op == 0 && mem/wb_func == alur)	//If the mem/wb_op and mem/wb_func are register ops
+      alu_mux0 = mem/wb_rd == id/ex_rs;             //Use data forwarding if addresses are the same.
 }
-else if(id/ex_op == 0 && id/ex_func == alur) {
+else if(id/ex_op = 0 && id/ex_func == alur) {
    if(ex/mem_op == alui_wr) {
-      // mux logic
-      if(mem/wb_op == alui_wr || mem/wb_op == lw) {
-         alu_mux0 = (ex/mem_rt == id/ex_rs) || (mem/wb_rt == id/ex_rs);
-         alu_mux1 = (ex/mem_rt == id/ex_rt) || (mem/wb_rt == id/ex_rt);
-      }
-      else if(mem/wb_op == 0 && mem/wb_func == alur) {
-         alu_mux0 = (ex/mem_rt == id/ex_rs) || (mem/wb_rd == id/ex_rs);
-         alu_mux1 = (ex/mem_rt == id/ex_rt) || (mem/wb_rd == id/ex_rt);
-      }
-      else {
-         alu_mux0 = (ex/mem_rt == id/ex_rs);
-         alu_mux1 = (ex/mem_rt == id/ex_rt);
-      }
-      // data logic
-      // mux 0 data
-      if(ex/mem_rt == id/ex_rs)
-         alu_D0 = ex/mem_ALU_D;
-      else
-         alu_D0 = mem/wb_ALU_D;
-      // mux 1 data
-      if(ex/mem_rt == id/ex_rt)
-         alu_D1 = ex/mem_ALU_D;
-      else if
-         alu_D1 = mem/wb_ALU_D;
+      alu_mux0 = ex/mem_rt == id/ex_rs;
+      alu_mux1 = ex/mem_rt == id/ex_rt;
    }
    else if(ex/mem_op == 0 && ex/mem_func == alur) {
-      // mux logic
-      if(mem/wb_op == alui_wr || mem/wb_op == lw) {
-         alu_mux0 = (ex/mem_rd == id/ex_rs) || (mem/wb_rt == id/ex_rs);
-         alu_mux1 = (ex/mem_rd == id/ex_rt) || (mem/wb_rt == id/ex_rt);
-      }
-      else if(mem/wb_op == 0 && mem/wb_func == alur) {
-         alu_mux0 = (ex/mem_rd == id/ex_rs) || (mem/wb_rd == id/ex_rs);
-         alu_mux1 = (ex/mem_rd == id/ex_rt) || (mem/wb_rd == id/ex_rt);
-      }
-      else {
-         alu_mux0 = (ex/mem_rd == id/ex_rs);
-         alu_mux1 = (ex/mem_rd == id/ex_rt);
-      }
-      // data logic
-      // mux 0 data
-      if(ex/mem_rd == id/ex_rs)
-         alu_D0 = ex/mem_ALU_D;
-      else
-         alu_D0 = mem/wb_ALU_D;
-      // mux 1 data
-      if(ex/mem_rd == id/ex_rt)
-         alu_D1 = ex/mem_ALU_D;
-      else
-         alu_D1 = mem/wb_ALU_D;
+      alu_mux0 = ex/mem_rd == id/ex_rs;
+      alu_mux1 = ex/mem_rd == id/ex_rt;
    }
+   else if(mem/wb_op == alui_wr || mem/wb_op == lw) {
+      alu_mux0 = mem/wb_rt == id/ex_rs;
+      alu_mux1 = mem/wb_rt == id/ex_rt;
+   }
+   else if(mem/wb_op == 0 && mem/wb_func == alur) {
+      alu_mux0 = mem/wb_rd == id/ex_rs;
+      alu_mux1 = mem/wb_rd == id/ex_rt;
+   }
+}
+
+// alu mux0 data. Handles data forwarding choices for alu_D0
+if(id/ex_op == alui_rd || (id/ex_op = 0 && id/ex_func == alur)) { 			//If the id/ex_op is getting read (immediate or register read)
+   if(ex/mem_op == alui_wr || (ex/mem_op == 0 && ex/mem_func == alur))		//If the ex/mem_op is a write (immediate or register)		
+      alu_D0 = ex/mem_ALU_D; 												//ALU0 data gets forwarded from ex/mem_ALU_D buffer register.
+   else if(mem/wb_op == alui_wr || (mem/wb_op == 0 && mem/wb_func == alur))	//If the mwm/wb_op is a write (immediate or register)		
+      alu_D0 = mem/wb_ALU_D;                                                //ALU0 data gets forwarded from mem/wb_ALU_D buffer register.
+   else if(mem/wb_op == lw)													//If the mem/wb_op is a lw		
+      alu_D0 = mem/wb_MEM_D;                                                //ALU0 data gets forwarded from mem/wb_MEM_D buffer register.
+}
+// alu mux1 data
+if(id/ex_op == alui_rd) {							//If the id/ex_op is an immediate read we don't care about what goes into alu_D1		
+   alu_D1 = X;
+}
+else if(id/ex_op = 0 && id/ex_func == alur) {		//Otherwise if the id/exop is a register read and...
+   if(ex/mem_op == 0 && ex/mem_func == alur)			//the ex/mem_op is also a register read
+      alu_D1 = ex/mem_ALU_D;								//ALU1 data gets forwarded from ex/mem_ALU_D
+   if(mem/wb_op == 0 && mem/wb_func == alur)			//the mem/wb_op is a register read
+      alu_D1 = mem/wb_ALU_D;								//ALU1 data gets forwarded from mem/wb_ALU_D
 }
 
 
 // FORWARDING TO DATA MEMORY
 /*
-mem mux logic and data (memD_mux == true  means memD is forwarded):
+mem mux logic and data (memD_mux == true  means memD is forwarded):			
 signals:
    ex_memD_mux, mem_memD_mux
    ex_memD,     mem_memD
 */
-// ex mem mux
-if(id/ex_op == sw) {
-   if((ex/mem_op == alui_wr) && (ex/mem_rt == id/ex_rt)) {
-      ex_memD_mux = 1;
-   else if((ex/mem_op == 0 && ex/mem_func == alur) && (ex/mem_rd == id/ex_rt))
-      ex_memD_mux = 1;
-   else if((mem/wb_op == alui_wr || mem/wb_op == lw) && mem/wb_rt == id/ex_rt)
-      ex_memD_mux = 1;
-   else
-      ex_memD_mux = mem/wb_rd == id/ex_rt;
+// ex mem mux	
+
+//forward data into ex/mem_D if the addresss are the same for a ex/mem_op of alui_r or alur OR for a mem/wb_op of alui_wr, lw, or alur
+if(id/ex_op == sw) {									//For a id/ex_op switch command
+   if(ex/mem_op == alui_wr)									//If the ex/mem_op is an alui_wr
+      ex_memD_mux = ex/mem_rt == id/ex_rt;						//Forward ex/Mem_D if the addresses are the same
+   else if(ex/mem_op == 0 && ex/mem_func == alur)			//If the ex/mem_op is and alur
+      ex_memD_mux = ex/mem_rd == id/ex_rt;						//Forward ex/Mem_D if the addresses are the same
+   else if(mem/wb_op == alui_wr || mem/wb_op == lw)			//If the mem/wb_op is an alui_wr or lw
+      ex_memD_mux = mem/wb_rt == id/ex_rt;						//Forward ex/Mem_D if the addresses are the same
+   else if(mem/wb_op == 0 && mem/wb_func = alur)			//If the mem/wb_op is an alur
+      ex_memD_mux = mem/wb_rd == id/ex_rt;                  	//Forward ex/Mem_D if the addresses are the same
 }
 // ex mem mux data
 if(id/ex_op == sw) {
-   if((ex/mem_op == alui_wr) && (ex/mem_rt == id/ex_rt))
+   if(ex/mem_op == alui_wr || (ex/mem_op == 0 && ex/mem_func == alur))
       ex_memD = ex/mem_ALU_D;
-   else if((ex/mem_op == 0 && ex/mem_func == alur) && (ex/mem_rd == id/ex_rt))
-      ex_memD = ex/mem_ALU_D;
-   else if((mem/wb_op == alui_wr) && (mem/wb_rt == id/ex_rt))
+   if(mem/wb_op == alui_wr || (mem/wb_op == 0 && mem/wb_func = alur))
       ex_memD = mem/wb_ALU_D;
-   else if((mem/wb_op == 0 && mem/wb_func = alur) && (mem/wb_rd == id/ex_rt)) 
-      ex_memD = mem/wb_ALU_D;
-   else:
+   if(mem/wb_op == lw)
       ex_memD = mem/wb_MEM_D;
 }
 // mem mem mux and data
