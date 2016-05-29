@@ -1,0 +1,6 @@
+
+State Machine - |computer_integration_HW_test|computer_integration_HW_SM:Computer_Control_SM|comp_state
+Name comp_state~8 comp_state~7 
+comp_state.IDLE 0 0 
+comp_state.WRITE_PROGRAM 0 1 
+comp_state.RUN_PROGRAM 1 0 

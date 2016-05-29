@@ -54,55 +54,82 @@ signals:
    alu_mux0, alu_mux1
    alu_D0,   alu_D1
 */
-// alu_mux logic
+// alu mux logic
 if(id/ex_op == alui_rd) {
-   alu_mux1 = 0;
+   // mux logic
+   // mux 0
    if(ex/mem_op == alui_wr)
-      alu_mux0 = ex/mem_rt == id/ex_rs;
+      alu_mux0 = (ex/mem_rt == id/ex_rs);
    else if(ex/mem_op == 0 && ex/mem_func == alur)
-      alu_mux0 = ex/mem_rd == id/ex_rs;
+      alu_mux0 = (ex/mem_rd == id/ex_rs);
    else if(mem/wb_op == alui_wr || mem/wb_op == lw)
-      alu_mux0 = mem/wb_rt == id/ex_rs;
-   else if(mem/wb_op == 0 && mem/wb_func == alur)
-      alu_mux0 = mem/wb_rd == id/ex_rs;
-}
-else if(id/ex_op = 0 && id/ex_func == alur) {
-   if(ex/mem_op == alui_wr) {
-      alu_mux0 = ex/mem_rt == id/ex_rs;
-      alu_mux1 = ex/mem_rt == id/ex_rt;
-   }
-   else if(ex/mem_op == 0 && ex/mem_func == alur) {
-      alu_mux0 = ex/mem_rd == id/ex_rs;
-      alu_mux1 = ex/mem_rd == id/ex_rt;
-   }
-   else if(mem/wb_op == alui_wr || mem/wb_op == lw) {
-      alu_mux0 = mem/wb_rt == id/ex_rs;
-      alu_mux1 = mem/wb_rt == id/ex_rt;
-   }
-   else if(mem/wb_op == 0 && mem/wb_func == alur) {
-      alu_mux0 = mem/wb_rd == id/ex_rs;
-      alu_mux1 = mem/wb_rd == id/ex_rt;
-   }
-}
-
-// alu mux0 data
-if(id/ex_op == alui_rd || (id/ex_op = 0 && id/ex_func == alur)) {
-   if(ex/mem_op == alui_wr || (ex/mem_op == 0 && ex/mem_func == alur))
+      alu_mux0 = (mem/wb_rt == id/ex_rs);
+   else
+      alu_mux0 = (mem/wb_rd == id/ex_rs);
+   // mux 1
+   alu_mux1 = 0;
+   // data logic
+   // mux 0 data
+   if((ex/mem_op == alui_wr) || (ex/mem_op == 0 && ex/mem_func == alur))
       alu_D0 = ex/mem_ALU_D;
-   else if(mem/wb_op == alui_wr || (mem/wb_op == 0 && mem/wb_func == alur))
-      alu_D0 = mem/wb_ALU_D;
-   else if(mem/wb_op == lw)
-      alu_D0 = mem/wb_MEM_D;
-}
-// alu mux1 data
-if(id/ex_op == alui_rd) {
+   else
+      alu_D0 = X;
+   // mux 1 data
    alu_D1 = X;
 }
-else if(id/ex_op = 0 && id/ex_func == alur) {
-   if(ex/mem_op == 0 && ex/mem_func == alur)
-      alu_D1 = ex/mem_ALU_D;
-   if(mem/wb_op == 0 && mem/wb_func == alur)
-      alu_D1 = mem/wb_ALU_D;
+else if(id/ex_op == 0 && id/ex_func == alur) {
+   if(ex/mem_op == alui_wr) {
+      // mux logic
+      if(mem/wb_op == alui_wr || mem/wb_op == lw) {
+         alu_mux0 = (ex/mem_rt == id/ex_rs) || (mem/wb_rt == id/ex_rs);
+         alu_mux1 = (ex/mem_rt == id/ex_rt) || (mem/wb_rt == id/ex_rt);
+      }
+      else if(mem/wb_op == 0 && mem/wb_func == alur) {
+         alu_mux0 = (ex/mem_rt == id/ex_rs) || (mem/wb_rd == id/ex_rs);
+         alu_mux1 = (ex/mem_rt == id/ex_rt) || (mem/wb_rd == id/ex_rt);
+      }
+      else {
+         alu_mux0 = (ex/mem_rt == id/ex_rs);
+         alu_mux1 = (ex/mem_rt == id/ex_rt);
+      }
+      // data logic
+      // mux 0 data
+      if(ex/mem_rt == id/ex_rs)
+         alu_D0 = ex/mem_ALU_D;
+      else
+         alu_D0 = mem/wb_ALU_D;
+      // mux 1 data
+      if(ex/mem_rt == id/ex_rt)
+         alu_D1 = ex/mem_ALU_D;
+      else if
+         alu_D1 = mem/wb_ALU_D;
+   }
+   else if(ex/mem_op == 0 && ex/mem_func == alur) {
+      // mux logic
+      if(mem/wb_op == alui_wr || mem/wb_op == lw) {
+         alu_mux0 = (ex/mem_rd == id/ex_rs) || (mem/wb_rt == id/ex_rs);
+         alu_mux1 = (ex/mem_rd == id/ex_rt) || (mem/wb_rt == id/ex_rt);
+      }
+      else if(mem/wb_op == 0 && mem/wb_func == alur) {
+         alu_mux0 = (ex/mem_rd == id/ex_rs) || (mem/wb_rd == id/ex_rs);
+         alu_mux1 = (ex/mem_rd == id/ex_rt) || (mem/wb_rd == id/ex_rt);
+      }
+      else {
+         alu_mux0 = (ex/mem_rd == id/ex_rs);
+         alu_mux1 = (ex/mem_rd == id/ex_rt);
+      }
+      // data logic
+      // mux 0 data
+      if(ex/mem_rd == id/ex_rs)
+         alu_D0 = ex/mem_ALU_D;
+      else
+         alu_D0 = mem/wb_ALU_D;
+      // mux 1 data
+      if(ex/mem_rd == id/ex_rt)
+         alu_D1 = ex/mem_ALU_D;
+      else
+         alu_D1 = mem/wb_ALU_D;
+   }
 }
 
 
@@ -115,22 +142,26 @@ signals:
 */
 // ex mem mux
 if(id/ex_op == sw) {
-   if(ex/mem_op == alui_wr)
-      ex_memD_mux = ex/mem_rt == id/ex_rt;
-   else if(ex/mem_op == 0 && ex/mem_func == alur)
-      ex_memD_mux = ex/mem_rd == id/ex_rt;
-   else if(mem/wb_op == alui_wr || mem/wb_op == lw)
-      ex_memD_mux = mem/wb_rt == id/ex_rt;
-   else if(mem/wb_op == 0 && mem/wb_func = alur)
+   if((ex/mem_op == alui_wr) && (ex/mem_rt == id/ex_rt)) {
+      ex_memD_mux = 1;
+   else if((ex/mem_op == 0 && ex/mem_func == alur) && (ex/mem_rd == id/ex_rt))
+      ex_memD_mux = 1;
+   else if((mem/wb_op == alui_wr || mem/wb_op == lw) && mem/wb_rt == id/ex_rt)
+      ex_memD_mux = 1;
+   else
       ex_memD_mux = mem/wb_rd == id/ex_rt;
 }
 // ex mem mux data
 if(id/ex_op == sw) {
-   if(ex/mem_op == alui_wr || (ex/mem_op == 0 && ex/mem_func == alur))
+   if((ex/mem_op == alui_wr) && (ex/mem_rt == id/ex_rt))
       ex_memD = ex/mem_ALU_D;
-   if(mem/wb_op == alui_wr || (mem/wb_op == 0 && mem/wb_func = alur))
+   else if((ex/mem_op == 0 && ex/mem_func == alur) && (ex/mem_rd == id/ex_rt))
+      ex_memD = ex/mem_ALU_D;
+   else if((mem/wb_op == alui_wr) && (mem/wb_rt == id/ex_rt))
       ex_memD = mem/wb_ALU_D;
-   if(mem/wb_op == lw)
+   else if((mem/wb_op == 0 && mem/wb_func = alur) && (mem/wb_rd == id/ex_rt)) 
+      ex_memD = mem/wb_ALU_D;
+   else:
       ex_memD = mem/wb_MEM_D;
 }
 // mem mem mux and data
