@@ -1,19 +1,18 @@
 /*
 Author: Ian Gilman
 Title: 32x32 File Register HW
-Summary: MIPS-based 32 by 32-bit file register hardware module with dual-read
-   and single enabled-write
+Summary: MIPS-based 32 by 32-bit general register hardware module with dual-read
+   and a single, asynchronous enabled-write
 */
 
 /*/ Module Dependencies *//*
-`include "../shared_modules/register_32bit/d_flipflop/d_flipflop.v"
-`include "../shared_modulesregister_32bit/register_32bit.v"
+`include "asynch_register_32bit/gated_d_latch/gate_d_latch.v"
+`include "asynch_register_32bit/asynch_register_32bit.v"
 `include "../shared_modules/mux_2to1/mux_2to1.v"
 `include "decoder_5bit/decoder_5bit.v"
 */
 
 module file_register(
-         clk, 
          we, 
          rst_all,
          reg_dst,
@@ -27,7 +26,7 @@ module file_register(
          read0_data, 
          read1_data
        );
-   input wire clk, we, rst_all,  // clock, write enable, low reset all registers
+   input wire we, rst_all,  // clock, write enable, low reset all registers
               reg_dst, mem_to_reg;  // register destination selector, write data selection
    input wire [4:0] read0_addr,  // read0 register address selection
                     read1_addr,  // read1 register address selection
@@ -76,16 +75,14 @@ module file_register(
    generate for(k=0; k<32; k=k+1) begin: FILE_REGISTER
       if (k == 0)
          // Zero Register is Tied to Ground
-         register_32bit F_REG(
-                        .clk(clk), 
+         asynch_register_32bit F_REG(
                         .we(1'b1), 
                         .rst(rst_all), 
                         .D(32'b0), 
                         .Q(Q[k])
                      );
       else
-         register_32bit F_REG(
-                           .clk(clk), 
+         asynch_register_32bit F_REG(
                            .we(we_sel[k]), 
                            .rst(rst_all), 
                            .D(write_data), 

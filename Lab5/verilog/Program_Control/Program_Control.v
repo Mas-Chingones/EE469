@@ -1,37 +1,53 @@
 /*
 Author David Dolengewicz
 Program_Control is an integrated instruction memory and program counter
-
-
-
 */
 
-// Module dependencies
-// instruction_memory.v
+/* Module dependencies
+   `include "../Instruction_Memory/register_32bit/d_flipflop/d_flipflop.v"
+   `include "../Instruction_Memory/synch_register_32bit/synch_register_32bit.v"
+   `include "../shared_modules/mux_2to1/mux_2to1.v"
+   `include "../Instruction_Memory/decoder_7bit/decoder_7bit.v"
+   `include "../Instruction_Memory/instruction_memory.v"
+*/ 
 
-module Program_Control(       clk, 
-                        jumpRegAddr,       //input from register Data1
-                        instruction,       //main output
-                        writeInstruction,   // for loading instruction data
-                        writeAddress,       // for loading instruction data
-                        writeEnable,      // for loading instruction data
-                        jump,            //
-                        jumpReg,         //
-                        branch,            //
-                        negative,         //
-                        zero,
-                        reset,            // active low
-                        suspendEnable,  
-                        immediate_value);   // active high
+module Program_Control( 
+         clk,
+         instruction,       //main output
+         writeInstruction,   // for loading instruction data
+         writeAddress,       // for loading instruction data
+         writeEnable,      // for loading instruction data
+         jump_address,
+         jump,            //
+         jumpReg,         //
+         branch,            //
+         fr_read0,         //
+         fr_read1,
+         fwd_data0,
+         fwd_data1,
+         jmp0_mux,
+         jmp1_mux,
+         reset,            // active low
+         suspendEnable
+      );   // active high
 // I/O
-input wire [31:0] jumpRegAddr, writeInstruction; //data inputs
+input wire [31:0] writeInstruction, //data inputs
+                  fr_read0, fr_read1,  // used for calc branch and jumpreg
+                  fwd_data0, fwd_data1;  // forwarded data fr_data
+input wire [25:0] jump_address;                  
 input wire [6:0] writeAddress;
-input wire clk, writeEnable, jump, jumpReg, branch, negative, zero, reset, suspendEnable; //1-bit flags
-output wire [31:0] instruction, immediate_value; // instruction output, immediate value to alu
+input wire clk, writeEnable, jump, jumpReg, branch, reset, suspendEnable, //1-bit flags
+           jmp0_mux, jmp1_mux;  // jump data muxes
+output wire [31:0] instruction; // instruction output, immediate value to alu
 // Internal
-wire [31:0] instruction_proxy;
+wire [31:0] instruction_proxy, jump_data0, jump_data1;
 reg [6:0] counter, nextcount; //Program counter value
 reg susHold, wasSE;
+
+
+// define where data used for calculating branch or jr comes from
+assign jump_data0 = jmp0_mux ? fwd_data0 : fr_read0;
+assign jump_data1 = jmp1_mux ? fwd_data1 : fr_read1;
 
 //connect instruction memory module
 assign instruction = suspendEnable ? 32'b0 : instruction_proxy;
@@ -44,9 +60,7 @@ instruction_memory inst_mem(
          .write_addr(writeAddress), 
          .write_data(writeInstruction)
        );
-                        
-sign_extender extender( .in16(instruction[15:0]), .out32(immediate_value) );
-                        
+                                              
 											
 						
 always @(*) begin
@@ -60,20 +74,20 @@ always @(*) begin
       if(jump) begin  //if jumping
          // Branch Greater Than (bgt)
          if(branch) begin
-            if(!negative && !zero)
-               nextcount <= counter + instruction[6:0] + 6'b1;
+            if(jump_data0 > jump_data1)
+               nextcount <= jump_address[6:0];
             else
                nextcount <= counter + 6'b1;
          end
              
          // Jump Register (jr)
          else if(jumpReg) begin
-            nextcount <= jumpRegAddr[6:0];
+            nextcount <= jump_data0[6:0];
          end
          
          // Jump (j)
          else begin 
-            nextcount <= instruction[6:0]; 
+            nextcount <= jump_address[6:0]; 
          end
       end
       
@@ -83,46 +97,25 @@ always @(*) begin
       end
        wasSE <= 1'b0;  
    end
-   
 end  
 
 always @ (posedge clk or negedge reset) begin
 
    // Reset PC Control
 	if(!reset) begin
-        counter <= 7'b0;
-	end
-   // Suspend PC Control
-	else if(suspendEnable & wasSE)
-		counter <= counter;
-	// Program Ended: Stop PC
-   else if(counter == 7'd127 || instruction == 32'b0)
-      counter <= counter;
-   // PC Active
-   else begin
-	   counter <= nextcount;
-    end
-	
-
-end
-
- 
-                        
-endmodule
-
-
-
-                        
-
-module sign_extender( in16, out32 );
-
-input wire [15:0] in16;
-output wire [31:0] out32;
-
-assign out32 = {{16{in16[15]}}, in16[15:0]}; 
-
-
-
-endmodule                        
+         counter <= 7'b0;
+      end
+      // Suspend PC Control
+      else if(suspendEnable & wasSE)
+         counter <= counter;
+      // Program Ended: Stop PC
+      else if(counter == 7'd127 || instruction == 32'b0)
+         counter <= counter;
+      // PC Active
+      else begin
+         counter <= nextcount;
+      end
+   end               
+endmodule                   
                         
                         

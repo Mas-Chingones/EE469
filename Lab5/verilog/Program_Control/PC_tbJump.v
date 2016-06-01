@@ -3,49 +3,62 @@ Author: David Dolengewicz
 Summary: Test the operation of the Program_Control module
 */
 
-`include "../Instruction_Memory/register_32bit/d_flipflop/d_flipflop.v"
-`include "../Instruction_Memory/register_32bit/register_32bit.v"
-`include "../Instruction_Memory/mux_2to1/mux_2to1.v"
+`include "../Instruction_Memory/synch_register_32bit/d_flipflop/d_flipflop.v"
+`include "../Instruction_Memory/synch_register_32bit/synch_register_32bit.v"
+`include "../shared_modules/mux_2to1/mux_2to1.v"
 `include "../Instruction_Memory/decoder_7bit/decoder_7bit.v"
 `include "../Instruction_Memory/instruction_memory.v"
 `include "Program_Control.v"
 
 module PC_tbJump();
-
-wire [31:0] jumpRegAddr, writeInstruction; //data inputs
+wire [31:0] writeInstruction, fr_read0, fr_read1, fwd_data0, fwd_data1;
+wire [25:0] jump_address;
 wire [6:0] writeAddress;
-wire clk, writeEnable, jump, jumpReg, branch, negative, zero, reset, suspendEnable; //1-bit flags
+wire clk, writeEnable, jump, jumpReg, branch, reset, 
+     suspendEnable, jmp0_mux, jmp1_mux;  // 1-bit flags
 wire [31:0] instruction; // instruction output
 
 
-PC_tester   tester (         .clk(clk), 
-                        .jumpRegAddr(jumpRegAddr),       
-                        .instruction(instruction),       
-                        .writeInstruction(writeInstruction),   
-                        .writeAddress(writeAddress),       
-                        .writeEnable(writeEnable),      
-                        .jump(jump),            
-                        .jumpReg(jumpReg),         
-                        .branch(branch),            
-                        .negative(negative),
-                        .zero(zero),         
-                        .reset(reset),            
-                        .suspendEnable(suspendEnable)  );   
+PC_tester   tester(         
+   .clk(clk),
+   .instruction(instruction),       //main output
+   .writeInstruction(writeInstruction),   // for loading instruction data
+   .writeAddress(writeAddress),       // for loading instruction data
+   .writeEnable(writeEnable),      // for loading instruction data
+   .jump_address(jump_address),
+   .jump(jump),            //
+   .jumpReg(jumpReg),         //
+   .branch(branch),            //
+   .fr_read0(fr_read0),         //
+   .fr_read1(fr_read1),
+   .fwd_data0(fwd_data0),
+   .fwd_data1(fwd_data1),
+   .jmp0_mux(jmp0_mux),
+   .jmp1_mux(jmp1_mux),
+   .reset(reset),            // active low
+   .suspendEnable(suspendEnable) 
+);   
 
 
-Program_Control dut (          .clk(clk), 
-                        .jumpRegAddr(jumpRegAddr),       
-                        .instruction(instruction),       
-                        .writeInstruction(writeInstruction),   
-                        .writeAddress(writeAddress),       
-                        .writeEnable(writeEnable),      
-                        .jump(jump),            
-                        .jumpReg(jumpReg),         
-                        .branch(branch),            
-                        .negative(negative),
-                        .zero(zero),         
-                        .reset(reset),            
-                        .suspendEnable(suspendEnable)  );   
+Program_Control dut( 
+   .clk(clk),       //input from register Data1
+   .instruction(instruction),       //main output
+   .writeInstruction(writeInstruction),   // for loading instruction data
+   .writeAddress(writeAddress),       // for loading instruction data
+   .writeEnable(writeEnable),      // for loading instruction data
+   .jump_address(jump_address),
+   .jump(jump),            //
+   .jumpReg(jumpReg),         //
+   .branch(branch),            //
+   .fr_read0(fr_read0),         //
+   .fr_read1(fr_read1),
+   .fwd_data0(fwd_data0),
+   .fwd_data1(fwd_data1),
+   .jmp0_mux(jmp0_mux),
+   .jmp1_mux(jmp1_mux),
+   .reset(reset),            // active low
+   .suspendEnable(suspendEnable)
+);  
 
    // Store waveform data
    initial begin
@@ -60,48 +73,63 @@ endmodule
 
 
 
-module PC_tester(            clk, 
-                        jumpRegAddr,       
-                        instruction,       
-                        writeInstruction,   
-                        writeAddress,       
-                        writeEnable,      
-                        jump,            
-                        jumpReg,         
-                        branch,            
-                        negative,         
-                        reset,            
-                        suspendEnable  );   
-                        
-output reg [31:0] jumpRegAddr, writeInstruction; //data inputs
+module PC_tester( 
+         clk,
+         instruction,       //main output
+         writeInstruction,   // for loading instruction data
+         writeAddress,       // for loading instruction data
+         writeEnable,      // for loading instruction data
+         jump_address,
+         jump,            //
+         jumpReg,         //
+         branch,            //
+         fr_read0,         //
+         fr_read1,
+         fwd_data0,
+         fwd_data1,
+         jmp0_mux,
+         jmp1_mux,
+         reset,            // active low
+         suspendEnable
+);
+// I/O
+output reg [31:0] writeInstruction, //data inputs
+                  fr_read0, fr_read1,  // used for calc branch and jumpreg
+                  fwd_data0, fwd_data1;  // forwarded data fr_data
+output reg [25:0] jump_address;
 output reg [6:0] writeAddress;
-output reg clk, writeEnable, jump, jumpReg, branch, negative, reset, suspendEnable; //1-bit flags
-input wire [31:0] instruction; // instruction output
+output reg clk, writeEnable, jump, jumpReg, branch, reset, suspendEnable, //1-bit flags
+           jmp0_mux, jmp1_mux;  // jump data muxes
+input wire [31:0] instruction; // instruction output, immediate value to alu
 
 wire flags [6:0];
 
 //assign flags = {writeEnable, jump, jumpReg, branch, negative, reset, suspendEnable};
-parameter CLOCK_PERIOD = 2;
  
 
 // print out test results
   initial begin
-         $display("\tjumpAddr \tinstruction \twrInstrct \twrAddr \t(We.J.Jr.B.N.Z.R.Se) \tclk\ttime");
-         $monitor("\t%h \t%h  \t%h  \t%h \t%b%b%b%b%b%%bb%b  \t\t%b\t%g",
-                        jumpRegAddr,
+         $display(" fwd0     fwd1      fr0     fr1      jad \tinstr     wrinstr  wrA\tWe.J.Jr.B.R.Se.j0.j1\tclk\ttime");
+         $monitor(" %h %h %h %h %h\t%h  %h  %h\t%b  %b %b  %b %b %b  %b  %b  \t%b  \t%g",
+                        fwd_data0,
+                        fwd_data1,
+                        fr_read0,
+                        fr_read1,
+                        jump_address,
                         instruction,       
                         writeInstruction,   
                         writeAddress, 
                         writeEnable,      
                         jump,            
                         jumpReg,         
-                        branch,            
-                        negative,
-                        zero,
+                        branch,
                         reset,            
                         suspendEnable,
+                        jmp0_mux,
+                        jmp1_mux,
                         clk,
-                        $time   );
+                        $time   
+                 );
    end
 
    
@@ -110,89 +138,91 @@ parameter CLOCK_PERIOD = 2;
    integer j;
 
    initial begin
-   
+
       // Initialize PC
       clk = 1'b1;
       reset = 1'b1;
       writeEnable = 1'b0;      
       jump = 1'b0;            
       jumpReg = 1'b0;         
-      branch = 1'b0;            
-      negative = 1'b0;
-      zero = 1'b0;       
-      reset <= 1;      
-      suspendEnable <= 1;
-      reset <= 1; #delay;
-      reset <= 0; #delay;
-      reset <= 1; #delay;
-      
+      branch = 1'b0;
+      jmp0_mux = 1'b0;
+      jmp1_mux = 1'b0;
+      reset = 1;      
+      suspendEnable = 1;
+      reset = 1; #delay;
+      reset = 0; #delay;
+      reset = 1; #delay;
+
       // Write Instructions to Memory
-      writeEnable <= 1;
-      writeAddress <= 7'h0;
-      writeInstruction <= 32'h108;
-      clk <= ~clk; #delay;
-      clk <= ~clk; #delay;
+      writeEnable = 1;
+      writeAddress = 7'h0;
+      writeInstruction = 32'h108;
+      clk = ~clk; #delay;
+      clk = ~clk; #delay;
       for (i = 1; i < 128; i++) begin
-         writeInstruction <= writeInstruction - 32'b1;
-         writeAddress <= writeAddress + 7'b1;
-         clk <= ~clk; #delay;
-         clk <= ~clk; #delay;
+         writeInstruction = writeInstruction - 32'b1;
+         writeAddress = writeAddress + 7'b1;
+         clk = ~clk; #delay;
+         clk = ~clk; #delay;
       end
-      clk <= ~clk; #delay;
-      clk <= ~clk; #delay;
-	  
-	  writeEnable <= 0;
-	  suspendEnable <= 0;
-      
-      //PC is active
-      // writeEnable <= 0;
-      // suspendEnable <= 0;
-      // for (i = 0; i < 128; i++) begin
-         // clk <= ~clk; #delay;
-         // clk <= ~clk; #delay;
-      // end
-	
-		jump <= 1; 
-		clk <= ~clk; #delay;clk <= ~clk; #delay;
-		
-		jump <= 0;
-		clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;
-      clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;
-      clk <= ~clk; #delay;clk <= ~clk; #delay;
-		
-		jump <= 1;
-		branch <= 1;
-		clk <= ~clk; #delay;clk <= ~clk; #delay;
-		
-		branch <= 0;
-      jump <= 0;
-		clk <= ~clk; #delay;clk <= ~clk; #delay;
-      
-      // branch greater than
-      branch <= 1;
-      jump <= 1;
-		clk <= ~clk; #delay;clk <= ~clk; #delay;
-      negative <= 1'b1; 
-		clk <= ~clk; #delay;clk <= ~clk; #delay;
-      branch <= 0;
-      jump <= 1'b0;
-      
-      
+      clk = ~clk; #delay;
+
+      writeEnable = 0;
+      suspendEnable = 0;
+
+      clk = ~clk; #delay;
+      clk = ~clk; #delay;
+
+      // jump test
+      jump = 1;
+      jump_address = instruction[25:0];  // jump to destination in last instr
+      clk = ~clk; #delay;clk <= ~clk; #delay;
+      jump = 0;
+      clk = ~clk; #delay;clk = ~clk; #delay;clk = ~clk; #delay;clk = ~clk; #delay;
+      clk = ~clk; #delay;clk = ~clk; #delay;clk = ~clk; #delay;clk = ~clk; #delay;
+      clk = ~clk; #delay;clk = ~clk; #delay;
+
+      // branch greater than test
+      jump_address = instruction[25:0];
+      fr_read0 = 32;
+      fr_read1 = 24;
+      branch = 1;
+      jump = 1;
+      clk = ~clk; #delay;clk = ~clk; #delay;
+      fr_read1 = 44;
+      clk = ~clk; #delay;clk = ~clk; #delay;
+      fr_read1 = 14;
+      jump_address = instruction[25:0];
+      clk = ~clk; #delay;clk = ~clk; #delay;
+      branch = 0;
+      jump = 1'b0;
+      // forwarding
+      fwd_data0 = 22;
+      fwd_data1 = 33;
+      clk = ~clk; #delay;clk = ~clk; #delay;
+      fwd_data0 = 55;
+      clk = ~clk; #delay;clk = ~clk; #delay;
+      jmp0_mux = 1'b1;
+      jmp1_mux = 1'b1;
+      jump = 1;
+      branch = 1;
+      clk = ~clk; #delay;clk = ~clk; #delay;
+      jump = 0;
+      branch = 0;
+
       // jump reg
-      jumpRegAddr <= 32'h1F;
-		clk <= ~clk; #delay;clk <= ~clk; #delay;
-      jump <= 1'b1;
-      jumpReg <= 1'b1;
-		clk <= ~clk; #delay;clk <= ~clk; #delay;
-      jumpReg <= 1'b0;
-      jump <= 1'b0;
-      
-      
-		clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;
-		clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;clk <= ~clk; #delay;
-   
-   $finish;
-   end
+      clk = ~clk; #delay;clk = ~clk; #delay;
+      jump = 1'b1;
+      jumpReg = 1'b1;
+      clk = ~clk; #delay;clk = ~clk; #delay;
+      jumpReg = 1'b0;
+      jump = 1'b0;
+      clk = ~clk; #delay;clk = ~clk; #delay;clk = ~clk; #delay;clk = ~clk; #delay;
+      clk = ~clk; #delay;clk = ~clk; #delay;clk = ~clk; #delay;clk = ~clk; #delay;
+
+      $finish;
+      end
    
  endmodule
 
