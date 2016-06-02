@@ -95,7 +95,7 @@ output reg [31:0] writeInstruction, //data inputs
                   fr_read0, fr_read1,  // used for calc branch and jumpreg
                   fwd_data0, fwd_data1;  // forwarded data fr_data
 output reg [25:0] jump_address;
-                  output reg [6:0] writeAddress;
+output reg [6:0] writeAddress;
 output reg clk, writeEnable, jump, jumpReg, branch, reset, suspendEnable, //1-bit flags
            jmp0_mux, jmp1_mux;  // jump data muxes
 input wire [31:0] instruction; // instruction output, immediate value to alu
