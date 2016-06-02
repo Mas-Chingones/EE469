@@ -6,17 +6,47 @@
 // Summary:	A test bench module
 module alu_tb;
    wire [31:0] fr_read0, fr_read1,  // file register read data
-                     immediate;  // immediate value
-	wire [6:0] control;  // determines operation performed
-   wire alu_source;  // ALU operand1 Data alu_source
+                     immediate,  // immediate value
+                     forward0, forward1;  // data forwarded to alu mux 0 & 1
+	wire [5:0] control;  // determines operation performed
+   wire alu1_src, alu0_fwd;  // alu op1 source, alu op0 forwarded, alu op1 forwarded
 	wire [31:0] result;  // result of operation
 	wire Z, V, C, N;  // status flags after operation
 	
 	// dut
-	alu dut(fr_read0, fr_read1, immediate, control, alu_source, result, Z, V, C, N);
+	alu dut(fr_read0, 
+         fr_read1, 
+         immediate, 
+         forward0, 
+         forward1, 
+         control, 
+         alu1_src,
+         alu0_fwd,
+         alu1_fwd, 
+         result, 
+         Z, 
+         V, 
+         C, 
+         N
+   );
 	
 	// tester
-	aluTester tester(fr_read0, fr_read1, immediate, control, alu_source, result, Z, V, C, N);
+	aluTester tester(
+         fr_read0, 
+         fr_read1, 
+         immediate, 
+         forward0, 
+         forward1, 
+         control, 
+         alu1_src,
+         alu0_fwd,
+         alu1_fwd, 
+         result, 
+         Z, 
+         V, 
+         C, 
+         N
+   );
 
 	// File for gtkwave
 	initial begin
@@ -31,11 +61,28 @@ endmodule
 // Author: Adolfo Pineda
 // A testing module
 
-module aluTester(fr_read0, fr_read1, immediate, control, alu_source, result, Z, V, C, N);
+module aluTester(
+         fr_read0, 
+         fr_read1, 
+         immediate, 
+         forward0, 
+         forward1, 
+         control, 
+         alu1_src,
+         alu0_fwd,
+         alu1_fwd, 
+         result, 
+         Z, 
+         V, 
+         C, 
+         N
+   );
+	// I/O
 	output reg [31:0] fr_read0, fr_read1,  // file register read data
-                     immediate;  // immediate value
-	output reg [6:0] control;  // determines operation performed
-   output reg alu_source;  // ALU operand1 Data alu_source
+                     immediate,  // immediate value
+                     forward0, forward1;  // data forwarded to alu mux 0 & 1
+	output reg [5:0] control;  // determines operation performed
+   output reg alu1_src, alu0_fwd, alu1_fwd;  // alu op1 source, alu op0 forwarded, alu op1 forwar
 	input wire [31:0] result;  // result of operation
 	input wire Z, V, C, N;  // status flags after operation
 	
@@ -53,13 +100,17 @@ module aluTester(fr_read0, fr_read1, immediate, control, alu_source, result, Z, 
 	
 	// Display variables 
 	initial begin
-		$display("\t\tfr0\t\tfr1\t\timm\t control\tsor\t     result\t Z V C N\t time");
-		$monitor("\t %d\t %d\t %d\t %b\t %b\t %d\t %b %b %b %b\t %g", 
+		$display("\tfr0\t\tfr1\t   imm\t      FD0\t FD1\tcontrol  sor F0 F1\t res\t Z V C N\t time");
+		$monitor(" %d\t %d %d %d %d\t %b  %b   %b  %b %d\t %b %b %b %b\t %g", 
 												fr_read0, 
 												fr_read1,
                                     immediate,
+                                    forward0,
+                                    forward1,
 												control,
-                                    alu_source,
+                                    alu1_src,
+                                    alu0_fwd,
+                                    alu1_fwd,
 												result, 
 												Z, 
 												V, 
@@ -71,113 +122,74 @@ module aluTester(fr_read0, fr_read1, immediate, control, alu_source, result, Z, 
 	initial begin
 		#delay; #delay; #delay;
 		
-      alu_source <= 0;
+      alu1_src <= 0;
+      alu0_fwd <= 0;
+      alu1_fwd <= 0;
 		control <= SUB;
 		immediate <= 32'h14;
       
+      // Subtraction
 		 #delay;
 		fr_read0 <= 32'd0;
 		fr_read1 <= 32'd0;
-		 #delay;
+		#delay;
+      alu1_src <= 1;
 		fr_read0 <= 32'd500;
-		fr_read1 <= 32'd500;
-		 #delay;
-		fr_read0 <= 32'd500000000;
-		fr_read1 <= 32'd500000000;
-		 #delay; #delay;
+		immediate <= 32'd500;
+      forward0 <= 32'd500000000;
+      forward1 <= 32'd300000000;
+		#delay;
+      alu1_src <=0;
+      alu0_fwd <=1;
+		fr_read0 <= 32'd30000000;
+		fr_read1 <= 32'd30000000;
+		#delay; #delay;
+      alu1_fwd <= 1;
 		fr_read0 <= 32'hFFFFFFE6;
 		fr_read1 <= 32'd10;
 
+      // Addition
       control <= ADD;
 		#delay;
 		fr_read0 <= 32'hFFFFFFFF;
 		fr_read1 <= 32'h00000001;
-		 #delay;
+		#delay;
+      alu0_fwd <= 0;
 		fr_read0 <= 32'd10;
 		fr_read1 <= 32'hFFFFFFFA;
-		 #delay;
+		#delay;
+      alu1_fwd <= 0;
+      alu1_src <= 1;
 		fr_read0 <= 32'd5;
 		fr_read1 <= 32'hFFFFFFF6;
 
 		#delay;
+      alu1_src = 0;
 		fr_read0 <= 32'd2147483647;
 		fr_read1 <= 32'd2147483647;
-		 #delay;#delay;
+		#delay;#delay;
 		fr_read0 <= 32'd3147483647;
 		fr_read1 <= 32'd3147483647;
-		 #delay;#delay;
+		#delay;#delay;
 		fr_read0 <= 32'hFFFFF000;
 		fr_read1 <= 32'h80000000;
-		 #delay;#delay;
+		#delay;#delay;
 		fr_read0 <= 32'd2147483647;
 		fr_read1 <= 32'd2147483647;
-		 #delay;#delay;
+		#delay;#delay;
 		fr_read0 <= 32'h80000000;
 		fr_read1 <= 32'h00000001;
-		 #delay;#delay;
+		#delay;#delay;
 		fr_read0 <= 32'hC0000000;
 		fr_read1 <= 32'hC0000000;
-		 #delay;#delay;
+		#delay;#delay;
 		fr_read0 <= 32'h80000000;
 		fr_read1 <= 32'h80000000;
-      alu_source <= 1'b1;
+      alu1_src <= 1'b1;
       control <=ADD;
 		#delay;#delay;
 		fr_read1 <= 32'hFFFFFFF6;
 		fr_read0 <= 32'hFFFFFFF6;
-		 #delay; #delay; #delay;
+		#delay; #delay; #delay;
 	end
-
 endmodule
-	
-	/*initial // Response
-	begin
-
-	// Displays the labels and data
-	$display("\tcontrol \ta \t  b \tresult \tTime");
-	$monitor("\t%b \t%h \t%h \t%h \t%g",
-		control, fr_read0, fr_read1, result, $time);
-	end
-
-	
-	
-	initial // Stimulus
-	begin
-		#stimdelay; 
-		#stimdelay; control <= 3'b000;
-		#stimdelay;
-		#stimdelay; 
-		#stimdelay; control <= 3'b001; // add
-		#stimdelay;
-		#stimdelay;
-		#stimdelay;
-		#stimdelay;
-		#stimdelay;
-		#stimdelay; fr_read0 <= {29'b0, 3'b111}; fr_read1 <= {29'b0, 3'b011}; 
-		#stimdelay;
-		#stimdelay;
-		#stimdelay;
-		#stimdelay; control <= 3'b010; // subtract
-		#stimdelay;
-		#stimdelay;
-		#stimdelay; control <= 3'b011; // and
-		#stimdelay;
-		#stimdelay; control <= 3'b100; // or
-		#stimdelay;
-		#stimdelay; control <= 3'b101; // xor
-		#stimdelay;
-							//slt 
-		#stimdelay; control <= 3'b110; fr_read0 <= 5; fr_read1 <= 7;
-		#stimdelay;
-							//sll
-		#stimdelay; control <= 3'b111; fr_read0 <= 1; fr_read1 <= 7;
-		#stimdelay;
-		#stimdelay; control <= 3'b010; fr_read0 <= 100; fr_read1 <= 32; // subtract
-		#stimdelay;
-		#stimdelay;
-		#stimdelay;
-
-		$finish; // finish simulation
-	end
-
-endmodule*/
