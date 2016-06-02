@@ -3,8 +3,8 @@ Author: David Dolengewicz
 Summary: Test the operation of the Program_Control module
 */
 
-`include "../Instruction_Memory/synch_register_32bit/d_flipflop/d_flipflop.v"
-`include "../Instruction_Memory/synch_register_32bit/synch_register_32bit.v"
+`include "../shared_modules/synch_register_32bit/d_flipflop/d_flipflop.v"
+`include "../shared_modules/synch_register_32bit/synch_register_32bit.v"
 `include "../shared_modules/mux_2to1/mux_2to1.v"
 `include "../Instruction_Memory/decoder_7bit/decoder_7bit.v"
 `include "../Instruction_Memory/instruction_memory.v"
@@ -167,10 +167,8 @@ wire flags [6:0];
          clk = ~clk; #delay;
       end
       clk = ~clk; #delay;
-
       writeEnable = 0;
       suspendEnable = 0;
-
       clk = ~clk; #delay;
       clk = ~clk; #delay;
 

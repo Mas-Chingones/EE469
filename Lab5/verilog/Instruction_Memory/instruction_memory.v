@@ -1,7 +1,7 @@
 
 /* Module Dependencies *//*
-`include "synch_register_32bit/d_flipflop/d_flipflop.v"
-`include "synch_register_32bit/synch_register_32bit.v"
+`include "../shared_modules/synch_register_32bit/d_flipflop/d_flipflop.v"
+`include "../shared_modules/synch_register_32bit/synch_register_32bit.v"
 `include "../shared_modules/mux_2to1/mux_2to1.v"
 `include "decoder_7bit/decoder_7bit.v"
 */

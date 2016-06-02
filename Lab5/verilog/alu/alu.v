@@ -6,13 +6,29 @@ functions selected by control code and produces status flags for
 zero result (Z), overflow (V), carry out (C), and negative result (N).
 */
 
-module alu(fr_read0, fr_read1, immediate, control, alu_source, result, Z, V, C, N);
+module alu(
+         fr_read0, 
+         fr_read1, 
+         immediate, 
+         forward0, 
+         forward1, 
+         control, 
+         alu1_src,
+         alu0_fwd,
+         alu1_fwd, 
+         result, 
+         Z, 
+         V, 
+         C, 
+         N
+      );
 
 	// I/O
 	input wire [31:0] fr_read0, fr_read1,  // file register read data
-                     immediate;  // immediate value
+                     immediate,  // immediate value
+                     forward0, forward1;  // data forwarded to alu mux 0 & 1
 	input wire [5:0] control;  // determines operation performed
-   input wire alu_source;  // ALU operand1 Data alu_source
+   input wire alu1_src, alu0_fwd, alu1_fwd;  // alu op1 source, alu op0 forwarded, alu op1 forwarded
 	output reg [31:0] result;  // result of operation
 	output reg Z, V, C, N;  // status flags after operation
 	
@@ -30,8 +46,8 @@ module alu(fr_read0, fr_read1, immediate, control, alu_source, result, Z, V, C, 
 	reg [31:0] twos_comp_op1, result_manip;
 
    // Determine operands
-   assign operand0 = fr_read0;
-   assign operand1 = alu_source ? immediate : fr_read1;
+   assign operand0 = alu0_fwd ? forward0 : fr_read0;
+   assign operand1 = alu1_src ? immediate : (alu1_fwd ? forward1 : fr_read1);
 	
 	// ALU operation control codes
 	parameter NOP = 6'd0;
