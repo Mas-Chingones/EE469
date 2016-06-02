@@ -1,7 +1,7 @@
 
 // Module Dependencies:
-`include "../shared_modules/register_32bit/d_flipflop/d_flipflop.v"
-`include "../shared_modulesregister_32bit/register_32bit.v"
+`include "../shared_modules/synch_register_32bit/d_flipflop/d_flipflop.v"
+`include "../shared_modules/synch_register_32bit/synch_register_32bit.v"
 `include "../shared_modules/mux_2to1/mux_2to1.v"
 `include "decoder_5bit/decoder_5bit.v"
 `include "file_register.v"
@@ -26,34 +26,34 @@ module file_register_testbench();
 
    // DUT and test stimulus
    file_register dut(
-                     clk, 
-                     we, 
-                     rst_all,
-                     reg_dst,
-                     mem_to_reg,
-                     read0_addr,
-                     read1_addr,
-                     imm_addr,
-                     reg_addr,
-                     mem_data,
-                     alu_data,
-                     read0_data, 
-                     read1_data
+      clk,
+      we, 
+      rst_all,
+      reg_dst,
+      mem_to_reg,
+      read0_addr,
+      read1_addr,
+      imm_addr,
+      reg_addr,
+      mem_data,
+      alu_data,
+      read0_data, 
+      read1_data
    );
    file_register_tester tester(
-                                 clk, 
-                                 we, 
-                                 rst_all,
-                                 reg_dst,
-                                 mem_to_reg,
-                                 read0_addr,
-                                 read1_addr,
-                                 imm_addr,
-                                 reg_addr,
-                                 mem_data,
-                                 alu_data,
-                                 read0_data, 
-                                 read1_data
+      clk,
+      we, 
+      rst_all,
+      reg_dst,
+      mem_to_reg,
+      read0_addr,
+      read1_addr,
+      imm_addr,
+      reg_addr,
+      mem_data,
+      alu_data,
+      read0_data, 
+      read1_data
    );
    
    // Store waveform data

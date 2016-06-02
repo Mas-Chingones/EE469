@@ -4,11 +4,11 @@ Program_Control is an integrated instruction memory and program counter
 */
 
 /* Module dependencies
-   `include "../Instruction_Memory/register_32bit/d_flipflop/d_flipflop.v"
-   `include "../Instruction_Memory/synch_register_32bit/synch_register_32bit.v"
-   `include "../shared_modules/mux_2to1/mux_2to1.v"
-   `include "../Instruction_Memory/decoder_7bit/decoder_7bit.v"
-   `include "../Instruction_Memory/instruction_memory.v"
+`include "../shared_modules/synch_register_32bit/d_flipflop/d_flipflop.v"
+`include "../shared_modules/synch_register_32bit/synch_register_32bit.v"
+`include "../shared_modules/mux_2to1/mux_2to1.v"
+`include "../Instruction_Memory/decoder_7bit/decoder_7bit.v"
+`include "../Instruction_Memory/instruction_memory.v"
 */ 
 
 module Program_Control( 

@@ -1,0 +1,132 @@
+$date
+	Wed Jun 01 21:51:47 2016
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module file_register_testbench $end
+$scope module dut $end
+$var wire 1 ! rd0_data_src $end
+$var wire 1 " rd1_data_src $end
+$var wire 32 # write_data [31:0] $end
+$var wire 5 $ write_addr [4:0] $end
+$var wire 32 % wreg_sel [31:0] $end
+$var wire 32 & we_sel [31:0] $end
+$var wire 1 ' we $end
+$var wire 1 ( rst_all $end
+$var wire 1 ) reg_dst $end
+$var wire 5 * reg_addr [4:0] $end
+$var wire 32 + read1_data [31:0] $end
+$var wire 5 , read1_addr [4:0] $end
+$var wire 32 - read0_data [31:0] $end
+$var wire 5 . read0_addr [4:0] $end
+$var wire 1 / mem_to_reg $end
+$var wire 32 0 mem_data [31:0] $end
+$var wire 5 1 imm_addr [4:0] $end
+$var wire 1 2 clk $end
+$var wire 32 3 alu_data [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 3
+12
+b0 1
+b0 0
+0/
+b0 .
+bx -
+b0 ,
+bx +
+b0 *
+0)
+1(
+0'
+b0 &
+b1 %
+b0 $
+b0 #
+0"
+0!
+$end
+#5
+b0 -
+b0 +
+0(
+#10
+1(
+#20
+02
+#25
+b1 .
+12
+#27
+b10 %
+b1011010110111111010110011101101 -
+1!
+b1011010110111111010110011101101 #
+b1 $
+b10 &
+0"
+1'
+b1011010110111111010110011101101 3
+b1 1
+#30
+02
+#35
+12
+#40
+b1 %
+b0 #
+b0 $
+b0 &
+0!
+02
+b0 3
+1)
+0'
+#45
+b0 -
+b10101 ,
+12
+b0 .
+#47
+b11101010011101110000101001010111 +
+b1000000000000000000000 %
+1"
+b11101010011101110000101001010111 #
+b10101 $
+b1000000000000000000000 &
+0!
+1'
+b11101010011101110000101001010111 0
+b10101 *
+1/
+#50
+02
+#55
+12
+#60
+b1011010110111111010110011101101 -
+b0 #
+b0 +
+b0 &
+0"
+02
+b1 .
+b0 0
+0'
+b0 ,
+#65
+12
+#70
+b11101010011101110000101001010111 +
+02
+b10101 ,
+#75
+12
+#80
