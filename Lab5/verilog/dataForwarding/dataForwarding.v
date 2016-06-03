@@ -3,7 +3,49 @@ Author David Dolengewicz, Ian Gilman
 	dataForwarding is handles the logic, datapath and control for the dataforwarding/hazard control
 */
 
-
+/*/// DEFINITION OF TERMS  /////
+-------------------------------------------------------------------------------------
+||  TERM           ||  Reference
+-------------------------------------------------------------------------------------
+||  IFID           ||  Refers to the data buffer between the Instruction Fetch and the 
+||                 ||  Instruction Decode pipelining stages
+-------------------------------------------------------------------------------------
+||  IDEX           ||  Refers to the data buffer between the Instruction Decode and the 
+||                 ||  Execution pipelining stages
+-------------------------------------------------------------------------------------
+||  EXMEM          ||  Refers to the data buffer between the Execution and the 
+||                 ||  Memory pipelinging stages
+--------------------------------------------------------------------------------------
+||  MEMWB          ||  Refers to the data bffer between the Memory and the
+||                 ||  Write Back pipelining stages
+--------------------------------------------------------------------------------------
+||  op             ||  The op-code part of an instruction: instr[31:26] (6-bits)
+---------------------------------------------------------------------------------------
+||  rs             ||  The 1st FR register address in an instruction: instr[25:21] (5-bits)
+||                 ||  this indicates a register that is being read
+--------------------------------------------------------------------------------------
+||  rt             ||  The 2nd FR register address in an instruction: instr[20:16] (5-bits)
+||                 ||  this indicates the register that is written to for immediate instructions
+||                 ||  or a register that is read for register instructions
+---------------------------------------------------------------------------------------
+||  rd             ||  The 2nd FR register address in an instruction (register only): instr[15:11] (5-bits)
+||                 ||  this indicates the register that is written to for register instructions
+||                 ||  it is invalid for immediate instructions
+---------------------------------------------------------------------------------------
+||  funct          ||  The part of the instruction that indicates the ALU function to perform:
+||                 ||      instr[5:0] (6-bit)
+---------------------------------------------------------------------------------------              
+||  alui_wr        ||  Op-codes for instructions that write data to FR from the ALU:
+||                 ||      ADDI, SLTI, ANDI, ORI, XORI, SLLI
+-------------------------------------------------------------------------------------
+||  alui_rd         ||  Op-codes for instructions that read data to ALU from the FR:
+||                 ||      ADDI, SLTI, ANDI, ORI, XORI, SLLI, SW, LW
+-------------------------------------------------------------------------------------
+||  alur           ||  ALU funct code for register instructions (Op-code = 0) that read
+||                 ||  from the FR to the ALU and also write from the ALU to the FR:
+||	               ||      ADD, SUB, SLT, AND, OR, XOR, SLLV
+-------------------------------------------------------------------------------------
+*/
 
 module dataForwarding(		instrIFID,	//inputs
 							instrIDEX,
@@ -98,6 +140,28 @@ wire funct_IDEX_is_alur;
 wire funct_EXMEM_is_alur;
 wire funct_MEMWB_is_alur;
 
+wire	[4:0]	op_IFID,
+				op_IDEX,
+				op_EXMEM,
+				op_MEMWB,	
+                rs_IFID,
+				rs_IDEX,
+				rs_EXMEM,
+				rs_MEMWB,
+                rt_IFID, 
+				rt_IDEX,
+				rt_EXMEM,
+				rt_MEMWB,
+                rd_IFID,
+				rd_IDEX,
+				rd_EXMEM,
+				rd_MEMWB;
+				
+wire [5:0]      funct_IFID, 	 			 		
+                funct_IDEX,	
+                funct_EXMEM, 	
+                funct_MEMWB; 	
+
 //assignation 
 assign op_IFID = 		instrIFID[31:26];
 assign rs_IFID = 		instrIFID[25:21];
@@ -176,14 +240,14 @@ assign op_IDEX_is_alui_wr = ( 		(op_IFID == ADDI) ||
 									(op_IDEX == XORI) ||
 									(op_IDEX == SLLI) );
 									
-assign op_EXMEM_is_alui_wr = ( 		(op_IFID == ADDI)  || 
+assign op_EXMEM_is_alui_wr = ( 		(op_EXMEM == ADDI)  || 
 									(op_EXMEM == SLTI) ||
 									(op_EXMEM == ORI)  ||
 									(op_EXMEM == ANDI) ||
 									(op_EXMEM == XORI) ||
 									(op_EXMEM == SLLI) );
 									
-assign op_MEMWB_is_alui_wr = ( 		(op_IFID == ADDI)  || 
+assign op_MEMWB_is_alui_wr = ( 		(op_EXMEM == ADDI)  || 
 									(op_MEMWB == SLTI) ||
 									(op_MEMWB == ORI)  ||
 									(op_MEMWB == ANDI) ||
@@ -249,17 +313,17 @@ assign funct_EXMEM_is_alur = (		(funct_EXMEM == ADD)	||
 									(funct_EXMEM == SLLV)	);
 									
 assign funct_MEMWB_is_alur = (		(funct_MEMWB == ADD)	||
-										(funct_MEMWB == SUB)	||
-										(funct_MEMWB == SLT)	||
-										(funct_MEMWB == AND)	||
-										(funct_MEMWB == OR)		||
-										(funct_MEMWB == XOR)	||
-										(funct_MEMWB == SLLV)	);
+									(funct_MEMWB == SUB)	||
+									(funct_MEMWB == SLT)	||
+									(funct_MEMWB == AND)	||
+									(funct_MEMWB == OR)		||
+									(funct_MEMWB == XOR)	||
+									(funct_MEMWB == SLLV)	);
 										
 										
 										
 always @(*) begin
-	// forwarding to the ALU
+	// BLOCK 1 forwarding to the ALU
 	if(op_IDEX_is_alui_rd) begin 
 		
 		alu1 = 0;
@@ -282,8 +346,10 @@ always @(*) begin
 		aluD1 = aluD1; 
 
 	end
+	
+	//BLOCK 2
 	else if(op_IDEX == 0 && funct_IDEX_is_alur) begin //
-		if(op_EXMEM_is_alui_wr) begin
+		if(op_EXMEM_is_alui_wr) begin				//SUB-BLOCK A
 			if(op_MEMWB_is_alui_wr || (op_MEMWB == LW)) begin
 				alu0 = (rt_EXMEM == rs_IDEX) || (rt_MEMWB == rs_IDEX);
 				alu1 = (rt_EXMEM == rt_IDEX) || (rt_MEMWB == rt_IDEX);
@@ -307,7 +373,7 @@ always @(*) begin
 			else
 				aluD1 = aluMEMWB_Data;
 		end
-		else if(op_EXMEM == 0 && funct_EXMEM_is_alur) begin	//107
+		else if(op_EXMEM == 0 && funct_EXMEM_is_alur) begin	//SUB-BLOCK B
 			if(op_MEMWB_is_alui_wr || op_MEMWB == LW) begin
 				alu0 = (rd_EXMEM == rs_IDEX) || (rt_MEMWB == rs_IDEX);
 				alu1 = (rd_EXMEM == rt_IDEX) || (rt_MEMWB == rt_IDEX);			
@@ -346,6 +412,7 @@ signals:
 */
 // ex mem mux
 
+	//BLOCK 3
 	if(op_IDEX == SW) begin	//144
 		if((op_EXMEM_is_alui_wr) && (rt_EXMEM == rt_IDEX))
 			exmem = 1;
@@ -356,6 +423,9 @@ signals:
 		else
 			exmem = rd_MEMWB == rt_IDEX;
 	end	
+	
+	
+		//BLOCK 4
 	// ex mem mux data
 	if(op_IDEX == SW) begin //155
 		if((op_EXMEM_is_alui_wr) && (rt_EXMEM == rt_IDEX))
@@ -369,7 +439,9 @@ signals:
 		else
 			exmemD = MEMWB_MemData;
 	end
+	
 	// mem mem mux and data
+	//BLOCK 5
 	if(op_EXMEM == SW) begin
 		memMemD = MEMWB_MemData;
 		if(op_MEMWB == LW)
@@ -384,18 +456,20 @@ signals:
    jmp1_mux,   jmpD1
 */
 // jmp mux	
-	if((op_IFID == 0 && funct_IFID == JR) || op_IFID == BGT) begin //183
+
+		//BLOCK 6
+	if((op_IFID == 0 && funct_IFID == JUMP) || op_IFID == BGTI) begin //183
 		if(op_EXMEM_is_alui_wr) begin
 			jmp0 = rt_EXMEM == rs_IFID;
-			jpm1 = rt_EXMEM == rt_IFID;
+			jmp1 = rt_EXMEM == rt_IFID;
 		end
 		else if(op_EXMEM == 0 && funct_EXMEM_is_alur) begin
 			jmp0 = rd_EXMEM == rs_IFID;
-			jpm1 = rd_EXMEM == rt_IFID;
+			jmp1 = rd_EXMEM == rt_IFID;
 		end
 	end
 // jmp mux data	
-	if((op_IFID == 0 && funct_IFID == jr) || op_IFID == BGT) begin
+	if((op_IFID == 0 && funct_IFID == JUMP) || op_IFID == BGTI) begin
 		if(op_EXMEM_is_alui_wr || (op_EXMEM == 0 && funct_EXMEM_is_alur)) begin
 			jmp0 = aluEXMEM_Data;
 			jmp1 = aluEXMEM_Data;
@@ -411,6 +485,8 @@ signals:
    guess_brnch (currently not implemented)
 */
 // stall
+
+	//BLOCK 7
 	if(op_EXMEM == LW) begin //// stall for forwarding from memory to alu
 		if(op_IDEX_is_alui_rd)
 			stall = rt_EXMEM == rs_IDEX;
@@ -425,7 +501,7 @@ signals:
 		else if(op_EXMEM == LW)
 			stall = rt_EXMEM == rs_IFID;
 	end
-	else if(op_IFID == BGT) begin // stall for data from alu / memory to bgt
+	else if(op_IFID == BGTI) begin // stall for data from alu / memory to bgt
 		if(op_IDEX_is_alui_wr || op_IDEX == LW)
 			stall = (rt_IDEX == rs_IFID) || (rt_IDEX == rt_IFID);
 		else if(op_IDEX == 0 && funct_IDEX_is_alur)

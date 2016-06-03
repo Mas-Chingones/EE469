@@ -254,11 +254,8 @@ initial begin
 		#delay; #delay;
 		#delay; #delay; #delay; #delay; 
 		
-	{op_IFID, rs_IFID, rt_IFID, rd_IFID, funct_IFID} = 27'b0;
-	{op_IDEX, rs_IDEX, rt_IDEX, rd_IDEX, funct_IDEX} = 27'b0;
-	{op_IFID, rs_EXMEM, rt_EXMEM, rd_EXMEM, funct_EXMEM} = 27'b0;
-	{op_MEMWB, rs_MEMWB, rt_MEMWB, rd_MEMWB, funct_MEMWB} = 27'b0;
-	funct_IDEX = 
+		op_EXMEM = 6'b0;
+		funct_EXMEM = 6'b111111;
 
 		//Case 3:   		op_MEMWB_is_alui_wr || op_MEMWB == LW
 		//result 3: 		alu0 = (rd_MEMWB == rs_IDEX);

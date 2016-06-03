@@ -116,12 +116,11 @@ module df_tester(	instrIFID,	//inputs (tester outputs)
 					exmem,
 					mem_mem		);
 								
-output wire [31:0] 	instrIFID,	//outputs
+output reg [31:0] 	instrIFID,	//outputs
 					instrIDEX,
 					instrEXMEM,
-					instrMEMWB;
-					
-output reg [31:0]	aluEXMEM_Data,
+					instrMEMWB,
+					aluEXMEM_Data,
 					aluMEMWB_Data,
 					EXMEM_Data2Mem,
 					MEMWB_MemData;
@@ -141,34 +140,29 @@ input wire			jmp0,		//inputs
 					alu1,
 					exmem,
 					mem_mem;
-
-reg	[4:0]		op_IFID,
-				op_IDEX,
-				op_EXMEM,
-				op_MEMWB,	
-                rs_IFID,
-				rs_IDEX,
-				rs_EXMEM,
-				rs_MEMWB,
-                rt_IFID, 
-				rt_IDEX,
-				rt_EXMEM,
-				rt_MEMWB,
-                rd_IFID,
-				rd_IDEX,
-				rd_EXMEM,
-				rd_MEMWB;
-				
-reg [5:0]       funct_IFID, 	 			 		
-                funct_IDEX,	
-                funct_EXMEM, 	
-                funct_MEMWB; 	
-
-assign	instrIFID	=	{op_IFID, rs_IFID, rt_IFID, rd_IFID, 5'b11111, funct_IFID};
-assign  instrIDEX	=	{op_IDEX, rs_IDEX, rt_IDEX, rd_IDEX, 5'b11111, funct_IDEX};
-assign  instrEXMEM	=	{op_EXMEM, rs_EXMEM, rt_EXMEM, rd_EXMEM, 5'b11111, funct_EXMEM};
-assign  instrMEMWB	=	{op_MEMWB, rs_MEMWB, rt_MEMWB, rd_MEMWB, 5'b11111, funct_MEMWB};
-				
+/*
+reg				op_IFID, 		
+                    rs_IFID, 		
+                    rt_IFID, 		
+                    rd_IFID, 		
+                    funct_IFID, 	 			
+                    op_IDEX, 		
+                    rs_IDEX, 		
+                    rt_IDEX, 		
+                    rd_IDEX, 		
+                    funct_IDEX, 				
+                    op_EXMEM, 	
+                    rs_EXMEM, 	
+                    rt_EXMEM, 	
+                    rd_EXMEM, 	
+                    funct_EXMEM, 				
+                    op_MEMWB, 	
+                    rs_MEMWB, 	
+                    rt_MEMWB, 	
+                    rd_MEMWB, 	
+                    funct_MEMWB; 	
+*/
+					
 //parameters
 // Instruction OP Codes
 parameter REG = 6'd0;
@@ -194,8 +188,31 @@ parameter OR = 6'd37;
 parameter XOR = 6'd38;
 parameter SLT = 6'd42;					
 					
+//assignation 
+assign op_IFID 		= 	instrIFID[31:26];
+assign rs_IFID 		= 	instrIFID[25:21];
+assign rt_IFID 		= 	instrIFID[20:16];						
+assign rd_IFID 		= 	instrIFID[15:11];
+assign funct_IFID 	= 	instrIFID[5:0];								
+									
+assign op_IDEX 		= 	instrIDEX[31:26];
+assign rs_IDEX 		= 	instrIDEX[25:21];
+assign rt_IDEX 		= 	instrIDEX[20:16];						
+assign rd_IDEX 		= 	instrIDEX[15:11];
+assign funct_IDEX 	= 	instrIDEX[5:0];	
+								
+assign op_EXMEM 	= 	instrEXMEM[31:26];
+assign rs_EXMEM 	= 	instrEXMEM[25:21];
+assign rt_EXMEM 	= 	instrEXMEM[20:16];						
+assign rd_EXMEM 	= 	instrEXMEM[15:11];
+assign funct_EXMEM 	= 	instrEXMEM[5:0];									
+								
+assign op_MEMWB 	= 	instrMEMWB[31:26];
+assign rs_MEMWB 	= 	instrMEMWB[25:21];
+assign rt_MEMWB 	= 	instrMEMWB[20:16];						
+assign rd_MEMWB 	= 	instrMEMWB[15:11];
+assign funct_MEMWB 	= 	instrMEMWB[5:0];						
 					
-/*					
 initial begin
 	$display("\tIFID \tIDEX \tEXMEM \tMEMWB \talu0	\talu1	\ttime");
     $monitor("\t%b  \t%b  \t%b \t%b  \t%b	\t%b  \t%g",
@@ -207,169 +224,42 @@ initial begin
 											alu1,
 												$time   );
    end					
-*/					
-   parameter delay = 1;					
+					
+   parameter delay = 10;					
 					
 					
 	initial begin
 	
-	
-	//reset parameters
-	{op_IFID, rs_IFID, rt_IFID, rd_IFID, funct_IFID} = 27'b0;
-	{op_IDEX, rs_IDEX, rt_IDEX, rd_IDEX, funct_IDEX} = 27'b0;
-	{op_IFID, rs_EXMEM, rt_EXMEM, rd_EXMEM, funct_EXMEM} = 27'b0;
-	{op_MEMWB, rs_MEMWB, rt_MEMWB, rd_MEMWB, funct_MEMWB} = 27'b0;
-	
-	aluEXMEM_Data = 32'd0;
-	aluMEMWB_Data = 32'd1;
-	EXMEM_Data2Mem = 32'd3;
-	MEMWB_MemData = 32'd7;
-	
-	//BLOCK 1, op_IDEX_is_alui_rd = true
+	instrIFID = 32'b0;
+	instrIDEX = 32'b0;
+	instrEXMEM = 32'b0;
+	instrMEMWB = 32'b0;
+	aluEXMEM_Data = 32'b0;
+	aluMEMWB_Data = 32'b0;
+	EXMEM_Data2Mem = 32'b0;
+	MEMWB_MemData = 32'b0;
 	#delay; 
 	op_IDEX = ADDI;
-
 	
-		//Case 1, 			op_EXMEM_is_alui_wr
-		//result 1: 		alu0 = (rt_EXMEM == rs_IDEX);
-		#delay; #delay;	
-		op_EXMEM = ADDI;		
-		rt_EXMEM = 5'b10101; //true case
-		rs_IDEX =  5'b10101;
-		#delay; #delay;
-		rs_IDEX = 5'b0; 	//false case
-		#delay; #delay; 
-		#delay; #delay; #delay; #delay; 
-		
-		
-		//Case 2, 			op_EXMEM == 0 && funct_EXMEM_is_alur
-		//result 2: 		alu0 = (rd_EXMEM == rs_IDEX);
-		#delay; #delay;	
-		op_EXMEM = 6'b0;
-		funct_EXMEM = ADD;
-		rd_EXMEM = 5'b10101; //true case
-		rs_IDEX =  5'b10101;
-		#delay; #delay;
-		rs_IDEX = 5'b0; 	//false case
-		#delay; #delay;
-		#delay; #delay; #delay; #delay; 
-		
-	{op_IFID, rs_IFID, rt_IFID, rd_IFID, funct_IFID} = 27'b0;
-	{op_IDEX, rs_IDEX, rt_IDEX, rd_IDEX, funct_IDEX} = 27'b0;
-	{op_IFID, rs_EXMEM, rt_EXMEM, rd_EXMEM, funct_EXMEM} = 27'b0;
-	{op_MEMWB, rs_MEMWB, rt_MEMWB, rd_MEMWB, funct_MEMWB} = 27'b0;
-	funct_IDEX = 
-
-		//Case 3:   		op_MEMWB_is_alui_wr || op_MEMWB == LW
-		//result 3: 		alu0 = (rd_MEMWB == rs_IDEX);
-		#delay; #delay;	
-		op_MEMWB = ADDI;
-		rd_MEMWB = 5'b10101; //true case
-		rs_IDEX =  5'b10101;
-		#delay; #delay;
-		rs_IDEX = 5'b0; 	//false case
-		#delay; #delay;
-
-		op_MEMWB = LW;
-		rd_MEMWB = 5'b10101; //true case
-		rs_IDEX =  5'b10101;
-		#delay; #delay;
-		rs_IDEX = 5'b0; 	//false case
-		#delay; #delay;
-
-
-		//Case 4: 			else for above
-		//result  			alu0 = (rd_MEMWB == rs_IDEX);
-		#delay; #delay;	
-		op_MEMWB = 6'b0;
-		rd_MEMWB = 5'b10101; //true case
-		rs_IDEX =  5'b10101;
-		#delay; #delay;
-		rs_IDEX = 5'b0; 	//false case
-		#delay; #delay;
-
-
-		//Case 5: 			op_EXMEM_is_alui_wr || (op_EXMEM == 0 && funct_EXMEM_is_alur)
-		//result: 			aluD0 = aluEXMEM_Data;
-		#delay; #delay;	
-		op_EXMEM = ADDI;
-		
-	op_IDEX = 6'b1;	
-		
-
+	#delay; //Case 1, op_IDEX_is_alui_rd && op_EXMEM_is_alui_wr && rt_EXMEM == rs_IDEX ====> alu1 = 0, alu0 = 1;
+	rt_EXMEM = 5'b10101;
+	rs_IDEX =  5'b10101;
+	#delay; #delay;
+	rt_EXMEM = 5'b0;
+	rs_IDEX =  5'b0;
 	
-	{op_IFID, rs_IFID, rt_IFID, rd_IFID, funct_IFID} = 27'b0;
-	{op_IDEX, rs_IDEX, rt_IDEX, rd_IDEX, funct_IDEX} = 27'b0;
-	{op_IFID, rs_EXMEM, rt_EXMEM, rd_EXMEM, funct_EXMEM} = 27'b0;
-	{op_MEMWB, rs_MEMWB, rt_MEMWB, rd_MEMWB, funct_MEMWB} = 27'b0;
-
-	//BLOCK 2, !(op_IDEX_is_alui_rd) && op_IDEX == 0 && funct_IDEX_is_alur
+	#delay; #delay;	 //Case 1, op_IDEX_is_alui_rd && op_EXMEM ==0
+	op_EXMEM = 6'b0;
+	funct_EXMEM = ADD;
+	rd_EXMEM = 5'b10101;
+	rs_IDEX = 5'b10101;
+	#delay; #delay;
 	
-	
-		//SUB-BLOCK A, op_EXMEM_is_alui_wr
 
-		
-		
 
-			
 
-			
-			
-			
-			
-			
-			
-			
 	$finish;
 	end
 					
 					
-endmodule	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-				
+endmodule					

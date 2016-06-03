@@ -1,0 +1,217 @@
+$date
+	Thu Jun 02 18:34:53 2016
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module df_tb $end
+$scope module dut $end
+$var wire 1 ! funct_EXMEM_is_alur $end
+$var wire 1 " funct_IDEX_is_alur $end
+$var wire 1 # funct_IFID_is_alur $end
+$var wire 1 $ funct_MEMWB_is_alur $end
+$var wire 1 % op_EXMEM_is_alui_rd $end
+$var wire 1 & op_EXMEM_is_alui_wr $end
+$var wire 1 ' op_EXMEM_is_alur $end
+$var wire 1 ( op_IDEX_is_alui_rd $end
+$var wire 1 ) op_IDEX_is_alui_wr $end
+$var wire 1 * op_IDEX_is_alur $end
+$var wire 1 + op_IFID_is_alui_rd $end
+$var wire 1 , op_IFID_is_alui_wr $end
+$var wire 1 - op_IFID_is_alur $end
+$var wire 1 . op_MEMWB_is_alui_rd $end
+$var wire 1 / op_MEMWB_is_alui_wr $end
+$var wire 1 0 op_MEMWB_is_alur $end
+$var wire 5 1 rt_MEMWB [4:0] $end
+$var wire 5 2 rt_IFID [4:0] $end
+$var wire 5 3 rt_IDEX [4:0] $end
+$var wire 5 4 rt_EXMEM [4:0] $end
+$var wire 5 5 rs_MEMWB [4:0] $end
+$var wire 5 6 rs_IFID [4:0] $end
+$var wire 5 7 rs_IDEX [4:0] $end
+$var wire 5 8 rs_EXMEM [4:0] $end
+$var wire 5 9 rd_MEMWB [4:0] $end
+$var wire 5 : rd_IFID [4:0] $end
+$var wire 5 ; rd_IDEX [4:0] $end
+$var wire 5 < rd_EXMEM [4:0] $end
+$var wire 5 = op_MEMWB [4:0] $end
+$var wire 5 > op_IFID [4:0] $end
+$var wire 5 ? op_IDEX [4:0] $end
+$var wire 5 @ op_EXMEM [4:0] $end
+$var wire 32 A instrMEMWB [31:0] $end
+$var wire 32 B instrIFID [31:0] $end
+$var wire 32 C instrIDEX [31:0] $end
+$var wire 32 D instrEXMEM [31:0] $end
+$var wire 6 E funct_MEMWB [5:0] $end
+$var wire 6 F funct_IFID [5:0] $end
+$var wire 6 G funct_IDEX [5:0] $end
+$var wire 6 H funct_EXMEM [5:0] $end
+$var wire 32 I aluMEMWB_Data [31:0] $end
+$var wire 32 J aluEXMEM_Data [31:0] $end
+$var wire 32 K MEMWB_MemData [31:0] $end
+$var wire 32 L EXMEM_Data2Mem [31:0] $end
+$var reg 1 M alu0 $end
+$var reg 1 N alu1 $end
+$var reg 32 O aluD0 [31:0] $end
+$var reg 32 P aluD1 [31:0] $end
+$var reg 1 Q calc_branch $end
+$var reg 1 R exmem $end
+$var reg 32 S exmemD [31:0] $end
+$var reg 1 T jmp0 $end
+$var reg 32 U jmp0D [31:0] $end
+$var reg 1 V jmp1 $end
+$var reg 32 W jmp1D [31:0] $end
+$var reg 32 X memMemD [31:0] $end
+$var reg 1 Y mem_mem $end
+$var reg 1 Z stall $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+xZ
+xY
+bx X
+bx W
+xV
+bx U
+xT
+bx S
+xR
+xQ
+bx P
+bx O
+xN
+xM
+b11 L
+b111 K
+b0 J
+b1 I
+b0 H
+b0 G
+b0 F
+b0 E
+b0xxxxx00000000000000011111000000 D
+b11111000000 C
+b11111000000 B
+b11111000000 A
+bx @
+b0 ?
+b0 >
+b0 =
+b0 <
+b0 ;
+b0 :
+b0 9
+b0 8
+b0 7
+b0 6
+b0 5
+b0 4
+b0 3
+b0 2
+b0 1
+00
+x/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+x'
+x&
+x%
+0$
+0#
+0"
+0!
+$end
+#1
+1M
+0N
+1(
+b1000 ?
+b100000000000000000011111000000 C
+#3
+1%
+b0 O
+1&
+1/
+0'
+1M
+b1000 @
+b10101 7
+b10101 4
+b100010101000000000011111000000 C
+b100000000101010000011111000000 D
+#5
+0M
+b0 7
+b100000000000000000011111000000 C
+#13
+0%
+1!
+0&
+0/
+1M
+b0 @
+b10101 7
+b10101 <
+b100000 H
+b100010101000000000011111000000 C
+b101011010111111100000 D
+#15
+0M
+b0 7
+b100000000000000000011111000000 C
+#21
+0(
+0!
+1M
+b0 ?
+b0 4
+b0 <
+b0 H
+b11111000000 D
+b11111000000 C
+#23
+1.
+b1000 =
+b10101 7
+b10101 9
+b10101000000000011111000000 C
+b100000000000001010111111000000 A
+#25
+b0 7
+b11111000000 C
+#27
+0.
+b11 =
+b10101 7
+b10101000000000011111000000 C
+b1100000000001010111111000000 A
+#29
+b0 7
+b11111000000 C
+#33
+b0 =
+b10101 7
+b10101000000000011111000000 C
+b1010111111000000 A
+#35
+b0 7
+b11111000000 C
+#39
+1%
+1&
+1/
+b1000 @
+b0 9
+b11111000000 A
+b11111000000 C
+b100000000000000000011111000000 D
