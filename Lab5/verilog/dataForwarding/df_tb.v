@@ -215,20 +215,35 @@ initial begin
 	
 	
 	//reset parameters
-	{op_IFID, rs_IFID, rt_IFID, rd_IFID, funct_IFID} = 27'b0;
-	{op_IDEX, rs_IDEX, rt_IDEX, rd_IDEX, funct_IDEX} = 27'b0;
-	{op_IFID, rs_EXMEM, rt_EXMEM, rd_EXMEM, funct_EXMEM} = 27'b0;
-	{op_MEMWB, rs_MEMWB, rt_MEMWB, rd_MEMWB, funct_MEMWB} = 27'b0;
+	{op_IFID, rs_IFID, rt_IFID, rd_IFID, funct_IFID} = 27'd1;
+	{op_IDEX, rs_IDEX, rt_IDEX, rd_IDEX, funct_IDEX} = 27'd1;
+	{op_IFID, rs_EXMEM, rt_EXMEM, rd_EXMEM, funct_EXMEM} = 27'd1;
+	{op_MEMWB, rs_MEMWB, rt_MEMWB, rd_MEMWB, funct_MEMWB} = 27'd1;
 	
-	aluEXMEM_Data = 32'd0;
-	aluMEMWB_Data = 32'd1;
-	EXMEM_Data2Mem = 32'd3;
-	MEMWB_MemData = 32'd7;
-	
+	aluEXMEM_Data = 32'd2;
+	aluMEMWB_Data = 32'd4;
+	EXMEM_Data2Mem = 32'd6;
+	MEMWB_MemData = 32'd8;
+	/*
 	//BLOCK 1, op_IDEX_is_alui_rd = true
 	#delay; 
 	op_IDEX = ADDI;
+		//Case 3:   		op_MEMWB_is_alui_wr || op_MEMWB == LW
+		//result 3: 		alu0 = (rd_MEMWB == rs_IDEX);
+		#delay; #delay;	
+		op_MEMWB = ADDI;
+		rd_MEMWB = 5'b10101; //true case
+		rs_IDEX =  5'b10101;
+		#delay; #delay;
+		rs_IDEX = 5'b0; 	//false case
+		#delay; #delay;
 
+		op_MEMWB = LW;
+		rd_MEMWB = 5'b10101; //true case
+		rs_IDEX =  5'b10101;
+		#delay; #delay;
+		rs_IDEX = 5'b0; 	//false case
+		#delay; #delay;
 	
 		//Case 1, 			op_EXMEM_is_alui_wr
 		//result 1: 		alu0 = (rt_EXMEM == rs_IDEX);
@@ -253,63 +268,69 @@ initial begin
 		rs_IDEX = 5'b0; 	//false case
 		#delay; #delay;
 		#delay; #delay; #delay; #delay; 
-		
-	{op_IFID, rs_IFID, rt_IFID, rd_IFID, funct_IFID} = 27'b0;
-	{op_IDEX, rs_IDEX, rt_IDEX, rd_IDEX, funct_IDEX} = 27'b0;
-	{op_IFID, rs_EXMEM, rt_EXMEM, rd_EXMEM, funct_EXMEM} = 27'b0;
-	{op_MEMWB, rs_MEMWB, rt_MEMWB, rd_MEMWB, funct_MEMWB} = 27'b0;
-	funct_IDEX = 
+	*/
+	
+/*
+	//BLOCK 2 op_IDEX == 0 && funct_IDEX_is_alur
 
-		//Case 3:   		op_MEMWB_is_alui_wr || op_MEMWB == LW
-		//result 3: 		alu0 = (rd_MEMWB == rs_IDEX);
-		#delay; #delay;	
-		op_MEMWB = ADDI;
-		rd_MEMWB = 5'b10101; //true case
-		rs_IDEX =  5'b10101;
-		#delay; #delay;
-		rs_IDEX = 5'b0; 	//false case
-		#delay; #delay;
-
-		op_MEMWB = LW;
-		rd_MEMWB = 5'b10101; //true case
-		rs_IDEX =  5'b10101;
-		#delay; #delay;
-		rs_IDEX = 5'b0; 	//false case
-		#delay; #delay;
-
-
-		//Case 4: 			else for above
-		//result  			alu0 = (rd_MEMWB == rs_IDEX);
-		#delay; #delay;	
-		op_MEMWB = 6'b0;
-		rd_MEMWB = 5'b10101; //true case
-		rs_IDEX =  5'b10101;
-		#delay; #delay;
-		rs_IDEX = 5'b0; 	//false case
-		#delay; #delay;
-
-
-		//Case 5: 			op_EXMEM_is_alui_wr || (op_EXMEM == 0 && funct_EXMEM_is_alur)
-		//result: 			aluD0 = aluEXMEM_Data;
-		#delay; #delay;	
+	op_IDEX = 6'b0;
+	funct_IDEX = ADD;
+	
+	rt_MEMWB = 5'b1;
+	rd_MEMWB = 5'b1;
+	
+		//case 1
 		op_EXMEM = ADDI;
+		rt_EXMEM = 5'd15;
+		rs_IDEX =  5'd15;
+		rt_IDEX = 5'd15;
+		//both alu0 and alu1 are on.
+		#delay; #delay;
+		rs_IDEX = 5'b0; //alu0 off;
+		#delay; #delay;
+		rt_IDEX = 5'b0; //alu1 off;
+		#delay; #delay;
+		#delay; #delay;
 		
-	op_IDEX = 6'b1;	
-		
+		op_MEMWB = 0;
+		rt_EXMEM = 5'd15;
+		rs_IDEX =  5'd15;
+		rt_IDEX = 5'd15;
+		//both alu0 and alu1 are on.
+		#delay; #delay;
+		rs_IDEX = 5'b0; //alu0 off;
+		#delay; #delay;
+		rt_IDEX = 5'b0; //alu1 off;
+		#delay; #delay;
+		#delay; #delay;
+*/	
 
+	//BLOCK 3 FORWARDING TO DATA MEMORY
+	op_IDEX = SW;
 	
-	{op_IFID, rs_IFID, rt_IFID, rd_IFID, funct_IFID} = 27'b0;
-	{op_IDEX, rs_IDEX, rt_IDEX, rd_IDEX, funct_IDEX} = 27'b0;
-	{op_IFID, rs_EXMEM, rt_EXMEM, rd_EXMEM, funct_EXMEM} = 27'b0;
-	{op_MEMWB, rs_MEMWB, rt_MEMWB, rd_MEMWB, funct_MEMWB} = 27'b0;
-
-	//BLOCK 2, !(op_IDEX_is_alui_rd) && op_IDEX == 0 && funct_IDEX_is_alur
-	
-	
-		//SUB-BLOCK A, op_EXMEM_is_alui_wr
-
+	op_EXMEM = ADDI;
+	rt_EXMEM = 5'd15;
+	rt_IDEX  = 5'd15;
+	rt_MEMWB = 5'd10;
 		
-		
+/*		
+
+	//BLOCK 6 FORWARDING TO JUMPS
+	op_IFID = BGTI;
+	op_EXMEM = ADDI;
+	rt_EXMEM = 5'b10101;
+	rt_IFID = 5'b10101;
+	rs_IFID = 5'b10101;	//jmp0 and jmp1 true
+	#delay; #delay;
+	rs_IFID = 5'b0;
+	#delay; #delay;
+	rt_IFID = 5'b0;
+	#delay; #delay;
+	funct_EXMEM = ADD;
+	#delay; #delay;
+*/	
+	
+	//BLOCK 4 HAZARD CONTROL
 
 			
 

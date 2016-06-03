@@ -97,28 +97,28 @@ output reg					jmp0,			//Control outputs
 
 //parameters
 // Instruction OP Codes
-parameter REG = 6'd0;
+parameter REG  = 6'd0;
 parameter JUMP = 6'd2;
 parameter BGTI = 6'd7;
 parameter ADDI = 6'd8;
 parameter SLTI = 6'd10;
 parameter ANDI = 6'd12;
-parameter ORI = 6'd13;
+parameter ORI  = 6'd13;
 parameter XORI = 6'd14;
 parameter SLLI = 6'd15;
-parameter LW = 6'd35;
-parameter SW = 6'd43;
+parameter LW   = 6'd35;
+parameter SW   = 6'd43;
 
 // ALU Functions
-parameter NOP = 6'd0;
+parameter NOP  = 6'd0;
 parameter SLLV = 6'd4;
-parameter JR = 6'd8;
-parameter ADD = 6'd32;
-parameter SUB = 6'd34;
-parameter AND = 6'd36;
-parameter OR = 6'd37;
-parameter XOR = 6'd38;
-parameter SLT = 6'd42;
+parameter JR   = 6'd8;
+parameter ADD  = 6'd32;
+parameter SUB  = 6'd34;
+parameter AND  = 6'd36;
+parameter OR   = 6'd37;
+parameter XOR  = 6'd38;
+parameter SLT  = 6'd42;
 
 wire op_IFID_is_alui_rd;
 wire op_IDEX_is_alui_rd;
@@ -337,7 +337,7 @@ always @(*) begin
 		else
 			alu0 = (rd_MEMWB == rs_IDEX);
 			
-			
+		//should this be dependant on alu0??	
 		if(op_EXMEM_is_alui_wr || (op_EXMEM == 0 && funct_EXMEM_is_alur))
 			aluD0 = aluEXMEM_Data;
 		else 
@@ -471,8 +471,8 @@ signals:
 // jmp mux data	
 	if((op_IFID == 0 && funct_IFID == JUMP) || op_IFID == BGTI) begin
 		if(op_EXMEM_is_alui_wr || (op_EXMEM == 0 && funct_EXMEM_is_alur)) begin
-			jmp0 = aluEXMEM_Data;
-			jmp1 = aluEXMEM_Data;
+			jmp0D = aluEXMEM_Data;
+			jmp1D = aluEXMEM_Data;
 		end
 	end
 	
