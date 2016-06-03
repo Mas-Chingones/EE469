@@ -1,46 +1,60 @@
+/*
+Author: Adolfo Pineda
+Title: Memory / Writeback Buffer Registers
+Summary: Buffer stores data, addresses, control signals, and instrutions between
+   the Memory and Writeback stages of a pipelined CPU
+*/
+
+
 module mem_wb_buffer( 
-						clk,
-						rst,
-						write_back,
-						memory_data,
-						alu_data,
-						extended,
-						instructions
-					);
-					
-	input wire [2:0]  write_back; //change name
-	input wire [31:0] memory_data, alu_data;
-	input wire [31:0] extended;
-	input wire [15:0] instructions;
+         clk,
+         rst,
+         wb_ctrl,
+         alu_data,
+         mem_data,
+         instruction,
+         wb_ctrl_out,
+         alu_data_out,
+         mem_data_out,
+         instruction_out
+);
 	
-	output reg [2:0]  write_back_out;
-	output reg [31:0] memory_data_out, alu_data_out;
-	output reg [31:0] extended_out;
-	output reg [15:0] instructions_out;
+   // INPUT
+   // buffer control
+	input wire clk, rst;
+   // cpu control in
+   input wire [2:0] wb_ctrl;
+   // data in
+	input wire [31:0] alu_data, mem_data;
+	// instr in
+   input wire [15:0] instruction;
+	// OUTPUT
+   // cpu control out
+	output reg [2:0]  wb_ctrl_out;
+   // data out
+	output reg [31:0] alu_data_out, mem_data_out;
+	// instr out
+   output reg [15:0] instruction_out;
 	
+   
 	initial begin
-		write_back_out = 0; 
-		memory_data_out = 0; //change name
-		alu_data_out = 0;
-		extended_out = 0;
-		instructions_out = 0;
+		wb_ctrl_out = 3'b011;  // no write
+		alu_data_out = 7'b0;
+		mem_data_out = 32'b0;
+		instruction_out = 32'b0;
 	end
-	
-	always @(posedge clk) begin
+	always @(posedge clk or negedge rst) begin
 		if (!rst) begin;
-			write_back_out = 0; 
-			memory_data_out = 0; //change name
-			alu_data_out = 0;
-			extended_out = 0;
-			instructions_out = 0;
-		end else begin
-			write_back_out = write_back; 
-			memory_data_out = memory_data; //change name
-			alu_data_out = alu_data;
-			extended_out = extended;
-			instructions_out = instructions;
+         wb_ctrl_out <= 3'b011; 
+			alu_data_out <= 7'b0;
+			mem_data_out <= 32'b0;
+			instruction_out <= 32'b0;
 		end
-		
+      else begin
+			wb_ctrl_out <= wb_ctrl;
+			alu_data_out <= alu_data;
+			mem_data_out <= mem_data;
+			instruction_out <= instruction;
+		end
 	end
-	
 endmodule

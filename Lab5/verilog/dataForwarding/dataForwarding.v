@@ -63,8 +63,9 @@ module dataForwarding(		instrIFID,	//inputs
 							memMemD,
 							jmp0,			//Control outputs
 							jmp1,
-							stall,
-							calc_branch,
+							stall_idex,
+                     stall_ifid,
+							flush_ifid,
 							alu0,
 							alu1,
 							exmem,
@@ -88,8 +89,9 @@ output reg [31:0]			jmp0D,		//Data outputs
 							
 output reg					jmp0,			//Control outputs
 							jmp1,
-							stall,
-							calc_branch,
+							stall_idex,
+                     stall_ifid,
+							flush_ifid,
 							alu0,
 							alu1,
 							exmem,
@@ -256,70 +258,39 @@ assign op_MEMWB_is_alui_wr = ( 		(op_EXMEM == ADDI)  ||
 									
 
 //is_alur
-assign op_IFID_is_alur = (			(op_IFID == ADD)	||
-									(op_IFID == SUB)	||
-									(op_IFID == SLT)	||
-									(op_IFID == AND)	||
-									(op_IFID == OR)		||
-									(op_IFID == XOR)	||
-									(op_IFID == SLLV)	);
-									
-assign op_IDEX_is_alur = (			(op_IDEX == ADD)	||
-									(op_IDEX == SUB)	||
-									(op_IDEX == SLT)	||
-									(op_IDEX == AND)	||
-									(op_IDEX == OR)		||
-									(op_IDEX == XOR)	||
-									(op_IDEX == SLLV)	);
-									
-assign op_EXMEM_is_alur = (			(op_EXMEM == ADD)	||
-									(op_EXMEM == SUB)	||
-									(op_EXMEM == SLT)	||
-									(op_EXMEM == AND)	||
-									(op_EXMEM == OR)	||
-									(op_EXMEM == XOR)	||
-									(op_EXMEM == SLLV)	);
-									
-assign op_MEMWB_is_alur = (			(op_MEMWB == ADD)	||
-									(op_MEMWB == SUB)	||
-									(op_MEMWB == SLT)	||
-									(op_MEMWB == AND)	||
-									(op_MEMWB == OR)	||
-									(op_MEMWB == XOR)	||
-									(op_MEMWB == SLLV)	);
-									
-assign funct_IFID_is_alur = (		(funct_IFID == ADD)	||
+assign IFID_is_alur = (			(op_IFID == 0) && 
+                        (  (funct_IFID == ADD)	||
 									(funct_IFID == SUB)	||
 									(funct_IFID == SLT)	||
 									(funct_IFID == AND)	||
 									(funct_IFID == OR)	||
 									(funct_IFID == XOR)	||
-									(funct_IFID == SLLV)	);
+									(funct_IFID == SLLV)	));
 									
-assign funct_IDEX_is_alur = (		(funct_IDEX == ADD)	||
+assign IDEX_is_alur = (			(op_IDEX == 0)	&&
+								(	(funct_IDEX == ADD)	||
 									(funct_IDEX == SUB)	||
 									(funct_IDEX == SLT)	||
 									(funct_IDEX == AND)	||
 									(funct_IDEX == OR)	||
 									(funct_IDEX == XOR)	||
-									(funct_IDEX == SLLV)	);
+									(funct_IDEX == SLLV)	));
 									
-assign funct_EXMEM_is_alur = (		(funct_EXMEM == ADD)	||
-									(funct_EXMEM == SUB)	||
+assign EXMEM_is_alur = (		(op_EXMEM == 0) &&
+								(	(funct_EXMEM == SUB)	||
 									(funct_EXMEM == SLT)	||
 									(funct_EXMEM == AND)	||
-									(funct_EXMEM == OR)		||
+									(funct_EXMEM == OR)	||
 									(funct_EXMEM == XOR)	||
-									(funct_EXMEM == SLLV)	);
+									(funct_EXMEM == SLLV) ));
 									
-assign funct_MEMWB_is_alur = (		(funct_MEMWB == ADD)	||
-									(funct_MEMWB == SUB)	||
+assign MEMWB_is_alur = (		(op_MEMWB == 0) &&
+								(	(funct_MEMWB == SUB)	||
 									(funct_MEMWB == SLT)	||
 									(funct_MEMWB == AND)	||
-									(funct_MEMWB == OR)		||
+									(funct_MEMWB == OR)	||
 									(funct_MEMWB == XOR)	||
-									(funct_MEMWB == SLLV)	);
-										
+									(funct_MEMWB == SLLV));
 										
 										
 always @(*) begin
@@ -330,7 +301,7 @@ always @(*) begin
 
 		if(op_EXMEM_is_alui_wr)
 			alu0 = (rt_EXMEM == rs_IDEX);
-		else if(op_EXMEM == 0 && funct_EXMEM_is_alur)
+		else if(EXMEM_is_alur)
 			alu0 = (rd_EXMEM == rs_IDEX);
 		else if(op_MEMWB_is_alui_wr || op_MEMWB == LW)
 			alu0 = (rd_MEMWB == rs_IDEX);
@@ -338,7 +309,7 @@ always @(*) begin
 			alu0 = (rd_MEMWB == rs_IDEX);
 			
 		//should this be dependant on alu0??	
-		if(op_EXMEM_is_alui_wr || (op_EXMEM == 0 && funct_EXMEM_is_alur))
+		if(op_EXMEM_is_alui_wr || (EXMEM_is_alur))
 			aluD0 = aluEXMEM_Data;
 		else 
 			aluD0 = aluD0;
@@ -348,13 +319,13 @@ always @(*) begin
 	end
 	
 	//BLOCK 2
-	else if(op_IDEX == 0 && funct_IDEX_is_alur) begin //
+	else if(IDEX_is_alur) begin //
 		if(op_EXMEM_is_alui_wr) begin				//SUB-BLOCK A
 			if(op_MEMWB_is_alui_wr || (op_MEMWB == LW)) begin
 				alu0 = (rt_EXMEM == rs_IDEX) || (rt_MEMWB == rs_IDEX);
 				alu1 = (rt_EXMEM == rt_IDEX) || (rt_MEMWB == rt_IDEX);
 			end
-			else if(op_MEMWB == 0 || funct_MEMWB_is_alur) begin
+			else if(MEMWB_is_alur) begin
 				alu0 = (rt_EXMEM == rs_IDEX) || (rd_MEMWB == rs_IDEX);
 				alu1 = (rt_EXMEM == rt_IDEX) || (rd_MEMWB == rt_IDEX);
 			end
@@ -373,12 +344,12 @@ always @(*) begin
 			else
 				aluD1 = aluMEMWB_Data;
 		end
-		else if(op_EXMEM == 0 && funct_EXMEM_is_alur) begin	//SUB-BLOCK B
+		else if(EXMEM_is_alur) begin	//SUB-BLOCK B
 			if(op_MEMWB_is_alui_wr || op_MEMWB == LW) begin
 				alu0 = (rd_EXMEM == rs_IDEX) || (rt_MEMWB == rs_IDEX);
 				alu1 = (rd_EXMEM == rt_IDEX) || (rt_MEMWB == rt_IDEX);			
 			end
-			else if(op_MEMWB == 0 && funct_MEMWB_is_alur) begin
+			else if(MEMWB_is_alur) begin
 				alu0 = (rd_EXMEM == rs_IDEX) || (rd_MEMWB == rs_IDEX);
 				alu1 = (rd_EXMEM == rt_IDEX) || (rd_MEMWB == rt_IDEX);	
 			end 
@@ -416,7 +387,7 @@ signals:
 	if(op_IDEX == SW) begin	//144
 		if((op_EXMEM_is_alui_wr) && (rt_EXMEM == rt_IDEX))
 			exmem = 1;
-		else if(op_EXMEM == 0 && funct_EXMEM_is_alur && rd_EXMEM == rt_IDEX)
+		else if(EXMEM_is_alur && rd_EXMEM == rt_IDEX)
 			exmem = 1;
 		else if((op_MEMWB_is_alui_wr || op_MEMWB == LW) && rt_MEMWB == rt_IDEX)
 			exmem = 1;
@@ -430,11 +401,11 @@ signals:
 	if(op_IDEX == SW) begin //155
 		if((op_EXMEM_is_alui_wr) && (rt_EXMEM == rt_IDEX))
 			exmemD = aluEXMEM_Data;
-		else if(op_EXMEM == 0 && funct_EXMEM_is_alur && rd_EXMEM == rt_IDEX)
+		else if(EXMEM_is_alur && rd_EXMEM == rt_IDEX)
 			exmemD = aluEXMEM_Data;
 		else if(op_MEMWB_is_alui_wr && rt_MEMWB == rt_IDEX)
 			exmemD = aluMEMWB_Data;
-		else if(op_MEMWB == 0 && funct_MEMWB_is_alur && rd_MEMWB == rt_IDEX)
+		else if(MEMWB_is_alur && rd_MEMWB == rt_IDEX)
 			exmemD = aluMEMWB_Data;
 		else
 			exmemD = MEMWB_MemData;
@@ -458,18 +429,18 @@ signals:
 // jmp mux	
 
 		//BLOCK 6
-	if((op_IFID == 0 && funct_IFID == JUMP) || op_IFID == BGTI) begin //183
+	if((op_IFID == 0 && funct_IFID == JR) || op_IFID == BGTI) begin //183
 		if(op_EXMEM_is_alui_wr) begin
 			jmp0 = rt_EXMEM == rs_IFID;
 			jmp1 = rt_EXMEM == rt_IFID;
 		end
-		else if(op_EXMEM == 0 && funct_EXMEM_is_alur) begin
+		else if(EXMEM_is_alur) begin
 			jmp0 = rd_EXMEM == rs_IFID;
 			jmp1 = rd_EXMEM == rt_IFID;
 		end
 	end
 // jmp mux data	
-	if((op_IFID == 0 && funct_IFID == JUMP) || op_IFID == BGTI) begin
+	if((op_IFID == 0 && funct_IFID == JR) || op_IFID == BGTI) begin
 		if(op_EXMEM_is_alui_wr || (op_EXMEM == 0 && funct_EXMEM_is_alur)) begin
 			jmp0D = aluEXMEM_Data;
 			jmp1D = aluEXMEM_Data;
@@ -480,8 +451,9 @@ signals:
 ///// HAZARD CONTROL /////
 /*
 signals:
-   stall
-   calc_branch
+   stall_idex
+   stall_ifid
+   flush_ifid
    guess_brnch (currently not implemented)
 */
 // stall
@@ -489,31 +461,36 @@ signals:
 	//BLOCK 7
 	if(op_EXMEM == LW) begin //// stall for forwarding from memory to alu
 		if(op_IDEX_is_alui_rd)
-			stall = rt_EXMEM == rs_IDEX;
-		if(op_IDEX == 0 && funct_IDEX_is_alur)
-			stall = (rt_EXMEM == rs_IDEX) || (rt_EXMEM == rt_IDEX);
+			stall_idex = rt_EXMEM == rs_IDEX;
+		if(IDEX_is_alur)
+			stall_idex = (rt_EXMEM == rs_IDEX) || (rt_EXMEM == rt_IDEX);
 	end
 	else if(op_IFID == 0 && funct_IFID == JR) begin  // stall for data from alu / memory to jr
 		if(op_IDEX_is_alui_wr || op_IDEX == LW)
-			stall = rt_IDEX == rs_IFID;
-		else if(op_IDEX == 0 && funct_IDEX_is_alur)
-			stall = rd_IDEX == rs_IFID;
+			stall_ifid = rt_IDEX == rs_IFID;
+		else if(IDEX_is_alur)
+			stall_ifid = rd_IDEX == rs_IFID;
 		else if(op_EXMEM == LW)
-			stall = rt_EXMEM == rs_IFID;
+			stall_ifid = rt_EXMEM == rs_IFID;
 	end
 	else if(op_IFID == BGTI) begin // stall for data from alu / memory to bgt
 		if(op_IDEX_is_alui_wr || op_IDEX == LW)
-			stall = (rt_IDEX == rs_IFID) || (rt_IDEX == rt_IFID);
-		else if(op_IDEX == 0 && funct_IDEX_is_alur)
-			stall = rt_IDEX == (	rt_IDEX == rs_IFID || rt_IDEX == rt_IFID ||
+			stall_ifid = (rt_IDEX == rs_IFID) || (rt_IDEX == rt_IFID);
+		else if(IDEX_is_alur)
+			stall_ifid = rt_IDEX == (	rt_IDEX == rs_IFID || rt_IDEX == rt_IFID ||
 									rs_IDEX == rs_IFID || rs_IDEX == rt_IFID  	);
 		else if(op_EXMEM == LW)
-			stall = rt_EXMEM == rs_IFID || rt_EXMEM == rt_IFID;
+			stall_ifid = rt_EXMEM == rs_IFID || rt_EXMEM == rt_IFID;
 	end	
 		
 end
 
-//calc_branch = (!stall) && (op_IFID == 0 && funct_IFID == JR) || op_IFID == BGT || op_IFID == JUMP;
+flush_ifid = !(
+   (!stall) && 
+   (op_IFID == 0 && funct_IFID == JR) || 
+   op_IFID == BGT || 
+   op_IFID == JUMP
+);
 
 endmodule							
 								

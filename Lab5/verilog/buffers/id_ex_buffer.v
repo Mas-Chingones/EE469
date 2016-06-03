@@ -1,56 +1,94 @@
+/*
+Author: Adolfo Pineda
+Title: Instruction Decode / Execution Buffer Registers
+Summary: Buffer stores read_data, addresses, control signals, and instrutions 
+   between the Instruction Decode and Execution stages of a pipelined CPU
+*/
+
+
 module id_ex_buffer( 
-						clk,
-						rst,
-						write_back,
-						memory,
-						execute,
-						r_data_0,
-						r_data_1,
-						extended,
-						instructions
-					);
-					
-	input wire [2:0] write_back, memory; //change name
-	input wire [6:0] execute; // change name
+         clk,
+         stall,
+         rst,
+         wb_ctrl,
+         mem_ctrl,
+         ex_ctrl,
+         r_data_0,
+         r_data_1,
+         instruction,
+         wb_ctrl_out, 
+         mem_ctrl_out,
+         ex_ctrl_out,
+         wb_ctrl_saved, 
+         mem_ctrl_saved,
+         ex_ctrl_saved,
+         r_data_0_out,
+         r_data_1_out,
+         instruction_out,
+         instruction_saved
+);
+   // INPUTS
+   // buffer control
+   input wire clk, stall, rst;
+   // control in
+	input wire [2:0] wb_ctrl, mem_ctrl;
+	input wire [6:0] ex_ctrl;
+   // data in
 	input wire [31:0] r_data_0, r_data_1;
-	input wire [31:0] extended;
-	input wire [15:0] instructions;
-	
-	output reg [2:0] write_back_out, memory_out; //change name
-	output reg [6:0] execute_out; // change name
+	// instruction in
+   input wire [31:0] instruction;
+	// OUTPUTS
+   // control out
+   output wire [2:0] wb_ctrl_out, mem_ctrl_out;  // to id stage
+   output wire [6:0] ex_ctrl_out;  // to id stage
+	output reg [2:0] wb_ctrl_saved, mem_ctrl_saved;  // checked by data fwd
+	output reg [6:0] ex_ctrl_saved;  // checked by data fwd
+   // data out
 	output reg [31:0] r_data_0_out, r_data_1_out;
-	output reg [31:0] extended_out;
-	output reg [15:0] instructions_out;
+	// instruction out
+   output wire [31:0] instruction_out;
+   output reg [31:0] instruction_saved;
 	
+   
+   // output logic (incorporate stall)
+   assign wb_ctrl_out = stall ? 3'b011 : wb_ctrl_saved;
+   assign mem_ctrl_out = stall ? 3'b100 : mem_ctrl_saved;
+   assign ex_ctrl_out = stall ? 7'b0 : ex_ctrl_saved;
+   assign instruction_out = stall ? 32'b0 : instruction_saved;
+   
+   // storage logic
 	initial begin
-		write_back_out = 0; 
-		memory_out = 0; //change name
-		execute_out = 0; // change name
-		r_data_0_out = 0;
-		r_data_1_out = 0;
-		extended_out = 0;
-		instructions_out = 0;
+		wb_ctrl_saved = 3'b011;  // no write
+		mem_ctrl_saved = 3'b100;  // cs high disable mem
+		ex_ctrl_saved = 7'b0;  // NOP
+		r_data_0_out = 32'b0;
+		r_data_1_out = 32'b0;
+		instruction_saved = 32'b0;
 	end
-	
-	always @(posedge clk) begin
+	always @(posedge clk or negedge rst) begin
 		if (!rst) begin;
-			write_back_out = 0; 
-			memory_out = 0; //change name
-			execute_out = 0; // change name
-			r_data_0_out = 0;
-			r_data_1_out = 0;
-			extended_out = 0;
-			instructions_out = 0;
-		end else begin
-			write_back_out = write_back; 
-			memory_out = memory; //change name
-			execute_out = execute; // change name
-			r_data_0_out = r_data_0;
-			r_data_1_out = r_data_1;
-			extended_out = extended;
-			instructions_out = instructions;
+         wb_ctrl_saved <= 3'b011; 
+         mem_ctrl_saved <= 3'b100;
+         ex_ctrl_saved <= 7'b0;
+         r_data_0_out <= 32'b0;
+         r_data_1_out <= 32'b0;
+         instruction_saved <= 32'b0;
+		end 
+      else if (stall) begin
+         wb_ctrl_saved <= wb_ctrl_saved; 
+         mem_ctrl_saved <= mem_ctrl_saved;
+         ex_ctrl_saved <= ex_ctrl_saved;
+         r_data_0_out <= r_data_0_out;
+         r_data_1_out <= r_data_1_out;
+         instruction_saved <= instruction_saved;
+      end
+      else begin
+			wb_ctrl_saved <= wb_ctrl; 
+         mem_ctrl_saved <= mem_ctrl;
+         ex_ctrl_saved <= ex_ctrl;
+         r_data_0_out <= r_data_0;
+         r_data_1_out <= r_data_1;
+         instruction_saved <= instruction;
 		end
-		
 	end
-	
 endmodule
