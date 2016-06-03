@@ -27,25 +27,25 @@ module mem_wb_buffer(
    // data in
 	input wire [31:0] alu_data, mem_data;
 	// instr in
-   input wire [15:0] instruction;
+   input wire [31:0] instruction;
 	// OUTPUT
    // cpu control out
 	output reg [2:0]  wb_ctrl_out;
    // data out
 	output reg [31:0] alu_data_out, mem_data_out;
 	// instr out
-   output reg [15:0] instruction_out;
+   output reg [31:0] instruction_out;
 	
    
 	initial begin
-		wb_ctrl_out = 3'b011;  // no write
+		wb_ctrl_out = 3'b0;  // no write
 		alu_data_out = 7'b0;
 		mem_data_out = 32'b0;
 		instruction_out = 32'b0;
 	end
 	always @(posedge clk or negedge rst) begin
 		if (!rst) begin;
-         wb_ctrl_out <= 3'b011; 
+         wb_ctrl_out <= 3'b0; 
 			alu_data_out <= 7'b0;
 			mem_data_out <= 32'b0;
 			instruction_out <= 32'b0;

@@ -13,6 +13,8 @@ Program_Control is an integrated instruction memory and program counter
 
 module Program_Control( 
          clk,
+         stall,
+         flush,
          instruction,       //main output
          writeInstruction,   // for loading instruction data
          writeAddress,       // for loading instruction data
@@ -36,7 +38,7 @@ input wire [31:0] writeInstruction, //data inputs
                   fwd_data0, fwd_data1;  // forwarded data fr_data
 input wire [25:0] jump_address;                  
 input wire [6:0] writeAddress;
-input wire clk, writeEnable, jump, jumpReg, branch, reset, suspendEnable, //1-bit flags
+input wire clk, stall, flush, writeEnable, jump, jumpReg, branch, reset, suspendEnable, //1-bit flags
            jmp0_mux, jmp1_mux;  // jump data muxes
 output wire [31:0] instruction; // instruction output, immediate value to alu
 // Internal
@@ -50,7 +52,7 @@ assign jump_data0 = jmp0_mux ? fwd_data0 : fr_read0;
 assign jump_data1 = jmp1_mux ? fwd_data1 : fr_read1;
 
 //connect instruction memory module
-assign instruction = suspendEnable ? 32'b0 : instruction_proxy;
+assign instruction = (suspendEnable || flush) ? 32'b0 : instruction_proxy;
 instruction_memory inst_mem(
          .clk(clk), 
          .we(writeEnable && suspendEnable), 
@@ -67,8 +69,8 @@ always @(*) begin
    
    if(suspendEnable) begin
       nextcount <= counter;  //do nothing
-	  wasSE <= 1'b1;
-   end 
+      wasSE <= 1'b1;
+   end
    else begin
       // Branching Opcodes
       if(jump) begin  //if jumping
@@ -106,7 +108,7 @@ always @ (posedge clk or negedge reset) begin
          counter <= 7'b0;
       end
       // Suspend PC Control
-      else if(suspendEnable & wasSE)
+      else if((suspendEnable && wasSE) || stall)
          counter <= counter;
       // Program Ended: Stop PC
       else if(counter == 7'd127 || instruction == 32'b0)

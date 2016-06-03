@@ -14,13 +14,13 @@ module if_id_buffer(
          instruction_out,
          instruction_saved
 );
-   // INPUTS
+   // INPUT
    // buffer control
-   input wire clk, rst, stall,  // clock, reset buf data, stall buf changes
+   input wire clk, rst, stall;  // clock, reset buf data, stall buf changes
    // instruction
    input wire [31:0] instruction;
-   // OUTPUTS
-   output wire [31:0] instruction_out,  // instr to id stage
+   // OUTPUT
+   output wire [31:0] instruction_out;  // instr to id stage
    output reg [31:0]  instruction_saved;  // instr checked by data fwd
    
    

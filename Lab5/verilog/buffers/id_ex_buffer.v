@@ -27,7 +27,7 @@ module id_ex_buffer(
          instruction_out,
          instruction_saved
 );
-   // INPUTS
+   // INPUT
    // buffer control
    input wire clk, stall, rst;
    // control in
@@ -37,7 +37,7 @@ module id_ex_buffer(
 	input wire [31:0] r_data_0, r_data_1;
 	// instruction in
    input wire [31:0] instruction;
-	// OUTPUTS
+	// OUTPUT
    // control out
    output wire [2:0] wb_ctrl_out, mem_ctrl_out;  // to id stage
    output wire [6:0] ex_ctrl_out;  // to id stage
@@ -58,7 +58,7 @@ module id_ex_buffer(
    
    // storage logic
 	initial begin
-		wb_ctrl_saved = 3'b011;  // no write
+		wb_ctrl_saved = 3'b0;  // no write
 		mem_ctrl_saved = 3'b100;  // cs high disable mem
 		ex_ctrl_saved = 7'b0;  // NOP
 		r_data_0_out = 32'b0;
@@ -67,7 +67,7 @@ module id_ex_buffer(
 	end
 	always @(posedge clk or negedge rst) begin
 		if (!rst) begin;
-         wb_ctrl_saved <= 3'b011; 
+         wb_ctrl_saved <= 3'b0; 
          mem_ctrl_saved <= 3'b100;
          ex_ctrl_saved <= 7'b0;
          r_data_0_out <= 32'b0;
