@@ -65,7 +65,7 @@ module dataForwarding(		instrIFID,	//inputs
 							jmp1,
 							stall_idex,
                      stall_ifid,
-							flush_ifid,
+							flush,
 							alu0,
 							alu1,
 							exmem,
@@ -91,7 +91,7 @@ output reg					jmp0,			//Control outputs
 							jmp1,
 							stall_idex,
                      stall_ifid,
-							flush_ifid,
+							flush,
 							alu0,
 							alu1,
 							exmem,
@@ -474,7 +474,7 @@ signals:
 signals:
    stall_idex
    stall_ifid
-   flush_ifid
+   flush
    guess_brnch (currently not implemented)
 */
 // stall
@@ -504,7 +504,7 @@ signals:
 			stall_ifid = rt_EXMEM == rs_IFID || rt_EXMEM == rt_IFID;
 	end	
 	
-   flush_ifid = !(
+   flush = (
       (op_IFID == 0 && funct_IFID == JR) || 
       (op_IFID == BGTI) || 
       (op_IFID == JUMP)

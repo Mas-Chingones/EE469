@@ -40,7 +40,7 @@ input wire [25:0] jump_address;
 input wire [6:0] writeAddress;
 input wire clk, stall, flush, writeEnable, jump, jumpReg, branch, reset, suspendEnable, //1-bit flags
            jmp0_mux, jmp1_mux;  // jump data muxes
-output wire [31:0] instruction; // instruction output, immediate value to alu
+output wire [31:0] instruction; // instruction output
 // Internal
 wire [31:0] instruction_proxy, jump_data0, jump_data1;
 reg [6:0] counter, nextcount; //Program counter value
@@ -54,12 +54,12 @@ assign jump_data1 = jmp1_mux ? fwd_data1 : fr_read1;
 //connect instruction memory module
 assign instruction = (suspendEnable || flush) ? 32'b0 : instruction_proxy;
 instruction_memory inst_mem(
-         .clk(clk), 
-         .we(writeEnable && suspendEnable), 
-         .rst_all(reset),        //low reset
+         .clk(clk),
+         .we(writeEnable && suspendEnable),
+         .rst_all(reset),
          .read_addr(counter),
-         .read_data(instruction_proxy),    
-         .write_addr(writeAddress), 
+         .read_data(instruction_proxy),
+         .write_addr(writeAddress),
          .write_data(writeInstruction)
        );
                                               
