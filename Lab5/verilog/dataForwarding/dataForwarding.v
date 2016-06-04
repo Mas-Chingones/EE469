@@ -263,7 +263,7 @@ assign op_MEMWB_is_alui_wr = (
 
 //is_alur
 assign IFID_is_alur = (			(op_IFID == 0) && 
-                        (  (funct_IFID == ADD)	||
+								(  	(funct_IFID == ADD)	||
 									(funct_IFID == SUB)	||
 									(funct_IFID == SLT)	||
 									(funct_IFID == AND)	||
@@ -291,7 +291,7 @@ assign EXMEM_is_alur = (		(op_EXMEM == 0) &&
 									
 assign MEMWB_is_alur = (		(op_MEMWB == 0) &&
 								(	(funct_MEMWB == ADD) ||
-                           (funct_MEMWB == SUB)	||
+									(funct_MEMWB == SUB)	||
 									(funct_MEMWB == SLT)	||
 									(funct_MEMWB == AND)	||
 									(funct_MEMWB == OR)	||
