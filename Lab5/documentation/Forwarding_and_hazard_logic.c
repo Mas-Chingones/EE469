@@ -148,8 +148,10 @@ if(id/ex_op == sw) {
       ex_memD_mux = 1;
    else if((mem/wb_op == alui_wr || mem/wb_op == lw) && mem/wb_rt == id/ex_rt)
       ex_memD_mux = 1;
-   else
+   else if (mem/wb_op == 0 && mem/wb_func == alur)
       ex_memD_mux = mem/wb_rd == id/ex_rt;
+   else
+      ex_memD_mux = 0;
 }
 // ex mem mux data
 if(id/ex_op == sw) {
@@ -165,11 +167,11 @@ if(id/ex_op == sw) {
       ex_memD = mem/wb_MEM_D;
 }
 // mem mem mux and data
-if(ex/mem_op == sw) {
-   mem_memD = mem/wb_MEM_D;
-   if(mem/wb_op == lw)
-      mem_memD_mux = mem/wb_rt == ex/mem_rt;
-}
+mem_memD = mem/wb_MEM_D;
+if(ex/mem_op == sw && mem/wb_op == lw)
+   mem_memD_mux = mem/wb_rt == ex/mem_rt;
+else
+   mem_memD_mux = 0;
 
 
 // FORWARDING TO JUMPS
@@ -189,7 +191,16 @@ if((if/id_op == 0 && if/id_func == jr) || if/id == bgt) {
       jmp0_mux = ex/mem_rd == if/id_rs;
       jmp1_mux = ex/mem_rd == if/id_rt;
    }
+   else{
+      jmp0 = 0;
+      jmp1 = 0;
+   }
 }
+else{
+   jmp0 = 0;
+   jmp1 = 0;
+}
+
 // jmp mux data
 if((if/id_op == 0 && if/id_func == jr) || if/id == bgt) {
    if(ex/mem_op == alui_wr || (ex/mem_op == 0 && ex/mem_func == alur)) {
@@ -202,36 +213,37 @@ if((if/id_op == 0 && if/id_func == jr) || if/id == bgt) {
 ///// HAZARD CONTROL /////
 /*
 signals:
-   stall
-   calc_branch
+   if_id_stall
+   id_ex_stall
+   flush
    guess_brnch (currently not implemented)
 */
 // stall
 if(ex/mem_op == lw) {  // stall for forwarding from memory to alu
    if(id/ex_op == alui_rd)
-      stall = ex/mem_rt == id/ex_rs;
+      id_ex_stall = ex/mem_rt == id/ex_rs;
    if(id/ex_op == 0 && id/ex_func == alur)
-      stall = ex/mem_rt == id/ex_rs || ex/mem_rt == id/ex_rt;
+      id_ex_stall = ex/mem_rt == id/ex_rs || ex/mem_rt == id/ex_rt;
 }
 else if(if/id_op == 0 && if/id_func == jr)  {  // stall for data from alu / memory to jr
    if(id/ex_op == alui_wr || id/ex_op == lw)
-      stall = id/ex_rt == if/id_rs;
+      if_id_stall = id/ex_rt == if/id_rs;
    else if(id/ex_op == 0 && id/ex_func == alur)
-      stall = id/ex_rd == if/id_rs;
+      if_id_stall = id/ex_rd == if/id_rs;
    else if(ex/mem_op == lw)
       stall = ex/mem_rt == if/id_rs;
 }
 else if(if/id_op == bgt) {  // stall for data from alu / memory to bgt
    if(id/ex_op == alui_wr || id/ex_op == lw)
-      stall = id/ex_rt == if/id_rs || id/ex_rt == if/id_rt;
+      if_id_stall = id/ex_rt == if/id_rs || id/ex_rt == if/id_rt;
    else if(id/ex_op == 0 && id/ex_func == alur)
-      stall = id/ex_rt == (
+      if_id_stall = id/ex_rt == (
                            id/ex_rt == if/id_rs || id/ex_rt == if/id_rt || 
                            id/ex_rs == if/id_rs || id/ex_rs == if/id_rt 
                           );
    else if(ex/mem_op == lw)
-      stall = ex/mem_rt == if/id_rs || ex/mem_rt == if/id_rt;
+      if_id_stall = ex/mem_rt == if/id_rs || ex/mem_rt == if/id_rt;
 }
 
 // calc_branch
-calc_branch = !stall && (if/id_op == 0 && if/id_func == jr) || if/id_op == bgt || if/id_op == jmp)
+flush = (if/id_op == 0 && if/id_func == jr) || if/id_op == bgt || if/id_op == jmp)

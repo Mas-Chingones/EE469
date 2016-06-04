@@ -137,16 +137,16 @@ wire op_IDEX_is_alur;
 wire op_EXMEM_is_alur;
 wire op_MEMWB_is_alur;
 
-wire funct_IFID_is_alur;
-wire funct_IDEX_is_alur;
-wire funct_EXMEM_is_alur;
-wire funct_MEMWB_is_alur;
+wire IFID_is_alur;
+wire IDEX_is_alur;
+wire EXMEM_is_alur;
+wire MEMWB_is_alur;
 
-wire	[4:0]	op_IFID,
+wire	[5:0]	op_IFID,
 				op_IDEX,
 				op_EXMEM,
-				op_MEMWB,	
-                rs_IFID,
+				op_MEMWB;	
+wire	[4:0]     rs_IFID,
 				rs_IDEX,
 				rs_EXMEM,
 				rs_MEMWB,
@@ -190,7 +190,8 @@ assign rd_MEMWB = 		instrMEMWB[15:11];
 assign funct_MEMWB = 	instrMEMWB[5:0];	
 
 //is_alui_rd assigns
-assign op_IFID_is_alui_rd = (		(op_IFID == ADDI) || 
+assign op_IFID_is_alui_rd = (		
+                           (op_IFID == ADDI) || 
 									(op_IFID == SLTI) ||
 									(op_IFID == ORI)  ||
 									(op_IFID == ANDI) ||
@@ -199,7 +200,8 @@ assign op_IFID_is_alui_rd = (		(op_IFID == ADDI) ||
 									(op_IFID == SW)   ||
 									(op_IFID == LW)	);
 									
-assign op_IDEX_is_alui_rd = (		(op_IDEX == ADDI) || 
+assign op_IDEX_is_alui_rd = (		
+                           (op_IDEX == ADDI) || 
 									(op_IDEX == SLTI) ||
 									(op_IDEX == ORI)  ||
 									(op_IDEX == ANDI) ||
@@ -208,7 +210,8 @@ assign op_IDEX_is_alui_rd = (		(op_IDEX == ADDI) ||
 									(op_IDEX == SW)   ||
 									(op_IDEX == LW)	);
 									
-assign op_EXMEM_is_alui_rd = (		(op_EXMEM == ADDI) || 
+assign op_EXMEM_is_alui_rd = (		
+                           (op_EXMEM == ADDI) || 
 									(op_EXMEM == SLTI) ||
 									(op_EXMEM == ANDI) ||
 									(op_EXMEM == XORI) ||
@@ -217,7 +220,8 @@ assign op_EXMEM_is_alui_rd = (		(op_EXMEM == ADDI) ||
 									(op_EXMEM == ORI)  ||
 									(op_EXMEM == LW)	);
 									
-assign op_MEMWB_is_alui_rd = (		(op_MEMWB == ADDI) || 
+assign op_MEMWB_is_alui_rd = (		
+                           (op_MEMWB == ADDI) || 
 									(op_MEMWB == SLTI) ||
 									(op_MEMWB == ORI)  ||
 									(op_MEMWB == ANDI) ||
@@ -228,28 +232,32 @@ assign op_MEMWB_is_alui_rd = (		(op_MEMWB == ADDI) ||
 
 
 //is_alui_wr									
-assign op_IFID_is_alui_wr = ( 		(op_IFID == ADDI) || 
+assign op_IFID_is_alui_wr = ( 		
+                           (op_IFID == ADDI) || 
 									(op_IFID == SLTI) ||
 									(op_IFID == ORI)  ||
 									(op_IFID == ANDI) ||
 									(op_IFID == XORI) ||
 									(op_IFID == SLLI) );
 									
-assign op_IDEX_is_alui_wr = ( 		(op_IFID == ADDI) || 
+assign op_IDEX_is_alui_wr = ( 		
+                           (op_IDEX == ADDI) || 
 									(op_IDEX == SLTI) ||
 									(op_IDEX == ORI)  ||
 									(op_IDEX == ANDI) ||
 									(op_IDEX == XORI) ||
 									(op_IDEX == SLLI) );
 									
-assign op_EXMEM_is_alui_wr = ( 		(op_EXMEM == ADDI)  || 
+assign op_EXMEM_is_alui_wr = ( 		
+                           (op_EXMEM == ADDI) || 
 									(op_EXMEM == SLTI) ||
 									(op_EXMEM == ORI)  ||
 									(op_EXMEM == ANDI) ||
 									(op_EXMEM == XORI) ||
 									(op_EXMEM == SLLI) );
 									
-assign op_MEMWB_is_alui_wr = ( 		(op_EXMEM == ADDI)  || 
+assign op_MEMWB_is_alui_wr = ( 		
+                           (op_MEMWB == ADDI) || 
 									(op_MEMWB == SLTI) ||
 									(op_MEMWB == ORI)  ||
 									(op_MEMWB == ANDI) ||
@@ -277,7 +285,8 @@ assign IDEX_is_alur = (			(op_IDEX == 0)	&&
 									(funct_IDEX == SLLV)	));
 									
 assign EXMEM_is_alur = (		(op_EXMEM == 0) &&
-								(	(funct_EXMEM == SUB)	||
+								(	(funct_EXMEM == ADD) ||
+                           (funct_EXMEM == SUB)	||
 									(funct_EXMEM == SLT)	||
 									(funct_EXMEM == AND)	||
 									(funct_EXMEM == OR)	||
@@ -285,12 +294,13 @@ assign EXMEM_is_alur = (		(op_EXMEM == 0) &&
 									(funct_EXMEM == SLLV) ));
 									
 assign MEMWB_is_alur = (		(op_MEMWB == 0) &&
-								(	(funct_MEMWB == SUB)	||
+								(	(funct_MEMWB == ADD) ||
+                           (funct_MEMWB == SUB)	||
 									(funct_MEMWB == SLT)	||
 									(funct_MEMWB == AND)	||
 									(funct_MEMWB == OR)	||
 									(funct_MEMWB == XOR)	||
-									(funct_MEMWB == SLLV));
+									(funct_MEMWB == SLLV) ));
 										
 										
 always @(*) begin
@@ -391,8 +401,10 @@ signals:
 			exmem = 1;
 		else if((op_MEMWB_is_alui_wr || op_MEMWB == LW) && rt_MEMWB == rt_IDEX)
 			exmem = 1;
-		else
+		else if(MEMWB_is_alur)
 			exmem = rd_MEMWB == rt_IDEX;
+      else
+         exmem = 0;
 	end	
 	
 	
@@ -413,11 +425,11 @@ signals:
 	
 	// mem mem mux and data
 	//BLOCK 5
-	if(op_EXMEM == SW) begin
-		memMemD = MEMWB_MemData;
-		if(op_MEMWB == LW)
+   memMemD = MEMWB_MemData;
+	if(op_EXMEM == SW && op_MEMWB == LW)
 			mem_mem = (rt_MEMWB == rt_EXMEM);
-	end
+   else
+         mem_mem = 0;
 
 // FORWARDING TO JUMPS
 /*
@@ -438,10 +450,19 @@ signals:
 			jmp0 = rd_EXMEM == rs_IFID;
 			jmp1 = rd_EXMEM == rt_IFID;
 		end
+      else begin
+         jmp0 = 0;
+         jmp1 = 0;
+      end
 	end
+   else begin
+      jmp0 = 0;
+      jmp1 = 0;
+   end
+   
 // jmp mux data	
 	if((op_IFID == 0 && funct_IFID == JR) || op_IFID == BGTI) begin
-		if(op_EXMEM_is_alui_wr || (op_EXMEM == 0 && funct_EXMEM_is_alur)) begin
+		if(op_EXMEM_is_alui_wr || (op_EXMEM == 0 && EXMEM_is_alur)) begin
 			jmp0D = aluEXMEM_Data;
 			jmp1D = aluEXMEM_Data;
 		end
@@ -482,15 +503,14 @@ signals:
 		else if(op_EXMEM == LW)
 			stall_ifid = rt_EXMEM == rs_IFID || rt_EXMEM == rt_IFID;
 	end	
-		
+	
+   flush_ifid = !(
+      (op_IFID == 0 && funct_IFID == JR) || 
+      (op_IFID == BGTI) || 
+      (op_IFID == JUMP)
+   );
+	
 end
-
-flush_ifid = !(
-   (!stall) && 
-   (op_IFID == 0 && funct_IFID == JR) || 
-   op_IFID == BGT || 
-   op_IFID == JUMP
-);
 
 endmodule							
 								

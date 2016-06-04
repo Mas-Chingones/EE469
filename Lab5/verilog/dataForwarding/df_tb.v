@@ -26,8 +26,9 @@ wire [31:0]		jmp0D,		//Data outputs
 					
 wire			jmp0,			//Control outputs
 				jmp1,
-				stall,
-				calc_branch,
+				stall_ifid,
+            stall_idex,
+				flush_ifid,
 				alu0,
 				alu1,
 				exmem,
@@ -49,8 +50,9 @@ df_tester tester(	.instrIFID(instrIFID),	//inputs
 					.memMemD(memMemD),
 					.jmp0(jmp0),			//Control outputs
 					.jmp1(jmp1),
-					.stall(stall),
-					.calc_branch(calc_branch),
+               .stall_ifid(stall_ifid),
+					.stall_idex(stall_idex),
+					.flush_ifid(flush_ifid),
 					.alu0(alu0),
 					.alu1(alu1),
 					.exmem(exmem),
@@ -72,8 +74,9 @@ dataForwarding dut(	.instrIFID(instrIFID),	//inputs
 					.memMemD(memMemD),
 					.jmp0(jmp0),			//Control outputs
 					.jmp1(jmp1),
-					.stall(stall),
-					.calc_branch(calc_branch),
+					.stall_ifid(stall_ifid),
+					.stall_idex(stall_idex),
+					.flush_ifid(flush_ifid),
 					.alu0(alu0),
 					.alu1(alu1),
 					.exmem(exmem),
@@ -109,8 +112,9 @@ module df_tester(	instrIFID,	//inputs (tester outputs)
 					memMemD,
 					jmp0,			//Control outputs (tester inputs)
 					jmp1,
-					stall,
-					calc_branch,
+					stall_ifid,
+               stall_idex,
+					flush_ifid,
 					alu0,
 					alu1,
 					exmem,
@@ -135,18 +139,19 @@ input wire [31:0]	jmp0D,		//inputs
 					
 input wire			jmp0,		//inputs
 					jmp1,
-					stall,
-					calc_branch,
+					stall_ifid,
+					stall_idex,
+					flush_ifid,
 					alu0,
 					alu1,
 					exmem,
 					mem_mem;
 
-reg	[4:0]		op_IFID,
+reg	[5:0]		op_IFID,
 				op_IDEX,
 				op_EXMEM,
-				op_MEMWB,	
-                rs_IFID,
+				op_MEMWB;	
+reg	[4:0]     rs_IFID,
 				rs_IDEX,
 				rs_EXMEM,
 				rs_MEMWB,
@@ -219,12 +224,13 @@ initial begin
 	{op_IDEX, rs_IDEX, rt_IDEX, rd_IDEX, funct_IDEX} = 27'd1;
 	{op_IFID, rs_EXMEM, rt_EXMEM, rd_EXMEM, funct_EXMEM} = 27'd1;
 	{op_MEMWB, rs_MEMWB, rt_MEMWB, rd_MEMWB, funct_MEMWB} = 27'd1;
-	
+	#5;
 	aluEXMEM_Data = 32'd2;
 	aluMEMWB_Data = 32'd4;
 	EXMEM_Data2Mem = 32'd6;
 	MEMWB_MemData = 32'd8;
-	/*
+	#5;
+   /*
 	//BLOCK 1, op_IDEX_is_alui_rd = true
 	#delay; 
 	op_IDEX = ADDI;
@@ -306,17 +312,42 @@ initial begin
 */	
 
 	//BLOCK 3 FORWARDING TO DATA MEMORY
-	op_IDEX = SW;
-	
-	op_EXMEM = ADDI;
-	rt_EXMEM = 5'd15;
-	rt_IDEX  = 5'd15;
-	rt_MEMWB = 5'd10;
-		
-/*		
+	//op_IDEX = SW;
+	 /* alui_wr */ /* 
+   op_MEMWB = ADDI;
+	rt_MEMWB = 5'd15;
+   rt_IDEX  = 5'd15;
+   #10;
+   op_MEMWB = LW;
+	#10;
+   op_EXMEM = ADDI;
+   rt_EXMEM = 5'd15;
+   #10;	
+   */
+    /* alur */ /*
+   op_MEMWB = 0;
+   rd_MEMWB = 5'd9;
+   funct_MEMWB = SLT;
+   #10;
+   rt_IDEX = 5'd9;
+   #10;
+   op_EXMEM = 0;   
+   rd_EXMEM = 5'd9;
+   funct_EXMEM = SUB;
+   #10;
+   */
 
+   // BLOCK 5 FORWARDING TO DATA MEMORY II
+   /*
+   op_EXMEM = SW;
+   op_MEMWB = 0;
+   #5;
+   op_MEMWB = LW;
+   #10;
+   */
+   
 	//BLOCK 6 FORWARDING TO JUMPS
-	op_IFID = BGTI;
+   op_IFID = BGTI;
 	op_EXMEM = ADDI;
 	rt_EXMEM = 5'b10101;
 	rt_IFID = 5'b10101;
@@ -326,10 +357,14 @@ initial begin
 	#delay; #delay;
 	rt_IFID = 5'b0;
 	#delay; #delay;
+   op_EXMEM = 0;
 	funct_EXMEM = ADD;
+   rd_EXMEM = 5'b10101;
 	#delay; #delay;
-*/	
-	
+	rt_IFID = 5'b10101;
+   #delay;
+   rs_IFID = 5'b10101;
+   #delay;
 	//BLOCK 4 HAZARD CONTROL
 
 			
