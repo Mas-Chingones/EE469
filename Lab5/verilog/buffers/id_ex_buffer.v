@@ -51,7 +51,7 @@ module id_ex_buffer(
 	
    
    // output logic (incorporate stall)
-   assign wb_ctrl_out = stall ? 3'b011 : wb_ctrl_saved;
+   assign wb_ctrl_out = stall ? 3'b0 : wb_ctrl_saved;
    assign mem_ctrl_out = stall ? 3'b100 : mem_ctrl_saved;
    assign ex_ctrl_out = stall ? 7'b0 : ex_ctrl_saved;
    assign instruction_out = stall ? 32'b0 : instruction_saved;

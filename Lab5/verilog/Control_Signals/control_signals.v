@@ -53,7 +53,7 @@ module control_signals(
       mem_to_reg = 0;
       alu_op = 6'b0;
       alu_src = 0;
-      reg_write = 1;
+      reg_write = 0;
    end
    
    always @(*) begin
@@ -77,10 +77,18 @@ module control_signals(
             rw = rw;
             mem_to_reg = 0;      
             alu_src = 0;
-            if(alu_function == NOP || alu_function == JR)
-               reg_write = 0;
-            else
+            if(
+               alu_function == SLLV ||
+               alu_function == ADD  ||
+               alu_function == SUB  || 
+               alu_function == AND  ||
+               alu_function == OR   || 
+               alu_function == XOR  ||
+               alu_function == SLT
+              )
                reg_write = 1;
+            else
+               reg_write = 0;
          end
          
          
@@ -110,7 +118,7 @@ module control_signals(
             oe = oe;
             rw = rw;
             mem_to_reg = mem_to_reg;
-            alu_op = SUB;
+            alu_op = NOP;  // alu is not used for bgt w/ pipelined cpu
             alu_src = 0;
             reg_write = 0;            
          end
@@ -226,6 +234,20 @@ module control_signals(
             alu_op = ADD;
             alu_src = 1;
             reg_write = 0;      
+         end
+         
+         default: begin  // Do Nothing
+            reg_dst = 0;
+            jump = 0;
+            jump_reg = 0;
+            branch = 0;
+            cs = 1;
+            oe = 0;
+            rw = 0;
+            mem_to_reg = 0;
+            alu_op = 6'b0;
+            alu_src = 0;
+            reg_write = 0;   
          end
       
       endcase

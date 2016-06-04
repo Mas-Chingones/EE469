@@ -52,7 +52,13 @@ assign jump_data0 = jmp0_mux ? fwd_data0 : fr_read0;
 assign jump_data1 = jmp1_mux ? fwd_data1 : fr_read1;
 
 //connect instruction memory module
-assign instruction = (suspendEnable || flush) ? 32'b0 : instruction_proxy;
+assign instruction = (
+                        (
+                           suspendEnable || 
+                           flush || 
+                           (branch && (jump_data0 > jump_data1))
+                        )  ? 32'b0 : instruction_proxy
+                     );
 instruction_memory inst_mem(
          .clk(clk),
          .we(writeEnable && suspendEnable),
@@ -111,7 +117,7 @@ always @ (posedge clk or negedge reset) begin
       else if((suspendEnable && wasSE) || stall)
          counter <= counter;
       // Program Ended: Stop PC
-      else if(counter == 7'd127 || instruction == 32'b0)
+      else if((counter == 7'd127 || instruction == 32'b0) && !jump)
          counter <= counter;
       // PC Active
       else begin
