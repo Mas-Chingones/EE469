@@ -63,9 +63,9 @@ module dataForwarding(		instrIFID,	//inputs
 							memMemD,
 							jmp0,			//Control outputs
 							jmp1,
+							stall_ifid,
 							stall_idex,
-                     stall_ifid,
-							flush,
+							flush_ifid,
 							alu0,
 							alu1,
 							exmem,
@@ -90,8 +90,8 @@ output reg [31:0]			jmp0D,		//Data outputs
 output reg					jmp0,			//Control outputs
 							jmp1,
 							stall_idex,
-                     stall_ifid,
-							flush,
+							stall_ifid,
+							flush_ifid,
 							alu0,
 							alu1,
 							exmem,
@@ -132,10 +132,6 @@ wire op_IDEX_is_alui_wr;
 wire op_EXMEM_is_alui_wr;
 wire op_MEMWB_is_alui_wr;
 
-wire op_IFID_is_alur;
-wire op_IDEX_is_alur;
-wire op_EXMEM_is_alur;
-wire op_MEMWB_is_alur;
 
 wire IFID_is_alur;
 wire IDEX_is_alur;
@@ -285,11 +281,11 @@ assign IDEX_is_alur = (			(op_IDEX == 0)	&&
 									(funct_IDEX == SLLV)	));
 									
 assign EXMEM_is_alur = (		(op_EXMEM == 0) &&
-								(	(funct_EXMEM == ADD) ||
-                           (funct_EXMEM == SUB)	||
+								(	(funct_EXMEM == ADD) 	||
+									(funct_EXMEM == SUB)	||
 									(funct_EXMEM == SLT)	||
 									(funct_EXMEM == AND)	||
-									(funct_EXMEM == OR)	||
+									(funct_EXMEM == OR)		||
 									(funct_EXMEM == XOR)	||
 									(funct_EXMEM == SLLV) ));
 									
@@ -504,7 +500,7 @@ signals:
 			stall_ifid = rt_EXMEM == rs_IFID || rt_EXMEM == rt_IFID;
 	end	
 	
-   flush = (
+   flush_ifid = (
       (op_IFID == 0 && funct_IFID == JR) || 
       (op_IFID == BGTI) || 
       (op_IFID == JUMP)

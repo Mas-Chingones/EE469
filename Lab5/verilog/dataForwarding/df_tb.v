@@ -50,7 +50,7 @@ df_tester tester(	.instrIFID(instrIFID),	//inputs
 					.memMemD(memMemD),
 					.jmp0(jmp0),			//Control outputs
 					.jmp1(jmp1),
-               .stall_ifid(stall_ifid),
+					.stall_ifid(stall_ifid),
 					.stall_idex(stall_idex),
 					.flush_ifid(flush_ifid),
 					.alu0(alu0),
@@ -345,7 +345,7 @@ initial begin
    op_MEMWB = LW;
    #10;
    */
-   
+   /*
 	//BLOCK 6 FORWARDING TO JUMPS
    op_IFID = BGTI;
 	op_EXMEM = ADDI;
@@ -365,11 +365,55 @@ initial begin
    #delay;
    rs_IFID = 5'b10101;
    #delay;
-	//BLOCK 4 HAZARD CONTROL
+*/
+	//BLOCK 7
+	op_EXMEM = LW;
+	op_IDEX = ADDI;
+	
+	rt_EXMEM = 5'd21;
+	rs_IDEX = 5'd21; 	//stall_idex true		10 sec
+	#delay; #delay;
+	rs_IDEX = 5'd11; 	//stall_idex false		12 sec
+	#delay; #delay;
 
-			
+	
+	op_IDEX = 6'b0;
+	funct_IDEX = ADD;
+	rt_EXMEM = 5'd21;
+	rs_IDEX = 5'd21;
+	rt_IDEX = 5'd21;
+	
+	
+	rd_IDEX = 5'd16;
+	rs_IFID = 5'd16;
+	#delay; #delay;		//stall_idex true		14 sec
+	rt_EXMEM = 5'd0;
+	#delay; #delay; #delay; #delay;
+	
+	op_EXMEM = ADDI;
+	#delay; #delay; #delay; #delay;
+	op_IFID = 0;
+	funct_IFID = JR;
+	op_IDEX = ADDI;
+	rt_IDEX = 5'd21;
+	rs_IFID = 5'd21;
+	#delay; #delay;
+	rs_IFID = 5'd11;
+	
+	
 
-			
+	// flush_ifid
+	op_IFID = 0;
+	funct_IFID = JR;
+	#delay; #delay;
+	funct_IFID = ADD;
+	#delay; #delay;
+	op_IFID = BGTI;
+	#delay; #delay;
+	op_IFID = ADDI;
+	#delay; #delay;
+	op_IFID = JUMP;
+	#delay; #delay; #delay; #delay;
 			
 			
 			
