@@ -48,7 +48,7 @@ module ex_mem_buffer(
    // storage logic
 	initial begin
 		wb_ctrl_out = 3'b0;  // no write
-		mem_ctrl_out = 3'b100;  // cs high disable mem
+		mem_ctrl_out = 3'b111;  // cs high disable mem
 		alu_data_out = 7'b0;
 		data_to_mem_out = 32'b0;
 		instruction_out = 32'b0;
@@ -56,7 +56,7 @@ module ex_mem_buffer(
 	always @(posedge clk or negedge rst) begin
 		if (!rst) begin;
          wb_ctrl_out <= 3'b0; 
-         mem_ctrl_out <= 3'b100;
+         mem_ctrl_out <= 3'b111;
 			alu_data_out <= 7'b0;
 			data_to_mem_out <= 32'b0;
 			instruction_out <= 32'b0;

@@ -53,7 +53,7 @@ module computer_integration(
         stall_ifid, stall_idex,  // stall PC and if_id buf, stall PC and id_ex buf
         jmp0_fwd, jmp1_fwd,  // determine if data is forwarded for jump calc
         alu0_fwd, alu1_fwd,  // determine if data is forwarded to alu
-        mem_fwd_exmem, mem_fwd_memwb;  // determine if data is forwarded to write memory bus   
+        mem_fwd_exmem, mem_fwd_memory;  // determine if data is forwarded to write memory bus   
    // From IFID Buffer
    wire [31:0] instruction_ifid, instruction_fwd_ifid;
    // From IDEX Buffer
@@ -77,7 +77,7 @@ module computer_integration(
    // From Data Forwarding and Hazard Control
    wire [31:0] jmp0_data, jmp1_data,  // data forwarded to jumps
                alu0_data, alu1_data,  // data forwarded to alu inputs
-               mem_data_fwd_exmem,  mem_data_fwd_memwb;  // data forwarded to memory path
+               mem_data_fwd_exmem,  mem_data_fwd_memory;  // data forwarded to memory path
    // From IDEX Buffer
    wire [31:0] fr_data0_idex, fr_data1_idex;  // fr data
    // From EXMEM Buffer
@@ -121,7 +121,7 @@ module computer_integration(
    if_id_buffer IFID(
       .clk(clk),
       .rst(comp_rst),
-      .stall(stall_ifid),
+      .stall(stall_ifid || stall_idex),
       .instruction(instruction),
       .instruction_out(instruction_ifid),
       .instruction_saved(instruction_fwd_ifid)
@@ -151,6 +151,9 @@ module computer_integration(
       .rst_all(comp_rst),
       .reg_dst(wb_ctrl_memwb[1]),
       .mem_to_reg(wb_ctrl_memwb[2]),
+      .stall_idex(stall_idex),
+      .stall_read0_addr(instruction_fwd_idex[25:21]),
+      .stall_read1_addr(instruction_fwd_idex[20:16]),
       .read0_addr(instruction_ifid[25:21]),
       .read1_addr(instruction_ifid[20:16]),
       .imm_addr(instruction_memwb[20:16]),
@@ -227,9 +230,11 @@ module computer_integration(
       .clk(clk), 
       .cs(mem_ctrl_exmem[2]), 
       .oe(mem_ctrl_exmem[1]), 
-      .rw(mem_ctrl_exmem[0]), 
+      .rw(mem_ctrl_exmem[0]),
+      .wr_fwd(mem_fwd_memory),
       .addr(alu_data_exmem), 
-      .write_data(data_to_mem_exmem), 
+      .write_data(data_to_mem_exmem),
+      .forward(mem_data_fwd_memory),
       .read_data(mem_data)
    );
 
@@ -263,7 +268,7 @@ module computer_integration(
       .aluD0(alu0_data),
       .aluD1(alu1_data),
       .exmemD(mem_data_fwd_exmem),
-      .memMemD(mem_data_fwd_memwb),
+      .memMemD(mem_data_fwd_memory),
       .jmp0(jmp0_fwd),			
       .jmp1(jmp1_fwd),
       .stall_idex(stall_idex),
@@ -272,6 +277,6 @@ module computer_integration(
       .alu0(alu0_fwd),
       .alu1(alu1_fwd),
       .exmem(mem_fwd_exmem),
-      .mem_mem(mem_fwd_memwb)		
+      .mem_mem(mem_fwd_memory)		
    );
 endmodule
