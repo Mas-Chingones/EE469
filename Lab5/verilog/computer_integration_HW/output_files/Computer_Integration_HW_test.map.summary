@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sat Jun 04 21:07:51 2016
+Analysis & Synthesis Status : Successful - Sat Jun 04 23:49:39 2016
 Quartus Prime Version : 15.1.1 Build 189 12/02/2015 SJ Standard Edition
 Revision Name : Computer_Integration_HW_test
 Top-level Entity Name : computer_integration_HW_test
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 11576
+Total registers : 13300
 Total pins : 67
 Total virtual pins : 0
-Total block memory bits : 166,912
+Total block memory bits : 183,296
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

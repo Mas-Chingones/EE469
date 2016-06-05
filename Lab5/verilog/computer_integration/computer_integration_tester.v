@@ -266,7 +266,7 @@ module computer_integration_tester(
    */
    
    /////////////////////////////////////////////////////////////
-   /* Program 2 */
+   /* Program 2 */ /*
    // Program
    // mem(0) = addi(0, t0, 16'd7)
    wr_instr = {6'd8, 5'd0, 5'd8, 16'd8};
@@ -402,6 +402,62 @@ module computer_integration_tester(
    wr_instr = {6'd43, 5'd8, 5'd9, 16'd0};
    wr_instr_addr = 32'd26;
    @(posedge clk);
+   */
+   
+   {ADDI,   zero,    t0,   16'd7    },              //  0     int A = 7;            A = 7
+   {SW,     zero,    t0,   A        },              //  1
+   {ADDI,   zero,    t0,   16'd5    },              //  2     int B = 5;            B = 5
+   {SW,     zero,    t0,   B        },              //  3
+   {ADDI,   zero,    t0,   16'd3    },              //  4     int C = 3;            C = 3
+   {SW,     zero,    t0,   C        },              //  5
+   {ADDI,   zero,    t0,   16'd5    },              //  6     int D = 5;            D = 5
+   {SW,     zero,    t0,   D        },              //  7
+   {ADDI,   zero,    t0,   D        },              //  8     int* DPtr = &D;       DPtr = 3
+   {SW,     zero,    t0,   DPtr     },              //  9
+   {ADDI,   zero,    t0,   16'h5A5A },              //  10    int E = 0x5A5A;       E = 0x5A5A
+   {SW,     zero,    t0,   E        },              //  11
+   {ADDI,   zero,    t0,   16'h6767 },              //  12    int F = 0x6767;       F = 0x6767
+   {SW,     zero,    t0,   F        },              //  13
+   {ADDI,   zero,    t0,   16'h3C   },              //  14    int G = 0x3C;         G = 0x3C
+   {SW,     zero,    t0,   G        },              //  15
+   {ADDI,   zero,    t0,   16'hFF   },              //  16    int H = 0xFF;         H = 0xFF
+   {SW,     zero,    t0,   H        },              //  17
+   {LW,     zero,    t0,   A        },              //  18    if(A-B) > 3 {         
+   {LW,     zero,    t1,   B        },              //  19
+   {ADDI,   zero,    t2,   16'd3    },              //  20
+   {REG,    t0,      t1,   t0,      SHAMT,   SUB},  //  21
+   {BGT,    t2,      t0,   16'd11   },              //  22
+   {LW,     zero,    t0,   C        },              //  23     C = C + 4;           C = 7
+   {ADDI,   t0,      t1,   16'd4    },              //  24
+   {SW,     zero,    t1,   C        },              //  25
+   {ADDI,   zero,    t1,   16'd3    },              //  26     D = C - 3;           D = 4
+   {REG,    t0,      t1,   t1,      SHAMT,   SUB},  //  27
+   {SW,     zero,    t1,   D        },              //  28
+   {LW,     zero,    t0,   E        },              //  29     G = E | F;}          G = 0x7F7F
+   {LW,     zero,    t1,   F        },              //  30
+   {REG,    t0,      t1,   t0,      SHAMT,   OR },  //  31     
+   {SW,     zero,    t0,   G        },              //  32
+   {JMP,    26'd44},                                //  33     else {
+   {LW,     zero,    t0,   C        },              //  34     C = C << 3;          C = 24
+   {SLLI,   t0,      t0,   16'd3    },              //  35
+   {SW,     zero,    t0,   C        },              //  36
+   {ADDI,   zero,    t0,   16'd7    },              //  37     *dPTR = 7;           D = 7
+   {LW,     zero,    t1,   DPtr     },              //  38
+   {SW,     DPtr,    t0,   16'd0    },              //  39
+   {LW,     zero,    t0,   E        },              //  40     G = E & F;}          G = 0x4242
+   {LW,     zero,    t1,   F        },              //  41
+   {REG,    t0,      t1,   t0,      SHAMT,   AND},  //  42
+   {SW,     zero,    t0,   G        },              //  43                        {BRANCH_1}           {BRANCH_2}
+   {LW,     zero,    t0,   A        },              //  44     A = A + B;           A = 12               A = 12
+   {LW,     zero,    t1,   B        },              //  45
+   {REG,    t0,      t1,   t0,      SHAMT,   ADD},  //  46
+   {SW,     zero,    t0,   A        },              //  47
+   {LW,     zero,    t0,   E        },              //  48     G = (E ^ F) & H      G = 0x3D             G = 0x3D
+   {LW,     zero,    t1,   F        },              //  49
+   {LW,     zero,    t2,   H        },              //  50
+   {REG,    t0,      t1,   t0,      SHAMT,   XOR},  //  51
+   {REG,    t0,      t2,   t0,      SHAMT,   AND},  //  52
+   {SW,     zero,    t0,   H        }  
    
    // run program
    wr_instr_en = 1'b0;
@@ -413,24 +469,52 @@ module computer_integration_tester(
    $finish;
    end
 
-   // Reference
-   parameter A = 5'd0;
-   parameter B = 5'd1;
-   parameter C = 5'd2;
-   parameter D = 5'd3;
-   parameter DPtr = 5'd4;
+   // C-Program Variable Memory locations
+   parameter A = 16'd0;
+   parameter B = 16'd1;
+   parameter C = 16'd2;
+   parameter D = 16'd3;
+   parameter DPtr = 16'd4;
+   parameter E = 16'd5;
+   parameter F = 16'd6;
+   parameter G = 16'd7;
+   parameter H = 16'd8;
    
+   // Computer OP-CODES
+   parameter REG = 6'd0;
+   parameter JMP = 6'd2;
+   parameter BGT = 6'd7;
+   parameter ADDI = 6'd8;
+   parameter SLTI = 6'd10;
+   parameter ANDI = 6'd12;
+   parameter ORI = 6'd13;
+   parameter XORI = 6'd14;
+   parameter SLLI = 6'd15;
+   parameter LW = 6'd35;
+   parameter SW = 6'd43;
+   
+   // Function Codes
+   parameter NOP = 6'd0;
+   parameter SLLV = 6'd4;
+   parameter JR = 6'd8;
+   parameter ADD = 6'd32;
+   parameter SUB = 6'd34;
+   parameter AND = 6'd36;
+   parameter OR = 6'd37;
+   parameter XOR = 6'd38;
+   parameter SLT = 6'd42;
+   
+   // FR Register Common Names
    parameter zero = 5'd0;
    parameter t0 = 5'd8;
    parameter t1 = 5'd9;
-   
-   parameter ADDI = 6'd8;
-   parameter SW = 6'd43;
-   parameter LW = 6'd35;
-   parameter SLLI = 6'd15;
-   
-   parameter SUB = 6'd34;
-   
-   parameter SHAMT = 5'b11111;
+   parameter t2 = 5'd10;
+   parameter t3 = 5'd11;
+   parameter t4 = 5'd12;
+   parameter t5 = 5'd13;
+   parameter t6 = 5'd14;
+   parameter t7 = 5'd15;
+
+   parameter SHAMT = 5'b11111;  // SHAMT filler for REG instructions
    
 endmodule

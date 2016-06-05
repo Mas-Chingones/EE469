@@ -33,7 +33,7 @@ module computer_integration_HW_test(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, H
    wire [32:0] clocks;  // divided clocks to choose the system clock from
    // Control
    wire comp_rst, comp_en, wr_instr_en;  // computer !reset, computer !enable, write instruction enable
-   wire [1:0] program_select;  // select program to execute
+   wire [2:0] program_select;  // select program to execute
    // Data
    wire [6:0] wr_instr_addr;  // address to write instruction
    wire [31:0] wr_instr;  // instruction to write to instruction memory
@@ -48,7 +48,7 @@ module computer_integration_HW_test(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, H
    assign clk_speed = SW[9];
    assign next_state = KEY[0];
    assign reset_sm = KEY[3];
-   assign program_select = SW[1:0];
+   assign program_select = SW[2:0];
    // Inactive Outputs
    assign LEDR = 10'd0;
    assign HEX0 = 7'h7F;
@@ -112,7 +112,7 @@ module computer_integration_HW_SM(
 );
 // I/O
    input wire clk, next_state, reset_sm;  // sm clock, PB indicating transition to next state, reset sm signal
-   input wire [1:0] program_select;  // select program to run
+   input wire [2:0] program_select;  // select program to run
    output reg comp_rst, comp_en, wr_instr_en;  // reset computer, enable computer, enable write instruction
    output reg [6:0] wr_instr_addr;  // address for writing instruction
    output reg [31:0] wr_instr;  // instruction to write
@@ -216,9 +216,17 @@ module computer_integration_HW_SM(
             instr_to_write = INSTR_TO_COMPUTER_2[instr_count];
             num_of_instr = N_INSTR_2;
          end
-			2: begin
+         2: begin
             instr_to_write = INSTR_TO_COMPUTER_3[instr_count];
             num_of_instr = N_INSTR_3;
+         end
+         3: begin
+            instr_to_write = INSTR_TO_COMPUTER_4[instr_count];
+            num_of_instr = N_INSTR_4;
+         end
+         4: begin
+            instr_to_write = INSTR_TO_COMPUTER_5[instr_count];
+            num_of_instr = N_INSTR_5;
          end
       endcase   
    end
@@ -293,35 +301,158 @@ module computer_integration_HW_SM(
    /* C Program 3 */
    parameter N_INSTR_3 = 25;
    parameter bit [31:0] INSTR_TO_COMPUTER_3 [0:(N_INSTR_3-1)] = 
-   '{																	//    
-		{ADDI,   zero,    t0,   16'd10},                //  0 
+   '{                                                 //      C Equivalnet  
+      {ADDI,   zero,    t0,   16'd10},                //  0 
       {SW,     zero,    t0,   A    },                 //  1
       {ADDI,   zero,    t0,   16'd3},                 //  2 
       {SW,     zero,    t0,   B    },                 //  3
-		{LW,     zero,    t0,   A    },                 //  4 
+      {LW,     zero,    t0,   A    },                 //  4 
       {LW,     zero,    t1,   B    },                 //  5
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  ADD},     //  6 
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  SUB},     //  7
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  AND},     //  8 
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  OR},      //  9
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  XOR},     //  10
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  SLT},     //  11
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  SLLV},    //  12
-		{ADDI,   zero,    t0,   16'd18},                //  13
-		{REG,    t0,   	10'b0, 	SHAMT,  JR},	      //  14
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},     //  15
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},     //  16
- 		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},     //  17
-		{REG,    t0,   	t1, 	t2, 	SHAMT,  NOP},     //  18
-		{ADDI,   t0,    t2,   16'd3},                	//  19
-		{SLTI,   t0,    t2,   16'd3},                	//  20
-		{ANDI,   t0,    t2,   16'd3},                	//  21
-		{ORI,    t0,    t2,   16'd3},                	//  22
-		{XORI,   t0,    t2,   16'd3},                	//  23
-		{SLLI,   t0,    t2,   16'd3}                		//  24
+      {REG,    t0,      t1,    t2,    SHAMT,  ADD},   //  6 
+      {REG,    t0,      t1,    t2,    SHAMT,  SUB},   //  7
+      {REG,    t0,      t1,    t2,    SHAMT,  AND},   //  8 
+      {REG,    t0,      t1,    t2,    SHAMT,  OR},    //  9
+      {REG,    t0,      t1,    t2,    SHAMT,  XOR},   //  10
+      {REG,    t0,      t1,    t2,    SHAMT,  SLT},   //  11
+      {REG,    t0,      t1,    t2,    SHAMT,  SLLV},  //  12
+      {ADDI,   zero,    t0,    16'd18},               //  13
+      {REG,    t0,      10'b0, SHAMT, JR},            //  14
+      {REG,    t0,      t1,    t2,    SHAMT,  NOP},   //  15
+      {REG,    t0,      t1,    t2,    SHAMT,  NOP},   //  16
+      {REG,    t0,      t1,    t2,    SHAMT,  NOP},   //  17
+      {REG,    t0,      t1,    t2,    SHAMT,  NOP},   //  18
+      {ADDI,   t0,      t2,   16'd3},                 //  19
+      {SLTI,   t0,      t2,   16'd3},                 //  20
+      {ANDI,   t0,      t2,   16'd3},                 //  21
+      {ORI,    t0,      t2,   16'd3},                 //  22
+      {XORI,   t0,      t2,   16'd3},                 //  23
+      {SLLI,   t0,      t2,   16'd3}                  //  24
     };                                                
-	
-	
+   
+   // Lab 5 Program 1
+   /* C Program 4 */
+   parameter N_INSTR_4 = 54;
+   parameter bit [31:0] INSTR_TO_COMPUTER_4 [0:(N_INSTR_4-1)] = 
+   '{                                                  //      C Equivalent           Updated Memory Values
+      {ADDI,   zero,    t0,   16'd7    },              //  0     int A = 7;            A = 7
+      {SW,     zero,    t0,   A        },              //  1
+      {ADDI,   zero,    t0,   16'd5    },              //  2     int B = 5;            B = 5
+      {SW,     zero,    t0,   B        },              //  3
+      {ADDI,   zero,    t0,   16'd3    },              //  4     int C = 3;            C = 3
+      {SW,     zero,    t0,   C        },              //  5
+      {ADDI,   zero,    t0,   16'd5    },              //  6     int D = 5;            D = 5
+      {SW,     zero,    t0,   D        },              //  7
+      {ADDI,   zero,    t0,   D        },              //  8     int* DPtr = &D;       DPtr = 3
+      {SW,     zero,    t0,   DPtr     },              //  9
+      {ADDI,   zero,    t0,   16'h5A5A },              //  10    int E = 0x5A5A;       E = 0x5A5A
+      {SW,     zero,    t0,   E        },              //  11
+      {ADDI,   zero,    t0,   16'h6767 },              //  12    int F = 0x6767;       F = 0x6767
+      {SW,     zero,    t0,   F        },              //  13
+      {ADDI,   zero,    t0,   16'h3C   },              //  14    int G = 0x3C;         G = 0x3C
+      {SW,     zero,    t0,   G        },              //  15
+      {ADDI,   zero,    t0,   16'hFF   },              //  16    int H = 0xFF;         H = 0xFF
+      {SW,     zero,    t0,   H        },              //  17
+      {LW,     zero,    t0,   A        },              //  18    if(A-B) > 3 {         
+      {LW,     zero,    t1,   B        },              //  19
+      {ADDI,   zero,    t2,   16'd3    },              //  20
+      {REG,    t0,      t1,   t0,      SHAMT,   SUB},  //  21
+      {BGT,    t2,      t0,   16'd11   },              //  22
+      {LW,     zero,    t0,   C        },              //  23     C = C + 4;           C = 7
+      {ADDI,   t0,      t1,   16'd4    },              //  24
+      {SW,     zero,    t1,   C        },              //  25
+      {ADDI,   zero,    t1,   16'd3    },              //  26     D = C - 3;           D = 4
+      {REG,    t0,      t1,   t1,      SHAMT,   SUB},  //  27
+      {SW,     zero,    t1,   D        },              //  28
+      {LW,     zero,    t0,   E        },              //  29     G = E | F;}          G = 0x7F7F
+      {LW,     zero,    t1,   F        },              //  30
+      {REG,    t0,      t1,   t0,      SHAMT,   OR },  //  31     
+      {SW,     zero,    t0,   G        },              //  32
+      {JMP,    26'd44},                                //  33     else {
+      {LW,     zero,    t0,   C        },              //  34     C = C << 3;          C = 24
+      {SLLI,   t0,      t0,   16'd3    },              //  35
+      {SW,     zero,    t0,   C        },              //  36
+      {ADDI,   zero,    t0,   16'd7    },              //  37     *dPTR = 7;           D = 7
+      {LW,     zero,    t1,   DPtr     },              //  38
+      {SW,     t1,      t0,   16'd0    },              //  39
+      {LW,     zero,    t0,   E        },              //  40     G = E & F;}          G = 0x4242
+      {LW,     zero,    t1,   F        },              //  41
+      {REG,    t0,      t1,   t0,      SHAMT,   AND},  //  42
+      {SW,     zero,    t0,   G        },              //  43                        {BRANCH_1}           {BRANCH_2}
+      {LW,     zero,    t0,   A        },              //  44     A = A + B;           A = 12               A = 12
+      {LW,     zero,    t1,   B        },              //  45
+      {REG,    t0,      t1,   t0,      SHAMT,   ADD},  //  46
+      {SW,     zero,    t0,   A        },              //  47
+      {LW,     zero,    t0,   E        },              //  48     G = (E ^ F) & H      G = 0x3D             G = 0x3D
+      {LW,     zero,    t1,   F        },              //  49
+      {LW,     zero,    t2,   H        },              //  50
+      {REG,    t0,      t1,   t0,      SHAMT,   XOR},  //  51
+      {REG,    t0,      t2,   t0,      SHAMT,   AND},  //  52
+      {SW,     zero,    t0,   G        }               //  53
+    };     
+   
+   
+   // Lab 5 Program 2
+   /* C Program 5 */
+   parameter N_INSTR_5 = 54;
+   parameter bit [31:0] INSTR_TO_COMPUTER_5 [0:(N_INSTR_5-1)] = 
+   '{                                                  //      C Equivalent           Updated Memory Values
+      {ADDI,   zero,    t0,   16'd8    },              //  0     int A = 8;            A = 8
+      {SW,     zero,    t0,   A        },              //  1
+      {ADDI,   zero,    t0,   16'd3    },              //  2     int B = 3;            B = 3
+      {SW,     zero,    t0,   B        },              //  3
+      {ADDI,   zero,    t0,   16'd3    },              //  4     int C = 3;            C = 3
+      {SW,     zero,    t0,   C        },              //  5
+      {ADDI,   zero,    t0,   16'd5    },              //  6     int D = 5;            D = 5
+      {SW,     zero,    t0,   D        },              //  7
+      {ADDI,   zero,    t0,   D        },              //  8     int* DPtr = &D;       DPtr = 3
+      {SW,     zero,    t0,   DPtr     },              //  9
+      {ADDI,   zero,    t0,   16'h5A5A },              //  10    int E = 0x5A5A;       E = 0x5A5A
+      {SW,     zero,    t0,   E        },              //  11
+      {ADDI,   zero,    t0,   16'h6767 },              //  12    int F = 0x6767;       F = 0x6767
+      {SW,     zero,    t0,   F        },              //  13
+      {ADDI,   zero,    t0,   16'h3C   },              //  14    int G = 0x3C;         G = 0x3C
+      {SW,     zero,    t0,   G        },              //  15
+      {ADDI,   zero,    t0,   16'hFF   },              //  16    int H = 0xFF;         H = 0xFF
+      {SW,     zero,    t0,   H        },              //  17
+      {LW,     zero,    t0,   A        },              //  18    if(A-B) > 3 {         
+      {LW,     zero,    t1,   B        },              //  19
+      {ADDI,   zero,    t2,   16'd3    },              //  20
+      {REG,    t0,      t1,   t0,      SHAMT,   SUB},  //  21
+      {BGT,    t2,      t0,   16'd11   },              //  22
+      {LW,     zero,    t0,   C        },              //  23     C = C + 4;           C = 7
+      {ADDI,   t0,      t1,   16'd4    },              //  24
+      {SW,     zero,    t1,   C        },              //  25
+      {ADDI,   zero,    t0,   16'd3    },              //  26     D = C - 3;           D = 4
+      {REG,    t1,      t0,   t1,      SHAMT,   SUB},  //  27
+      {SW,     zero,    t1,   D        },              //  28
+      {LW,     zero,    t0,   E        },              //  29     G = E | F;}          G = 0x7F7F
+      {LW,     zero,    t1,   F        },              //  30
+      {REG,    t0,      t1,   t0,      SHAMT,   OR },  //  31     
+      {SW,     zero,    t0,   G        },              //  32
+      {JMP,    26'd44},                                //  33     else {
+      {LW,     zero,    t0,   C        },              //  34     C = C << 3;          C = 24
+      {SLLI,   t0,      t0,   16'd3    },              //  35
+      {SW,     zero,    t0,   C        },              //  36
+      {ADDI,   zero,    t0,   16'd7    },              //  37     *dPTR = 7;           D = 7
+      {LW,     zero,    t1,   DPtr     },              //  38
+      {SW,     t1,      t0,   16'd0    },              //  39
+      {LW,     zero,    t0,   E        },              //  40     G = E & F;}          G = 0x4242
+      {LW,     zero,    t1,   F        },              //  41
+      {REG,    t0,      t1,   t0,      SHAMT,   AND},  //  42
+      {SW,     zero,    t0,   G        },              //  43                        {BRANCH_1}           {BRANCH_2}
+      {LW,     zero,    t0,   A        },              //  44     A = A + B;           A = 11               A = 11
+      {LW,     zero,    t1,   B        },              //  45
+      {REG,    t0,      t1,   t0,      SHAMT,   ADD},  //  46
+      {SW,     zero,    t0,   A        },              //  47
+      {LW,     zero,    t0,   E        },              //  48     G = (E ^ F) & H      G = 0x3D             G = 0x3D
+      {LW,     zero,    t1,   F        },              //  49
+      {LW,     zero,    t2,   H        },              //  50
+      {REG,    t0,      t1,   t0,      SHAMT,   XOR},  //  51
+      {REG,    t0,      t2,   t0,      SHAMT,   AND},  //  52
+      {SW,     zero,    t0,   G        }               //  53
+    };     
+   
+   
    /*--------------------------------
    ///// INSTRUCTIONS Reference /////
    ----------------------------------
@@ -337,6 +468,11 @@ module computer_integration_HW_SM(
    parameter C = 16'd2;
    parameter D = 16'd3;
    parameter DPtr = 16'd4;
+   parameter E = 16'd5;
+   parameter F = 16'd6;
+   parameter G = 16'd7;
+   parameter H = 16'd8;
+   
    
    // Computer OP-CODES
    parameter REG = 6'd0;
@@ -354,7 +490,7 @@ module computer_integration_HW_SM(
    // Function Codes
    parameter NOP = 6'd0;
    parameter SLLV = 6'd4;
-	parameter JR = 6'd8;
+   parameter JR = 6'd8;
    parameter ADD = 6'd32;
    parameter SUB = 6'd34;
    parameter AND = 6'd36;
