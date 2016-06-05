@@ -1,16 +1,16 @@
-Fitter Status : Successful - Sat Jun 04 23:52:38 2016
+Fitter Status : Successful - Sun Jun 05 13:27:15 2016
 Quartus Prime Version : 15.1.1 Build 189 12/02/2015 SJ Standard Edition
 Revision Name : Computer_Integration_HW_test
 Top-level Entity Name : computer_integration_HW_test
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 5,631 / 32,070 ( 18 % )
-Total registers : 13406
+Logic utilization (in ALMs) : 7,714 / 32,070 ( 24 % )
+Total registers : 16605
 Total pins : 67 / 457 ( 15 % )
 Total virtual pins : 0
-Total block memory bits : 183,296 / 4,065,280 ( 5 % )
-Total RAM Blocks : 18 / 397 ( 5 % )
+Total block memory bits : 366,592 / 4,065,280 ( 9 % )
+Total RAM Blocks : 36 / 397 ( 9 % )
 Total DSP Blocks : 0 / 87 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

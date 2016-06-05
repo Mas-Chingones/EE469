@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="alt_sld_fab" kind="alt_sld_fab" version="1.0" fabric="QSYS">
  <!-- Format version 15.1 189 (Future versions may contain additional information.) -->
- <!-- 2016.06.04.23:48:59 -->
+ <!-- 2016.06.05.13:22:39 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_DEVICE_FAMILY">
   <type>java.lang.String</type>
@@ -56,7 +56,7 @@
 the requested settings for a module instance. -->
   <parameter name="DESIGN_HASH">
    <type>java.lang.String</type>
-   <value>e80b64db513df03a376e</value>
+   <value>3fa3e4b77ef3124a5c0b</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1611,7 +1611,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="DESIGN_HASH">
    <type>java.lang.String</type>
-   <value>e80b64db513df03a376e</value>
+   <value>3fa3e4b77ef3124a5c0b</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
