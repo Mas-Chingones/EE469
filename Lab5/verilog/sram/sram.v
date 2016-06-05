@@ -6,6 +6,7 @@ Summary: 2k memory registers of 16 bits memory with data-in & data-out with
    chip select, output enable, write enable
 */
 
+// NOTE: Reduced memory to 128 locations from 2048
 module sram(clk, cs, oe, rw, wr_fwd, addr, write_data, forward, read_data);
 	// I/O
    input wire clk, cs, oe, rw,  // clock, !chip select, !out enable, read/!write
@@ -14,7 +15,7 @@ module sram(clk, cs, oe, rw, wr_fwd, addr, write_data, forward, read_data);
                      write_data,  // data to sram (only first 16 bits)
                      forward;  // data to forward to the sram
    output reg [31:0] read_data;  // data from sram
-	reg [15:0] memory [0:2047];  // sram array of 16-bit registers
+	reg [15:0] memory [0:127];  // sram array of 16-bit registers
    // Internal
    wire [15:0] data_to_mem;
    
@@ -23,7 +24,7 @@ module sram(clk, cs, oe, rw, wr_fwd, addr, write_data, forward, read_data);
    always @(*) begin
       if(!cs && (rw && !oe)) begin
          // sign extend data from memory
-         read_data = {{16{memory[addr[10:0]][15]}}, {memory[addr[10:0]]}};
+         read_data = {{16{memory[addr[6:0]][15]}}, {memory[addr[6:0]]}};
       end
       else
          read_data = 32'bz;
@@ -33,8 +34,8 @@ module sram(clk, cs, oe, rw, wr_fwd, addr, write_data, forward, read_data);
 	assign data_to_mem = wr_fwd ? forward[15:0] : write_data[15:0];
    always @(posedge clk) begin
       if (!cs && (!rw && oe))
-         memory[addr[10:0]] = data_to_mem[15:0];
+         memory[addr[6:0]] = data_to_mem[15:0];
       else
-         memory[addr[10:0]] = memory[addr[10:0]];
+         memory[addr[6:0]] = memory[addr[6:0]];
 	end
 endmodule

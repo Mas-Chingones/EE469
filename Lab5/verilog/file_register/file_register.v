@@ -19,8 +19,11 @@ module file_register(
          rst_all,
          reg_dst,
          mem_to_reg,
+         stall_idex,
          read0_addr,
          read1_addr,
+         stall_read0_addr,
+         stall_read1_addr,
          imm_addr,
          reg_addr,
          mem_data,
@@ -29,9 +32,12 @@ module file_register(
          read1_data
        );
    input wire clk, we, rst_all,  // clock, write enable, low reset all registers
-              reg_dst, mem_to_reg;  // register destination selector, write data selection
+              reg_dst, mem_to_reg,  // register destination selector, write data selection
+              stall_idex;  // idex buffer is stalled
    input wire [4:0] read0_addr,  // read0 register address selection
                     read1_addr,  // read1 register address selection
+                    stall_read0_addr,  // address0 to read during a stall
+                    stall_read1_addr,  // address1 to read during a stall
                     imm_addr, reg_addr;  // write register address
    input wire [31:0] mem_data, alu_data;  // data from mem or alu to be written to write address 
    output wire [31:0] read0_data,  // data to be read from read0 address
@@ -42,6 +48,7 @@ module file_register(
                write_data;  // data to be written to registers
    wire [4:0] write_addr;  // address to write to in registers
    wire rd0_data_src, rd1_data_src;  // determines if read data comes from fr or write data
+   wire [31:0] read0_addr_proxy, read1_addr_proxy;  // used to access fr address (with stall)
   
    // write enable register selection
    decoder_5bit write_decoder(.code(write_addr), .selection(wreg_sel));
@@ -66,13 +73,15 @@ module file_register(
    endgenerate
    
    // read data selection
-   assign rd0_data_src = (read0_addr == write_addr) && we;
-   assign rd1_data_src = (read1_addr == write_addr) && we;
+   assign read0_addr_proxy = stall_idex ? stall_read0_addr : read0_addr;
+   assign read1_addr_proxy = stall_idex ? stall_read1_addr : read1_addr;
+   assign rd0_data_src = (read0_addr_proxy == write_addr) && we;
+   assign rd1_data_src = (read1_addr_proxy == write_addr) && we;
    // route chosen data to read out
    genvar j;
    generate for(j=0; j<32; j=j+1) begin: READ
-      mux_2to1 mux_read0(.in0(Q[read0_addr][j]), .in1(write_data[j]), .select(rd0_data_src), .out(read0_data[j]));
-      mux_2to1 mux_read1(.in0(Q[read1_addr][j]), .in1(write_data[j]), .select(rd1_data_src), .out(read1_data[j]));
+      mux_2to1 mux_read0(.in0(Q[read0_addr_proxy][j]), .in1(write_data[j]), .select(rd0_data_src), .out(read0_data[j]));
+      mux_2to1 mux_read1(.in0(Q[read1_addr_proxy][j]), .in1(write_data[j]), .select(rd1_data_src), .out(read1_data[j]));
    end
    endgenerate   
    

@@ -52,14 +52,14 @@ module id_ex_buffer(
    
    // output logic (incorporate stall)
    assign wb_ctrl_out = stall ? 3'b0 : wb_ctrl_saved;
-   assign mem_ctrl_out = stall ? 3'b100 : mem_ctrl_saved;
+   assign mem_ctrl_out = stall ? 3'b111 : mem_ctrl_saved;
    assign ex_ctrl_out = stall ? 7'b0 : ex_ctrl_saved;
    assign instruction_out = stall ? 32'b0 : instruction_saved;
    
    // storage logic
 	initial begin
 		wb_ctrl_saved = 3'b0;  // no write
-		mem_ctrl_saved = 3'b100;  // cs high disable mem
+		mem_ctrl_saved = 3'b111;  // cs high disable mem
 		ex_ctrl_saved = 7'b0;  // NOP
 		r_data_0_out = 32'b0;
 		r_data_1_out = 32'b0;
@@ -68,7 +68,7 @@ module id_ex_buffer(
 	always @(posedge clk or negedge rst) begin
 		if (!rst) begin;
          wb_ctrl_saved <= 3'b0; 
-         mem_ctrl_saved <= 3'b100;
+         mem_ctrl_saved <= 3'b111;
          ex_ctrl_saved <= 7'b0;
          r_data_0_out <= 32'b0;
          r_data_1_out <= 32'b0;
@@ -78,8 +78,8 @@ module id_ex_buffer(
          wb_ctrl_saved <= wb_ctrl_saved; 
          mem_ctrl_saved <= mem_ctrl_saved;
          ex_ctrl_saved <= ex_ctrl_saved;
-         r_data_0_out <= r_data_0_out;
-         r_data_1_out <= r_data_1_out;
+         r_data_0_out <= r_data_0;
+         r_data_1_out <= r_data_1;
          instruction_saved <= instruction_saved;
       end
       else begin

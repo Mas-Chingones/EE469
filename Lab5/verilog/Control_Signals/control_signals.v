@@ -49,7 +49,7 @@ module control_signals(
       branch = 0;
       cs = 1;
       oe = 0;
-      rw = 0;
+      rw = 1;
       mem_to_reg = 0;
       alu_op = 6'b0;
       alu_src = 0;
@@ -73,8 +73,8 @@ module control_signals(
             reg_dst = 1;
             branch = 0;
             cs = 1;
-            oe = oe;
-            rw = rw;
+            oe = 1;
+            rw = 1;
             mem_to_reg = 0;      
             alu_src = 0;
             if(
@@ -99,8 +99,8 @@ module control_signals(
             jump_reg = 0;
             branch = 0;
             cs = 1;
-            oe = oe;
-            rw = rw;
+            oe = 1;
+            rw = 1;
             mem_to_reg = mem_to_reg;
             alu_op = alu_op;
             alu_src = alu_src;
@@ -115,8 +115,8 @@ module control_signals(
             jump_reg = jump_reg;
             branch = 1;
             cs = 1;
-            oe = oe;
-            rw = rw;
+            oe = 1;
+            rw = 1;
             mem_to_reg = mem_to_reg;
             alu_op = NOP;  // alu is not used for bgt w/ pipelined cpu
             alu_src = 0;
@@ -129,8 +129,8 @@ module control_signals(
             jump_reg = 0;
             branch = 0;
             cs = 1;
-            oe = oe;
-            rw = rw;
+            oe = 1;
+            rw = 1;
             mem_to_reg = 0;
             alu_op = ADD;
             alu_src = 1;
@@ -143,8 +143,8 @@ module control_signals(
             jump_reg = 0;
             branch = 0;
             cs = 1;
-            oe = oe;
-            rw = rw;
+            oe = 1;
+            rw = 1;
             mem_to_reg = 0;
             alu_op = SLT;
             alu_src = 1;
@@ -157,8 +157,8 @@ module control_signals(
             jump_reg = 0;
             branch = 0;
             cs = 1;
-            oe = oe;
-            rw = rw;
+            oe = 1;
+            rw = 1;
             mem_to_reg = 0;
             alu_op = AND;
             alu_src = 1;
@@ -171,8 +171,8 @@ module control_signals(
             jump_reg = 0;
             branch = 0;
             cs = 1;
-            oe = oe;
-            rw = rw;
+            oe = 1;
+            rw = 1;
             mem_to_reg = 0;
             alu_op = OR;
             alu_src = 1;
@@ -185,8 +185,8 @@ module control_signals(
             jump_reg = 0;
             branch = 0;
             cs = 1;
-            oe = oe;
-            rw = rw;
+            oe = 1;
+            rw = 1;
             mem_to_reg = 0;
             alu_op = XOR;
             alu_src = 1;
@@ -200,8 +200,8 @@ module control_signals(
             jump_reg = 0;
             branch = 0;
             cs = 1;
-            oe = oe;
-            rw = rw;
+            oe = 1;
+            rw = 1;
             mem_to_reg = 0;
             alu_op = SLLV;
             alu_src = 1;
@@ -242,8 +242,8 @@ module control_signals(
             jump_reg = 0;
             branch = 0;
             cs = 1;
-            oe = 0;
-            rw = 0;
+            oe = 1;
+            rw = 1;
             mem_to_reg = 0;
             alu_op = 6'b0;
             alu_src = 0;

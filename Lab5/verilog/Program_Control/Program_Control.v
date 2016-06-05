@@ -83,7 +83,7 @@ always @(*) begin
          // Branch Greater Than (bgt)
          if(branch) begin
             if(jump_data0 > jump_data1)
-               nextcount <= jump_address[6:0];
+               nextcount <= counter + jump_address[6:0];
             else
                nextcount <= counter + 6'b1;
          end

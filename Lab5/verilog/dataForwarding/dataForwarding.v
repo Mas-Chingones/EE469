@@ -193,7 +193,6 @@ assign op_IFID_is_alui_rd = (
                            (op_IFID == ANDI) ||
                            (op_IFID == XORI) ||
                            (op_IFID == SLLI) ||
-                           (op_IFID == SW)   ||
                            (op_IFID == LW)   );
                            
 assign op_IDEX_is_alui_rd = (      
@@ -203,7 +202,6 @@ assign op_IDEX_is_alui_rd = (
                            (op_IDEX == ANDI) ||
                            (op_IDEX == XORI) ||
                            (op_IDEX == SLLI) ||
-                           (op_IDEX == SW)   ||
                            (op_IDEX == LW)   );
                            
 assign op_EXMEM_is_alui_rd = (      
@@ -212,7 +210,6 @@ assign op_EXMEM_is_alui_rd = (
                            (op_EXMEM == ANDI) ||
                            (op_EXMEM == XORI) ||
                            (op_EXMEM == SLLI) ||
-                           (op_EXMEM == SW)   ||
                            (op_EXMEM == ORI)  ||
                            (op_EXMEM == LW)   );
                            
@@ -223,7 +220,6 @@ assign op_MEMWB_is_alui_rd = (
                            (op_MEMWB == ANDI) ||
                            (op_MEMWB == XORI) ||
                            (op_MEMWB == SLLI) ||
-                           (op_MEMWB == SW)   ||
                            (op_MEMWB == LW)   );
 
 
@@ -299,95 +295,138 @@ assign MEMWB_is_alur = (      (op_MEMWB == 0) &&
                            (funct_MEMWB == SLLV) ));
                               
                               
-always @(*) begin
-   // BLOCK 1 forwarding to the ALU
-   if(op_IDEX_is_alui_rd) begin 
-      
-      alu1 = 0;
-      aluD1 = aluD1; 
+	always @(*) begin
+		// BLOCK 1 forwarding to the ALU
+		if(op_IDEX_is_alui_rd) begin 
+			alu1 = 0;
+			aluD1 = aluD1; 
 
-      if(op_EXMEM_is_alui_wr) begin
-         alu0 = (rt_EXMEM == rs_IDEX);
-         aluD0 = aluEXMEM_Data;
-      end
-      else if(EXMEM_is_alur) begin
-         alu0 = (rd_EXMEM == rs_IDEX);
-         aluD0 = aluEXMEM_Data;
-      end
-      else if(op_MEMWB_is_alui_wr || op_MEMWB == LW) begin
-         alu0 = (rt_MEMWB == rs_IDEX);
-         aluD0 = aluMEMWB_Data;
-      end
-      else if(MEMWB_is_alur) begin
-         alu0 = (rd_MEMWB == rs_IDEX);
-         aluD0 = aluMEMWB_Data;
-      end
-      else begin
-         alu0 = 0;
-         aluD0 = 32'h70E51E5;
-      end
-   end
-   
-   //BLOCK 2
-   else if(IDEX_is_alur) begin //
-      if(op_EXMEM_is_alui_wr) begin            //SUB-BLOCK A
-         if(op_MEMWB_is_alui_wr || (op_MEMWB == LW)) begin
-            alu0 = (rt_EXMEM == rs_IDEX) || (rt_MEMWB == rs_IDEX);
-            alu1 = (rt_EXMEM == rt_IDEX) || (rt_MEMWB == rt_IDEX);
-         end
-         else if(MEMWB_is_alur) begin
-            alu0 = (rt_EXMEM == rs_IDEX) || (rd_MEMWB == rs_IDEX);
-            alu1 = (rt_EXMEM == rt_IDEX) || (rd_MEMWB == rt_IDEX);
-         end
-         else begin
-            alu0 = (rt_EXMEM == rs_IDEX);
-            alu1 = (rt_EXMEM == rt_IDEX);
-         end
-         
-         if(rt_EXMEM == rs_IDEX)
-            aluD0 = aluEXMEM_Data;
-         else
-            aluD0 = aluMEMWB_Data;
-            
-         if(rt_EXMEM == rt_IDEX)
-            aluD1 = aluEXMEM_Data;
-         else
-            aluD1 = aluMEMWB_Data;
-      end
-      else if(EXMEM_is_alur) begin   //SUB-BLOCK B
-         if(op_MEMWB_is_alui_wr || op_MEMWB == LW) begin
-            alu0 = (rd_EXMEM == rs_IDEX) || (rt_MEMWB == rs_IDEX);
-            alu1 = (rd_EXMEM == rt_IDEX) || (rt_MEMWB == rt_IDEX);         
-         end
-         else if(MEMWB_is_alur) begin
-            alu0 = (rd_EXMEM == rs_IDEX) || (rd_MEMWB == rs_IDEX);
-            alu1 = (rd_EXMEM == rt_IDEX) || (rd_MEMWB == rt_IDEX);   
-         end 
-         else begin
-            alu0 = (rd_EXMEM == rs_IDEX);
-            alu1 = (rd_EXMEM == rt_IDEX);
-         end
-         
-         // data logic
-         // mux 0 data
-         if(rd_EXMEM == rs_IDEX)
-            aluD0 = aluEXMEM_Data;
-         else
-            aluD0 = aluMEMWB_Data;
-         
-         // mux 1 data
-         if(rd_EXMEM == rt_IDEX)
-            aluD1 = aluEXMEM_Data;
-         else
-            aluD1 = aluMEMWB_Data;
-      end
-      else begin
-         alu0 = 0;
-         alu1 = 0;
-         aluD0 = 32'h3A770A27;
-         aluD1 = 32'h2ADFACED;
-      end
-   end   
+			if(op_EXMEM_is_alui_wr) begin
+				alu0 = (rt_EXMEM == rs_IDEX);
+				aluD0 = aluEXMEM_Data;
+			end
+			else if(EXMEM_is_alur) begin
+				alu0 = (rd_EXMEM == rs_IDEX);
+				aluD0 = aluEXMEM_Data;
+			end
+			else if(op_MEMWB_is_alui_wr || op_MEMWB == LW) begin
+				alu0 = (rt_MEMWB == rs_IDEX);
+            if(op_MEMWB_is_alui_wr)
+               aluD0 = aluMEMWB_Data;
+            else
+               aluD0 = MEMWB_MemData;
+			end
+			else if(MEMWB_is_alur) begin
+				alu0 = (rd_MEMWB == rs_IDEX);
+				aluD0 = aluMEMWB_Data;
+			end
+			else begin
+				alu0 = 0;
+				aluD0 = 32'h70E51E5;
+			end
+		end
+		
+		//BLOCK 2
+		else if(IDEX_is_alur || op_IDEX == SW) begin //
+			if(op_EXMEM_is_alui_wr) begin            //SUB-BLOCK A
+				// alu mux logic
+				if(op_MEMWB_is_alui_wr || (op_MEMWB == LW)) begin
+					alu0 = (rt_EXMEM == rs_IDEX) || (rt_MEMWB == rs_IDEX);
+					alu1 = (rt_EXMEM == rt_IDEX) || (rt_MEMWB == rt_IDEX);
+				end
+				else if(MEMWB_is_alur) begin
+					alu0 = (rt_EXMEM == rs_IDEX) || (rd_MEMWB == rs_IDEX);
+					alu1 = (rt_EXMEM == rt_IDEX) || (rd_MEMWB == rt_IDEX);
+				end
+				else begin
+					alu0 = (rt_EXMEM == rs_IDEX);
+					alu1 = (rt_EXMEM == rt_IDEX);
+				end
+				
+				// data logic
+				// mux 0 data
+				if(rt_EXMEM == rs_IDEX)
+					aluD0 = aluEXMEM_Data;
+				else if(op_MEMWB == LW)
+					aluD0 = MEMWB_MemData;
+				else
+					aluD0 = aluMEMWB_Data;
+				
+				// mux 1 data
+				if(rt_EXMEM == rt_IDEX)
+					aluD1 = aluEXMEM_Data;
+				else if(op_MEMWB == LW)
+					aluD1 = MEMWB_MemData;
+				else
+					aluD1 = aluMEMWB_Data;	
+			end
+			else if(EXMEM_is_alur) begin   //SUB-BLOCK B
+				// alu mux logic
+				if(op_MEMWB_is_alui_wr || (op_MEMWB == LW)) begin
+					alu0 = (rd_EXMEM == rs_IDEX) || (rt_MEMWB == rs_IDEX);
+					alu1 = (rd_EXMEM == rt_IDEX) || (rt_MEMWB == rt_IDEX);         
+				end
+				else if(MEMWB_is_alur) begin
+					alu0 = (rd_EXMEM == rs_IDEX) || (rd_MEMWB == rs_IDEX);
+					alu1 = (rd_EXMEM == rt_IDEX) || (rd_MEMWB == rt_IDEX);   
+				end 
+				else begin
+					alu0 = (rd_EXMEM == rs_IDEX);
+					alu1 = (rd_EXMEM == rt_IDEX);
+				end
+				
+				// data logic
+				// mux 0 data
+				if(rd_EXMEM == rs_IDEX)
+					aluD0 = aluEXMEM_Data;
+				else if(op_MEMWB == LW)
+					aluD0 = MEMWB_MemData;
+				else
+					aluD0 = aluMEMWB_Data;
+				
+				// mux 1 data
+				if(rd_EXMEM == rt_IDEX)
+					aluD1 = aluEXMEM_Data;
+				else if(op_MEMWB == LW)
+					aluD1 = MEMWB_MemData;
+				else
+					aluD1 = aluMEMWB_Data;
+			end
+			else begin
+				// alu mux logic
+				if(op_MEMWB_is_alui_wr || (op_MEMWB == LW)) begin
+					alu0 = (rt_MEMWB == rs_IDEX);
+					alu1 = (rt_MEMWB == rt_IDEX);         
+				end
+				else if(MEMWB_is_alur) begin
+					alu0 = (rd_MEMWB == rs_IDEX);
+					alu1 = (rd_MEMWB == rt_IDEX);   
+				end 
+				else begin
+					alu0 = 0;
+					alu1 = 0;
+				end
+				
+				// data logic
+				// mux 0 data
+				if(op_MEMWB == LW)
+					aluD0 = MEMWB_MemData;
+				else
+					aluD0 = aluMEMWB_Data;
+				
+				// mux 1 data
+				if(op_MEMWB == LW)
+					aluD1 = MEMWB_MemData;
+				else
+					aluD1 = aluMEMWB_Data;
+			end				
+		end
+		else begin
+			alu0 = 0;
+			alu1 = 0;
+			aluD0 = 32'h3A770A27;
+			aluD1 = 32'h2ADFACED;
+		end
    
    
 // FORWARDING TO DATA MEMORY
@@ -493,8 +532,8 @@ signals:
    //BLOCK 7
    if(op_EXMEM == LW) begin //// stall for forwarding from memory to alu
       if(op_IDEX_is_alui_rd)
-         stall_idex = rt_EXMEM == rs_IDEX;
-      if(IDEX_is_alur)
+         stall_idex = (rt_EXMEM == rs_IDEX);
+      else if(IDEX_is_alur || op_IDEX == SW)
          stall_idex = (rt_EXMEM == rs_IDEX) || (rt_EXMEM == rt_IDEX);
       else
          stall_idex = 0;
@@ -503,11 +542,11 @@ signals:
       stall_idex = 0;
    if(op_IFID == 0 && funct_IFID == JR) begin  // stall for data from alu / memory to jr
       if(op_IDEX_is_alui_wr || op_IDEX == LW)
-         stall_ifid = rt_IDEX == rs_IFID;
+         stall_ifid = (rt_IDEX == rs_IFID);
       else if(IDEX_is_alur)
-         stall_ifid = rd_IDEX == rs_IFID;
+         stall_ifid = (rd_IDEX == rs_IFID);
       else if(op_EXMEM == LW)
-         stall_ifid = rt_EXMEM == rs_IFID;
+         stall_ifid = (rt_EXMEM == rs_IFID);
       else
          stall_ifid = 0;
    end
