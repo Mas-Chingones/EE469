@@ -258,6 +258,50 @@ assign op_MEMWB_is_alui_wr = (
                            
 
 //is_alur
+<<<<<<< HEAD
+assign IFID_is_alur = (			(op_IFID == 0) && 
+								(  	(funct_IFID == ADD)	||
+									(funct_IFID == SUB)	||
+									(funct_IFID == SLT)	||
+									(funct_IFID == AND)	||
+									(funct_IFID == OR)	||
+									(funct_IFID == XOR)	||
+									(funct_IFID == SLLV)	));
+									
+assign IDEX_is_alur = (			(op_IDEX == 0)	&&
+								(	(funct_IDEX == ADD)	||
+									(funct_IDEX == SUB)	||
+									(funct_IDEX == SLT)	||
+									(funct_IDEX == AND)	||
+									(funct_IDEX == OR)	||
+									(funct_IDEX == XOR)	||
+									(funct_IDEX == SLLV)	));
+									
+assign EXMEM_is_alur = (		(op_EXMEM == 0) &&
+								(	(funct_EXMEM == ADD) 	||
+									(funct_EXMEM == SUB)	||
+									(funct_EXMEM == SLT)	||
+									(funct_EXMEM == AND)	||
+									(funct_EXMEM == OR)		||
+									(funct_EXMEM == XOR)	||
+									(funct_EXMEM == SLLV) ));
+									
+assign MEMWB_is_alur = (		(op_MEMWB == 0) &&
+								(	(funct_MEMWB == ADD) ||
+									(funct_MEMWB == SUB)	||
+									(funct_MEMWB == SLT)	||
+									(funct_MEMWB == AND)	||
+									(funct_MEMWB == OR)	||
+									(funct_MEMWB == XOR)	||
+									(funct_MEMWB == SLLV) ));
+										
+										
+always @(*) begin
+	// BLOCK 1 forwarding to the ALU
+	if(op_IDEX_is_alui_rd) begin 
+		
+		alu1 = 0;
+=======
 assign IFID_is_alur = (         (op_IFID == 0) && 
                         (  (funct_IFID == ADD)   ||
                            (funct_IFID == SUB)   ||
@@ -300,6 +344,7 @@ assign MEMWB_is_alur = (      (op_MEMWB == 0) &&
 		if(op_IDEX_is_alui_rd) begin 
 			alu1 = 0;
 			aluD1 = aluD1; 
+>>>>>>> b918f6d6639646586cb3b5142d8e0ab7180a9c14
 
 			if(op_EXMEM_is_alui_wr) begin
 				alu0 = (rt_EXMEM == rs_IDEX);
